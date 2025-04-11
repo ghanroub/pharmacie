@@ -39,6 +39,8 @@
 
         header .logo h1 {
             margin: 0;
+            font-size: 2rem;
+            color: var(--secondary-color);
         }
 
         header nav ul {
@@ -99,7 +101,7 @@
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 30px;
             animation: slideIn 1.2s ease-out;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -305,6 +307,17 @@
             event.preventDefault();
             alert('شكرًا على استفسارك! سنقوم بالرد عليك قريبًا.');
             modal.style.display = 'none';
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
