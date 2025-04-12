@@ -105,8 +105,15 @@
 
         /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            header .logo {
+                margin-bottom: 10px;
+            }
             header nav ul {
-                flex-direction: column; /* ترتيب العناصر في صف واحد */
+                flex-direction: row; /* ترتيب العناصر في صف واحد */
                 gap: 10px; /* مسافة بين العناصر */
                 text-align: center; /* محاذاة النص في الوسط */
             }
