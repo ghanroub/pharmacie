@@ -17,7 +17,7 @@
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
-            padding: 30px 20px; /* زيادة المسافة للأعلى */
+            padding: 20px 15px; /* تعديل المسافة للأجهزة المحمولة */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,12 +27,12 @@
             z-index: 1000;
         }
         header nav {
-            transform: translateX(35px); /* سحب العناصر نحو اليمين بمقدار 35px */
+            transform: translateX(35px); /* سحب العناصر نحو اليمين */
         }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 30px; /* زيادة المسافة بين العناصر */
+            gap: 20px; /* مسافة بين العناصر */
             margin: 0;
             padding: 0;
         }
@@ -40,6 +40,7 @@
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1rem; /* حجم النص للأجهزة المحمولة */
         }
         header nav ul li a:hover {
             color: #fff;
@@ -95,11 +96,26 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
-            padding: 10px 20px;
+            padding: 10px 15px; /* تعديل المسافة للأجهزة المحمولة */
             position: fixed;
             bottom: 0;
             width: 100%;
             z-index: 1000;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column; /* ترتيب العناصر في صف واحد */
+                gap: 10px; /* مسافة بين العناصر */
+                text-align: center; /* محاذاة النص في الوسط */
+            }
+            header nav ul li a {
+                font-size: 0.9rem; /* تعديل حجم النص للأجهزة المحمولة */
+            }
+            footer p {
+                font-size: 0.8rem; /* تعديل حجم النص في الشريط السفلي */
+            }
         }
     </style>
 </head>
