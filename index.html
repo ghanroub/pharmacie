@@ -15,12 +15,16 @@
             text-align: right;
         }
         header {
-            background-color: #4a4a88;
-            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffeb3b;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
         header nav ul {
             list-style: none;
@@ -30,12 +34,12 @@
             padding: 0;
         }
         header nav ul li a {
-            color: #fff;
+            color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
         }
         header nav ul li a:hover {
-            color: #ffeb3b;
+            color: #fff;
         }
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Medical%20interface%20vector%20image%20on%20VectorStock.jpeg') no-repeat center center/cover;
@@ -48,6 +52,7 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            color: #228b22; /* Dark green color */
         }
         .hero p {
             font-size: 1.2rem;
@@ -83,10 +88,14 @@
             line-height: 1.6;
         }
         footer {
-            background-color: #4a4a88;
-            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffeb3b;
             text-align: center;
             padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -112,7 +121,6 @@
             <button onclick="alert('اضغط هنا للاستفسار')">استفسار</button>
         </div>
     </section>
-
 
     <footer>
         <p>&copy; 2025 Cours Pharmacie. جميع الحقوق محفوظة.</p>
