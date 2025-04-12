@@ -26,20 +26,13 @@
             width: 100%;
             z-index: 1000;
         }
-        header .logo {
-            text-align: center;
-            width: 100%; /* توسيع العنصر ليغطي الشريط بالكامل */
-        }
         header nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px; /* مسافة بين العناصر */
-            width: 100%; /* توسيع العنصر ليغطي الشريط بالكامل */
+            transform: translateX(35px); /* سحب العناصر نحو اليمين */
         }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 15px; /* مسافة بين العناصر */
+            gap: 20px; /* مسافة بين العناصر */
             margin: 0;
             padding: 0;
         }
@@ -112,16 +105,10 @@
 
         /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column; /* ترتيب العناصر في عمود */
-                align-items: center; /* محاذاة العناصر في الوسط */
-            }
-            header .logo {
-                margin-bottom: 10px; /* مسافة بين اللوجو والقائمة */
-            }
-            header nav {
-                flex-direction: row; /* ترتيب العناصر أفقياً */
-                justify-content: space-around; /* توزيع العناصر بشكل متساوٍ */
+            header nav ul {
+                flex-direction: column; /* ترتيب العناصر في صف واحد */
+                gap: 10px; /* مسافة بين العناصر */
+                text-align: center; /* محاذاة النص في الوسط */
             }
             header nav ul li a {
                 font-size: 0.9rem; /* تعديل حجم النص للأجهزة المحمولة */
