@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours de pharmacie</title>
+    <title>Cours Pharmacie</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -17,7 +17,7 @@
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
-            padding: 20px 15px;
+            padding: 20px 15px; /* تعديل المسافة للأجهزة المحمولة */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -26,21 +26,13 @@
             width: 100%;
             z-index: 1000;
         }
-        .logo {
-            margin-right: auto;
-        }
-        .menu-icon {
-            display: none;
-            font-size: 2rem;
-            cursor: pointer;
-        }
         header nav {
-            display: flex;
+            transform: translateX(35px); /* سحب العناصر نحو اليمين */
         }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 20px; /* مسافة بين العناصر */
             margin: 0;
             padding: 0;
         }
@@ -48,7 +40,7 @@
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1rem; /* حجم النص للأجهزة المحمولة */
         }
         header nav ul li a:hover {
             color: #fff;
@@ -60,12 +52,12 @@
             color: #fff;
             padding: 100px 20px;
             text-align: center;
-            height: 100vh;
+            height: 100vh; /* تغطية الشاشة بالكامل */
         }
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #ffeb3b;
+            color: #ffeb3b; /* لون ذهبي */
         }
         .hero p {
             font-size: 1.2rem;
@@ -104,7 +96,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
-            padding: 10px 15px;
+            padding: 10px 15px; /* تعديل المسافة للأجهزة المحمولة */
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -113,41 +105,16 @@
 
         /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
-            header {
-                flex-direction: row;
-                align-items: center;
-            }
-            .menu-icon {
-                display: block;
-            }
             header nav ul {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding-top: 60px;
-                z-index: 1001;
-            }
-            header nav ul.active {
-                display: flex;
-            }
-            header nav ul li {
-                text-align: center;
-                margin-bottom: 20px;
+                flex-direction: column; /* ترتيب العناصر في صف واحد */
+                gap: 10px; /* مسافة بين العناصر */
+                text-align: center; /* محاذاة النص في الوسط */
             }
             header nav ul li a {
-                font-size: 1.2rem;
+                font-size: 0.9rem; /* تعديل حجم النص للأجهزة المحمولة */
             }
-            .close-icon {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 2rem;
-                cursor: pointer;
+            footer p {
+                font-size: 0.8rem; /* تعديل حجم النص في الشريط السفلي */
             }
         }
     </style>
@@ -155,44 +122,28 @@
 <body>
     <header>
         <div class="logo">
-            <h1>Cours de pharmacie</h1>
+            <h1>Cours Pharmacie</h1>
         </div>
-        <div class="menu-icon">&#9776;</div>
         <nav>
-            <span class="close-icon">&times;</span>
             <ul>
-                <li><a href="#intro">Principale</a></li>
-                <li><a href="#about">A propos</a></li>
-                <li><a href="#content">Modules</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#intro">مقدمة</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#content">المحتوى</a></li>
+                <li><a href="#contact">للاستفسار</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Bienvenue aux cours de pharmacie</h1>
-            <p>Nous proposons des cours complets à différents niveaux.</p>
-            <button onclick="alert('Commandez ici')">Commandez</button>
+            <h1>مرحباً بكم في Cours Pharmacie</h1>
+            <p>نقدم لكم دورات شاملة عن جوانب مختلفة من الصيدلة</p>
+            <button onclick="alert('اضغط هنا للاستفسار')">استفسار</button>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Cours de pharmacie. Tous droits réservés.</p>
+        <p>&copy; 2025 Cours Pharmacie. جميع الحقوق محفوظة.</p>
     </footer>
-
-    <script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const navUl = document.querySelector('header nav ul');
-        const closeIcon = document.querySelector('.close-icon');
-
-        menuIcon.addEventListener('click', () => {
-            navUl.classList.toggle('active');
-        });
-
-        closeIcon.addEventListener('click', () => {
-            navUl.classList.remove('active');
-        });
-    </script>
 </body>
 </html>
