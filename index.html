@@ -26,6 +26,33 @@
             width: 100%;
             z-index: 1000;
         }
+        .logo-and-button {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* مسافة بين الشعار والزر */
+        }
+        .logo a {
+            color: #00bcd4; /* لون أزرق سماوي */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .logo a:hover {
+            color: #0288d1; /* لون أزرق أغمق عند التمرير */
+        }
+        .publish-button {
+            background-color: #6a1b9a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .publish-button:hover {
+            background-color: #4a4a88;
+        }
         header nav {
             transform: translateX(35px); /* سحب العناصر نحو اليمين */
         }
@@ -44,15 +71,6 @@
         }
         header nav ul li a:hover {
             color: #fff;
-        }
-        .logo a {
-            color: #00bcd4; /* لون أزرق سماوي */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .logo a:hover {
-            color: #0288d1; /* لون أزرق أغمق عند التمرير */
         }
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
@@ -137,8 +155,9 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="#intro">PharmaFacile</a>
+        <div class="logo-and-button">
+            <a href="#intro" class="logo">PharmaFacile</a>
+            <button class="publish-button">نشر</button>
         </div>
         <nav>
             <ul>
