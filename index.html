@@ -79,14 +79,9 @@
                 1px -1px 0 #000,
                 -1px 1px 0 #000,
                 1px 1px 0 #000;
-        }
-
-        .typing {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 4s steps(40, end), blink 0.5s step-end infinite alternate;
-            border-right: 2px solid white;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2s; /* تأخير التأثير لجعلها تظهر بعد العنوان */
         }
 
         @keyframes fadeIn {
@@ -95,24 +90,6 @@
             }
             to {
                 opacity: 1;
-            }
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink {
-            from {
-                border-right-color: white;
-            }
-            to {
-                border-right-color: transparent;
             }
         }
 
@@ -159,13 +136,10 @@
         /* Media Queries for Mobile Devices */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem; /* تقليل حجم النص */
+                font-size: 2rem;
             }
             .hero p {
-                font-size: 1rem; /* تقليل حجم النص */
-            }
-            .typing {
-                font-size: 1rem; /* تقليل حجم النص داخل تأثير الكتابة */
+                font-size: 1rem;
             }
             header nav ul {
                 flex-direction: column;
@@ -199,7 +173,7 @@
     <section class="hero">
         <div class="container">
             <h1>Bienvenue sur PharmaFacile</h1>
-            <p class="typing">votre passerelle vers le savoir pharmaceutique</p>
+            <p>votre passerelle vers le savoir pharmaceutique</p>
         </div>
     </section>
 
