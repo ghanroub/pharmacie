@@ -17,7 +17,7 @@
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
-            padding: 20px 15px; /* تعديل المسافة للأجهزة المحمولة */
+            padding: 20px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,12 +27,12 @@
             z-index: 1000;
         }
         header nav {
-            transform: translateX(35px); /* سحب العناصر نحو اليمين */
+            transform: translateX(35px);
         }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 20px; /* مسافة بين العناصر */
+            gap: 20px;
             margin: 0;
             padding: 0;
         }
@@ -40,19 +40,19 @@
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem; /* حجم النص للأجهزة المحمولة */
+            font-size: 1rem;
         }
         header nav ul li a:hover {
             color: #fff;
         }
         .logo a {
-            color: #00bcd4; /* لون أزرق سماوي */
+            color: #00bcd4;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.5rem;
         }
         .logo a:hover {
-            color: #0288d1; /* لون أزرق أغمق عند التمرير */
+            color: #0288d1;
         }
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
@@ -61,22 +61,59 @@
             color: #fff;
             padding: 100px 20px;
             text-align: center;
-            height: 100vh; /* تغطية الشاشة بالكامل */
+            height: 100vh;
         }
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #ffeb3b; /* لون ذهبي */
+            color: #ffeb3b;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
         }
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            color: white; /* لون النص أبيض */
+            color: white;
             text-shadow:
                 -1px -1px 0 #000,
                 1px -1px 0 #000,
                 -1px 1px 0 #000,
-                1px 1px 0 #000; /* إضافة ظلال سوداء حول النص */
+                1px 1px 0 #000;
+        }
+
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(40, end), blink 0.5s step-end infinite alternate;
+            border-right: 2px solid white;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-right-color: white;
+            }
+            to {
+                border-right-color: transparent;
+            }
         }
 
         .hero button {
@@ -112,25 +149,24 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
-            padding: 10px 15px; /* تعديل المسافة للأجهزة المحمولة */
+            padding: 10px 15px;
             position: fixed;
             bottom: 0;
             width: 100%;
             z-index: 1000;
         }
 
-        /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
             header nav ul {
-                flex-direction: column; /* ترتيب العناصر في صف واحد */
-                gap: 10px; /* مسافة بين العناصر */
-                text-align: center; /* محاذاة النص في الوسط */
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
             header nav ul li a {
-                font-size: 0.9rem; /* تعديل حجم النص للأجهزة المحمولة */
+                font-size: 0.9rem;
             }
             footer p {
-                font-size: 0.8rem; /* تعديل حجم النص في الشريط السفلي */
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -153,8 +189,7 @@
     <section class="hero">
         <div class="container">
             <h1>Bienvenue sur PharmaFacile</h1>
-            <p>votre passerelle vers le savoir pharmaceutique</p>
-            
+            <p class="typing">votre passerelle vers le savoir pharmaceutique</p>
         </div>
     </section>
 
