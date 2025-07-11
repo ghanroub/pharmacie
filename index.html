@@ -81,9 +81,8 @@
                 1px 1px 0 #000;
             opacity: 0;
             animation: fadeIn 2s forwards;
-            animation-delay: 2s; /* تأخير التأثير لجعلها تظهر بعد العنوان */
+            animation-delay: 2s;
         }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -92,7 +91,6 @@
                 opacity: 1;
             }
         }
-
         .hero button {
             background-color: #6a1b9a;
             color: #fff;
@@ -132,7 +130,6 @@
             width: 100%;
             z-index: 1000;
         }
-
         /* Media Queries for Mobile Devices */
         @media (max-width: 768px) {
             .hero h1 {
@@ -170,15 +167,29 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="intro" class="hero">
         <div class="container">
             <h1>Bienvenue sur GhaniPharm</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
         </div>
     </section>
 
+    <section id="about" class="section">
+        <div class="container">
+            <h2>À propos</h2>
+            <p>Information sur GhaniPharm...</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Informations de contact...</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; .2025 GhaniPharm. Tous droits réservés</p>
+        <p>&copy; 2025 GhaniPharm. Tous droits réservés</p>
     </footer>
 </body>
 </html>
