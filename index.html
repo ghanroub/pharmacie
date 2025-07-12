@@ -36,6 +36,9 @@
             margin: 0;
             padding: 0;
         }
+        header nav ul li {
+            position: relative;
+        }
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
@@ -53,6 +56,32 @@
         }
         .logo a:hover {
             color: #0288d1;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+        .dropdown-content a {
+            color: #ffeb3b;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: right;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 20px;
+            cursor: pointer;
         }
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
@@ -176,7 +205,16 @@
             <ul>
                 <li><a href="#intro">Principale</a></li>
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#content">Modules</a></li>
+                <li class="dropdown">
+                    <a href="#content" class="dropbtn">Modules</a>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <span class="close-btn" onclick="closeDropdown()">&times;</span>
+                        <a href="#cours">Cours</a>
+                        <a href="#tp">TP</a>
+                        <a href="#td">TD</a>
+                        <a href="#examens">Examens</a>
+                    </div>
+                </li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -207,5 +245,24 @@ Merci de votre visite !</p>
     <footer>
         <p>&copy; 2025 GhaniPharm. Tous droits réservés</p>
     </footer>
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdownContent");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+
+        function closeDropdown() {
+            document.getElementById("dropdownContent").style.display = "none";
+        }
+
+        document.querySelector('.dropbtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleDropdown();
+        });
+    </script>
 </body>
 </html>
