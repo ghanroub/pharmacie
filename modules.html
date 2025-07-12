@@ -13,7 +13,6 @@
             color: #333;
             direction: rtl;
             text-align: right;
-            overflow-x: hidden;
         }
         header {
             background-color: rgba(0, 0, 0, 0.5);
@@ -57,23 +56,16 @@
         }
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
             background-size: cover;
             color: #fff;
             padding: 100px 20px;
             text-align: center;
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            animation: moveBackground 20s linear infinite;
-        }
-        @keyframes moveBackground {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hero h1 {
             font-size: 3rem;
@@ -93,6 +85,9 @@
         .sections-container {
             display: flex;
             justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .section {
             flex: 1;
