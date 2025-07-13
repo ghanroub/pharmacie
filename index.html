@@ -171,6 +171,24 @@
             width: 100%;
             z-index: 1000;
         }
+        /* Gallery styles */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 10px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .gallery img.active {
+            opacity: 1;
+        }
         /* Media Queries for Mobile Devices */
         @media (max-width: 768px) {
             .sections-container {
@@ -223,6 +241,13 @@
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
+            <div class="gallery">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Flux_Dev_A_colorful_arrangement_of_various_medicines_and_drugs_2.jpg" alt="Image 1">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20080434.png" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Actualit%C3%A9s%20%5BCHLORATE%5D%20La%20synth%C3%A8se%20des%20articles%20_%20presse%2C%20magazines%2C%20we.jpeg" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/%D0%A3%D1%87%D0%B5%D0%BD%D1%8B%D0%B9%20%D1%81%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpeg" alt="Image 5">
+            </div>
         </div>
         <div class="sections-container">
             <div id="about" class="section">
@@ -261,6 +286,21 @@ Merci de votre visite !</p>
         document.querySelector('.dropbtn').addEventListener('click', function(event) {
             event.preventDefault();
             toggleDropdown();
+        });
+
+        // Gallery script
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.gallery img');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            images[currentIndex].classList.add('active');
+            setInterval(showNextImage, 3000); // Change image every 3 seconds
         });
     </script>
 </body>
