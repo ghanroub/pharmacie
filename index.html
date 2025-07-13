@@ -174,16 +174,19 @@
         /* Gallery styles */
         .gallery {
             position: relative;
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: 300px;
             margin: 0 auto;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .gallery img {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             border-radius: 10px;
             opacity: 0;
             transition: opacity 2s ease-in-out;
@@ -193,6 +196,9 @@
         }
         /* Media Queries for Mobile Devices */
         @media (max-width: 768px) {
+            .gallery {
+                height: 200px;
+            }
             .sections-container {
                 flex-direction: column;
             }
