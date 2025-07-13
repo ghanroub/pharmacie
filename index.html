@@ -171,29 +171,6 @@
             width: 100%;
             z-index: 1000;
         }
-        /* Slider Styles */
-        .slider {
-            max-width: 800px;
-            margin: 20px auto;
-            position: relative;
-            overflow: hidden;
-            height: 400px;
-        }
-        .slides {
-            display: flex;
-            transition: transform 1s ease;
-            height: 100%;
-        }
-        .slide {
-            min-width: 100%;
-            height: 100%;
-        }
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
         /* Media Queries for Mobile Devices */
         @media (max-width: 768px) {
             .sections-container {
@@ -246,26 +223,6 @@
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
-            <!-- Slider -->
-            <div class="slider">
-                <div class="slides">
-                    <div class="slide">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Actualit%C3%A9s%20%5BCHLORATE%5D%20La%20synth%C3%A8se%20des%20articles%20_%20presse%2C%20magazines%2C%20we.jpeg" alt="Slide 1">
-                    </div>
-                    <div class="slide">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Slide 2">
-                    </div>
-                    <div class="slide">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Flux_Dev_A_colorful_arrangement_of_various_medicines_and_drugs_2.jpg" alt="Slide 3">
-                    </div>
-                    <div class="slide">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20080434.png" alt="Slide 4">
-                    </div>
-                    <div class="slide">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/%D0%A3%D1%87%D0%B5%D0%BD%D1%8B%D0%B9%20%D1%81%20%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpeg" alt="Slide 5">
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="sections-container">
             <div id="about" class="section">
@@ -304,24 +261,6 @@ Merci de votre visite !</p>
         document.querySelector('.dropbtn').addEventListener('click', function(event) {
             event.preventDefault();
             toggleDropdown();
-        });
-
-        // Slider Script
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelector('.slides');
-            const slideItems = document.querySelectorAll('.slide');
-            let currentIndex = 0;
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % slideItems.length;
-                updateSlider();
-            }
-
-            function updateSlider() {
-                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-
-            setInterval(nextSlide, 3000);
         });
     </script>
 </body>
