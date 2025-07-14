@@ -26,6 +26,11 @@
             width: 100%;
             z-index: 1000;
         }
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
         header nav {
             transform: translateX(35px);
         }
@@ -209,15 +214,28 @@
                 font-size: 1rem;
             }
             header nav ul {
+                display: none;
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+            }
+            header nav ul.show {
+                display: flex;
             }
             header nav ul li a {
                 font-size: 0.9rem;
             }
             footer p {
                 font-size: 0.8rem;
+            }
+            .menu-btn {
+                display: block;
             }
         }
     </style>
@@ -227,8 +245,9 @@
         <div class="logo">
             <a href="#intro">GhaniPharma</a>
         </div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="#order">Commandez</a></li>
                 <li><a href="#about">À propos</a></li>
                 <li class="dropdown">
@@ -298,21 +317,27 @@ Merci de votre visite !</p>
             event.preventDefault();
             toggleDropdown();
         });
-
         // Gallery script
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentIndex = 0;
-
             function showNextImage() {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].classList.add('active');
             }
-
             images[currentIndex].classList.add('active');
             setInterval(showNextImage, 3000); // Change image every 3 seconds
         });
+
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            if (navMenu.classList.contains("show")) {
+                navMenu.classList.remove("show");
+            } else {
+                navMenu.classList.add("show");
+            }
+        }
     </script>
 </body>
 </html>
