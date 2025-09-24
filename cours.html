@@ -176,6 +176,56 @@
             width: 100%;
             z-index: 1000;
         }
+
+        /* قسم الأزرار أسفل الشريط العلوي */
+        .year-navigation {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px 20px;
+            text-align: center;
+            margin-top: 70px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .year-navigation h3 {
+            color: #ffeb3b;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .year-btn {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            min-width: 120px;
+        }
+
+        .year-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
+        .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
+        .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
+        .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
+        .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
+
         @media (max-width: 768px) {
             .sections-container {
                 flex-direction: column;
@@ -220,6 +270,17 @@
             footer p {
                 font-size: 0.8rem;
             }
+            .year-navigation {
+                margin-top: 110px;
+            }
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .year-btn {
+                width: 80%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -239,7 +300,6 @@
                         <span class="close-btn" onclick="closeDropdown()">&times;</span>
                         <a href="cours.html">Cours</a>
                         <a href="tps.html">TPs</a>
-                        <a href="cours.html">Cours</a>
                         <a href="examens.html">Examens</a>
                     </div>
                 </li>
@@ -247,10 +307,23 @@
             </ul>
         </nav>
     </header>
+
+    <!-- قسم الأزرار الجديد -->
+    <div class="year-navigation">
+        <h3>Par Année</h3>
+        <div class="buttons-container">
+            <button class="year-btn first-year">1ère Année</button>
+            <button class="year-btn second-year">2ème Année</button>
+            <button class="year-btn third-year">3ème Année</button>
+            <button class="year-btn fourth-year">4ème Année</button>
+            <button class="year-btn fifth-year">5ème Année</button>
+        </div>
+    </div>
+
     <section id="cours" class="hero">
         <div class="container">
             <h1>Les cours</h1>
-            <p>Bienvenue à la section des coure.</p>
+            <p>Bienvenue à la section des cours.</p>
         </div>
         <div class="sections-container">
             <div class="section">
@@ -291,6 +364,18 @@
                 navMenu.classList.add("show");
             }
         }
+
+        // إضافة JavaScript للأزرار (اختياري)
+        document.querySelectorAll('.year-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const year = this.textContent.trim();
+                if (year === "1ère Année") window.location.href = "annee1.html";
+                else if (year === "2ème Année") window.location.href = "annee2.html";
+                else if (year === "3ème Année") window.location.href = "annee3.html";
+                else if (year === "4ème Année") window.location.href = "annee4.html";
+                else if (year === "5ème Année") window.location.href = "annee5.html";
+            });
+        });
     </script>
 </body>
 </html>
