@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF- Njeg8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours - GhaniPharma</title>
     <style>
@@ -93,7 +93,7 @@
             background-attachment: fixed;
             background-size: cover;
             color: #fff;
-            padding: 150px 20px 100px;
+            padding: 100px 20px;
             text-align: center;
         }
         .hero h1 {
@@ -117,8 +117,12 @@
             animation-delay: 2s;
         }
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         .hero button {
             background-color: #6a1b9a;
@@ -217,51 +221,6 @@
                 font-size: 0.8rem;
             }
         }
-
-        /* أنماط الأزرار الجديدة */
-        .year-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 70px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.3);
-            position: fixed;
-            width: 100%;
-            z-index: 999;
-            flex-wrap: wrap;
-        }
-
-        .year-btn {
-            background-color: #6a1b9a;
-            color: #fff;
-            border: none;
-            padding: 8px 12px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            flex: 1 1 auto;
-            min-width: 80px;
-        }
-
-        .year-btn:hover {
-            background-color: #4a4a88;
-        }
-
-        @media (max-width: 480px) {
-            .year-buttons {
-                flex-direction: column;
-                align-items: center;
-                padding: 5px;
-            }
-            .year-btn {
-                width: 90%;
-                margin: 3px 0;
-                font-size: 0.9rem;
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -288,16 +247,6 @@
             </ul>
         </nav>
     </header>
-
-    <!-- الأزرار الجديدة -->
-    <div class="year-buttons">
-        <button class="year-btn">Première Année</button>
-        <button class="year-btn">Deuxième Année</button>
-        <button class="year-btn">Troisième Année</button>
-        <button class="year-btn">Quatrième Année</button>
-        <button class="year-btn">Cinquième Année</button>
-    </div>
-
     <section id="cours" class="hero">
         <div class="container">
             <h1>Cours de Pharmacie</h1>
