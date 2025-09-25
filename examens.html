@@ -14,7 +14,6 @@
             direction: rtl;
             text-align: left;
         }
-
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
             position: fixed;
@@ -24,7 +23,6 @@
             background-color: rgba(0, 0, 0, 0.7);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -33,7 +31,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         /* قسم الأزرار الثابتة أسفل header */
         .year-navigation {
             background-color: rgba(0, 0, 0, 0.6);
@@ -42,14 +39,12 @@
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-
         .year-navigation h3 {
             color: #ffeb3b;
             font-size: 1.3rem;
             margin: 10px 0;
             text-align: center;
         }
-
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
@@ -57,7 +52,6 @@
             gap: 8px;
             padding-bottom: 10px;
         }
-
         .year-btn {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
             color: white;
@@ -75,29 +69,24 @@
             align-items: center;
             justify-content: center;
         }
-
         .year-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
-
         .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
         .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-
         /* بقية التصميمات */
         .menu-btn {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
-
         header nav {
             transform: translateX(35px);
         }
-
         header nav ul {
             list-style: none;
             display: flex;
@@ -105,33 +94,27 @@
             margin: 0;
             padding: 0;
         }
-
         header nav ul li {
             position: relative;
         }
-
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
         }
-
         header nav ul li a:hover {
             color: #fff;
         }
-
         .logo a {
             color: #00bcd4;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.5rem;
         }
-
         .logo a:hover {
             color: #0288d1;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -141,7 +124,6 @@
             z-index: 1;
             left: 0;
         }
-
         .dropdown-content a {
             color: #ffeb3b;
             padding: 12px 16px;
@@ -149,11 +131,9 @@
             display: block;
             text-align: left;
         }
-
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-
         .close-btn {
             position: absolute;
             top: 5px;
@@ -161,22 +141,20 @@
             font-size: 20px;
             cursor: pointer;
         }
-
         /* قسم البطل مع خلفية تغطي الشاشة كاملة */
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
             background-attachment: fixed;
             background-size: cover;
             color: #fff;
-            padding: 150px 20px 100px; /* زيادة الهامش العلوي لتجنب التداخل مع الشريط العلوي */
+            padding: 150px 20px 100px;
             text-align: center;
-            min-height: 100vh; /* تغطية الشاشة كاملة */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
@@ -184,7 +162,6 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
         }
-
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
@@ -198,12 +175,10 @@
             animation: fadeIn 2s forwards;
             animation-delay: 2s;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         .hero button {
             background-color: #6a1b9a;
             color: #fff;
@@ -213,11 +188,9 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .hero button:hover {
             background-color: #4a4a88;
         }
-
         .hero .container {
             padding: 20px;
             max-width: 1200px;
@@ -226,7 +199,6 @@
             background-color: transparent;
             border: none;
         }
-
         .sections-container {
             display: flex;
             justify-content: space-between;
@@ -234,7 +206,6 @@
             max-width: 1200px;
             padding: 0 20px;
         }
-
         .section {
             flex: 1;
             margin: 0 10px;
@@ -244,16 +215,62 @@
             padding: 20px;
             color: #fff;
         }
-
         .section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
             color: #ffeb3b;
         }
-
         .section p {
             font-size: 1rem;
             line-height: 1.6;
+        }
+
+        /* أنماط جديدة للعناوين والفصول */
+        .section h3 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            padding: 10px 15px;
+            color: white;
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section h3:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+
+        .section ul li {
+            margin: 10px 0;
+            padding: 8px 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .section ul li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .section ul li a {
+            color: #ffeb3b;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .section ul li a:hover {
+            color: white;
+            text-decoration: underline;
         }
 
         footer {
@@ -266,29 +283,23 @@
             width: 100%;
             z-index: 1000;
         }
-
         /* تنسيق للأجهزة المحمولة */
         @media (max-width: 768px) {
             .sections-container {
                 flex-direction: column;
             }
-
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero p {
                 font-size: 1rem;
             }
-
             .menu-btn {
                 display: block;
             }
-
             header nav {
                 transform: none;
             }
-
             header nav ul {
                 display: none;
                 flex-direction: column;
@@ -301,33 +312,27 @@
                 margin: 0;
                 align-items: center;
             }
-
             header nav ul.show {
                 display: flex;
             }
-
             header nav ul li {
                 margin: 10px 0;
                 width: 100%;
                 text-align: center;
             }
-
             header nav ul li a {
                 font-size: 1.2rem;
                 padding: 10px;
                 display: inline-block;
             }
-
             footer p {
                 font-size: 0.8rem;
             }
-
             .buttons-container {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .year-btn {
                 min-width: 80px;
                 padding: 8px 12px;
@@ -363,7 +368,6 @@
                 </ul>
             </nav>
         </header>
-
         <!-- قسم الأزرار الثابتة -->
         <div class="year-navigation">
             <div class="buttons-container">
@@ -375,59 +379,88 @@
             </div>
         </div>
     </div>
-
-    <!-- قسم البطل مع خلفية تغطي الشاشة كاملة -->
+    <!-- قسم المحتوى الرئيسي -->
     <section id="examens" class="hero">
         <div class="container">
+            <!-- إزالة العبارتين:
             <h1>Les examens</h1>
             <p>Bienvenue à la section des examens.</p>
+            -->
         </div>
         <div class="sections-container">
             <div class="section">
                 <h2>Examens Disponibles</h2>
-                <p>Liste des Examens disponibles pour les étudiants en pharmacie.</p>
+                <p>Liste des examens disponibles pour les étudiants en pharmacie.</p>
+                <!-- إضافة هيكل السنوات والفصول -->
+                <h3 id="annee1">1ère Année</h3>
                 <ul>
-                    <li><a href="examen1.html">Examen 1: Études de Cas</a></li>
-                    <li><a href="examen2.html">Examen 2: Exercices Pratiques</a></li>
-                    <li><a href="examen3.html">Examen 3: Révisions</a></li>
+                    <li><a href="annee1_semestre1.html">Semestre 1</a></li>
+                    <li><a href="annee1_semestre2.html">Semestre 2</a></li>
+                    <li><a href="annee1_semestre3.html">Semestre 3</a></li>
+                </ul>
+                <h3 id="annee2">2ème Année</h3>
+                <ul>
+                    <li><a href="annee2_semestre1.html">Semestre 1</a></li>
+                    <li><a href="annee2_semestre2.html">Semestre 2</a></li>
+                    <li><a href="annee2_semestre3.html">Semestre 3</a></li>
+                </ul>
+                <h3 id="annee3">3ème Année</h3>
+                <ul>
+                    <li><a href="annee3_semestre1.html">Semestre 1</a></li>
+                    <li><a href="annee3_semestre2.html">Semestre 2</a></li>
+                    <li><a href="annee3_semestre3.html">Semestre 3</a></li>
+                </ul>
+                <h3 id="annee4">4ème Année</h3>
+                <ul>
+                    <li><a href="annee4_semestre1.html">Semestre 1</a></li>
+                    <li><a href="annee4_semestre2.html">Semestre 2</a></li>
+                    <li><a href="annee4_semestre3.html">Semestre 3</a></li>
+                </ul>
+                <h3 id="annee5">5ème Année</h3>
+                <ul>
+                    <li><a href="annee5_semestre1.html">Semestre 1</a></li>
+                    <li><a href="annee5_semestre2.html">Semestre 2</a></li>
+                    <li><a href="annee5_semestre3.html">Semestre 3</a></li>
                 </ul>
             </div>
         </div>
     </section>
-
     <footer>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
-
     <script>
         function toggleDropdown() {
             var dropdownContent = document.getElementById("dropdownContent");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-
         function closeDropdown() {
             document.getElementById("dropdownContent").style.display = "none";
         }
-
         document.querySelector('.dropbtn').addEventListener('click', function(event) {
             event.preventDefault();
             toggleDropdown();
         });
-
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
 
-        // JavaScript للأزرار (اختياري)
+        // الكود الجديد للتمرير إلى الأقسام
         document.querySelectorAll('.year-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const year = this.textContent.trim();
-                if (year === "1ère Année") window.location.href = "annee1.html";
-                else if (year === "2ème Année") window.location.href = "annee2.html";
-                else if (year === "3ème Année") window.location.href = "annee3.html";
-                else if (year === "4ème Année") window.location.href = "annee4.html";
-                else if (year === "5ème Année") window.location.href = "annee5.html";
+                let targetId;
+
+                if (year === "1ère Année") targetId = "annee1";
+                else if (year === "2ème Année") targetId = "annee2";
+                else if (year === "3ème Année") targetId = "annee3";
+                else if (year === "4ème Année") targetId = "annee4";
+                else if (year === "5ème Année") targetId = "annee5";
+
+                // التمرير إلى العنصر المستهدف
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
