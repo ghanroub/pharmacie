@@ -141,6 +141,43 @@
             font-size: 20px;
             cursor: pointer;
         }
+        /* تعديل القائمة المنسدلة في الهاتف */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                display: none;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .dropdown-content.show {
+                display: block;
+            }
+            .dropdown-content a {
+                padding: 10px 15px;
+                display: block;
+                text-align: center;
+                color: #ffeb3b;
+            }
+            .dropdown-content a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            .close-btn {
+                display: block;
+                color: #ffeb3b;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+        /* سلوك القائمة المنسدلة في الكمبيوتر */
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
         /* قسم البطل مع خلفية تغطي الشاشة كاملة */
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
@@ -375,7 +412,7 @@
                     <li><a href="index.html#order">Commandez</a></li>
                     <li><a href="index.html#about">À propos</a></li>
                     <li class="dropdown">
-                        <a href="#content" class="dropbtn">Contenu</a>
+                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)">Contenu</a>
                         <div id="dropdownContent" class="dropdown-content">
                             <span class="close-btn" onclick="closeDropdown()">&times;</span>
                             <a href="cours.html">Cours</a>
@@ -658,22 +695,31 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        function toggleDropdown() {
-            var dropdownContent = document.getElementById("dropdownContent");
-            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        // عرض/إخفاء القائمة المنسدلة في الهاتف
+        function toggleDropdownMobile(event) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                const dropdownContent = document.getElementById("dropdownContent");
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                } else {
+                    dropdownContent.classList.add("show");
+                }
+            }
         }
+
+        // إغلاق القائمة المنسدلة
         function closeDropdown() {
-            document.getElementById("dropdownContent").style.display = "none";
+            document.getElementById("dropdownContent").classList.remove("show");
         }
-        document.querySelector('.dropbtn').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleDropdown();
-        });
+
+        // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-        // الكود الجديد للتمرير إلى الأقسام
+
+        // الكود الخاص بالأزرار والتمرير
         document.querySelectorAll('.year-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const year = this.textContent.trim();
@@ -683,21 +729,19 @@
                 else if (year === "3ème Année") targetId = "annee3";
                 else if (year === "4ème Année") targetId = "annee4";
                 else if (year === "5ème Année") targetId = "annee5";
-                // التمرير إلى العنصر المستهدف
                 document.getElementById(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
+
         // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
         function toggleSemesters(element) {
             const semestersList = element.nextElementSibling;
             const semesters = semestersList.querySelectorAll('li');
             if (semesters.length === 1) {
-                // إذا كان هناك فصل واحد فقط، انتقل مباشرة إلى صفحة الفصل
                 window.location.href = semesters[0].querySelector('a').href;
             } else {
-                // إذا كان هناك أكثر من فصل، اعرض/اخفي القائمة
                 semestersList.classList.toggle('hidden');
             }
         }
