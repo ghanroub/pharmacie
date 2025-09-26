@@ -245,6 +245,32 @@
             footer p {
                 font-size: 0.8rem;
             }
+            /* تعديل القائمة المنسدلة في الهاتف */
+            .dropdown-menu {
+                position: static !important;
+                width: 100%;
+                display: none;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .dropdown-menu.show {
+                display: block;
+            }
+            .dropdown-menu a {
+                padding: 10px 15px;
+                display: block;
+                text-align: center;
+                color: #ffeb3b;
+            }
+            .dropdown-menu a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -260,8 +286,8 @@
                 <li><a href="#about">À propos</a></li>
                 <li class="dropdown">
                     <a href="#content" class="dropbtn">Contenu</a>
-                    <div id="dropdownContent" class="dropdown-content">
-                        <span class="close-btn" onclick="closeDropdown()">&times;</span>
+                    <div id="dropdownContent" class="dropdown-content dropdown-menu">
+                        <span class="close-btn" onclick="closeDropdown()">×</span>
                         <a href="cours.html">Cours</a>
                         <a href="tps.html">TPs</a>
                         <a href="tds.html">TDs</a>
@@ -299,7 +325,7 @@ Que vous soyez en première année ou en fin de cycle, ce site est fait pour vou
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
 N'hésitez pas à nous écrire sur nos réseaux sociaux :
 <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
@@ -310,32 +336,7 @@ Merci de votre visite !</p>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        function toggleDropdown() {
-            var dropdownContent = document.getElementById("dropdownContent");
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        }
-        function closeDropdown() {
-            document.getElementById("dropdownContent").style.display = "none";
-        }
-        document.querySelector('.dropbtn').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleDropdown();
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.gallery img');
-            let currentIndex = 0;
-            function showNextImage() {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
-            }
-            images[currentIndex].classList.add('active');
-            setInterval(showNextImage, 3000);
-        });
+        // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             if (navMenu.classList.contains("show")) {
@@ -344,6 +345,42 @@ Merci de votre visite !</p>
                 navMenu.classList.add("show");
             }
         }
+
+        // عرض/إخفاء القائمة المنسدلة في الهاتف
+        function toggleDropdownMobile() {
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            if (dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+            } else {
+                dropdownMenu.classList.add('show');
+            }
+        }
+
+        // إغلاق القائمة المنسدلة
+        function closeDropdown() {
+            document.querySelector('.dropdown-menu').classList.remove('show');
+        }
+
+        // إضافة مستمع للنقر على زر Contenu
+        document.querySelector('.dropbtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleDropdownMobile();
+        });
+
+        // عرض الصور في المعرض
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.gallery img');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            images[currentIndex].classList.add('active');
+            setInterval(showNextImage, 3000);
+        });
     </script>
 </body>
 </html>
