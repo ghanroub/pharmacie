@@ -17,9 +17,9 @@
             text-align: left;
         }
         header {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
-            padding: 15px 20px;
+            padding: 20px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,118 +27,87 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        /* تصميم اللوغو بشكل احترافي */
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        .logo-icon {
-            font-size: 2rem;
-            color: #00bcd4;
-            margin-right: 8px;
-            font-weight: bold;
-        }
-        .logo a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .logo a:hover {
-            color: #ffeb3b;
-        }
-        /* زر القائمة في الهاتف */
         .menu-btn {
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
             color: #ffeb3b;
-            padding: 8px 12px;
+            padding: 5px 10px;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 5px;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s;
         }
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
-            transform: scale(1.05);
         }
         /* تعديل تصميم القائمة */
         header nav {
-            width: auto;
-            max-width: none;
+            width: 100%;
+            max-width: 600px;
         }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 5px;
+            gap: 10px;
             margin: 0;
             padding: 0;
-            align-items: center;
+            justify-content: space-between;
+            width: 100%;
         }
         header nav ul li {
             position: relative;
-            margin: 0 5px;
+            flex: 1;
+            text-align: center;
         }
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        header nav ul li a i {
-            margin-left: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            padding: 5px;
         }
         header nav ul li a:hover {
             color: #fff;
-            background-color: rgba(255, 255, 255, 0.1);
         }
-        /* القائمة المنسدلة */
+        .logo a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .logo a:hover {
+            color: #0288d1;
+        }
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.8);
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.7);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            right: 0;
+            left: 0;
             border-radius: 0 0 10px 10px;
-            animation: fadeIn 0.3s ease;
         }
         .dropdown-content a {
             color: #ffeb3b;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            text-align: right;
+            text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s;
-        }
-        .dropdown-content a i {
-            margin-right: 10px;
+            transition: background-color 0.2s;
         }
         .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: white;
-            padding-right: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
         }
-        /* بقية التصميمات */
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
             background-attachment: fixed;
             background-size: cover;
             color: #fff;
-            padding: 120px 20px 80px;
+            padding: 100px 20px;
             text-align: center;
         }
         .hero h1 {
@@ -147,7 +116,6 @@
             color: #ffeb3b;
             opacity: 0;
             animation: fadeIn 2s forwards;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .hero p {
             font-size: 1.2rem;
@@ -160,124 +128,180 @@
                 1px 1px 0 #000;
             opacity: 0;
             animation: fadeIn 2s forwards;
-            animation-delay: 0.5s;
+            animation-delay: 2s;
         }
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .hero button {
+            background-color: #6a1b9a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #4a4a88;
+        }
+        .hero .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background-color: transparent;
+            border: none;
         }
         .sections-container {
             display: flex;
             justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
         .section {
             flex: 1;
             margin: 0 10px;
             background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
-            padding: 25px;
+            padding: 20px;
             color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
             color: #ffeb3b;
-            border-bottom: 2px solid #ffeb3b;
-            padding-bottom: 10px;
+        }
+        .section p {
+            font-size: 1rem;
+            line-height: 1.6;
         }
         footer {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
-            padding: 12px;
+            padding: 10px 15px;
             position: fixed;
             bottom: 0;
             width: 100%;
             z-index: 1000;
-            font-size: 0.9rem;
         }
         .gallery {
             position: relative;
             width: 100%;
             height: 300px;
-            margin: 20px auto;
+            margin: 0 auto;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .gallery img {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             border-radius: 10px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
         }
         .gallery img.active {
             opacity: 1;
         }
-        /* تصميم وضع الهاتف */
-        @media (max-width: 768px) {
-            header {
-                padding: 12px 15px;
-            }
-            .menu-btn {
+        @media (min-width: 769px) {
+            /* سلوك القائمة المنسدلة في الكمبيوتر */
+            .dropdown:hover .dropdown-content {
                 display: block;
-                margin-left: 15px;
+                animation: fadeIn 0.3s ease;
             }
-            header nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.95);
-                padding: 15px 0;
-                margin: 0;
-                border-radius: 0 0 10px 10px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            }
-            header nav ul.show {
-                display: flex;
-            }
-            header nav ul li {
-                margin: 8px 0;
-                text-align: center;
-            }
-            header nav ul li a {
-                font-size: 1.1rem;
-                padding: 10px 15px;
-                justify-content: center;
-            }
-            header nav ul li a i {
-                margin: 0 5px;
-            }
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                border-radius: 0;
-                box-shadow: none;
+        }
+        @media (max-width: 768px) {
+            .gallery {
+                height: 200px;
             }
             .sections-container {
                 flex-direction: column;
             }
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .hero p {
                 font-size: 1rem;
             }
-            .section {
-                margin: 10px 0;
+            .menu-btn {
+                display: block;
+                margin-left: 10px; /* إضافة هامش يسار لزر القائمة */
             }
-            .gallery {
-                height: 200px;
+            header nav {
+                transform: none;
+            }
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                padding: 15px 0;
+                margin: 0;
+                align-items: center;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease;
+            }
+            header nav ul.show {
+                display: flex;
+                animation: fadeIn 0.3s ease;
+            }
+            header nav ul li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+            header nav ul li a {
+                font-size: 1.2rem;
+                padding: 12px;
+                display: inline-block;
+                color: #ffeb3b;
+                transition: background-color 0.2s;
+            }
+            header nav ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+            footer p {
+                font-size: 0.8rem;
+            }
+            /* تعديل القائمة المنسدلة في الهاتف */
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                display: none;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                transition: all 0.3s ease;
+            }
+            .dropdown-content.show {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+            .dropdown-content a {
+                padding: 12px 15px;
+                display: block;
+                text-align: center;
+                color: #ffeb3b;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transition: background-color 0.2s;
+            }
+            .dropdown-content a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
             }
         }
     </style>
@@ -285,7 +309,6 @@
 <body>
     <header>
         <div class="logo">
-            <i class="logo-icon fas fa-prescription-bottle-alt"></i>
             <a href="index.html">GhaniPharma</a>
         </div>
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -309,26 +332,39 @@
     <section id="intro" class="hero">
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
-            <p>Votre passerelle vers le savoir pharmaceutique</p>
+            <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Pharmacie 1">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Pharmacie 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Pharmacie 3">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 2">
             </div>
         </div>
         <div class="sections-container">
             <div id="about" class="section">
                 <h2>À propos</h2>
-                <p>Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs cours, TPs, TDs, réviser efficacement, et réussir leurs examens. Vous y trouverez des explications claires, des fiches résumées, des vidéos pédagogiques, et bien plus encore.</p>
+                <p>Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs cours, TPs, TDs, réviser efficacement, et réussir leurs examens. Vous y trouverez des explications claires, des fiches résumées, des vidéos pédagogiques, et bien plus encore.
+Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire.
+Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !</p>
             </div>
             <div id="questions" class="section">
                 <h2>Questions</h2>
-                <p>Vous avez une question ou une suggestion? N'hésitez pas à nous contacter via nos réseaux sociaux.</p>
+                <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
+N'hésitez pas à nous écrire sur nos réseaux sociaux :
+<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
+<a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
+Nous vous répondrons dans les plus brefs délais.
+Merci de votre visite !</p>
             </div>
         </div>
     </section>
     <footer>
-        <p>&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+        <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
         // عرض/إخفاء القائمة الرئيسية في الهاتف
@@ -336,7 +372,6 @@
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -345,7 +380,6 @@
                 dropdownContent.classList.toggle("show");
             }
         }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -355,18 +389,15 @@
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
         // عرض الصور في المعرض
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentIndex = 0;
-
             function showNextImage() {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].classList.add('active');
             }
-
             images[currentIndex].classList.add('active');
             setInterval(showNextImage, 3000);
         });
