@@ -230,10 +230,25 @@
             margin: 25px 0 15px;
             padding: 10px 15px;
             color: white;
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* ألوان عناوين السنوات الدراسية */
+        #annee1 {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+        }
+        #annee2 {
+            background: linear-gradient(135deg, #4a148c, #3f51b5);
+        }
+        #annee3 {
+            background: linear-gradient(135deg, #3f51b5, #2196f3);
+        }
+        #annee4 {
+            background: linear-gradient(135deg, #2196f3, #00bcd4);
+        }
+        #annee5 {
+            background: linear-gradient(135deg, #00bcd4, #009688);
         }
         .section h3:hover {
             transform: translateY(-3px);
@@ -674,12 +689,10 @@
                 });
             });
         });
-
         // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
         function toggleSemesters(element) {
             const semestersList = element.nextElementSibling;
             const semesters = semestersList.querySelectorAll('li');
-
             if (semesters.length === 1) {
                 // إذا كان هناك فصل واحد فقط، انتقل مباشرة إلى صفحة الفصل
                 window.location.href = semesters[0].querySelector('a').href;
