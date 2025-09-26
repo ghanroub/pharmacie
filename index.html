@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF- Međutim">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
@@ -19,7 +19,6 @@
             direction: ltr;
             text-align: left;
         }
-
         /* أنماط اللوغو */
         .logo a {
             display: flex;
@@ -31,24 +30,19 @@
             font-size: 1.8rem;
             transition: transform 0.3s ease;
         }
-
         .logo a:hover {
             transform: scale(1.05);
         }
-
         .logo-icon {
             font-size: 2rem;
             color: #27ae60;
         }
-
         .logo-text {
             font-family: 'Poppins', sans-serif;
         }
-
         .logo-highlight {
             color: #f39c12;
         }
-
         /* أنماط الرأسية */
         header {
             background-color: rgba(0, 0, 0, 0.7);
@@ -62,7 +56,6 @@
             width: 100%;
             z-index: 1000;
         }
-
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -73,17 +66,14 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
-
         /* تعديل تصميم القائمة */
         header nav {
             width: 100%;
             max-width: 600px;
         }
-
         header nav ul {
             list-style: none;
             display: flex;
@@ -93,13 +83,11 @@
             justify-content: space-between;
             width: 100%;
         }
-
         header nav ul li {
             position: relative;
             flex: 1;
             text-align: center;
         }
-
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
@@ -109,11 +97,9 @@
             padding: 5px;
             font-family: 'Poppins', sans-serif;
         }
-
         header nav ul li a:hover {
             color: #fff;
         }
-
         /* القائمة المنسدلة للكمبيوتر والهاتف */
         .dropdown-content {
             display: none;
@@ -125,7 +111,6 @@
             left: 0;
             border-radius: 0 0 10px 10px;
         }
-
         .dropdown-content a {
             color: #ffeb3b;
             padding: 12px 16px;
@@ -136,11 +121,9 @@
             transition: background-color 0.2s;
             font-family: 'Poppins', sans-serif;
         }
-
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
@@ -148,30 +131,24 @@
                 animation: fadeIn 0.3s ease;
             }
         }
-
         /* سلوك القائمة المنسدلة في الهاتف */
         @media (max-width: 768px) {
             .gallery {
                 height: 200px;
             }
-
             .sections-container {
                 flex-direction: column;
             }
-
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero p {
                 font-size: 1rem;
             }
-
             .menu-btn {
                 display: block;
                 margin-left: 10px;
             }
-
             header nav ul {
                 display: none;
                 flex-direction: column;
@@ -187,18 +164,15 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                 transition: all 0.3s ease;
             }
-
             header nav ul.show {
                 display: flex;
                 animation: fadeIn 0.3s ease;
             }
-
             header nav ul li {
                 margin: 5px 0;
                 width: 100%;
                 text-align: center;
             }
-
             header nav ul li a {
                 font-size: 1.2rem;
                 padding: 12px;
@@ -206,15 +180,12 @@
                 color: #ffeb3b;
                 transition: background-color 0.2s;
             }
-
             header nav ul li a:hover {
                 background-color: rgba(255, 255, 255, 0.15);
             }
-
             footer p {
                 font-size: 0.8rem;
             }
-
             .dropdown-content {
                 position: static;
                 width: 100%;
@@ -225,13 +196,11 @@
                 border-radius: 0;
                 box-shadow: none;
             }
-
             .dropdown-content.show {
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
         }
-
         /* قسم البطل (Hero) */
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
@@ -241,7 +210,6 @@
             padding: 150px 20px 100px;
             text-align: center;
         }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
@@ -251,7 +219,6 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
         }
-
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
@@ -266,12 +233,10 @@
             animation-delay: 2s;
             font-family: 'Poppins', sans-serif;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         .hero button {
             background-color: #6a1b9a;
             color: #fff;
@@ -283,11 +248,9 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
         }
-
         .hero button:hover {
             background-color: #4a4a88;
         }
-
         /* المعرض */
         .gallery {
             position: relative;
@@ -299,7 +262,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .gallery img {
             position: absolute;
             max-width: 100%;
@@ -309,11 +271,9 @@
             opacity: 0;
             transition: opacity 2s ease-in-out;
         }
-
         .gallery img.active {
             opacity: 1;
         }
-
         /* الأقسام */
         .sections-container {
             display: flex;
@@ -322,7 +282,6 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
         .section {
             flex: 1;
             margin: 0 10px;
@@ -332,7 +291,6 @@
             padding: 20px;
             color: #fff;
         }
-
         .section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
@@ -340,23 +298,19 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
-
         .section p {
             font-size: 1rem;
             line-height: 1.6;
             font-family: 'Poppins', sans-serif;
         }
-
         .section a {
             color: #27ae60;
             text-decoration: none;
             font-weight: 600;
         }
-
         .section a:hover {
             color: #f39c12;
         }
-
         /* التذييل */
         footer {
             background-color: rgba(0, 0, 0, 0.7);
@@ -385,7 +339,7 @@
                 <li><a href="#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li class="dropdown">
-                    <a href="#content" class="dropbtn">
+                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)">
                         <i class="fas fa-book"></i> Contenu
                     </a>
                     <div id="dropdownContent" class="dropdown-content">
@@ -399,7 +353,6 @@
             </ul>
         </nav>
     </header>
-
     <section id="intro" class="hero">
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
@@ -434,18 +387,15 @@ Merci de votre visite !</p>
             </div>
         </div>
     </section>
-
     <footer>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
-
     <script>
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-
         // عرض/إخفاء القائمة المنسدلة في الهاتف فقط
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -454,7 +404,6 @@ Merci de votre visite !</p>
                 dropdownContent.classList.toggle("show");
             }
         }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -464,18 +413,15 @@ Merci de votre visite !</p>
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
         // عرض الصور في المعرض
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentIndex = 0;
-
             function showNextImage() {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].classList.add('active');
             }
-
             images[currentIndex].classList.add('active');
             setInterval(showNextImage, 3000);
         });
