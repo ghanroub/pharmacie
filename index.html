@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhaniPharma</title>
+    <!-- إضافة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -28,8 +30,16 @@
         }
         .menu-btn {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            color: #ffeb3b;
+            padding: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-btn:hover {
+            background-color: rgba(0, 0, 0, 0.5);
         }
         header nav {
             transform: translateX(35px);
@@ -70,6 +80,7 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
             left: 0;
+            border-radius: 0 0 10px 10px;
         }
         .dropdown-content a {
             color: #ffeb3b;
@@ -77,6 +88,8 @@
             text-decoration: none;
             display: block;
             text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.2s;
         }
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
@@ -195,6 +208,7 @@
             /* سلوك القائمة المنسدلة في الكمبيوتر */
             .dropdown:hover .dropdown-content {
                 display: block;
+                animation: fadeIn 0.3s ease;
             }
         }
         @media (max-width: 768px) {
@@ -223,23 +237,32 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.95);
+                padding: 15px 0;
                 margin: 0;
                 align-items: center;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease;
             }
             header nav ul.show {
                 display: flex;
+                animation: fadeIn 0.3s ease;
             }
             header nav ul li {
-                margin: 10px 0;
+                margin: 5px 0;
                 width: 100%;
                 text-align: center;
             }
             header nav ul li a {
                 font-size: 1.2rem;
-                padding: 10px;
+                padding: 12px;
                 display: inline-block;
+                color: #ffeb3b;
+                transition: background-color 0.2s;
+            }
+            header nav ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.15);
             }
             footer p {
                 font-size: 0.8rem;
@@ -254,15 +277,19 @@
                 margin: 0;
                 border-radius: 0;
                 box-shadow: none;
+                transition: all 0.3s ease;
             }
             .dropdown-content.show {
                 display: block;
+                animation: fadeIn 0.3s ease;
             }
             .dropdown-content a {
-                padding: 10px 15px;
+                padding: 12px 15px;
                 display: block;
                 text-align: center;
                 color: #ffeb3b;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transition: background-color 0.2s;
             }
             .dropdown-content a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
@@ -278,18 +305,18 @@
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
         <nav>
             <ul id="navMenu">
-                <li><a href="#order">Commandez</a></li>
-                <li><a href="#about">À propos</a></li>
+                <li><a href="#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li class="dropdown">
-                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)">Contenu</a>
+                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
                     <div id="dropdownContent" class="dropdown-content">
-                        <a href="cours.html">Cours</a>
-                        <a href="tps.html">TPs</a>
-                        <a href="tds.html">TDs</a>
-                        <a href="examens.html">Examens</a>
+                        <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
+                        <a href="tps.html"><i class="fas fa-flask"></i> TPs</a>
+                        <a href="tds.html"><i class="fas fa-tasks"></i> TDs</a>
+                        <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                     </div>
                 </li>
-                <li><a href="#questions">Questions</a></li>
+                <li><a href="#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
             </ul>
         </nav>
     </header>
@@ -319,8 +346,8 @@ Que vous soyez en première année ou en fin de cycle, ce site est fait pour vou
                 <h2>Questions</h2>
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
 N'hésitez pas à nous écrire sur nos réseaux sociaux :
-<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
@@ -334,11 +361,7 @@ Merci de votre visite !</p>
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
-            if (navMenu.classList.contains("show")) {
-                navMenu.classList.remove("show");
-            } else {
-                navMenu.classList.add("show");
-            }
+            navMenu.classList.toggle("show");
         }
 
         // عرض/إخفاء القائمة المنسدلة في الهاتف
@@ -346,13 +369,19 @@ Merci de votre visite !</p>
             if (window.innerWidth <= 768) {
                 event.preventDefault();
                 const dropdownContent = document.getElementById("dropdownContent");
-                if (dropdownContent.classList.contains("show")) {
-                    dropdownContent.classList.remove("show");
-                } else {
-                    dropdownContent.classList.add("show");
-                }
+                dropdownContent.classList.toggle("show");
             }
         }
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById("navMenu");
+            const menuBtn = document.querySelector('.menu-btn');
+            if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                navMenu.classList.remove("show");
+                document.getElementById("dropdownContent").classList.remove("show");
+            }
+        });
 
         // عرض الصور في المعرض
         document.addEventListener('DOMContentLoaded', function() {
