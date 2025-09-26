@@ -246,8 +246,8 @@
                 font-size: 0.8rem;
             }
             /* تعديل القائمة المنسدلة في الهاتف */
-            .dropdown-menu {
-                position: static !important;
+            .dropdown-content {
+                position: static;
                 width: 100%;
                 display: none;
                 background-color: rgba(0, 0, 0, 0.9);
@@ -256,20 +256,17 @@
                 border-radius: 0;
                 box-shadow: none;
             }
-            .dropdown-menu.show {
+            .dropdown-content.show {
                 display: block;
             }
-            .dropdown-menu a {
+            .dropdown-content a {
                 padding: 10px 15px;
                 display: block;
                 text-align: center;
                 color: #ffeb3b;
             }
-            .dropdown-menu a:hover {
+            .dropdown-content a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
-            }
-            .dropdown:hover .dropdown-menu {
-                display: none;
             }
         }
     </style>
@@ -285,9 +282,8 @@
                 <li><a href="#order">Commandez</a></li>
                 <li><a href="#about">À propos</a></li>
                 <li class="dropdown">
-                    <a href="#content" class="dropbtn">Contenu</a>
-                    <div id="dropdownContent" class="dropdown-content dropdown-menu">
-                        <span class="close-btn" onclick="closeDropdown()">×</span>
+                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)">Contenu</a>
+                    <div id="dropdownContent" class="dropdown-content">
                         <a href="cours.html">Cours</a>
                         <a href="tps.html">TPs</a>
                         <a href="tds.html">TDs</a>
@@ -347,25 +343,15 @@ Merci de votre visite !</p>
         }
 
         // عرض/إخفاء القائمة المنسدلة في الهاتف
-        function toggleDropdownMobile() {
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            if (dropdownMenu.classList.contains('show')) {
-                dropdownMenu.classList.remove('show');
+        function toggleDropdownMobile(event) {
+            event.preventDefault();
+            const dropdownContent = document.getElementById("dropdownContent");
+            if (dropdownContent.classList.contains("show")) {
+                dropdownContent.classList.remove("show");
             } else {
-                dropdownMenu.classList.add('show');
+                dropdownContent.classList.add("show");
             }
         }
-
-        // إغلاق القائمة المنسدلة
-        function closeDropdown() {
-            document.querySelector('.dropdown-menu').classList.remove('show');
-        }
-
-        // إضافة مستمع للنقر على زر Contenu
-        document.querySelector('.dropbtn').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleDropdownMobile();
-        });
 
         // عرض الصور في المعرض
         document.addEventListener('DOMContentLoaded', function() {
