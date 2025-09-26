@@ -41,24 +41,32 @@
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
+        /* تعديل تصميم القائمة */
         header nav {
-            transform: translateX(35px);
+            width: 100%;
+            max-width: 600px; /* تحديد عرض أقصى للقائمة */
         }
         header nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 10px; /* تقليل المسافة بين الأزرار */
             margin: 0;
             padding: 0;
+            justify-content: space-between; /* توزيع الأزرار بشكل متساوٍ */
+            width: 100%;
         }
         header nav ul li {
             position: relative;
+            flex: 1; /* توزيع المساحة بالتساوي بين الأزرار */
+            text-align: center;
         }
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.9rem; /* تقليل حجم الخط قليلاً */
+            display: block;
+            padding: 5px;
         }
         header nav ul li a:hover {
             color: #fff;
@@ -363,7 +371,6 @@ Merci de votre visite !</p>
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -372,7 +379,6 @@ Merci de votre visite !</p>
                 dropdownContent.classList.toggle("show");
             }
         }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -382,18 +388,15 @@ Merci de votre visite !</p>
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
         // عرض الصور في المعرض
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentIndex = 0;
-
             function showNextImage() {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].classList.add('active');
             }
-
             images[currentIndex].classList.add('active');
             setInterval(showNextImage, 3000);
         });
