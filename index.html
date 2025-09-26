@@ -81,13 +81,6 @@
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-        }
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
             background-attachment: fixed;
@@ -197,6 +190,12 @@
         }
         .gallery img.active {
             opacity: 1;
+        }
+        @media (min-width: 769px) {
+            /* سلوك القائمة المنسدلة في الكمبيوتر */
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
         }
         @media (max-width: 768px) {
             .gallery {
@@ -344,12 +343,14 @@ Merci de votre visite !</p>
 
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
-            event.preventDefault();
-            const dropdownContent = document.getElementById("dropdownContent");
-            if (dropdownContent.classList.contains("show")) {
-                dropdownContent.classList.remove("show");
-            } else {
-                dropdownContent.classList.add("show");
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                const dropdownContent = document.getElementById("dropdownContent");
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                } else {
+                    dropdownContent.classList.add("show");
+                }
             }
         }
 
