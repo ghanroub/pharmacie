@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhaniPharma</title>
+    <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -26,9 +21,8 @@
         }
 
         main {
-            flex: 1 0 auto;
-            margin-top: 80px;
-            padding-bottom: 50px;
+            flex: 1;
+            margin-bottom: 50px; /* هامش لتجنب تداخل المحتوى مع footer */
         }
 
         header {
@@ -42,7 +36,6 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            height: 60px;
         }
 
         .menu-btn {
@@ -128,9 +121,8 @@
             background-attachment: fixed;
             background-size: cover;
             color: #fff;
-            padding: 100px 20px 100px;
+            padding: 100px 20px;
             text-align: center;
-            min-height: calc(100vh - 80px);
         }
 
         .hero h1 {
@@ -215,7 +207,6 @@
             text-align: center;
             padding: 10px 15px;
             width: 100%;
-            flex-shrink: 0;
         }
 
         .gallery {
