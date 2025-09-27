@@ -15,6 +15,9 @@
             color: #333;
             direction: ltr;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background-color: rgba(0, 0, 0, 0.5);
@@ -101,6 +104,8 @@
             color: #fff;
             padding: 100px 20px;
             text-align: center;
+            margin-top: 70px; /* تعويض للهيدر الثابت */
+            flex: 1; /* لملء المساحة المتاحة */
         }
         .hero h1 {
             font-size: 3rem;
@@ -177,10 +182,8 @@
             color: #ffeb3b;
             text-align: center;
             padding: 10px 15px;
-            position: fixed;
-            bottom: 0;
             width: 100%;
-            z-index: 1000;
+            /* إزالة position: fixed و bottom: 0 */
         }
         .gallery {
             position: relative;
