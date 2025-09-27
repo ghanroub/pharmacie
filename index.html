@@ -313,6 +313,11 @@
                 }
             }
             
+            /* إخفاء الصور الفردية في وضع الكمبيوتر */
+            .gallery > img {
+                display: none;
+            }
+            
             /* سلوك القائمة المنسدلة في الكمبيوتر */
             .dropdown:hover .dropdown-content {
                 display: block;
@@ -340,6 +345,11 @@
             
             .gallery img.active {
                 opacity: 1;
+            }
+            
+            /* إخفاء شريط الصور في وضع الهاتف */
+            .gallery-track {
+                display: none;
             }
             
             .sections-container {
@@ -455,7 +465,7 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <!-- للهاتف: نستخدم الصور بشكل فردي -->
+                <!-- الصور للهاتف -->
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
@@ -465,9 +475,9 @@
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
                 
-                <!-- للكمبيوتر: نضيف شريط الصور المتحرك -->
+                <!-- شريط الصور للكمبيوتر -->
                 <div class="gallery-track">
-                    <!-- سيتم إنشاء شريط الصور ديناميكيًا باستخدام JavaScript -->
+                    <!-- سيتم ملؤه بواسطة JavaScript -->
                 </div>
             </div>
         </div>
@@ -482,8 +492,8 @@ Que vous soyez en première année ou en fin de cycle, ce site est fait pour vou
                 <h2>Questions</h2>
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
 N'hésitez pas à nous écrire sur nos réseaux sociaux :
-<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
@@ -519,38 +529,31 @@ Merci de votre visite !</p>
         
         // معرض الصور المتقدم
         document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.gallery img');
+            const images = document.querySelectorAll('.gallery > img');
             const galleryTrack = document.querySelector('.gallery-track');
             
             // إعداد شريط الصور للكمبيوتر
             if (window.innerWidth > 768) {
-                const imageUrls = [
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg",
-                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg"
-                ];
-                
                 // إنشاء عناصر الصور وإضافتها إلى الشريط
-                imageUrls.forEach(url => {
+                images.forEach(img => {
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
                     
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.alt = 'Gallery Image';
-                    
-                    galleryItem.appendChild(img);
+                    const imgClone = img.cloneNode(true);
+                    imgClone.style.display = 'block'; // تأكيد عرض الصورة
+                    galleryItem.appendChild(imgClone);
                     galleryTrack.appendChild(galleryItem);
                 });
                 
-                // إخفاء الصور الفردية المستخدمة في الهاتف
+                // تكرار الصور لإنشاء تأثير لا نهائي أكثر سلاسة
                 images.forEach(img => {
-                    img.style.display = 'none';
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    
+                    const imgClone = img.cloneNode(true);
+                    imgClone.style.display = 'block';
+                    galleryItem.appendChild(imgClone);
+                    galleryTrack.appendChild(galleryItem);
                 });
             } else {
                 // للهاتف: عرض الصور الفردية
@@ -573,15 +576,6 @@ Merci de votre visite !</p>
                 updateGallery();
                 setInterval(nextImage, 2000);
             }
-            
-            // تحديث العرض عند تغيير حجم النافذة
-            window.addEventListener('resize', function() {
-                // إعادة تحميل الصفحة عند تغيير حجم النافذة للتأكد من التحميل الصحيح
-                if ((window.innerWidth > 768 && images[0].style.display !== 'none') || 
-                    (window.innerWidth <= 768 && images[0].style.display === 'none')) {
-                    location.reload();
-                }
-            });
         });
     </script>
 </body>
