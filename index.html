@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhaniPharma</title>
+    <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,13 +15,17 @@
             margin: 0;
             padding: 0;
             color: #333;
+            direction: ltr;
+            text-align: left;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* إضافة صورة الخلفية للجسم بدلاً من قسم hero */
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
+        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
         body::before {
             content: '';
             position: fixed;
@@ -207,16 +212,16 @@
             padding: 10px 15px;
             width: 100%;
         }
-        
-        /* تصميم الهاتف - معرض شرائح بسيط */
         .gallery {
             position: relative;
             width: 100%;
             height: 300px;
             margin: 0 auto;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
         .gallery img {
             position: absolute;
             max-width: 100%;
@@ -225,128 +230,21 @@
             border-radius: 10px;
             opacity: 0;
             transition: opacity 2s ease-in-out;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
         }
         .gallery img.active {
             opacity: 1;
         }
-        
-        /* تصميم الكمبيوتر - شريط متحرك */
         @media (min-width: 769px) {
-            .gallery {
-                height: 300px;
-                position: relative;
-                overflow: hidden;
-                margin: 20px 0;
-                width: 100%;
-            }
-            
-            .gallery::before,
-            .gallery::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                width: 15%;
-                height: 100%;
-                z-index: 2;
-            }
-            
-            .gallery::before {
-                left: 0;
-                background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, transparent 100%);
-            }
-            
-            .gallery::after {
-                right: 0;
-                background: linear-gradient(to left, rgba(0,0,0,0.9) 0%, transparent 100%);
-            }
-            
-            .gallery-track {
-                display: flex;
-                height: 100%;
-                width: max-content;
-                animation: scroll 40s linear infinite;
-                gap: 20px;
-                padding: 0 20px;
-                align-items: center;
-            }
-            
-            .gallery-track:hover {
-                animation-play-state: paused;
-            }
-            
-            .gallery-item {
-                flex: 0 0 auto;
-                width: 220px;
-                height: 220px;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s ease;
-                background-color: #f0f0f0; /* لون خلفية مؤقت */
-            }
-            
-            .gallery-item:hover {
-                transform: scale(1.05);
-                z-index: 1;
-            }
-            
-            .gallery-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-            
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(calc(-220px * 8 - 20px * 7));
-                }
-            }
-            
-            /* إخفاء الصور الفردية في وضع الكمبيوتر */
-            .gallery > img {
-                display: none;
-            }
-            
+            /* سلوك القائمة المنسدلة في الكمبيوتر */
             .dropdown:hover .dropdown-content {
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
         }
-        
         @media (max-width: 768px) {
             .gallery {
                 height: 200px;
             }
-            
-            .gallery img {
-                position: absolute;
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: contain;
-                border-radius: 10px;
-                opacity: 0;
-                transition: opacity 2s ease-in-out;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-            }
-            
-            .gallery img.active {
-                opacity: 1;
-            }
-            
-            /* إخفاء شريط الصور في وضع الهاتف */
-            .gallery-track {
-                display: none;
-            }
-            
             .sections-container {
                 flex-direction: column;
             }
@@ -402,6 +300,7 @@
             footer p {
                 font-size: 0.8rem;
             }
+            /* تعديل القائمة المنسدلة في الهاتف */
             .dropdown-content {
                 position: static;
                 width: 100%;
@@ -459,20 +358,14 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <!-- الصور للهاتف (سيتم إخفاؤها على الكمبيوتر) -->
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 4">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 4">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 5">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
-                
-                <!-- شريط الصور للكمبيوتر (سيتم ملؤه بواسطة JavaScript) -->
-                <div class="gallery-track">
-                    <!-- سيتم إضافة الصور هنا ديناميكيًا -->
-                </div>
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 2">
             </div>
         </div>
         <div class="sections-container">
@@ -486,8 +379,8 @@ Que vous soyez en première année ou en fin de cycle, ce site est fait pour vou
                 <h2>Questions</h2>
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
 N'hésitez pas à nous écrire sur nos réseaux sociaux :
-<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
-<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
+<a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
@@ -503,7 +396,6 @@ Merci de votre visite !</p>
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-        
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -512,7 +404,6 @@ Merci de votre visite !</p>
                 dropdownContent.classList.toggle("show");
             }
         }
-        
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -522,95 +413,17 @@ Merci de votre visite !</p>
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-        
-        // معرض الصور المتقدم
+        // عرض الصور في المعرض
         document.addEventListener('DOMContentLoaded', function() {
-            const gallery = document.querySelector('.gallery');
-            const galleryTrack = document.querySelector('.gallery-track');
-            
-            // قائمة بعناوين الصور
-            const imageUrls = [
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg",
-                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg"
-            ];
-            
-            // التحقق من أن عنصر galleryTrack موجود
-            if (galleryTrack) {
-                console.log("تم العثور على galleryTrack");
-                
-                // إعداد شريط الصور للكمبيوتر
-                if (window.innerWidth > 768) {
-                    console.log("جاري إعداد معرض الكمبيوتر...");
-                    
-                    // إنشاء عناصر الصور وإضافتها إلى الشريط
-                    imageUrls.forEach((url, index) => {
-                        const galleryItem = document.createElement('div');
-                        galleryItem.className = 'gallery-item';
-                        
-                        const img = document.createElement('img');
-                        img.src = url;
-                        img.alt = `Image ${index + 1}`;
-                        
-                        // إضافة حدث تحميل الصورة لمعرفة إذا تم تحميلها بنجاح
-                        img.onload = function() {
-                            console.log(`تم تحميل الصورة ${index + 1} بنجاح`);
-                        };
-                        
-                        img.onerror = function() {
-                            console.error(`فشل في تحميل الصورة ${index + 1}: ${url}`);
-                        };
-                        
-                        galleryItem.appendChild(img);
-                        galleryTrack.appendChild(galleryItem);
-                    });
-                    
-                    // تكرار الصور لإنشاء تأثير لا نهائي أكثر سلاسة
-                    imageUrls.forEach((url, index) => {
-                        const galleryItem = document.createElement('div');
-                        galleryItem.className = 'gallery-item';
-                        
-                        const img = document.createElement('img');
-                        img.src = url;
-                        img.alt = `Image ${index + 1} (نسخة مكررة)`;
-                        
-                        galleryItem.appendChild(img);
-                        galleryTrack.appendChild(galleryItem);
-                    });
-                    
-                    console.log("تم إنشاء معرض الكمبيوتر مع " + (imageUrls.length * 2) + " عنصر");
-                }
-            } else {
-                console.error("لم يتم العثور على galleryTrack!");
+            const images = document.querySelectorAll('.gallery img');
+            let currentIndex = 0;
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
             }
-            
-            // إعداد معرض الصور للهاتف
-            if (window.innerWidth <= 768) {
-                const images = document.querySelectorAll('.gallery > img');
-                let currentImageIndex = 0;
-                
-                function updateGallery() {
-                    images.forEach((img, index) => {
-                        img.classList.remove('active');
-                        if (index === currentImageIndex) {
-                            img.classList.add('active');
-                        }
-                    });
-                }
-                
-                function nextImage() {
-                    currentImageIndex = (currentImageIndex + 1) % images.length;
-                    updateGallery();
-                }
-                
-                updateGallery();
-                setInterval(nextImage, 2000);
-            }
+            images[currentIndex].classList.add('active');
+            setInterval(showNextImage, 3000);
         });
     </script>
 </body>
