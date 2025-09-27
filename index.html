@@ -465,7 +465,7 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <!-- الصور للهاتف -->
+                <!-- الصور للهاتف (سيتم إخفاؤها على الكمبيوتر) -->
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
@@ -475,9 +475,9 @@
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
                 
-                <!-- شريط الصور للكمبيوتر -->
+                <!-- شريط الصور للكمبيوتر (سيتم ملؤه بواسطة JavaScript) -->
                 <div class="gallery-track">
-                    <!-- سيتم ملؤه بواسطة JavaScript -->
+                    <!-- سيتم إضافة الصور هنا ديناميكيًا -->
                 </div>
             </div>
         </div>
@@ -509,6 +509,7 @@ Merci de votre visite !</p>
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
+        
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -517,6 +518,7 @@ Merci de votre visite !</p>
                 dropdownContent.classList.toggle("show");
             }
         }
+        
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -532,27 +534,43 @@ Merci de votre visite !</p>
             const images = document.querySelectorAll('.gallery > img');
             const galleryTrack = document.querySelector('.gallery-track');
             
+            // قائمة بعناوين الصور
+            const imageUrls = [
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg",
+                "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg"
+            ];
+            
             // إعداد شريط الصور للكمبيوتر
             if (window.innerWidth > 768) {
                 // إنشاء عناصر الصور وإضافتها إلى الشريط
-                images.forEach(img => {
+                imageUrls.forEach((url, index) => {
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
                     
-                    const imgClone = img.cloneNode(true);
-                    imgClone.style.display = 'block'; // تأكيد عرض الصورة
-                    galleryItem.appendChild(imgClone);
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = `Image ${index + 1}`;
+                    
+                    galleryItem.appendChild(img);
                     galleryTrack.appendChild(galleryItem);
                 });
                 
                 // تكرار الصور لإنشاء تأثير لا نهائي أكثر سلاسة
-                images.forEach(img => {
+                imageUrls.forEach((url, index) => {
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
                     
-                    const imgClone = img.cloneNode(true);
-                    imgClone.style.display = 'block';
-                    galleryItem.appendChild(imgClone);
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = `Image ${index + 1}`;
+                    
+                    galleryItem.appendChild(img);
                     galleryTrack.appendChild(galleryItem);
                 });
             } else {
