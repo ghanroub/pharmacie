@@ -98,14 +98,18 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
         .hero {
-            background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
-            background-attachment: fixed;
+            background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             padding: 100px 20px;
             text-align: center;
             margin-top: 70px; /* تعويض للهيدر الثابت */
             flex: 1; /* لملء المساحة المتاحة */
+            min-height: calc(100vh - 70px); /* لضمان أن القسم يمتد على الأقل لارتفاع الشاشة */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hero h1 {
             font-size: 3rem;
@@ -158,6 +162,8 @@
         .sections-container {
             display: flex;
             justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
         }
         .section {
             flex: 1;
@@ -183,7 +189,6 @@
             text-align: center;
             padding: 10px 15px;
             width: 100%;
-            /* إزالة position: fixed و bottom: 0 */
         }
         .gallery {
             position: relative;
