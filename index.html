@@ -239,7 +239,7 @@
             opacity: 1;
         }
         
-        /* تصميم الكمبيوتر - معرض منظم */
+        /* تصميم الكمبيوتر - معرض منظم مع تأثير التلاشي التدريجي */
         @media (min-width: 769px) {
             .gallery {
                 height: 300px;
@@ -268,48 +268,60 @@
                 flex-shrink: 0; /* منع الصور من التقلص */
             }
             
-            /* الصورة في اليسار */
+            /* تأثير التلاشي التدريجي من اليسار إلى اليمين */
             .gallery img.pos1 {
                 transform: translateX(-100%);
                 opacity: 0;
+                transition-delay: 0s;
             }
             
             .gallery img.pos1.active {
                 transform: translateX(0);
                 opacity: 1;
+                transition-delay: 0s;
             }
             
-            /* الصورة في المركز الأيسر */
             .gallery img.pos2 {
                 transform: translateX(-100%);
                 opacity: 0;
+                transition-delay: 0.2s;
             }
             
             .gallery img.pos2.active {
                 transform: translateX(0);
                 opacity: 1;
+                transition-delay: 0.2s;
             }
             
-            /* الصورة في المركز الأيمن */
             .gallery img.pos3 {
                 transform: translateX(-100%);
                 opacity: 0;
+                transition-delay: 0.4s;
             }
             
             .gallery img.pos3.active {
                 transform: translateX(0);
                 opacity: 1;
+                transition-delay: 0.4s;
             }
             
-            /* الصورة في اليمين */
             .gallery img.pos4 {
                 transform: translateX(-100%);
                 opacity: 0;
+                transition-delay: 0.6s;
             }
             
             .gallery img.pos4.active {
                 transform: translateX(0);
                 opacity: 1;
+                transition-delay: 0.6s;
+            }
+            
+            /* تأثير الخروج (الاختفاء) من اليمين */
+            .gallery img.exiting {
+                transform: translateX(100%);
+                opacity: 0;
+                transition: all 1.5s ease-in-out;
             }
             
             /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -516,24 +528,42 @@ Merci de votre visite !</p>
             }
         });
         
-        // عرض الصور في المعرض (معدل)
+        // عرض الصور في المعرض (معدل لتأثير التلاشي التدريجي)
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentImageIndex = 0;
+            let isAnimating = false; // لمنع التداخل في الحركات
             
             function updateGallery() {
                 if (window.innerWidth <= 768) {
                     // تصميم الهاتف المحمول - صورة واحدة في المركز
                     images.forEach((img, index) => {
-                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4');
+                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4', 'exiting');
                         if (index === currentImageIndex) {
                             img.classList.add('active');
                         }
                     });
                 } else {
-                    // تصميم الكمبيوتر - أربع صور بالتتابع من اليسار إلى اليمين
+                    // تصميم الكمبيوتر - أربع صور بالتتابع مع تأثير التلاشي التدريجي
+                    if (isAnimating) return; // منع التداخل في الحركات
+                    isAnimating = true;
+                    
+                    // إزالة جميع الفئات من الصور
                     images.forEach(img => {
-                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4');
+                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4', 'exiting');
+                    });
+                    
+                    // إضافة تأثير الخروج للصور السابقة
+                    const prevImages = [];
+                    for (let i = 0; i < 4; i++) {
+                        const prevIndex = (currentImageIndex - 4 + i) % images.length;
+                        if (prevIndex >= 0) {
+                            prevImages.push(images[prevIndex]);
+                        }
+                    }
+                    
+                    prevImages.forEach(img => {
+                        img.classList.add('exiting');
                     });
                     
                     // تحديد الصور التي يجب أن تكون نشطة
@@ -543,10 +573,19 @@ Merci de votre visite !</p>
                         activeImages.push(images[imgIndex]);
                     }
                     
-                    // تعيين المواضع للصور النشطة
+                    // تعيين المواضع للصور النشطة مع تأخير متتالي
                     activeImages.forEach((img, index) => {
                         img.classList.add(`pos${index+1}`);
-                        img.classList.add('active');
+                        // إضافة فئة active بعد تأخير لتحريك الصور بشكل متتالي
+                        setTimeout(() => {
+                            img.classList.add('active');
+                            if (index === 3) {
+                                // بعد انتهاء حركة آخر صورة، نسمح بالحركة التالية
+                                setTimeout(() => {
+                                    isAnimating = false;
+                                }, 500);
+                            }
+                        }, 100);
                     });
                 }
             }
@@ -555,19 +594,25 @@ Merci de votre visite !</p>
                 if (window.innerWidth <= 768) {
                     // الهاتف: الانتقال إلى الصورة التالية
                     currentImageIndex = (currentImageIndex + 1) % images.length;
+                    updateGallery();
                 } else {
                     // الكمبيوتر: الانتقال إلى الصورة التالية مع الحفاظ على أربع صور نشطة
-                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    if (!isAnimating) {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        updateGallery();
+                    }
                 }
-                updateGallery();
             }
             
             // بدء العرض
             updateGallery();
-            const interval = setInterval(nextImage, 2000); // تغيير كل 2 ثانية
+            const interval = setInterval(nextImage, 3000); // تغيير كل 3 ثواني لإعطاء الوقت الكافي للحركة
             
             // تحديث العرض عند تغيير حجم النافذة
-            window.addEventListener('resize', updateGallery);
+            window.addEventListener('resize', function() {
+                isAnimating = false; // إعادة تعيين حالة الحركة
+                updateGallery();
+            });
         });
     </script>
 </body>
