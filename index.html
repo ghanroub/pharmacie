@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF- Tako8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhaniPharma</title>
-    <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -22,7 +21,8 @@
 
         main {
             flex: 1;
-            margin-bottom: 50px; /* هامش لتجنب تداخل المحتوى مع footer */
+            background-color: #f4f4f9;
+            padding-bottom: 50px;
         }
 
         header {
@@ -121,8 +121,12 @@
             background-attachment: fixed;
             background-size: cover;
             color: #fff;
-            padding: 100px 20px;
+            padding: 100px 20px 50px;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
@@ -178,6 +182,10 @@
         .sections-container {
             display: flex;
             justify-content: space-between;
+            margin-top: auto;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
 
         .section {
@@ -202,11 +210,12 @@
         }
 
         footer {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             color: #ffeb3b;
             text-align: center;
             padding: 10px 15px;
             width: 100%;
+            margin-top: auto;
         }
 
         .gallery {
