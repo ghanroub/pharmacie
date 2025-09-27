@@ -6,12 +6,9 @@
     <title>Cours - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- إضافة خط Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* أنماط خط Poppins */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
@@ -19,36 +16,6 @@
             direction: ltr;
             text-align: left;
         }
-
-        /* أنماط اللوغو */
-        .logo a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease;
-        }
-
-        .logo a:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-icon {
-            font-size: 2rem;
-            color: #27ae60;
-        }
-
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .logo-highlight {
-            color: #f39c12;
-        }
-
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
             position: fixed;
@@ -58,7 +25,6 @@
             background-color: rgba(0, 0, 0, 0.7);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -67,7 +33,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         /* زر القائمة في الهاتف */
         .menu-btn {
             display: none;
@@ -79,16 +44,13 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
-
         /* قائمة التنقل الرئيسية */
         header nav {
             transform: translateX(35px);
         }
-
         header nav ul {
             list-style: none;
             display: flex;
@@ -96,23 +58,18 @@
             margin: 0;
             padding: 0;
         }
-
         header nav ul li {
             position: relative;
         }
-
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
             font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
         }
-
         header nav ul li a:hover {
             color: #fff;
         }
-
         /* قائمة التنقل المنسدلة */
         .dropdown-content {
             display: none;
@@ -125,7 +82,6 @@
             border-radius: 0 0 10px 10px;
             animation: fadeIn 0.3s ease;
         }
-
         .dropdown-content a {
             color: #ffeb3b;
             padding: 12px 16px;
@@ -134,13 +90,10 @@
             text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
         }
-
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-
         /* زر إغلاق القائمة المنسدلة في الهاتف */
         .close-btn {
             position: absolute;
@@ -150,7 +103,6 @@
             cursor: pointer;
             color: #ffeb3b;
         }
-
         /* قسم الأزرار الثابتة أسفل header */
         .year-navigation {
             background-color: rgba(0, 0, 0, 0.6);
@@ -159,15 +111,12 @@
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-
         .year-navigation h3 {
             color: #ffeb3b;
             font-size: 1.3rem;
             margin: 10px 0;
             text-align: center;
-            font-family: 'Poppins', sans-serif;
         }
-
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
@@ -175,7 +124,6 @@
             gap: 8px;
             padding-bottom: 10px;
         }
-
         .year-btn {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
             color: white;
@@ -192,20 +140,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Poppins', sans-serif;
         }
-
         .year-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
-
         .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
         .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-
+        /* تصميم اللوگو */
+        .logo a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .logo a:hover {
+            color: #0288d1;
+        }
         /* قسم البطل مع خلفية تغطي الشاشة كاملة */
         .hero {
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
@@ -220,17 +174,13 @@
             justify-content: center;
             align-items: center;
         }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             color: #ffeb3b;
             opacity: 0;
             animation: fadeIn 2s forwards;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
         }
-
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
@@ -243,14 +193,11 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
             animation-delay: 2s;
-            font-family: 'Poppins', sans-serif;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         .hero button {
             background-color: #6a1b9a;
             color: #fff;
@@ -259,14 +206,10 @@
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
         }
-
         .hero button:hover {
             background-color: #4a4a88;
         }
-
         .hero .container {
             padding: 20px;
             max-width: 1200px;
@@ -275,7 +218,6 @@
             background-color: transparent;
             border: none;
         }
-
         .sections-container {
             display: flex;
             justify-content: space-between;
@@ -283,7 +225,6 @@
             max-width: 1200px;
             padding: 0 20px;
         }
-
         .section {
             flex: 1;
             margin: 0 10px;
@@ -293,21 +234,15 @@
             padding: 20px;
             color: #fff;
         }
-
         .section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
             color: #ffeb3b;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
         }
-
         .section p {
             font-size: 1rem;
             line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
         }
-
         /* أنماط جديدة للعناوين والفصول والمواد */
         .section h3 {
             font-size: 1.8rem;
@@ -317,10 +252,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
         }
-
         /* ألوان عناوين السنوات الدراسية */
         #annee1 {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
@@ -337,12 +269,10 @@
         #annee5 {
             background: linear-gradient(135deg, #00bcd4, #009688);
         }
-
         .section h3:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
-
         .section h4 {
             font-size: 1.4rem;
             margin: 15px 0 10px;
@@ -355,10 +285,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
         }
-
         .section h4::after {
             content: "\f078";
             font-family: "Font Awesome 6 Free";
@@ -366,17 +293,14 @@
             margin-left: 10px;
             transition: transform 0.3s ease;
         }
-
         .section h4.active::after {
             transform: rotate(180deg);
         }
-
         .section ul {
             list-style: none;
             padding: 0;
             margin: 0 0 20px;
         }
-
         .section ul li {
             margin: 8px 0;
             padding: 8px 12px;
@@ -384,35 +308,28 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-
         .section ul li:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-
         .section ul li a {
             color: #ffeb3b;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
             font-size: 0.95rem;
             transition: color 0.3s ease;
-            font-family: 'Poppins', sans-serif;
         }
-
         .section ul li a:hover {
             color: white;
             text-decoration: underline;
         }
-
         /* تصميم القائمة المنسدلة في الهاتف */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
             }
-
             header nav {
                 transform: none;
             }
-
             header nav ul {
                 display: none;
                 flex-direction: column;
@@ -428,17 +345,14 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                 animation: fadeIn 0.3s ease;
             }
-
             header nav ul.show {
                 display: flex;
             }
-
             header nav ul li {
                 margin: 5px 0;
                 width: 100%;
                 text-align: center;
             }
-
             header nav ul li a {
                 font-size: 1.2rem;
                 padding: 12px;
@@ -446,11 +360,9 @@
                 color: #ffeb3b;
                 transition: background-color 0.2s;
             }
-
             header nav ul li a:hover {
                 background-color: rgba(255, 255, 255, 0.15);
             }
-
             /* تعديل القائمة المنسدلة في الهاتف */
             .dropdown-content {
                 position: static;
@@ -463,12 +375,10 @@
                 box-shadow: none;
                 transition: all 0.3s ease;
             }
-
             .dropdown-content.show {
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
-
             .dropdown-content a {
                 padding: 12px 15px;
                 display: block;
@@ -477,29 +387,23 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 transition: background-color 0.2s;
             }
-
             .dropdown-content a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
             }
-
             .sections-container {
                 flex-direction: column;
             }
-
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero p {
                 font-size: 1rem;
             }
-
             .buttons-container {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .year-btn {
                 min-width: 80px;
                 padding: 8px 12px;
@@ -507,17 +411,15 @@
                 height: 35px;
             }
         }
-
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block;
             }
         }
-
         /* تصميم التذييل */
         footer {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
             padding: 10px 15px;
@@ -525,13 +427,10 @@
             bottom: 0;
             width: 100%;
             z-index: 1000;
-            font-family: 'Poppins', sans-serif;
         }
-
         footer p {
             font-size: 0.8rem;
         }
-
         /* إخفاء العناصر المخفية */
         .hidden {
             display: none;
@@ -543,10 +442,7 @@
     <div class="top-bar">
         <header>
             <div class="logo">
-                <a href="index.html">
-                    <span class="logo-icon">💊</span>
-                    <span class="logo-text">Ghani<span class="logo-highlight">Pharma</span></span>
-                </a>
+                <a href="index.html">GhaniPharma</a>
             </div>
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
@@ -554,9 +450,7 @@
                     <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                     <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li class="dropdown">
-                        <a href="#content" class="dropbtn">
-                            <i class="fas fa-book"></i> Contenu
-                        </a>
+                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
                         <div id="dropdownContent" class="dropdown-content">
                             <span class="close-btn" onclick="closeDropdown()">&times;</span>
                             <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
@@ -580,7 +474,6 @@
             </div>
         </div>
     </div>
-
     <!-- قسم المحتوى الرئيسي -->
     <section id="cours" class="hero">
         <div class="container">
@@ -836,11 +729,9 @@
             </div>
         </div>
     </section>
-
     <footer>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
-
     <script>
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
@@ -848,7 +739,7 @@
             navMenu.classList.toggle("show");
         }
 
-        // عرض/إخفاء القائمة المنسدلة في الهاتف فقط
+        // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
                 event.preventDefault();
