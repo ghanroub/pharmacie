@@ -239,7 +239,7 @@
             opacity: 1;
         }
         
-        /* تصميم الكمبيوتر - صور كاملة مع مسافات */
+        /* تصميم الكمبيوتر - معرض منظم */
         @media (min-width: 769px) {
             .gallery {
                 height: 300px;
@@ -247,15 +247,16 @@
                 justify-content: center;
                 align-items: center;
                 position: relative;
-                gap: 20px; /* مسافة بين الصور */
+                gap: 15px; /* مسافة بين الصور */
+                padding: 0 20px;
             }
             
             .gallery img {
                 position: relative;
-                width: 22%; /* عرض أقل لترك مسافة بين الصور */
-                height: 100%;
-                max-width: 22%;
-                max-height: 100%;
+                width: 23%; /* عرض أقل لترك مسافة بين الصور */
+                height: 90%;
+                max-width: 23%;
+                max-height: 90%;
                 opacity: 0;
                 transition: all 1.5s ease-in-out;
                 object-fit: contain; /* عرض الصورة كاملة بدون قص */
@@ -269,7 +270,6 @@
             
             /* الصورة في اليسار */
             .gallery img.pos1 {
-                left: 0;
                 transform: translateX(-100%);
                 opacity: 0;
             }
@@ -281,7 +281,6 @@
             
             /* الصورة في المركز الأيسر */
             .gallery img.pos2 {
-                left: 25%;
                 transform: translateX(-100%);
                 opacity: 0;
             }
@@ -293,7 +292,6 @@
             
             /* الصورة في المركز الأيمن */
             .gallery img.pos3 {
-                left: 50%;
                 transform: translateX(-100%);
                 opacity: 0;
             }
@@ -305,7 +303,6 @@
             
             /* الصورة في اليمين */
             .gallery img.pos4 {
-                left: 75%;
                 transform: translateX(-100%);
                 opacity: 0;
             }
@@ -327,6 +324,7 @@
                 height: 200px;
                 display: block;
                 gap: 0;
+                padding: 0;
             }
             
             .gallery img {
@@ -522,7 +520,6 @@ Merci de votre visite !</p>
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentImageIndex = 0;
-            let activeImages = []; // لتخزين الصور النشطة حاليًا
             
             function updateGallery() {
                 if (window.innerWidth <= 768) {
@@ -540,7 +537,7 @@ Merci de votre visite !</p>
                     });
                     
                     // تحديد الصور التي يجب أن تكون نشطة
-                    activeImages = [];
+                    const activeImages = [];
                     for (let i = 0; i < 4; i++) {
                         const imgIndex = (currentImageIndex + i) % images.length;
                         activeImages.push(images[imgIndex]);
