@@ -220,9 +220,6 @@
             height: 300px;
             margin: 0 auto;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         
         /* تصميم الهاتف المحمول (الحالي) */
@@ -234,6 +231,9 @@
             border-radius: 10px;
             opacity: 0;
             transition: opacity 2s ease-in-out;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
         }
         .gallery img.active {
             opacity: 1;
@@ -243,8 +243,10 @@
         @media (min-width: 769px) {
             .gallery {
                 height: 300px;
-                justify-content: space-between;
-                padding: 0 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
             }
             
             .gallery img {
@@ -253,17 +255,23 @@
                 height: 100%;
                 max-width: 30%;
                 max-height: 100%;
-                opacity: 1;
-                transition: all 2s ease-in-out;
+                opacity: 0;
+                transition: all 1.5s ease-in-out;
                 object-fit: cover;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                margin: 0;
+                left: auto;
+                right: auto;
             }
             
             /* الصورة اليسرى */
             .gallery img.left {
                 transform: translateX(-100%);
-                opacity: 0;
+                opacity: 0.7;
+                filter: brightness(0.8);
+                width: 25%;
+                height: 90%;
             }
             
             /* الصورة الوسطى */
@@ -271,12 +279,18 @@
                 transform: translateX(0);
                 opacity: 1;
                 z-index: 2;
+                width: 35%;
+                height: 100%;
+                filter: brightness(1);
             }
             
             /* الصورة اليمنى */
             .gallery img.right {
                 transform: translateX(100%);
-                opacity: 0;
+                opacity: 0.7;
+                filter: brightness(0.8);
+                width: 25%;
+                height: 90%;
             }
             
             /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -289,9 +303,7 @@
         @media (max-width: 768px) {
             .gallery {
                 height: 200px;
-                /* إعادة تصميم الهاتف المحمول */
-                justify-content: center;
-                padding: 0;
+                display: block;
             }
             
             .gallery img {
@@ -302,7 +314,13 @@
                 border-radius: 10px;
                 opacity: 0;
                 transition: opacity 2s ease-in-out;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: auto;
+                height: auto;
                 transform: none !important;
+                filter: none !important;
             }
             
             .gallery img.active {
@@ -422,14 +440,14 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 5">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
             </div>
         </div>
         <div class="sections-container">
@@ -483,43 +501,46 @@ Merci de votre visite !</p>
             const images = document.querySelectorAll('.gallery img');
             let currentIndex = 0;
             
-            function showImages() {
-                // إعادة تعيين جميع الصور
-                images.forEach(img => {
-                    img.classList.remove('active', 'left', 'center', 'right');
-                });
-                
+            function updateGallery() {
                 if (window.innerWidth <= 768) {
                     // تصميم الهاتف المحمول - صورة واحدة في المركز
-                    images[currentIndex].classList.add('active');
+                    images.forEach((img, index) => {
+                        img.classList.remove('active', 'left', 'center', 'right');
+                        if (index === currentIndex) {
+                            img.classList.add('active');
+                        }
+                    });
                 } else {
                     // تصميم الكمبيوتر - ثلاث صور متجاورة
                     const totalImages = images.length;
                     
-                    // الصورة اليسرى (الصورة السابقة)
-                    const leftIndex = (currentIndex - 1 + totalImages) % totalImages;
-                    images[leftIndex].classList.add('left');
+                    // إزالة جميع الفئات أولاً
+                    images.forEach(img => {
+                        img.classList.remove('active', 'left', 'center', 'right');
+                    });
                     
-                    // الصورة الوسطى (الصورة الحالية)
+                    // تحديد مؤشرات الصور الثلاثة التي سنعرضها
+                    const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
+                    const nextIndex = (currentIndex + 1) % totalImages;
+                    
+                    // تعيين الفئات المناسبة
+                    images[prevIndex].classList.add('left');
                     images[currentIndex].classList.add('center');
-                    
-                    // الصورة اليمنى (الصورة التالية)
-                    const rightIndex = (currentIndex + 1) % totalImages;
-                    images[rightIndex].classList.add('right');
+                    images[nextIndex].classList.add('right');
                 }
             }
             
             function showNextImage() {
                 currentIndex = (currentIndex + 1) % images.length;
-                showImages();
+                updateGallery();
             }
             
             // بدء العرض
-            showImages();
-            setInterval(showNextImage, 3000);
+            updateGallery();
+            const interval = setInterval(showNextImage, 3000);
             
             // تحديث العرض عند تغيير حجم النافذة
-            window.addEventListener('resize', showImages);
+            window.addEventListener('resize', updateGallery);
         });
     </script>
 </body>
