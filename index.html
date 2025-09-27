@@ -239,22 +239,22 @@
             opacity: 1;
         }
         
-        /* تصميم الكمبيوتر - ثلاث صور بالتتابع */
+        /* تصميم الكمبيوتر - أربع صور بالتتابع من اليسار إلى اليمين */
         @media (min-width: 769px) {
             .gallery {
                 height: 300px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
-                padding: 0 20px;
+                position: relative;
             }
             
             .gallery img {
-                position: relative;
-                width: 30%;
-                height: 100%;
-                max-width: 30%;
-                max-height: 100%;
+                position: absolute;
+                width: 25%;
+                height: 80%;
+                max-width: 25%;
+                max-height: 80%;
                 opacity: 0;
                 transition: all 1.5s ease-in-out;
                 object-fit: cover;
@@ -266,27 +266,51 @@
             }
             
             /* الصورة في اليسار */
-            .gallery img.left {
+            .gallery img.pos1 {
+                left: 10%;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            
+            .gallery img.pos1.active {
                 transform: translateX(0);
                 opacity: 1;
             }
             
-            /* الصورة في الوسط */
-            .gallery img.center {
+            /* الصورة في المركز الأيسر */
+            .gallery img.pos2 {
+                left: 30%;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            
+            .gallery img.pos2.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            /* الصورة في المركز الأيمن */
+            .gallery img.pos3 {
+                left: 50%;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            
+            .gallery img.pos3.active {
                 transform: translateX(0);
                 opacity: 1;
             }
             
             /* الصورة في اليمين */
-            .gallery img.right {
-                transform: translateX(0);
-                opacity: 1;
+            .gallery img.pos4 {
+                left: 70%;
+                transform: translateX(-100%);
+                opacity: 0;
             }
             
-            /* الصورة المخفية */
-            .gallery img.hidden {
-                opacity: 0;
-                transform: translateX(-100%);
+            .gallery img.pos4.active {
+                transform: translateX(0);
+                opacity: 1;
             }
             
             /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -300,7 +324,6 @@
             .gallery {
                 height: 200px;
                 display: block;
-                padding: 0;
             }
             
             .gallery img {
@@ -495,39 +518,37 @@ Merci de votre visite !</p>
         // عرض الصور في المعرض (معدل)
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
-            let currentPosition = 0; // 0: اليسار, 1: الوسط, 2: اليمين
             let currentImageIndex = 0;
+            let currentPosition = 0; // 0: اليسار, 1: المركز الأيسر, 2: المركز الأيمن, 3: اليمين
+            let activeImages = []; // لتخزين الصور النشطة حاليًا
             
             function updateGallery() {
                 if (window.innerWidth <= 768) {
                     // تصميم الهاتف المحمول - صورة واحدة في المركز
                     images.forEach((img, index) => {
-                        img.classList.remove('active', 'left', 'center', 'right', 'hidden');
+                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4');
                         if (index === currentImageIndex) {
                             img.classList.add('active');
                         }
                     });
                 } else {
-                    // تصميم الكمبيوتر - ثلاث صور بالتتابع في مواضع مختلفة
+                    // تصميم الكمبيوتر - أربع صور بالتتابع من اليسار إلى اليمين
                     images.forEach(img => {
-                        img.classList.remove('active', 'left', 'center', 'right', 'hidden');
-                        img.classList.add('hidden');
+                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4');
                     });
                     
-                    // إظهار الصورة الحالية في الموضع المناسب
-                    if (currentPosition === 0) {
-                        // الصورة في اليسار
-                        images[currentImageIndex].classList.remove('hidden');
-                        images[currentImageIndex].classList.add('left');
-                    } else if (currentPosition === 1) {
-                        // الصورة في الوسط
-                        images[currentImageIndex].classList.remove('hidden');
-                        images[currentImageIndex].classList.add('center');
-                    } else if (currentPosition === 2) {
-                        // الصورة في اليمين
-                        images[currentImageIndex].classList.remove('hidden');
-                        images[currentImageIndex].classList.add('right');
+                    // تحديد الصور التي يجب أن تكون نشطة
+                    activeImages = [];
+                    for (let i = 0; i < 4; i++) {
+                        const imgIndex = (currentImageIndex + i) % images.length;
+                        activeImages.push(images[imgIndex]);
                     }
+                    
+                    // تعيين المواضع للصور النشطة
+                    activeImages.forEach((img, index) => {
+                        img.classList.add(`pos${index+1}`);
+                        img.classList.add('active');
+                    });
                 }
             }
             
@@ -535,15 +556,9 @@ Merci de votre visite !</p>
                 if (window.innerWidth <= 768) {
                     // الهاتف: الانتقال إلى الصورة التالية
                     currentImageIndex = (currentImageIndex + 1) % images.length;
-                    currentPosition = 0;
                 } else {
-                    // الكمبيوتر: التحرك إلى الموضع التالي
-                    currentPosition = (currentPosition + 1) % 3;
-                    
-                    // إذا عدنا إلى الموضع الأول (اليسار)، ننتقل إلى الصورة التالية
-                    if (currentPosition === 0) {
-                        currentImageIndex = (currentImageIndex + 1) % images.length;
-                    }
+                    // الكمبيوتر: الانتقال إلى الصورة التالية مع الحفاظ على أربع صور نشطة
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
                 }
                 updateGallery();
             }
