@@ -213,7 +213,7 @@
             width: 100%;
         }
         
-        /* معرض الصور المعدل */
+        /* معرض الصور المعدل للهاتف */
         .gallery {
             position: relative;
             width: 100%;
@@ -222,7 +222,6 @@
             overflow: hidden;
         }
         
-        /* تصميم الهاتف المحمول (الحالي) */
         .gallery img {
             position: absolute;
             max-width: 100%;
@@ -239,89 +238,79 @@
             opacity: 1;
         }
         
-        /* تصميم الكمبيوتر - معرض منظم مع تأثير التلاشي التدريجي */
+        /* تصميم الكمبيوتر - شريط متحرك مع تأثير التلاشي الجانبي */
         @media (min-width: 769px) {
             .gallery {
                 height: 300px;
+                position: relative;
+                overflow: hidden;
+                margin: 20px 0;
+                width: 100%;
+            }
+            
+            .gallery::before,
+            .gallery::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 15%;
+                height: 100%;
+                z-index: 2;
+            }
+            
+            .gallery::before {
+                left: 0;
+                background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, transparent 100%);
+            }
+            
+            .gallery::after {
+                right: 0;
+                background: linear-gradient(to left, rgba(0,0,0,0.9) 0%, transparent 100%);
+            }
+            
+            .gallery-track {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                gap: 15px; /* مسافة بين الصور */
+                height: 100%;
+                width: max-content;
+                animation: scroll 40s linear infinite;
+                gap: 20px;
                 padding: 0 20px;
+                align-items: center;
             }
             
-            .gallery img {
-                position: relative;
-                width: 23%; /* عرض أقل لترك مسافة بين الصور */
-                height: 90%;
-                max-width: 23%;
-                max-height: 90%;
-                opacity: 0;
-                transition: all 1.5s ease-in-out;
-                object-fit: contain; /* عرض الصورة كاملة بدون قص */
+            .gallery-track:hover {
+                animation-play-state: paused;
+            }
+            
+            .gallery-item {
+                flex: 0 0 auto;
+                width: 220px;
+                height: 220px;
                 border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                margin: 0;
-                left: auto;
-                right: auto;
-                flex-shrink: 0; /* منع الصور من التقلص */
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
             }
             
-            /* تأثير التلاشي التدريجي من اليسار إلى اليمين */
-            .gallery img.pos1 {
-                transform: translateX(-100%);
-                opacity: 0;
-                transition-delay: 0s;
+            .gallery-item:hover {
+                transform: scale(1.05);
+                z-index: 1;
             }
             
-            .gallery img.pos1.active {
-                transform: translateX(0);
-                opacity: 1;
-                transition-delay: 0s;
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
             }
             
-            .gallery img.pos2 {
-                transform: translateX(-100%);
-                opacity: 0;
-                transition-delay: 0.2s;
-            }
-            
-            .gallery img.pos2.active {
-                transform: translateX(0);
-                opacity: 1;
-                transition-delay: 0.2s;
-            }
-            
-            .gallery img.pos3 {
-                transform: translateX(-100%);
-                opacity: 0;
-                transition-delay: 0.4s;
-            }
-            
-            .gallery img.pos3.active {
-                transform: translateX(0);
-                opacity: 1;
-                transition-delay: 0.4s;
-            }
-            
-            .gallery img.pos4 {
-                transform: translateX(-100%);
-                opacity: 0;
-                transition-delay: 0.6s;
-            }
-            
-            .gallery img.pos4.active {
-                transform: translateX(0);
-                opacity: 1;
-                transition-delay: 0.6s;
-            }
-            
-            /* تأثير الخروج (الاختفاء) من اليمين */
-            .gallery img.exiting {
-                transform: translateX(100%);
-                opacity: 0;
-                transition: all 1.5s ease-in-out;
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-220px * 8 - 20px * 7)); /* حساب إجمالي العرض */
+                }
             }
             
             /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -334,9 +323,6 @@
         @media (max-width: 768px) {
             .gallery {
                 height: 200px;
-                display: block;
-                gap: 0;
-                padding: 0;
             }
             
             .gallery img {
@@ -350,9 +336,6 @@
                 left: 0;
                 right: 0;
                 margin: 0 auto;
-                width: auto;
-                height: auto;
-                transform: none !important;
             }
             
             .gallery img.active {
@@ -472,6 +455,7 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
+                <!-- للهاتف: نستخدم الصور بشكل فردي -->
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
@@ -480,6 +464,11 @@
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
                 <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
+                
+                <!-- للكمبيوتر: نضيف شريط الصور المتحرك -->
+                <div class="gallery-track">
+                    <!-- سيتم إنشاء شريط الصور ديناميكيًا باستخدام JavaScript -->
+                </div>
             </div>
         </div>
         <div class="sections-container">
@@ -528,90 +517,70 @@ Merci de votre visite !</p>
             }
         });
         
-        // عرض الصور في المعرض (معدل لتأثير التلاشي التدريجي)
+        // معرض الصور المتقدم
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
-            let currentImageIndex = 0;
-            let isAnimating = false; // لمنع التداخل في الحركات
+            const galleryTrack = document.querySelector('.gallery-track');
             
-            function updateGallery() {
-                if (window.innerWidth <= 768) {
-                    // تصميم الهاتف المحمول - صورة واحدة في المركز
+            // إعداد شريط الصور للكمبيوتر
+            if (window.innerWidth > 768) {
+                const imageUrls = [
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg",
+                    "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg"
+                ];
+                
+                // إنشاء عناصر الصور وإضافتها إلى الشريط
+                imageUrls.forEach(url => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = 'Gallery Image';
+                    
+                    galleryItem.appendChild(img);
+                    galleryTrack.appendChild(galleryItem);
+                });
+                
+                // إخفاء الصور الفردية المستخدمة في الهاتف
+                images.forEach(img => {
+                    img.style.display = 'none';
+                });
+            } else {
+                // للهاتف: عرض الصور الفردية
+                let currentImageIndex = 0;
+                
+                function updateGallery() {
                     images.forEach((img, index) => {
-                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4', 'exiting');
+                        img.classList.remove('active');
                         if (index === currentImageIndex) {
                             img.classList.add('active');
                         }
                     });
-                } else {
-                    // تصميم الكمبيوتر - أربع صور بالتتابع مع تأثير التلاشي التدريجي
-                    if (isAnimating) return; // منع التداخل في الحركات
-                    isAnimating = true;
-                    
-                    // إزالة جميع الفئات من الصور
-                    images.forEach(img => {
-                        img.classList.remove('active', 'pos1', 'pos2', 'pos3', 'pos4', 'exiting');
-                    });
-                    
-                    // إضافة تأثير الخروج للصور السابقة
-                    const prevImages = [];
-                    for (let i = 0; i < 4; i++) {
-                        const prevIndex = (currentImageIndex - 4 + i) % images.length;
-                        if (prevIndex >= 0) {
-                            prevImages.push(images[prevIndex]);
-                        }
-                    }
-                    
-                    prevImages.forEach(img => {
-                        img.classList.add('exiting');
-                    });
-                    
-                    // تحديد الصور التي يجب أن تكون نشطة
-                    const activeImages = [];
-                    for (let i = 0; i < 4; i++) {
-                        const imgIndex = (currentImageIndex + i) % images.length;
-                        activeImages.push(images[imgIndex]);
-                    }
-                    
-                    // تعيين المواضع للصور النشطة مع تأخير متتالي
-                    activeImages.forEach((img, index) => {
-                        img.classList.add(`pos${index+1}`);
-                        // إضافة فئة active بعد تأخير لتحريك الصور بشكل متتالي
-                        setTimeout(() => {
-                            img.classList.add('active');
-                            if (index === 3) {
-                                // بعد انتهاء حركة آخر صورة، نسمح بالحركة التالية
-                                setTimeout(() => {
-                                    isAnimating = false;
-                                }, 500);
-                            }
-                        }, 100);
-                    });
                 }
-            }
-            
-            function nextImage() {
-                if (window.innerWidth <= 768) {
-                    // الهاتف: الانتقال إلى الصورة التالية
+                
+                function nextImage() {
                     currentImageIndex = (currentImageIndex + 1) % images.length;
                     updateGallery();
-                } else {
-                    // الكمبيوتر: الانتقال إلى الصورة التالية مع الحفاظ على أربع صور نشطة
-                    if (!isAnimating) {
-                        currentImageIndex = (currentImageIndex + 1) % images.length;
-                        updateGallery();
-                    }
                 }
+                
+                updateGallery();
+                setInterval(nextImage, 2000);
             }
-            
-            // بدء العرض
-            updateGallery();
-            const interval = setInterval(nextImage, 3000); // تغيير كل 3 ثواني لإعطاء الوقت الكافي للحركة
             
             // تحديث العرض عند تغيير حجم النافذة
             window.addEventListener('resize', function() {
-                isAnimating = false; // إعادة تعيين حالة الحركة
-                updateGallery();
+                // إعادة تحميل الصفحة عند تغيير حجم النافذة للتأكد من التحميل الصحيح
+                if ((window.innerWidth > 768 && images[0].style.display !== 'none') || 
+                    (window.innerWidth <= 768 && images[0].style.display === 'none')) {
+                    location.reload();
+                }
             });
         });
     </script>
