@@ -212,6 +212,8 @@
             padding: 10px 15px;
             width: 100%;
         }
+        
+        /* معرض الصور المعدل */
         .gallery {
             position: relative;
             width: 100%;
@@ -222,6 +224,8 @@
             justify-content: center;
             align-items: center;
         }
+        
+        /* تصميم الهاتف المحمول (الحالي) */
         .gallery img {
             position: absolute;
             max-width: 100%;
@@ -234,17 +238,77 @@
         .gallery img.active {
             opacity: 1;
         }
+        
+        /* تصميم الكمبيوتر - ثلاث صور متجاورة */
         @media (min-width: 769px) {
+            .gallery {
+                height: 300px;
+                justify-content: space-between;
+                padding: 0 20px;
+            }
+            
+            .gallery img {
+                position: relative;
+                width: 30%;
+                height: 100%;
+                max-width: 30%;
+                max-height: 100%;
+                opacity: 1;
+                transition: all 2s ease-in-out;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+            
+            /* الصورة اليسرى */
+            .gallery img.left {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            
+            /* الصورة الوسطى */
+            .gallery img.center {
+                transform: translateX(0);
+                opacity: 1;
+                z-index: 2;
+            }
+            
+            /* الصورة اليمنى */
+            .gallery img.right {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            
             /* سلوك القائمة المنسدلة في الكمبيوتر */
             .dropdown:hover .dropdown-content {
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
         }
+        
         @media (max-width: 768px) {
             .gallery {
                 height: 200px;
+                /* إعادة تصميم الهاتف المحمول */
+                justify-content: center;
+                padding: 0;
             }
+            
+            .gallery img {
+                position: absolute;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                border-radius: 10px;
+                opacity: 0;
+                transition: opacity 2s ease-in-out;
+                transform: none !important;
+            }
+            
+            .gallery img.active {
+                opacity: 1;
+            }
+            
             .sections-container {
                 flex-direction: column;
             }
@@ -413,17 +477,49 @@ Merci de votre visite !</p>
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-        // عرض الصور في المعرض
+        
+        // عرض الصور في المعرض (معدل)
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.gallery img');
             let currentIndex = 0;
-            function showNextImage() {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
+            
+            function showImages() {
+                // إعادة تعيين جميع الصور
+                images.forEach(img => {
+                    img.classList.remove('active', 'left', 'center', 'right');
+                });
+                
+                if (window.innerWidth <= 768) {
+                    // تصميم الهاتف المحمول - صورة واحدة في المركز
+                    images[currentIndex].classList.add('active');
+                } else {
+                    // تصميم الكمبيوتر - ثلاث صور متجاورة
+                    const totalImages = images.length;
+                    
+                    // الصورة اليسرى (الصورة السابقة)
+                    const leftIndex = (currentIndex - 1 + totalImages) % totalImages;
+                    images[leftIndex].classList.add('left');
+                    
+                    // الصورة الوسطى (الصورة الحالية)
+                    images[currentIndex].classList.add('center');
+                    
+                    // الصورة اليمنى (الصورة التالية)
+                    const rightIndex = (currentIndex + 1) % totalImages;
+                    images[rightIndex].classList.add('right');
+                }
             }
-            images[currentIndex].classList.add('active');
+            
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImages();
+            }
+            
+            // بدء العرض
+            showImages();
             setInterval(showNextImage, 3000);
+            
+            // تحديث العرض عند تغيير حجم النافذة
+            window.addEventListener('resize', showImages);
         });
     </script>
 </body>
