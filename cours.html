@@ -7,14 +7,34 @@
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
             color: #333;
             direction: ltr;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* نقل صورة الخلفية إلى body بدلاً من hero */
+            background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
         }
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
@@ -160,15 +180,13 @@
         .logo a:hover {
             color: #0288d1;
         }
-        /* قسم البطل مع خلفية تغطي الشاشة كاملة */
+        /* قسم البطل - إزالة الخلفية لأنها الآن في body */
         .hero {
-            background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center/cover;
-            background-attachment: fixed;
-            background-size: cover;
             color: #fff;
             padding: 150px 20px 100px;
             text-align: center;
-            min-height: 100vh;
+            margin-top: 140px; /* تعويض للشريط العلوي الثابت */
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -410,6 +428,9 @@
                 font-size: 0.8rem;
                 height: 35px;
             }
+            .hero {
+                margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
+            }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
@@ -417,16 +438,13 @@
                 display: block;
             }
         }
-        /* تصميم التذييل */
+        /* تصميم التذييل - إزالة position: fixed */
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
             padding: 10px 15px;
-            position: fixed;
-            bottom: 0;
             width: 100%;
-            z-index: 1000;
         }
         footer p {
             font-size: 0.8rem;
