@@ -542,8 +542,12 @@ Merci de votre visite !</p>
             
             // التحقق من أن عنصر galleryTrack موجود
             if (galleryTrack) {
+                console.log("تم العثور على galleryTrack");
+                
                 // إعداد شريط الصور للكمبيوتر
                 if (window.innerWidth > 768) {
+                    console.log("جاري إعداد معرض الكمبيوتر...");
+                    
                     // إنشاء عناصر الصور وإضافتها إلى الشريط
                     imageUrls.forEach((url, index) => {
                         const galleryItem = document.createElement('div');
@@ -552,6 +556,15 @@ Merci de votre visite !</p>
                         const img = document.createElement('img');
                         img.src = url;
                         img.alt = `Image ${index + 1}`;
+                        
+                        // إضافة حدث تحميل الصورة لمعرفة إذا تم تحميلها بنجاح
+                        img.onload = function() {
+                            console.log(`تم تحميل الصورة ${index + 1} بنجاح`);
+                        };
+                        
+                        img.onerror = function() {
+                            console.error(`فشل في تحميل الصورة ${index + 1}: ${url}`);
+                        };
                         
                         galleryItem.appendChild(img);
                         galleryTrack.appendChild(galleryItem);
@@ -564,12 +577,16 @@ Merci de votre visite !</p>
                         
                         const img = document.createElement('img');
                         img.src = url;
-                        img.alt = `Image ${index + 1}`;
+                        img.alt = `Image ${index + 1} (نسخة مكررة)`;
                         
                         galleryItem.appendChild(img);
                         galleryTrack.appendChild(galleryItem);
                     });
+                    
+                    console.log("تم إنشاء معرض الكمبيوتر مع " + (imageUrls.length * 2) + " عنصر");
                 }
+            } else {
+                console.error("لم يتم العثور على galleryTrack!");
             }
             
             // إعداد معرض الصور للهاتف
