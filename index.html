@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhaniPharma</title>
-    <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,17 +14,13 @@
             margin: 0;
             padding: 0;
             color: #333;
-            direction: ltr;
-            text-align: left;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            /* إضافة صورة الخلفية للجسم بدلاً من قسم hero */
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
-        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
         body::before {
             content: '';
             position: fixed;
@@ -213,7 +208,7 @@
             width: 100%;
         }
         
-        /* معرض الصور المعدل للهاتف */
+        /* تصميم الهاتف - معرض شرائح بسيط */
         .gallery {
             position: relative;
             width: 100%;
@@ -238,7 +233,7 @@
             opacity: 1;
         }
         
-        /* تصميم الكمبيوتر - شريط متحرك مع تأثير التلاشي الجانبي */
+        /* تصميم الكمبيوتر - شريط متحرك */
         @media (min-width: 769px) {
             .gallery {
                 height: 300px;
@@ -290,6 +285,7 @@
                 overflow: hidden;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
                 transition: transform 0.3s ease;
+                background-color: #f0f0f0; /* لون خلفية مؤقت */
             }
             
             .gallery-item:hover {
@@ -309,7 +305,7 @@
                     transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(calc(-220px * 8 - 20px * 7)); /* حساب إجمالي العرض */
+                    transform: translateX(calc(-220px * 8 - 20px * 7));
                 }
             }
             
@@ -318,7 +314,6 @@
                 display: none;
             }
             
-            /* سلوك القائمة المنسدلة في الكمبيوتر */
             .dropdown:hover .dropdown-content {
                 display: block;
                 animation: fadeIn 0.3s ease;
@@ -407,7 +402,6 @@
             footer p {
                 font-size: 0.8rem;
             }
-            /* تعديل القائمة المنسدلة في الهاتف */
             .dropdown-content {
                 position: static;
                 width: 100%;
@@ -531,7 +525,7 @@ Merci de votre visite !</p>
         
         // معرض الصور المتقدم
         document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.gallery > img');
+            const gallery = document.querySelector('.gallery');
             const galleryTrack = document.querySelector('.gallery-track');
             
             // قائمة بعناوين الصور
@@ -546,35 +540,41 @@ Merci de votre visite !</p>
                 "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg"
             ];
             
-            // إعداد شريط الصور للكمبيوتر
-            if (window.innerWidth > 768) {
-                // إنشاء عناصر الصور وإضافتها إلى الشريط
-                imageUrls.forEach((url, index) => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
+            // التحقق من أن عنصر galleryTrack موجود
+            if (galleryTrack) {
+                // إعداد شريط الصور للكمبيوتر
+                if (window.innerWidth > 768) {
+                    // إنشاء عناصر الصور وإضافتها إلى الشريط
+                    imageUrls.forEach((url, index) => {
+                        const galleryItem = document.createElement('div');
+                        galleryItem.className = 'gallery-item';
+                        
+                        const img = document.createElement('img');
+                        img.src = url;
+                        img.alt = `Image ${index + 1}`;
+                        
+                        galleryItem.appendChild(img);
+                        galleryTrack.appendChild(galleryItem);
+                    });
                     
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.alt = `Image ${index + 1}`;
-                    
-                    galleryItem.appendChild(img);
-                    galleryTrack.appendChild(galleryItem);
-                });
-                
-                // تكرار الصور لإنشاء تأثير لا نهائي أكثر سلاسة
-                imageUrls.forEach((url, index) => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.alt = `Image ${index + 1}`;
-                    
-                    galleryItem.appendChild(img);
-                    galleryTrack.appendChild(galleryItem);
-                });
-            } else {
-                // للهاتف: عرض الصور الفردية
+                    // تكرار الصور لإنشاء تأثير لا نهائي أكثر سلاسة
+                    imageUrls.forEach((url, index) => {
+                        const galleryItem = document.createElement('div');
+                        galleryItem.className = 'gallery-item';
+                        
+                        const img = document.createElement('img');
+                        img.src = url;
+                        img.alt = `Image ${index + 1}`;
+                        
+                        galleryItem.appendChild(img);
+                        galleryTrack.appendChild(galleryItem);
+                    });
+                }
+            }
+            
+            // إعداد معرض الصور للهاتف
+            if (window.innerWidth <= 768) {
+                const images = document.querySelectorAll('.gallery > img');
                 let currentImageIndex = 0;
                 
                 function updateGallery() {
