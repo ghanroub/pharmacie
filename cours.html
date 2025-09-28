@@ -36,6 +36,42 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
+        
+        /* زر إخفاء/إظهار الهيدر */
+        .header-toggle {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #ffeb3b;
+            border: 1px solid #ffeb3b;
+            border-radius: 20px;
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .header-toggle:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+        
+        .header-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .header-toggle.collapsed i {
+            transform: rotate(180deg);
+        }
+        
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
             position: fixed;
@@ -44,41 +80,13 @@
             z-index: 1000;
             background-color: rgba(0, 0, 0, 0.7);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease-in-out;
         }
-        .top-bar.collapsed {
+        
+        .top-bar.hidden {
             transform: translateY(-100%);
         }
-        /* زر تبديل إخفاء/إظهار الهيدر */
-        .toggle-header-btn {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-            z-index: 1002;
-            transition: all 0.3s ease;
-            border: 2px solid #ffeb3b;
-        }
-        .toggle-header-btn:hover {
-            background: linear-gradient(135deg, #7c1fb9, #5c1a9c);
-            transform: scale(1.1);
-        }
-        .toggle-header-btn i {
-            transition: transform 0.4s ease;
-        }
-        .toggle-header-btn.collapsed i {
-            transform: rotate(180deg);
-        }
+        
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -124,6 +132,27 @@
         header nav ul li a:hover {
             color: #fff;
         }
+        
+        /* تحسينات اللوغو */
+        .logo a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+        .logo a:hover {
+            color: #0288d1;
+            background: rgba(0, 188, 212, 0.1);
+            transform: scale(1.05);
+            text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+        }
+        
         /* قائمة التنقل المنسدلة */
         .dropdown-content {
             display: none;
@@ -204,16 +233,7 @@
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-        /* تصميم اللوگو */
-        .logo a {
-            color: #00bcd4;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .logo a:hover {
-            color: #0288d1;
-        }
+        
         /* قسم البطل - إزالة الخلفية لأنها الآن في body */
         .hero {
             color: #fff;
@@ -225,10 +245,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: margin-top 0.4s ease;
-        }
-        .hero.expanded {
-            margin-top: 20px; /* مسافة أقل عندما يكون الهيدر مخفي */
         }
         .hero h1 {
             font-size: 3rem;
@@ -380,6 +396,12 @@
         }
         /* تصميم القائمة المنسدلة في الهاتف */
         @media (max-width: 768px) {
+            .header-toggle {
+                top: 5px;
+                padding: 5px 12px;
+                font-size: 0.8rem;
+            }
+            
             .menu-btn {
                 display: block;
             }
@@ -469,16 +491,6 @@
             .hero {
                 margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
             }
-            .hero.expanded {
-                margin-top: 40px; /* مسافة أقل عندما يكون الهيدر مخفي في الهاتف */
-            }
-            .toggle-header-btn {
-                top: 5px;
-                right: 5px;
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
@@ -504,16 +516,16 @@
     </style>
 </head>
 <body>
-    <!-- زر تبديل إخفاء/إظهار الهيدر -->
-    <div class="toggle-header-btn" onclick="toggleHeader()">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
+    <!-- زر إخفاء/إظهار الهيدر -->
+    <button class="header-toggle" id="headerToggle">
+        <i class="fas fa-chevron-down"></i> Cacher l'en-tête
+    </button>
+    
     <!-- الشريط العلوي والأزرار الثابتة -->
-    <div class="top-bar">
+    <div class="top-bar" id="topBar">
         <header>
             <div class="logo">
-                <a href="index.html">💊GhaniPharma</a>
+                <a href="index.html">💊 GhaniPharma</a>
             </div>
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
@@ -804,16 +816,46 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // دالة لإخفاء وإظهار الهيدر بالكامل
-        function toggleHeader() {
-            const topBar = document.querySelector('.top-bar');
-            const toggleBtn = document.querySelector('.toggle-header-btn');
-            const hero = document.querySelector('.hero');
+        // وظيفة إخفاء/إظهار الهيدر
+        const headerToggle = document.getElementById('headerToggle');
+        const topBar = document.getElementById('topBar');
+        
+        headerToggle.addEventListener('click', function() {
+            topBar.classList.toggle('hidden');
             
-            topBar.classList.toggle('collapsed');
-            hero.classList.toggle('expanded');
-            toggleBtn.classList.toggle('collapsed');
-        }
+            if (topBar.classList.contains('hidden')) {
+                headerToggle.innerHTML = '<i class="fas fa-chevron-down"></i> Afficher l\'en-tête';
+                headerToggle.classList.add('collapsed');
+            } else {
+                headerToggle.innerHTML = '<i class="fas fa-chevron-up"></i> Cacher l\'en-tête';
+                headerToggle.classList.remove('collapsed');
+            }
+        });
+        
+        // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // التمرير لأسفل - إخفاء الهيدر
+                if (!topBar.classList.contains('hidden')) {
+                    topBar.classList.add('hidden');
+                    headerToggle.innerHTML = '<i class="fas fa-chevron-down"></i> Afficher l\'en-tête';
+                    headerToggle.classList.add('collapsed');
+                }
+            } else if (scrollTop < lastScrollTop) {
+                // التمرير لأعلى - إظهار الهيدر
+                if (topBar.classList.contains('hidden')) {
+                    topBar.classList.remove('hidden');
+                    headerToggle.innerHTML = '<i class="fas fa-chevron-up"></i> Cacher l\'en-tête';
+                    headerToggle.classList.remove('collapsed');
+                }
+            }
+            
+            lastScrollTop = scrollTop;
+        });
 
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
