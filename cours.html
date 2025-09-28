@@ -44,6 +44,40 @@
             z-index: 1000;
             background-color: rgba(0, 0, 0, 0.7);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+        .top-bar.collapsed {
+            transform: translateY(-100%);
+        }
+        /* زر تبديل إخفاء/إظهار الهيدر */
+        .toggle-header-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1002;
+            transition: all 0.3s ease;
+            border: 2px solid #ffeb3b;
+        }
+        .toggle-header-btn:hover {
+            background: linear-gradient(135deg, #7c1fb9, #5c1a9c);
+            transform: scale(1.1);
+        }
+        .toggle-header-btn i {
+            transition: transform 0.4s ease;
+        }
+        .toggle-header-btn.collapsed i {
+            transform: rotate(180deg);
         }
         header {
             background-color: rgba(0, 0, 0, 0.5);
@@ -123,38 +157,6 @@
             cursor: pointer;
             color: #ffeb3b;
         }
-        /* زر تبديل إظهار/إخفاء السنوات */
-        .toggle-years-btn {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            width: 50px;
-            height: 25px;
-            border-radius: 15px 15px 0 0;
-            cursor: pointer;
-            text-align: center;
-            line-height: 25px;
-            font-size: 0.8rem;
-            box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.3);
-            z-index: 1001;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .toggle-years-btn:hover {
-            background: linear-gradient(135deg, #7c1fb9, #5c1a9c);
-            height: 28px;
-        }
-        .toggle-years-btn i {
-            transition: transform 0.3s ease;
-        }
-        .toggle-years-btn.collapsed i {
-            transform: rotate(180deg);
-        }
         /* قسم الأزرار الثابتة أسفل header */
         .year-navigation {
             background-color: rgba(0, 0, 0, 0.6);
@@ -162,11 +164,6 @@
             text-align: center;
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .year-navigation.collapsed {
-            padding-bottom: 5px;
         }
         .year-navigation h3 {
             color: #ffeb3b;
@@ -180,10 +177,6 @@
             justify-content: center;
             gap: 8px;
             padding-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-        .buttons-container.hidden {
-            display: none;
         }
         .year-btn {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
@@ -232,10 +225,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: margin-top 0.3s ease;
+            transition: margin-top 0.4s ease;
         }
         .hero.expanded {
-            margin-top: 100px; /* مسافة أقل عندما تكون الأزرار مخفية */
+            margin-top: 20px; /* مسافة أقل عندما يكون الهيدر مخفي */
         }
         .hero h1 {
             font-size: 3rem;
@@ -477,7 +470,14 @@
                 margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
             }
             .hero.expanded {
-                margin-top: 120px; /* مسافة أقل عندما تكون الأزرار مخفية في الهاتف */
+                margin-top: 40px; /* مسافة أقل عندما يكون الهيدر مخفي في الهاتف */
+            }
+            .toggle-header-btn {
+                top: 5px;
+                right: 5px;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -504,6 +504,11 @@
     </style>
 </head>
 <body>
+    <!-- زر تبديل إخفاء/إظهار الهيدر -->
+    <div class="toggle-header-btn" onclick="toggleHeader()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <!-- الشريط العلوي والأزرار الثابتة -->
     <div class="top-bar">
         <header>
@@ -531,11 +536,6 @@
         </header>
         <!-- قسم الأزرار الثابتة -->
         <div class="year-navigation">
-            <!-- زر تبديل إظهار/إخفاء السنوات -->
-            <div class="toggle-years-btn" onclick="toggleYears()">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            
             <div class="buttons-container">
                 <button class="year-btn first-year">1ère Année</button>
                 <button class="year-btn second-year">2ème Année</button>
@@ -804,6 +804,17 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
+        // دالة لإخفاء وإظهار الهيدر بالكامل
+        function toggleHeader() {
+            const topBar = document.querySelector('.top-bar');
+            const toggleBtn = document.querySelector('.toggle-header-btn');
+            const hero = document.querySelector('.hero');
+            
+            topBar.classList.toggle('collapsed');
+            hero.classList.toggle('expanded');
+            toggleBtn.classList.toggle('collapsed');
+        }
+
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
@@ -832,19 +843,6 @@
         // إغلاق القائمة المنسدلة
         function closeDropdown() {
             document.getElementById("dropdownContent").classList.remove("show");
-        }
-
-        // دالة لإخفاء وإظهار أزرار السنوات
-        function toggleYears() {
-            const buttonsContainer = document.querySelector('.buttons-container');
-            const toggleBtn = document.querySelector('.toggle-years-btn');
-            const yearNavigation = document.querySelector('.year-navigation');
-            const hero = document.querySelector('.hero');
-            
-            buttonsContainer.classList.toggle('hidden');
-            yearNavigation.classList.toggle('collapsed');
-            hero.classList.toggle('expanded');
-            toggleBtn.classList.toggle('collapsed');
         }
 
         // الكود الخاص بالأزرار والتمرير
