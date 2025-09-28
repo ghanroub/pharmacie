@@ -123,6 +123,38 @@
             cursor: pointer;
             color: #ffeb3b;
         }
+        /* زر تبديل إظهار/إخفاء السنوات */
+        .toggle-years-btn {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            width: 50px;
+            height: 25px;
+            border-radius: 15px 15px 0 0;
+            cursor: pointer;
+            text-align: center;
+            line-height: 25px;
+            font-size: 0.8rem;
+            box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .toggle-years-btn:hover {
+            background: linear-gradient(135deg, #7c1fb9, #5c1a9c);
+            height: 28px;
+        }
+        .toggle-years-btn i {
+            transition: transform 0.3s ease;
+        }
+        .toggle-years-btn.collapsed i {
+            transform: rotate(180deg);
+        }
         /* قسم الأزرار الثابتة أسفل header */
         .year-navigation {
             background-color: rgba(0, 0, 0, 0.6);
@@ -130,6 +162,11 @@
             text-align: center;
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .year-navigation.collapsed {
+            padding-bottom: 5px;
         }
         .year-navigation h3 {
             color: #ffeb3b;
@@ -143,6 +180,10 @@
             justify-content: center;
             gap: 8px;
             padding-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .buttons-container.hidden {
+            display: none;
         }
         .year-btn {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
@@ -191,6 +232,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            transition: margin-top 0.3s ease;
+        }
+        .hero.expanded {
+            margin-top: 100px; /* مسافة أقل عندما تكون الأزرار مخفية */
         }
         .hero h1 {
             font-size: 3rem;
@@ -431,6 +476,9 @@
             .hero {
                 margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
             }
+            .hero.expanded {
+                margin-top: 120px; /* مسافة أقل عندما تكون الأزرار مخفية في الهاتف */
+            }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
@@ -483,6 +531,11 @@
         </header>
         <!-- قسم الأزرار الثابتة -->
         <div class="year-navigation">
+            <!-- زر تبديل إظهار/إخفاء السنوات -->
+            <div class="toggle-years-btn" onclick="toggleYears()">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            
             <div class="buttons-container">
                 <button class="year-btn first-year">1ère Année</button>
                 <button class="year-btn second-year">2ème Année</button>
@@ -779,6 +832,19 @@
         // إغلاق القائمة المنسدلة
         function closeDropdown() {
             document.getElementById("dropdownContent").classList.remove("show");
+        }
+
+        // دالة لإخفاء وإظهار أزرار السنوات
+        function toggleYears() {
+            const buttonsContainer = document.querySelector('.buttons-container');
+            const toggleBtn = document.querySelector('.toggle-years-btn');
+            const yearNavigation = document.querySelector('.year-navigation');
+            const hero = document.querySelector('.hero');
+            
+            buttonsContainer.classList.toggle('hidden');
+            yearNavigation.classList.toggle('collapsed');
+            hero.classList.toggle('expanded');
+            toggleBtn.classList.toggle('collapsed');
         }
 
         // الكود الخاص بالأزرار والتمرير
