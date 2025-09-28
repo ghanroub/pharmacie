@@ -36,6 +36,38 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
+        
+        /* زر تبديل إخفاء/إظهار الهيدر */
+        .toggle-header-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1002;
+            transition: all 0.3s ease;
+            border: 2px solid #ffeb3b;
+        }
+        .toggle-header-btn:hover {
+            background: linear-gradient(135deg, #7c1fb9, #5c1a9c);
+            transform: scale(1.1);
+        }
+        .toggle-header-btn i {
+            transition: transform 0.4s ease;
+        }
+        .toggle-header-btn.collapsed i {
+            transform: rotate(180deg);
+        }
+        
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -47,7 +79,12 @@
             top: 0;
             width: 100%;
             z-index: 1000;
+            transition: transform 0.4s ease;
         }
+        header.collapsed {
+            transform: translateY(-100%);
+        }
+        
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -124,6 +161,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            transition: margin-top 0.4s ease;
+        }
+        .hero.expanded {
+            margin-top: 20px;
         }
         .hero h1 {
             font-size: 3rem;
@@ -378,10 +419,28 @@
             .dropdown-content a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
             }
+            .toggle-header-btn {
+                top: 5px;
+                right: 5px;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            .hero {
+                margin-top: 70px;
+            }
+            .hero.expanded {
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- زر تبديل إخفاء/إظهار الهيدر -->
+    <div class="toggle-header-btn" onclick="toggleHeader()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <header>
         <div class="logo">
             <a href="index.html">💊GhaniPharma</a>
@@ -465,6 +524,17 @@ Merci de votre visite !</p>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
+        // دالة لإخفاء وإظهار الهيدر بالكامل
+        function toggleHeader() {
+            const header = document.querySelector('header');
+            const toggleBtn = document.querySelector('.toggle-header-btn');
+            const hero = document.querySelector('.hero');
+            
+            header.classList.toggle('collapsed');
+            hero.classList.toggle('expanded');
+            toggleBtn.classList.toggle('collapsed');
+        }
+
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
