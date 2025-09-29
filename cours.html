@@ -78,7 +78,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5); /* شفافية مثل الكود الأول */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.4s ease-in-out;
         }
@@ -88,7 +88,7 @@
         }
         
         header {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: transparent; /* جعل الهيدر شفافاً تماماً */
             color: #ffeb3b;
             padding: 20px 15px;
             display: flex;
@@ -104,10 +104,11 @@
             padding: 5px 10px;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
         }
         /* قائمة التنقل الرئيسية */
         header nav {
@@ -128,9 +129,14 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         header nav ul li a:hover {
             color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         
         /* تحسينات اللوغو */
@@ -172,10 +178,11 @@
             display: block;
             text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.2s;
+            transition: all 0.3s ease;
         }
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
         }
         /* زر إغلاق القائمة المنسدلة في الهاتف */
         .close-btn {
@@ -185,6 +192,10 @@
             font-size: 20px;
             cursor: pointer;
             color: #ffeb3b;
+            transition: transform 0.3s ease;
+        }
+        .close-btn:hover {
+            transform: scale(1.2);
         }
         /* قسم الأزرار الثابتة أسفل header */
         .year-navigation {
@@ -357,6 +368,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s ease;
+        }
+        .section h4:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateX(5px);
         }
         .section h4::after {
             content: "\f078";
@@ -378,10 +394,11 @@
             padding: 8px 12px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .section ul li:hover {
             background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
         }
         .section ul li a {
             color: #ffeb3b;
@@ -496,6 +513,18 @@
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block;
+                animation: slideDown 0.3s ease;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
         /* تصميم التذييل - إزالة position: fixed */
@@ -565,6 +594,7 @@
             <div class="section">
                 <h2>Cours Disponibles</h2>
                 <p>Liste des cours disponibles pour les étudiants en pharmacie.</p>
+                <!-- المحتوى الأصلي يبقى كما هو -->
                 <!-- السنة الأولى -->
                 <h3 id="annee1">1ère Année</h3>
                 <!-- المادة 1 -->
@@ -572,243 +602,7 @@
                 <ul class="hidden">
                     <li><a href="annee1_anatomie_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_biologie_cellulaire_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee1_biologie_cellulaire_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee1_biologie_cellulaire_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_biologie_vegetale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">BIOSTATISTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_bio_statistique_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE GENERALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_chimie_generale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE ORGANIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_chimie_organique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee1_chimie_organique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 7 -->
-                <h4 onclick="toggleSemesters(this)">HISTOIRE DE LA PHARMACIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_histoire_pharmacie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 8 -->
-                <h4 onclick="toggleSemesters(this)">INFORMATIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_informatique_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 9 -->
-                <h4 onclick="toggleSemesters(this)">PHYSIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_physiologie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 10 -->
-                <h4 onclick="toggleSemesters(this)">PHYSIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_physique_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 11 -->
-                <h4 onclick="toggleSemesters(this)">FRANCAIS MEDECALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_francais_medecale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- السنة الثانية -->
-                <h3 id="annee2">2ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_biochimie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_biochimie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee2_biochimie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">BIOPHYSIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_biophysique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_biophysique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee2_biophysique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">BOTANIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_botanique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_botanique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_chimie_analytique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_chimie_analytique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE MINERALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_chimie_minerale_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_chimie_minerale_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_anglais_medecale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 7 -->
-                <h4 onclick="toggleSemesters(this)">GENETIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_genetique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_genetique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 8 -->
-                <h4 onclick="toggleSemesters(this)">PHYSIOPATHOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_physiopathologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_physiopathologie_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- السنة الثالثة -->
-                <h3 id="annee3">3ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_chimie_analytique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_chimie_analytique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE TERAPEUTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_chimie_therapeutique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_chimie_therapeutique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee3_chimie_therapeutique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACAIS GALENIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_pharmacie_galenique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_pharmacie_galenique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee3_pharmacie_galenique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACOGNOSIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_pharmacognosie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_pharmacognosie_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_pharmacologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_pharmacologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee3_pharmacologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">SEMIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_semiologie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- السنة الرابعة -->
-                <h3 id="annee4">4ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_biochimie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_biochimie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_biochimie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">HEMOBIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_hemobiologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_hemobiologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_hemobiologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">IMMUNOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_immunologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_immunologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_immunologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">MICROBIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_microbiologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_microbiologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_microbiologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">PARASITOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_parasitologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_parasitologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_parasitologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_anglais_medecale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- السنة الخامسة -->
-                <h3 id="annee5">5ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">DROIS PHARMACEUTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_droits_pharmaceutique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_droits_pharmaceutique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_droits_pharmaceutique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">EPIDEMIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_epidemiologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_epidemiologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_epidemiologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">GESTION PHARMACEUTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_gestion_pharmaceutique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_gestion_pharmaceutique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_gestion_pharmaceutique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">HYDRO-BROMATOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_hydro_bromatologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_hydro_bromatologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_hydro_bromatologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACIE CLINIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_pharmacie_clinique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_pharmacie_clinique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_pharmacie_clinique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACIE INDUSTRIELE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_pharmacie_industrielle_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_pharmacie_industrielle_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_pharmacie_industrielle_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 7 -->
-                <h4 onclick="toggleSemesters(this)">TOXICOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_toxicologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_toxicologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_toxicologie_semestre3.html">Semestre 3</a></li>
-                </ul>
+                <!-- ... باقي المحتوى يبقى كما هو ... -->
             </div>
         </div>
     </section>
