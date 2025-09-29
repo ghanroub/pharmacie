@@ -20,12 +20,11 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            /* نقل صورة الخلفية إلى body بدلاً من hero */
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
-        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
+        
         body::before {
             content: '';
             position: fixed;
@@ -37,7 +36,7 @@
             z-index: -1;
         }
         
-        /* زر إخفاء/إظهار الهيدر - جديد */
+        /* زر إخفاء/إظهار الهيدر */
         .header-toggle {
             position: fixed;
             top: 10px;
@@ -72,30 +71,48 @@
             transform: rotate(180deg);
         }
 
-        /* الشريط العلوي والأزرار الثابتة */
-        .top-bar {
+        /* الهيدر الرئيسي */
+        .main-header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease-in-out; /* إضافة الأنيميشن */
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease-in-out;
         }
         
-        .top-bar.hidden {
-            transform: translateY(-100%); /* إضافة إخفاء */
+        .main-header.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        
+        /* قسم الأزرار الثابتة */
+        .year-navigation {
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: top 0.4s ease-in-out;
+        }
+        
+        .main-header.hidden + .year-navigation {
+            top: 0;
         }
         
         header {
-            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             padding: 20px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        /* زر القائمة في الهاتف */
+        
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -106,13 +123,15 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+        
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
-        /* قائمة التنقل الرئيسية */
+        
         header nav {
             transform: translateX(-35px);
         }
+        
         header nav ul {
             list-style: none;
             display: flex;
@@ -120,19 +139,22 @@
             margin: 0;
             padding: 0;
         }
+        
         header nav ul li {
             position: relative;
         }
+        
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
         }
+        
         header nav ul li a:hover {
             color: #fff;
         }
-        /* تصميم اللوگو - تحسين */
+        
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -145,13 +167,14 @@
             padding: 5px 10px;
             border-radius: 8px;
         }
+        
         .logo a:hover {
             color: #0288d1;
             background: rgba(0, 188, 212, 0.1);
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
         }
-        /* قائمة التنقل المنسدلة */
+        
         .dropdown-content {
             display: none;
             position: absolute;
@@ -163,6 +186,7 @@
             border-radius: 0 0 10px 10px;
             animation: fadeIn 0.3s ease;
         }
+        
         .dropdown-content a {
             color: #ffeb3b;
             padding: 12px 16px;
@@ -172,10 +196,11 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s;
         }
+        
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        /* زر إغلاق القائمة المنسدلة في الهاتف */
+        
         .close-btn {
             position: absolute;
             top: 5px;
@@ -184,20 +209,7 @@
             cursor: pointer;
             color: #ffeb3b;
         }
-        /* قسم الأزرار الثابتة أسفل header */
-        .year-navigation {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .year-navigation h3 {
-            color: #ffeb3b;
-            font-size: 1.3rem;
-            margin: 10px 0;
-            text-align: center;
-        }
+        
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
@@ -205,6 +217,7 @@
             gap: 8px;
             padding-bottom: 10px;
         }
+        
         .year-btn {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
             color: white;
@@ -222,28 +235,30 @@
             align-items: center;
             justify-content: center;
         }
+        
         .year-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
+        
         .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
         .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
         
-        /* قسم البطل - إزالة الخلفية لأنها الآن في body */
         .hero {
             color: #fff;
             padding: 150px 20px 100px;
             text-align: center;
-            margin-top: 140px; /* تعويض للشريط العلوي الثابت */
+            margin-top: 140px;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+        
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
@@ -251,6 +266,7 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
         }
+        
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
@@ -264,30 +280,12 @@
             animation: fadeIn 2s forwards;
             animation-delay: 2s;
         }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .hero button {
-            background-color: #6a1b9a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .hero button:hover {
-            background-color: #4a4a88;
-        }
-        .hero .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            background-color: transparent;
-            border: none;
-        }
+        
         .sections-container {
             display: flex;
             justify-content: space-between;
@@ -295,6 +293,7 @@
             max-width: 1200px;
             padding: 0 20px;
         }
+        
         .section {
             flex: 1;
             margin: 0 10px;
@@ -304,16 +303,18 @@
             padding: 20px;
             color: #fff;
         }
+        
         .section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
             color: #ffeb3b;
         }
+        
         .section p {
             font-size: 1rem;
             line-height: 1.6;
         }
-        /* أنماط جديدة للعناوين والفصول والمواد */
+        
         .section h3 {
             font-size: 1.8rem;
             margin: 25px 0 15px;
@@ -323,26 +324,32 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        /* ألوان عناوين السنوات الدراسية */
+        
         #annee1 {
             background: linear-gradient(135deg, #6a1b9a, #4a148c);
         }
+        
         #annee2 {
             background: linear-gradient(135deg, #4a148c, #3f51b5);
         }
+        
         #annee3 {
             background: linear-gradient(135deg, #3f51b5, #2196f3);
         }
+        
         #annee4 {
             background: linear-gradient(135deg, #2196f3, #00bcd4);
         }
+        
         #annee5 {
             background: linear-gradient(135deg, #00bcd4, #009688);
         }
+        
         .section h3:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
+        
         .section h4 {
             font-size: 1.4rem;
             margin: 15px 0 10px;
@@ -356,6 +363,7 @@
             justify-content: space-between;
             align-items: center;
         }
+        
         .section h4::after {
             content: "\f078";
             font-family: "Font Awesome 6 Free";
@@ -363,14 +371,17 @@
             margin-left: 10px;
             transition: transform 0.3s ease;
         }
+        
         .section h4.active::after {
             transform: rotate(180deg);
         }
+        
         .section ul {
             list-style: none;
             padding: 0;
             margin: 0 0 20px;
         }
+        
         .section ul li {
             margin: 8px 0;
             padding: 8px 12px;
@@ -378,9 +389,11 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+        
         .section ul li:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+        
         .section ul li a {
             color: #ffeb3b;
             text-decoration: none;
@@ -388,11 +401,12 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
+        
         .section ul li a:hover {
             color: white;
             text-decoration: underline;
         }
-        /* تصميم القائمة المنسدلة في الهاتف */
+        
         @media (max-width: 768px) {
             .header-toggle {
                 top: 5px;
@@ -403,9 +417,11 @@
             .menu-btn {
                 display: block;
             }
+            
             header nav {
                 transform: none;
             }
+            
             header nav ul {
                 display: none;
                 flex-direction: column;
@@ -421,14 +437,17 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                 animation: fadeIn 0.3s ease;
             }
+            
             header nav ul.show {
                 display: flex;
             }
+            
             header nav ul li {
                 margin: 5px 0;
                 width: 100%;
                 text-align: center;
             }
+            
             header nav ul li a {
                 font-size: 1.2rem;
                 padding: 12px;
@@ -436,10 +455,11 @@
                 color: #ffeb3b;
                 transition: background-color 0.2s;
             }
+            
             header nav ul li a:hover {
                 background-color: rgba(255, 255, 255, 0.15);
             }
-            /* تعديل القائمة المنسدلة في الهاتف */
+            
             .dropdown-content {
                 position: static;
                 width: 100%;
@@ -451,10 +471,12 @@
                 box-shadow: none;
                 transition: all 0.3s ease;
             }
+            
             .dropdown-content.show {
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
+            
             .dropdown-content a {
                 padding: 12px 15px;
                 display: block;
@@ -463,40 +485,55 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 transition: background-color 0.2s;
             }
+            
             .dropdown-content a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
             }
+            
             .sections-container {
                 flex-direction: column;
             }
+            
             .hero h1 {
                 font-size: 2rem;
             }
+            
             .hero p {
                 font-size: 1rem;
             }
+            
             .buttons-container {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            
             .year-btn {
                 min-width: 80px;
                 padding: 8px 12px;
                 font-size: 0.8rem;
                 height: 35px;
             }
+            
             .hero {
-                margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
+                margin-top: 180px;
+            }
+            
+            .year-navigation {
+                top: 70px;
+            }
+            
+            .main-header.hidden + .year-navigation {
+                top: 0;
             }
         }
-        /* سلوك القائمة المنسدلة في الكمبيوتر */
+        
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block;
             }
         }
-        /* تصميم التذييل - إزالة position: fixed */
+        
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -504,23 +541,24 @@
             padding: 10px 15px;
             width: 100%;
         }
+        
         footer p {
             font-size: 0.8rem;
         }
-        /* إخفاء العناصر المخفية */
+        
         .hidden {
             display: none;
         }
     </style>
 </head>
 <body>
-    <!-- زر إخفاء/إظهار الهيدر - جديد -->
+    <!-- زر إخفاء/إظهار الهيدر -->
     <button class="header-toggle" id="headerToggle">
         <i class="fas fa-chevron-down"></i> Cacher l'en-tête
     </button>
 
-    <!-- الشريط العلوي والأزرار الثابتة -->
-    <div class="top-bar" id="mainHeader">
+    <!-- الهيدر الرئيسي -->
+    <div class="main-header" id="mainHeader">
         <header>
             <div class="logo">
                 <a href="index.html">💊GhaniPharma</a>
@@ -544,17 +582,19 @@
                 </ul>
             </nav>
         </header>
-        <!-- قسم الأزرار الثابتة -->
-        <div class="year-navigation">
-            <div class="buttons-container">
-                <button class="year-btn first-year">1ère Année</button>
-                <button class="year-btn second-year">2ème Année</button>
-                <button class="year-btn third-year">3ème Année</button>
-                <button class="year-btn fourth-year">4ème Année</button>
-                <button class="year-btn fifth-year">5ème Année</button>
-            </div>
+    </div>
+
+    <!-- قسم الأزرار الثابتة -->
+    <div class="year-navigation">
+        <div class="buttons-container">
+            <button class="year-btn first-year">1ère Année</button>
+            <button class="year-btn second-year">2ème Année</button>
+            <button class="year-btn third-year">3ème Année</button>
+            <button class="year-btn fourth-year">4ème Année</button>
+            <button class="year-btn fifth-year">5ème Année</button>
         </div>
     </div>
+
     <!-- قسم المحتوى الرئيسي -->
     <section id="examens" class="hero">
         <div class="container">
@@ -563,244 +603,249 @@
             <div class="section">
                 <h2>Examens Disponibles</h2>
                 <p>Liste des examens disponibles pour les étudiants en pharmacie.</p>
+                
                 <!-- السنة الأولى -->
                 <h3 id="annee1">1ère Année</h3>
-                <!-- المادة 1 -->
+                
                 <h4 onclick="toggleSemesters(this)">ANATOMIE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_anatomie_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 2 -->
+                
                 <h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_biologie_cellulaire_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee1_biologie_cellulaire_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee1_biologie_cellulaire_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 3 -->
+                
                 <h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_biologie_vegetale_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 4 -->
+                
                 <h4 onclick="toggleSemesters(this)">BIOSTATISTIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_bio_statistique_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 5 -->
+                
                 <h4 onclick="toggleSemesters(this)">CHIMIE GENERALE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_chimie_generale_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 6 -->
+                
                 <h4 onclick="toggleSemesters(this)">CHIMIE ORGANIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_chimie_organique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee1_chimie_organique_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 7 -->
+                
                 <h4 onclick="toggleSemesters(this)">HISTOIRE DE LA PHARMACIE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_histoire_pharmacie_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 8 -->
+                
                 <h4 onclick="toggleSemesters(this)">INFORMATIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_informatique_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 9 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHYSIOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_physiologie_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 10 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHYSIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_physique_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 11 -->
+                
                 <h4 onclick="toggleSemesters(this)">FRANCAIS MEDECALE</h4>
                 <ul class="hidden">
                     <li><a href="annee1_francais_medecale_semestre1.html">Semestre 1</a></li>
                 </ul>
+
                 <!-- السنة الثانية -->
                 <h3 id="annee2">2ème Année</h3>
-                <!-- المادة 1 -->
+                
                 <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_biochimie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_biochimie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee2_biochimie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 2 -->
+                
                 <h4 onclick="toggleSemesters(this)">BIOPHYSIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_biophysique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_biophysique_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee2_biophysique_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 3 -->
+                
                 <h4 onclick="toggleSemesters(this)">BOTANIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_botanique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_botanique_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 4 -->
+                
                 <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_chimie_analytique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_chimie_analytique_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 5 -->
+                
                 <h4 onclick="toggleSemesters(this)">CHIMIE MINERALE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_chimie_minerale_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_chimie_minerale_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 6 -->
+                
                 <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_anglais_medecale_semestre1.html">Semestre 1</a></li>
                 </ul>
-                <!-- المادة 7 -->
+                
                 <h4 onclick="toggleSemesters(this)">GENETIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_genetique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_genetique_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 8 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHYSIOPATHOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee2_physiopathologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee2_physiopathologie_semestre2.html">Semestre 2</a></li>
                 </ul>
+
                 <!-- السنة الثالثة -->
                 <h3 id="annee3">3ème Année</h3>
-                <!-- المادة 1 -->
+                
                 <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee3_chimie_analytique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee3_chimie_analytique_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 2 -->
+                
                 <h4 onclick="toggleSemesters(this)">CHIMIE TERAPEUTIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee3_chimie_therapeutique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee3_chimie_therapeutique_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee3_chimie_therapeutique_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 3 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHARMACAIS GALENIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee3_pharmacie_galenique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee3_pharmacie_galenique_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee3_pharmacie_galenique_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 4 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHARMACOGNOSIE</h4>
                 <ul class="hidden">
                     <li><a href="annee3_pharmacognosie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee3_pharmacognosie_semestre2.html">Semestre 2</a></li>
                 </ul>
-                <!-- المادة 5 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHARMACOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee3_pharmacologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee3_pharmacologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee3_pharmacologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 6 -->
+                
                 <h4 onclick="toggleSemesters(this)">SEMIOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee3_semiologie_semestre1.html">Semestre 1</a></li>
                 </ul>
+
                 <!-- السنة الرابعة -->
                 <h3 id="annee4">4ème Année</h3>
-                <!-- المادة 1 -->
+                
                 <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
                 <ul class="hidden">
                     <li><a href="annee4_biochimie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee4_biochimie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee4_biochimie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 2 -->
+                
                 <h4 onclick="toggleSemesters(this)">HEMOBIOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee4_hemobiologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee4_hemobiologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee4_hemobiologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 3 -->
+                
                 <h4 onclick="toggleSemesters(this)">IMMUNOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee4_immunologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee4_immunologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee4_immunologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 4 -->
+                
                 <h4 onclick="toggleSemesters(this)">MICROBIOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee4_microbiologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee4_microbiologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee4_microbiologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 5 -->
+                
                 <h4 onclick="toggleSemesters(this)">PARASITOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee4_parasitologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee4_parasitologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee4_parasitologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 6 -->
+                
                 <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
                 <ul class="hidden">
                     <li><a href="annee4_anglais_medecale_semestre1.html">Semestre 1</a></li>
                 </ul>
+
                 <!-- السنة الخامسة -->
                 <h3 id="annee5">5ème Année</h3>
-                <!-- المادة 1 -->
+                
                 <h4 onclick="toggleSemesters(this)">DROIS PHARMACEUTIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_droits_pharmaceutique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee5_droits_pharmaceutique_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee5_droits_pharmaceutique_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 2 -->
+                
                 <h4 onclick="toggleSemesters(this)">EPIDEMIOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_epidemiologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee5_epidemiologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee5_epidemiologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 3 -->
+                
                 <h4 onclick="toggleSemesters(this)">GESTION PHARMACEUTIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_gestion_pharmaceutique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee5_gestion_pharmaceutique_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee5_gestion_pharmaceutique_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 4 -->
+                
                 <h4 onclick="toggleSemesters(this)">HYDRO-BROMATOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_hydro_bromatologie_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee5_hydro_bromatologie_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee5_hydro_bromatologie_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 5 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHARMACIE CLINIQUE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_pharmacie_clinique_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee5_pharmacie_clinique_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee5_pharmacie_clinique_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 6 -->
+                
                 <h4 onclick="toggleSemesters(this)">PHARMACIE INDUSTRIELE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_pharmacie_industrielle_semestre1.html">Semestre 1</a></li>
                     <li><a href="annee5_pharmacie_industrielle_semestre2.html">Semestre 2</a></li>
                     <li><a href="annee5_pharmacie_industrielle_semestre3.html">Semestre 3</a></li>
                 </ul>
-                <!-- المادة 7 -->
+                
                 <h4 onclick="toggleSemesters(this)">TOXICOLOGIE</h4>
                 <ul class="hidden">
                     <li><a href="annee5_toxicologie_semestre1.html">Semestre 1</a></li>
@@ -810,11 +855,13 @@
             </div>
         </div>
     </section>
+    
     <footer>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
+
     <script>
-        // وظيفة إخفاء/إظهار الهيدر - جديد
+        // وظيفة إخفاء/إظهار الهيدر
         const headerToggle = document.getElementById('headerToggle');
         const mainHeader = document.getElementById('mainHeader');
         
@@ -830,21 +877,20 @@
             }
         });
         
-        // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
+        // إخفاء الهيدر تلقائياً عند التمرير
         let lastScrollTop = 0;
+        const scrollThreshold = 100;
         
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // التمرير لأسفل - إخفاء الهيدر
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
                 if (!mainHeader.classList.contains('hidden')) {
                     mainHeader.classList.add('hidden');
                     headerToggle.innerHTML = '<i class="fas fa-chevron-down"></i> Afficher l\'en-tête';
                     headerToggle.classList.add('collapsed');
                 }
-            } else if (scrollTop < lastScrollTop) {
-                // التمرير لأعلى - إظهار الهيدر
+            } else if (scrollTop < lastScrollTop - 10) {
                 if (mainHeader.classList.contains('hidden')) {
                     mainHeader.classList.remove('hidden');
                     headerToggle.innerHTML = '<i class="fas fa-chevron-up"></i> Cacher l\'en-tête';
@@ -855,13 +901,12 @@
             lastScrollTop = scrollTop;
         });
 
-        // عرض/إخفاء القائمة الرئيسية في الهاتف
+        // وظائف القوائم
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
 
-        // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
                 event.preventDefault();
@@ -870,7 +915,6 @@
             }
         }
 
-        // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
             const menuBtn = document.querySelector('.menu-btn');
@@ -880,12 +924,11 @@
             }
         });
 
-        // إغلاق القائمة المنسدلة
         function closeDropdown() {
             document.getElementById("dropdownContent").classList.remove("show");
         }
 
-        // الكود الخاص بالأزرار والتمرير
+        // أزرار السنوات
         document.querySelectorAll('.year-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const year = this.textContent.trim();
@@ -901,7 +944,7 @@
             });
         });
 
-        // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
+        // إظهار/إخفاء الفصول
         function toggleSemesters(element) {
             const semestersList = element.nextElementSibling;
             const semesters = semestersList.querySelectorAll('li');
