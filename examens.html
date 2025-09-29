@@ -71,39 +71,22 @@
             transform: rotate(180deg);
         }
 
-        /* الهيدر الرئيسي */
+        /* الهيدر الرئيسي المدمج مع الأزرار */
         .main-header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             background-color: rgba(0, 0, 0, 0.5);
-            transition: all 0.4s ease-in-out;
+            transition: transform 0.4s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .main-header.hidden {
             transform: translateY(-100%);
-            opacity: 0;
         }
         
-        /* قسم الأزرار الثابتة */
-        .year-navigation {
-            position: fixed;
-            top: 80px;
-            width: 100%;
-            z-index: 999;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: top 0.4s ease-in-out;
-        }
-        
-        .main-header.hidden + .year-navigation {
-            top: 0;
-        }
-        
+        /* الهيدر العلوي */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -210,6 +193,14 @@
             color: #ffeb3b;
         }
         
+        /* قسم الأزرار الثابتة - مدمج مع الهيدر */
+        .year-navigation {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
@@ -251,7 +242,7 @@
             color: #fff;
             padding: 150px 20px 100px;
             text-align: center;
-            margin-top: 140px;
+            margin-top: 160px; /* زيادة الهامش ليتناسب مع الهيدر المدمج */
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -516,15 +507,7 @@
             }
             
             .hero {
-                margin-top: 180px;
-            }
-            
-            .year-navigation {
-                top: 70px;
-            }
-            
-            .main-header.hidden + .year-navigation {
-                top: 0;
+                margin-top: 200px; /* زيادة الهامش في الهاتف */
             }
         }
         
@@ -557,7 +540,7 @@
         <i class="fas fa-chevron-down"></i> Cacher l'en-tête
     </button>
 
-    <!-- الهيدر الرئيسي -->
+    <!-- الهيدر الرئيسي المدمج مع الأزرار -->
     <div class="main-header" id="mainHeader">
         <header>
             <div class="logo">
@@ -582,16 +565,16 @@
                 </ul>
             </nav>
         </header>
-    </div>
-
-    <!-- قسم الأزرار الثابتة -->
-    <div class="year-navigation">
-        <div class="buttons-container">
-            <button class="year-btn first-year">1ère Année</button>
-            <button class="year-btn second-year">2ème Année</button>
-            <button class="year-btn third-year">3ème Année</button>
-            <button class="year-btn fourth-year">4ème Année</button>
-            <button class="year-btn fifth-year">5ème Année</button>
+        
+        <!-- قسم الأزرار مدمج مع الهيدر -->
+        <div class="year-navigation">
+            <div class="buttons-container">
+                <button class="year-btn first-year">1ère Année</button>
+                <button class="year-btn second-year">2ème Année</button>
+                <button class="year-btn third-year">3ème Année</button>
+                <button class="year-btn fourth-year">4ème Année</button>
+                <button class="year-btn fifth-year">5ème Année</button>
+            </div>
         </div>
     </div>
 
@@ -604,7 +587,7 @@
                 <h2>Examens Disponibles</h2>
                 <p>Liste des examens disponibles pour les étudiants en pharmacie.</p>
                 
-                <!-- السنة الأولى -->
+                <!-- المحتوى الكامل للسنوات والمواد -->
                 <h3 id="annee1">1ère Année</h3>
                 
                 <h4 onclick="toggleSemesters(this)">ANATOMIE</h4>
