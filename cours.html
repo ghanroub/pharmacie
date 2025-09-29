@@ -132,8 +132,7 @@
         header nav ul li a:hover {
             color: #fff;
         }
-        
-        /* تحسينات اللوغو */
+        /* تصميم اللوگو مع التحسينات */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -152,7 +151,6 @@
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
         }
-        
         /* قائمة التنقل المنسدلة */
         .dropdown-content {
             display: none;
@@ -233,7 +231,6 @@
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-        
         /* قسم البطل - إزالة الخلفية لأنها الآن في body */
         .hero {
             color: #fff;
@@ -522,7 +519,7 @@
     </button>
     
     <!-- الشريط العلوي والأزرار الثابتة -->
-    <div class="top-bar" id="topBar">
+    <div class="top-bar" id="mainHeader">
         <header>
             <div class="logo">
                 <a href="index.html">💊 GhaniPharma</a>
@@ -818,12 +815,12 @@
     <script>
         // وظيفة إخفاء/إظهار الهيدر
         const headerToggle = document.getElementById('headerToggle');
-        const topBar = document.getElementById('topBar');
+        const mainHeader = document.getElementById('mainHeader');
         
         headerToggle.addEventListener('click', function() {
-            topBar.classList.toggle('hidden');
+            mainHeader.classList.toggle('hidden');
             
-            if (topBar.classList.contains('hidden')) {
+            if (mainHeader.classList.contains('hidden')) {
                 headerToggle.innerHTML = '<i class="fas fa-chevron-down"></i> Afficher l\'en-tête';
                 headerToggle.classList.add('collapsed');
             } else {
@@ -840,15 +837,15 @@
             
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 // التمرير لأسفل - إخفاء الهيدر
-                if (!topBar.classList.contains('hidden')) {
-                    topBar.classList.add('hidden');
+                if (!mainHeader.classList.contains('hidden')) {
+                    mainHeader.classList.add('hidden');
                     headerToggle.innerHTML = '<i class="fas fa-chevron-down"></i> Afficher l\'en-tête';
                     headerToggle.classList.add('collapsed');
                 }
             } else if (scrollTop < lastScrollTop) {
                 // التمرير لأعلى - إظهار الهيدر
-                if (topBar.classList.contains('hidden')) {
-                    topBar.classList.remove('hidden');
+                if (mainHeader.classList.contains('hidden')) {
+                    mainHeader.classList.remove('hidden');
                     headerToggle.innerHTML = '<i class="fas fa-chevron-up"></i> Cacher l\'en-tête';
                     headerToggle.classList.remove('collapsed');
                 }
