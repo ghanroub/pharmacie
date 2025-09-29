@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPs - GhaniPharma</title>
+    <title>Tps - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -36,17 +36,24 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
+        
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease-in-out; /* إضافة الأنيميشن */
         }
+        
+        .top-bar.hidden {
+            transform: translateY(-100%); /* إضافة إخفاء */
+        }
+        
         header {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
             color: #ffeb3b;
             padding: 20px 15px;
             display: flex;
@@ -89,6 +96,25 @@
         }
         header nav ul li a:hover {
             color: #fff;
+        }
+        /* تصميم اللوگو - تحسين */
+        .logo a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+        .logo a:hover {
+            color: #0288d1;
+            background: rgba(0, 188, 212, 0.1);
+            transform: scale(1.05);
+            text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
         }
         /* قائمة التنقل المنسدلة */
         .dropdown-content {
@@ -170,16 +196,7 @@
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-        /* تصميم اللوگو */
-        .logo a {
-            color: #00bcd4;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .logo a:hover {
-            color: #0288d1;
-        }
+        
         /* قسم البطل - إزالة الخلفية لأنها الآن في body */
         .hero {
             color: #fff;
@@ -457,7 +474,7 @@
 </head>
 <body>
     <!-- الشريط العلوي والأزرار الثابتة -->
-    <div class="top-bar">
+    <div class="top-bar" id="mainHeader">
         <header>
             <div class="logo">
                 <a href="index.html">💊GhaniPharma</a>
@@ -472,8 +489,8 @@
                         <div id="dropdownContent" class="dropdown-content">
                             <span class="close-btn" onclick="closeDropdown()">&times;</span>
                             <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> TPs</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> TDs</a>
+                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
+                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
                             <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                         </div>
                     </li>
@@ -498,8 +515,8 @@
         </div>
         <div class="sections-container">
             <div class="section">
-                <h2>TPs Disponibles</h2>
-                <p>Liste des TPs disponibles pour les étudiants en pharmacie.</p>
+                <h2>Tps Disponibles</h2>
+                <p>Liste des tps disponibles pour les étudiants en pharmacie.</p>
                 <!-- السنة الأولى -->
                 <h3 id="annee1">1ère Année</h3>
                 <!-- المادة 1 -->
@@ -751,6 +768,24 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
+        // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
+        let lastScrollTop = 0;
+        const mainHeader = document.getElementById('mainHeader');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // التمرير لأسفل - إخفاء الهيدر
+                mainHeader.classList.add('hidden');
+            } else if (scrollTop < lastScrollTop) {
+                // التمرير لأعلى - إظهار الهيدر
+                mainHeader.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
