@@ -240,7 +240,8 @@
         footer p {
             font-size: 0.8rem;
         }
-        /* تصميم القائمة المنسدلة في الهاتف */
+
+        /* تحسينات القائمة المنسدلة للهاتف - مطابقة للكود الثاني */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -272,7 +273,14 @@
                 font-size: 1.2rem;
                 padding: 12px;
                 display: inline-block;
+                color: #ffeb3b;
+                transition: background-color 0.2s;
             }
+            header nav ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+            
+            /* تعديل القائمة المنسدلة في الهاتف - مطابق للكود الثاني */
             .dropdown-content {
                 position: static;
                 width: 100%;
@@ -288,6 +296,18 @@
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
+            .dropdown-content a {
+                padding: 12px 15px;
+                display: block;
+                text-align: center;
+                color: #ffeb3b;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transition: background-color 0.2s;
+            }
+            .dropdown-content a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            
             .content {
                 margin-top: 180px;
             }
