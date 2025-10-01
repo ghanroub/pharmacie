@@ -24,6 +24,7 @@
             background-size: cover;
             position: relative;
         }
+        /* طبقة شبه شفافة لتحسين قراءة النص */
         body::before {
             content: '';
             position: fixed;
@@ -34,7 +35,6 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
-        
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
             position: fixed;
@@ -45,11 +45,9 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.4s ease-in-out;
         }
-        
         .top-bar.hidden {
             transform: translateY(-100%);
         }
-        
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -58,6 +56,7 @@
             justify-content: space-between;
             align-items: center;
         }
+        /* زر القائمة في الهاتف */
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -71,6 +70,7 @@
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
+        /* قائمة التنقل الرئيسية */
         header nav {
             transform: translateX(-35px);
         }
@@ -93,6 +93,7 @@
         header nav ul li a:hover {
             color: #fff;
         }
+        /* تصميم اللوغو */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -111,6 +112,7 @@
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
         }
+        /* قائمة التنقل المنسدلة */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -134,6 +136,7 @@
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+        /* زر إغلاق القائمة المنسدلة في الهاتف */
         .close-btn {
             position: absolute;
             top: 5px;
@@ -142,271 +145,117 @@
             cursor: pointer;
             color: #ffeb3b;
         }
-        .year-navigation {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .year-navigation h3 {
-            color: #ffeb3b;
-            font-size: 1.3rem;
-            margin: 10px 0;
-            text-align: center;
-        }
-        .buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            padding-bottom: 10px;
-        }
-        .year-btn {
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-            min-width: 100px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .year-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        }
-        .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
-        .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
-        .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
-        .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
-        .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-        
-        /* قسم البطل */
-        .hero {
-            color: #fff;
-            padding: 150px 20px 100px;
-            text-align: center;
+        /* قسم المحتوى الرئيسي */
+        .content {
             margin-top: 140px;
+            padding: 20px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
-        .hero h1 {
-            font-size: 3rem;
+        .content h1 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #ffeb3b;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
+            text-align: center;
         }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
             color: white;
             text-shadow:
                 -1px -1px 0 #000,
                 1px -1px 0 #000,
                 -1px 1px 0 #000,
                 1px 1px 0 #000;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-            animation-delay: 2s;
+            text-align: center;
+            max-width: 800px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .hero button {
-            background-color: #6a1b9a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .hero button:hover {
-            background-color: #4a4a88;
-        }
-        .hero .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            background-color: transparent;
-            border: none;
-        }
-        .sections-container {
-            display: flex;
-            justify-content: space-between;
+        /* قسم الفصول والمواد */
+        .semester-section {
             width: 100%;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        .section {
-            flex: 1;
-            margin: 0 10px;
+            max-width: 1000px;
+            margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
             padding: 20px;
             color: #fff;
         }
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #ffeb3b;
-        }
-        .section p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .section h3 {
+        .semester-section h2 {
             font-size: 1.8rem;
-            margin: 25px 0 15px;
+            margin-bottom: 15px;
+            color: #ffeb3b;
+            text-align: center;
+        }
+        .semester-section h3 {
+            font-size: 1.4rem;
+            margin: 15px 0;
             padding: 10px 15px;
             color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #annee1 {
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-        }
-        .section h3:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-        .section h4 {
-            font-size: 1.4rem;
-            margin: 15px 0 10px;
-            padding: 8px 12px;
-            color: #ffeb3b;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 5px;
-            border-left: 4px solid #6a1b9a;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .section h4::after {
+        .semester-section h3::after {
             content: "\f078";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             margin-left: 10px;
             transition: transform 0.3s ease;
         }
-        .section h4.active::after {
+        .semester-section h3.active::after {
             transform: rotate(180deg);
         }
-        .section ul {
+        .semester-section ul {
             list-style: none;
             padding: 0;
             margin: 0 0 20px;
+            display: none;
         }
-        .section ul li {
+        .semester-section ul.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        .semester-section ul li {
             margin: 8px 0;
             padding: 8px 12px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-        .section ul li:hover {
+        .semester-section ul li:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        .section ul li a {
+        .semester-section ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
-        .section ul li a:hover {
+        .semester-section ul li a:hover {
             color: white;
             text-decoration: underline;
         }
-        
-        /* تصميم محتوى الدروس */
-        .lesson-content {
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            padding: 25px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .lesson-title {
+        /* تصميم التذييل */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
-            font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(255, 235, 59, 0.3);
+            padding: 10px 15px;
+            width: 100%;
         }
-        
-        .lesson-section {
-            margin-bottom: 30px;
+        footer p {
+            font-size: 0.8rem;
         }
-        
-        .lesson-section h3 {
-            color: #ffeb3b;
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 4px solid #6a1b9a;
-        }
-        
-        .lesson-section p {
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-        
-        .lesson-list {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        
-        .lesson-list li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        
-        .back-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .back-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            color: #ffeb3b;
-        }
-        
         /* تصميم القائمة المنسدلة في الهاتف */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
-            }
-            header nav {
-                transform: none;
             }
             header nav ul {
                 display: none;
@@ -435,11 +284,6 @@
                 font-size: 1.2rem;
                 padding: 12px;
                 display: inline-block;
-                color: #ffeb3b;
-                transition: background-color 0.2s;
-            }
-            header nav ul li a:hover {
-                background-color: rgba(255, 255, 255, 0.15);
             }
             .dropdown-content {
                 position: static;
@@ -456,66 +300,25 @@
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
-            .dropdown-content a {
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-                color: #ffeb3b;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                transition: background-color 0.2s;
-            }
-            .dropdown-content a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            .sections-container {
-                flex-direction: column;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .buttons-container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .year-btn {
-                min-width: 80px;
-                padding: 8px 12px;
-                font-size: 0.8rem;
-                height: 35px;
-            }
-            .hero {
+            .content {
                 margin-top: 180px;
             }
-            .lesson-title {
-                font-size: 1.8rem;
-            }
         }
+        /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block;
             }
         }
-        footer {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #ffeb3b;
-            text-align: center;
-            padding: 10px 15px;
-            width: 100%;
-        }
-        footer p {
-            font-size: 0.8rem;
-        }
-        .hidden {
-            display: none;
+        /* تأثيرات التحريك */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي والأزرار الثابتة -->
+    <!-- الشريط العلوي -->
     <div class="top-bar" id="mainHeader">
         <header>
             <div class="logo">
@@ -540,101 +343,57 @@
                 </ul>
             </nav>
         </header>
-        <!-- قسم الأزرار الثابتة -->
-        <div class="year-navigation">
-            <div class="buttons-container">
-                <button class="year-btn first-year">1ère Année</button>
-                <button class="year-btn second-year">2ème Année</button>
-                <button class="year-btn third-year">3ème Année</button>
-                <button class="year-btn fourth-year">4ème Année</button>
-                <button class="year-btn fifth-year">5ème Année</button>
-            </div>
-        </div>
     </div>
     <!-- قسم المحتوى الرئيسي -->
-    <section id="cours" class="hero">
-        <div class="container">
+    <div class="content">
+        <h1>Anatomie</h1>
+        <p>
+            Bienvenue dans la section dédiée à l'Anatomie. Ici, vous trouverez des cours détaillés sur la structure du corps humain,
+            organisés par semestre pour faciliter votre apprentissage.
+        </p>
+        <!-- قسم الفصول -->
+        <div class="semester-section">
+            <h2>Semestre 1</h2>
+            <h3 onclick="toggleContent(this)">Introduction à l'Anatomie</h3>
+            <ul>
+                <li><a href="#">Télécharger le cours (PDF)</a></li>
+                <li><a href="#">Voir la vidéo explicative</a></li>
+            </ul>
+            <h3 onclick="toggleContent(this)">Système Squelettique</h3>
+            <ul>
+                <li><a href="#">Télécharger le cours (PDF)</a></li>
+                <li><a href="#">Voir la vidéo explicative</a></li>
+            </ul>
+            <h3 onclick="toggleContent(this)">Système Musculaire</h3>
+            <ul>
+                <li><a href="#">Télécharger le cours (PDF)</a></li>
+                <li><a href="#">Voir la الفيديو explicative</a></li>
+            </ul>
         </div>
-        <div class="sections-container">
-            <div class="section">
-                <div class="lesson-content">
-                    <h1 class="lesson-title">Anatomie - 1ère Année</h1>
-                    
-                    <div class="lesson-section">
-                        <h3>Introduction à l'Anatomie</h3>
-                        <p>L'anatomie est la science qui étudie la structure du corps humain et les relations entre ses différentes parties. Elle constitue la base de la médecine et de la pharmacie.</p>
-                        
-                        <h3>Objectifs du cours</h3>
-                        <p>Ce cours vise à fournir aux étudiants en pharmacie une compréhension approfondie de :</p>
-                        <ul class="lesson-list">
-                            <li>L'organisation générale du corps humain</li>
-                            <li>Les systèmes et appareils anatomiques</li>
-                            <li>La terminologie anatomique</li>
-                            <li>Les relations entre structure et fonction</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="lesson-section">
-                        <h3>Plan du cours</h3>
-                        <ul class="lesson-list">
-                            <li><strong>Chapitre 1 :</strong> Introduction à l'anatomie et terminologie</li>
-                            <li><strong>Chapitre 2 :</strong> Système squelettique</li>
-                            <li><strong>Chapitre 3 :</strong> Système musculaire</li>
-                            <li><strong>Chapitre 4 :</strong> Système nerveux</li>
-                            <li><strong>Chapitre 5 :</strong> Système cardiovasculaire</li>
-                            <li><strong>Chapitre 6 :</strong> Système respiratoire</li>
-                            <li><strong>Chapitre 7 :</strong> Système digestif</li>
-                            <li><strong>Chapitre 8 :</strong> Système urinaire</li>
-                            <li><strong>Chapitre 9 :</strong> Système reproducteur</li>
-                            <li><strong>Chapitre 10 :</strong> Système endocrinien</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="lesson-section">
-                        <h3>Ressources supplémentaires</h3>
-                        <ul class="lesson-list">
-                            <li>Atlas d'anatomie en ligne</li>
-                            <li>Vidéos de dissection</li>
-                            <li>Quiz d'auto-évaluation</li>
-                            <li>Fiches de révision</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="cours.html" class="back-btn">
-                        <i class="fas fa-arrow-left"></i> Retour aux cours
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+    <!-- التذييل -->
     <footer>
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
+    <!-- جافا سكربت لإدارة القائمة والتأثيرات -->
     <script>
-        // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
+        // إخفاء الهيدر تلقائياً عند التمرير لأسفل
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
-        
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
             if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // التمرير لأسفل - إخفاء الهيدر
                 mainHeader.classList.add('hidden');
             } else if (scrollTop < lastScrollTop) {
-                // التمرير لأعلى - إظهار الهيدر
                 mainHeader.classList.remove('hidden');
             }
-            
             lastScrollTop = scrollTop;
         });
-
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -643,7 +402,6 @@
                 dropdownContent.classList.toggle("show");
             }
         }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -653,38 +411,15 @@
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
         // إغلاق القائمة المنسدلة
         function closeDropdown() {
             document.getElementById("dropdownContent").classList.remove("show");
         }
-
-        // الكود الخاص بالأزرار والتمرير
-        document.querySelectorAll('.year-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const year = this.textContent.trim();
-                let targetId;
-                if (year === "1ère Année") targetId = "annee1";
-                else if (year === "2ème Année") targetId = "annee2";
-                else if (year === "3ème Année") targetId = "annee3";
-                else if (year === "4ème Année") targetId = "annee4";
-                else if (year === "5ème Année") targetId = "annee5";
-                document.getElementById(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
-        function toggleSemesters(element) {
-            const semestersList = element.nextElementSibling;
-            const semesters = semestersList.querySelectorAll('li');
-            if (semesters.length === 1) {
-                window.location.href = semesters[0].querySelector('a').href;
-            } else {
-                semestersList.classList.toggle('hidden');
-                element.classList.toggle('active');
-            }
+        // عرض/إخفاء المحتوى عند النقر على العنوان
+        function toggleContent(element) {
+            const contentList = element.nextElementSibling;
+            contentList.classList.toggle('show');
+            element.classList.toggle('active');
         }
     </script>
 </body>
