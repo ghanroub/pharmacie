@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANATOMIE - GhaniPharma</title>
+    <title>Anatomie - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -35,7 +35,7 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
-        /* الشريط العلوي والأزرار الثابتة */
+        /* الشريط العلوي */
         .top-bar {
             position: fixed;
             top: 0;
@@ -210,11 +210,15 @@
         .semester-section h3.active::after {
             transform: rotate(180deg);
         }
+        /* تعديل القائمة المنسدلة */
         .semester-section ul {
             list-style: none;
             padding: 0;
-            margin: 0 0 20px;
+            margin: 0;
+            width: 100%;
             display: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
         }
         .semester-section ul.show {
             display: block;
@@ -222,24 +226,18 @@
         }
         .semester-section ul li {
             margin: 8px 0;
-            padding: 8px 12px;
+            padding: 8px 15px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .semester-section ul li:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            width: 100%;
+            box-sizing: border-box;
         }
         .semester-section ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-        .semester-section ul li a:hover {
-            color: white;
-            text-decoration: underline;
+            display: block;
+            width: 100%;
         }
         /* تصميم التذييل */
         footer {
@@ -346,9 +344,10 @@
     </div>
     <!-- قسم المحتوى الرئيسي -->
     <div class="content">
-        <h1>ANATOMIE</h1>
+        <h1>Anatomie</h1>
         <p>
-            Bienvenue dans la section Anatomie, cette matière couvre l’ensemble des organes et systèmes du corps humain afin de comprendre leur structure et leurs relations.
+            Bienvenue dans la section dédiée à l'Anatomie. Ici, vous trouverez des cours détaillés sur la structure du corps humain,
+            organisés par semestre pour faciliter votre apprentissage.
         </p>
         <!-- قسم الفصول -->
         <div class="semester-section">
