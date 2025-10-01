@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anatomie - GhaniPharma</title>
+    <title>BIOCHIMIE S2- GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -35,19 +35,8 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
-        /* الشريط العلوي */
-        .top-bar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease-in-out;
-        }
-        .top-bar.hidden {
-            transform: translateY(-100%);
-        }
+        
+        /* الهيدر المعدل - مطابق للكود الثاني */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -55,8 +44,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: transform 0.4s ease-in-out;
         }
-        /* زر القائمة في الهاتف */
+        
+        header.hidden {
+            transform: translateY(-100%);
+        }
+        
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -70,10 +68,7 @@
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
-        /* قائمة التنقل الرئيسية */
-        header nav {
-            transform: translateX(-35px);
-        }
+        
         header nav ul {
             list-style: none;
             display: flex;
@@ -89,11 +84,14 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         header nav ul li a:hover {
             color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
         }
-        /* تصميم اللوغو */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -112,16 +110,19 @@
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
         }
-        /* قائمة التنقل المنسدلة */
+        
+        /* تحسينات القائمة المنسدلة */
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1001;
             left: 0;
+            top: 100%;
             border-radius: 0 0 10px 10px;
+            overflow: hidden;
             animation: fadeIn 0.3s ease;
         }
         .dropdown-content a {
@@ -134,17 +135,13 @@
             transition: background-color 0.2s;
         }
         .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
         }
-        /* زر إغلاق القائمة المنسدلة في الهاتف */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #ffeb3b;
+        .dropdown-content a:last-child {
+            border-bottom: none;
         }
+
         /* قسم المحتوى الرئيسي */
         .content {
             margin-top: 140px;
@@ -210,15 +207,11 @@
         .semester-section h3.active::after {
             transform: rotate(180deg);
         }
-        /* تعديل القائمة المنسدلة */
         .semester-section ul {
             list-style: none;
             padding: 0;
-            margin: 0;
-            width: 100%;
+            margin: 0 0 20px;
             display: none;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
         }
         .semester-section ul.show {
             display: block;
@@ -226,18 +219,24 @@
         }
         .semester-section ul li {
             margin: 8px 0;
-            padding: 8px 15px;
+            padding: 8px 12px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+        .semester-section ul li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .semester-section ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
-            display: block;
-            width: 100%;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        .semester-section ul li a:hover {
+            color: white;
+            text-decoration: underline;
         }
         /* تصميم التذييل */
         footer {
@@ -250,16 +249,18 @@
         footer p {
             font-size: 0.8rem;
         }
-        /* تصميم القائمة المنسدلة في الهاتف */
+
+        /* تحسينات القائمة المنسدلة للهاتف - مطابقة للكود الثاني */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
             }
+            
             header nav ul {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background-color: rgba(0, 0, 0, 0.95);
@@ -269,90 +270,111 @@
                 border-radius: 0 0 10px 10px;
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                 animation: fadeIn 0.3s ease;
+                z-index: 1001;
             }
+            
             header nav ul.show {
                 display: flex;
             }
+            
             header nav ul li {
-                margin: 5px 0;
+                margin: 0;
                 width: 100%;
                 text-align: center;
             }
+            
             header nav ul li a {
                 font-size: 1.2rem;
-                padding: 12px;
-                display: inline-block;
+                padding: 15px;
+                display: block;
+                width: 100%;
+                border-radius: 0;
             }
+            
+            /* تعديل القائمة المنسدلة في الهاتف */
             .dropdown-content {
                 position: static;
                 width: 100%;
                 display: none;
-                background-color: rgba(0, 0, 0, 0.9);
+                background-color: rgba(0, 0, 0, 0.8);
                 padding: 0;
                 margin: 0;
                 border-radius: 0;
                 box-shadow: none;
-                transition: all 0.3s ease;
+                animation: none;
             }
+            
             .dropdown-content.show {
                 display: block;
-                animation: fadeIn 0.3s ease;
             }
+            
+            .dropdown-content a {
+                padding: 15px;
+                display: block;
+                text-align: center;
+                color: #ffeb3b;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 1.1rem;
+            }
+            
             .content {
                 margin-top: 180px;
             }
         }
+        
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block;
             }
+            
+            header nav ul li a.dropbtn {
+                cursor: pointer;
+            }
         }
+        
         /* تأثيرات التحريك */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي -->
-    <div class="top-bar" id="mainHeader">
-        <header>
-            <div class="logo">
-                <a href="index.html">💊GhaniPharma</a>
-            </div>
-            <div class="menu-btn" onclick="toggleMenu()">☰</div>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
-                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li class="dropdown">
-                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <span class="close-btn" onclick="closeDropdown()">&times;</span>
-                            <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
-                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
-                        </div>
-                    </li>
-                    <li><a href="index.html#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <!-- الهيدر المعدل - مطابق للكود الثاني -->
+    <header id="mainHeader">
+        <div class="logo">
+            <a href="index.html">💊 GhaniPharma</a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li class="dropdown">
+                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
+                        <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
+                        <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
+                        <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
+                    </div>
+                </li>
+                <li><a href="index.html#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- قسم المحتوى الرئيسي -->
     <div class="content">
-        <h1>Anatomie</h1>
+        <h1>BIOCHIMIE S2</h1>
         <p>
-            Bienvenue dans la section dédiée à l'Anatomie. Ici, vous trouverez des cours détaillés sur la structure du corps humain,
-            organisés par semestre pour faciliter votre apprentissage.
+            Bienvenue dans la section Biochimie. Ici, vous trouverez une présentation claire et simple de cette science qui étudie la composition chimique du vivant et les réactions moléculaires essentielles à la vie.
         </p>
         <!-- قسم الفصول -->
         <div class="semester-section">
             <h2>Semestre 1</h2>
-            <h3 onclick="toggleContent(this)">Introduction à l'Anatomie</h3>
+            <h3 onclick="toggleContent(this)">Introduction</h3>
             <ul>
                 <li><a href="#">Télécharger le cours (PDF)</a></li>
                 <li><a href="#">Voir la vidéo explicative</a></li>
@@ -375,44 +397,69 @@
     </footer>
     <!-- جافا سكربت لإدارة القائمة والتأثيرات -->
     <script>
-        // إخفاء الهيدر تلقائياً عند التمرير لأسفل
+        // إخفاء الهيدر تلقائياً عند التمرير لأسفل - مطابق للكود الثاني
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
+        
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 mainHeader.classList.add('hidden');
             } else if (scrollTop < lastScrollTop) {
                 mainHeader.classList.remove('hidden');
             }
+            
             lastScrollTop = scrollTop;
         });
+
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
-            var navMenu = document.getElementById("navMenu");
+            const navMenu = document.getElementById("navMenu");
+            const isShowing = navMenu.classList.contains("show");
+            
+            // إغلاق القائمة المنسدلة إذا كانت مفتوحة
+            if (isShowing) {
+                document.getElementById("dropdownContent").classList.remove("show");
+            }
+            
             navMenu.classList.toggle("show");
         }
+
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
                 event.preventDefault();
+                event.stopPropagation();
                 const dropdownContent = document.getElementById("dropdownContent");
                 dropdownContent.classList.toggle("show");
             }
         }
-        // إغلاق القائمة عند النقر خارجها
+
+        // إغلاق القوائم عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
             const menuBtn = document.querySelector('.menu-btn');
+            const dropdownContent = document.getElementById("dropdownContent");
+            
+            // إغلاق القائمة الرئيسية إذا تم النقر خارجها
             if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
                 navMenu.classList.remove("show");
-                document.getElementById("dropdownContent").classList.remove("show");
+            }
+            
+            // إغلاق القائمة المنسدلة إذا تم النقر خارجها (للهاتف)
+            if (window.innerWidth <= 768) {
+                if (!event.target.closest('.dropdown')) {
+                    dropdownContent.classList.remove("show");
+                }
             }
         });
-        // إغلاق القائمة المنسدلة
-        function closeDropdown() {
-            document.getElementById("dropdownContent").classList.remove("show");
-        }
+
+        // منع إغلاق القائمة المنسدلة عند النقر داخلها
+        document.getElementById('dropdownContent').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
         // عرض/إخفاء المحتوى عند النقر على العنوان
         function toggleContent(element) {
             const contentList = element.nextElementSibling;
