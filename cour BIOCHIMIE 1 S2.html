@@ -35,19 +35,8 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
-        /* الشريط العلوي والأزرار الثابتة */
-        .top-bar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease-in-out;
-        }
-        .top-bar.hidden {
-            transform: translateY(-100%);
-        }
+        
+        /* الهيدر المعدل - مطابق للكود الثاني */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -55,8 +44,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: transform 0.4s ease-in-out;
         }
-        /* زر القائمة في الهاتف */
+        
+        header.hidden {
+            transform: translateY(-100%);
+        }
+        
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -70,7 +68,6 @@
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
-        /* قائمة التنقل الرئيسية */
         header nav {
             transform: translateX(-35px);
         }
@@ -93,7 +90,6 @@
         header nav ul li a:hover {
             color: #fff;
         }
-        /* تصميم اللوغو */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -112,7 +108,7 @@
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
         }
-        /* قائمة التنقل المنسدلة */
+        
         .dropdown-content {
             display: none;
             position: absolute;
@@ -136,15 +132,7 @@
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        /* زر إغلاق القائمة المنسدلة في الهاتف */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #ffeb3b;
-        }
+
         /* قسم المحتوى الرئيسي */
         .content {
             margin-top: 140px;
@@ -318,32 +306,30 @@
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي -->
-    <div class="top-bar" id="mainHeader">
-        <header>
-            <div class="logo">
-                <a href="index.html">💊GhaniPharma</a>
-            </div>
-            <div class="menu-btn" onclick="toggleMenu()">☰</div>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
-                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li class="dropdown">
-                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <span class="close-btn" onclick="closeDropdown()">&times;</span>
-                            <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
-                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
-                        </div>
-                    </li>
-                    <li><a href="index.html#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <!-- الهيدر المعدل - مطابق للكود الثاني -->
+    <header id="mainHeader">
+        <div class="logo">
+            <a href="index.html">💊 GhaniPharma</a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li class="dropdown">
+                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
+                        <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
+                        <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
+                        <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
+                    </div>
+                </li>
+                <li><a href="index.html#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- قسم المحتوى الرئيسي -->
     <div class="content">
         <h1>BIOCHIMIE S2</h1>
@@ -376,18 +362,22 @@
     </footer>
     <!-- جافا سكربت لإدارة القائمة والتأثيرات -->
     <script>
-        // إخفاء الهيدر تلقائياً عند التمرير لأسفل
+        // إخفاء الهيدر تلقائياً عند التمرير لأسفل - مطابق للكود الثاني
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
+        
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 mainHeader.classList.add('hidden');
             } else if (scrollTop < lastScrollTop) {
                 mainHeader.classList.remove('hidden');
             }
+            
             lastScrollTop = scrollTop;
         });
+
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
@@ -410,10 +400,6 @@
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-        // إغلاق القائمة المنسدلة
-        function closeDropdown() {
-            document.getElementById("dropdownContent").classList.remove("show");
-        }
         // عرض/إخفاء المحتوى عند النقر على العنوان
         function toggleContent(element) {
             const contentList = element.nextElementSibling;
