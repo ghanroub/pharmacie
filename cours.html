@@ -20,11 +20,12 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* نقل صورة الخلفية إلى body بدلاً من hero */
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
-        /* طبقة شبه شفافة لتحسين قراءة النص */
+        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
         body::before {
             content: '';
             position: fixed;
@@ -35,21 +36,24 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
+        
         /* الشريط العلوي والأزرار الثابتة */
         .top-bar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease-in-out;
+            transition: transform 0.4s ease-in-out; /* إضافة الأنيميشن */
         }
+        
         .top-bar.hidden {
-            transform: translateY(-100%);
+            transform: translateY(-100%); /* إضافة إخفاء */
         }
+        
         header {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
             color: #ffeb3b;
             padding: 20px 15px;
             display: flex;
@@ -93,7 +97,7 @@
         header nav ul li a:hover {
             color: #fff;
         }
-        /* تصميم اللوغو */
+        /* تصميم اللوگو - تحسين */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -192,13 +196,13 @@
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
-
-        /* قسم المحتوى الرئيسي */
+        
+        /* قسم البطل - إزالة الخلفية لأنها الآن في body */
         .hero {
             color: #fff;
             padding: 150px 20px 100px;
             text-align: center;
-            margin-top: 140px;
+            margin-top: 140px; /* تعويض للشريط العلوي الثابت */
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -274,7 +278,7 @@
             font-size: 1rem;
             line-height: 1.6;
         }
-        /* تعديل عناوين المواد الدراسية */
+        /* أنماط جديدة للعناوين والفصول والمواد */
         .section h3 {
             font-size: 1.8rem;
             margin: 25px 0 15px;
@@ -304,15 +308,14 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
-        /* تعديل عناوين المواد الدراسية */
         .section h4 {
             font-size: 1.4rem;
             margin: 15px 0 10px;
             padding: 8px 12px;
-            color: white; /* تغيير اللون إلى الأبيض */
-            background-color: rgba(0, 0, 0, 0.5); /* شفافية الإطار */
+            color: white; /* تغيير اللون من الأصفر إلى الأبيض */
+            background-color: rgba(0, 0, 0, 0.4);
             border-radius: 5px;
-            border-left: 4px solid #6a1b9a;
+            border-left: 4px solid #ffeb3b; /* تغيير اللون من البنفسجي إلى الأصفر */
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -328,12 +331,10 @@
         .section h4.active::after {
             transform: rotate(180deg);
         }
-        /* تعديل القوائم المنسدلة */
         .section ul {
             list-style: none;
             padding: 0;
             margin: 0 0 20px;
-            display: none;
         }
         .section ul li {
             margin: 8px 0;
@@ -445,7 +446,7 @@
                 height: 35px;
             }
             .hero {
-                margin-top: 180px;
+                margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
             }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -454,7 +455,7 @@
                 display: block;
             }
         }
-        /* تصميم التذييل */
+        /* تصميم التذييل - إزالة position: fixed */
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -706,7 +707,6 @@
                     <li><a href="cour PARASITOLOGIE S2.html">Semestre 2</a></li>
                     <li><a href="cour PARASITOLOGIE S3.html">Semestre 3</a></li>
                 </ul>
-                <!-- السنة الخامسة -->
                 <h3 id="annee5">5ème Année</h3>
                 <!-- المادة 1 -->
                 <h4 onclick="toggleSemesters(this)">DROIS PHARMACEUTIQUE</h4>
@@ -764,23 +764,30 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // إخفاء الهيدر تلقائياً عند التمرير لأسفل
+        // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
+        
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
             if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // التمرير لأسفل - إخفاء الهيدر
                 mainHeader.classList.add('hidden');
             } else if (scrollTop < lastScrollTop) {
+                // التمرير لأعلى - إظهار الهيدر
                 mainHeader.classList.remove('hidden');
             }
+            
             lastScrollTop = scrollTop;
         });
+
         // عرض/إخفاء القائمة الرئيسية في الهاتف
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
+
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -789,6 +796,7 @@
                 dropdownContent.classList.toggle("show");
             }
         }
+
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -798,10 +806,12 @@
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
+
         // إغلاق القائمة المنسدلة
         function closeDropdown() {
             document.getElementById("dropdownContent").classList.remove("show");
         }
+
         // الكود الخاص بالأزرار والتمرير
         document.querySelectorAll('.year-btn').forEach(button => {
             button.addEventListener('click', function() {
@@ -817,6 +827,7 @@
                 });
             });
         });
+
         // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
         function toggleSemesters(element) {
             const semestersList = element.nextElementSibling;
