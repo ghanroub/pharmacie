@@ -452,9 +452,32 @@
             .hero {
                 margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
             }
+            /* تعديلات لجعل الإطار أعرض على الهواتف */
             .main-content-container {
-                padding: 0 15px;
-                max-width: 95%; /* جعل الحاوية أكثر مرونة على الشاشات الصغيرة */
+                max-width: 95%; /* زيادة العرض على الهواتف */
+                padding: 0 10px; /* تقليل الهوامش الجانبية */
+            }
+            .section {
+                padding: 15px; /* تعديل المسافات الداخلية */
+                margin: 0; /* إزالة أي هوامش */
+                border-radius: 12px; /* زيادة أناقة الزوايا */
+            }
+            .section h2 {
+                font-size: 1.8rem; /* تعديل حجم العنوان الرئيسي */
+                margin-bottom: 15px;
+            }
+            .section h3 {
+                font-size: 1.5rem; /* تعديل حجم عناوين السنوات */
+                margin: 20px 0 12px;
+                padding: 10px 12px;
+            }
+            .section h4 {
+                font-size: 1.2rem; /* تعديل حجم عناوين المواد */
+                margin: 12px 0 8px;
+                padding: 8px 10px;
+            }
+            .section ul li a {
+                font-size: 1rem; /* زيادة حجم الخط للروابط */
             }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
