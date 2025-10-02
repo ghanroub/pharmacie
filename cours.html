@@ -247,7 +247,7 @@
         }
         /* إعدادات متسقة للعرض - محدثة */
         .main-content-container {
-            max-width: 900px; /* تم تقليل العرض من 1200px إلى 900px */
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 0 20px;
@@ -312,29 +312,53 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
+        
+        /* تصميم عناوين المواد مع الصور */
         .section h4 {
             font-size: 1.4rem;
             margin: 15px 0 10px;
             padding: 8px 12px;
-            color: white; /* تغيير اللون من الأصفر إلى الأبيض */
+            color: white;
             background-color: rgba(0, 0, 0, 0.4);
             border-radius: 5px;
-            border-left: 4px solid #ffeb3b; /* تغيير اللون من البنفسجي إلى الأصفر */
+            border-left: 4px solid #ffeb3b;
             cursor: pointer;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .section h4:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-2px);
         }
         .section h4::after {
             content: "\f078";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
-            margin-left: 10px;
+            margin-top: 5px;
             transition: transform 0.3s ease;
         }
         .section h4.active::after {
             transform: rotate(180deg);
         }
+        
+        /* تصميم الصور المربعة للمواد */
+        .subject-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 8px;
+            border: 2px solid #ffeb3b;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .section h4:hover .subject-image {
+            transform: scale(1.05);
+        }
+        
         .section ul {
             list-style: none;
             padding: 0;
@@ -361,6 +385,7 @@
             color: white;
             text-decoration: underline;
         }
+        
         /* تصميم القائمة المنسدلة في الهاتف */
         @media (max-width: 768px) {
             .menu-btn {
@@ -452,32 +477,13 @@
             .hero {
                 margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
             }
-            /* تعديلات لجعل الإطار أعرض على الهواتف */
             .main-content-container {
-                max-width: 95%; /* زيادة العرض على الهواتف */
-                padding: 0 10px; /* تقليل الهوامش الجانبية */
+                padding: 0 15px;
             }
-            .section {
-                padding: 15px; /* تعديل المسافات الداخلية */
-                margin: 0; /* إزالة أي هوامش */
-                border-radius: 12px; /* زيادة أناقة الزوايا */
-            }
-            .section h2 {
-                font-size: 1.8rem; /* تعديل حجم العنوان الرئيسي */
-                margin-bottom: 15px;
-            }
-            .section h3 {
-                font-size: 1.5rem; /* تعديل حجم عناوين السنوات */
-                margin: 20px 0 12px;
-                padding: 10px 12px;
-            }
-            .section h4 {
-                font-size: 1.2rem; /* تعديل حجم عناوين المواد */
-                margin: 12px 0 8px;
-                padding: 8px 10px;
-            }
-            .section ul li a {
-                font-size: 1rem; /* زيادة حجم الخط للروابط */
+            /* تعديل حجم الصور في الهاتف */
+            .subject-image {
+                width: 60px;
+                height: 60px;
             }
         }
         /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -552,112 +558,169 @@
                     <!-- السنة الأولى -->
                     <h3 id="annee1">1ère Année</h3>
                     <!-- المادة 1 -->
-                    <h4 onclick="toggleSemesters(this)">ANATOMIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="ANATOMIE" class="subject-image">
+                        ANATOMIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour ANATOMIE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 2 -->
-                    <h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BIOLOGIE CELLULAIRE" class="subject-image">
+                        BIOLOGIE CELLULAIRE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BIOLOGIE CELLULAIRE S1.html">Semestre 1</a></li>
                         <li><a href="cour BIOLOGIE CELLULAIRE S2.html">Semestre 2</a></li>
                         <li><a href="cour BIOLOGIE CELLULAIRE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 3 -->
-                    <h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BIOLOGIE VEGETALE" class="subject-image">
+                        BIOLOGIE VEGETALE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BIOLOGIE VEGETALE S1.html">Semestre 1</a></li>
                         <li><a href="cour BIOLOGIE VEGETALE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 4 -->
-                    <h4 onclick="toggleSemesters(this)">BIOSTATISTIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BIOSTATISTIQUE" class="subject-image">
+                        BIOSTATISTIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BIOSTATISTIQUE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 5 -->
-                    <h4 onclick="toggleSemesters(this)">CHIMIE GENERALE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="CHIMIE GENERALE" class="subject-image">
+                        CHIMIE GENERALE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour CHIMIE GENERALE S1.html">Semestre 1</a></li>
                         <li><a href="cour CHIMIE GENERALE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 6 -->
-                    <h4 onclick="toggleSemesters(this)">CHIMIE ORGANIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="CHIMIE ORGANIQUE" class="subject-image">
+                        CHIMIE ORGANIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour CHIMIE ORGANIQUE S1.html">Semestre 1</a></li>
                         <li><a href="cour CHIMIE ORGANIQUE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 7 -->
-                    <h4 onclick="toggleSemesters(this)">HISTOIRE DE LA PHARMACIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="HISTOIRE DE LA PHARMACIE" class="subject-image">
+                        HISTOIRE DE LA PHARMACIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour HISTOIRE DE LA PHARMACIE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 8 -->
-                    <h4 onclick="toggleSemesters(this)">INFORMATIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="INFORMATIQUE" class="subject-image">
+                        INFORMATIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour INFORMATIQUE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 9 -->
-                    <h4 onclick="toggleSemesters(this)">PHYSIOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHYSIOLOGIE" class="subject-image">
+                        PHYSIOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PHYSIOLOGIE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 10 -->
-                    <h4 onclick="toggleSemesters(this)">PHYSIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHYSIQUE" class="subject-image">
+                        PHYSIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PHYSIQUE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 11 -->
-                    <h4 onclick="toggleSemesters(this)">FRANCAIS MEDECALE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="FRANCAIS MEDECALE" class="subject-image">
+                        FRANCAIS MEDECALE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour FRANCAIS MEDECALE.html">Semestre 1</a></li>
                     </ul>
                     <!-- السنة الثانية -->
                     <h3 id="annee2">2ème Année</h3>
                     <!-- المادة 1 -->
-                    <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BIOCHIMIE" class="subject-image">
+                        BIOCHIMIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BIOCHIMIE 1 S1.html">Semestre 1</a></li>
                         <li><a href="cour BIOCHIMIE 1 S2.html">Semestre 2</a></li>
                         <li><a href="cour BIOCHIMIE 1 S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 2 -->
-                    <h4 onclick="toggleSemesters(this)">BIOPHYSIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BIOPHYSIQUE" class="subject-image">
+                        BIOPHYSIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BIOPHYSIQUE S1.html">Semestre 1</a></li>
                         <li><a href="cour BIOPHYSIQUE S2.html">Semestre 2</a></li>
                         <li><a href="cour BIOPHYSIQUE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 3 -->
-                    <h4 onclick="toggleSemesters(this)">BOTANIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BOTANIQUE" class="subject-image">
+                        BOTANIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BOTANIQUE S1.html">Semestre 1</a></li>
                         <li><a href="cour BOTANIQUE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 4 -->
-                    <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="CHIMIE ANALYTIQUE" class="subject-image">
+                        CHIMIE ANALYTIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour CHIMIE ANALYTIQUE 1 S1.html">Semestre 1</a></li>
                         <li><a href="cour CHIMIE ANALYTIQUE 1 S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 5 -->
-                    <h4 onclick="toggleSemesters(this)">CHIMIE MINERALE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="CHIMIE MINERALE" class="subject-image">
+                        CHIMIE MINERALE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour CHIMIE MINERALE S1.html">Semestre 1</a></li>
                         <li><a href="cour CHIMIE MINERALE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 6 -->
-                    <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="ENGLAIS MEDECALE" class="subject-image">
+                        ENGLAIS MEDECALE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour ENGLAIS MEDECALE.html">Semestre 1</a></li>
                     </ul>
                     <!-- المادة 7 -->
-                    <h4 onclick="toggleSemesters(this)">GENETIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="GENETIQUE" class="subject-image">
+                        GENETIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour GENETIQUE S1.html">Semestre 1</a></li>
                         <li><a href="cour GENETIQUE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 8 -->
-                    <h4 onclick="toggleSemesters(this)">PHYSIOPATHOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHYSIOPATHOLOGIE" class="subject-image">
+                        PHYSIOPATHOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PHYSIOPATHOLOGIE S1.html">Semestre 1</a></li>
                         <li><a href="cour PHYSIOPATHOLOGIE S2.html">Semestre 2</a></li>
@@ -665,75 +728,108 @@
                     <!-- السنة الثالثة -->
                     <h3 id="annee3">3ème Année</h3>
                     <!-- المادة 1 -->
-                    <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="CHIMIE ANALYTIQUE" class="subject-image">
+                        CHIMIE ANALYTIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour CHIMIE ANALYTIQUE 2 S1.html">Semestre 1</a></li>
                         <li><a href="cour CHIMIE ANALYTIQUE 2 S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 2 -->
-                    <h4 onclick="toggleSemesters(this)">CHIMIE TERAPEUTIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="CHIMIE TERAPEUTIQUE" class="subject-image">
+                        CHIMIE TERAPEUTIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour CHIMIE TERAPEUTIQUE S1.html">Semestre 1</a></li>
                         <li><a href="cour CHIMIE TERAPEUTIQUE S2.html">Semestre 2</a></li>
                         <li><a href="cour CHIMIE TERAPEUTIQUE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 3 -->
-                    <h4 onclick="toggleSemesters(this)">PHARMAIE GALENIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHARMAIE GALENIQUE" class="subject-image">
+                        PHARMAIE GALENIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PHARMACIE GALENIQUE S1.html">Semestre 1</a></li>
                         <li><a href="cour PHARMACIE GALENIQUE S2.html">Semestre 2</a></li>
                         <li><a href="cour PHARMACAIE GALENIQUE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 4 -->
-                    <h4 onclick="toggleSemesters(this)">PHARMACOGNOSIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHARMACOGNOSIE" class="subject-image">
+                        PHARMACOGNOSIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PHARMACOGNOSIE S1.html">Semestre 1</a></li>
                         <li><a href="cour PHARMACOGNOSIE S2.html">Semestre 2</a></li>
                     </ul>
                     <!-- المادة 5 -->
-                    <h4 onclick="toggleSemesters(this)">PHARMACOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHARMACOLOGIE" class="subject-image">
+                        PHARMACOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PHARMACOLOGIE S1.html">Semestre 1</a></li>
                         <li><a href="cour PHARMACOLOGIE S2.html">Semestre 2</a></li>
                         <li><a href="cour PHARMACOLOGIE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 6 -->
-                    <h4 onclick="toggleSemesters(this)">SEMIOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="SEMIOLOGIE" class="subject-image">
+                        SEMIOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour SEMIOLOGIE.html">Semestre 1</a></li>
                     </ul>
                     <!-- السنة الرابعة -->
                     <h3 id="annee4">4ème Année</h3>
                     <!-- المادة 1 -->
-                    <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="BIOCHIMIE" class="subject-image">
+                        BIOCHIMIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour BIOCHIMIE 2 S1.html">Semestre 1</a></li>
                         <li><a href="cour BIOCHIMIE 2 S2.html">Semestre 2</a></li>
                         <li><a href="cour BIOCHIMIE 2 S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 2 -->
-                    <h4 onclick="toggleSemesters(this)">HEMOBIOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="HEMOBIOLOGIE" class="subject-image">
+                        HEMOBIOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour HEMOBIOLOGIE S1.html">Semestre 1</a></li>
                         <li><a href="cour HEMOBIOLOGIE S2.html">Semestre 2</a></li>
                         <li><a href="cour HEMOBIOLOGIE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 3 -->
-                    <h4 onclick="toggleSemesters(this)">IMMUNOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="IMMUNOLOGIE" class="subject-image">
+                        IMMUNOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour IMMUNOLOGIE S1.html">Semestre 1</a></li>
                         <li><a href="cour IMMUNOLOGIE S2.html">Semestre 2</a></li>
                         <li><a href="cour IMMUNOLOGIE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 4 -->
-                    <h4 onclick="toggleSemesters(this)">MICROBIOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="MICROBIOLOGIE" class="subject-image">
+                        MICROBIOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour MICROBIOLOGIE S1.html">Semestre 1</a></li>
                         <li><a href="cour MICROBIOLOGIE S2.html">Semestre 2</a></li>
                         <li><a href="cour MICROBIOLOGIE S3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 5 -->
-                    <h4 onclick="toggleSemesters(this)">PARASITOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PARASITOLOGIE" class="subject-image">
+                        PARASITOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="cour PARASITOLOGIE S1.html">Semestre 1</a></li>
                         <li><a href="cour PARASITOLOGIE S2.html">Semestre 2</a></li>
@@ -741,49 +837,70 @@
                     </ul>
                     <h3 id="annee5">5ème Année</h3>
                     <!-- المادة 1 -->
-                    <h4 onclick="toggleSemesters(this)">DROIS PHARMACEUTIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="DROIS PHARMACEUTIQUE" class="subject-image">
+                        DROIS PHARMACEUTIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_droits_pharmaceutique_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_droits_pharmaceutique_semestre2.html">Semestre 2</a></li>
                         <li><a href="annee5_droits_pharmaceutique_semestre3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 2 -->
-                    <h4 onclick="toggleSemesters(this)">EPIDEMIOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="EPIDEMIOLOGIE" class="subject-image">
+                        EPIDEMIOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_epidemiologie_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_epidemiologie_semestre2.html">Semestre 2</a></li>
                         <li><a href="annee5_epidemiologie_semestre3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 3 -->
-                    <h4 onclick="toggleSemesters(this)">GESTION PHARMACEUTIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="GESTION PHARMACEUTIQUE" class="subject-image">
+                        GESTION PHARMACEUTIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_gestion_pharmaceutique_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_gestion_pharmaceutique_semestre2.html">Semestre 2</a></li>
                         <li><a href="annee5_gestion_pharmaceutique_semestre3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 4 -->
-                    <h4 onclick="toggleSemesters(this)">HYDRO-BROMATOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="HYDRO-BROMATOLOGIE" class="subject-image">
+                        HYDRO-BROMATOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_hydro_bromatologie_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_hydro_bromatologie_semestre2.html">Semestre 2</a></li>
                         <li><a href="annee5_hydro_bromatologie_semestre3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 5 -->
-                    <h4 onclick="toggleSemesters(this)">PHARMACIE CLINIQUE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHARMACIE CLINIQUE" class="subject-image">
+                        PHARMACIE CLINIQUE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_pharmacie_clinique_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_pharmacie_clinique_semestre2.html">Semestre 2</a></li>
                         <li><a href="annee5_pharmacie_clinique_semestre3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 6 -->
-                    <h4 onclick="toggleSemesters(this)">PHARMACIE INDUSTRIELE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="PHARMACIE INDUSTRIELE" class="subject-image">
+                        PHARMACIE INDUSTRIELE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_pharmacie_industrielle_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_pharmacie_industrielle_semestre2.html">Semestre 2</a></li>
                         <li><a href="annee5_pharmacie_industrielle_semestre3.html">Semestre 3</a></li>
                     </ul>
                     <!-- المادة 7 -->
-                    <h4 onclick="toggleSemesters(this)">TOXICOLOGIE</h4>
+                    <h4 onclick="toggleSemesters(this)">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="TOXICOLOGIE" class="subject-image">
+                        TOXICOLOGIE
+                    </h4>
                     <ul class="hidden">
                         <li><a href="annee5_toxicologie_semestre1.html">Semestre 1</a></li>
                         <li><a href="annee5_toxicologie_semestre2.html">Semestre 2</a></li>
