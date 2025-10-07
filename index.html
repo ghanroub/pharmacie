@@ -295,6 +295,12 @@
             transform: translateY(0);
         }
         
+        .submit-btn:disabled {
+            background-color: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
         .form-row {
             display: flex;
             gap: 15px;
@@ -318,6 +324,12 @@
             background-color: rgba(76, 175, 80, 0.2);
             color: #4CAF50;
             border: 1px solid #4CAF50;
+        }
+        
+        .status-error {
+            background-color: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+            border: 1px solid #f44336;
         }
         
         footer {
@@ -575,19 +587,27 @@ Que vous soyez en première année ou en fin de cycle, ce site est fait pour vou
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
 N'hésitez pas à nous écrire sur nos réseaux sociaux :
 <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
                 
-                <!-- نموذج الاتصال المضاف -->
+                <!-- نموذج الاتصال المعدل -->
                 <div class="contact-form">
                     <h3 style="color: #ffeb3b; margin-top: 0;">Envoyez-nous un message</h3>
                     
                     <!-- رسائل الحالة -->
-                    <div id="statusMessage" class="status-message"></div>
+                    <div id="statusMessage" class="status-message" style="display: none;"></div>
                     
-                    <form id="contactForm">
+                    <!-- النموذج المعدل مع Form ID الحقيقي -->
+                    <form 
+                        id="contactForm" 
+                        action="https://formspree.io/f/xkgqvnad" 
+                        method="POST"
+                    >
+                        <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
+                        <input type="hidden" name="_language" value="fr">
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name"><i class="fas fa-user"></i> Votre nom</label>
@@ -606,6 +626,15 @@ Merci de votre visite !</p>
                             <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
                     </form>
+                    
+                    <!-- رسالة نجاح الإعداد -->
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(76,175,80,0.2); border-radius: 5px; border: 1px solid #4CAF50;">
+                        <h4 style="color: #4CAF50; margin-top: 0;">✅ Formulaire configuré avec succès!</h4>
+                        <p style="color: white; font-size: 0.9rem; margin: 5px 0;">
+                            Votre formulaire est maintenant opérationnel. Les messages seront envoyés à:<br>
+                            <strong>ghanirouabahbbadz@gmail.com</strong>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -692,33 +721,40 @@ Merci de votre visite !</p>
             const statusMessage = document.getElementById('statusMessage');
             
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
+                contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
-                    // الحصول على القيم من النموذج
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
+                    // تعطيل زر الإرسال أثناء المعالجة
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
                     
-                    // عنوان البريد الإلكتروني المستهدف
-                    const targetEmail = 'ghanirouabahbbadz@gmail.com';
+                    // إخفاء رسالة الحالة السابقة
+                    statusMessage.style.display = 'none';
                     
-                    // إنشاء رابط البريد الإلكتروني
-                    const subject = `Message de ${name} - GhaniPharma`;
-                    const body = `Nom: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-                    
-                    const mailtoLink = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    
-                    // فتح بريد المستخدم الإلكتروني
-                    window.location.href = mailtoLink;
-                    
-                    // عرض رسالة تأكيد
-                    showStatus('Votre client de messagerie s\'ouvre. Veuillez envoyer le message pour finaliser l\'envoi.', 'success');
-                    
-                    // إعادة تعيين النموذج بعد تأخير قصير
-                    setTimeout(() => {
-                        contactForm.reset();
-                    }, 2000);
+                    try {
+                        const formData = new FormData(contactForm);
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
+                            contactForm.reset();
+                        } else {
+                            const errorData = await response.json();
+                            throw new Error(errorData.error || 'Erreur lors de l\'envoi du message');
+                        }
+                    } catch (error) {
+                        showStatus('❌ Erreur: ' + error.message, 'error');
+                    } finally {
+                        // إعادة تمكين زر الإرسال
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+                    }
                 });
             }
             
@@ -729,10 +765,12 @@ Merci de votre visite !</p>
                 statusMessage.classList.add(`status-${type}`);
                 statusMessage.style.display = 'block';
                 
-                // إخفاء الرسالة تلقائياً بعد 8 ثوانٍ
-                setTimeout(() => {
-                    statusMessage.style.display = 'none';
-                }, 8000);
+                // إخفاء الرسالة تلقائياً بعد 8 ثوانٍ للرسائل الناجحة
+                if (type === 'success') {
+                    setTimeout(() => {
+                        statusMessage.style.display = 'none';
+                    }, 8000);
+                }
             }
         });
     </script>
