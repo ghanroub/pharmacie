@@ -523,7 +523,7 @@
             <p>Choisissez vos documents et payez facilement par Mobile Money.</p>
             
             <!-- زر الطلب الرئيسي في الأعلى -->
-            <a href="#" class="order-main-btn" id="orderBtnTop">
+            <a href="https://mobile.mypaymentlink.com" class="order-main-btn">
                 Commandez Vos Documents
             </a>
         </div>
@@ -704,7 +704,7 @@
         </div>
         
         <!-- زر الطلب الرئيسي في الأسفل -->
-        <a href="#" class="order-main-btn" id="orderBtnBottom">
+        <a href="https://mobile.mypaymentlink.com" class="order-main-btn">
             Commandez Vos Documents
         </a>
     </section>
@@ -776,29 +776,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // دالة للانتقال إلى صفحة بريدي موب
-        function redirectToBaridiMob() {
-            // استبدل هذا الرابط برابط بريدي موب الحقيقي الخاص بك
-            const baridiMobLink = "https://www.baridimob.dz/paiement/"; // مثال لرابط بريدي موب
-            
-            // الانتقال إلى صفحة الدفع
-            window.open(baridiMobLink, '_blank');
-            
-            // أو استخدام window.location.href إذا كنت تريد الانتقال في نفس النافذة
-            // window.location.href = baridiMobLink;
-        }
-
-        // إضافة مستمعي الأحداث لأزرار الطلب
-        document.getElementById('orderBtnTop').addEventListener('click', function(e) {
-            e.preventDefault();
-            redirectToBaridiMob();
-        });
-
-        document.getElementById('orderBtnBottom').addEventListener('click', function(e) {
-            e.preventDefault();
-            redirectToBaridiMob();
         });
     </script>
 </body>
