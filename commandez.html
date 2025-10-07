@@ -216,34 +216,9 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
         }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: white;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-            animation-delay: 2s;
-        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-        .hero button {
-            background-color: #6a1b9a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .hero button:hover {
-            background-color: #4a4a88;
         }
         .hero .container {
             padding: 20px;
@@ -276,7 +251,7 @@
             background: linear-gradient(135deg, #ff5722, #ff9800);
         }
         
-        /* تصميم الجداول */
+        /* تصميم الجداول المحسنة */
         .pricing-section {
             width: 100%;
             max-width: 1200px;
@@ -310,13 +285,14 @@
             background-color: rgba(106, 27, 154, 0.8);
             color: white;
             padding: 15px;
-            text-align: left;
+            text-align: center;
             font-size: 1.1rem;
         }
         
         .pricing-table td {
             padding: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
         
         .pricing-table tr:last-child td {
@@ -330,22 +306,13 @@
         .price {
             font-weight: bold;
             color: #ffeb3b;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
-        .order-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .offer-name {
             font-weight: bold;
-        }
-        
-        .order-btn:hover {
-            background-color: #45a049;
+            text-align: left;
+            padding-left: 20px;
         }
         
         /* تصميم القائمة المنسدلة في الهاتف */
@@ -419,9 +386,6 @@
             
             .hero h1 {
                 font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
             }
             .buttons-container {
                 flex-direction: row;
@@ -515,13 +479,7 @@
     <!-- قسم المحتوى الرئيسي -->
     <section id="commandez" class="hero">
         <div class="container">
-            <h1>Commandez Vos Documents</h1>
-            <p>Choisissez vos documents et payez facilement par Mobile Money.</p>
-            
-            <!-- زر الطلب الرئيسي -->
-            <a href="mailto:ghanipharma@example.com?subject=Commande de documents&body=Bonjour, je souhaite commander les documents suivants:" class="order-main-btn">
-                Commandez Vos Documents
-            </a>
+            <!-- تم إزالة العبارات المطلوبة -->
         </div>
         
         <!-- جدول أسعار السنة الأولى -->
@@ -531,41 +489,29 @@
                 <thead>
                     <tr>
                         <th>Offre</th>
-                        <th>Description</th>
                         <th>Prix</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Matière unique</td>
-                        <td>Cours complet d'une matière (tous les chapitres)</td>
+                        <td class="offer-name">Matière unique</td>
                         <td class="price">500 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Matière unique - 1ère Année', 500)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Deux matières</td>
-                        <td>Deux matières au choix (offre groupée)</td>
+                        <td class="offer-name">Deux matières</td>
                         <td class="price">800 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Deux matières - 1ère Année', 800)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Chapitre unique</td>
-                        <td>Un chapitre d'une matière spécifique</td>
+                        <td class="offer-name">Chapitre unique</td>
                         <td class="price">200 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Chapitre unique - 1ère Année', 200)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Semestre 1</td>
-                        <td>Tous les cours du semestre 1</td>
+                        <td class="offer-name">Semestre 1</td>
                         <td class="price">2500 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Semestre 1 - 1ère Année', 2500)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Année complète</td>
-                        <td>Tous les cours de la 1ère année</td>
+                        <td class="offer-name">Année complète</td>
                         <td class="price">4000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Année complète - 1ère Année', 4000)">Commander</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -578,41 +524,29 @@
                 <thead>
                     <tr>
                         <th>Offre</th>
-                        <th>Description</th>
                         <th>Prix</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Matière unique</td>
-                        <td>Cours complet d'une matière (tous les chapitres)</td>
+                        <td class="offer-name">Matière unique</td>
                         <td class="price">600 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Matière unique - 2ème Année', 600)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Deux matières</td>
-                        <td>Deux matières au choix (offre groupée)</td>
+                        <td class="offer-name">Deux matières</td>
                         <td class="price">1000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Deux matières - 2ème Année', 1000)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Chapitre unique</td>
-                        <td>Un chapitre d'une matière spécifique</td>
+                        <td class="offer-name">Chapitre unique</td>
                         <td class="price">250 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Chapitre unique - 2ème Année', 250)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Semestre 1</td>
-                        <td>Tous les cours du semestre 1</td>
+                        <td class="offer-name">Semestre 1</td>
                         <td class="price">3000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Semestre 1 - 2ème Année', 3000)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Année complète</td>
-                        <td>Tous les cours de la 2ème année</td>
+                        <td class="offer-name">Année complète</td>
                         <td class="price">5000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Année complète - 2ème Année', 5000)">Commander</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -625,41 +559,29 @@
                 <thead>
                     <tr>
                         <th>Offre</th>
-                        <th>Description</th>
                         <th>Prix</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Matière unique</td>
-                        <td>Cours complet d'une matière (tous les chapitres)</td>
+                        <td class="offer-name">Matière unique</td>
                         <td class="price">700 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Matière unique - 3ème Année', 700)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Deux matières</td>
-                        <td>Deux matières au choix (offre groupée)</td>
+                        <td class="offer-name">Deux matières</td>
                         <td class="price">1200 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Deux matières - 3ème Année', 1200)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Chapitre unique</td>
-                        <td>Un chapitre d'une matière spécifique</td>
+                        <td class="offer-name">Chapitre unique</td>
                         <td class="price">300 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Chapitre unique - 3ème Année', 300)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Semestre 1</td>
-                        <td>Tous les cours du semestre 1</td>
+                        <td class="offer-name">Semestre 1</td>
                         <td class="price">3500 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Semestre 1 - 3ème Année', 3500)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Année complète</td>
-                        <td>Tous les cours de la 3ème année</td>
+                        <td class="offer-name">Année complète</td>
                         <td class="price">6000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Année complète - 3ème Année', 6000)">Commander</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -672,41 +594,29 @@
                 <thead>
                     <tr>
                         <th>Offre</th>
-                        <th>Description</th>
                         <th>Prix</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Matière unique</td>
-                        <td>Cours complet d'une matière (tous les chapitres)</td>
+                        <td class="offer-name">Matière unique</td>
                         <td class="price">800 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Matière unique - 4ème Année', 800)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Deux matières</td>
-                        <td>Deux matières au choix (offre groupée)</td>
+                        <td class="offer-name">Deux matières</td>
                         <td class="price">1400 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Deux matières - 4ème Année', 1400)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Chapitre unique</td>
-                        <td>Un chapitre d'une matière spécifique</td>
+                        <td class="offer-name">Chapitre unique</td>
                         <td class="price">350 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Chapitre unique - 4ème Année', 350)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Semestre 1</td>
-                        <td>Tous les cours du semestre 1</td>
+                        <td class="offer-name">Semestre 1</td>
                         <td class="price">4000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Semestre 1 - 4ème Année', 4000)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Année complète</td>
-                        <td>Tous les cours de la 4ème année</td>
+                        <td class="offer-name">Année complète</td>
                         <td class="price">7000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Année complète - 4ème Année', 7000)">Commander</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -719,48 +629,36 @@
                 <thead>
                     <tr>
                         <th>Offre</th>
-                        <th>Description</th>
                         <th>Prix</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Matière unique</td>
-                        <td>Cours complet d'une matière (tous les chapitres)</td>
+                        <td class="offer-name">Matière unique</td>
                         <td class="price">900 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Matière unique - 5ème Année', 900)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Deux matières</td>
-                        <td>Deux matières au choix (offre groupée)</td>
+                        <td class="offer-name">Deux matières</td>
                         <td class="price">1600 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Deux matières - 5ème Année', 1600)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Chapitre unique</td>
-                        <td>Un chapitre d'une matière spécifique</td>
+                        <td class="offer-name">Chapitre unique</td>
                         <td class="price">400 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Chapitre unique - 5ème Année', 400)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Semestre 1</td>
-                        <td>Tous les cours du semestre 1</td>
+                        <td class="offer-name">Semestre 1</td>
                         <td class="price">4500 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Semestre 1 - 5ème Année', 4500)">Commander</button></td>
                     </tr>
                     <tr>
-                        <td>Année complète</td>
-                        <td>Tous les cours de la 5ème année</td>
+                        <td class="offer-name">Année complète</td>
                         <td class="price">8000 DA</td>
-                        <td><button class="order-btn" onclick="orderItem('Année complète - 5ème Année', 8000)">Commander</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <!-- زر الطلب الرئيسي في الأسفل -->
-        <a href="mailto:ghanipharma@example.com?subject=Commande de documents&body=Bonjour, je souhaite commander les documents suivants:" class="order-main-btn">
+        <a href="https://mobile.mypaymentlink.com" class="order-main-btn">
             Commandez Vos Documents
         </a>
     </section>
@@ -833,13 +731,6 @@
                 });
             });
         });
-
-        // دالة لطلب عنصر معين
-        function orderItem(itemName, price) {
-            const emailSubject = `Commande: ${itemName}`;
-            const emailBody = `Bonjour, je souhaite commander: ${itemName} pour ${price} DA.`;
-            window.location.href = `mailto:ghanipharma@example.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-        }
     </script>
 </body>
 </html>
