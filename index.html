@@ -230,8 +230,8 @@
             width: 100%;
         }
         
-        /* معرض موحد لجميع الأجهزة */
-        .gallery {
+        /* معرض الكمبيوتر - الشريط المتحرك */
+        .desktop-gallery {
             position: relative;
             width: 100%;
             height: 200px;
@@ -249,7 +249,7 @@
             will-change: transform;
         }
         
-        .gallery img {
+        .desktop-gallery img {
             height: 150px;
             width: auto;
             margin: 0 15px;
@@ -260,7 +260,7 @@
             flex-shrink: 0;
         }
         
-        .gallery img:hover {
+        .desktop-gallery img:hover {
             transform: scale(1.05);
         }
         
@@ -273,29 +273,106 @@
             }
         }
         
-        .gallery:hover .gallery-track {
+        .desktop-gallery:hover .gallery-track {
             animation-play-state: paused;
+        }
+        
+        /* معرض الهاتف - تمرير صورة واحدة */
+        .mobile-gallery {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mobile-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        
+        .mobile-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .mobile-slide img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mobile-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .mobile-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .mobile-dot.active {
+            background-color: #ffeb3b;
+        }
+        
+        .mobile-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffeb3b;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        
+        .mobile-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .mobile-arrow.prev {
+            left: 10px;
+        }
+        
+        .mobile-arrow.next {
+            right: 10px;
         }
         
         /* تحسينات للهاتف */
         @media (max-width: 768px) {
-            .gallery {
-                height: 150px;
-                margin: 15px auto;
+            .desktop-gallery {
+                display: none;
             }
             
-            .gallery img {
-                height: 120px;
-                margin: 0 10px;
-            }
-            
-            .gallery-track {
-                animation: scroll 35s linear infinite;
-            }
-            
-            /* إزالة تأثير hover في الهاتف */
-            .gallery img:hover {
-                transform: none;
+            .mobile-gallery {
+                display: block;
             }
             
             .sections-container {
@@ -384,6 +461,14 @@
         
         /* سلوك القائمة المنسدلة في الكمبيوتر */
         @media (min-width: 769px) {
+            .mobile-gallery {
+                display: none;
+            }
+            
+            .desktop-gallery {
+                display: block;
+            }
+            
             .dropdown:hover .dropdown-content {
                 display: block;
                 animation: fadeIn 0.3s ease;
@@ -418,7 +503,9 @@
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
-            <div class="gallery">
+            
+            <!-- معرض الكمبيوتر -->
+            <div class="desktop-gallery">
                 <div class="gallery-track">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
@@ -438,6 +525,48 @@
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
+                </div>
+            </div>
+            
+            <!-- معرض الهاتف -->
+            <div class="mobile-gallery">
+                <div class="mobile-slider">
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 4">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 5">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
+                    </div>
+                    <div class="mobile-slide">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
+                    </div>
+                </div>
+                <button class="mobile-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="mobile-arrow next" onclick="changeSlide(1)">&#10095;</button>
+                <div class="mobile-nav">
+                    <span class="mobile-dot active" onclick="currentSlide(0)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(1)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(2)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(3)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(4)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(5)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(6)"></span>
+                    <span class="mobile-dot" onclick="currentSlide(7)"></span>
                 </div>
             </div>
         </div>
@@ -504,6 +633,83 @@ Merci de votre visite !</p>
                 document.getElementById("dropdownContent").classList.remove("show");
             }
         });
+        
+        // معرض الهاتف - تمرير صورة واحدة
+        let currentMobileSlide = 0;
+        const mobileSlides = document.querySelectorAll('.mobile-slide');
+        const mobileDots = document.querySelectorAll('.mobile-dot');
+        
+        function showSlide(n) {
+            if (n >= mobileSlides.length) currentMobileSlide = 0;
+            if (n < 0) currentMobileSlide = mobileSlides.length - 1;
+            
+            const slider = document.querySelector('.mobile-slider');
+            slider.style.transform = `translateX(-${currentMobileSlide * 100}%)`;
+            
+            // تحديث النقاط النشطة
+            mobileDots.forEach(dot => dot.classList.remove('active'));
+            mobileDots[currentMobileSlide].classList.add('active');
+        }
+        
+        function changeSlide(n) {
+            currentMobileSlide += n;
+            showSlide(currentMobileSlide);
+        }
+        
+        function currentSlide(n) {
+            currentMobileSlide = n;
+            showSlide(currentMobileSlide);
+        }
+        
+        // التمرير التلقائي للهاتف
+        let slideInterval = setInterval(() => {
+            if (window.innerWidth <= 768) {
+                changeSlide(1);
+            }
+        }, 4000);
+        
+        // إيقاف التمرير التلقائي عند التفاعل
+        document.querySelector('.mobile-gallery').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        document.querySelector('.mobile-gallery').addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                if (window.innerWidth <= 768) {
+                    changeSlide(1);
+                }
+            }, 4000);
+        });
+        
+        // التمرير بالسحب على الهاتف
+        let startX = 0;
+        let endX = 0;
+        
+        const mobileGallery = document.querySelector('.mobile-gallery');
+        
+        mobileGallery.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        mobileGallery.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const diff = startX - endX;
+            const swipeThreshold = 50;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // سحب لليسار - التالي
+                    changeSlide(1);
+                } else {
+                    // سحب لليمين - السابق
+                    changeSlide(-1);
+                }
+            }
+        }
     </script>
 </body>
 </html>
