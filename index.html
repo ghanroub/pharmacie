@@ -304,6 +304,22 @@
             flex: 1;
         }
         
+        /* رسائل الحالة */
+        .status-message {
+            padding: 12px;
+            border-radius: 5px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .status-success {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+        
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -567,6 +583,10 @@ Merci de votre visite !</p>
                 <!-- نموذج الاتصال المضاف -->
                 <div class="contact-form">
                     <h3 style="color: #ffeb3b; margin-top: 0;">Envoyez-nous un message</h3>
+                    
+                    <!-- رسائل الحالة -->
+                    <div id="statusMessage" class="status-message"></div>
+                    
                     <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
@@ -582,7 +602,7 @@ Merci de votre visite !</p>
                             <label for="message"><i class="fas fa-comment"></i> Votre message</label>
                             <textarea id="message" name="message" required placeholder="Tapez votre message ici..."></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">
+                        <button type="submit" class="submit-btn" id="submitBtn">
                             <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
                     </form>
@@ -668,6 +688,9 @@ Merci de votre visite !</p>
             
             // معالجة نموذج الاتصال
             const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const statusMessage = document.getElementById('statusMessage');
+            
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -677,14 +700,39 @@ Merci de votre visite !</p>
                     const email = document.getElementById('email').value;
                     const message = document.getElementById('message').value;
                     
-                    // هنا يمكنك إضافة منطق إرسال النموذج إلى الخادم
-                    // في هذا المثال، سنعرض رسالة تأكيد فقط
+                    // عنوان البريد الإلكتروني المستهدف
+                    const targetEmail = 'ghanirouabahbbadz@gmail.com';
                     
-                    alert(`Merci ${name}! Votre message a été envoyé avec succès. Nous vous répondrons à ${email} dans les plus brefs délais.`);
+                    // إنشاء رابط البريد الإلكتروني
+                    const subject = `Message de ${name} - GhaniPharma`;
+                    const body = `Nom: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
                     
-                    // إعادة تعيين النموذج
-                    contactForm.reset();
+                    const mailtoLink = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    
+                    // فتح بريد المستخدم الإلكتروني
+                    window.location.href = mailtoLink;
+                    
+                    // عرض رسالة تأكيد
+                    showStatus('Votre client de messagerie s\'ouvre. Veuillez envoyer le message pour finaliser l\'envoi.', 'success');
+                    
+                    // إعادة تعيين النموذج بعد تأخير قصير
+                    setTimeout(() => {
+                        contactForm.reset();
+                    }, 2000);
                 });
+            }
+            
+            // وظيفة لعرض رسائل الحالة
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = 'status-message';
+                statusMessage.classList.add(`status-${type}`);
+                statusMessage.style.display = 'block';
+                
+                // إخفاء الرسالة تلقائياً بعد 8 ثوانٍ
+                setTimeout(() => {
+                    statusMessage.style.display = 'none';
+                }, 8000);
             }
         });
     </script>
