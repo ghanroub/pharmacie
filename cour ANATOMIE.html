@@ -222,29 +222,35 @@
         }
         
         .chapter-card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.9); /* تغيير إلى أبيض */
+            border: 2px solid rgba(0, 0, 0, 0.8); /* زيادة غمق الإطار */
             border-radius: 8px;
             padding: 15px;
             transition: all 0.3s ease;
             cursor: pointer;
+            color: #333; /* تغيير لون النص إلى داكن */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* إضافة ظل لتحسين الوضوح */
         }
         
         .chapter-card:hover {
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 1); /* أبيض نقي عند التمرير */
             transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
         }
         
         .chapter-title {
             font-size: 1.2rem;
-            color: #ffeb3b;
+            color: #333; /* تغيير لون العنوان إلى داكن */
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-weight: bold;
         }
         
         .chapter-title i {
             transition: transform 0.3s ease;
+            color: #6a1b9a; /* لون أرجواني للأيقونة */
         }
         
         .chapter-card.active .chapter-title i {
@@ -255,7 +261,7 @@
             display: none;
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(106, 27, 154, 0.5); /* تغيير لون الحدود */
         }
         
         .chapter-card.active .resources-options {
@@ -416,7 +422,8 @@
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
                 <ul id="navMenu">
-                    <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                    <!-- تم تغيير الرابط هنا -->
+                    <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                     <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li class="dropdown">
                         <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
