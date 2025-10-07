@@ -192,14 +192,14 @@
         }
         .sections-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; /* تغيير إلى عمودي */
             width: 100%;
             max-width: 1200px;
             margin-top: 40px;
+            gap: 20px; /* إضافة مسافة بين الأقسام */
         }
         .section {
-            flex: 1;
-            margin: 0 10px;
+            margin: 0;
             background-color: rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
@@ -587,7 +587,7 @@ Que vous soyez en première année ou en fin de cycle, ce site est fait pour vou
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?
 N'hésitez pas à nous écrire sur nos réseaux sociaux :
 <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
+<a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
@@ -626,15 +626,6 @@ Merci de votre visite !</p>
                             <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
                     </form>
-                    
-                    <!-- رسالة نجاح الإعداد -->
-                    <div style="margin-top: 20px; padding: 15px; background: rgba(76,175,80,0.2); border-radius: 5px; border: 1px solid #4CAF50;">
-                        <h4 style="color: #4CAF50; margin-top: 0;">✅ Formulaire configuré avec succès!</h4>
-                        <p style="color: white; font-size: 0.9rem; margin: 5px 0;">
-                            Votre formulaire est maintenant opérationnel. Les messages seront envoyés à:<br>
-                            <strong>ghanirouabahbbadz@gmail.com</strong>
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
