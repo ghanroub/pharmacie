@@ -222,6 +222,88 @@
         .section a:hover {
             text-decoration: underline;
         }
+        
+        /* أنماط نموذج الاتصال الجديد */
+        .contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00bcd4;
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #4a4a88;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -395,6 +477,12 @@
             .dropdown-content a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
             }
+            
+            /* تعديلات الهاتف للنموذج */
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
         }
     </style>
 </head>
@@ -475,6 +563,30 @@ N'hésitez pas à nous écrire sur nos réseaux sociaux :
 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.
 Nous vous répondrons dans les plus brefs délais.
 Merci de votre visite !</p>
+                
+                <!-- نموذج الاتصال المضاف -->
+                <div class="contact-form">
+                    <h3 style="color: #ffeb3b; margin-top: 0;">Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Votre nom</label>
+                                <input type="text" id="name" name="name" required placeholder="Entrez votre nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Votre email</label>
+                                <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Votre message</label>
+                            <textarea id="message" name="message" required placeholder="Tapez votre message ici..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -551,6 +663,27 @@ Merci de votre visite !</p>
                 const individualImages = document.querySelectorAll('.gallery img:not(.gallery-track img)');
                 individualImages.forEach(img => {
                     img.style.display = 'none';
+                });
+            }
+            
+            // معالجة نموذج الاتصال
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // الحصول على القيم من النموذج
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // هنا يمكنك إضافة منطق إرسال النموذج إلى الخادم
+                    // في هذا المثال، سنعرض رسالة تأكيد فقط
+                    
+                    alert(`Merci ${name}! Votre message a été envoyé avec succès. Nous vous répondrons à ${email} dans les plus brefs délais.`);
+                    
+                    // إعادة تعيين النموذج
+                    contactForm.reset();
                 });
             }
         });
