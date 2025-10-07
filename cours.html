@@ -317,6 +317,13 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .subject-card ul.show {
+            max-height: 500px; /* قيمة كبيرة تكفي لعرض جميع الفصول */
         }
         
         .subject-card ul li {
@@ -514,11 +521,6 @@
         footer p {
             font-size: 0.8rem;
         }
-        
-        /* إخفاء العناصر المخفية */
-        .hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -576,7 +578,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">ANATOMIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="cour ANATOMIE.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -587,7 +589,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(3).jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_biologie_cellulaire_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee1_biologie_cellulaire_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee1_biologie_cellulaire_semestre3.html">Semestre 3</a></li>
@@ -600,7 +602,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_biologie_vegetale_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee1_biologie_vegetale_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -612,7 +614,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BIOSTATISTIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_bio_statistique_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -623,7 +625,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">CHIMIE GENERALE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_chimie_generale_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee1_chimie_generale_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -635,7 +637,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Chirality%2C%20a%20Primer%20(Updated).jfif')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">CHIMIE ORGANIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_chimie_organique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee1_chimie_organique_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -647,7 +649,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">HISTOIRE DE LA PHARMACIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_histoire_pharmacie_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -658,7 +660,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">INFORMATIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_informatique_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -669,7 +671,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHYSIOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_physiologie_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -680,7 +682,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Client%20Challenge.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHYSIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_physique_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -691,7 +693,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Produits%20pharmaceutiques%20sur%20fond%20neutre.png')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">FRANCAIS MEDECALE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee1_francais_medecale_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -708,7 +710,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/__files_hamster3d.com_stockbox_icon-hd720.jpg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_biochimie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_biochimie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee2_biochimie_semestre3.html">Semestre 3</a></li>
@@ -721,7 +723,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BIOPHYSIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_biophysique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_biophysique_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee2_biophysique_semestre3.html">Semestre 3</a></li>
@@ -734,7 +736,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(2).jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BOTANIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_botanique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_botanique_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -746,7 +748,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_chimie_analytique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_chimie_analytique_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -758,7 +760,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">CHIMIE MINERALE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_chimie_minerale_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_chimie_minerale_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -770,7 +772,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_anglais_medecale_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -781,7 +783,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/%F0%9F%A7%AC%F0%9F%94%AC.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">GENETIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_genetique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_genetique_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -793,7 +795,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download.jpg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHYSIOPATHOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee2_physiopathologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee2_physiopathologie_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -811,7 +813,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee3_chimie_analytique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee3_chimie_analytique_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -823,7 +825,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Pourquoi%20l%27heure%20de%20vos%20repas%20est%20importante.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">CHIMIE TERAPEUTIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee3_chimie_therapeutique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee3_chimie_therapeutique_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee3_chimie_therapeutique_semestre3.html">Semestre 3</a></li>
@@ -836,7 +838,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHARMACAIS GALENIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee3_pharmacie_galenique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee3_pharmacie_galenique_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee3_pharmacie_galenique_semestre3.html">Semestre 3</a></li>
@@ -849,7 +851,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHARMACOGNOSIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee3_pharmacognosie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee3_pharmacognosie_semestre2.html">Semestre 2</a></li>
                         </ul>
@@ -861,7 +863,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHARMACOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee3_pharmacologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee3_pharmacologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee3_pharmacologie_semestre3.html">Semestre 3</a></li>
@@ -874,7 +876,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Symptoms%20of%20Heart%20Attack.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">SEMIOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee3_semiologie_semestre1.html">Semestre 1</a></li>
                         </ul>
                     </div>
@@ -891,7 +893,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee4_biochimie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee4_biochimie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee4_biochimie_semestre3.html">Semestre 3</a></li>
@@ -904,7 +906,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Les%20carences%20en%20fer%20sont%20plus%20courantes%20-%20et%20plus%20graves%20-%20qu%27on%20ne%20le%20pensait.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">HEMOBIOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee4_hemobiologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee4_hemobiologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee4_hemobiologie_semestre3.html">Semestre 3</a></li>
@@ -917,7 +919,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">IMMUNOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee4_immunologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee4_immunologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee4_immunologie_semestre3.html">Semestre 3</a></li>
@@ -930,7 +932,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">MICROBIOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee4_microbiologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee4_microbiologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee4_microbiologie_semestre3.html">Semestre 3</a></li>
@@ -943,7 +945,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(8).jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PARASITOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee4_parasitologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee4_parasitologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee4_parasitologie_semestre3.html">Semestre 3</a></li>
@@ -962,7 +964,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">DROIS PHARMACEUTIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_droits_pharmaceutique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_droits_pharmaceutique_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_droits_pharmaceutique_semestre3.html">Semestre 3</a></li>
@@ -975,7 +977,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">EPIDEMIOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_epidemiologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_epidemiologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_epidemiologie_semestre3.html">Semestre 3</a></li>
@@ -988,7 +990,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">GESTION PHARMACEUTIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_gestion_pharmaceutique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_gestion_pharmaceutique_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_gestion_pharmaceutique_semestre3.html">Semestre 3</a></li>
@@ -1001,7 +1003,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">HYDRO-BROMATOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_hydro_bromatologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_hydro_bromatologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_hydro_bromatologie_semestre3.html">Semestre 3</a></li>
@@ -1014,7 +1016,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHARMACIE CLINIQUE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_pharmacie_clinique_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_pharmacie_clinique_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_pharmacie_clinique_semestre3.html">Semestre 3</a></li>
@@ -1027,7 +1029,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">PHARMACIE INDUSTRIELE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_pharmacie_industrielle_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_pharmacie_industrielle_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_pharmacie_industrielle_semestre3.html">Semestre 3</a></li>
@@ -1040,7 +1042,7 @@
                     <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif')"></div>
                     <div class="subject-content">
                         <h4 onclick="toggleSemesters(this)">TOXICOLOGIE</h4>
-                        <ul class="hidden">
+                        <ul>
                             <li><a href="annee5_toxicologie_semestre1.html">Semestre 1</a></li>
                             <li><a href="annee5_toxicologie_semestre2.html">Semestre 2</a></li>
                             <li><a href="annee5_toxicologie_semestre3.html">Semestre 3</a></li>
@@ -1120,16 +1122,21 @@
             });
         });
 
-        // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
+        // دالة لإظهار/إخفاء الفصول الدراسية - تم التعديل هنا
         function toggleSemesters(element) {
             const semestersList = element.nextElementSibling;
-            const semesters = semestersList.querySelectorAll('li');
-            if (semesters.length === 1) {
-                window.location.href = semesters[0].querySelector('a').href;
-            } else {
-                semestersList.classList.toggle('hidden');
-                element.classList.toggle('active');
-            }
+            
+            // إخفاء جميع القوائم الأخرى أولاً
+            document.querySelectorAll('.subject-card ul').forEach(list => {
+                if (list !== semestersList) {
+                    list.classList.remove('show');
+                    list.previousElementSibling.classList.remove('active');
+                }
+            });
+            
+            // تبديل عرض/إخفاء القائمة الحالية
+            semestersList.classList.toggle('show');
+            element.classList.toggle('active');
         }
     </script>
 </body>
