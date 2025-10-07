@@ -216,6 +216,19 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
         }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -244,6 +257,9 @@
             margin: 40px 0;
             display: inline-block;
             text-decoration: none;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2s;
         }
         .order-main-btn:hover {
             transform: translateY(-5px);
@@ -387,6 +403,9 @@
             .hero h1 {
                 font-size: 2rem;
             }
+            .hero p {
+                font-size: 1rem;
+            }
             .buttons-container {
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -479,7 +498,13 @@
     <!-- قسم المحتوى الرئيسي -->
     <section id="commandez" class="hero">
         <div class="container">
-            <!-- تم إزالة العبارات المطلوبة -->
+            <h1>Commandez Vos Documents</h1>
+            <p>Choisissez vos documents et payez facilement par Mobile Money.</p>
+            
+            <!-- زر الطلب الرئيسي في الأعلى -->
+            <a href="https://mobile.mypaymentlink.com" class="order-main-btn">
+                Commandez Vos Documents
+            </a>
         </div>
         
         <!-- جدول أسعار السنة الأولى -->
