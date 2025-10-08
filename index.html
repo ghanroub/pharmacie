@@ -6,6 +6,8 @@
     <title>GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- إضافة reCAPTCHA من Google -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -429,50 +431,6 @@
             border-color: #4CAF50 !important;
         }
         
-        .verification-section {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 235, 59, 0.2);
-        }
-        
-        .verification-code {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .verification-code input {
-            flex: 1;
-            text-align: center;
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-            font-weight: bold;
-        }
-        
-        .verify-btn {
-            background: linear-gradient(135deg, #00bcd4, #0288d1);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-        
-        .verify-btn:hover {
-            background: linear-gradient(135deg, #0288d1, #00bcd4);
-            transform: translateY(-2px);
-        }
-        
-        .verify-btn:disabled {
-            background: #666;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
         .security-notice {
             background: rgba(255, 235, 59, 0.1);
             border: 1px solid rgba(255, 235, 59, 0.3);
@@ -481,6 +439,59 @@
             margin-bottom: 20px;
             font-size: 0.9rem;
             color: #ffeb3b;
+        }
+        
+        /* أنماط CAPTCHA */
+        .captcha-container {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 235, 59, 0.2);
+        }
+        
+        .captcha-challenge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .captcha-image {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            color: #333;
+            user-select: none;
+        }
+        
+        .captcha-refresh {
+            background: transparent;
+            border: none;
+            color: #00bcd4;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .captcha-refresh:hover {
+            color: #4dd0e1;
+            transform: rotate(90deg);
+        }
+        
+        .captcha-input {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
         }
         
         footer {
@@ -679,11 +690,12 @@
                 font-size: 1rem;
             }
             
-            .verification-code {
+            .captcha-challenge {
                 flex-direction: column;
+                align-items: flex-start;
             }
             
-            .verify-btn {
+            .captcha-input {
                 width: 100%;
             }
         }
@@ -785,6 +797,9 @@
                         action="https://formspree.io/f/xkgqvnad" 
                         method="POST"
                     >
+                        <!-- حقل honeypot للبوتات -->
+                        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+                        
                         <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
                         <input type="hidden" name="_language" value="fr">
                         
@@ -801,22 +816,32 @@
                             </div>
                         </div>
                         
-                        <!-- قسم التحقق من البريد الإلكتروني -->
-                        <div id="verificationSection" class="verification-section" style="display: none;">
-                            <h4><i class="fas fa-check-circle"></i> Vérification d'email</h4>
-                            <p>Nous avons envoyé un code à votre adresse email. Veuillez le saisir ci-dessous :</p>
-                            <div class="verification-code">
-                                <input type="text" id="verificationCode" placeholder="Code de vérification" maxlength="6">
-                                <button type="button" id="verifyBtn" class="verify-btn">Vérifier</button>
-                            </div>
-                            <div id="verificationStatus" class="validation-message"></div>
-                        </div>
-                        
                         <div class="form-group">
                             <label for="message"><i class="fas fa-comment"></i> Votre message</label>
                             <textarea id="message" name="message" required placeholder="Tapez votre message ici... (minimum 10 caractères)"></textarea>
                             <div id="messageValidation" class="validation-message"></div>
                         </div>
+                        
+                        <!-- قسم CAPTCHA -->
+                        <div class="captcha-container">
+                            <h4><i class="fas fa-robot"></i> Vérification de sécurité</h4>
+                            <p>Veuillez résoudre le défi suivant pour prouver que vous n'êtes pas un robot :</p>
+                            <div class="captcha-challenge">
+                                <div class="captcha-image" id="captchaText">ABCD</div>
+                                <button type="button" class="captcha-refresh" id="refreshCaptcha" title="Rafraîchir">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <input type="text" class="captcha-input" id="captchaInput" placeholder="Entrez le texte ci-dessus" maxlength="6">
+                            </div>
+                            <div id="captchaValidation" class="validation-message"></div>
+                            
+                            <!-- reCAPTCHA من Google -->
+                            <div style="margin-top: 15px; text-align: center;">
+                                <div class="g-recaptcha" data-sitekey="6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs" data-callback="enableSubmit" data-expired-callback="disableSubmit"></div>
+                                <div id="gCaptchaValidation" class="validation-message"></div>
+                            </div>
+                        </div>
+                        
                         <button type="submit" class="submit-btn" id="submitBtn" disabled>
                             <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
@@ -901,6 +926,61 @@
                 });
             }
             
+            // توليد CAPTCHA مخصص
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+                let captcha = '';
+                for (let i = 0; i < 5; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+            
+            let currentCaptcha = generateCaptcha();
+            document.getElementById('captchaText').textContent = currentCaptcha;
+            
+            // تحديث CAPTCHA
+            document.getElementById('refreshCaptcha').addEventListener('click', function() {
+                currentCaptcha = generateCaptcha();
+                document.getElementById('captchaText').textContent = currentCaptcha;
+                document.getElementById('captchaInput').value = '';
+                document.getElementById('captchaValidation').textContent = '';
+                checkFormValidity();
+            });
+            
+            // التحقق من CAPTCHA المخصص
+            document.getElementById('captchaInput').addEventListener('input', function() {
+                const captchaValidation = document.getElementById('captchaValidation');
+                if (this.value.toUpperCase() === currentCaptcha.toUpperCase()) {
+                    captchaValidation.innerHTML = '<i class="fas fa-check-circle"></i> CAPTCHA correct';
+                    captchaValidation.className = 'validation-message validation-success';
+                    window.customCaptchaVerified = true;
+                } else if (this.value.length > 0) {
+                    captchaValidation.innerHTML = '<i class="fas fa-exclamation-circle"></i> CAPTCHA incorrect';
+                    captchaValidation.className = 'validation-message validation-error';
+                    window.customCaptchaVerified = false;
+                } else {
+                    captchaValidation.textContent = '';
+                    window.customCaptchaVerified = false;
+                }
+                checkFormValidity();
+            });
+            
+            // وظائف reCAPTCHA من Google
+            window.enableSubmit = function() {
+                window.gCaptchaVerified = true;
+                document.getElementById('gCaptchaValidation').innerHTML = '<i class="fas fa-check-circle"></i> Vérification réussie';
+                document.getElementById('gCaptchaValidation').className = 'validation-message validation-success';
+                checkFormValidity();
+            };
+            
+            window.disableSubmit = function() {
+                window.gCaptchaVerified = false;
+                document.getElementById('gCaptchaValidation').innerHTML = '<i class="fas fa-exclamation-circle"></i> Vérification expirée, veuillez réessayer';
+                document.getElementById('gCaptchaValidation').className = 'validation-message validation-error';
+                checkFormValidity();
+            };
+            
             // التحقق من صحة البيانات
             function isValidName(name) {
                 const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/;
@@ -949,10 +1029,6 @@
                     this.classList.add('field-success');
                     validationMsg.innerHTML = '<i class="fas fa-check-circle"></i> Email valide';
                     validationMsg.className = 'validation-message validation-success';
-                    
-                    // إظهار قسم التحقق إذا كان البريد الإلكتروني صالحاً
-                    document.getElementById('verificationSection').style.display = 'block';
-                    sendVerificationCode(email);
                 }
                 checkFormValidity();
             });
@@ -975,41 +1051,6 @@
                 checkFormValidity();
             });
             
-            // إرسال رمز التحقق (محاكاة)
-            function sendVerificationCode(email) {
-                // في الواقع، هنا سيتم إرسال رمز حقيقي إلى البريد الإلكتروني
-                // للمحاكاة، سننشئ رمز عشوائي ونخزنه
-                const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
-                window.currentVerificationCode = verificationCode;
-                
-                const verificationStatus = document.getElementById('verificationStatus');
-                verificationStatus.innerHTML = `<i class="fas fa-info-circle"></i> Code de vérification envoyé à ${email}. Pour la démonstration, le code est: ${verificationCode}`;
-                verificationStatus.className = 'validation-message';
-                
-                // إعادة تعيين زر التحقق
-                document.getElementById('verifyBtn').disabled = false;
-                document.getElementById('verifyBtn').innerHTML = 'Vérifier';
-            }
-            
-            // التحقق من الرمز
-            document.getElementById('verifyBtn').addEventListener('click', function() {
-                const enteredCode = document.getElementById('verificationCode').value;
-                const verificationStatus = document.getElementById('verificationStatus');
-                
-                if (enteredCode === window.currentVerificationCode) {
-                    verificationStatus.innerHTML = '<i class="fas fa-check-circle"></i> Email vérifié avec succès!';
-                    verificationStatus.className = 'validation-message validation-success';
-                    window.emailVerified = true;
-                    document.getElementById('verifyBtn').disabled = true;
-                    document.getElementById('verifyBtn').innerHTML = '<i class="fas fa-check"></i> Vérifié';
-                    checkFormValidity();
-                } else {
-                    verificationStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Code incorrect. Veuillez réessayer.';
-                    verificationStatus.className = 'validation-message validation-error';
-                    window.emailVerified = false;
-                }
-            });
-            
             // التحقق من صحة النموذج الكلي
             function checkFormValidity() {
                 const name = document.getElementById('name').value.trim();
@@ -1019,11 +1060,15 @@
                 const isNameValid = isValidName(name);
                 const isEmailValid = isValidEmail(email);
                 const isMessageValid = isValidMessage(message);
-                const isEmailVerified = window.emailVerified || false;
+                const isCustomCaptchaVerified = window.customCaptchaVerified || false;
+                const isGCaptchaVerified = window.gCaptchaVerified || false;
+                
+                // يجب أن ينجح أحد نظامي CAPTCHA على الأقل
+                const isCaptchaVerified = isCustomCaptchaVerified || isGCaptchaVerified;
                 
                 const submitBtn = document.getElementById('submitBtn');
                 
-                if (isNameValid && isEmailValid && isMessageValid && isEmailVerified) {
+                if (isNameValid && isEmailValid && isMessageValid && isCaptchaVerified) {
                     submitBtn.disabled = false;
                 } else {
                     submitBtn.disabled = true;
@@ -1043,9 +1088,12 @@
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const message = document.getElementById('message').value.trim();
+                    const isCustomCaptchaVerified = window.customCaptchaVerified || false;
+                    const isGCaptchaVerified = window.gCaptchaVerified || false;
+                    const isCaptchaVerified = isCustomCaptchaVerified || isGCaptchaVerified;
                     
-                    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message) || !window.emailVerified) {
-                        showStatus('❌ Veuillez remplir tous les champs correctement et vérifier votre email', 'error');
+                    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message) || !isCaptchaVerified) {
+                        showStatus('❌ Veuillez remplir tous les champs correctement et compléter la vérification de sécurité', 'error');
                         return;
                     }
                     
@@ -1070,10 +1118,19 @@
                             showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
                             contactForm.reset();
                             // إعادة تعيين حالة التحقق
-                            window.emailVerified = false;
-                            document.getElementById('verificationSection').style.display = 'none';
-                            document.getElementById('verifyBtn').disabled = false;
-                            document.getElementById('verifyBtn').innerHTML = 'Vérifier';
+                            window.customCaptchaVerified = false;
+                            window.gCaptchaVerified = false;
+                            
+                            // إعادة تعيين CAPTCHA
+                            currentCaptcha = generateCaptcha();
+                            document.getElementById('captchaText').textContent = currentCaptcha;
+                            document.getElementById('captchaInput').value = '';
+                            document.getElementById('captchaValidation').textContent = '';
+                            
+                            // إعادة تعيين reCAPTCHA من Google
+                            if (window.grecaptcha) {
+                                grecaptcha.reset();
+                            }
                             
                             // إعادة تعيين أنماط الحقول
                             document.querySelectorAll('input, textarea').forEach(field => {
