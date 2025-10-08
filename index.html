@@ -812,7 +812,18 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // تكوين Auth0 - إصلاح المشاكل المحتملة
+        // تكوين Auth0 مع البيانات الجديدة
+        const auth0Config = {
+            domain: 'dev-kar8wzb3njd17hjm.eu.auth0.com',
+            clientID: 'c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS',
+            redirectUri: window.location.origin,
+            responseType: 'token id_token',
+            scope: 'openid profile email',
+            leeway: 60
+        };
+
+        console.log('Auth0 Configuration:', auth0Config);
+
         let auth0Client;
         let isAuthenticated = false;
         let userProfile = null;
@@ -820,33 +831,30 @@
         // تهيئة Auth0
         function initAuth0() {
             try {
-                auth0Client = new auth0.WebAuth({
-                    domain: 'dev-kar8wzb3njd17hjm.eu.auth0.com',
-                    clientID: 'CdqRuCzPd8osz0386sM903VrMhsTLxtV',
-                    redirectUri: window.location.origin,
-                    responseType: 'token id_token',
-                    scope: 'openid profile email',
-                    leeway: 60
-                });
-                console.log('Auth0 initialized successfully');
+                auth0Client = new auth0.WebAuth(auth0Config);
+                console.log('✅ Auth0 initialized successfully with domain:', auth0Config.domain);
+                return true;
             } catch (error) {
-                console.error('Error initializing Auth0:', error);
+                console.error('❌ Error initializing Auth0:', error);
+                return false;
             }
         }
 
         // التحقق من حالة المصادقة عند تحميل الصفحة
         function checkAuth() {
             if (!auth0Client) {
-                console.error('Auth0 client not initialized');
+                console.error('❌ Auth0 client not initialized');
+                showUnauthenticatedUI();
                 return;
             }
 
+            console.log('🔍 Checking authentication status...');
             auth0Client.checkSession({}, function(err, authResult) {
                 if (err) {
-                    console.log('User not authenticated:', err);
+                    console.log('👤 User not authenticated:', err);
                     showUnauthenticatedUI();
                 } else {
-                    console.log('User authenticated:', authResult);
+                    console.log('✅ User authenticated successfully');
                     handleAuthentication(authResult);
                 }
             });
@@ -855,13 +863,15 @@
         // معالجة المصادقة الناجحة
         function handleAuthentication(authResult) {
             if (authResult && authResult.accessToken && authResult.idToken) {
+                console.log('🔐 Fetching user info...');
                 auth0Client.client.userInfo(authResult.accessToken, function(err, user) {
                     if (err) {
-                        console.log('Error fetching user info:', err);
+                        console.error('❌ Error fetching user info:', err);
                         return;
                     }
                     userProfile = user;
                     isAuthenticated = true;
+                    console.log('👤 User profile loaded:', user);
                     showAuthenticatedUI(user);
                 });
             }
@@ -869,19 +879,22 @@
 
         // تسجيل الدخول
         function login() {
-            console.log('Login function called');
+            console.log('🚀 Login function called');
             if (!auth0Client) {
-                console.error('Auth0 client not initialized');
+                console.error('❌ Auth0 client not initialized');
+                alert('Erreur: Auth0 non initialisé. Veuillez recharger la page.');
                 return;
             }
             
+            console.log('🔗 Redirecting to Auth0 login...');
             auth0Client.authorize();
         }
 
         // تسجيل الخروج
         function logout() {
+            console.log('🚪 Logout function called');
             if (!auth0Client) {
-                console.error('Auth0 client not initialized');
+                console.error('❌ Auth0 client not initialized');
                 return;
             }
             
@@ -892,6 +905,8 @@
 
         // عرض واجهة المستخدم للمستخدم المسجل
         function showAuthenticatedUI(user) {
+            console.log('🔄 Showing authenticated UI for user:', user.name);
+            
             const loginBtn = document.getElementById('loginBtn');
             const userInfo = document.getElementById('userInfo');
             const userName = document.getElementById('userName');
@@ -926,6 +941,8 @@
 
         // عرض واجهة المستخدم للزائر غير المسجل
         function showUnauthenticatedUI() {
+            console.log('🔄 Showing unauthenticated UI');
+            
             const loginBtn = document.getElementById('loginBtn');
             const userInfo = document.getElementById('userInfo');
             const loginRequired = document.getElementById('loginRequired');
@@ -1057,28 +1074,31 @@
             }
         }
 
-        // عرض الصور في المعرض للهاتف فقط
+        // تهيئة التطبيق عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing Auth0...');
+            console.log('🚀 DOM loaded, initializing application...');
             
             // تهيئة Auth0
-            initAuth0();
+            const authInitialized = initAuth0();
             
-            // التحقق من المصادقة عند تحميل الصفحة
-            checkAuth();
-            
-            // معالجة callback من Auth0
-            if (auth0Client) {
+            if (authInitialized) {
+                // التحقق من المصادقة عند تحميل الصفحة
+                checkAuth();
+                
+                // معالجة callback من Auth0
                 auth0Client.parseHash(function(err, authResult) {
                     if (err) {
-                        console.log('Auth error:', err);
+                        console.log('❌ Auth error:', err);
                         return;
                     }
                     if (authResult) {
-                        console.log('Auth result received:', authResult);
+                        console.log('✅ Auth result received:', authResult);
                         handleAuthentication(authResult);
                     }
                 });
+            } else {
+                console.error('❌ Failed to initialize Auth0');
+                showUnauthenticatedUI();
             }
 
             // إضافة event listener إضافي لزر التسجيل للتأكد من العمل
@@ -1086,7 +1106,7 @@
             if (loginBtn) {
                 loginBtn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log('Login button clicked via event listener');
+                    console.log('🖱️ Login button clicked via event listener');
                     login();
                 });
             }
