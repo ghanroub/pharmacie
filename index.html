@@ -7,7 +7,7 @@
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- إضافة reCAPTCHA من Google -->
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         * {
             box-sizing: border-box;
@@ -475,6 +475,8 @@
         .g-recaptcha {
             display: inline-block;
             margin: 0 auto;
+            transform: scale(1.0);
+            transform-origin: center;
         }
         
         .captcha-footer {
@@ -703,7 +705,14 @@
             }
             
             .g-recaptcha {
-                transform: scale(0.9);
+                transform: scale(0.85);
+                transform-origin: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .g-recaptcha {
+                transform: scale(0.75);
                 transform-origin: center;
             }
         }
@@ -782,8 +791,8 @@
                 <h2><i class="fas fa-question-circle"></i> Questions</h2>
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
                 <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
-                <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+                <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
+                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
                 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
                 <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                 
@@ -841,8 +850,8 @@
                                 Cette étape simple nous aide à protéger notre site contre les messages indésirables.
                             </p>
                             
-                            <!-- reCAPTCHA من Google -->
-                            <div class="g-recaptcha" data-sitekey="6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs" data-callback="enableSubmit" data-expired-callback="disableSubmit"></div>
+                            <!-- reCAPTCHA من Google - الخانة الفعلية -->
+                            <div class="g-recaptcha" data-sitekey="6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs"></div>
                             <div id="gCaptchaValidation" class="validation-message"></div>
                             
                             <div class="captcha-footer">
@@ -853,7 +862,7 @@
                             </div>
                         </div>
                         
-                        <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                        <button type="submit" class="submit-btn" id="submitBtn">
                             <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
                     </form>
@@ -937,21 +946,6 @@
                 });
             }
             
-            // وظائف reCAPTCHA من Google
-            window.enableSubmit = function() {
-                window.gCaptchaVerified = true;
-                document.getElementById('gCaptchaValidation').innerHTML = '<i class="fas fa-check-circle"></i> Vérification réussie - Vous pouvez maintenant envoyer votre message';
-                document.getElementById('gCaptchaValidation').className = 'validation-message validation-success';
-                checkFormValidity();
-            };
-            
-            window.disableSubmit = function() {
-                window.gCaptchaVerified = false;
-                document.getElementById('gCaptchaValidation').innerHTML = '<i class="fas fa-exclamation-circle"></i> Vérification expirée, veuillez réessayer';
-                document.getElementById('gCaptchaValidation').className = 'validation-message validation-error';
-                checkFormValidity();
-            };
-            
             // التحقق من صحة البيانات
             function isValidName(name) {
                 const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/;
@@ -983,7 +977,6 @@
                     validationMsg.innerHTML = '<i class="fas fa-check-circle"></i> Nom valide';
                     validationMsg.className = 'validation-message validation-success';
                 }
-                checkFormValidity();
             });
             
             document.getElementById('email').addEventListener('blur', function() {
@@ -1001,7 +994,6 @@
                     validationMsg.innerHTML = '<i class="fas fa-check-circle"></i> Email valide';
                     validationMsg.className = 'validation-message validation-success';
                 }
-                checkFormValidity();
             });
             
             document.getElementById('message').addEventListener('blur', function() {
@@ -1019,28 +1011,7 @@
                     validationMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message valide';
                     validationMsg.className = 'validation-message validation-success';
                 }
-                checkFormValidity();
             });
-            
-            // التحقق من صحة النموذج الكلي
-            function checkFormValidity() {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const message = document.getElementById('message').value.trim();
-                
-                const isNameValid = isValidName(name);
-                const isEmailValid = isValidEmail(email);
-                const isMessageValid = isValidMessage(message);
-                const isGCaptchaVerified = window.gCaptchaVerified || false;
-                
-                const submitBtn = document.getElementById('submitBtn');
-                
-                if (isNameValid && isEmailValid && isMessageValid && isGCaptchaVerified) {
-                    submitBtn.disabled = false;
-                } else {
-                    submitBtn.disabled = true;
-                }
-            }
             
             // معالجة نموذج الاتصال
             const contactForm = document.getElementById('contactForm');
@@ -1055,10 +1026,15 @@
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const message = document.getElementById('message').value.trim();
-                    const isGCaptchaVerified = window.gCaptchaVerified || false;
+                    const recaptchaResponse = grecaptcha.getResponse();
                     
-                    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message) || !isGCaptchaVerified) {
-                        showStatus('❌ Veuillez remplir tous les champs correctement et compléter la vérification de sécurité', 'error');
+                    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message)) {
+                        showStatus('❌ Veuillez remplir tous les champs correctement', 'error');
+                        return;
+                    }
+                    
+                    if (!recaptchaResponse) {
+                        showStatus('❌ Veuillez confirmer que vous n\'êtes pas un robot', 'error');
                         return;
                     }
                     
@@ -1071,6 +1047,9 @@
                     
                     try {
                         const formData = new FormData(contactForm);
+                        // إضافة استجابة reCAPTCHA إلى البيانات المرسلة
+                        formData.append('g-recaptcha-response', recaptchaResponse);
+                        
                         const response = await fetch(contactForm.action, {
                             method: 'POST',
                             body: formData,
@@ -1082,13 +1061,9 @@
                         if (response.ok) {
                             showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
                             contactForm.reset();
-                            // إعادة تعيين حالة التحقق
-                            window.gCaptchaVerified = false;
                             
-                            // إعادة تعيين reCAPTCHA من Google
-                            if (window.grecaptcha) {
-                                grecaptcha.reset();
-                            }
+                            // إعادة تعيين reCAPTCHA
+                            grecaptcha.reset();
                             
                             // إعادة تعيين أنماط الحقول
                             document.querySelectorAll('input, textarea').forEach(field => {
@@ -1106,7 +1081,7 @@
                         showStatus('❌ Erreur: ' + error.message, 'error');
                     } finally {
                         // إعادة تمكين زر الإرسال
-                        submitBtn.disabled = true; // نتركه معطلاً حتى يتم التحقق من جديد
+                        submitBtn.disabled = false;
                         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
                     }
                 });
