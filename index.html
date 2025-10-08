@@ -441,51 +441,59 @@
             color: #ffeb3b;
         }
         
-        /* أنماط CAPTCHA */
+        /* تحسينات reCAPTCHA */
         .captcha-container {
             margin: 20px 0;
-            padding: 15px;
+            padding: 25px;
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 235, 59, 0.2);
+            text-align: center;
         }
         
-        .captcha-challenge {
+        .captcha-header {
             display: flex;
             align-items: center;
-            gap: 15px;
+            justify-content: center;
+            gap: 10px;
             margin-bottom: 15px;
-            flex-wrap: wrap;
+            color: #ffeb3b;
         }
         
-        .captcha-image {
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
+        .captcha-header i {
             font-size: 1.5rem;
-            letter-spacing: 5px;
-            color: #333;
-            user-select: none;
-        }
-        
-        .captcha-refresh {
-            background: transparent;
-            border: none;
             color: #00bcd4;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
         }
         
-        .captcha-refresh:hover {
-            color: #4dd0e1;
-            transform: rotate(90deg);
+        .captcha-instruction {
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
         
-        .captcha-input {
-            flex: 1;
-            min-width: 150px;
+        .g-recaptcha {
+            display: inline-block;
+            margin: 0 auto;
+        }
+        
+        .captcha-footer {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .captcha-footer a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+        
+        .captcha-footer a:hover {
+            text-decoration: underline;
         }
         
         .honeypot {
@@ -690,13 +698,13 @@
                 font-size: 1rem;
             }
             
-            .captcha-challenge {
-                flex-direction: column;
-                align-items: flex-start;
+            .captcha-container {
+                padding: 20px 15px;
             }
             
-            .captcha-input {
-                width: 100%;
+            .g-recaptcha {
+                transform: scale(0.9);
+                transform-origin: center;
             }
         }
     </style>
@@ -822,23 +830,26 @@
                             <div id="messageValidation" class="validation-message"></div>
                         </div>
                         
-                        <!-- قسم CAPTCHA -->
+                        <!-- قسم CAPTCHA المحسن -->
                         <div class="captcha-container">
-                            <h4><i class="fas fa-robot"></i> Vérification de sécurité</h4>
-                            <p>Veuillez résoudre le défi suivant pour prouver que vous n'êtes pas un robot :</p>
-                            <div class="captcha-challenge">
-                                <div class="captcha-image" id="captchaText">ABCD</div>
-                                <button type="button" class="captcha-refresh" id="refreshCaptcha" title="Rafraîchir">
-                                    <i class="fas fa-sync-alt"></i>
-                                </button>
-                                <input type="text" class="captcha-input" id="captchaInput" placeholder="Entrez le texte ci-dessus" maxlength="6">
+                            <div class="captcha-header">
+                                <i class="fas fa-robot"></i>
+                                <h4>Vérification de sécurité</h4>
                             </div>
-                            <div id="captchaValidation" class="validation-message"></div>
+                            <p class="captcha-instruction">
+                                Veuillez confirmer que vous n'êtes pas un robot en cochant la case ci-dessous. 
+                                Cette étape simple nous aide à protéger notre site contre les messages indésirables.
+                            </p>
                             
                             <!-- reCAPTCHA من Google -->
-                            <div style="margin-top: 15px; text-align: center;">
-                                <div class="g-recaptcha" data-sitekey="6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs" data-callback="enableSubmit" data-expired-callback="disableSubmit"></div>
-                                <div id="gCaptchaValidation" class="validation-message"></div>
+                            <div class="g-recaptcha" data-sitekey="6Ldj-OIYAAAAW4AYLYRLY8nZNYZRQc9Kn7azs" data-callback="enableSubmit" data-expired-callback="disableSubmit"></div>
+                            <div id="gCaptchaValidation" class="validation-message"></div>
+                            
+                            <div class="captcha-footer">
+                                <i class="fas fa-lock"></i>
+                                Protégé par reCAPTCHA - 
+                                <a href="https://policies.google.com/privacy" target="_blank">Confidentialité</a> - 
+                                <a href="https://policies.google.com/terms" target="_blank">Conditions</a>
                             </div>
                         </div>
                         
@@ -926,50 +937,10 @@
                 });
             }
             
-            // توليد CAPTCHA مخصص
-            function generateCaptcha() {
-                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
-                let captcha = '';
-                for (let i = 0; i < 5; i++) {
-                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                return captcha;
-            }
-            
-            let currentCaptcha = generateCaptcha();
-            document.getElementById('captchaText').textContent = currentCaptcha;
-            
-            // تحديث CAPTCHA
-            document.getElementById('refreshCaptcha').addEventListener('click', function() {
-                currentCaptcha = generateCaptcha();
-                document.getElementById('captchaText').textContent = currentCaptcha;
-                document.getElementById('captchaInput').value = '';
-                document.getElementById('captchaValidation').textContent = '';
-                checkFormValidity();
-            });
-            
-            // التحقق من CAPTCHA المخصص
-            document.getElementById('captchaInput').addEventListener('input', function() {
-                const captchaValidation = document.getElementById('captchaValidation');
-                if (this.value.toUpperCase() === currentCaptcha.toUpperCase()) {
-                    captchaValidation.innerHTML = '<i class="fas fa-check-circle"></i> CAPTCHA correct';
-                    captchaValidation.className = 'validation-message validation-success';
-                    window.customCaptchaVerified = true;
-                } else if (this.value.length > 0) {
-                    captchaValidation.innerHTML = '<i class="fas fa-exclamation-circle"></i> CAPTCHA incorrect';
-                    captchaValidation.className = 'validation-message validation-error';
-                    window.customCaptchaVerified = false;
-                } else {
-                    captchaValidation.textContent = '';
-                    window.customCaptchaVerified = false;
-                }
-                checkFormValidity();
-            });
-            
             // وظائف reCAPTCHA من Google
             window.enableSubmit = function() {
                 window.gCaptchaVerified = true;
-                document.getElementById('gCaptchaValidation').innerHTML = '<i class="fas fa-check-circle"></i> Vérification réussie';
+                document.getElementById('gCaptchaValidation').innerHTML = '<i class="fas fa-check-circle"></i> Vérification réussie - Vous pouvez maintenant envoyer votre message';
                 document.getElementById('gCaptchaValidation').className = 'validation-message validation-success';
                 checkFormValidity();
             };
@@ -1060,15 +1031,11 @@
                 const isNameValid = isValidName(name);
                 const isEmailValid = isValidEmail(email);
                 const isMessageValid = isValidMessage(message);
-                const isCustomCaptchaVerified = window.customCaptchaVerified || false;
                 const isGCaptchaVerified = window.gCaptchaVerified || false;
-                
-                // يجب أن ينجح أحد نظامي CAPTCHA على الأقل
-                const isCaptchaVerified = isCustomCaptchaVerified || isGCaptchaVerified;
                 
                 const submitBtn = document.getElementById('submitBtn');
                 
-                if (isNameValid && isEmailValid && isMessageValid && isCaptchaVerified) {
+                if (isNameValid && isEmailValid && isMessageValid && isGCaptchaVerified) {
                     submitBtn.disabled = false;
                 } else {
                     submitBtn.disabled = true;
@@ -1088,11 +1055,9 @@
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const message = document.getElementById('message').value.trim();
-                    const isCustomCaptchaVerified = window.customCaptchaVerified || false;
                     const isGCaptchaVerified = window.gCaptchaVerified || false;
-                    const isCaptchaVerified = isCustomCaptchaVerified || isGCaptchaVerified;
                     
-                    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message) || !isCaptchaVerified) {
+                    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message) || !isGCaptchaVerified) {
                         showStatus('❌ Veuillez remplir tous les champs correctement et compléter la vérification de sécurité', 'error');
                         return;
                     }
@@ -1118,14 +1083,7 @@
                             showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
                             contactForm.reset();
                             // إعادة تعيين حالة التحقق
-                            window.customCaptchaVerified = false;
                             window.gCaptchaVerified = false;
-                            
-                            // إعادة تعيين CAPTCHA
-                            currentCaptcha = generateCaptcha();
-                            document.getElementById('captchaText').textContent = currentCaptcha;
-                            document.getElementById('captchaInput').value = '';
-                            document.getElementById('captchaValidation').textContent = '';
                             
                             // إعادة تعيين reCAPTCHA من Google
                             if (window.grecaptcha) {
