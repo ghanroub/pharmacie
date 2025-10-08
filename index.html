@@ -6,10 +6,7 @@
     <title>GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- إضافة Auth0 SDK -->
-    <script src="https://cdn.auth0.com/js/auth0/9.16.2/auth0.min.js"></script>
     <style>
-        /* جميع الأنماط السابقة تبقى كما هي */
         * {
             box-sizing: border-box;
         }
@@ -23,10 +20,12 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* إضافة صورة الخلفية للجسم بدلاً من قسم hero */
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
+        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
         body::before {
             content: '';
             position: fixed;
@@ -108,53 +107,6 @@
             background: rgba(0, 188, 212, 0.1);
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
-        }
-        
-        /* أنماط أزرار Auth0 */
-        .auth-buttons {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .auth-btn {
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .auth-btn:hover {
-            background: linear-gradient(135deg, #4a148c, #6a1b9a);
-            transform: translateY(-2px);
-        }
-        
-        .auth-btn.login {
-            background: linear-gradient(135deg, #00bcd4, #0288d1);
-        }
-        
-        .auth-btn.login:hover {
-            background: linear-gradient(135deg, #0288d1, #00bcd4);
-        }
-        
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ffeb3b;
-        }
-        
-        .user-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 2px solid #ffeb3b;
         }
         
         .dropdown-content {
@@ -452,22 +404,6 @@
             border: 1px solid #f44336;
         }
         
-        /* رسالة التسجيل المطلوب */
-        .login-required {
-            background: linear-gradient(135deg, rgba(106, 27, 154, 0.3), rgba(74, 20, 140, 0.3));
-            border: 1px solid #6a1b9a;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .login-required p {
-            color: #ffeb3b;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -663,17 +599,6 @@
                 padding: 12px 25px;
                 font-size: 1rem;
             }
-            
-            /* تعديلات الهاتف لأزرار Auth0 */
-            .auth-buttons {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .auth-btn {
-                padding: 6px 12px;
-                font-size: 0.9rem;
-            }
         }
     </style>
 </head>
@@ -685,6 +610,7 @@
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
         <nav>
             <ul id="navMenu">
+                <!-- تم تغيير الرابط هنا -->
                 <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li class="dropdown">
@@ -699,15 +625,6 @@
                 <li><a href="#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
             </ul>
         </nav>
-        <!-- إضافة أزرار Auth0 -->
-        <div class="auth-buttons" id="authButtons">
-            <div id="userInfo" class="user-info" style="display: none;">
-                <img id="userAvatar" class="user-avatar" src="" alt="User Avatar">
-                <span id="userName"></span>
-                <button class="auth-btn" onclick="logout()">Déconnexion</button>
-            </div>
-            <button id="loginBtn" class="auth-btn login" onclick="login()">Connexion</button>
-        </div>
     </header>
     <section id="intro" class="hero">
         <div class="container">
@@ -763,15 +680,9 @@
                 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
                 <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                 
-                <!-- نموذج الاتصال المعدل مع حماية Auth0 -->
-                <div class="contact-form" id="contactFormSection">
+                <!-- نموذج الاتصال المعدل -->
+                <div class="contact-form">
                     <h3><i class="fas fa-envelope"></i> Envoyez-nous un message</h3>
-                    
-                    <!-- رسالة التسجيل المطلوب -->
-                    <div id="loginRequired" class="login-required">
-                        <p><i class="fas fa-lock"></i> Vous devez être connecté pour envoyer un message</p>
-                        <button class="auth-btn login" onclick="login()">Se connecter</button>
-                    </div>
                     
                     <!-- رسائل الحالة -->
                     <div id="statusMessage" class="status-message" style="display: none;"></div>
@@ -781,7 +692,6 @@
                         id="contactForm" 
                         action="https://formspree.io/f/xkgqvnad" 
                         method="POST"
-                        style="display: none;"
                     >
                         <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
                         <input type="hidden" name="_language" value="fr">
@@ -812,148 +722,6 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // تكوين Auth0 مع البيانات الجديدة
-        const auth0Config = {
-            domain: 'dev-kar8wzb3njd17hjm.eu.auth0.com',
-            clientID: 'c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS',
-            redirectUri: window.location.origin,
-            responseType: 'token id_token',
-            scope: 'openid profile email',
-            leeway: 60
-        };
-
-        console.log('Auth0 Configuration:', auth0Config);
-
-        let auth0Client;
-        let isAuthenticated = false;
-        let userProfile = null;
-
-        // تهيئة Auth0
-        function initAuth0() {
-            try {
-                auth0Client = new auth0.WebAuth(auth0Config);
-                console.log('✅ Auth0 initialized successfully with domain:', auth0Config.domain);
-                return true;
-            } catch (error) {
-                console.error('❌ Error initializing Auth0:', error);
-                return false;
-            }
-        }
-
-        // التحقق من حالة المصادقة عند تحميل الصفحة
-        function checkAuth() {
-            if (!auth0Client) {
-                console.error('❌ Auth0 client not initialized');
-                showUnauthenticatedUI();
-                return;
-            }
-
-            console.log('🔍 Checking authentication status...');
-            auth0Client.checkSession({}, function(err, authResult) {
-                if (err) {
-                    console.log('👤 User not authenticated:', err);
-                    showUnauthenticatedUI();
-                } else {
-                    console.log('✅ User authenticated successfully');
-                    handleAuthentication(authResult);
-                }
-            });
-        }
-
-        // معالجة المصادقة الناجحة
-        function handleAuthentication(authResult) {
-            if (authResult && authResult.accessToken && authResult.idToken) {
-                console.log('🔐 Fetching user info...');
-                auth0Client.client.userInfo(authResult.accessToken, function(err, user) {
-                    if (err) {
-                        console.error('❌ Error fetching user info:', err);
-                        return;
-                    }
-                    userProfile = user;
-                    isAuthenticated = true;
-                    console.log('👤 User profile loaded:', user);
-                    showAuthenticatedUI(user);
-                });
-            }
-        }
-
-        // تسجيل الدخول
-        function login() {
-            console.log('🚀 Login function called');
-            if (!auth0Client) {
-                console.error('❌ Auth0 client not initialized');
-                alert('Erreur: Auth0 non initialisé. Veuillez recharger la page.');
-                return;
-            }
-            
-            console.log('🔗 Redirecting to Auth0 login...');
-            auth0Client.authorize();
-        }
-
-        // تسجيل الخروج
-        function logout() {
-            console.log('🚪 Logout function called');
-            if (!auth0Client) {
-                console.error('❌ Auth0 client not initialized');
-                return;
-            }
-            
-            auth0Client.logout({
-                returnTo: window.location.origin
-            });
-        }
-
-        // عرض واجهة المستخدم للمستخدم المسجل
-        function showAuthenticatedUI(user) {
-            console.log('🔄 Showing authenticated UI for user:', user.name);
-            
-            const loginBtn = document.getElementById('loginBtn');
-            const userInfo = document.getElementById('userInfo');
-            const userName = document.getElementById('userName');
-            const userAvatar = document.getElementById('userAvatar');
-            
-            if (loginBtn) loginBtn.style.display = 'none';
-            if (userInfo) userInfo.style.display = 'flex';
-            if (userName) userName.textContent = user.name || user.email;
-            
-            if (user.picture && userAvatar) {
-                userAvatar.src = user.picture;
-            }
-
-            // إظهار نموذج الاتصال وإخفاء رسالة التسجيل المطلوب
-            const loginRequired = document.getElementById('loginRequired');
-            const contactForm = document.getElementById('contactForm');
-            
-            if (loginRequired) loginRequired.style.display = 'none';
-            if (contactForm) contactForm.style.display = 'block';
-
-            // تعبئة بيانات المستخدم تلقائياً
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            
-            if (user.name && nameInput) {
-                nameInput.value = user.name;
-            }
-            if (user.email && emailInput) {
-                emailInput.value = user.email;
-            }
-        }
-
-        // عرض واجهة المستخدم للزائر غير المسجل
-        function showUnauthenticatedUI() {
-            console.log('🔄 Showing unauthenticated UI');
-            
-            const loginBtn = document.getElementById('loginBtn');
-            const userInfo = document.getElementById('userInfo');
-            const loginRequired = document.getElementById('loginRequired');
-            const contactForm = document.getElementById('contactForm');
-            
-            if (loginBtn) loginBtn.style.display = 'block';
-            if (userInfo) userInfo.style.display = 'none';
-            if (loginRequired) loginRequired.style.display = 'block';
-            if (contactForm) contactForm.style.display = 'none';
-        }
-
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
@@ -962,8 +730,10 @@
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // التمرير لأسفل - إخفاء الهيدر
                 mainHeader.classList.add('hidden');
             } else if (scrollTop < lastScrollTop) {
+                // التمرير لأعلى - إظهار الهيدر
                 mainHeader.classList.remove('hidden');
             }
             
@@ -975,7 +745,6 @@
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-
         // عرض/إخفاء القائمة المنسدلة في الهاتف
         function toggleDropdownMobile(event) {
             if (window.innerWidth <= 768) {
@@ -984,7 +753,6 @@
                 dropdownContent.classList.toggle("show");
             }
         }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
@@ -995,122 +763,8 @@
             }
         });
         
-        // معالجة نموذج الاتصال
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const statusMessage = document.getElementById('statusMessage');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // التحقق من أن المستخدم مسجل الدخول
-                if (!isAuthenticated) {
-                    showStatus('❌ Vous devez être connecté pour envoyer un message', 'error');
-                    return;
-                }
-                
-                // تعطيل زر الإرسال أثناء المعالجة
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-                
-                // إخفاء رسالة الحالة السابقة
-                statusMessage.style.display = 'none';
-                
-                try {
-                    const formData = new FormData(contactForm);
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
-                        contactForm.reset();
-                        
-                        // إعادة تعبئة بيانات المستخدم بعد إعادة تعيين النموذج
-                        if (userProfile) {
-                            const nameInput = document.getElementById('name');
-                            const emailInput = document.getElementById('email');
-                            
-                            if (userProfile.name && nameInput) {
-                                nameInput.value = userProfile.name;
-                            }
-                            if (userProfile.email && emailInput) {
-                                emailInput.value = userProfile.email;
-                            }
-                        }
-                    } else {
-                        const errorData = await response.json();
-                        throw new Error(errorData.error || 'Erreur lors de l\'envoi du message');
-                    }
-                } catch (error) {
-                    showStatus('❌ Erreur: ' + error.message, 'error');
-                } finally {
-                    // إعادة تمكين زر الإرسال
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
-                }
-            });
-        }
-        
-        // وظيفة لعرض رسائل الحالة
-        function showStatus(message, type) {
-            if (!statusMessage) return;
-            
-            statusMessage.textContent = message;
-            statusMessage.className = 'status-message';
-            statusMessage.classList.add(`status-${type}`);
-            statusMessage.style.display = 'block';
-            
-            // إخفاء الرسالة تلقائياً بعد 8 ثوانٍ للرسائل الناجحة
-            if (type === 'success') {
-                setTimeout(() => {
-                    statusMessage.style.display = 'none';
-                }, 8000);
-            }
-        }
-
-        // تهيئة التطبيق عند تحميل الصفحة
+        // عرض الصور في المعرض للهاتف فقط
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 DOM loaded, initializing application...');
-            
-            // تهيئة Auth0
-            const authInitialized = initAuth0();
-            
-            if (authInitialized) {
-                // التحقق من المصادقة عند تحميل الصفحة
-                checkAuth();
-                
-                // معالجة callback من Auth0
-                auth0Client.parseHash(function(err, authResult) {
-                    if (err) {
-                        console.log('❌ Auth error:', err);
-                        return;
-                    }
-                    if (authResult) {
-                        console.log('✅ Auth result received:', authResult);
-                        handleAuthentication(authResult);
-                    }
-                });
-            } else {
-                console.error('❌ Failed to initialize Auth0');
-                showUnauthenticatedUI();
-            }
-
-            // إضافة event listener إضافي لزر التسجيل للتأكد من العمل
-            const loginBtn = document.getElementById('loginBtn');
-            if (loginBtn) {
-                loginBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('🖱️ Login button clicked via event listener');
-                    login();
-                });
-            }
-
             // إخفاء شريط الصور المتحرك في الهاتف
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
@@ -1138,6 +792,64 @@
                 individualImages.forEach(img => {
                     img.style.display = 'none';
                 });
+            }
+            
+            // معالجة نموذج الاتصال
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // تعطيل زر الإرسال أثناء المعالجة
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                    
+                    // إخفاء رسالة الحالة السابقة
+                    statusMessage.style.display = 'none';
+                    
+                    try {
+                        const formData = new FormData(contactForm);
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
+                            contactForm.reset();
+                        } else {
+                            const errorData = await response.json();
+                            throw new Error(errorData.error || 'Erreur lors de l\'envoi du message');
+                        }
+                    } catch (error) {
+                        showStatus('❌ Erreur: ' + error.message, 'error');
+                    } finally {
+                        // إعادة تمكين زر الإرسال
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+                    }
+                });
+            }
+            
+            // وظيفة لعرض رسائل الحالة
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = 'status-message';
+                statusMessage.classList.add(`status-${type}`);
+                statusMessage.style.display = 'block';
+                
+                // إخفاء الرسالة تلقائياً بعد 8 ثوانٍ للرسائل الناجحة
+                if (type === 'success') {
+                    setTimeout(() => {
+                        statusMessage.style.display = 'none';
+                    }, 8000);
+                }
             }
         });
     </script>
