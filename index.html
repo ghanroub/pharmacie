@@ -9,7 +9,7 @@
     <!-- إضافة Auth0 SDK -->
     <script src="https://cdn.auth0.com/js/auth0/9.16.2/auth0.min.js"></script>
     <style>
-        /* جميع الأنماط تبقى كما هي */
+        /* جميع الأنماط السابقة تبقى كما هي */
         * {
             box-sizing: border-box;
         }
@@ -685,7 +685,6 @@
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
         <nav>
             <ul id="navMenu">
-                <!-- تم تغيير الرابط هنا -->
                 <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li class="dropdown">
@@ -813,25 +812,41 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // تكوين Auth0 - باستخدام الـ Domain الصحيح
-        const auth0 = new auth0.WebAuth({
-            domain: 'dev-kar8wzb3njd17hjm.eu.auth0.com', // ✅ الـ Domain الصحيح
-            clientID: 'CdqRuCzPd8osz0386sM903VrMhsTLxtV', // الـ Client ID الذي قدمته
-            redirectUri: window.location.origin,
-            responseType: 'token id_token',
-            scope: 'openid profile email'
-        });
-
+        // تكوين Auth0 - إصلاح المشاكل المحتملة
+        let auth0Client;
         let isAuthenticated = false;
         let userProfile = null;
 
+        // تهيئة Auth0
+        function initAuth0() {
+            try {
+                auth0Client = new auth0.WebAuth({
+                    domain: 'dev-kar8wzb3njd17hjm.eu.auth0.com',
+                    clientID: 'CdqRuCzPd8osz0386sM903VrMhsTLxtV',
+                    redirectUri: window.location.origin,
+                    responseType: 'token id_token',
+                    scope: 'openid profile email',
+                    leeway: 60
+                });
+                console.log('Auth0 initialized successfully');
+            } catch (error) {
+                console.error('Error initializing Auth0:', error);
+            }
+        }
+
         // التحقق من حالة المصادقة عند تحميل الصفحة
         function checkAuth() {
-            auth0.checkSession({}, function(err, authResult) {
+            if (!auth0Client) {
+                console.error('Auth0 client not initialized');
+                return;
+            }
+
+            auth0Client.checkSession({}, function(err, authResult) {
                 if (err) {
-                    console.log('غير مسجل:', err);
+                    console.log('User not authenticated:', err);
                     showUnauthenticatedUI();
                 } else {
+                    console.log('User authenticated:', authResult);
                     handleAuthentication(authResult);
                 }
             });
@@ -840,9 +855,9 @@
         // معالجة المصادقة الناجحة
         function handleAuthentication(authResult) {
             if (authResult && authResult.accessToken && authResult.idToken) {
-                auth0.client.userInfo(authResult.accessToken, function(err, user) {
+                auth0Client.client.userInfo(authResult.accessToken, function(err, user) {
                     if (err) {
-                        console.log('خطأ في جلب معلومات المستخدم:', err);
+                        console.log('Error fetching user info:', err);
                         return;
                     }
                     userProfile = user;
@@ -854,47 +869,72 @@
 
         // تسجيل الدخول
         function login() {
-            auth0.authorize();
+            console.log('Login function called');
+            if (!auth0Client) {
+                console.error('Auth0 client not initialized');
+                return;
+            }
+            
+            auth0Client.authorize();
         }
 
         // تسجيل الخروج
         function logout() {
-            auth0.logout({
+            if (!auth0Client) {
+                console.error('Auth0 client not initialized');
+                return;
+            }
+            
+            auth0Client.logout({
                 returnTo: window.location.origin
             });
         }
 
         // عرض واجهة المستخدم للمستخدم المسجل
         function showAuthenticatedUI(user) {
-            document.getElementById('loginBtn').style.display = 'none';
-            document.getElementById('userInfo').style.display = 'flex';
-            document.getElementById('userName').textContent = user.name || user.email;
+            const loginBtn = document.getElementById('loginBtn');
+            const userInfo = document.getElementById('userInfo');
+            const userName = document.getElementById('userName');
+            const userAvatar = document.getElementById('userAvatar');
             
-            if (user.picture) {
-                document.getElementById('userAvatar').src = user.picture;
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (userInfo) userInfo.style.display = 'flex';
+            if (userName) userName.textContent = user.name || user.email;
+            
+            if (user.picture && userAvatar) {
+                userAvatar.src = user.picture;
             }
 
             // إظهار نموذج الاتصال وإخفاء رسالة التسجيل المطلوب
-            document.getElementById('loginRequired').style.display = 'none';
-            document.getElementById('contactForm').style.display = 'block';
+            const loginRequired = document.getElementById('loginRequired');
+            const contactForm = document.getElementById('contactForm');
+            
+            if (loginRequired) loginRequired.style.display = 'none';
+            if (contactForm) contactForm.style.display = 'block';
 
             // تعبئة بيانات المستخدم تلقائياً
-            if (user.name) {
-                document.getElementById('name').value = user.name;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            
+            if (user.name && nameInput) {
+                nameInput.value = user.name;
             }
-            if (user.email) {
-                document.getElementById('email').value = user.email;
+            if (user.email && emailInput) {
+                emailInput.value = user.email;
             }
         }
 
         // عرض واجهة المستخدم للزائر غير المسجل
         function showUnauthenticatedUI() {
-            document.getElementById('loginBtn').style.display = 'block';
-            document.getElementById('userInfo').style.display = 'none';
+            const loginBtn = document.getElementById('loginBtn');
+            const userInfo = document.getElementById('userInfo');
+            const loginRequired = document.getElementById('loginRequired');
+            const contactForm = document.getElementById('contactForm');
             
-            // إخفاء نموذج الاتصال وإظهار رسالة التسجيل المطلوب
-            document.getElementById('loginRequired').style.display = 'block';
-            document.getElementById('contactForm').style.display = 'none';
+            if (loginBtn) loginBtn.style.display = 'block';
+            if (userInfo) userInfo.style.display = 'none';
+            if (loginRequired) loginRequired.style.display = 'block';
+            if (contactForm) contactForm.style.display = 'none';
         }
 
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
@@ -976,11 +1016,14 @@
                         
                         // إعادة تعبئة بيانات المستخدم بعد إعادة تعيين النموذج
                         if (userProfile) {
-                            if (userProfile.name) {
-                                document.getElementById('name').value = userProfile.name;
+                            const nameInput = document.getElementById('name');
+                            const emailInput = document.getElementById('email');
+                            
+                            if (userProfile.name && nameInput) {
+                                nameInput.value = userProfile.name;
                             }
-                            if (userProfile.email) {
-                                document.getElementById('email').value = userProfile.email;
+                            if (userProfile.email && emailInput) {
+                                emailInput.value = userProfile.email;
                             }
                         }
                     } else {
@@ -999,6 +1042,8 @@
         
         // وظيفة لعرض رسائل الحالة
         function showStatus(message, type) {
+            if (!statusMessage) return;
+            
             statusMessage.textContent = message;
             statusMessage.className = 'status-message';
             statusMessage.classList.add(`status-${type}`);
@@ -1014,19 +1059,37 @@
 
         // عرض الصور في المعرض للهاتف فقط
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing Auth0...');
+            
+            // تهيئة Auth0
+            initAuth0();
+            
             // التحقق من المصادقة عند تحميل الصفحة
             checkAuth();
             
             // معالجة callback من Auth0
-            auth0.parseHash(function(err, authResult) {
-                if (err) {
-                    console.log('خطأ في المصادقة:', err);
-                    return;
-                }
-                if (authResult) {
-                    handleAuthentication(authResult);
-                }
-            });
+            if (auth0Client) {
+                auth0Client.parseHash(function(err, authResult) {
+                    if (err) {
+                        console.log('Auth error:', err);
+                        return;
+                    }
+                    if (authResult) {
+                        console.log('Auth result received:', authResult);
+                        handleAuthentication(authResult);
+                    }
+                });
+            }
+
+            // إضافة event listener إضافي لزر التسجيل للتأكد من العمل
+            const loginBtn = document.getElementById('loginBtn');
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Login button clicked via event listener');
+                    login();
+                });
+            }
 
             // إخفاء شريط الصور المتحرك في الهاتف
             if (window.innerWidth <= 768) {
