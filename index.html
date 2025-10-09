@@ -42,7 +42,7 @@
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
-            padding: 20px 15px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -70,9 +70,12 @@
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
+        
         header nav {
-            transform: translateX(-35px);
+            display: flex;
+            align-items: center;
         }
+        
         header nav ul {
             list-style: none;
             display: flex;
@@ -139,6 +142,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-left: 20px;
         }
         
         .login-btn {
@@ -669,6 +673,7 @@
             /* تعديلات زر تسجيل الدخول في الهاتف */
             .auth-buttons {
                 gap: 5px;
+                margin-left: 10px;
             }
             
             .login-btn {
@@ -717,7 +722,10 @@
             </ul>
         </nav>
         <div class="auth-buttons" id="authButtons">
-            <!-- سيتم ملء هذا القسم ديناميكياً بواسطة JavaScript -->
+            <!-- زر تسجيل الدخول الافتراضي - سيتم تحديثه ديناميكياً -->
+            <button class="login-btn" id="loginButton" onclick="login()">
+                <i class="fas fa-sign-in-alt"></i> Connexion
+            </button>
         </div>
     </header>
     <section id="intro" class="hero">
@@ -830,32 +838,52 @@
 
         // تهيئة Auth0
         async function initializeAuth0() {
-            auth0Client = await createAuth0Client(auth0Config);
-            
-            // تحديث واجهة المستخدم بناءً على حالة المصادقة
-            updateUI();
-            
-            // التعامل مع نتيجة المصادقة بعد إعادة التوجيه
-            if (window.location.search.includes("code=") && 
-                window.location.search.includes("state=")) {
-                await auth0Client.handleRedirectCallback();
-                window.history.replaceState({}, document.title, window.location.pathname);
-                updateUI();
+            try {
+                auth0Client = await createAuth0Client(auth0Config);
+                
+                // تحديث واجهة المستخدم بناءً على حالة المصادقة
+                await updateUI();
+                
+                // التعامل مع نتيجة المصادقة بعد إعادة التوجيه
+                if (window.location.search.includes("code=") && 
+                    window.location.search.includes("state=")) {
+                    await auth0Client.handleRedirectCallback();
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    await updateUI();
+                }
+            } catch (error) {
+                console.error("Error initializing Auth0:", error);
+                // عرض رسالة خطأ للمستخدم
+                document.getElementById("authButtons").innerHTML = `
+                    <div style="color: #ff5252; font-size: 0.8rem;">
+                        <i class="fas fa-exclamation-triangle"></i> Erreur d'authentification
+                    </div>
+                `;
             }
         }
 
         // تسجيل الدخول
         async function login() {
-            await auth0Client.loginWithRedirect();
+            try {
+                await auth0Client.loginWithRedirect();
+            } catch (error) {
+                console.error("Login error:", error);
+                alert("Erreur lors de la connexion. Veuillez réessayer.");
+            }
         }
 
         // تسجيل الخروج
         async function logout() {
-            await auth0Client.logout({
-                logoutParams: {
-                    returnTo: window.location.origin
-                }
-            });
+            try {
+                await auth0Client.logout({
+                    logoutParams: {
+                        returnTo: window.location.origin
+                    }
+                });
+            } catch (error) {
+                console.error("Logout error:", error);
+                alert("Erreur lors de la déconnexion. Veuillez réessayer.");
+            }
         }
 
         // تحديث واجهة المستخدم بناءً على حالة المصادقة
