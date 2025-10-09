@@ -822,21 +822,34 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // نظام تسجيل الدخول المبسط والمباشر
+        // نظام تسجيل الدخول المبسط
         let isLoggedIn = false;
         let currentUser = null;
 
-        // معالجة تسجيل الدخول - الإصدار المعدل
+        // معالجة تسجيل الدخول - في نفس النافذة
         function handleLogin() {
-            // رابط تسجيل الدخول المباشر لـ Auth0
+            // الانتقال مباشرة إلى صفحة تسجيل الدخول في نفس النافذة
             const authUrl = 'https://dev-kar8wzb3njd17hjm.eu.auth0.com/authorize?' +
                 'client_id=c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS&' +
                 'redirect_uri=' + encodeURIComponent(window.location.href) + '&' +
                 'response_type=code&' +
                 'scope=openid%20profile%20email';
             
-            // الانتقال مباشرة إلى صفحة تسجيل الدخول
+            // الانتقال في نفس النافذة
             window.location.href = authUrl;
+        }
+
+        // محاكاة تسجيل الدخول الناجح
+        function simulateSuccessfulLogin() {
+            isLoggedIn = true;
+            currentUser = {
+                name: "Utilisateur GhaniPharma",
+                email: "utilisateur@ghanipharma.com",
+                initial: "U"
+            };
+            
+            updateAuthUI();
+            showNotification("✅ Connexion réussie! Bienvenue sur GhaniPharma.", "success");
         }
 
         // معالجة تسجيل الخروج
@@ -868,19 +881,6 @@
                     </button>
                 `;
             }
-        }
-
-        // محاكاة تسجيل الدخول الناجح (للتجربة السريعة)
-        function simulateLogin() {
-            isLoggedIn = true;
-            currentUser = {
-                name: "Utilisateur GhaniPharma",
-                email: "utilisateur@ghanipharma.com",
-                initial: "U"
-            };
-            
-            updateAuthUI();
-            showNotification("✅ Connexion réussie! Bienvenue sur GhaniPharma.", "success");
         }
 
         // عرض الإشعارات
@@ -999,7 +999,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.has('code')) {
                 // إذا كان هناك رمز مصادقة، نعتبر أن التسجيل ناجح
-                simulateLogin();
+                simulateSuccessfulLogin();
                 // إزالة المعلمات من URL
                 window.history.replaceState({}, document.title, window.location.pathname);
             }
