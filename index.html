@@ -822,44 +822,21 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // نظام تسجيل الدخول المبسط
+        // نظام تسجيل الدخول المبسط والمباشر
         let isLoggedIn = false;
         let currentUser = null;
 
-        // معالجة تسجيل الدخول
+        // معالجة تسجيل الدخول - الإصدار المعدل
         function handleLogin() {
-            // فتح نافذة تسجيل الدخول الخاصة بـ Auth0
-            const authWindow = window.open(
-                'https://dev-kar8wzb3njd17hjm.eu.auth0.com/authorize?' +
+            // رابط تسجيل الدخول المباشر لـ Auth0
+            const authUrl = 'https://dev-kar8wzb3njd17hjm.eu.auth0.com/authorize?' +
                 'client_id=c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS&' +
                 'redirect_uri=' + encodeURIComponent(window.location.href) + '&' +
                 'response_type=code&' +
-                'scope=openid%20profile%20email',
-                'auth0-login',
-                'width=600,height=700,scrollbars=yes'
-            );
-
-            // التحقق من نجاح التسجيل كل ثانية
-            const checkLogin = setInterval(() => {
-                if (authWindow.closed) {
-                    clearInterval(checkLogin);
-                    // محاكاة تسجيل الدخول الناجح بعد إغلاق النافذة
-                    simulateSuccessfulLogin();
-                }
-            }, 1000);
-        }
-
-        // محاكاة تسجيل الدخول الناجح
-        function simulateSuccessfulLogin() {
-            isLoggedIn = true;
-            currentUser = {
-                name: "Utilisateur GhaniPharma",
-                email: "utilisateur@ghanipharma.com",
-                initial: "U"
-            };
+                'scope=openid%20profile%20email';
             
-            updateAuthUI();
-            showNotification("✅ Connexion réussie! Bienvenue sur GhaniPharma.", "success");
+            // الانتقال مباشرة إلى صفحة تسجيل الدخول
+            window.location.href = authUrl;
         }
 
         // معالجة تسجيل الخروج
@@ -891,6 +868,19 @@
                     </button>
                 `;
             }
+        }
+
+        // محاكاة تسجيل الدخول الناجح (للتجربة السريعة)
+        function simulateLogin() {
+            isLoggedIn = true;
+            currentUser = {
+                name: "Utilisateur GhaniPharma",
+                email: "utilisateur@ghanipharma.com",
+                initial: "U"
+            };
+            
+            updateAuthUI();
+            showNotification("✅ Connexion réussie! Bienvenue sur GhaniPharma.", "success");
         }
 
         // عرض الإشعارات
@@ -1003,8 +993,17 @@
             }
         });
         
-        // عرض الصور في المعرض للهاتف فقط
+        // عند تحميل الصفحة، نتحقق من وجود استجابة مصادقة
         document.addEventListener('DOMContentLoaded', function() {
+            // التحقق من وجود رمز المصادقة في URL (بعد العودة من Auth0)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('code')) {
+                // إذا كان هناك رمز مصادقة، نعتبر أن التسجيل ناجح
+                simulateLogin();
+                // إزالة المعلمات من URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+            
             // إخفاء شريط الصور المتحرك في الهاتف
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
