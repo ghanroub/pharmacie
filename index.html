@@ -6,6 +6,8 @@
     <title>GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- إضافة Auth0 SDK -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -131,6 +133,50 @@
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+        
+        /* أزرار تسجيل الدخول والخروج */
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .auth-btn {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .auth-btn:hover {
+            background: linear-gradient(135deg, #4a148c, #6a1b9a);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(106, 27, 154, 0.4);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffeb3b;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffeb3b;
+        }
+        
         .hero {
             color: #fff;
             padding: 100px 20px;
@@ -404,6 +450,17 @@
             border: 1px solid #f44336;
         }
         
+        /* رسالة تسجيل الدخول */
+        .login-message {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -556,6 +613,18 @@
             header nav ul li a:hover {
                 background-color: rgba(255, 255, 255, 0.15);
             }
+            
+            /* أزرار المصادقة في الهاتف */
+            .auth-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .user-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
             footer p {
                 font-size: 0.9rem;
             }
@@ -623,6 +692,11 @@
                     </div>
                 </li>
                 <li><a href="#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
+                
+                <!-- أزرار تسجيل الدخول والخروج -->
+                <li id="authButtons" class="auth-buttons">
+                    <!-- سيتم ملؤها ديناميكياً عبر JavaScript -->
+                </li>
             </ul>
         </nav>
     </header>
@@ -681,8 +755,16 @@
                 <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                 
                 <!-- نموذج الاتصال المعدل -->
-                <div class="contact-form">
+                <div class="contact-form" id="contactFormSection">
                     <h3><i class="fas fa-envelope"></i> Envoyez-nous un message</h3>
+                    
+                    <!-- رسالة تسجيل الدخول -->
+                    <div id="loginMessage" class="login-message" style="display: none;">
+                        <i class="fas fa-info-circle"></i> Vous devez vous connecter pour envoyer un message.
+                        <button id="loginFromMessage" class="auth-btn" style="margin-top: 10px;">
+                            <i class="fas fa-sign-in-alt"></i> Se connecter
+                        </button>
+                    </div>
                     
                     <!-- رسائل الحالة -->
                     <div id="statusMessage" class="status-message" style="display: none;"></div>
@@ -692,6 +774,7 @@
                         id="contactForm" 
                         action="https://formspree.io/f/xkgqvnad" 
                         method="POST"
+                        style="display: none;"
                     >
                         <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
                         <input type="hidden" name="_language" value="fr">
@@ -722,6 +805,103 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
+        // تكوين Auth0
+        const auth0Config = {
+            domain: 'dev-kar8wzb3njd17hjm.eu.auth0.com',
+            clientId: 'c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS',
+            authorizationParams: {
+                redirect_uri: window.location.origin
+            }
+        };
+
+        // إنشاء عميل Auth0
+        let auth0Client;
+
+        // تهيئة Auth0
+        async function initializeAuth0() {
+            auth0Client = await auth0.createAuth0Client({
+                domain: auth0Config.domain,
+                clientId: auth0Config.clientId,
+                authorizationParams: {
+                    redirect_uri: auth0Config.authorizationParams.redirect_uri
+                }
+            });
+
+            // التحقق من حالة المصادقة وتحديث الواجهة
+            await updateAuthUI();
+        }
+
+        // تحديث واجهة المستخدم بناءً على حالة المصادقة
+        async function updateAuthUI() {
+            const isAuthenticated = await auth0Client.isAuthenticated();
+            const authButtons = document.getElementById('authButtons');
+            const contactForm = document.getElementById('contactForm');
+            const loginMessage = document.getElementById('loginMessage');
+            
+            if (isAuthenticated) {
+                // المستخدم مسجل الدخول
+                const user = await auth0Client.getUser();
+                
+                // تحديث أزرار المصادقة
+                authButtons.innerHTML = `
+                    <div class="user-info">
+                        <img src="${user.picture || 'https://via.placeholder.com/32'}" alt="Avatar" class="user-avatar">
+                        <span>${user.name || user.email}</span>
+                        <button id="logoutBtn" class="auth-btn">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                        </button>
+                    </div>
+                `;
+                
+                // إظهار نموذج الاتصال
+                if (contactForm) {
+                    contactForm.style.display = 'block';
+                }
+                if (loginMessage) {
+                    loginMessage.style.display = 'none';
+                }
+                
+                // إضافة حدث النقر لزر تسجيل الخروج
+                document.getElementById('logoutBtn').addEventListener('click', logout);
+            } else {
+                // المستخدم غير مسجل الدخول
+                authButtons.innerHTML = `
+                    <button id="loginBtn" class="auth-btn">
+                        <i class="fas fa-sign-in-alt"></i> Connexion
+                    </button>
+                `;
+                
+                // إخفاء نموذج الاتصال وإظهار رسالة تسجيل الدخول
+                if (contactForm) {
+                    contactForm.style.display = 'none';
+                }
+                if (loginMessage) {
+                    loginMessage.style.display = 'block';
+                }
+                
+                // إضافة حدث النقر لزر تسجيل الدخول
+                document.getElementById('loginBtn').addEventListener('click', login);
+            }
+        }
+
+        // تسجيل الدخول
+        async function login() {
+            await auth0Client.loginWithRedirect({
+                authorizationParams: {
+                    redirect_uri: auth0Config.authorizationParams.redirect_uri
+                }
+            });
+        }
+
+        // تسجيل الخروج
+        async function logout() {
+            await auth0Client.logout({
+                logoutParams: {
+                    returnTo: auth0Config.authorizationParams.redirect_uri
+                }
+            });
+        }
+
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
@@ -765,6 +945,12 @@
         
         // عرض الصور في المعرض للهاتف فقط
         document.addEventListener('DOMContentLoaded', function() {
+            // تهيئة Auth0
+            initializeAuth0();
+            
+            // إضافة حدث النقر لزر تسجيل الدخول من الرسالة
+            document.getElementById('loginFromMessage').addEventListener('click', login);
+            
             // إخفاء شريط الصور المتحرك في الهاتف
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
