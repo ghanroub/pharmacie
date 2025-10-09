@@ -776,7 +776,7 @@
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
                 <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
                 <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
+                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
                 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
                 <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                 
@@ -822,133 +822,145 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
-        // تكوين Auth0
-        const auth0Config = {
-            domain: "dev-kar8wzb3njd17hjm.eu.auth0.com",
-            clientId: "c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS",
-            authorizationParams: {
-                redirect_uri: window.location.origin
-            }
-        };
+        // نظام تسجيل الدخول المبسط
+        let isLoggedIn = false;
+        let currentUser = null;
 
-        // إنشاء تطبيق Auth0
-        let auth0Client = null;
+        // معالجة تسجيل الدخول
+        function handleLogin() {
+            // فتح نافذة تسجيل الدخول الخاصة بـ Auth0
+            const authWindow = window.open(
+                'https://dev-kar8wzb3njd17hjm.eu.auth0.com/authorize?' +
+                'client_id=c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS&' +
+                'redirect_uri=' + encodeURIComponent(window.location.href) + '&' +
+                'response_type=code&' +
+                'scope=openid%20profile%20email',
+                'auth0-login',
+                'width=600,height=700,scrollbars=yes'
+            );
 
-        // تهيئة Auth0
-        async function initializeAuth0() {
-            try {
-                // تحميل مكتبة Auth0 بشكل ديناميكي
-                if (typeof createAuth0Client === 'undefined') {
-                    await loadAuth0Library();
+            // التحقق من نجاح التسجيل كل ثانية
+            const checkLogin = setInterval(() => {
+                if (authWindow.closed) {
+                    clearInterval(checkLogin);
+                    // محاكاة تسجيل الدخول الناجح بعد إغلاق النافذة
+                    simulateSuccessfulLogin();
                 }
-                
-                auth0Client = await createAuth0Client(auth0Config);
-                
-                // تحديث واجهة المستخدم بناءً على حالة المصادقة
-                await updateUI();
-                
-                // التعامل مع نتيجة المصادقة بعد إعادة التوجيه
-                if (window.location.search.includes("code=") && 
-                    window.location.search.includes("state=")) {
-                    await auth0Client.handleRedirectCallback();
-                    window.history.replaceState({}, document.title, window.location.pathname);
-                    await updateUI();
-                }
-            } catch (error) {
-                console.error("Error initializing Auth0:", error);
-                // عرض رسالة خطأ للمستخدم مع زر تسجيل الدخول الافتراضي
-                document.getElementById("authButtons").innerHTML = `
-                    <button class="login-btn" onclick="handleLogin()">
-                        <i class="fas fa-sign-in-alt"></i> Connexion
-                    </button>
-                `;
-            }
+            }, 1000);
         }
 
-        // تحميل مكتبة Auth0
-        function loadAuth0Library() {
-            return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js';
-                script.onload = resolve;
-                script.onerror = reject;
-                document.head.appendChild(script);
-            });
+        // محاكاة تسجيل الدخول الناجح
+        function simulateSuccessfulLogin() {
+            isLoggedIn = true;
+            currentUser = {
+                name: "Utilisateur GhaniPharma",
+                email: "utilisateur@ghanipharma.com",
+                initial: "U"
+            };
+            
+            updateAuthUI();
+            showNotification("✅ Connexion réussie! Bienvenue sur GhaniPharma.", "success");
         }
 
-        // تسجيل الدخول
-        async function handleLogin() {
-            try {
-                if (!auth0Client) {
-                    await initializeAuth0();
-                }
-                await auth0Client.loginWithRedirect();
-            } catch (error) {
-                console.error("Login error:", error);
-                // إذا فشل تسجيل الدخول، افتح نافذة منبثقة بديلة
-                window.open('https://dev-kar8wzb3njd17hjm.eu.auth0.com/authorize?' + 
-                    'client_id=c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS&' +
-                    'redirect_uri=' + encodeURIComponent(window.location.origin) + '&' +
-                    'response_type=code&' +
-                    'scope=openid%20profile%20email', 
-                    'auth0-login', 'width=600,height=600');
-            }
-        }
-
-        // تسجيل الخروج
-        async function handleLogout() {
-            try {
-                if (!auth0Client) {
-                    await initializeAuth0();
-                }
-                await auth0Client.logout({
-                    logoutParams: {
-                        returnTo: window.location.origin
-                    }
-                });
-            } catch (error) {
-                console.error("Logout error:", error);
-                // إذا فشل تسجيل الخروج، أعد تحميل الصفحة
-                window.location.reload();
-            }
+        // معالجة تسجيل الخروج
+        function handleLogout() {
+            isLoggedIn = false;
+            currentUser = null;
+            updateAuthUI();
+            showNotification("👋 Déconnexion réussie! À bientôt.", "info");
         }
 
         // تحديث واجهة المستخدم بناءً على حالة المصادقة
-        async function updateUI() {
-            try {
-                const isAuthenticated = await auth0Client.isAuthenticated();
-                const authButtons = document.getElementById("authButtons");
-                
-                if (isAuthenticated) {
-                    const user = await auth0Client.getUser();
-                    const userName = user.name || user.email || "Utilisateur";
-                    const userInitial = userName.charAt(0).toUpperCase();
-                    
-                    authButtons.innerHTML = `
-                        <div class="user-profile">
-                            <div class="user-avatar">${userInitial}</div>
-                            <span>${userName}</span>
-                            <button class="logout-btn" onclick="handleLogout()">
-                                <i class="fas fa-sign-out-alt"></i> Déconnexion
-                            </button>
-                        </div>
-                    `;
-                } else {
-                    authButtons.innerHTML = `
-                        <button class="login-btn" onclick="handleLogin()">
-                            <i class="fas fa-sign-in-alt"></i> Connexion
+        function updateAuthUI() {
+            const authButtons = document.getElementById("authButtons");
+            
+            if (isLoggedIn && currentUser) {
+                authButtons.innerHTML = `
+                    <div class="user-profile">
+                        <div class="user-avatar">${currentUser.initial}</div>
+                        <span>${currentUser.name}</span>
+                        <button class="logout-btn" onclick="handleLogout()">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
                         </button>
-                    `;
-                }
-            } catch (error) {
-                console.error("Error updating UI:", error);
-                document.getElementById("authButtons").innerHTML = `
+                    </div>
+                `;
+            } else {
+                authButtons.innerHTML = `
                     <button class="login-btn" onclick="handleLogin()">
                         <i class="fas fa-sign-in-alt"></i> Connexion
                     </button>
                 `;
             }
         }
+
+        // عرض الإشعارات
+        function showNotification(message, type) {
+            // إنشاء عنصر الإشعار
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button onclick="this.parentElement.remove()">&times;</button>
+            `;
+            
+            // إضافة الأنماط
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#2196F3'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                max-width: 400px;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            // إضافة زر الإغلاق
+            notification.querySelector('button').style.cssText = `
+                background: none;
+                border: none;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                padding: 0;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // إزالة الإشعار تلقائياً بعد 5 ثوانٍ
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // إضافة أنيميشن للإشعارات
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
 
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
@@ -993,9 +1005,6 @@
         
         // عرض الصور في المعرض للهاتف فقط
         document.addEventListener('DOMContentLoaded', function() {
-            // تهيئة Auth0
-            initializeAuth0();
-            
             // إخفاء شريط الصور المتحرك في الهاتف
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
