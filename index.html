@@ -268,6 +268,116 @@
             border-bottom-color: #4dd0e1;
         }
         
+        /* أنماط جديدة لقسم الإحصائيات */
+        .stats-section {
+            margin: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+            border: 1px solid rgba(255, 235, 59, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            color: #fff;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00bcd4, #ffeb3b, #6a1b9a);
+        }
+        
+        .stats-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 235, 59, 0.5);
+        }
+        
+        .stats-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #ffeb3b;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .stats-section h2 i {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.15), rgba(106, 27, 154, 0.15));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffeb3b, #00bcd4);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(106, 27, 154, 0.2));
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffeb3b, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #ffeb3b;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+        
         /* تحسينات لنموذج الاتصال */
         .contact-form {
             margin-top: 25px;
@@ -510,6 +620,19 @@
             .section p {
                 font-size: 1rem;
             }
+            .stats-section {
+                padding: 20px;
+            }
+            .stats-section h2 {
+                font-size: 1.8rem;
+            }
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .stat-number {
+                font-size: 2.2rem;
+            }
             .hero h1 {
                 font-size: 2rem;
             }
@@ -671,6 +794,35 @@
                 <p>Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire.</p>
                 <p>Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !</p>
             </div>
+            
+            <!-- قسم الإحصائيات الجديد -->
+            <div id="statistics" class="stats-section">
+                <h2><i class="fas fa-chart-line"></i> Nos Statistiques</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-target="1250">0</div>
+                        <div class="stat-label">Visiteurs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="stat-number" data-target="350">0</div>
+                        <div class="stat-label">Contributeurs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-number" data-target="89">0</div>
+                        <div class="stat-label">Leçons</div>
+                    </div>
+                </div>
+            </div>
+            
             <div id="questions" class="section">
                 <h2><i class="fas fa-question-circle"></i> Questions</h2>
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
@@ -850,6 +1002,42 @@
                         statusMessage.style.display = 'none';
                     }, 8000);
                 }
+            }
+            
+            // وظيفة عد متزايد للإحصائيات
+            function animateStats() {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    const duration = 2000; // مدة الحركة بالمللي ثانية
+                    const step = target / (duration / 16); // 60 إطار في الثانية
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current);
+                    }, 16);
+                });
+            }
+            
+            // تشغيل العد عند ظهور القسم في الشاشة
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.getElementById('statistics');
+            if (statsSection) {
+                observer.observe(statsSection);
             }
         });
     </script>
