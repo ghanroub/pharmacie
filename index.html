@@ -6,8 +6,6 @@
     <title>GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- إضافة مكتبة Auth0 -->
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -723,7 +721,7 @@
         </nav>
         <div class="auth-buttons" id="authButtons">
             <!-- زر تسجيل الدخول الافتراضي - سيتم تحديثه ديناميكياً -->
-            <button class="login-btn" id="loginButton" onclick="login()">
+            <button class="login-btn" id="loginButton" onclick="handleLogin()">
                 <i class="fas fa-sign-in-alt"></i> Connexion
             </button>
         </div>
@@ -778,7 +776,7 @@
                 <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
                 <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
                 <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
                 <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
                 <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                 
@@ -834,11 +832,16 @@
         };
 
         // إنشاء تطبيق Auth0
-        let auth0Client;
+        let auth0Client = null;
 
         // تهيئة Auth0
         async function initializeAuth0() {
             try {
+                // تحميل مكتبة Auth0 بشكل ديناميكي
+                if (typeof createAuth0Client === 'undefined') {
+                    await loadAuth0Library();
+                }
+                
                 auth0Client = await createAuth0Client(auth0Config);
                 
                 // تحديث واجهة المستخدم بناءً على حالة المصادقة
@@ -853,28 +856,51 @@
                 }
             } catch (error) {
                 console.error("Error initializing Auth0:", error);
-                // عرض رسالة خطأ للمستخدم
+                // عرض رسالة خطأ للمستخدم مع زر تسجيل الدخول الافتراضي
                 document.getElementById("authButtons").innerHTML = `
-                    <div style="color: #ff5252; font-size: 0.8rem;">
-                        <i class="fas fa-exclamation-triangle"></i> Erreur d'authentification
-                    </div>
+                    <button class="login-btn" onclick="handleLogin()">
+                        <i class="fas fa-sign-in-alt"></i> Connexion
+                    </button>
                 `;
             }
         }
 
+        // تحميل مكتبة Auth0
+        function loadAuth0Library() {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js';
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
         // تسجيل الدخول
-        async function login() {
+        async function handleLogin() {
             try {
+                if (!auth0Client) {
+                    await initializeAuth0();
+                }
                 await auth0Client.loginWithRedirect();
             } catch (error) {
                 console.error("Login error:", error);
-                alert("Erreur lors de la connexion. Veuillez réessayer.");
+                // إذا فشل تسجيل الدخول، افتح نافذة منبثقة بديلة
+                window.open('https://dev-kar8wzb3njd17hjm.eu.auth0.com/authorize?' + 
+                    'client_id=c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS&' +
+                    'redirect_uri=' + encodeURIComponent(window.location.origin) + '&' +
+                    'response_type=code&' +
+                    'scope=openid%20profile%20email', 
+                    'auth0-login', 'width=600,height=600');
             }
         }
 
         // تسجيل الخروج
-        async function logout() {
+        async function handleLogout() {
             try {
+                if (!auth0Client) {
+                    await initializeAuth0();
+                }
                 await auth0Client.logout({
                     logoutParams: {
                         returnTo: window.location.origin
@@ -882,32 +908,42 @@
                 });
             } catch (error) {
                 console.error("Logout error:", error);
-                alert("Erreur lors de la déconnexion. Veuillez réessayer.");
+                // إذا فشل تسجيل الخروج، أعد تحميل الصفحة
+                window.location.reload();
             }
         }
 
         // تحديث واجهة المستخدم بناءً على حالة المصادقة
         async function updateUI() {
-            const isAuthenticated = await auth0Client.isAuthenticated();
-            const authButtons = document.getElementById("authButtons");
-            
-            if (isAuthenticated) {
-                const user = await auth0Client.getUser();
-                const userName = user.name || user.email || "Utilisateur";
-                const userInitial = userName.charAt(0).toUpperCase();
+            try {
+                const isAuthenticated = await auth0Client.isAuthenticated();
+                const authButtons = document.getElementById("authButtons");
                 
-                authButtons.innerHTML = `
-                    <div class="user-profile">
-                        <div class="user-avatar">${userInitial}</div>
-                        <span>${userName}</span>
-                        <button class="logout-btn" onclick="logout()">
-                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                if (isAuthenticated) {
+                    const user = await auth0Client.getUser();
+                    const userName = user.name || user.email || "Utilisateur";
+                    const userInitial = userName.charAt(0).toUpperCase();
+                    
+                    authButtons.innerHTML = `
+                        <div class="user-profile">
+                            <div class="user-avatar">${userInitial}</div>
+                            <span>${userName}</span>
+                            <button class="logout-btn" onclick="handleLogout()">
+                                <i class="fas fa-sign-out-alt"></i> Déconnexion
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    authButtons.innerHTML = `
+                        <button class="login-btn" onclick="handleLogin()">
+                            <i class="fas fa-sign-in-alt"></i> Connexion
                         </button>
-                    </div>
-                `;
-            } else {
-                authButtons.innerHTML = `
-                    <button class="login-btn" onclick="login()">
+                    `;
+                }
+            } catch (error) {
+                console.error("Error updating UI:", error);
+                document.getElementById("authButtons").innerHTML = `
+                    <button class="login-btn" onclick="handleLogin()">
                         <i class="fas fa-sign-in-alt"></i> Connexion
                     </button>
                 `;
