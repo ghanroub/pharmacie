@@ -416,14 +416,14 @@
             font-weight: 600;
         }
         
-        /* تحسينات لنموذج الاتصال */
+        /* تحسينات لنموذج الاتصال - تم إزالة الإطار */
         .contact-form {
             margin-top: 25px;
-            padding: 25px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
-            border-radius: 12px;
-            border: 1px solid rgba(255, 235, 59, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 0; /* تم إزالة padding */
+            background: transparent; /* تم إزالة الخلفية */
+            border-radius: 0; /* تم إزالة الزوايا المدورة */
+            border: none; /* تم إزالة الحدود */
+            box-shadow: none; /* تم إزالة الظلال */
         }
         
         .contact-form h3 {
@@ -434,6 +434,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            background: transparent; /* تأكيد إزالة الخلفية */
+            padding: 0; /* تأكيد إزالة padding */
         }
         
         .contact-form h3 i {
@@ -763,7 +765,7 @@
                 gap: 0;
             }
             .contact-form {
-                padding: 20px;
+                padding: 0; /* تم إزالة padding للهاتف أيضًا */
             }
             .submit-btn {
                 padding: 12px 25px;
