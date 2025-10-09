@@ -415,43 +415,6 @@
             font-weight: 600;
         }
         
-        /* أنماط جديدة لقسم الأسئلة مع الصورة */
-        .questions-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        .questions-content {
-            flex: 1;
-        }
-        
-        .questions-image {
-            flex: 0 0 350px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s ease;
-            border: 2px solid rgba(255, 235, 59, 0.3);
-        }
-        
-        .questions-image:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-            border-color: rgba(255, 235, 59, 0.6);
-        }
-        
-        .questions-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .questions-image:hover img {
-            transform: scale(1.05);
-        }
-        
         /* تحسينات لنموذج الاتصال */
         .contact-form {
             margin-top: 25px;
@@ -703,15 +666,6 @@
                 max-width: 300px;
                 margin: 0 auto 20px;
             }
-            .questions-container {
-                flex-direction: column;
-            }
-            .questions-image {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 350px;
-                margin: 20px auto 0;
-            }
             .stats-section {
                 padding: 20px;
             }
@@ -838,7 +792,6 @@
                     </div>
                 </li>
                 <li><a href="#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -925,29 +878,16 @@
             
             <div id="questions" class="section">
                 <h2><i class="fas fa-question-circle"></i> Questions</h2>
-                <div class="questions-container">
-                    <div class="questions-content">
-                        <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
-                        <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
-                        <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-                        <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
-                        <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
-                        <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
-                    </div>
-                    <div class="questions-image">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Instant%20Messaging%20Market%20Key%20Players%20%26%20Trades%20Report%20to%202028.jpeg" alt="Communication">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- قسم الاتصال المنفصل -->
-            <div id="contact" class="section">
-                <h2><i class="fas fa-envelope"></i> Contactez-nous</h2>
-                <p>Vous avez une question spécifique ou besoin d'assistance ? Envoyez-nous un message directement via le formulaire ci-dessous.</p>
+                <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
+                <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
+                <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
+                <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+                <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
+                <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                 
                 <!-- نموذج الاتصال المعدل -->
                 <div class="contact-form">
-                    <h3><i class="fas fa-paper-plane"></i> Envoyez-nous un message</h3>
+                    <h3><i class="fas fa-envelope"></i> Envoyez-nous un message</h3>
                     
                     <!-- رسائل الحالة -->
                     <div id="statusMessage" class="status-message" style="display: none;"></div>
