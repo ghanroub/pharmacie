@@ -6,6 +6,8 @@
     <title>GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- إضافة مكتبة Auth0 -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -131,6 +133,70 @@
         .dropdown-content a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+        
+        /* زر تسجيل الدخول */
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .login-btn {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .login-btn:hover {
+            background: linear-gradient(135deg, #4a148c, #6a1b9a);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffeb3b;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffeb3b, #00bcd4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .logout-btn {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff5252;
+            border: 1px solid #ff5252;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255, 0, 0, 0.3);
+        }
+        
         .hero {
             color: #fff;
             padding: 100px 20px;
@@ -599,6 +665,31 @@
                 padding: 12px 25px;
                 font-size: 1rem;
             }
+            
+            /* تعديلات زر تسجيل الدخول في الهاتف */
+            .auth-buttons {
+                gap: 5px;
+            }
+            
+            .login-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            
+            .user-profile {
+                font-size: 0.8rem;
+            }
+            
+            .user-avatar {
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
+            }
+            
+            .logout-btn {
+                padding: 4px 8px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -625,6 +716,9 @@
                 <li><a href="#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
             </ul>
         </nav>
+        <div class="auth-buttons" id="authButtons">
+            <!-- سيتم ملء هذا القسم ديناميكياً بواسطة JavaScript -->
+        </div>
     </header>
     <section id="intro" class="hero">
         <div class="container">
@@ -722,6 +816,76 @@
         <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
     </footer>
     <script>
+        // تكوين Auth0
+        const auth0Config = {
+            domain: "dev-kar8wzb3njd17hjm.eu.auth0.com",
+            clientId: "c3Akfaaa6ttb8bSshbLEjDMUsxPY4HgS",
+            authorizationParams: {
+                redirect_uri: window.location.origin
+            }
+        };
+
+        // إنشاء تطبيق Auth0
+        let auth0Client;
+
+        // تهيئة Auth0
+        async function initializeAuth0() {
+            auth0Client = await createAuth0Client(auth0Config);
+            
+            // تحديث واجهة المستخدم بناءً على حالة المصادقة
+            updateUI();
+            
+            // التعامل مع نتيجة المصادقة بعد إعادة التوجيه
+            if (window.location.search.includes("code=") && 
+                window.location.search.includes("state=")) {
+                await auth0Client.handleRedirectCallback();
+                window.history.replaceState({}, document.title, window.location.pathname);
+                updateUI();
+            }
+        }
+
+        // تسجيل الدخول
+        async function login() {
+            await auth0Client.loginWithRedirect();
+        }
+
+        // تسجيل الخروج
+        async function logout() {
+            await auth0Client.logout({
+                logoutParams: {
+                    returnTo: window.location.origin
+                }
+            });
+        }
+
+        // تحديث واجهة المستخدم بناءً على حالة المصادقة
+        async function updateUI() {
+            const isAuthenticated = await auth0Client.isAuthenticated();
+            const authButtons = document.getElementById("authButtons");
+            
+            if (isAuthenticated) {
+                const user = await auth0Client.getUser();
+                const userName = user.name || user.email || "Utilisateur";
+                const userInitial = userName.charAt(0).toUpperCase();
+                
+                authButtons.innerHTML = `
+                    <div class="user-profile">
+                        <div class="user-avatar">${userInitial}</div>
+                        <span>${userName}</span>
+                        <button class="logout-btn" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                        </button>
+                    </div>
+                `;
+            } else {
+                authButtons.innerHTML = `
+                    <button class="login-btn" onclick="login()">
+                        <i class="fas fa-sign-in-alt"></i> Connexion
+                    </button>
+                `;
+            }
+        }
+
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
@@ -765,6 +929,9 @@
         
         // عرض الصور في المعرض للهاتف فقط
         document.addEventListener('DOMContentLoaded', function() {
+            // تهيئة Auth0
+            initializeAuth0();
+            
             // إخفاء شريط الصور المتحرك في الهاتف
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
