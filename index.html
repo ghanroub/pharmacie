@@ -563,11 +563,11 @@
             margin-top: 40px;
         }
         
-        /* المعرض الموحد لجميع الأجهزة */
+        /* المعرض الموحد لجميع الأجهزة - تم التعديل لجعل الشريط أضيق على الهاتف */
         .gallery {
             position: relative;
             width: 100%;
-            height: 150px; /* ارتفاع أقل للهاتف */
+            height: 180px; /* ارتفاع مناسب للكمبيوتر */
             margin: 0 auto 20px;
             overflow: hidden;
             display: flex;
@@ -580,13 +580,13 @@
 
         .gallery-track {
             display: flex;
-            animation: scroll 40s linear infinite; /* أبطأ قليلاً للهاتف */
+            animation: scroll 40s linear infinite;
             width: max-content;
-            gap: 12px; /* مسافة بين الصور */
+            gap: 15px; /* مسافة بين الصور */
         }
 
         .gallery img {
-            height: 120px; /* حجم أصغر للهاتف */
+            height: 160px; /* الحفاظ على حجم الصورة كبير */
             width: auto;
             border-radius: 8px;
             object-fit: cover;
@@ -612,20 +612,21 @@
             animation-play-state: paused;
         }
 
-        /* تحسينات للهاتف */
+        /* تحسينات للهاتف - الشريط أضيق مع الحفاظ على حجم الصورة */
         @media (max-width: 768px) {
             .gallery {
-                height: 130px;
+                height: 140px; /* شريط أضيق على الهاتف */
                 margin: 10px 0 20px;
+                padding: 8px 0; /* تقليل padding */
             }
             
             .gallery-track {
-                animation-duration: 35s; /* أسرع قليلاً للهاتف */
-                gap: 10px;
+                animation-duration: 35s;
+                gap: 12px;
             }
             
             .gallery img {
-                height: 100px;
+                height: 125px; /* الحفاظ على حجم الصورة كبير */
                 border-radius: 6px;
             }
             
@@ -761,35 +762,37 @@
             }
         }
 
-        /* تحسينات للشاشات الصغيرة جداً */
+        /* تحسينات للشاشات الصغيرة جداً - شريط أضيق مع الحفاظ على الصورة */
         @media (max-width: 480px) {
             .gallery {
-                height: 110px;
+                height: 120px; /* شريط أضيق جداً */
+                margin: 8px 0 15px;
+                padding: 6px 0;
             }
             
             .gallery img {
-                height: 90px;
+                height: 110px; /* الحفاظ على حجم الصورة */
             }
             
             .gallery-track {
                 animation-duration: 30s;
-                gap: 8px;
+                gap: 10px;
             }
         }
 
-        /* تحسينات للكمبيوتر */
+        /* تحسينات للكمبيوتر - الحفاظ على الشريط العريض */
         @media (min-width: 1024px) {
             .gallery {
-                height: 180px;
+                height: 200px;
             }
             
             .gallery img {
-                height: 150px;
+                height: 180px;
             }
             
             .gallery-track {
                 animation-duration: 45s; /* أبطأ للكمبيوتر */
-                gap: 15px;
+                gap: 18px;
             }
             
             /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -900,8 +903,8 @@
                     <div class="about-content">
                         <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
                         <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
-                        <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
-                        <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
+                        <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
+                        <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
                         <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
                         <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                     </div>
