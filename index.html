@@ -563,89 +563,77 @@
             margin-top: 40px;
         }
         
-        /* المعرض للهاتف - التصميم الأصلي */
+        /* المعرض الموحد لجميع الأجهزة */
         .gallery {
             position: relative;
             width: 100%;
-            height: 300px;
-            margin: 0 auto;
+            height: 150px; /* ارتفاع أقل للهاتف */
+            margin: 0 auto 20px;
             overflow: hidden;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-        }
-        .gallery img {
-            position: absolute;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
+            padding: 10px 0;
         }
-        .gallery img.active {
-            opacity: 1;
+
+        .gallery-track {
+            display: flex;
+            animation: scroll 40s linear infinite; /* أبطأ قليلاً للهاتف */
+            width: max-content;
+            gap: 12px; /* مسافة بين الصور */
         }
-        
-        /* المعرض الجديد للكمبيوتر فقط */
-        @media (min-width: 769px) {
+
+        .gallery img {
+            height: 120px; /* حجم أصغر للهاتف */
+            width: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .gallery:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
+        /* تحسينات للهاتف */
+        @media (max-width: 768px) {
             .gallery {
-                height: 200px;
-                justify-content: flex-start;
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 10px;
-                padding: 10px 0;
-                overflow: hidden;
+                height: 130px;
+                margin: 10px 0 20px;
             }
             
             .gallery-track {
-                display: flex;
-                animation: scroll 30s linear infinite;
-                width: max-content;
+                animation-duration: 35s; /* أسرع قليلاً للهاتف */
+                gap: 10px;
             }
             
             .gallery img {
-                position: static;
-                height: 150px;
-                width: auto;
-                margin: 0 15px;
-                border-radius: 8px;
-                object-fit: cover;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s;
-                opacity: 1;
-                max-width: none;
-                max-height: none;
+                height: 100px;
+                border-radius: 6px;
             }
             
-            .gallery img:hover {
-                transform: scale(1.05);
-            }
-            
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
-            
-            .gallery:hover .gallery-track {
-                animation-play-state: paused;
-            }
-            
-            /* سلوك القائمة المنسدلة في الكمبيوتر */
-            .dropdown:hover .dropdown-content {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-        }
-        
-        @media (max-width: 768px) {
+            /* تحسين الأداء على الهاتف */
             .gallery {
-                height: 200px;
+                -webkit-overflow-scrolling: touch;
             }
+            
             .sections-container {
                 flex-direction: column;
                 gap: 20px;
@@ -772,6 +760,44 @@
                 font-size: 1rem;
             }
         }
+
+        /* تحسينات للشاشات الصغيرة جداً */
+        @media (max-width: 480px) {
+            .gallery {
+                height: 110px;
+            }
+            
+            .gallery img {
+                height: 90px;
+            }
+            
+            .gallery-track {
+                animation-duration: 30s;
+                gap: 8px;
+            }
+        }
+
+        /* تحسينات للكمبيوتر */
+        @media (min-width: 1024px) {
+            .gallery {
+                height: 180px;
+            }
+            
+            .gallery img {
+                height: 150px;
+            }
+            
+            .gallery-track {
+                animation-duration: 45s; /* أبطأ للكمبيوتر */
+                gap: 15px;
+            }
+            
+            /* سلوك القائمة المنسدلة في الكمبيوتر */
+            .dropdown:hover .dropdown-content {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+        }
     </style>
 </head>
 <body>
@@ -803,7 +829,6 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <!-- للكمبيوتر: شريط متحرك -->
                 <div class="gallery-track">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
@@ -824,16 +849,6 @@
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
                 </div>
-                
-                <!-- للهاتف: الصور الأصلية -->
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 4">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 5">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
-                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
             </div>
         </div>
         <div class="sections-container">
@@ -978,38 +993,8 @@
             }
         });
         
-        // عرض الصور في المعرض للهاتف فقط
+        // معالجة نموذج الاتصال
         document.addEventListener('DOMContentLoaded', function() {
-            // إخفاء شريط الصور المتحرك في الهاتف
-            if (window.innerWidth <= 768) {
-                const galleryTrack = document.querySelector('.gallery-track');
-                if (galleryTrack) {
-                    galleryTrack.style.display = 'none';
-                }
-                
-                // تفعيل تبديل الصور للهاتف
-                const images = document.querySelectorAll('.gallery img:not(.gallery-track img)');
-                let currentIndex = 0;
-                
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % images.length;
-                    images[currentIndex].classList.add('active');
-                }
-                
-                if (images.length > 0) {
-                    images[currentIndex].classList.add('active');
-                    setInterval(showNextImage, 3000);
-                }
-            } else {
-                // إخفاء الصور الفردية في الكمبيوتر
-                const individualImages = document.querySelectorAll('.gallery img:not(.gallery-track img)');
-                individualImages.forEach(img => {
-                    img.style.display = 'none';
-                });
-            }
-            
-            // معالجة نموذج الاتصال
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const statusMessage = document.getElementById('statusMessage');
