@@ -563,78 +563,89 @@
             margin-top: 40px;
         }
         
-        /* المعرض الموحد لجميع الأجهزة - تم التعديل لجعل الشريط أضيق على الهاتف */
+        /* المعرض للهاتف - التصميم الأصلي */
         .gallery {
             position: relative;
             width: 100%;
-            height: 180px; /* ارتفاع مناسب للكمبيوتر */
-            margin: 0 auto 20px;
+            height: 300px;
+            margin: 0 auto;
             overflow: hidden;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 10px 0;
         }
-
-        .gallery-track {
-            display: flex;
-            animation: scroll 40s linear infinite;
-            width: max-content;
-            gap: 15px; /* مسافة بين الصور */
-        }
-
         .gallery img {
-            height: 160px; /* الحفاظ على حجم الصورة كبير */
-            width: auto;
-            border-radius: 8px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-            flex-shrink: 0;
+            position: absolute;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
         }
-
-        .gallery img:hover {
-            transform: scale(1.05);
+        .gallery img.active {
+            opacity: 1;
         }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .gallery:hover .gallery-track {
-            animation-play-state: paused;
-        }
-
-        /* تحسينات للهاتف - الشريط أضيق مع الحفاظ على حجم الصورة */
-        @media (max-width: 768px) {
+        
+        /* المعرض الجديد للكمبيوتر فقط */
+        @media (min-width: 769px) {
             .gallery {
-                height: 140px; /* شريط أضيق على الهاتف */
-                margin: 10px 0 20px;
-                padding: 8px 0; /* تقليل padding */
+                height: 200px;
+                justify-content: flex-start;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                padding: 10px 0;
+                overflow: hidden;
             }
             
             .gallery-track {
-                animation-duration: 35s;
-                gap: 12px;
+                display: flex;
+                animation: scroll 30s linear infinite;
+                width: max-content;
             }
             
             .gallery img {
-                height: 125px; /* الحفاظ على حجم الصورة كبير */
-                border-radius: 6px;
+                position: static;
+                height: 150px;
+                width: auto;
+                margin: 0 15px;
+                border-radius: 8px;
+                object-fit: cover;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s;
+                opacity: 1;
+                max-width: none;
+                max-height: none;
             }
             
-            /* تحسين الأداء على الهاتف */
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+            
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+            
+            .gallery:hover .gallery-track {
+                animation-play-state: paused;
+            }
+            
+            /* سلوك القائمة المنسدلة في الكمبيوتر */
+            .dropdown:hover .dropdown-content {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+        }
+        
+        @media (max-width: 768px) {
             .gallery {
-                -webkit-overflow-scrolling: touch;
+                height: 200px;
             }
-            
             .sections-container {
                 flex-direction: column;
                 gap: 20px;
@@ -761,46 +772,6 @@
                 font-size: 1rem;
             }
         }
-
-        /* تحسينات للشاشات الصغيرة جداً - شريط أضيق مع الحفاظ على الصورة */
-        @media (max-width: 480px) {
-            .gallery {
-                height: 120px; /* شريط أضيق جداً */
-                margin: 8px 0 15px;
-                padding: 6px 0;
-            }
-            
-            .gallery img {
-                height: 110px; /* الحفاظ على حجم الصورة */
-            }
-            
-            .gallery-track {
-                animation-duration: 30s;
-                gap: 10px;
-            }
-        }
-
-        /* تحسينات للكمبيوتر - الحفاظ على الشريط العريض */
-        @media (min-width: 1024px) {
-            .gallery {
-                height: 200px;
-            }
-            
-            .gallery img {
-                height: 180px;
-            }
-            
-            .gallery-track {
-                animation-duration: 45s; /* أبطأ للكمبيوتر */
-                gap: 18px;
-            }
-            
-            /* سلوك القائمة المنسدلة في الكمبيوتر */
-            .dropdown:hover .dropdown-content {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-        }
     </style>
 </head>
 <body>
@@ -832,6 +803,7 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
+                <!-- للكمبيوتر: شريط متحرك -->
                 <div class="gallery-track">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
@@ -852,6 +824,16 @@
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
                 </div>
+                
+                <!-- للهاتف: الصور الأصلية -->
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/t%C3%A9l%C3%A9chargement%20(4).jpeg" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Uso%20de%20la%20inteligencia%20artificial%20en%20el%20desarrollo%20de%20f%C3%A1rmacos.jpeg" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 5">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg" alt="Image 6">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COVID's%20Long%20Haul_%20Virus%20Lingers%20in%20Blood%20Years%20After%20Infection%20-%20Neuroscience%20News.jpeg" alt="Image 7">
+                <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Knowledge%20and%20ideas%20in%20the%20human%20head%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 8">
             </div>
         </div>
         <div class="sections-container">
@@ -903,8 +885,8 @@
                     <div class="about-content">
                         <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
                         <p>N'hésitez pas à nous écrire sur nos réseaux sociaux :
-                        <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> أو
-                        <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> أو
+                        <a href="https://www.facebook.com/ghani.rouabah.2025">Facebook</a> ou
+                        <a href="https://www.tiktok.com/@ghanroub">Tiktok</a> ou
                         <a href="https://www.instagram.com/ghani.rouabah/">Instagram</a>.</p>
                         <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                     </div>
@@ -996,8 +978,38 @@
             }
         });
         
-        // معالجة نموذج الاتصال
+        // عرض الصور في المعرض للهاتف فقط
         document.addEventListener('DOMContentLoaded', function() {
+            // إخفاء شريط الصور المتحرك في الهاتف
+            if (window.innerWidth <= 768) {
+                const galleryTrack = document.querySelector('.gallery-track');
+                if (galleryTrack) {
+                    galleryTrack.style.display = 'none';
+                }
+                
+                // تفعيل تبديل الصور للهاتف
+                const images = document.querySelectorAll('.gallery img:not(.gallery-track img)');
+                let currentIndex = 0;
+                
+                function showNextImage() {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
+                }
+                
+                if (images.length > 0) {
+                    images[currentIndex].classList.add('active');
+                    setInterval(showNextImage, 3000);
+                }
+            } else {
+                // إخفاء الصور الفردية في الكمبيوتر
+                const individualImages = document.querySelectorAll('.gallery img:not(.gallery-track img)');
+                individualImages.forEach(img => {
+                    img.style.display = 'none';
+                });
+            }
+            
+            // معالجة نموذج الاتصال
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const statusMessage = document.getElementById('statusMessage');
