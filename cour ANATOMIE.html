@@ -104,7 +104,7 @@
             color: #fff;
         }
         
-        /* تصميم اللوگو */
+        /* تحسين شعار كبسولة الدواء */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -114,15 +114,54 @@
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .logo a:hover::before {
+            left: 100%;
         }
         
         .logo a:hover {
             color: #0288d1;
-            background: rgba(0, 188, 212, 0.1);
+            background: rgba(0, 188, 212, 0.15);
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        
+        .pill-icon {
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .logo a:hover .pill-icon {
+            animation: pillBounce 0.6s ease;
+            color: #ff4081;
+            text-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+        }
+        
+        @keyframes pillBounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-10deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+            75% { transform: scale(1.15) rotate(-5deg); }
         }
         
         /* قائمة التنقل المنسدلة */
@@ -297,13 +336,74 @@
             transform: scale(1.05);
         }
         
+        /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
-            padding: 10px 15px;
+            padding: 30px 15px;
             width: 100%;
             margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.2), rgba(0, 188, 212, 0.2));
+            color: #ffeb3b;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 235, 59, 0.3);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.3), rgba(0, 188, 212, 0.3));
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .social-link.youtube:hover {
+            color: #ff0000;
+            border-color: #ff0000;
+        }
+        
+        .social-link.facebook:hover {
+            color: #1877f2;
+            border-color: #1877f2;
+        }
+        
+        .social-link.instagram:hover {
+            color: #e4405f;
+            border-color: #e4405f;
+        }
+        
+        .social-link.tiktok:hover {
+            color: #69c9d0;
+            border-color: #69c9d0;
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #e0e0e0;
         }
         
         /* تصميم القائمة المنسدلة في الهاتف */
@@ -397,6 +497,17 @@
                 padding: 10px;
                 margin-top: 180px;
             }
+            
+            /* تعديلات الهاتف للفوتر */
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
         }
         
         /* سلوك القائمة المنسدلة في الكمبيوتر */
@@ -417,7 +528,9 @@
     <div class="top-bar" id="mainHeader">
         <header>
             <div class="logo">
-                <a href="index.html">💊GhaniPharma</a>
+                <a href="index.html">
+                    <span class="pill-icon">💊</span> GhaniPharma
+                </a>
             </div>
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
@@ -435,7 +548,8 @@
                             <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                         </div>
                     </li>
-                    <li><a href="index.html#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
+                    <!-- تغيير Questions إلى Contact -->
+                    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -555,7 +669,23 @@
     </div>
     
     <footer>
-        <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés</p>
+        </div>
     </footer>
     
     <script>
