@@ -566,13 +566,74 @@
             border: 1px solid #f44336;
         }
         
+        /* أنماط جديدة للفوتر */
         footer {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             text-align: center;
-            padding: 20px 15px;
+            padding: 30px 15px;
             width: 100%;
             margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.2), rgba(0, 188, 212, 0.2));
+            color: #ffeb3b;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 235, 59, 0.3);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.3), rgba(0, 188, 212, 0.3));
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .social-link.youtube:hover {
+            color: #ff0000;
+            border-color: #ff0000;
+        }
+        
+        .social-link.facebook:hover {
+            color: #1877f2;
+            border-color: #1877f2;
+        }
+        
+        .social-link.instagram:hover {
+            color: #e4405f;
+            border-color: #e4405f;
+        }
+        
+        .social-link.tiktok:hover {
+            color: #69c9d0;
+            border-color: #69c9d0;
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #e0e0e0;
         }
         
         /* المعرض للهاتف - التصميم الأصلي */
@@ -673,6 +734,11 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         .card::before {
@@ -711,6 +777,11 @@
             font-size: 1rem;
             line-height: 1.6;
             color: #e0e0e0;
+        }
+        
+        .coming-soon {
+            color: #888;
+            font-style: italic;
         }
         
         @media (max-width: 768px) {
@@ -877,6 +948,17 @@
             .card {
                 padding: 20px;
             }
+            
+            /* تعديلات الهاتف للفوتر */
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -1008,21 +1090,21 @@
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <h3>Étudiant en 3ème année</h3>
-                        <p>"GhaniPharma m'a sauvé la vie pendant mes révisions. Les fiches résumées sont parfaites!"</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-star"></i>
                         </div>
                         <h3>Future pharmacienne</h3>
-                        <p>"Les TPs sont tellement bien expliqués. Je recommande vivement cette plateforme!"</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3>Étudiant international</h3>
-                        <p>"En tant qu'étudiant étranger, les cours en français m'ont énormément aidé. Merci!"</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                 </div>
             </div>
@@ -1037,21 +1119,21 @@
                             <i class="fas fa-bullhorn"></i>
                         </div>
                         <h3>Nouveaux Cours</h3>
-                        <p>Découvrez nos nouveaux cours de pharmacologie ajoutés ce mois-ci.</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
                         <h3>Événements à Venir</h3>
-                        <p>Participez à notre webinaire sur les nouvelles thérapies le 15 décembre.</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-download"></i>
                         </div>
                         <h3>Mise à Jour</h3>
-                        <p>Téléchargez notre nouvelle application mobile maintenant disponible.</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                 </div>
             </div>
@@ -1119,28 +1201,44 @@
                             <i class="fas fa-video"></i>
                         </div>
                         <h3>Tutoriels Vidéo</h3>
-                        <p>Accédez à notre bibliothèque de tutoriels vidéo pour mieux comprendre les concepts complexes.</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>Ressources PDF</h3>
-                        <p>Téléchargez nos fiches de révision et résumés de cours au format PDF.</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Communauté</h3>
-                        <p>Rejoignez notre communauté d'étudiants en pharmacie pour échanger et s'entraider.</p>
+                        <p class="coming-soon">Contenu à venir...</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <footer>
-        <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.youtube.com" class="social-link youtube" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@ghanroub" class="social-link tiktok" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés</p>
+        </div>
     </footer>
     <script>
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
