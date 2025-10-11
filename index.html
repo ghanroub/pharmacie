@@ -101,6 +101,8 @@
         header nav ul li a:hover {
             color: #fff;
         }
+        
+        /* شعار كبسولة الدواء المحسن */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -110,14 +112,54 @@
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 8px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .logo a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .logo a:hover::before {
+            left: 100%;
+        }
+        
         .logo a:hover {
             color: #0288d1;
-            background: rgba(0, 188, 212, 0.1);
+            background: rgba(0, 188, 212, 0.15);
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        
+        .pill-icon {
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .logo a:hover .pill-icon {
+            animation: pillBounce 0.6s ease;
+            color: #ff4081;
+            text-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+        }
+        
+        @keyframes pillBounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-10deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+            75% { transform: scale(1.15) rotate(-5deg); }
         }
         
         .dropdown-content {
@@ -946,7 +988,9 @@
 <body>
     <header id="mainHeader">
         <div class="logo">
-            <a href="index.html">💊 GhaniPharma</a>
+            <a href="index.html">
+                <span class="pill-icon">💊</span> GhaniPharma
+            </a>
         </div>
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
         <nav>
@@ -963,7 +1007,8 @@
                         <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                     </div>
                 </li>
-                <li><a href="#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
+                <!-- تغيير Questions إلى Contact -->
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -1095,8 +1140,9 @@
                 </div>
             </div>
             
-            <div id="questions" class="section">
-                <h2><i class="fas fa-question-circle"></i> Questions</h2>
+            <!-- تغيير قسم Questions إلى Contact -->
+            <div id="contact" class="section">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
                 <div class="about-container">
                     <div class="about-content">
                         <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
@@ -1108,7 +1154,7 @@
                         <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite !</p>
                     </div>
                     <div class="about-image">
-                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Instant%20Messaging%20Market%20Key%20Players%20%26%20Trades%20Report%20to%202028.jpeg" alt="Questions GhaniPharma">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Instant%20Messaging%20Market%20Key%20Players%20%26%20Trades%20Report%20to%202028.jpeg" alt="Contact GhaniPharma">
                     </div>
                 </div>
                 
