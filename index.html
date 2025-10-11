@@ -513,6 +513,7 @@
         }
         
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 14px;
@@ -525,7 +526,22 @@
             font-family: 'Arial', sans-serif;
         }
         
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffeb3b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        .form-group select option {
+            background-color: #333;
+            color: white;
+        }
+        
         .form-group input:focus,
+        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #00bcd4;
@@ -1184,6 +1200,20 @@
                                 <input type="email" id="email" name="email" required placeholder="Entrez votre email">
                             </div>
                         </div>
+                        
+                        <!-- إضافة حقل نوع الرسالة (الفلتر) -->
+                        <div class="form-group">
+                            <label for="messageType"><i class="fas fa-filter"></i> Type de message</label>
+                            <select id="messageType" name="messageType" required>
+                                <option value="" disabled selected>Sélectionnez le type de message</option>
+                                <option value="inquiry">استفسار (Inquiry)</option>
+                                <option value="suggestion">اقتراح (Suggestion)</option>
+                                <option value="support">دعم (Support)</option>
+                                <option value="advertisement">اعلان (Advertisement)</option>
+                                <option value="other">اخرى (Other)</option>
+                            </select>
+                        </div>
+                        
                         <div class="form-group">
                             <label for="message"><i class="fas fa-comment"></i> Votre message</label>
                             <textarea id="message" name="message" required placeholder="Tapez votre message ici..."></textarea>
