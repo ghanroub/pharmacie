@@ -473,11 +473,11 @@
         /* تحسينات لنموذج الاتصال - تم إزالة الإطار */
         .contact-form {
             margin-top: 25px;
-            padding: 0; /* تم إزالة padding */
-            background: transparent; /* تم إزالة الخلفية */
-            border-radius: 0; /* تم إزالة الزوايا المدورة */
-            border: none; /* تم إزالة الحدود */
-            box-shadow: none; /* تم إزالة الظلال */
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
         }
         
         .contact-form h3 {
@@ -488,8 +488,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: transparent; /* تأكيد إزالة الخلفية */
-            padding: 0; /* تأكيد إزالة padding */
+            background: transparent;
+            padding: 0;
         }
         
         .contact-form h3 i {
@@ -513,7 +513,6 @@
         }
         
         .form-group input,
-        .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 14px;
@@ -526,22 +525,7 @@
             font-family: 'Arial', sans-serif;
         }
         
-        .form-group select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffeb3b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-            background-size: 16px;
-            padding-right: 40px;
-        }
-        
-        .form-group select option {
-            background-color: #333;
-            color: white;
-        }
-        
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #00bcd4;
@@ -554,6 +538,13 @@
             min-height: 140px;
             resize: vertical;
             line-height: 1.5;
+        }
+        
+        /* أنماط جديدة لزر الإرسال مع الفلتر */
+        .submit-btn-container {
+            position: relative;
+            display: flex;
+            width: 100%;
         }
         
         .submit-btn {
@@ -573,6 +564,64 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            padding-right: 50px;
+        }
+        
+        .filter-dropdown {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .filter-dropdown:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .filter-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #4a148c, #6a1b9a);
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .filter-options.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .filter-option {
+            padding: 12px 15px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .filter-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .filter-option:last-child {
+            border-bottom: none;
         }
         
         .submit-btn:hover {
@@ -970,7 +1019,7 @@
                 gap: 0;
             }
             .contact-form {
-                padding: 0; /* تم إزالة padding للهاتف أيضًا */
+                padding: 0;
             }
             .submit-btn {
                 padding: 12px 25px;
@@ -998,6 +1047,18 @@
                 height: 45px;
                 font-size: 1.3rem;
             }
+            
+            /* تعديلات الهاتف للفلتر */
+            .submit-btn-container {
+                flex-direction: column;
+            }
+            
+            .filter-dropdown {
+                position: static;
+                transform: none;
+                margin-top: 10px;
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
@@ -1023,6 +1084,8 @@
                         <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                     </div>
                 </li>
+                <!-- إضافة آخر الأخبار في الهيدر -->
+                <li><a href="#news"><i class="fas fa-newspaper"></i> Dernières nouvelles</a></li>
                 <!-- تغيير Questions إلى Contact -->
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
@@ -1189,6 +1252,7 @@
                     >
                         <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
                         <input type="hidden" name="_language" value="fr">
+                        <input type="hidden" name="messageType" id="messageType" value="">
                         
                         <div class="form-row">
                             <div class="form-group">
@@ -1201,26 +1265,27 @@
                             </div>
                         </div>
                         
-                        <!-- إضافة حقل نوع الرسالة (الفلتر) -->
-                        <div class="form-group">
-                            <label for="messageType"><i class="fas fa-filter"></i> Type de message</label>
-                            <select id="messageType" name="messageType" required>
-                                <option value="" disabled selected>Sélectionnez le type de message</option>
-                                <option value="inquiry">استفسار (Inquiry)</option>
-                                <option value="suggestion">اقتراح (Suggestion)</option>
-                                <option value="support">دعم (Support)</option>
-                                <option value="advertisement">اعلان (Advertisement)</option>
-                                <option value="other">اخرى (Other)</option>
-                            </select>
-                        </div>
-                        
                         <div class="form-group">
                             <label for="message"><i class="fas fa-comment"></i> Votre message</label>
                             <textarea id="message" name="message" required placeholder="Tapez votre message ici..."></textarea>
                         </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">
-                            <i class="fas fa-paper-plane"></i> Envoyer le message
-                        </button>
+                        
+                        <!-- زر الإرسال مع الفلتر -->
+                        <div class="submit-btn-container">
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                                <button type="button" class="filter-dropdown" onclick="toggleFilter()">
+                                    <i class="fas fa-filter"></i>
+                                </button>
+                            </button>
+                            <div class="filter-options" id="filterOptions">
+                                <div class="filter-option" onclick="selectFilter('inquiry', 'استفسار (Inquiry)')">استفسار (Inquiry)</div>
+                                <div class="filter-option" onclick="selectFilter('suggestion', 'اقتراح (Suggestion)')">اقتراح (Suggestion)</div>
+                                <div class="filter-option" onclick="selectFilter('support', 'دعم (Support)')">دعم (Support)</div>
+                                <div class="filter-option" onclick="selectFilter('advertisement', 'اعلان (Advertisement)')">اعلان (Advertisement)</div>
+                                <div class="filter-option" onclick="selectFilter('other', 'اخرى (Other)')">اخرى (Other)</div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1344,6 +1409,13 @@
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
+                    // التحقق من اختيار نوع الرسالة
+                    const messageType = document.getElementById('messageType').value;
+                    if (!messageType) {
+                        showStatus('❌ Veuillez sélectionner le type de message', 'error');
+                        return;
+                    }
+                    
                     // تعطيل زر الإرسال أثناء المعالجة
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
@@ -1364,6 +1436,7 @@
                         if (response.ok) {
                             showStatus('✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
                             contactForm.reset();
+                            document.getElementById('messageType').value = '';
                         } else {
                             const errorData = await response.json();
                             throw new Error(errorData.error || 'Erreur lors de l\'envoi du message');
@@ -1427,6 +1500,37 @@
             const statsSection = document.getElementById('statistics');
             if (statsSection) {
                 observer.observe(statsSection);
+            }
+        });
+
+        // وظائف الفلتر الجديدة
+        function toggleFilter() {
+            const filterOptions = document.getElementById('filterOptions');
+            filterOptions.classList.toggle('show');
+        }
+
+        function selectFilter(value, text) {
+            document.getElementById('messageType').value = value;
+            const filterOptions = document.getElementById('filterOptions');
+            filterOptions.classList.remove('show');
+            
+            // إظهار تأكيد الاختيار
+            showStatus(`✅ Type de message sélectionné: ${text}`, 'success');
+            setTimeout(() => {
+                const statusMessage = document.getElementById('statusMessage');
+                if (statusMessage.style.display !== 'none') {
+                    statusMessage.style.display = 'none';
+                }
+            }, 2000);
+        }
+
+        // إغلاق الفلتر عند النقر خارجها
+        document.addEventListener('click', function(event) {
+            const filterOptions = document.getElementById('filterOptions');
+            const filterDropdown = document.querySelector('.filter-dropdown');
+            
+            if (!filterOptions.contains(event.target) && !filterDropdown.contains(event.target)) {
+                filterOptions.classList.remove('show');
             }
         });
     </script>
