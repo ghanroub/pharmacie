@@ -2,39 +2,57 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>مثال على الروابط الداخلية</title>
+  <title>العناصر الدلالية في HTML</title>
+  <style>
+    header { background: #b3e5fc; padding: 10px; }
+    nav { background: #c8e6c9; padding: 10px; }
+    main { background: #fff9c4; padding: 10px; }
+    section { background: #ffe0b2; margin: 10px 0; padding: 10px; }
+    article { background: #e1bee7; margin: 10px 0; padding: 10px; }
+    aside { background: #b2ebf2; padding: 10px; }
+    footer { background: #eeeeee; padding: 10px; text-align: center; }
+  </style>
 </head>
 <body>
 
   <header>
-    <!-- 🖼️ شعار الموقع -->
-    <h1><a href="#home" >🌐 Logo غني</a></h1>
-
-    <!-- 🔗 قائمة التنقل -->
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
+    <h1>موقعي</h1>
+    <p>شعار الموقع</p>
   </header>
 
-  <!-- 🏠 القسم الرئيسي -->
+  <nav>
+    <a href="#home">الرئيسية</a> |
+    <a href="#news">الأخبار</a> |
+    <a href="#contact">اتصل بنا</a>
+  </nav>
+
   <main id="home">
-    <h2>مرحبًا بكم في موقعي</h2>
-    <p>هذا هو القسم الرئيسي للموقع، هنا يبدأ المحتوى الأساسي.</p>
+    <h2>المحتوى الرئيسي</h2>
+
+    <section id="news">
+      <h3>قسم الأخبار</h3>
+      <article>
+        <h4>مقال 1</h4>
+        <p>هذا مثال على مقالة مستقلة داخل قسم الأخبار.</p>
+      </article>
+      <article>
+        <h4>مقال 2</h4>
+        <p>هذا مثال على مقالة أخرى يمكن قراءتها بشكل مستقل.</p>
+      </article>
+    </section>
+
+    <aside>
+      <h3>روابط جانبية</h3>
+      <ul>
+        <li><a href="#">صفحتنا على فيسبوك</a></li>
+        <li><a href="#">أحدث المقالات</a></li>
+      </ul>
+    </aside>
   </main>
 
-  <!-- ℹ️ قسم من نحن -->
-  <section id="about">
-    <h2>من نحن</h2>
-    <p>نحن فريق مهتم بالصيدلة والمعلومة الطبية الدقيقة.</p>
-  </section>
-
-  <!-- 📧 قسم الاتصال -->
-  <section id="contact">
-    <h2>تواصل معنا</h2>
-    <p>يمكنك مراسلتنا عبر البريد: ghanipharm@example.com</p>
-  </section>
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة لغني</p>
+  </footer>
 
 </body>
 </html>
