@@ -998,15 +998,8 @@
                 <!-- تم تغيير الرابط هنا -->
                 <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                <li class="dropdown">
-                    <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
-                    <div id="dropdownContent" class="dropdown-content">
-                        <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                        <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
-                        <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
-                        <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
-                    </div>
-                </li>
+                <!-- تم تغيير Contenu إلى Modules وإزالة القائمة المنسدلة -->
+                <li><a href="modules.html"><i class="fas fa-book"></i> Modules</a></li>
                 <!-- تغيير Questions إلى Contact -->
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
@@ -1059,19 +1052,9 @@
                     </div>
                     <div class="about-content">
                         <p><p>Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs 
-                        <a href="cours.html" style="color: #00bcd4; text-decoration: none; font-weight: bold; transition: all 0.3s ease; border-bottom: 1px solid transparent;" 
+                        <a href="modules.html" style="color: #00bcd4; text-decoration: none; font-weight: bold; transition: all 0.3s ease; border-bottom: 1px solid transparent;" 
                            onmouseover="this.style.color='#4dd0e1'; this.style.borderBottomColor='#4dd0e1'" 
-                           onmouseout="this.style.color='#00bcd4'; this.style.borderBottomColor='transparent'">cours</a>, 
-                        <a href="tps.html" style="color: #00bcd4; text-decoration: none; font-weight: bold; transition: all 0.3s ease; border-bottom: 1px solid transparent;" 
-                           onmouseover="this.style.color='#4dd0e1'; this.style.borderBottomColor='#4dd0e1'" 
-                           onmouseout="this.style.color='#00bcd4'; this.style.borderBottomColor='transparent'">TPs</a>, 
-                        <a href="tds.html" style="color: #00bcd4; text-decoration: none; font-weight: bold; transition: all 0.3s ease; border-bottom: 1px solid transparent;" 
-                           onmouseover="this.style.color='#4dd0e1'; this.style.borderBottomColor='#4dd0e1'" 
-                           onmouseout="this.style.color='#00bcd4'; this.style.borderBottomColor='transparent'">TDs</a>, 
-                        réviser efficacement, et réussir leurs 
-                        <a href="examens.html" style="color: #00bcd4; text-decoration: none; font-weight: bold; transition: all 0.3s ease; border-bottom: 1px solid transparent;" 
-                           onmouseover="this.style.color='#4dd0e1'; this.style.borderBottomColor='#4dd0e1'" 
-                           onmouseout="this.style.color='#00bcd4'; this.style.borderBottomColor='transparent'">examens</a>. Vous y trouverez des explications claires, des fiches résumées, des vidéos pédagogiques, et bien plus encore.</p></p>
+                           onmouseout="this.style.color='#00bcd4'; this.style.borderBottomColor='transparent'">modules</a>.</p></p>
                         <p>Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire.</p>
                         <p>Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !</p>
                     </div>
@@ -1226,21 +1209,12 @@
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("show");
         }
-        // عرض/إخفاء القائمة المنسدلة في الهاتف
-        function toggleDropdownMobile(event) {
-            if (window.innerWidth <= 768) {
-                event.preventDefault();
-                const dropdownContent = document.getElementById("dropdownContent");
-                dropdownContent.classList.toggle("show");
-            }
-        }
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
             const menuBtn = document.querySelector('.menu-btn');
             if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
                 navMenu.classList.remove("show");
-                document.getElementById("dropdownContent").classList.remove("show");
             }
         });
         
