@@ -158,39 +158,6 @@
             75% { transform: scale(1.15) rotate(-5deg); }
         }
         
-        /* قائمة التنقل المنسدلة */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 0;
-            border-radius: 0 0 10px 10px;
-            animation: fadeIn 0.3s ease;
-        }
-        .dropdown-content a {
-            color: #ffeb3b;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.2s;
-        }
-        .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        /* زر إغلاق القائمة المنسدلة في الهاتف */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #ffeb3b;
-        }
         /* قسم الأزرار الثابتة أسفل header */
         .year-navigation {
             background-color: rgba(0, 0, 0, 0.6);
@@ -464,7 +431,7 @@
             color: #e0e0e0;
         }
         
-        /* تصميم القائمة المنسدلة في الهاتف */
+        /* تصميم القائمة في الهاتف */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -504,33 +471,6 @@
             }
             header nav ul li a:hover {
                 background-color: rgba(255, 255, 255, 0.15);
-            }
-            /* تعديل القائمة المنسدلة في الهاتف */
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-                transition: all 0.3s ease;
-            }
-            .dropdown-content.show {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            .dropdown-content a {
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-                color: #ffeb3b;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                transition: background-color 0.2s;
-            }
-            .dropdown-content a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
             }
             
             .hero h1 {
@@ -578,13 +518,6 @@
                 font-size: 1.3rem;
             }
         }
-        
-        /* سلوك القائمة المنسدلة في الكمبيوتر */
-        @media (min-width: 769px) {
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
@@ -602,16 +535,8 @@
                     <!-- تم تغيير الرابط هنا -->
                     <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                     <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li class="dropdown">
-                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <span class="close-btn" onclick="closeDropdown()">&times;</span>
-                            <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
-                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
-                        </div>
-                    </li>
+                    <!-- تم تغيير Contenu إلى Modules وإزالة القائمة المنسدلة -->
+                    <li><a href="modules.html"><i class="fas fa-book"></i> Modules</a></li>
                     <!-- تغيير Questions إلى Contact -->
                     <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -865,29 +790,14 @@
             navMenu.classList.toggle("show");
         }
 
-        // عرض/إخفاء القائمة المنسدلة في الهاتف
-        function toggleDropdownMobile(event) {
-            if (window.innerWidth <= 768) {
-                event.preventDefault();
-                const dropdownContent = document.getElementById("dropdownContent");
-                dropdownContent.classList.toggle("show");
-            }
-        }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
             const menuBtn = document.querySelector('.menu-btn');
             if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
                 navMenu.classList.remove("show");
-                document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
-        // إغلاق القائمة المنسدلة
-        function closeDropdown() {
-            document.getElementById("dropdownContent").classList.remove("show");
-        }
 
         // الكود الخاص بالأزرار والتمرير
         document.querySelectorAll('.year-btn').forEach(button => {
