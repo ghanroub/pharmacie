@@ -21,7 +21,7 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -45,6 +45,14 @@
         .subtitle {
             font-size: 18px;
             opacity: 0.9;
+        }
+        
+        .instructions {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-bottom: 1px solid #b8daff;
+            text-align: center;
+            color: #004085;
         }
         
         .exam-info {
@@ -115,7 +123,7 @@
         
         .option {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 12px 15px;
             background-color: #f8f9fa;
             border-radius: 8px;
@@ -136,6 +144,7 @@
         
         .option input {
             margin-left: 10px;
+            margin-top: 3px;
         }
         
         .option label {
@@ -238,6 +247,13 @@
             background-color: #f7a900;
         }
         
+        .multi-select-note {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -270,6 +286,10 @@
             <p class="subtitle">كلية الصيدلة - اختبار QCM</p>
         </header>
         
+        <div class="instructions">
+            <p><strong>تعليمات:</strong> يمكن اختيار أكثر من إجابة في بعض الأسئلة. يتم منح النقطة فقط إذا كانت جميع الإجابات المختارة صحيحة وتم اختيار جميع الإجابات الصحيحة.</p>
+        </div>
+        
         <div class="exam-info">
             <div class="timer">الوقت المتبقي: <span id="time">30:00</span></div>
             <div class="progress">السؤال <span id="current-q">1</span> من <span id="total-qs">10</span></div>
@@ -301,7 +321,7 @@
     </div>
 
     <script>
-        // أسئلة الامتحان
+        // أسئلة الامتحان مع دعم الاختيار المتعدد
         const questions = [
             {
                 id: 1,
@@ -310,7 +330,8 @@
                     { id: "a", text: "Peptidoglycane", correct: true },
                     { id: "b", text: "Lipopolysaccharide", correct: false },
                     { id: "c", text: "Membrane externe", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 2,
@@ -319,7 +340,8 @@
                     { id: "a", text: "Vrai", correct: false },
                     { id: "b", text: "Faux", correct: true },
                     { id: "c", text: "Parfois", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 3,
@@ -328,7 +350,8 @@
                     { id: "a", text: "Vrai", correct: false },
                     { id: "b", text: "Faux", correct: true },
                     { id: "c", text: "Seulement certains virus", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 4,
@@ -337,7 +360,8 @@
                     { id: "a", text: "Vrai", correct: true },
                     { id: "b", text: "Faux", correct: false },
                     { id: "c", text: "Cela dépend du type de bactéries", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 5,
@@ -346,7 +370,8 @@
                     { id: "a", text: "Vrai", correct: false },
                     { id: "b", text: "Faux", correct: true },
                     { id: "c", text: "Seulement les bactéries Gram-négatives", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 6,
@@ -355,7 +380,8 @@
                     { id: "a", text: "Vrai", correct: true },
                     { id: "b", text: "Faux", correct: false },
                     { id: "c", text: "Seulement les bactéries végétatives", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 7,
@@ -364,7 +390,8 @@
                     { id: "a", text: "Vrai", correct: false },
                     { id: "b", text: "Faux", correct: true },
                     { id: "c", text: "Certains oui", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 8,
@@ -373,7 +400,8 @@
                     { id: "a", text: "Vrai", correct: false },
                     { id: "b", text: "Faux", correct: true },
                     { id: "c", text: "Dans le plasmide seulement", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 9,
@@ -382,7 +410,8 @@
                     { id: "a", text: "Vrai", correct: false },
                     { id: "b", text: "Faux", correct: true },
                     { id: "c", text: "Parfois", correct: false }
-                ]
+                ],
+                multiSelect: false
             },
             {
                 id: 10,
@@ -391,13 +420,14 @@
                     { id: "a", text: "Vrai", correct: true },
                     { id: "b", text: "Faux", correct: false },
                     { id: "c", text: "Elle empêche seulement la déshydratation", correct: false }
-                ]
+                ],
+                multiSelect: false
             }
         ];
 
         // المتغيرات العامة
         let currentQuestion = 0;
-        let userAnswers = new Array(questions.length).fill(null);
+        let userAnswers = new Array(questions.length).fill([]);
         let timeLeft = 30 * 60; // 30 دقيقة بالثواني
         let timerInterval;
 
@@ -421,11 +451,14 @@
             
             let optionsHTML = '';
             question.options.forEach(option => {
-                const isSelected = userAnswers[index] === option.id;
+                const isSelected = userAnswers[index].includes(option.id);
                 optionsHTML += `
                     <div class="option ${isSelected ? 'selected' : ''}" data-option="${option.id}">
-                        <input type="radio" id="q${question.id}_${option.id}" name="q${question.id}" 
-                               value="${option.id}" ${isSelected ? 'checked' : ''}>
+                        <input type="${question.multiSelect ? 'checkbox' : 'radio'}" 
+                               id="q${question.id}_${option.id}" 
+                               name="q${question.id}" 
+                               value="${option.id}" 
+                               ${isSelected ? 'checked' : ''}>
                         <label for="q${question.id}_${option.id}">${option.id}) ${option.text}</label>
                     </div>
                 `;
@@ -436,14 +469,18 @@
                     <div class="question-number">سؤال <span>${question.id}</span></div>
                     <div class="question-text">${question.text}</div>
                     <div class="options">${optionsHTML}</div>
+                    ${question.multiSelect ? '<p class="multi-select-note">(يمكن اختيار أكثر من إجابة)</p>' : ''}
                 </div>
             `;
             
             // إضافة مستمعي الأحداث للخيارات
             document.querySelectorAll('.option').forEach(option => {
-                option.addEventListener('click', function() {
-                    const optionId = this.getAttribute('data-option');
-                    selectOption(optionId);
+                option.addEventListener('click', function(e) {
+                    // منع الحدث إذا تم النقر على العنصر input مباشرة
+                    if (e.target.tagName !== 'INPUT') {
+                        const optionId = this.getAttribute('data-option');
+                        selectOption(optionId, question.multiSelect);
+                    }
                 });
             });
             
@@ -452,15 +489,22 @@
         }
 
         // اختيار إجابة
-        function selectOption(optionId) {
-            userAnswers[currentQuestion] = optionId;
+        function selectOption(optionId, isMultiSelect) {
+            if (isMultiSelect) {
+                // للاختيار المتعدد - تبديل حالة الخيار
+                const index = userAnswers[currentQuestion].indexOf(optionId);
+                if (index === -1) {
+                    userAnswers[currentQuestion].push(optionId);
+                } else {
+                    userAnswers[currentQuestion].splice(index, 1);
+                }
+            } else {
+                // لاختيار واحد - استبدال الخيار المحدد
+                userAnswers[currentQuestion] = [optionId];
+            }
             
-            // تحديث المظهر للخيار المحدد
-            document.querySelectorAll('.option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            document.querySelector(`.option[data-option="${optionId}"]`).classList.add('selected');
+            // إعادة عرض السؤال لتحديث المظهر
+            displayQuestion(currentQuestion);
         }
 
         // الانتقال إلى السؤال التالي
@@ -528,9 +572,15 @@
             
             questions.forEach((question, index) => {
                 const userAnswer = userAnswers[index];
-                const correctOption = question.options.find(opt => opt.correct);
+                const correctOptions = question.options.filter(opt => opt.correct).map(opt => opt.id);
                 
-                if (userAnswer === correctOption.id) {
+                // التحقق مما إذا كانت الإجابات المختارة تطابق تمامًا الإجابات الصحيحة
+                const isCorrect = 
+                    userAnswer.length === correctOptions.length &&
+                    userAnswer.every(answer => correctOptions.includes(answer)) &&
+                    correctOptions.every(correct => userAnswer.includes(correct));
+                
+                if (isCorrect) {
                     score++;
                     feedbackHTML += `
                         <li>
@@ -543,7 +593,7 @@
                         <li>
                             <strong>سؤال ${index + 1}:</strong> 
                             <span class="wrong-answer">إجابة خاطئة ✗</span> - 
-                            الإجابة الصحيحة: <span class="correct-answer">${correctOption.id}) ${correctOption.text}</span>
+                            الإجابة الصحيحة: <span class="correct-answer">${correctOptions.map(opt => `${opt}) ${question.options.find(o => o.id === opt).text}`).join('، ')}</span>
                         </li>
                     `;
                 }
@@ -559,6 +609,7 @@
             // إخفاء قسم الأسئلة وإظهار قسم النتائج
             document.querySelector('.exam-content').style.display = 'none';
             document.querySelector('.exam-info').style.display = 'none';
+            document.querySelector('.instructions').style.display = 'none';
             document.getElementById('result-container').style.display = 'block';
         }
 
@@ -582,12 +633,13 @@
         // إعادة الامتحان
         function restartExam() {
             currentQuestion = 0;
-            userAnswers = new Array(questions.length).fill(null);
+            userAnswers = new Array(questions.length).fill([]);
             timeLeft = 30 * 60;
             
             // إعادة تعيين العرض
             document.querySelector('.exam-content').style.display = 'block';
             document.querySelector('.exam-info').style.display = 'flex';
+            document.querySelector('.instructions').style.display = 'block';
             document.getElementById('result-container').style.display = 'none';
             
             // إعادة تهيئة الامتحان
