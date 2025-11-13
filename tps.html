@@ -263,13 +263,16 @@
             color: #ffeb3b;
         }
         
+        /* التغيير الرئيسي هنا: إزالة الحد الأقصى للارتفاع وجعل الأسئلة تظهر في مستطيل طويل */
         .questions-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            max-height: 60vh;
-            overflow-y: auto;
+            /* إزالة max-height وoverflow-y لتجنب التمرير الداخلي */
             padding: 10px;
+            /* إضافة ارتفاع تلقائي للسماح بالتمرير الطبيعي للصفحة */
+            min-height: auto;
+            overflow: visible;
         }
         
         .question {
@@ -278,6 +281,8 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-left: 5px solid #4a6491;
+            /* جعل كل سؤال يأخذ المساحة التي يحتاجها */
+            flex-shrink: 0;
         }
         
         .question-number {
@@ -586,8 +591,10 @@
                 margin-top: 180px;
             }
             
+            /* إزالة الحد الأقصى للارتفاع في الهاتف أيضاً */
             .questions-container {
-                max-height: 50vh;
+                max-height: none;
+                overflow: visible;
             }
             
             /* تعديلات الهاتف للفوتر */
