@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen de Microbiologie - GhaniPharma</title>
+    <title>Cours ANATOMIE - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -201,6 +201,11 @@
             color: #ffeb3b;
         }
         
+        /* قسم الأزرار الثابتة أسفل header - إزالة شريط السنوات */
+        .year-navigation {
+            display: none;
+        }
+        
         /* المحتوى الرئيسي */
         .main-content {
             margin-top: 140px;
@@ -210,21 +215,21 @@
             align-items: center;
         }
         
-        .exam-header {
+        .course-header {
             text-align: center;
             margin-bottom: 20px;
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
         }
         
-        .exam-title {
+        .course-title {
             font-size: 2.5rem;
             color: #ffeb3b;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .exam-description {
+        .course-description {
             font-size: 1.1rem;
             color: white;
             background-color: rgba(0, 0, 0, 0.5);
@@ -233,199 +238,131 @@
             line-height: 1.6;
         }
         
-        .exam-container {
+        .semester-container {
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
         }
         
-        .exam-info {
+        .semester-title {
+            font-size: 1.8rem;
+            color: #ffeb3b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .chapter-card {
+            background-color: rgba(255, 255, 255, 0.9); /* تغيير إلى أبيض */
+            border: 2px solid rgba(0, 0, 0, 0.8); /* زيادة غمق الإطار */
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #333; /* تغيير لون النص إلى داكن */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* إضافة ظل لتحسين الوضوح */
+        }
+        
+        .chapter-card:hover {
+            background-color: rgba(255, 255, 255, 1); /* أبيض نقي عند التمرير */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
+        }
+        
+        .chapter-title {
+            font-size: 1.2rem;
+            color: #333; /* تغيير لون العنوان إلى داكن */
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .timer {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffeb3b;
-        }
-        
-        .progress {
-            font-size: 16px;
-            color: #ffeb3b;
-        }
-        
-        .questions-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-height: 60vh;
-            overflow-y: auto;
-            padding: 10px;
-        }
-        
-        .question {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #4a6491;
-        }
-        
-        .question-number {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            display: flex;
             align-items: center;
-        }
-        
-        .question-number span {
-            background-color: #4a6491;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-        }
-        
-        .question-text {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-        
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .option {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .option:hover {
-            background-color: #e9ecef;
-            transform: translateX(5px);
-        }
-        
-        .option.selected {
-            background-color: #e3f2fd;
-            border-color: #2196f3;
-        }
-        
-        .option input {
-            margin-right: 10px;
-        }
-        
-        .option label {
-            cursor: pointer;
-            flex-grow: 1;
-            font-size: 16px;
-        }
-        
-        .actions {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
             font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
         
-        #submit-btn {
-            background-color: #28a745;
-            color: white;
+        .chapter-title i {
+            transition: transform 0.3s ease;
+            color: #6a1b9a; /* لون أرجواني للأيقونة */
         }
         
-        #submit-btn:hover {
-            background-color: #218838;
+        .chapter-card.active .chapter-title i {
+            transform: rotate(180deg);
         }
         
-        .result-container {
+        .resources-options {
             display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 2px solid rgba(106, 27, 154, 0.5); /* تغيير لون الحدود */
+        }
+        
+        .chapter-card.active .resources-options {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .resource-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .pdf-btn {
+            background-color: #e74c3c;
+        }
+        
+        .video-btn {
+            background-color: #3498db;
+        }
+        
+        .exam-btn {
+            background-color: #2ecc71;
+        }
+        
+        .resource-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        
+        /* أنماط زر الامتحان النهائي */
+        .module-exam-container {
             text-align: center;
-            padding: 40px 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            margin-top: 20px;
+            margin: 30px 0;
         }
         
-        .result-header {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        
-        .score {
-            font-size: 72px;
-            font-weight: bold;
-            color: #e74c3c;
-            margin: 20px 0;
-        }
-        
-        .score-text {
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-        
-        .feedback {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: left;
-        }
-        
-        .correct-answer {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .wrong-answer {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        
-        .restart-btn {
-            background-color: #fdbb2d;
-            color: #2c3e50;
-            font-size: 18px;
+        .module-exam-btn {
+            background-color: #9b59b6;
+            color: white;
+            border: none;
             padding: 15px 30px;
-            margin-top: 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .restart-btn:hover {
-            background-color: #f7a900;
+        .module-exam-btn:hover {
+            background-color: #8e44ad;
+            transform: scale(1.05);
         }
         
         /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
@@ -577,17 +514,17 @@
                 background-color: rgba(255, 255, 255, 0.2);
             }
             
-            .exam-title {
+            .course-title {
                 font-size: 2rem;
+            }
+            
+            .chapters-grid {
+                grid-template-columns: 1fr;
             }
             
             .main-content {
                 padding: 10px;
                 margin-top: 180px;
-            }
-            
-            .questions-container {
-                max-height: 50vh;
             }
             
             /* تعديلات الهاتف للفوتر */
@@ -627,6 +564,7 @@
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
                 <ul id="navMenu">
+                    <!-- تم تغيير الرابط هنا -->
                     <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                     <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li class="dropdown">
@@ -639,48 +577,148 @@
                             <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                         </div>
                     </li>
+                    <!-- تغيير Questions إلى Contact -->
                     <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </header>
+        <!-- إزالة قسم الأزرار الثابتة (شريط السنوات) -->
     </div>
     
     <!-- المحتوى الرئيسي -->
     <div class="main-content">
-        <div class="exam-header">
-            <h1 class="exam-title">Examen de Microbiologie</h1>
-            <div class="exam-description">
-                Test QCM en Microbiologie - Faculté de Pharmacie. L'examen se compose de 10 questions à choix multiples. Vous avez 30 minutes pour répondre à toutes les questions.
+        <div class="course-header">
+            <h1 class="course-title">ANATOMIE</h1>
+            <div class="course-description">
+                L'anatomie est la science qui étudie la structure du corps humain, la position et les relations des organes entre eux. Elle constitue la base fondamentale pour comprendre la physiologie et la pathologie.
             </div>
         </div>
         
-        <div class="exam-container">
-            <div class="exam-info">
-                <div class="timer">Temps restant: <span id="time">30:00</span></div>
-                <div class="progress">Questions: <span id="answered">0</span>/<span id="total-qs">10</span> répondues</div>
-            </div>
+        <div class="semester-container">
+            <h2 class="semester-title">Semestre 1</h2>
             
-            <div class="exam-content">
-                <div class="questions-container" id="questions-container">
-                    <!-- سيتم ملء الأسئلة ديناميكيًا -->
+            <div class="chapters-grid">
+                <!-- الفصل 1 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-title">
+                        Introduction à l'Anatomie
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen de cour 1 Anatomie.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="actions">
-                    <button id="submit-btn">Soumettre l'examen</button>
+                <!-- الفصل 2 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-title">
+                        Ostéologie
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen de cour 2 Anatomie.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- الفصل 3 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-title">
+                        Myologie
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen de cour 3 Anatomie.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- الفصل 4 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-title">
+                        Système Nerveux
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen de cour 4 Anatomie.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- الفصل 5 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-title">
+                        Système Cardio-vasculaire
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen de cour 5 Anatomie.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- الفصل 6 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-title">
+                        Système Respiratoire
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen de cour 6 Anatomie.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="result-container" id="result-container">
-                <h2 class="result-header">Résultats de l'examen</h2>
-                <div class="score" id="final-score">0/10</div>
-                <div class="score-text" id="score-text">Essayez à nouveau!</div>
-                
-                <div class="feedback" id="feedback">
-                    <!-- سيتم ملء التقييم ديناميكيًا -->
-                </div>
-                
-                <button class="restart-btn" id="restart-btn">Refaire l'examen</button>
-            </div>
+        </div>
+        
+        <!-- قسم زر الامتحان النهائي -->
+        <div class="module-exam-container">
+            <button class="module-exam-btn" onclick="window.location.href='Examen Anatomie.html'">
+                <i class="fas fa-file-alt"></i> Examen de module
+            </button>
         </div>
     </div>
     
@@ -705,275 +743,6 @@
     </footer>
     
     <script>
-        // أسئلة الامتحان
-        const questions = [
-            {
-                id: 1,
-                text: "Quel est le principal constituant de la paroi bactérienne des bactéries Gram-positives ?",
-                options: [
-                    { id: "a", text: "Peptidoglycane", correct: true },
-                    { id: "b", text: "Lipopolysaccharide", correct: false },
-                    { id: "c", text: "Membrane externe", correct: false }
-                ]
-            },
-            {
-                id: 2,
-                text: "Les bactéries anaérobies strictes peuvent survivre en présence d'oxygène.",
-                options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Parfois", correct: false }
-                ]
-            },
-            {
-                id: 3,
-                text: "Les virus peuvent se reproduire seuls sans cellule hôte.",
-                options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Seulement certains virus", correct: false }
-                ]
-            },
-            {
-                id: 4,
-                text: "La fermentation est une voie métabolique qui produit de l'énergie en absence d'oxygène.",
-                options: [
-                    { id: "a", text: "Vrai", correct: true },
-                    { id: "b", text: "Faux", correct: false },
-                    { id: "c", text: "Cela dépend du type de bactéries", correct: false }
-                ]
-            },
-            {
-                id: 5,
-                text: "Toutes les bactéries sont pathogènes pour l'homme.",
-                options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Seulement les bactéries Gram-négatives", correct: false }
-                ]
-            },
-            {
-                id: 6,
-                text: "La stérilisation élimine tous les micro-organismes y compris les spores.",
-                options: [
-                    { id: "a", text: "Vrai", correct: true },
-                    { id: "b", text: "Faux", correct: false },
-                    { id: "c", text: "Seulement les bactéries végétatives", correct: false }
-                ]
-            },
-            {
-                id: 7,
-                text: "Les champignons sont des procaryotes.",
-                options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Certains oui", correct: false }
-                ]
-            },
-            {
-                id: 8,
-                text: "L'ADN bactérien se trouve dans le noyau.",
-                options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Dans le plasmide seulement", correct: false }
-                ]
-            },
-            {
-                id: 9,
-                text: "Les antibiotiques peuvent être efficaces contre les virus.",
-                options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Parfois", correct: false }
-                ]
-            },
-            {
-                id: 10,
-                text: "La capsule bactérienne peut contribuer à la virulence d'une bactérie.",
-                options: [
-                    { id: "a", text: "Vrai", correct: true },
-                    { id: "b", text: "Faux", correct: false },
-                    { id: "c", text: "Elle empêche seulement la déshydratation", correct: false }
-                ]
-            }
-        ];
-
-        // المتغيرات العامة
-        let userAnswers = new Array(questions.length).fill(null);
-        let timeLeft = 30 * 60; // 30 دقيقة بالثواني
-        let timerInterval;
-
-        // تهيئة الامتحان
-        function initExam() {
-            displayAllQuestions();
-            updateProgress();
-            startTimer();
-            
-            // إضافة مستمعي الأحداث للأزرار
-            document.getElementById('submit-btn').addEventListener('click', submitExam);
-            document.getElementById('restart-btn').addEventListener('click', restartExam);
-        }
-
-        // عرض جميع الأسئلة في صفحة واحدة
-        function displayAllQuestions() {
-            const container = document.getElementById('questions-container');
-            
-            let questionsHTML = '';
-            questions.forEach((question, index) => {
-                let optionsHTML = '';
-                question.options.forEach(option => {
-                    const isSelected = userAnswers[index] === option.id;
-                    optionsHTML += `
-                        <div class="option ${isSelected ? 'selected' : ''}" data-question="${index}" data-option="${option.id}">
-                            <input type="radio" id="q${question.id}_${option.id}" name="q${question.id}" 
-                                   value="${option.id}" ${isSelected ? 'checked' : ''}>
-                            <label for="q${question.id}_${option.id}">${option.id}) ${option.text}</label>
-                        </div>
-                    `;
-                });
-                
-                questionsHTML += `
-                    <div class="question">
-                        <div class="question-number">Question <span>${question.id}</span></div>
-                        <div class="question-text">${question.text}</div>
-                        <div class="options">${optionsHTML}</div>
-                    </div>
-                `;
-            });
-            
-            container.innerHTML = questionsHTML;
-            
-            // إضافة مستمعي الأحداث للخيارات
-            document.querySelectorAll('.option').forEach(option => {
-                option.addEventListener('click', function() {
-                    const questionIndex = parseInt(this.getAttribute('data-question'));
-                    const optionId = this.getAttribute('data-option');
-                    selectOption(questionIndex, optionId);
-                });
-            });
-        }
-
-        // اختيار إجابة
-        function selectOption(questionIndex, optionId) {
-            userAnswers[questionIndex] = optionId;
-            
-            // تحديث المظهر للخيار المحدد
-            document.querySelectorAll(`.option[data-question="${questionIndex}"]`).forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            document.querySelector(`.option[data-question="${questionIndex}"][data-option="${optionId}"]`).classList.add('selected');
-            
-            // تحديث التقدم
-            updateProgress();
-        }
-
-        // تحديث شريط التقدم
-        function updateProgress() {
-            const answeredCount = userAnswers.filter(answer => answer !== null).length;
-            document.getElementById('answered').textContent = answeredCount;
-            document.getElementById('total-qs').textContent = questions.length;
-        }
-
-        // بدء المؤقت
-        function startTimer() {
-            timerInterval = setInterval(function() {
-                timeLeft--;
-                
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                
-                document.getElementById('time').textContent = 
-                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    submitExam();
-                }
-            }, 1000);
-        }
-
-        // تقديم الامتحان
-        function submitExam() {
-            clearInterval(timerInterval);
-            
-            // حساب النتيجة
-            let score = 0;
-            let feedbackHTML = '<h3>Détails des réponses:</h3><ul>';
-            
-            questions.forEach((question, index) => {
-                const userAnswer = userAnswers[index];
-                const correctOption = question.options.find(opt => opt.correct);
-                
-                if (userAnswer === correctOption.id) {
-                    score++;
-                    feedbackHTML += `
-                        <li>
-                            <strong>Question ${index + 1}:</strong> 
-                            <span class="correct-answer">Réponse correcte ✓</span>
-                        </li>
-                    `;
-                } else {
-                    feedbackHTML += `
-                        <li>
-                            <strong>Question ${index + 1}:</strong> 
-                            <span class="wrong-answer">Réponse incorrecte ✗</span> - 
-                            Réponse correcte: <span class="correct-answer">${correctOption.id}) ${correctOption.text}</span>
-                        </li>
-                    `;
-                }
-            });
-            
-            feedbackHTML += '</ul>';
-            
-            // عرض النتيجة
-            document.getElementById('final-score').textContent = `${score}/${questions.length}`;
-            document.getElementById('score-text').textContent = getScoreMessage(score);
-            document.getElementById('feedback').innerHTML = feedbackHTML;
-            
-            // إخفاء قسم الأسئلة وإظهار قسم النتائج
-            document.querySelector('.exam-content').style.display = 'none';
-            document.querySelector('.exam-info').style.display = 'none';
-            document.getElementById('result-container').style.display = 'block';
-        }
-
-        // رسالة النتيجة
-        function getScoreMessage(score) {
-            const percentage = (score / questions.length) * 100;
-            
-            if (percentage >= 90) {
-                return "Excellent! Performance remarquable!";
-            } else if (percentage >= 80) {
-                return "Très bien! Bon travail!";
-            } else if (percentage >= 70) {
-                return "Bien! Vous pouvez vous améliorer davantage";
-            } else if (percentage >= 60) {
-                return "Passable! Vous avez besoin de réviser";
-            } else {
-                return "Faible! Vous devez étudier davantage";
-            }
-        }
-
-        // إعادة الامتحان
-        function restartExam() {
-            userAnswers = new Array(questions.length).fill(null);
-            timeLeft = 30 * 60;
-            
-            // إعادة تعيين العرض
-            document.querySelector('.exam-content').style.display = 'block';
-            document.querySelector('.exam-info').style.display = 'flex';
-            document.getElementById('result-container').style.display = 'none';
-            
-            // إعادة تهيئة الامتحان
-            displayAllQuestions();
-            updateProgress();
-            startTimer();
-        }
-
-        // بدء الامتحان عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', initExam);
-
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
@@ -1021,6 +790,35 @@
         function closeDropdown() {
             document.getElementById("dropdownContent").classList.remove("show");
         }
+        
+        // دالة لإظهار/إخفاء خيارات PDF و VIDEO
+        function toggleChapter(element) {
+            // إغلاق جميع البطاقات الأخرى
+            document.querySelectorAll('.chapter-card').forEach(card => {
+                if (card !== element) {
+                    card.classList.remove('active');
+                }
+            });
+            
+            // تبديل حالة البطاقة المحددة
+            element.classList.toggle('active');
+        }
+        
+        // إضافة مستمعي الأحداث لأزرار PDF و VIDEO
+        document.querySelectorAll('.resource-btn').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation(); // منع تنفيذ الحدث على البطاقة الأم
+                
+                const chapterTitle = this.closest('.chapter-card').querySelector('.chapter-title').textContent.trim();
+                const resourceType = this.classList.contains('pdf-btn') ? 'PDF' : 
+                                   this.classList.contains('video-btn') ? 'VIDÉO' : 'EXAMEN';
+                
+                if (resourceType !== 'EXAMEN') {
+                    alert(`Téléchargement du ${resourceType} pour: ${chapterTitle}`);
+                    // هنا يمكنك إضافة الكود لتحميل الملف أو فتحه
+                }
+            });
+        });
     </script>
 </body>
 </html>
