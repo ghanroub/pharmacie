@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>امتحان علم الأحياء الدقيقة - GhaniPharma</title>
+    <title>Examen de Microbiologie - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -15,8 +15,8 @@
             margin: 0;
             padding: 0;
             color: #333;
-            direction: rtl;
-            text-align: right;
+            direction: ltr;
+            text-align: left;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -78,7 +78,7 @@
         
         /* قائمة التنقل الرئيسية */
         header nav {
-            transform: translateX(35px);
+            transform: translateX(-35px);
         }
         
         header nav ul {
@@ -172,7 +172,7 @@
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            right: 0;
+            left: 0;
             border-radius: 0 0 10px 10px;
             animation: fadeIn 0.3s ease;
         }
@@ -182,7 +182,7 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            text-align: right;
+            text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s;
         }
@@ -195,7 +195,7 @@
         .close-btn {
             position: absolute;
             top: 5px;
-            left: 5px;
+            right: 5px;
             font-size: 20px;
             cursor: pointer;
             color: #ffeb3b;
@@ -214,7 +214,7 @@
             text-align: center;
             margin-bottom: 20px;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
         }
         
         .exam-title {
@@ -239,7 +239,7 @@
             padding: 20px;
             margin: 20px 0;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
         }
         
         .exam-info {
@@ -263,13 +263,21 @@
             color: #ffeb3b;
         }
         
+        .questions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
         .question {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             padding: 20px;
-            margin-bottom: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-right: 5px solid #4a6491;
+            border-left: 5px solid #4a6491;
         }
         
         .question-number {
@@ -290,7 +298,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-left: 10px;
+            margin-right: 10px;
         }
         
         .question-text {
@@ -328,7 +336,7 @@
         }
         
         .option input {
-            margin-left: 10px;
+            margin-right: 10px;
         }
         
         .option label {
@@ -339,7 +347,7 @@
         
         .actions {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 30px;
         }
         
@@ -353,27 +361,13 @@
             transition: all 0.3s ease;
         }
         
-        #prev-btn {
-            background-color: #6c757d;
-            color: white;
-        }
-        
-        #prev-btn:hover:not(:disabled) {
-            background-color: #5a6268;
-        }
-        
-        #next-btn, #submit-btn {
+        #submit-btn {
             background-color: #28a745;
             color: white;
         }
         
-        #next-btn:hover, #submit-btn:hover {
+        #submit-btn:hover {
             background-color: #218838;
-        }
-        
-        button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
         }
         
         .result-container {
@@ -409,7 +403,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
-            text-align: right;
+            text-align: left;
         }
         
         .correct-answer {
@@ -519,7 +513,7 @@
                 flex-direction: column;
                 position: absolute;
                 top: 70px;
-                right: 0;
+                left: 0;
                 width: 100%;
                 background-color: rgba(0, 0, 0, 0.95);
                 padding: 15px 0;
@@ -592,13 +586,8 @@
                 margin-top: 180px;
             }
             
-            .actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            button {
-                width: 100%;
+            .questions-container {
+                max-height: 50vh;
             }
             
             /* تعديلات الهاتف للفوتر */
@@ -638,64 +627,59 @@
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
                 <ul id="navMenu">
-                    <!-- تم تغيير الرابط هنا -->
-                    <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> طلب</a></li>
-                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> حول</a></li>
+                    <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li class="dropdown">
-                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> المحتوى</a>
+                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
                         <div id="dropdownContent" class="dropdown-content">
                             <span class="close-btn" onclick="closeDropdown()">&times;</span>
-                            <a href="cours.html"><i class="fas fa-file-alt"></i> الدروس</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> التمارين العملية</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> التمارين الموجهة</a>
-                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> الامتحانات</a>
+                            <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
+                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
+                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
+                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
                         </div>
                     </li>
-                    <!-- تغيير Questions إلى Contact -->
-                    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </header>
-        <!-- إزالة قسم الأزرار الثابتة (شريط السنوات) -->
     </div>
     
     <!-- المحتوى الرئيسي -->
     <div class="main-content">
         <div class="exam-header">
-            <h1 class="exam-title">امتحان علم الأحياء الدقيقة</h1>
+            <h1 class="exam-title">Examen de Microbiologie</h1>
             <div class="exam-description">
-                اختبار QCM في علم الأحياء الدقيقة - كلية الصيدلة. يتكون الامتحان من 10 أسئلة متعددة الخيارات. لديك 30 دقيقة للإجابة على جميع الأسئلة.
+                Test QCM en Microbiologie - Faculté de Pharmacie. L'examen se compose de 10 questions à choix multiples. Vous avez 30 minutes pour répondre à toutes les questions.
             </div>
         </div>
         
         <div class="exam-container">
             <div class="exam-info">
-                <div class="timer">الوقت المتبقي: <span id="time">30:00</span></div>
-                <div class="progress">السؤال <span id="current-q">1</span> من <span id="total-qs">10</span></div>
+                <div class="timer">Temps restant: <span id="time">30:00</span></div>
+                <div class="progress">Questions: <span id="answered">0</span>/<span id="total-qs">10</span> répondues</div>
             </div>
             
             <div class="exam-content">
-                <div id="questions-container">
+                <div class="questions-container" id="questions-container">
                     <!-- سيتم ملء الأسئلة ديناميكيًا -->
                 </div>
                 
                 <div class="actions">
-                    <button id="prev-btn" disabled>السابق</button>
-                    <button id="next-btn">التالي</button>
-                    <button id="submit-btn" style="display: none;">إنهاء الامتحان</button>
+                    <button id="submit-btn">Soumettre l'examen</button>
                 </div>
             </div>
             
             <div class="result-container" id="result-container">
-                <h2 class="result-header">نتيجة الامتحان</h2>
+                <h2 class="result-header">Résultats de l'examen</h2>
                 <div class="score" id="final-score">0/10</div>
-                <div class="score-text" id="score-text">حاول مرة أخرى!</div>
+                <div class="score-text" id="score-text">Essayez à nouveau!</div>
                 
                 <div class="feedback" id="feedback">
                     <!-- سيتم ملء التقييم ديناميكيًا -->
                 </div>
                 
-                <button class="restart-btn" id="restart-btn">إعادة الامتحان</button>
+                <button class="restart-btn" id="restart-btn">Refaire l'examen</button>
             </div>
         </div>
     </div>
@@ -716,7 +700,7 @@
                     <i class="fab fa-tiktok"></i>
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 GhaniPharma. جميع الحقوق محفوظة</p>
+            <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés</p>
         </div>
     </footer>
     
@@ -816,107 +800,79 @@
         ];
 
         // المتغيرات العامة
-        let currentQuestion = 0;
         let userAnswers = new Array(questions.length).fill(null);
         let timeLeft = 30 * 60; // 30 دقيقة بالثواني
         let timerInterval;
 
         // تهيئة الامتحان
         function initExam() {
-            displayQuestion(currentQuestion);
+            displayAllQuestions();
             updateProgress();
             startTimer();
             
             // إضافة مستمعي الأحداث للأزرار
-            document.getElementById('prev-btn').addEventListener('click', prevQuestion);
-            document.getElementById('next-btn').addEventListener('click', nextQuestion);
             document.getElementById('submit-btn').addEventListener('click', submitExam);
             document.getElementById('restart-btn').addEventListener('click', restartExam);
         }
 
-        // عرض السؤال الحالي
-        function displayQuestion(index) {
-            const question = questions[index];
+        // عرض جميع الأسئلة في صفحة واحدة
+        function displayAllQuestions() {
             const container = document.getElementById('questions-container');
             
-            let optionsHTML = '';
-            question.options.forEach(option => {
-                const isSelected = userAnswers[index] === option.id;
-                optionsHTML += `
-                    <div class="option ${isSelected ? 'selected' : ''}" data-option="${option.id}">
-                        <input type="radio" id="q${question.id}_${option.id}" name="q${question.id}" 
-                               value="${option.id}" ${isSelected ? 'checked' : ''}>
-                        <label for="q${question.id}_${option.id}">${option.id}) ${option.text}</label>
+            let questionsHTML = '';
+            questions.forEach((question, index) => {
+                let optionsHTML = '';
+                question.options.forEach(option => {
+                    const isSelected = userAnswers[index] === option.id;
+                    optionsHTML += `
+                        <div class="option ${isSelected ? 'selected' : ''}" data-question="${index}" data-option="${option.id}">
+                            <input type="radio" id="q${question.id}_${option.id}" name="q${question.id}" 
+                                   value="${option.id}" ${isSelected ? 'checked' : ''}>
+                            <label for="q${question.id}_${option.id}">${option.id}) ${option.text}</label>
+                        </div>
+                    `;
+                });
+                
+                questionsHTML += `
+                    <div class="question">
+                        <div class="question-number">Question <span>${question.id}</span></div>
+                        <div class="question-text">${question.text}</div>
+                        <div class="options">${optionsHTML}</div>
                     </div>
                 `;
             });
             
-            container.innerHTML = `
-                <div class="question">
-                    <div class="question-number">سؤال <span>${question.id}</span></div>
-                    <div class="question-text">${question.text}</div>
-                    <div class="options">${optionsHTML}</div>
-                </div>
-            `;
+            container.innerHTML = questionsHTML;
             
             // إضافة مستمعي الأحداث للخيارات
             document.querySelectorAll('.option').forEach(option => {
                 option.addEventListener('click', function() {
+                    const questionIndex = parseInt(this.getAttribute('data-question'));
                     const optionId = this.getAttribute('data-option');
-                    selectOption(optionId);
+                    selectOption(questionIndex, optionId);
                 });
             });
-            
-            // تحديث حالة الأزرار
-            updateButtons();
         }
 
         // اختيار إجابة
-        function selectOption(optionId) {
-            userAnswers[currentQuestion] = optionId;
+        function selectOption(questionIndex, optionId) {
+            userAnswers[questionIndex] = optionId;
             
             // تحديث المظهر للخيار المحدد
-            document.querySelectorAll('.option').forEach(option => {
+            document.querySelectorAll(`.option[data-question="${questionIndex}"]`).forEach(option => {
                 option.classList.remove('selected');
             });
             
-            document.querySelector(`.option[data-option="${optionId}"]`).classList.add('selected');
-        }
-
-        // الانتقال إلى السؤال التالي
-        function nextQuestion() {
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                displayQuestion(currentQuestion);
-                updateProgress();
-            }
-        }
-
-        // العودة إلى السؤال السابق
-        function prevQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                displayQuestion(currentQuestion);
-                updateProgress();
-            }
-        }
-
-        // تحديث أزرار التنقل
-        function updateButtons() {
-            document.getElementById('prev-btn').disabled = currentQuestion === 0;
+            document.querySelector(`.option[data-question="${questionIndex}"][data-option="${optionId}"]`).classList.add('selected');
             
-            if (currentQuestion === questions.length - 1) {
-                document.getElementById('next-btn').style.display = 'none';
-                document.getElementById('submit-btn').style.display = 'block';
-            } else {
-                document.getElementById('next-btn').style.display = 'block';
-                document.getElementById('submit-btn').style.display = 'none';
-            }
+            // تحديث التقدم
+            updateProgress();
         }
 
         // تحديث شريط التقدم
         function updateProgress() {
-            document.getElementById('current-q').textContent = currentQuestion + 1;
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            document.getElementById('answered').textContent = answeredCount;
             document.getElementById('total-qs').textContent = questions.length;
         }
 
@@ -944,7 +900,7 @@
             
             // حساب النتيجة
             let score = 0;
-            let feedbackHTML = '<h3>تفاصيل الإجابات:</h3><ul>';
+            let feedbackHTML = '<h3>Détails des réponses:</h3><ul>';
             
             questions.forEach((question, index) => {
                 const userAnswer = userAnswers[index];
@@ -954,16 +910,16 @@
                     score++;
                     feedbackHTML += `
                         <li>
-                            <strong>سؤال ${index + 1}:</strong> 
-                            <span class="correct-answer">إجابة صحيحة ✓</span>
+                            <strong>Question ${index + 1}:</strong> 
+                            <span class="correct-answer">Réponse correcte ✓</span>
                         </li>
                     `;
                 } else {
                     feedbackHTML += `
                         <li>
-                            <strong>سؤال ${index + 1}:</strong> 
-                            <span class="wrong-answer">إجابة خاطئة ✗</span> - 
-                            الإجابة الصحيحة: <span class="correct-answer">${correctOption.id}) ${correctOption.text}</span>
+                            <strong>Question ${index + 1}:</strong> 
+                            <span class="wrong-answer">Réponse incorrecte ✗</span> - 
+                            Réponse correcte: <span class="correct-answer">${correctOption.id}) ${correctOption.text}</span>
                         </li>
                     `;
                 }
@@ -987,21 +943,20 @@
             const percentage = (score / questions.length) * 100;
             
             if (percentage >= 90) {
-                return "ممتاز! أداء رائع!";
+                return "Excellent! Performance remarquable!";
             } else if (percentage >= 80) {
-                return "جيد جداً! أحسنت!";
+                return "Très bien! Bon travail!";
             } else if (percentage >= 70) {
-                return "جيد! يمكنك التحسن أكثر";
+                return "Bien! Vous pouvez vous améliorer davantage";
             } else if (percentage >= 60) {
-                return "مقبول! تحتاج للمراجعة";
+                return "Passable! Vous avez besoin de réviser";
             } else {
-                return "ضعيف! يجب عليك الدراسة أكثر";
+                return "Faible! Vous devez étudier davantage";
             }
         }
 
         // إعادة الامتحان
         function restartExam() {
-            currentQuestion = 0;
             userAnswers = new Array(questions.length).fill(null);
             timeLeft = 30 * 60;
             
@@ -1011,7 +966,7 @@
             document.getElementById('result-container').style.display = 'none';
             
             // إعادة تهيئة الامتحان
-            displayQuestion(currentQuestion);
+            displayAllQuestions();
             updateProgress();
             startTimer();
         }
