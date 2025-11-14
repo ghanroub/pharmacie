@@ -275,14 +275,33 @@
             overflow: visible;
         }
         
+        /* تحسين تصميم الأسئلة البيضاء */
         .question {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #4a6491;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            border-left: 6px solid #4a6491;
             /* جعل كل سؤال يأخذ المساحة التي يحتاجها */
             flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .question:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4a6491, #00bcd4);
         }
         
         .question-number {
@@ -295,22 +314,24 @@
         }
         
         .question-number span {
-            background-color: #4a6491;
+            background: linear-gradient(135deg, #4a6491, #00bcd4);
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
+            margin-right: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .question-text {
             font-size: 18px;
             margin-bottom: 20px;
             color: #2c3e50;
-            font-weight: 500;
+            font-weight: 600;
+            line-height: 1.5;
         }
         
         .options {
@@ -322,32 +343,38 @@
         .option {
             display: flex;
             align-items: center;
-            padding: 12px 15px;
-            background-color: #f8f9fa;
+            padding: 15px;
+            background-color: #ffffff;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
         
         .option:hover {
-            background-color: #e9ecef;
+            background-color: #f0f8ff;
             transform: translateX(5px);
+            border-color: #b3d9ff;
         }
         
         .option.selected {
             background-color: #e3f2fd;
             border-color: #2196f3;
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
         }
         
         .option input {
-            margin-right: 10px;
+            margin-right: 12px;
+            transform: scale(1.2);
         }
         
         .option label {
             cursor: pointer;
             flex-grow: 1;
             font-size: 16px;
+            color: #333;
+            font-weight: 500;
         }
         
         .actions {
@@ -367,12 +394,15 @@
         }
         
         #submit-btn {
-            background-color: #28a745;
+            background: linear-gradient(135deg, #28a745, #20c997);
             color: white;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
         }
         
         #submit-btn:hover {
-            background-color: #218838;
+            background: linear-gradient(135deg, #218838, #1ea085);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
         }
         
         .result-container {
@@ -422,15 +452,18 @@
         }
         
         .restart-btn {
-            background-color: #fdbb2d;
+            background: linear-gradient(135deg, #fdbb2d, #f7a900);
             color: #2c3e50;
             font-size: 18px;
             padding: 15px 30px;
             margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(253, 187, 45, 0.3);
         }
         
         .restart-btn:hover {
-            background-color: #f7a900;
+            background: linear-gradient(135deg, #f7a900, #e69a00);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(253, 187, 45, 0.4);
         }
         
         /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
