@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tds - GhaniPharma</title>
+    <title>Examen de prélèvements en biochimie partie 1 - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -20,12 +20,11 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            /* نقل صورة الخلفية إلى body بدلاً من hero */
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
-        /* إضافة طبقة شبه شفافة فوق الخلفية لتحسين قراءة النص */
+        /* طبقة شبه شفافة فوق الخلفية */
         body::before {
             content: '';
             position: fixed;
@@ -37,29 +36,30 @@
             z-index: -1;
         }
         
-        /* الشريط العلوي والأزرار الثابتة */
+        /* الشريط العلوي */
         .top-bar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
+            background-color: rgba(0, 0, 0, 0.5);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease-in-out; /* إضافة الأنيميشن */
+            transition: transform 0.4s ease-in-out;
         }
         
         .top-bar.hidden {
-            transform: translateY(-100%); /* إضافة إخفاء */
+            transform: translateY(-100%);
         }
         
         header {
-            background-color: rgba(0, 0, 0, 0.5); /* تعديل الشفافية */
+            background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
             padding: 20px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+        
         /* زر القائمة في الهاتف */
         .menu-btn {
             display: none;
@@ -71,13 +71,16 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+        
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
+        
         /* قائمة التنقل الرئيسية */
         header nav {
             transform: translateX(-35px);
         }
+        
         header nav ul {
             list-style: none;
             display: flex;
@@ -85,19 +88,23 @@
             margin: 0;
             padding: 0;
         }
+        
         header nav ul li {
             position: relative;
         }
+        
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
         }
+        
         header nav ul li a:hover {
             color: #fff;
         }
-        /* تصميم اللوگو - تحسين */
+        
+        /* تحسين شعار كبسولة الدواء */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -107,264 +114,401 @@
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 8px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .logo a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .logo a:hover::before {
+            left: 100%;
+        }
+        
         .logo a:hover {
             color: #0288d1;
-            background: rgba(0, 188, 212, 0.1);
+            background: rgba(0, 188, 212, 0.15);
             transform: scale(1.05);
             text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
         }
-        /* قائمة التنقل المنسدلة */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 0;
-            border-radius: 0 0 10px 10px;
-            animation: fadeIn 0.3s ease;
-        }
-        .dropdown-content a {
-            color: #ffeb3b;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.2s;
-        }
-        .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        /* زر إغلاق القائمة المنسدلة في الهاتف */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #ffeb3b;
-        }
-        /* قسم الأزرار الثابتة أسفل header */
-        .year-navigation {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .year-navigation h3 {
-            color: #ffeb3b;
-            font-size: 1.3rem;
-            margin: 10px 0;
-            text-align: center;
-        }
-        .buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            padding-bottom: 10px;
-        }
-        .year-btn {
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-            min-width: 100px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .year-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        }
-        .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
-        .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
-        .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
-        .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
-        .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
         
-        /* قسم البطل - إزالة الخلفية لأنها الآن في body */
-        .hero {
-            color: #fff;
-            padding: 150px 20px 100px;
-            text-align: center;
-            margin-top: 140px; /* تعويض للشريط العلوي الثابت */
-            flex: 1;
+        .pill-icon {
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .logo a:hover .pill-icon {
+            animation: pillBounce 0.6s ease;
+            color: #ff4081;
+            text-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+        }
+        
+        @keyframes pillBounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-10deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+            75% { transform: scale(1.15) rotate(-5deg); }
+        }
+        
+        /* المحتوى الرئيسي */
+        .main-content {
+            margin-top: 140px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
-        .hero h1 {
-            font-size: 3rem;
+        
+        .exam-header {
+            text-align: center;
             margin-bottom: 20px;
-            color: #ffeb3b;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: white;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-            animation-delay: 2s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .hero button {
-            background-color: #6a1b9a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .hero button:hover {
-            background-color: #4a4a88;
-        }
-        .hero .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            background-color: transparent;
-            border: none;
-        }
-        .sections-container {
-            display: flex;
-            justify-content: space-between;
             width: 100%;
-            max-width: 1200px;
-            padding: 0 20px;
+            max-width: 900px;
         }
-        .section {
-            flex: 1;
-            margin: 0 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            color: #fff;
-        }
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        
+        .exam-title {
+            font-size: 2.5rem;
             color: #ffeb3b;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        .section p {
-            font-size: 1rem;
+        
+        .exam-description {
+            font-size: 1.1rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
             line-height: 1.6;
         }
-        /* أنماط جديدة للعناوين والفصول والمواد */
-        .section h3 {
-            font-size: 1.8rem;
-            margin: 25px 0 15px;
-            padding: 10px 15px;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .exam-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 900px;
         }
-        /* ألوان عناوين السنوات الدراسية */
-        #annee1 {
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-        }
-        #annee2 {
-            background: linear-gradient(135deg, #4a148c, #3f51b5);
-        }
-        #annee3 {
-            background: linear-gradient(135deg, #3f51b5, #2196f3);
-        }
-        #annee4 {
-            background: linear-gradient(135deg, #2196f3, #00bcd4);
-        }
-        #annee5 {
-            background: linear-gradient(135deg, #00bcd4, #009688);
-        }
-        .section h3:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-        .section h4 {
-            font-size: 1.4rem;
-            margin: 15px 0 10px;
-            padding: 8px 12px;
-            color: #ffeb3b;
-            background-color: rgba(0, 0, 0, 0.4);
-            border-radius: 5px;
-            border-left: 4px solid #6a1b9a;
-            cursor: pointer;
+        
+        .exam-info {
             display: flex;
             justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+        
+        .progress {
+            font-size: 16px;
+            color: #ffeb3b;
+        }
+        
+        /* التغيير الرئيسي هنا: إزالة الحد الأقصى للارتفاع وجعل الأسئلة تظهر في مستطيل طويل */
+        .questions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            /* إزالة max-height وoverflow-y لتجنب التمرير الداخلي */
+            padding: 10px;
+            /* إضافة ارتفاع تلقائي للسماح بالتمرير الطبيعي للصفحة */
+            min-height: auto;
+            overflow: visible;
+        }
+        
+        /* تحسين تصميم الأسئلة البيضاء */
+        .question {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            border-left: 6px solid #4a6491;
+            /* جعل كل سؤال يأخذ المساحة التي يحتاجها */
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .question:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4a6491, #00bcd4);
+        }
+        
+        .question-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
             align-items: center;
         }
-        .section h4::after {
-            content: "\f078";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-left: 10px;
-            transition: transform 0.3s ease;
-        }
-        .section h4.active::after {
-            transform: rotate(180deg);
-        }
-        .section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px;
-        }
-        .section ul li {
-            margin: 8px 0;
-            padding: 8px 12px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .section ul li:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .section ul li a {
-            color: #ffeb3b;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-        .section ul li a:hover {
+        
+        .question-number span {
+            background: linear-gradient(135deg, #4a6491, #00bcd4);
             color: white;
-            text-decoration: underline;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        /* تصميم القائمة المنسدلة في الهاتف */
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .option:hover {
+            background-color: #f0f8ff;
+            transform: translateX(5px);
+            border-color: #b3d9ff;
+        }
+        
+        .option.selected {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+        }
+        
+        .option input {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+        
+        .option label {
+            cursor: pointer;
+            flex-grow: 1;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #submit-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        }
+        
+        #submit-btn:hover {
+            background: linear-gradient(135deg, #218838, #1ea085);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        .result-container {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .result-header {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .score {
+            font-size: 72px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+        
+        .score-text {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .feedback {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .correct-answer {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .wrong-answer {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .restart-btn {
+            background: linear-gradient(135deg, #fdbb2d, #f7a900);
+            color: #2c3e50;
+            font-size: 18px;
+            padding: 15px 30px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(253, 187, 45, 0.3);
+        }
+        
+        .restart-btn:hover {
+            background: linear-gradient(135deg, #f7a900, #e69a00);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(253, 187, 45, 0.4);
+        }
+        
+        /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffeb3b;
+            text-align: center;
+            padding: 30px 15px;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.2), rgba(0, 188, 212, 0.2));
+            color: #ffeb3b;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 235, 59, 0.3);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.3), rgba(0, 188, 212, 0.3));
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .social-link.youtube:hover {
+            color: #ff0000;
+            border-color: #ff0000;
+        }
+        
+        .social-link.facebook:hover {
+            color: #1877f2;
+            border-color: #1877f2;
+        }
+        
+        .social-link.instagram:hover {
+            color: #e4405f;
+            border-color: #e4405f;
+        }
+        
+        .social-link.tiktok:hover {
+            color: #69c9d0;
+            border-color: #69c9d0;
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+        
+        /* تصميم القائمة في الهاتف */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
             }
+            
             header nav {
                 transform: none;
             }
+            
             header nav ul {
                 display: none;
                 flex-direction: column;
@@ -380,14 +524,17 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                 animation: fadeIn 0.3s ease;
             }
+            
             header nav ul.show {
                 display: flex;
             }
+            
             header nav ul li {
                 margin: 5px 0;
                 width: 100%;
                 text-align: center;
             }
+            
             header nav ul li a {
                 font-size: 1.2rem;
                 padding: 12px;
@@ -395,80 +542,41 @@
                 color: #ffeb3b;
                 transition: background-color 0.2s;
             }
+            
             header nav ul li a:hover {
                 background-color: rgba(255, 255, 255, 0.15);
             }
-            /* تعديل القائمة المنسدلة في الهاتف */
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-                transition: all 0.3s ease;
-            }
-            .dropdown-content.show {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            .dropdown-content a {
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-                color: #ffeb3b;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                transition: background-color 0.2s;
-            }
-            .dropdown-content a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            .sections-container {
-                flex-direction: column;
-            }
-            .hero h1 {
+            
+            .exam-title {
                 font-size: 2rem;
             }
-            .hero p {
-                font-size: 1rem;
+            
+            .main-content {
+                padding: 10px;
+                margin-top: 180px;
             }
-            .buttons-container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
+            
+            /* إزالة الحد الأقصى للارتفاع في الهاتف أيضاً */
+            .questions-container {
+                max-height: none;
+                overflow: visible;
             }
-            .year-btn {
-                min-width: 80px;
-                padding: 8px 12px;
-                font-size: 0.8rem;
-                height: 35px;
+            
+            /* تعديلات الهاتف للفوتر */
+            .social-links {
+                gap: 15px;
             }
-            .hero {
-                margin-top: 180px; /* تعويض أكبر للشريط العلوي في الهاتف */
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }
-        /* سلوك القائمة المنسدلة في الكمبيوتر */
-        @media (min-width: 769px) {
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-        }
-        /* تصميم التذييل - إزالة position: fixed */
-        footer {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #ffeb3b;
-            text-align: center;
-            padding: 10px 15px;
-            width: 100%;
-        }
-        footer p {
-            font-size: 0.8rem;
-        }
-        /* إخفاء العناصر المخفية */
-        .hidden {
-            display: none;
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -477,297 +585,482 @@
     <div class="top-bar" id="mainHeader">
         <header>
             <div class="logo">
-                <a href="index.html">💊GhaniPharma</a>
+                <a href="index.html">
+                    <span class="pill-icon">💊</span> GhaniPharma
+                </a>
             </div>
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
             <nav>
                 <ul id="navMenu">
-                    <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                    <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
                     <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li class="dropdown">
-                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <span class="close-btn" onclick="closeDropdown()">&times;</span>
-                            <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
-                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
-                        </div>
-                    </li>
-                    <li><a href="index.html#questions"><i class="fas fa-question-circle"></i> Questions</a></li>
+                    <!-- تم تغيير Contenu إلى Modules مع رابط مباشر -->
+                    <li><a href="modules.html"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </header>
-        <!-- قسم الأزرار الثابتة -->
-        <div class="year-navigation">
-            <div class="buttons-container">
-                <button class="year-btn first-year">1ère Année</button>
-                <button class="year-btn second-year">2ème Année</button>
-                <button class="year-btn third-year">3ème Année</button>
-                <button class="year-btn fourth-year">4ème Année</button>
-                <button class="year-btn fifth-year">5ème Année</button>
+    </div>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <div class="exam-header">
+            <h1 class="exam-title">Examen de prélèvements en biochimie partie 1</h1>
+            <div class="exam-description">
+                Test QCM sur les techniques de prélèvement en biochimie. L'examen se compose de 20 questions à choix multiples. Vous avez 40 minutes pour répondre à toutes les questions.
+            </div>
+        </div>
+        
+        <div class="exam-container">
+            <div class="exam-info">
+                <div class="timer">Temps restant: <span id="time">40:00</span></div>
+                <div class="progress">Questions: <span id="answered">0</span>/<span id="total-qs">20</span> répondues</div>
+            </div>
+            
+            <div class="exam-content">
+                <div class="questions-container" id="questions-container">
+                    <!-- سيتم ملء الأسئلة ديناميكيًا -->
+                </div>
+                
+                <div class="actions">
+                    <button id="submit-btn">Soumettre l'examen</button>
+                </div>
+            </div>
+            
+            <div class="result-container" id="result-container">
+                <h2 class="result-header">Résultats de l'examen</h2>
+                <div class="score" id="final-score">0/20</div>
+                <div class="score-text" id="score-text">Essayez à nouveau!</div>
+                
+                <div class="feedback" id="feedback">
+                    <!-- سيتم ملء التقييم ديناميكيًا -->
+                </div>
+                
+                <button class="restart-btn" id="restart-btn">Refaire l'examen</button>
             </div>
         </div>
     </div>
-    <!-- قسم المحتوى الرئيسي -->
-    <section id="tds" class="hero">
-        <div class="container">
-        </div>
-        <div class="sections-container">
-            <div class="section">
-                <h2>Tds Disponibles</h2>
-                <p>Liste des tds disponibles pour les étudiants en pharmacie.</p>
-                <!-- السنة الأولى -->
-                <h3 id="annee1">1ère Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">ANATOMIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_anatomie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_biologie_cellulaire_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee1_biologie_cellulaire_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee1_biologie_cellulaire_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_biologie_vegetale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">BIOSTATISTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_bio_statistique_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE GENERALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_chimie_generale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE ORGANIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_chimie_organique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee1_chimie_organique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 7 -->
-                <h4 onclick="toggleSemesters(this)">HISTOIRE DE LA PHARMACIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_histoire_pharmacie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 8 -->
-                <h4 onclick="toggleSemesters(this)">INFORMATIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_informatique_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 9 -->
-                <h4 onclick="toggleSemesters(this)">PHYSIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_physiologie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 10 -->
-                <h4 onclick="toggleSemesters(this)">PHYSIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_physique_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 11 -->
-                <h4 onclick="toggleSemesters(this)">FRANCAIS MEDECALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee1_francais_medecale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- السنة الثانية -->
-                <h3 id="annee2">2ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_biochimie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_biochimie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee2_biochimie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">BIOPHYSIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_biophysique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_biophysique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee2_biophysique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">BOTANIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_botanique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_botanique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_chimie_analytique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_chimie_analytique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE MINERALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_chimie_minerale_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_chimie_minerale_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_anglais_medecale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- المادة 7 -->
-                <h4 onclick="toggleSemesters(this)">GENETIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_genetique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_genetique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 8 -->
-                <h4 onclick="toggleSemesters(this)">PHYSIOPATHOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee2_physiopathologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee2_physiopathologie_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- السنة الثالثة -->
-                <h3 id="annee3">3ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_chimie_analytique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_chimie_analytique_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">CHIMIE TERAPEUTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_chimie_therapeutique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_chimie_therapeutique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee3_chimie_therapeutique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACAIS GALENIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_pharmacie_galenique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_pharmacie_galenique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee3_pharmacie_galenique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACOGNOSIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_pharmacognosie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_pharmacognosie_semestre2.html">Semestre 2</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_pharmacologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee3_pharmacologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee3_pharmacologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">SEMIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee3_semiologie_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- السنة الرابعة -->
-                <h3 id="annee4">4ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">BIOCHIMIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_biochimie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_biochimie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_biochimie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">HEMOBIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_hemobiologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_hemobiologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_hemobiologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">IMMUNOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_immunologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_immunologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_immunologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">MICROBIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_microbiologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_microbiologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_microbiologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">PARASITOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_parasitologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee4_parasitologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee4_parasitologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">ENGLAIS MEDECALE</h4>
-                <ul class="hidden">
-                    <li><a href="annee4_anglais_medecale_semestre1.html">Semestre 1</a></li>
-                </ul>
-                <!-- السنة الخامسة -->
-                <h3 id="annee5">5ème Année</h3>
-                <!-- المادة 1 -->
-                <h4 onclick="toggleSemesters(this)">DROIS PHARMACEUTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_droits_pharmaceutique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_droits_pharmaceutique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_droits_pharmaceutique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 2 -->
-                <h4 onclick="toggleSemesters(this)">EPIDEMIOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_epidemiologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_epidemiologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_epidemiologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 3 -->
-                <h4 onclick="toggleSemesters(this)">GESTION PHARMACEUTIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_gestion_pharmaceutique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_gestion_pharmaceutique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_gestion_pharmaceutique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 4 -->
-                <h4 onclick="toggleSemesters(this)">HYDRO-BROMATOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_hydro_bromatologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_hydro_bromatologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_hydro_bromatologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 5 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACIE CLINIQUE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_pharmacie_clinique_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_pharmacie_clinique_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_pharmacie_clinique_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 6 -->
-                <h4 onclick="toggleSemesters(this)">PHARMACIE INDUSTRIELE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_pharmacie_industrielle_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_pharmacie_industrielle_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_pharmacie_industrielle_semestre3.html">Semestre 3</a></li>
-                </ul>
-                <!-- المادة 7 -->
-                <h4 onclick="toggleSemesters(this)">TOXICOLOGIE</h4>
-                <ul class="hidden">
-                    <li><a href="annee5_toxicologie_semestre1.html">Semestre 1</a></li>
-                    <li><a href="annee5_toxicologie_semestre2.html">Semestre 2</a></li>
-                    <li><a href="annee5_toxicologie_semestre3.html">Semestre 3</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    
     <footer>
-        <p>&copy; 2025 GhaniPharma. Tous droits réservés</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés</p>
+        </div>
     </footer>
+    
     <script>
+        // أسئلة الامتحان الجديدة
+        const questions = [
+            {
+                id: 1,
+                text: "La phase pré-analytique commence :",
+                options: [
+                    { id: "A", text: "Au début de l'analyse", correct: false },
+                    { id: "B", text: "À la réception des échantillons", correct: false },
+                    { id: "C", text: "À la prescription médicale", correct: true },
+                    { id: "D", text: "Après la centrifugation", correct: false },
+                    { id: "E", text: "À la validation des résultats", correct: false }
+                ]
+            },
+            {
+                id: 2,
+                text: "Le plasma se distingue du sérum par :",
+                options: [
+                    { id: "A", text: "L'absence totale de protéines", correct: false },
+                    { id: "B", text: "La présence du fibrinogène", correct: true },
+                    { id: "C", text: "Une couleur plus foncée", correct: false },
+                    { id: "D", text: "Sa formation après coagulation", correct: false },
+                    { id: "E", text: "L'absence d'eau", correct: false }
+                ]
+            },
+            {
+                id: 3,
+                text: "Un garrot trop serré et prolongé entraîne :",
+                options: [
+                    { id: "A", text: "Une hémodilution", correct: false },
+                    { id: "B", text: "Une baisse du sodium", correct: false },
+                    { id: "C", text: "Une hémoconcentration", correct: true },
+                    { id: "D", text: "Une chute du pH", correct: false },
+                    { id: "E", text: "Une hypoglycémie", correct: false }
+                ]
+            },
+            {
+                id: 4,
+                text: "Le prélèvement capillaire est particulièrement utilisé chez :",
+                options: [
+                    { id: "A", text: "Les adultes", correct: false },
+                    { id: "B", text: "Les sportifs", correct: false },
+                    { id: "C", text: "Les enfants et nouveau-nés", correct: true },
+                    { id: "D", text: "Les diabétiques uniquement", correct: false },
+                    { id: "E", text: "Les personnes âgées", correct: false }
+                ]
+            },
+            {
+                id: 5,
+                text: "Le prélèvement artériel est indiqué pour :",
+                options: [
+                    { id: "A", text: "La glycémie à jeun", correct: false },
+                    { id: "B", text: "L'ionogramme sanguin", correct: false },
+                    { id: "C", text: "Les gaz du sang", correct: true },
+                    { id: "D", text: "Le dosage du fer", correct: false },
+                    { id: "E", text: "Le dosage du calcium", correct: false }
+                ]
+            },
+            {
+                id: 6,
+                text: "Le prélèvement est en général effectué le matin pour :",
+                options: [
+                    { id: "A", text: "Avoir le patient à jeun depuis 24h", correct: false },
+                    { id: "B", text: "Éviter l'action de la lumière", correct: false },
+                    { id: "C", text: "Limiter les variations nycthémérales", correct: true },
+                    { id: "D", text: "Obtenir un volume sanguin élevé", correct: false },
+                    { id: "E", text: "Éviter l'hémolyse", correct: false }
+                ]
+            },
+            {
+                id: 7,
+                text: "Une cause de variation biologique avant prélèvement est :",
+                options: [
+                    { id: "A", text: "Le groupe sanguin", correct: false },
+                    { id: "B", text: "Le sexe du patient", correct: false },
+                    { id: "C", text: "Le stress émotionnel", correct: true },
+                    { id: "D", text: "Le type d'aiguille utilisée", correct: false },
+                    { id: "E", text: "La couleur du tube", correct: false }
+                ]
+            },
+            {
+                id: 8,
+                text: "L'EDTA ne doit jamais être utilisé pour :",
+                options: [
+                    { id: "A", text: "La FNS", correct: false },
+                    { id: "B", text: "Le dosage de l'HbA1c", correct: false },
+                    { id: "C", text: "L'extraction d'ADN", correct: false },
+                    { id: "D", text: "Le dosage du calcium", correct: true },
+                    { id: "E", text: "Les enzymes leucocytaires", correct: false }
+                ]
+            },
+            {
+                id: 9,
+                text: "L'héparine de lithium est utilisée car :",
+                options: [
+                    { id: "A", text: "Elle contient du sodium", correct: false },
+                    { id: "B", text: "Elle interfère avec l'urée", correct: false },
+                    { id: "C", text: "C'est l'anticoagulant de choix en biochimie", correct: true },
+                    { id: "D", text: "Elle inhibe les enzymes", correct: false },
+                    { id: "E", text: "Elle favorise la coagulation", correct: false }
+                ]
+            },
+            {
+                id: 10,
+                text: "Le citrate trisodique est l'anticoagulant de choix pour :",
+                options: [
+                    { id: "A", text: "Le dosage du potassium", correct: false },
+                    { id: "B", text: "Le bilan d'hémostase", correct: true },
+                    { id: "C", text: "L'ionogramme", correct: false },
+                    { id: "D", text: "La VS seulement", correct: false },
+                    { id: "E", text: "Le dosage du calcium", correct: false }
+                ]
+            },
+            {
+                id: 11,
+                text: "Le fluorure de sodium inhibe :",
+                options: [
+                    { id: "A", text: "La coagulation", correct: false },
+                    { id: "B", text: "La dégradation des protéines", correct: false },
+                    { id: "C", text: "Les enzymes de la glycolyse", correct: true },
+                    { id: "D", text: "La production d'urée", correct: false },
+                    { id: "E", text: "La formation du fibrinogène", correct: false }
+                ]
+            },
+            {
+                id: 12,
+                text: "L'ordre de remplissage des tubes sert principalement à :",
+                options: [
+                    { id: "A", text: "Éviter l'hémolyse", correct: false },
+                    { id: "B", text: "Éviter la contamination des additifs", correct: true },
+                    { id: "C", text: "Obtenir plus de sérum", correct: false },
+                    { id: "D", text: "Accélérer la coagulation", correct: false },
+                    { id: "E", text: "Réduire la quantité de sang prélevé", correct: false }
+                ]
+            },
+            {
+                id: 13,
+                text: "Les urines fraîches du matin sont recommandées pour :",
+                options: [
+                    { id: "A", text: "Le dosage du cuivre", correct: false },
+                    { id: "B", text: "La micro-albuminurie", correct: true },
+                    { id: "C", text: "Le dosage de la VMA", correct: false },
+                    { id: "D", text: "Les dérivés méthoxylés", correct: false },
+                    { id: "E", text: "Le potassium urinaire", correct: false }
+                ]
+            },
+            {
+                id: 14,
+                text: "Les urines de 24 heures sont nécessaires pour :",
+                options: [
+                    { id: "A", text: "Le pH urinaire", correct: false },
+                    { id: "B", text: "La densité urinaire", correct: false },
+                    { id: "C", text: "Le dosage de la VMA", correct: true },
+                    { id: "D", text: "La recherche d'acétone", correct: false },
+                    { id: "E", text: "Le test de grossesse", correct: false }
+                ]
+            },
+            {
+                id: 15,
+                text: "Dans la collecte des urines de 24h, la première étape correcte est :",
+                options: [
+                    { id: "A", text: "Collecter la première urine du matin", correct: false },
+                    { id: "B", text: "Jeter la première miction du matin", correct: true },
+                    { id: "C", text: "Boire 3 litres d'eau", correct: false },
+                    { id: "D", text: "Ajouter un anticoagulant", correct: false },
+                    { id: "E", text: "Mettre les urines au congélateur", correct: false }
+                ]
+            },
+            {
+                id: 16,
+                text: "Les récipients pour la calciurie doivent être :",
+                options: [
+                    { id: "A", text: "Colorés", correct: false },
+                    { id: "B", text: "En verre uniquement", correct: false },
+                    { id: "C", text: "Décalcifiés par EDTA ou citrate", correct: true },
+                    { id: "D", text: "Rincés à l'eau du robinet", correct: false },
+                    { id: "E", text: "Réfrigérés à –20°C", correct: false }
+                ]
+            },
+            {
+                id: 17,
+                text: "Pour un prélèvement de liquide biologique, il faut :",
+                options: [
+                    { id: "A", text: "Utiliser un seul tube", correct: false },
+                    { id: "B", text: "Ajouter de l'alcool", correct: false },
+                    { id: "C", text: "Respecter l'asepsie stricte", correct: true },
+                    { id: "D", text: "Mélanger avec EDTA", correct: false },
+                    { id: "E", text: "Chauffer le liquide", correct: false }
+                ]
+            },
+            {
+                id: 18,
+                text: "Les aiguilles et seringues ne doivent jamais être :",
+                options: [
+                    { id: "A", text: "Utilisées en pédiatrie", correct: false },
+                    { id: "B", text: "Jetables", correct: false },
+                    { id: "C", text: "Nettoyées à l'alcool ou éther", correct: true },
+                    { id: "D", text: "Stériles", correct: false },
+                    { id: "E", text: "Adaptées au patient", correct: false }
+                ]
+            },
+            {
+                id: 19,
+                text: "L'orthostatisme augmente :",
+                options: [
+                    { id: "A", text: "La calcémie", correct: false },
+                    { id: "B", text: "La bilirubine", correct: false },
+                    { id: "C", text: "La rénine", correct: true },
+                    { id: "D", text: "La glycémie", correct: false },
+                    { id: "E", text: "Le sodium", correct: false }
+                ]
+            },
+            {
+                id: 20,
+                text: "Le LCR permet le dosage de :",
+                options: [
+                    { id: "A", text: "La VMA", correct: false },
+                    { id: "B", text: "La LDH", correct: false },
+                    { id: "C", text: "La glucorachie", correct: true },
+                    { id: "D", text: "Le potassium", correct: false },
+                    { id: "E", text: "Le sodium", correct: false }
+                ]
+            }
+        ];
+
+        // المتغيرات العامة
+        let userAnswers = new Array(questions.length).fill(null);
+        let timeLeft = 40 * 60; // 40 دقيقة بالثواني
+        let timerInterval;
+
+        // تهيئة الامتحان
+        function initExam() {
+            displayAllQuestions();
+            updateProgress();
+            startTimer();
+            
+            // إضافة مستمعي الأحداث للأزرار
+            document.getElementById('submit-btn').addEventListener('click', submitExam);
+            document.getElementById('restart-btn').addEventListener('click', restartExam);
+        }
+
+        // عرض جميع الأسئلة في صفحة واحدة
+        function displayAllQuestions() {
+            const container = document.getElementById('questions-container');
+            
+            let questionsHTML = '';
+            questions.forEach((question, index) => {
+                let optionsHTML = '';
+                question.options.forEach(option => {
+                    const isSelected = userAnswers[index] === option.id;
+                    optionsHTML += `
+                        <div class="option ${isSelected ? 'selected' : ''}" data-question="${index}" data-option="${option.id}">
+                            <input type="radio" id="q${question.id}_${option.id}" name="q${question.id}" 
+                                   value="${option.id}" ${isSelected ? 'checked' : ''}>
+                            <label for="q${question.id}_${option.id}">${option.id}) ${option.text}</label>
+                        </div>
+                    `;
+                });
+                
+                questionsHTML += `
+                    <div class="question">
+                        <div class="question-number">Question <span>${question.id}</span></div>
+                        <div class="question-text">${question.text}</div>
+                        <div class="options">${optionsHTML}</div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = questionsHTML;
+            
+            // إضافة مستمعي الأحداث للخيارات
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const questionIndex = parseInt(this.getAttribute('data-question'));
+                    const optionId = this.getAttribute('data-option');
+                    selectOption(questionIndex, optionId);
+                });
+            });
+        }
+
+        // اختيار إجابة
+        function selectOption(questionIndex, optionId) {
+            userAnswers[questionIndex] = optionId;
+            
+            // تحديث المظهر للخيار المحدد
+            document.querySelectorAll(`.option[data-question="${questionIndex}"]`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            document.querySelector(`.option[data-question="${questionIndex}"][data-option="${optionId}"]`).classList.add('selected');
+            
+            // تحديث التقدم
+            updateProgress();
+        }
+
+        // تحديث شريط التقدم
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            document.getElementById('answered').textContent = answeredCount;
+            document.getElementById('total-qs').textContent = questions.length;
+        }
+
+        // بدء المؤقت
+        function startTimer() {
+            timerInterval = setInterval(function() {
+                timeLeft--;
+                
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                document.getElementById('time').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitExam();
+                }
+            }, 1000);
+        }
+
+        // تقديم الامتحان
+        function submitExam() {
+            clearInterval(timerInterval);
+            
+            // حساب النتيجة
+            let score = 0;
+            let feedbackHTML = '<h3>Détails des réponses:</h3><ul>';
+            
+            questions.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                const correctOption = question.options.find(opt => opt.correct);
+                
+                if (userAnswer === correctOption.id) {
+                    score++;
+                    feedbackHTML += `
+                        <li>
+                            <strong>Question ${index + 1}:</strong> 
+                            <span class="correct-answer">Réponse correcte ✓</span>
+                        </li>
+                    `;
+                } else {
+                    feedbackHTML += `
+                        <li>
+                            <strong>Question ${index + 1}:</strong> 
+                            <span class="wrong-answer">Réponse incorrecte ✗</span> - 
+                            Réponse correcte: <span class="correct-answer">${correctOption.id}) ${correctOption.text}</span>
+                        </li>
+                    `;
+                }
+            });
+            
+            feedbackHTML += '</ul>';
+            
+            // عرض النتيجة
+            document.getElementById('final-score').textContent = `${score}/${questions.length}`;
+            document.getElementById('score-text').textContent = getScoreMessage(score);
+            document.getElementById('feedback').innerHTML = feedbackHTML;
+            
+            // إخفاء قسم الأسئلة وإظهار قسم النتائج
+            document.querySelector('.exam-content').style.display = 'none';
+            document.querySelector('.exam-info').style.display = 'none';
+            document.getElementById('result-container').style.display = 'block';
+        }
+
+        // رسالة النتيجة
+        function getScoreMessage(score) {
+            const percentage = (score / questions.length) * 100;
+            
+            if (percentage >= 90) {
+                return "Excellent! Performance remarquable!";
+            } else if (percentage >= 80) {
+                return "Très bien! Bon travail!";
+            } else if (percentage >= 70) {
+                return "Bien! Vous pouvez vous améliorer davantage";
+            } else if (percentage >= 60) {
+                return "Passable! Vous avez besoin de réviser";
+            } else {
+                return "Faible! Vous devez étudier davantage";
+            }
+        }
+
+        // إعادة الامتحان
+        function restartExam() {
+            userAnswers = new Array(questions.length).fill(null);
+            timeLeft = 40 * 60;
+            
+            // إعادة تعيين العرض
+            document.querySelector('.exam-content').style.display = 'block';
+            document.querySelector('.exam-info').style.display = 'flex';
+            document.getElementById('result-container').style.display = 'none';
+            
+            // إعادة تهيئة الامتحان
+            displayAllQuestions();
+            updateProgress();
+            startTimer();
+        }
+
+        // بدء الامتحان عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', initExam);
+
         // إخفاء الهيدر تلقائياً عند التمرير لأسفل وإظهاره عند التمرير لأعلى
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
@@ -792,57 +1085,14 @@
             navMenu.classList.toggle("show");
         }
 
-        // عرض/إخفاء القائمة المنسدلة في الهاتف
-        function toggleDropdownMobile(event) {
-            if (window.innerWidth <= 768) {
-                event.preventDefault();
-                const dropdownContent = document.getElementById("dropdownContent");
-                dropdownContent.classList.toggle("show");
-            }
-        }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
             const menuBtn = document.querySelector('.menu-btn');
             if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
                 navMenu.classList.remove("show");
-                document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
-        // إغلاق القائمة المنسدلة
-        function closeDropdown() {
-            document.getElementById("dropdownContent").classList.remove("show");
-        }
-
-        // الكود الخاص بالأزرار والتمرير
-        document.querySelectorAll('.year-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const year = this.textContent.trim();
-                let targetId;
-                if (year === "1ère Année") targetId = "annee1";
-                else if (year === "2ème Année") targetId = "annee2";
-                else if (year === "3ème Année") targetId = "annee3";
-                else if (year === "4ème Année") targetId = "annee4";
-                else if (year === "5ème Année") targetId = "annee5";
-                document.getElementById(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // دالة لإظهار/إخفاء الفصول أو الانتقال مباشرة
-        function toggleSemesters(element) {
-            const semestersList = element.nextElementSibling;
-            const semesters = semestersList.querySelectorAll('li');
-            if (semesters.length === 1) {
-                window.location.href = semesters[0].querySelector('a').href;
-            } else {
-                semestersList.classList.toggle('hidden');
-                element.classList.toggle('active');
-            }
-        }
     </script>
 </body>
 </html>
