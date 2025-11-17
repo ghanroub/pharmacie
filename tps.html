@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen de Microbiologie - GhaniPharma</title>
+    <title>Examen de prélèvements en biochimie partie 1 - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -688,16 +688,16 @@
     <!-- المحتوى الرئيسي -->
     <div class="main-content">
         <div class="exam-header">
-            <h1 class="exam-title">Examen de Microbiologie</h1>
+            <h1 class="exam-title">Examen de prélèvements en biochimie partie 1</h1>
             <div class="exam-description">
-                Test QCM en Microbiologie - Faculté de Pharmacie. L'examen se compose de 10 questions à choix multiples. Vous avez 30 minutes pour répondre à toutes les questions.
+                Test QCM sur les techniques de prélèvement en biochimie. L'examen se compose de 20 questions à choix multiples. Vous avez 40 minutes pour répondre à toutes les questions.
             </div>
         </div>
         
         <div class="exam-container">
             <div class="exam-info">
-                <div class="timer">Temps restant: <span id="time">30:00</span></div>
-                <div class="progress">Questions: <span id="answered">0</span>/<span id="total-qs">10</span> répondues</div>
+                <div class="timer">Temps restant: <span id="time">40:00</span></div>
+                <div class="progress">Questions: <span id="answered">0</span>/<span id="total-qs">20</span> répondues</div>
             </div>
             
             <div class="exam-content">
@@ -712,7 +712,7 @@
             
             <div class="result-container" id="result-container">
                 <h2 class="result-header">Résultats de l'examen</h2>
-                <div class="score" id="final-score">0/10</div>
+                <div class="score" id="final-score">0/20</div>
                 <div class="score-text" id="score-text">Essayez à nouveau!</div>
                 
                 <div class="feedback" id="feedback">
@@ -745,103 +745,233 @@
     </footer>
     
     <script>
-        // أسئلة الامتحان
+        // أسئلة الامتحان الجديدة
         const questions = [
             {
                 id: 1,
-                text: "Quel est le principal constituant de la paroi bactérienne des bactéries Gram-positives ?",
+                text: "La phase pré-analytique commence :",
                 options: [
-                    { id: "a", text: "Peptidoglycane", correct: true },
-                    { id: "b", text: "Lipopolysaccharide", correct: false },
-                    { id: "c", text: "Membrane externe", correct: false }
+                    { id: "A", text: "Au début de l'analyse", correct: false },
+                    { id: "B", text: "À la réception des échantillons", correct: false },
+                    { id: "C", text: "À la prescription médicale", correct: true },
+                    { id: "D", text: "Après la centrifugation", correct: false },
+                    { id: "E", text: "À la validation des résultats", correct: false }
                 ]
             },
             {
                 id: 2,
-                text: "Les bactéries anaérobies strictes peuvent survivre en présence d'oxygène.",
+                text: "Le plasma se distingue du sérum par :",
                 options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Parfois", correct: false }
+                    { id: "A", text: "L'absence totale de protéines", correct: false },
+                    { id: "B", text: "La présence du fibrinogène", correct: true },
+                    { id: "C", text: "Une couleur plus foncée", correct: false },
+                    { id: "D", text: "Sa formation après coagulation", correct: false },
+                    { id: "E", text: "L'absence d'eau", correct: false }
                 ]
             },
             {
                 id: 3,
-                text: "Les virus peuvent se reproduire seuls sans cellule hôte.",
+                text: "Un garrot trop serré et prolongé entraîne :",
                 options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Seulement certains virus", correct: false }
+                    { id: "A", text: "Une hémodilution", correct: false },
+                    { id: "B", text: "Une baisse du sodium", correct: false },
+                    { id: "C", text: "Une hémoconcentration", correct: true },
+                    { id: "D", text: "Une chute du pH", correct: false },
+                    { id: "E", text: "Une hypoglycémie", correct: false }
                 ]
             },
             {
                 id: 4,
-                text: "La fermentation est une voie métabolique qui produit de l'énergie en absence d'oxygène.",
+                text: "Le prélèvement capillaire est particulièrement utilisé chez :",
                 options: [
-                    { id: "a", text: "Vrai", correct: true },
-                    { id: "b", text: "Faux", correct: false },
-                    { id: "c", text: "Cela dépend du type de bactéries", correct: false }
+                    { id: "A", text: "Les adultes", correct: false },
+                    { id: "B", text: "Les sportifs", correct: false },
+                    { id: "C", text: "Les enfants et nouveau-nés", correct: true },
+                    { id: "D", text: "Les diabétiques uniquement", correct: false },
+                    { id: "E", text: "Les personnes âgées", correct: false }
                 ]
             },
             {
                 id: 5,
-                text: "Toutes les bactéries sont pathogènes pour l'homme.",
+                text: "Le prélèvement artériel est indiqué pour :",
                 options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Seulement les bactéries Gram-négatives", correct: false }
+                    { id: "A", text: "La glycémie à jeun", correct: false },
+                    { id: "B", text: "L'ionogramme sanguin", correct: false },
+                    { id: "C", text: "Les gaz du sang", correct: true },
+                    { id: "D", text: "Le dosage du fer", correct: false },
+                    { id: "E", text: "Le dosage du calcium", correct: false }
                 ]
             },
             {
                 id: 6,
-                text: "La stérilisation élimine tous les micro-organismes y compris les spores.",
+                text: "Le prélèvement est en général effectué le matin pour :",
                 options: [
-                    { id: "a", text: "Vrai", correct: true },
-                    { id: "b", text: "Faux", correct: false },
-                    { id: "c", text: "Seulement les bactéries végétatives", correct: false }
+                    { id: "A", text: "Avoir le patient à jeun depuis 24h", correct: false },
+                    { id: "B", text: "Éviter l'action de la lumière", correct: false },
+                    { id: "C", text: "Limiter les variations nycthémérales", correct: true },
+                    { id: "D", text: "Obtenir un volume sanguin élevé", correct: false },
+                    { id: "E", text: "Éviter l'hémolyse", correct: false }
                 ]
             },
             {
                 id: 7,
-                text: "Les champignons sont des procaryotes.",
+                text: "Une cause de variation biologique avant prélèvement est :",
                 options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Certains oui", correct: false }
+                    { id: "A", text: "Le groupe sanguin", correct: false },
+                    { id: "B", text: "Le sexe du patient", correct: false },
+                    { id: "C", text: "Le stress émotionnel", correct: true },
+                    { id: "D", text: "Le type d'aiguille utilisée", correct: false },
+                    { id: "E", text: "La couleur du tube", correct: false }
                 ]
             },
             {
                 id: 8,
-                text: "L'ADN bactérien se trouve dans le noyau.",
+                text: "L'EDTA ne doit jamais être utilisé pour :",
                 options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Dans le plasmide seulement", correct: false }
+                    { id: "A", text: "La FNS", correct: false },
+                    { id: "B", text: "Le dosage de l'HbA1c", correct: false },
+                    { id: "C", text: "L'extraction d'ADN", correct: false },
+                    { id: "D", text: "Le dosage du calcium", correct: true },
+                    { id: "E", text: "Les enzymes leucocytaires", correct: false }
                 ]
             },
             {
                 id: 9,
-                text: "Les antibiotiques peuvent être efficaces contre les virus.",
+                text: "L'héparine de lithium est utilisée car :",
                 options: [
-                    { id: "a", text: "Vrai", correct: false },
-                    { id: "b", text: "Faux", correct: true },
-                    { id: "c", text: "Parfois", correct: false }
+                    { id: "A", text: "Elle contient du sodium", correct: false },
+                    { id: "B", text: "Elle interfère avec l'urée", correct: false },
+                    { id: "C", text: "C'est l'anticoagulant de choix en biochimie", correct: true },
+                    { id: "D", text: "Elle inhibe les enzymes", correct: false },
+                    { id: "E", text: "Elle favorise la coagulation", correct: false }
                 ]
             },
             {
                 id: 10,
-                text: "La capsule bactérienne peut contribuer à la virulence d'une bactérie.",
+                text: "Le citrate trisodique est l'anticoagulant de choix pour :",
                 options: [
-                    { id: "a", text: "Vrai", correct: true },
-                    { id: "b", text: "Faux", correct: false },
-                    { id: "c", text: "Elle empêche seulement la déshydratation", correct: false }
+                    { id: "A", text: "Le dosage du potassium", correct: false },
+                    { id: "B", text: "Le bilan d'hémostase", correct: true },
+                    { id: "C", text: "L'ionogramme", correct: false },
+                    { id: "D", text: "La VS seulement", correct: false },
+                    { id: "E", text: "Le dosage du calcium", correct: false }
+                ]
+            },
+            {
+                id: 11,
+                text: "Le fluorure de sodium inhibe :",
+                options: [
+                    { id: "A", text: "La coagulation", correct: false },
+                    { id: "B", text: "La dégradation des protéines", correct: false },
+                    { id: "C", text: "Les enzymes de la glycolyse", correct: true },
+                    { id: "D", text: "La production d'urée", correct: false },
+                    { id: "E", text: "La formation du fibrinogène", correct: false }
+                ]
+            },
+            {
+                id: 12,
+                text: "L'ordre de remplissage des tubes sert principalement à :",
+                options: [
+                    { id: "A", text: "Éviter l'hémolyse", correct: false },
+                    { id: "B", text: "Éviter la contamination des additifs", correct: true },
+                    { id: "C", text: "Obtenir plus de sérum", correct: false },
+                    { id: "D", text: "Accélérer la coagulation", correct: false },
+                    { id: "E", text: "Réduire la quantité de sang prélevé", correct: false }
+                ]
+            },
+            {
+                id: 13,
+                text: "Les urines fraîches du matin sont recommandées pour :",
+                options: [
+                    { id: "A", text: "Le dosage du cuivre", correct: false },
+                    { id: "B", text: "La micro-albuminurie", correct: true },
+                    { id: "C", text: "Le dosage de la VMA", correct: false },
+                    { id: "D", text: "Les dérivés méthoxylés", correct: false },
+                    { id: "E", text: "Le potassium urinaire", correct: false }
+                ]
+            },
+            {
+                id: 14,
+                text: "Les urines de 24 heures sont nécessaires pour :",
+                options: [
+                    { id: "A", text: "Le pH urinaire", correct: false },
+                    { id: "B", text: "La densité urinaire", correct: false },
+                    { id: "C", text: "Le dosage de la VMA", correct: true },
+                    { id: "D", text: "La recherche d'acétone", correct: false },
+                    { id: "E", text: "Le test de grossesse", correct: false }
+                ]
+            },
+            {
+                id: 15,
+                text: "Dans la collecte des urines de 24h, la première étape correcte est :",
+                options: [
+                    { id: "A", text: "Collecter la première urine du matin", correct: false },
+                    { id: "B", text: "Jeter la première miction du matin", correct: true },
+                    { id: "C", text: "Boire 3 litres d'eau", correct: false },
+                    { id: "D", text: "Ajouter un anticoagulant", correct: false },
+                    { id: "E", text: "Mettre les urines au congélateur", correct: false }
+                ]
+            },
+            {
+                id: 16,
+                text: "Les récipients pour la calciurie doivent être :",
+                options: [
+                    { id: "A", text: "Colorés", correct: false },
+                    { id: "B", text: "En verre uniquement", correct: false },
+                    { id: "C", text: "Décalcifiés par EDTA ou citrate", correct: true },
+                    { id: "D", text: "Rincés à l'eau du robinet", correct: false },
+                    { id: "E", text: "Réfrigérés à –20°C", correct: false }
+                ]
+            },
+            {
+                id: 17,
+                text: "Pour un prélèvement de liquide biologique, il faut :",
+                options: [
+                    { id: "A", text: "Utiliser un seul tube", correct: false },
+                    { id: "B", text: "Ajouter de l'alcool", correct: false },
+                    { id: "C", text: "Respecter l'asepsie stricte", correct: true },
+                    { id: "D", text: "Mélanger avec EDTA", correct: false },
+                    { id: "E", text: "Chauffer le liquide", correct: false }
+                ]
+            },
+            {
+                id: 18,
+                text: "Les aiguilles et seringues ne doivent jamais être :",
+                options: [
+                    { id: "A", text: "Utilisées en pédiatrie", correct: false },
+                    { id: "B", text: "Jetables", correct: false },
+                    { id: "C", text: "Nettoyées à l'alcool ou éther", correct: true },
+                    { id: "D", text: "Stériles", correct: false },
+                    { id: "E", text: "Adaptées au patient", correct: false }
+                ]
+            },
+            {
+                id: 19,
+                text: "L'orthostatisme augmente :",
+                options: [
+                    { id: "A", text: "La calcémie", correct: false },
+                    { id: "B", text: "La bilirubine", correct: false },
+                    { id: "C", text: "La rénine", correct: true },
+                    { id: "D", text: "La glycémie", correct: false },
+                    { id: "E", text: "Le sodium", correct: false }
+                ]
+            },
+            {
+                id: 20,
+                text: "Le LCR permet le dosage de :",
+                options: [
+                    { id: "A", text: "La VMA", correct: false },
+                    { id: "B", text: "La LDH", correct: false },
+                    { id: "C", text: "La glucorachie", correct: true },
+                    { id: "D", text: "Le potassium", correct: false },
+                    { id: "E", text: "Le sodium", correct: false }
                 ]
             }
         ];
 
         // المتغيرات العامة
         let userAnswers = new Array(questions.length).fill(null);
-        let timeLeft = 30 * 60; // 30 دقيقة بالثواني
+        let timeLeft = 40 * 60; // 40 دقيقة بالثواني
         let timerInterval;
 
         // تهيئة الامتحان
@@ -998,7 +1128,7 @@
         // إعادة الامتحان
         function restartExam() {
             userAnswers = new Array(questions.length).fill(null);
-            timeLeft = 30 * 60;
+            timeLeft = 40 * 60;
             
             // إعادة تعيين العرض
             document.querySelector('.exam-content').style.display = 'block';
