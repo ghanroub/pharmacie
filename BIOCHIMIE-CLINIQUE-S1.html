@@ -36,21 +36,7 @@
             z-index: -1;
         }
         
-        /* الشريط العلوي */
-        .top-bar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease-in-out;
-        }
-        
-        .top-bar.hidden {
-            transform: translateY(-100%);
-        }
-        
+        /* تحديث الهيدر ليكون مشابهاً للكود الثاني */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #ffeb3b;
@@ -58,9 +44,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: transform 0.4s ease-in-out;
         }
         
-        /* زر القائمة في الهاتف */
+        header.hidden {
+            transform: translateY(-100%);
+        }
+        
         .menu-btn {
             display: none;
             font-size: 1.8rem;
@@ -76,11 +70,7 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
         
-        /* قائمة التنقل الرئيسية */
-        header nav {
-            transform: translateX(-35px);
-        }
-        
+        /* تحديث قائمة التنقل الرئيسية */
         header nav ul {
             list-style: none;
             display: flex;
@@ -104,7 +94,7 @@
             color: #fff;
         }
         
-        /* تحسين شعار كبسولة الدواء */
+        /* شعار كبسولة الدواء المحسن */
         .logo a {
             color: #00bcd4;
             text-decoration: none;
@@ -164,47 +154,7 @@
             75% { transform: scale(1.15) rotate(-5deg); }
         }
         
-        /* قائمة التنقل المنسدلة */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 0;
-            border-radius: 0 0 10px 10px;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .dropdown-content a {
-            color: #ffeb3b;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.2s;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* زر إغلاق القائمة المنسدلة في الهاتف */
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #ffeb3b;
-        }
-        
-        /* قسم الأزرار الثابتة أسفل header - إزالة شريط السنوات */
-        .year-navigation {
-            display: none;
-        }
+        /* إزالة أنماط القائمة المنسدلة */
         
         /* المحتوى الرئيسي */
         .main-content {
@@ -261,25 +211,25 @@
         }
         
         .chapter-card {
-            background-color: rgba(255, 255, 255, 0.9); /* تغيير إلى أبيض */
-            border: 2px solid rgba(0, 0, 0, 0.8); /* زيادة غمق الإطار */
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(0, 0, 0, 0.8);
             border-radius: 8px;
             padding: 15px;
             transition: all 0.3s ease;
             cursor: pointer;
-            color: #333; /* تغيير لون النص إلى داكن */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* إضافة ظل لتحسين الوضوح */
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         .chapter-card:hover {
-            background-color: rgba(255, 255, 255, 1); /* أبيض نقي عند التمرير */
+            background-color: rgba(255, 255, 255, 1);
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
         
         .chapter-title {
             font-size: 1.2rem;
-            color: #333; /* تغيير لون العنوان إلى داكن */
+            color: #333;
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
@@ -289,7 +239,7 @@
         
         .chapter-title i {
             transition: transform 0.3s ease;
-            color: #6a1b9a; /* لون أرجواني للأيقونة */
+            color: #6a1b9a;
         }
         
         .chapter-card.active .chapter-title i {
@@ -300,7 +250,7 @@
             display: none;
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 2px solid rgba(106, 27, 154, 0.5); /* تغيير لون الحدود */
+            border-top: 2px solid rgba(106, 27, 154, 0.5);
         }
         
         .chapter-card.active .resources-options {
@@ -435,14 +385,10 @@
             color: #e0e0e0;
         }
         
-        /* تصميم القائمة المنسدلة في الهاتف */
+        /* تصميم القائمة في الهاتف */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
-            }
-            
-            header nav {
-                transform: none;
             }
             
             header nav ul {
@@ -483,37 +429,6 @@
                 background-color: rgba(255, 255, 255, 0.15);
             }
             
-            /* تعديل القائمة المنسدلة في الهاتف */
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-                transition: all 0.3s ease;
-            }
-            
-            .dropdown-content.show {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            
-            .dropdown-content a {
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-                color: #ffeb3b;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                transition: background-color 0.2s;
-            }
-            
-            .dropdown-content a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            
             .course-title {
                 font-size: 2rem;
             }
@@ -539,13 +454,6 @@
             }
         }
         
-        /* سلوك القائمة المنسدلة في الكمبيوتر */
-        @media (min-width: 769px) {
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-        }
-        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -553,37 +461,25 @@
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي والأزرار الثابتة -->
-    <div class="top-bar" id="mainHeader">
-        <header>
-            <div class="logo">
-                <a href="index.html">
-                    <span class="pill-icon">💊</span> GhaniPharma
-                </a>
-            </div>
-            <div class="menu-btn" onclick="toggleMenu()">☰</div>
-            <nav>
-                <ul id="navMenu">
-                    <!-- تم تغيير الرابط هنا -->
-                    <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
-                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li class="dropdown">
-                        <a href="#content" class="dropbtn" onclick="toggleDropdownMobile(event)"><i class="fas fa-book"></i> Contenu</a>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <span class="close-btn" onclick="closeDropdown()">&times;</span>
-                            <a href="cours.html"><i class="fas fa-file-alt"></i> Cours</a>
-                            <a href="tps.html"><i class="fas fa-flask"></i> Tps</a>
-                            <a href="tds.html"><i class="fas fa-tasks"></i> Tds</a>
-                            <a href="examens.html"><i class="fas fa-clipboard-list"></i> Examens</a>
-                        </div>
-                    </li>
-                    <!-- تغيير Questions إلى Contact -->
-                    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <!-- إزالة قسم الأزرار الثابتة (شريط السنوات) -->
-    </div>
+    <!-- الهيدر المحدث -->
+    <header id="mainHeader">
+        <div class="logo">
+            <a href="index.html">
+                <span class="pill-icon">💊</span> GhaniPharma
+            </a>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="commandez.html"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
+                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <!-- تم تغيير Contenu إلى Modules وإزالة القائمة المنسدلة -->
+                <li><a href="modules.html"><i class="fas fa-book"></i> Modules</a></li>
+                <!-- تغيير Questions إلى Contact -->
+                <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
     <!-- المحتوى الرئيسي -->
     <div class="main-content">
@@ -691,29 +587,14 @@
             navMenu.classList.toggle("show");
         }
 
-        // عرض/إخفاء القائمة المنسدلة في الهاتف
-        function toggleDropdownMobile(event) {
-            if (window.innerWidth <= 768) {
-                event.preventDefault();
-                const dropdownContent = document.getElementById("dropdownContent");
-                dropdownContent.classList.toggle("show");
-            }
-        }
-
         // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', function(event) {
             const navMenu = document.getElementById("navMenu");
             const menuBtn = document.querySelector('.menu-btn');
             if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
                 navMenu.classList.remove("show");
-                document.getElementById("dropdownContent").classList.remove("show");
             }
         });
-
-        // إغلاق القائمة المنسدلة
-        function closeDropdown() {
-            document.getElementById("dropdownContent").classList.remove("show");
-        }
         
         // دالة لإظهار/إخفاء خيارات PDF و VIDEO
         function toggleChapter(element) {
