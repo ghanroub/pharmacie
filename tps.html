@@ -724,6 +724,21 @@
         .warning-box li {
             margin-bottom: 5px;
         }
+        
+        /* تحسينات للمحتوى النصي */
+        .correction-rules {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .correction-rules h4 {
+            margin-top: 0;
+            color: #ff9800;
+        }
     </style>
 </head>
 <body>
@@ -760,14 +775,16 @@
                 Test QCM de pharmacologie avec système de correction strict. L'examen se compose de 5 questions. Chaque question peut avoir plusieurs bonnes réponses.
             </div>
             
-            <div class="warning-box">
-                <h4><i class="fas fa-exclamation-triangle"></i> Système de correction strict:</h4>
+            <div class="correction-rules">
+                <h4><i class="fas fa-calculator"></i> Système de calcul des points:</h4>
+                <p><strong>Pour chaque question:</strong></p>
                 <ul>
-                    <li>✓ Toutes les bonnes réponses sélectionnées → Point complet</li>
-                    <li>✓ Certaines bonnes réponses sélectionnées → Points partiels</li>
-                    <li>✗ Une seule mauvaise réponse sélectionnée → Zéro point pour la question</li>
+                    <li>✓ <strong>Point complet (1 point)</strong>: Sélectionner TOUTES les bonnes réponses et AUCUNE mauvaise réponse</li>
+                    <li>✓ <strong>Points partiels</strong>: Sélectionner certaines bonnes réponses et AUCUNE mauvaise réponse → (nombre de bonnes réponses sélectionnées / nombre total de bonnes réponses)</li>
+                    <li>✗ <strong>Zéro point</strong>: Sélectionner AU MOINS UNE mauvaise réponse (même si vous avez sélectionné des bonnes réponses)</li>
+                    <li>✗ <strong>Zéro point</strong>: Ne sélectionner aucune réponse</li>
                 </ul>
-                <p><strong>Conseil:</strong> Ne sélectionnez que les réponses dont vous êtes sûr à 100%!</p>
+                <p><strong>Conseil:</strong> Soyez prudent! Une seule mauvaise réponse annule tous les points pour cette question.</p>
             </div>
         </div>
         
@@ -909,7 +926,6 @@
         ];
 
         // المتغيرات العامة
-        let userAnswers = {};
         let timeLeft = 40 * 60; // 40 دقيقة بالثواني
         let timerInterval;
 
@@ -930,17 +946,14 @@
             const container = document.getElementById('questions-container');
             
             let questionsHTML = '';
-            questions.forEach((question, index) => {
+            questions.forEach((question) => {
                 const questionId = `q${question.id}`;
-                const selectedOptions = userAnswers[questionId] || [];
                 
                 let optionsHTML = '';
                 question.options.forEach(option => {
-                    const isSelected = selectedOptions.includes(option.id);
                     optionsHTML += `
-                        <div class="option ${isSelected ? 'selected' : ''}" data-question="${questionId}" data-option="${option.id}">
-                            <input type="checkbox" id="${questionId}_${option.id}" 
-                                   value="${option.id}" ${isSelected ? 'checked' : ''}>
+                        <div class="option" data-question="${questionId}" data-option="${option.id}">
+                            <input type="checkbox" id="${questionId}_${option.id}" value="${option.id}">
                             <label for="${questionId}_${option.id}">${option.id}) ${option.text}</label>
                         </div>
                     `;
@@ -969,31 +982,46 @@
 
         // تبديل اختيار الخيار
         function toggleOption(questionId, optionId) {
-            if (!userAnswers[questionId]) {
-                userAnswers[questionId] = [];
-            }
-            
             const checkbox = document.getElementById(`${questionId}_${optionId}`);
             const optionElement = checkbox.parentElement;
             
+            checkbox.checked = !checkbox.checked;
+            
             if (checkbox.checked) {
-                // إزالة الخيار
-                userAnswers[questionId] = userAnswers[questionId].filter(id => id !== optionId);
-                checkbox.checked = false;
-                optionElement.classList.remove('selected');
-            } else {
-                // إضافة الخيار
-                userAnswers[questionId].push(optionId);
-                checkbox.checked = true;
                 optionElement.classList.add('selected');
+            } else {
+                optionElement.classList.remove('selected');
             }
             
             // تحديث التقدم
             updateProgress();
         }
 
+        // جمع إجابات الطالب مباشرة من الواجهة
+        function collectStudentAnswers() {
+            const userAnswers = {};
+            
+            questions.forEach(question => {
+                const questionId = `q${question.id}`;
+                const selectedOptions = [];
+                
+                // لكل خيار في هذا السؤال
+                question.options.forEach(option => {
+                    const checkbox = document.getElementById(`${questionId}_${option.id}`);
+                    if (checkbox && checkbox.checked) {
+                        selectedOptions.push(option.id);
+                    }
+                });
+                
+                userAnswers[questionId] = selectedOptions;
+            });
+            
+            return userAnswers;
+        }
+
         // تحديث شريط التقدم
         function updateProgress() {
+            const userAnswers = collectStudentAnswers();
             const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
             document.getElementById('answered').textContent = answeredCount;
             document.getElementById('total-qs').textContent = questions.length;
@@ -1017,9 +1045,12 @@
             }, 1000);
         }
 
-        // تصحيح الامتحان حسب النظام الجديد
+        // تصحيح الامتحان
         function submitExam() {
             clearInterval(timerInterval);
+            
+            // جمع الإجابات مباشرة من الواجهة
+            const userAnswers = collectStudentAnswers();
             
             let totalScore = 0;
             const maxScore = questions.length;
@@ -1042,7 +1073,7 @@
                     return;
                 }
                 
-                // تحقق من وجود أي إجابة خاطئة
+                // التحقق من وجود أي إجابة خاطئة
                 let hasWrongAnswer = false;
                 for (const choice of studentList) {
                     if (!correctList.includes(choice)) {
@@ -1062,12 +1093,13 @@
                     return;
                 }
                 
-                // احسب النقاط الجزئية (بدون أخطاء)
-                const correctSelected = studentList.length;
+                // الآن نعلم أن جميع الإجابات المختارة صحيحة
+                // حساب عدد الإجابات الصحيحة المختارة
+                const correctSelected = studentList.length; // جميعها صحيحة لأننا تحققنا من ذلك
                 const totalCorrect = correctList.length;
                 
                 if (correctSelected === totalCorrect) {
-                    // كل الإجابات الصحيحة → النقطة كاملة
+                    // اختار جميع الإجابات الصحيحة → النقطة كاملة
                     results[questionId] = {
                         score: 1,
                         correctChoices: correctList,
@@ -1084,7 +1116,7 @@
                         note: 'Aucune bonne réponse sélectionnée'
                     };
                 } else {
-                    // نقاط جزئية: (عدد الإجابات الصحيحة المختارة / عدد الإجابات الصحيحة الكلي)
+                    // نقاط جزئية
                     const score = correctSelected / totalCorrect;
                     results[questionId] = {
                         score: parseFloat(score.toFixed(2)),
@@ -1172,14 +1204,22 @@
 
         // إعادة تعيين الإجابات
         function resetExam() {
-            userAnswers = {};
-            displayAllQuestions();
+            // إلغاء تحديد جميع الخيارات
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // إزالة التحديد المرئي
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // تحديث التقدم
             updateProgress();
         }
 
         // إعادة الامتحان
         function restartExam() {
-            userAnswers = {};
             timeLeft = 40 * 60;
             
             // إعادة تعيين العرض
@@ -1187,9 +1227,11 @@
             document.querySelector('.exam-info').style.display = 'flex';
             document.getElementById('result-container').style.display = 'none';
             
-            // إعادة تهيئة الامتحان
-            displayAllQuestions();
-            updateProgress();
+            // إعادة تعيين الإجابات
+            resetExam();
+            
+            // إعادة بدء المؤقت
+            clearInterval(timerInterval);
             startTimer();
         }
 
