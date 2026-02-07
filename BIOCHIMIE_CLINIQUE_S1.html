@@ -233,78 +233,103 @@
             text-align: center;
         }
         
-        /* ===== تحسينات بطاقات الدروس ===== */
+        /* ===== تحسينات بطاقات الدروس ثلاثية الأبعاد ===== */
         .chapters-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
+            perspective: 1000px;
         }
         
         .chapter-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
             border: none;
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 0;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             color: #333;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.1),
+                0 2px 5px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
             overflow: hidden;
             position: relative;
-            border-top: 4px solid #6a1b9a;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
         }
         
+        /* تأثير ثلاثي الأبعاد عند التحويم */
+        .chapter-card:hover {
+            transform: 
+                translateY(-8px) 
+                rotateX(5deg) 
+                rotateY(0deg) 
+                scale(1.03);
+            box-shadow: 
+                0 20px 40px rgba(106, 27, 154, 0.25),
+                0 10px 20px rgba(0, 0, 0, 0.15),
+                0 5px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(145deg, #ffffff, #fafafa);
+        }
+        
+        .chapter-card.active {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 30px rgba(106, 27, 154, 0.2),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* شريط علوي مع تدرج لوني */
         .chapter-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 6px;
             background: linear-gradient(90deg, #6a1b9a, #9c27b0, #ba68c8);
-            z-index: 1;
+            z-index: 2;
+            border-radius: 12px 12px 0 0;
         }
         
-        .chapter-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(106, 27, 154, 0.3);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(250, 250, 250, 1));
-        }
-        
-        .chapter-card.active {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(106, 27, 154, 0.25);
-        }
-        
-        .chapter-header {
-            padding: 20px 15px 15px;
+        /* تأثير ثلاثي الأبعاد للجزء الداخلي */
+        .chapter-content {
+            padding: 20px 15px;
             position: relative;
+            transform: translateZ(20px);
         }
         
         .chapter-title {
             font-size: 1.3rem;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
             line-height: 1.4;
             padding-right: 25px;
+            text-align: center;
         }
         
+        /* علامة GRATUIT ثلاثية الأبعاد */
         .free-badge {
             position: absolute;
             top: 10px;
             right: 10px;
             background: linear-gradient(135deg, #ff5252, #ff4081);
             color: white;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: bold;
-            box-shadow: 0 3px 8px rgba(255, 82, 82, 0.3);
-            z-index: 2;
+            box-shadow: 
+                0 4px 8px rgba(255, 82, 82, 0.3),
+                0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            transform: translateZ(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .chapter-icon {
@@ -312,36 +337,32 @@
             transition: transform 0.3s ease;
             color: #6a1b9a;
             margin-left: 8px;
+            transform: translateZ(10px);
         }
         
         .chapter-card.active .chapter-icon {
-            transform: rotate(180deg);
-        }
-        
-        .chapter-description {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 5px;
-            line-height: 1.4;
+            transform: rotate(180deg) translateZ(10px);
         }
         
         .resources-options {
             display: none;
             padding: 15px;
-            background: linear-gradient(to right, rgba(245, 245, 245, 0.9), rgba(235, 235, 235, 0.9));
-            border-top: 1px solid rgba(106, 27, 154, 0.2);
-            border-radius: 0 0 15px 15px;
+            background: linear-gradient(to bottom, #f9f9f9, #f0f0f0);
+            border-top: 2px solid rgba(106, 27, 154, 0.15);
+            border-radius: 0 0 12px 12px;
             animation: slideDown 0.3s ease-out;
+            transform-style: preserve-3d;
+            transform: translateZ(10px);
         }
         
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-10px);
+                transform: translateY(-10px) translateZ(10px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) translateZ(10px);
             }
         }
         
@@ -350,11 +371,12 @@
             gap: 10px;
         }
         
+        /* أزرار الموارد ثلاثية الأبعاد */
         .resource-btn {
             flex: 1;
-            padding: 10px 12px;
+            padding: 12px 15px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -364,24 +386,50 @@
             gap: 8px;
             transition: all 0.3s ease;
             font-size: 0.9rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.15),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            transform: translateZ(5px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .resource-btn:hover::before {
+            left: 100%;
         }
         
         .resource-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) translateZ(10px) scale(1.05);
+            box-shadow: 
+                0 8px 16px rgba(0, 0, 0, 0.2),
+                0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
         .pdf-btn {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border: 1px solid rgba(231, 76, 60, 0.3);
         }
         
         .video-btn {
             background: linear-gradient(135deg, #3498db, #2980b9);
+            border: 1px solid rgba(52, 152, 219, 0.3);
         }
         
         .exam-btn {
             background: linear-gradient(135deg, #2ecc71, #27ae60);
+            border: 1px solid rgba(46, 204, 113, 0.3);
         }
         
         /* أنماط زر الامتحان النهائي */
@@ -402,12 +450,18 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 6px 15px rgba(155, 89, 182, 0.3);
+            box-shadow: 
+                0 8px 20px rgba(155, 89, 182, 0.3),
+                0 4px 10px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transform: translateZ(0);
         }
         
         .module-exam-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.4);
+            transform: translateY(-5px) scale(1.05) translateZ(10px);
+            box-shadow: 
+                0 15px 30px rgba(155, 89, 182, 0.4),
+                0 8px 16px rgba(0, 0, 0, 0.25);
         }
         
         /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
@@ -544,7 +598,7 @@
             
             .chapters-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
             }
             
             .main-content {
@@ -564,7 +618,7 @@
             }
             
             .resource-btn {
-                padding: 8px 10px;
+                padding: 10px 12px;
                 font-size: 0.85rem;
             }
         }
@@ -619,14 +673,11 @@
             <div class="chapters-grid">
                 <!-- الفصل 1 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
-                    <div class="chapter-header">
-                        <div class="free-badge">GRATUIT</div>
+                    <div class="free-badge">GRATUIT</div>
+                    <div class="chapter-content">
                         <div class="chapter-title">
                             Sang : composition et fonctions du sang
                             <i class="fas fa-chevron-down chapter-icon"></i>
-                        </div>
-                        <div class="chapter-description">
-                            Introduction à l'hémobiologie et étude des composants sanguins
                         </div>
                     </div>
                     <div class="resources-options">
@@ -644,13 +695,10 @@
                 
                 <!-- الفصل 2 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
-                    <div class="chapter-header">
+                    <div class="chapter-content">
                         <div class="chapter-title">
                             L'hématopoïèse
                             <i class="fas fa-chevron-down chapter-icon"></i>
-                        </div>
-                        <div class="chapter-description">
-                            Processus de formation des cellules sanguines
                         </div>
                     </div>
                     <div class="resources-options">
@@ -668,13 +716,10 @@
                 
                 <!-- الفصل 3 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
-                    <div class="chapter-header">
+                    <div class="chapter-content">
                         <div class="chapter-title">
                             Les organes hématopoïétiques
                             <i class="fas fa-chevron-down chapter-icon"></i>
-                        </div>
-                        <div class="chapter-description">
-                            Moelle osseuse, rate et ganglions lymphatiques
                         </div>
                     </div>
                     <div class="resources-options">
@@ -784,8 +829,6 @@
                 
                 if (resourceType !== 'EXAMEN') {
                     // تم إزالة alert واستبداله بفتح الرابط مباشرة
-                    // alert(`Téléchargement du ${resourceType} pour: ${chapterTitle}`);
-                    // هنا يمكنك إضافة الكود لتحميل الملف أو فتحه
                 }
             });
         });
@@ -795,13 +838,13 @@
             const cards = document.querySelectorAll('.chapter-card');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+                card.style.transform = 'translateY(20px) rotateX(10deg)';
                 
                 setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                     card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 * index);
+                    card.style.transform = 'translateY(0) rotateX(0)';
+                }, 150 * index);
             });
         });
     </script>
