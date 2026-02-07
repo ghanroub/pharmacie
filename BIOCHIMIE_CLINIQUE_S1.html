@@ -19,7 +19,7 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours BIOCHIMIE CLINIQUE S1 - GhaniPharma</title>
+    <title>Cours HEMOBIOLOGIE S1 - GhaniPharma</title>
     <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -233,24 +233,25 @@
             text-align: center;
         }
         
-        /* ==================== تحسينات أطر الدروس فقط ==================== */
+        /* ===== تحسينات بطاقات الدروس ===== */
         .chapters-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
         
         .chapter-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+            border: none;
+            border-radius: 15px;
             padding: 0;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             color: #333;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
-            border: none;
+            border-top: 4px solid #6a1b9a;
         }
         
         .chapter-card::before {
@@ -258,70 +259,82 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #4CAF50, #2196F3, #9C27B0);
+            background: linear-gradient(90deg, #6a1b9a, #9c27b0, #ba68c8);
             z-index: 1;
         }
         
         .chapter-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(106, 27, 154, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(250, 250, 250, 1));
         }
         
         .chapter-card.active {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 27, 154, 0.25);
         }
         
         .chapter-header {
-            padding: 18px 20px;
+            padding: 20px 15px 15px;
             position: relative;
         }
         
         .chapter-title {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin: 0;
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
+            line-height: 1.4;
+            padding-right: 25px;
         }
         
         .free-badge {
-            background: linear-gradient(135deg, #FF5722, #FF9800);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ff5252, #ff4081);
             color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
             padding: 4px 10px;
             border-radius: 12px;
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            box-shadow: 0 3px 6px rgba(255, 87, 34, 0.3);
+            font-size: 0.75rem;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(255, 82, 82, 0.3);
+            z-index: 2;
         }
         
         .chapter-icon {
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: transform 0.3s ease;
-            color: #2196F3;
+            color: #6a1b9a;
+            margin-left: 8px;
         }
         
         .chapter-card.active .chapter-icon {
             transform: rotate(180deg);
-            color: #9C27B0;
+        }
+        
+        .chapter-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.4;
         }
         
         .resources-options {
             display: none;
-            padding: 15px 20px;
-            background: #f1f8ff;
-            border-top: 1px solid #e3f2fd;
-            animation: fadeInUp 0.3s ease;
+            padding: 15px;
+            background: linear-gradient(to right, rgba(245, 245, 245, 0.9), rgba(235, 235, 235, 0.9));
+            border-top: 1px solid rgba(106, 27, 154, 0.2);
+            border-radius: 0 0 15px 15px;
+            animation: slideDown 0.3s ease-out;
         }
         
-        @keyframes fadeInUp {
+        @keyframes slideDown {
             from {
                 opacity: 0;
                 transform: translateY(-10px);
@@ -335,48 +348,41 @@
         .chapter-card.active .resources-options {
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
         }
         
         .resource-btn {
             flex: 1;
-            min-width: 90px;
-            padding: 10px 15px;
+            padding: 10px 12px;
             border: none;
             border-radius: 8px;
             color: white;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pdf-btn {
-            background: linear-gradient(135deg, #F44336, #D32F2F);
-        }
-        
-        .video-btn {
-            background: linear-gradient(135deg, #2196F3, #1976D2);
-        }
-        
-        .exam-btn {
-            background: linear-gradient(135deg, #4CAF50, #388E3C);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .resource-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         
-        .resource-btn i {
-            font-size: 1rem;
+        .pdf-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
         }
-        /* ==================== نهاية تحسينات أطر الدروس ==================== */
+        
+        .video-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .exam-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
         
         /* أنماط زر الامتحان النهائي */
         .module-exam-container {
@@ -385,22 +391,23 @@
         }
         
         .module-exam-btn {
-            background-color: #9b59b6;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
             color: white;
             border: none;
             padding: 15px 30px;
             font-size: 1.2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 6px 15px rgba(155, 89, 182, 0.3);
         }
         
         .module-exam-btn:hover {
-            background-color: #8e44ad;
-            transform: scale(1.05);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.4);
         }
         
         /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
@@ -537,6 +544,7 @@
             
             .chapters-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
             
             .main-content {
@@ -555,14 +563,8 @@
                 font-size: 1.3rem;
             }
             
-            /* تعديلات الهاتف لأطر الدروس */
-            .chapter-card {
-                margin-bottom: 15px;
-            }
-            
             .resource-btn {
-                min-width: 80px;
-                padding: 8px 12px;
+                padding: 8px 10px;
                 font-size: 0.85rem;
             }
         }
@@ -605,9 +607,9 @@
     <!-- المحتوى الرئيسي -->
     <div class="main-content">
         <div class="course-header">
-            <h1 class="course-title">BIOCHIMIE CLINIQUE S1</h1>
+            <h1 class="course-title">HEMOBIOLOGIE S1</h1>
             <div class="course-description">
-                La biochimie clinique est une discipline médicale qui étudie les composés chimiques et les réactions biochimiques dans l'organisme humain. Elle se concentre sur l'analyse des fluides biologiques (sang, urine, etc.) pour évaluer la fonction des organes, diagnostiquer des maladies et suivre l'efficacité des traitements.
+                L'hémobiologie est la science qui étudie le sang dans ses aspects normaux et pathologiques. Elle englobe l'étude de la composition du sang, des cellules sanguines, de l'hématopoïèse et des organes hématopoïétiques, ainsi que des pathologies associées.
             </div>
         </div>
         
@@ -618,20 +620,23 @@
                 <!-- الفصل 1 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
                     <div class="chapter-header">
-                        <span class="free-badge">GRATUIT</span>
-                        <h3 class="chapter-title">
-                            Prélèvements en biochimie partie 1
+                        <div class="free-badge">GRATUIT</div>
+                        <div class="chapter-title">
+                            Sang : composition et fonctions du sang
                             <i class="fas fa-chevron-down chapter-icon"></i>
-                        </h3>
+                        </div>
+                        <div class="chapter-description">
+                            Introduction à l'hémobiologie et étude des composants sanguins
+                        </div>
                     </div>
                     <div class="resources-options">
-                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/170wmKfFnzzHo3lhD49k6YqAC0sYwB6px/view?usp=sharing', '_blank'); event.stopPropagation();">
+                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/1ZWRE0T5iN6o7G4w5P7f-mRi_6D1wf_8Z/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-file-pdf"></i> PDF
                         </button>
-                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1tHQTGyoBEc6rkr93i3NBTVjBL4mO7SZP/view?usp=sharing', '_blank'); event.stopPropagation();">
+                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/15Wdbf0xuBC5vdLmdK7zPy-nwlI5LYnlj/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-video"></i> VIDÉO
                         </button>
-                        <button class="resource-btn exam-btn" onclick="window.location.href='BIOCHIMIE_CLINIQUE_S1_Examen_de_cour1.html'">
+                        <button class="resource-btn exam-btn" onclick="window.location.href='HEMOBIOLOGIE_S1_Examen_de_cour1.html'">
                             <i class="fas fa-clipboard-list"></i> EXAMEN
                         </button>
                     </div>
@@ -640,19 +645,46 @@
                 <!-- الفصل 2 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
                     <div class="chapter-header">
-                        <h3 class="chapter-title">
-                            Prélèvements en biochimie partie 2
+                        <div class="chapter-title">
+                            L'hématopoïèse
                             <i class="fas fa-chevron-down chapter-icon"></i>
-                        </h3>
+                        </div>
+                        <div class="chapter-description">
+                            Processus de formation des cellules sanguines
+                        </div>
                     </div>
                     <div class="resources-options">
-                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/1hVbdnlvV8PbXUdMYdWslagpEPZiq1kPu/view?usp=sharing', '_blank'); event.stopPropagation();">
+                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/1dgSFonIl1x_KI6S30m0u5u66f0sAnzU2/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-file-pdf"></i> PDF
                         </button>
-                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1cGx6_V18iBEpOV4Z1RZ2gkdoD8L5eK6n/view?usp=sharing', '_blank'); event.stopPropagation();">
+                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1RgcE7_vTVZz4fDvHL1PVWjq2kzDQ5-6_/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-video"></i> VIDÉO
                         </button>
-                        <button class="resource-btn exam-btn" onclick="window.location.href='BIOCHIMIE_CLINIQUE_S1_Examen_de_cour2.html'">
+                        <button class="resource-btn exam-btn" onclick="window.location.href='HEMOBIOLOGIE_S1_Examen_de_cour2.html'">
+                            <i class="fas fa-clipboard-list"></i> EXAMEN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- الفصل 3 -->
+                <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-header">
+                        <div class="chapter-title">
+                            Les organes hématopoïétiques
+                            <i class="fas fa-chevron-down chapter-icon"></i>
+                        </div>
+                        <div class="chapter-description">
+                            Moelle osseuse, rate et ganglions lymphatiques
+                        </div>
+                    </div>
+                    <div class="resources-options">
+                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/1ZJej6NkH7W33IFPHvT5EMXnhl0o135Cx/view?usp=sharing', '_blank'); event.stopPropagation();">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1FUlmNPDcqObtZdhLOwJoqe0BMk7RcT8b/view?usp=sharing', '_blank'); event.stopPropagation();">
+                            <i class="fas fa-video"></i> VIDÉO
+                        </button>
+                        <button class="resource-btn exam-btn" onclick="window.location.href='HEMOBIOLOGIE_S1_Examen_de_cour3.html'">
                             <i class="fas fa-clipboard-list"></i> EXAMEN
                         </button>
                     </div>
@@ -662,7 +694,7 @@
         
         <!-- قسم زر الامتحان النهائي -->
         <div class="module-exam-container">
-            <button class="module-exam-btn" onclick="window.location.href='Examen Biochimie.html'">
+            <button class="module-exam-btn" onclick="window.location.href='Examen_Hemobiologie.html'">
                 <i class="fas fa-file-alt"></i> Examen de module
             </button>
         </div>
@@ -755,6 +787,21 @@
                     // alert(`Téléchargement du ${resourceType} pour: ${chapterTitle}`);
                     // هنا يمكنك إضافة الكود لتحميل الملف أو فتحه
                 }
+            });
+        });
+        
+        // إضافة تأثير عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.chapter-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
             });
         });
     </script>
