@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-WMZ6GN3075');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours BIOCHIMIE CLINIQUE S1 - GhaniPharma</title>
@@ -217,90 +233,188 @@
             text-align: center;
         }
         
+        /* تحسينات بطاقات الدروس - الجزء المُحسّن */
         .chapters-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            width: 100%;
         }
         
         .chapter-card {
-            background-color: rgba(255, 255, 255, 0.9); /* تغيير إلى أبيض */
-            border: 2px solid rgba(0, 0, 0, 0.8); /* زيادة غمق الإطار */
-            border-radius: 8px;
-            padding: 15px;
-            transition: all 0.3s ease;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95));
+            border: none;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            color: #333; /* تغيير لون النص إلى داكن */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* إضافة ظل لتحسين الوضوح */
+            color: #333;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid #6a1b9a;
+        }
+        
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6a1b9a, #9c27b0, #e91e63);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .chapter-card:hover {
-            background-color: rgba(255, 255, 255, 1); /* أبيض نقي عند التمرير */
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chapter-card:hover::before {
+            opacity: 1;
+        }
+        
+        .chapter-card.active {
+            background: linear-gradient(145deg, #ffffff, #f8f8f8);
+            box-shadow: 0 8px 20px rgba(106, 27, 154, 0.25);
+            border-left: 5px solid #e91e63;
         }
         
         .chapter-title {
-            font-size: 1.2rem;
-            color: #333; /* تغيير لون العنوان إلى داكن */
-            margin-bottom: 10px;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: bold;
+            font-weight: 600;
+            padding-right: 5px;
         }
         
         .chapter-title i {
-            transition: transform 0.3s ease;
-            color: #6a1b9a; /* لون أرجواني للأيقونة */
+            transition: transform 0.4s ease;
+            color: #6a1b9a;
+            font-size: 1.1rem;
+            background: rgba(106, 27, 154, 0.1);
+            padding: 8px;
+            border-radius: 50%;
         }
         
         .chapter-card.active .chapter-title i {
             transform: rotate(180deg);
+            background: rgba(233, 30, 99, 0.15);
+            color: #e91e63;
+        }
+        
+        /* شارة "GRATUIT" المحسنة */
+        .free-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff4081, #e91e63);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 8px;
+            box-shadow: 0 2px 5px rgba(233, 30, 99, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
         .resources-options {
             display: none;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 2px solid rgba(106, 27, 154, 0.5); /* تغيير لون الحدود */
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .chapter-card.active .resources-options {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
         .resource-btn {
             flex: 1;
-            padding: 8px 12px;
+            min-width: 100px;
+            padding: 12px 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             color: white;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
             transition: all 0.3s ease;
-        }
-        
-        .pdf-btn {
-            background-color: #e74c3c;
-        }
-        
-        .video-btn {
-            background-color: #3498db;
-        }
-        
-        .exam-btn {
-            background-color: #2ecc71;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .resource-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .resource-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .pdf-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+        
+        .video-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+        
+        .exam-btn {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+        }
+        
+        /* أيقونات الأزرار */
+        .resource-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* تلميحات بصرية */
+        .chapter-card .chapter-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: #6a1b9a;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
         }
         
         /* أنماط زر الامتحان النهائي */
@@ -310,7 +424,7 @@
         }
         
         .module-exam-btn {
-            background-color: #9b59b6;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -321,11 +435,13 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .module-exam-btn:hover {
-            background-color: #8e44ad;
+            background: linear-gradient(45deg, #8e44ad, #7d3c98);
             transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         
         /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
@@ -372,9 +488,14 @@
             color: #fff;
         }
         
-        .social-link.youtube:hover {
-            color: #ff0000;
-            border-color: #ff0000;
+        .social-link.whatsapp:hover {
+            color: #25d366;
+            border-color: #25d366;
+        }
+        
+        .social-link.telegram:hover {
+            color: #0088cc;
+            border-color: #0088cc;
         }
         
         .social-link.facebook:hover {
@@ -390,6 +511,11 @@
         .social-link.tiktok:hover {
             color: #69c9d0;
             border-color: #69c9d0;
+        }
+        
+        .social-link.youtube:hover {
+            color: #ff0000;
+            border-color: #ff0000;
         }
         
         .copyright {
@@ -450,8 +576,32 @@
                 font-size: 2rem;
             }
             
+            /* تحسينات للجوال على البطاقات */
             .chapters-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .chapter-card {
+                padding: 15px;
+            }
+            
+            .chapter-title {
+                font-size: 1.1rem;
+            }
+            
+            .resource-btn {
+                min-width: 90px;
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .resources-options {
+                flex-direction: column;
+            }
+            
+            .resource-btn {
+                width: 100%;
             }
             
             .main-content {
@@ -471,6 +621,28 @@
             }
         }
         
+        @media (max-width: 480px) {
+            .chapter-title {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .chapter-title i {
+                align-self: flex-end;
+                margin-top: -30px;
+            }
+            
+            .course-description {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            
+            .semester-container {
+                padding: 15px;
+            }
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -478,6 +650,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- الشريط العلوي والأزرار الثابتة -->
     <div class="top-bar" id="mainHeader">
         <header>
@@ -517,18 +693,22 @@
             <div class="chapters-grid">
                 <!-- الفصل 1 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-number">1</div>
                     <div class="chapter-title">
-                        Prélèvements en biochimie partie 1
+                        <div style="text-align: center; width: 100%;">
+                            <div>Prélèvements en biochimie partie 1</div>
+                            <div class="free-badge">GRATUIT</div>
+                        </div>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="resources-options">
-                        <button class="resource-btn pdf-btn">
+                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/170wmKfFnzzHo3lhD49k6YqAC0sYwB6px/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-file-pdf"></i> PDF
                         </button>
-                        <button class="resource-btn video-btn">
+                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1tHQTGyoBEc6rkr93i3NBTVjBL4mO7SZP/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-video"></i> VIDÉO
                         </button>
-                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen_de_cour1_BIOCHIMIE_CLINIQUE_S1.html'">
+                        <button class="resource-btn exam-btn" onclick="window.location.href='BIOCHIMIE_CLINIQUE_S1_Examen_de_cour1.html'">
                             <i class="fas fa-clipboard-list"></i> EXAMEN
                         </button>
                     </div>
@@ -536,18 +716,21 @@
                 
                 <!-- الفصل 2 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
+                    <div class="chapter-number">2</div>
                     <div class="chapter-title">
-                        Prélèvements en biochimie partie 2
+                        <div style="width: 100%;">
+                            Prélèvements en biochimie partie 2
+                        </div>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="resources-options">
-                        <button class="resource-btn pdf-btn">
+                        <button class="resource-btn pdf-btn" onclick="window.open('https://drive.google.com/file/d/1hVbdnlvV8PbXUdMYdWslagpEPZiq1kPu/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-file-pdf"></i> PDF
                         </button>
-                        <button class="resource-btn video-btn">
+                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1cGx6_V18iBEpOV4Z1RZ2gkdoD8L5eK6n/view?usp=sharing', '_blank'); event.stopPropagation();">
                             <i class="fas fa-video"></i> VIDÉO
                         </button>
-                        <button class="resource-btn exam-btn" onclick="window.location.href='Examen_de_cour2_BIOCHIMIE_CLINIQUE_S1.html'">
+                        <button class="resource-btn exam-btn" onclick="window.location.href='BIOCHIMIE_CLINIQUE_S1_Examen_de_cour2.html'">
                             <i class="fas fa-clipboard-list"></i> EXAMEN
                         </button>
                     </div>
@@ -566,8 +749,11 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube">
-                    <i class="fab fa-youtube"></i>
+                <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
                 </a>
                 <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook">
                     <i class="fab fa-facebook-f"></i>
@@ -577,6 +763,9 @@
                 </a>
                 <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok">
                     <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
                 </a>
             </div>
             <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés</p>
@@ -617,18 +806,43 @@
             }
         });
         
-        // دالة لإظهار/إخفاء خيارات PDF و VIDEO
+        // تحسين تفاعل البطاقات
         function toggleChapter(element) {
-            // إغلاق جميع البطاقات الأخرى
+            // إغلاق جميع البطاقات الأخرى بسلاسة
             document.querySelectorAll('.chapter-card').forEach(card => {
-                if (card !== element) {
+                if (card !== element && card.classList.contains('active')) {
                     card.classList.remove('active');
+                    // إضافة تأثير إغلاق
+                    card.style.transform = 'translateY(0)';
                 }
             });
             
             // تبديل حالة البطاقة المحددة
+            const wasActive = element.classList.contains('active');
             element.classList.toggle('active');
+            
+            // إضافة تأثيرات بصرية
+            if (!wasActive) {
+                element.style.transform = 'translateY(-8px)';
+            } else {
+                element.style.transform = 'translateY(0)';
+            }
         }
+        
+        // إغلاق البطاقات عند النقر خارجها
+        document.addEventListener('click', function(event) {
+            const chapterCards = document.querySelectorAll('.chapter-card');
+            const clickedInsideCard = Array.from(chapterCards).some(card => 
+                card.contains(event.target)
+            );
+            
+            if (!clickedInsideCard) {
+                chapterCards.forEach(card => {
+                    card.classList.remove('active');
+                    card.style.transform = 'translateY(0)';
+                });
+            }
+        });
         
         // إضافة مستمعي الأحداث لأزرار PDF و VIDEO
         document.querySelectorAll('.resource-btn').forEach(button => {
@@ -640,7 +854,8 @@
                                    this.classList.contains('video-btn') ? 'VIDÉO' : 'EXAMEN';
                 
                 if (resourceType !== 'EXAMEN') {
-                    alert(`Téléchargement du ${resourceType} pour: ${chapterTitle}`);
+                    // تم إزالة alert واستبداله بفتح الرابط مباشرة
+                    // alert(`Téléchargement du ${resourceType} pour: ${chapterTitle}`);
                     // هنا يمكنك إضافة الكود لتحميل الملف أو فتحه
                 }
             });
