@@ -196,7 +196,7 @@
         
         .course-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             width: 100%;
             max-width: 800px;
         }
@@ -220,48 +220,34 @@
         .semester-container {
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            padding: 30px;
+            padding: 20px;
             margin: 20px 0;
             width: 100%;
-            max-width: 900px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
         }
         
         .semester-title {
             font-size: 1.8rem;
             color: #ffeb3b;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
-            position: relative;
-            padding-bottom: 15px;
         }
         
-        .semester-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ffeb3b, transparent);
-        }
-        
-        /* تحسينات بطاقات الدروس - التصميم الجديد */
+        /* ==================== تحسينات أطر الدروس فقط ==================== */
         .chapters-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
         
         .chapter-card {
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            border-radius: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
             padding: 0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             cursor: pointer;
             color: #333;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             position: relative;
             border: none;
@@ -272,189 +258,149 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #6a1b9a, #9c27b0, #e91e63);
+            background: linear-gradient(90deg, #4CAF50, #2196F3, #9C27B0);
             z-index: 1;
         }
         
         .chapter-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
         
         .chapter-card.active {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
         }
         
         .chapter-header {
-            padding: 20px;
-            background: linear-gradient(135deg, #6a1b9a, #9c27b0);
-            color: white;
+            padding: 18px 20px;
             position: relative;
         }
         
         .chapter-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            color: #2c3e50;
             margin: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: white;
         }
         
         .free-badge {
-            background-color: #ff4081;
+            background: linear-gradient(135deg, #FF5722, #FF9800);
             color: white;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 4px 10px;
+            border-radius: 12px;
             position: absolute;
-            top: -10px;
-            right: 20px;
-            box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 64, 129, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 64, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 64, 129, 0); }
+            top: 12px;
+            right: 15px;
+            box-shadow: 0 3px 6px rgba(255, 87, 34, 0.3);
         }
         
         .chapter-icon {
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: transform 0.3s ease;
-            color: white;
+            color: #2196F3;
         }
         
         .chapter-card.active .chapter-icon {
             transform: rotate(180deg);
+            color: #9C27B0;
         }
         
         .resources-options {
             display: none;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-top: 1px solid #eee;
-            animation: slideDown 0.3s ease-out;
+            padding: 15px 20px;
+            background: #f1f8ff;
+            border-top: 1px solid #e3f2fd;
+            animation: fadeInUp 0.3s ease;
         }
         
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .chapter-card.active .resources-options {
             display: flex;
+            gap: 10px;
             flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
         }
         
         .resource-btn {
             flex: 1;
-            min-width: 100px;
-            padding: 12px 15px;
+            min-width: 90px;
+            padding: 10px 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             color: white;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .resource-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .resource-btn:hover::before {
-            left: 100%;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
         }
         
         .pdf-btn {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #F44336, #D32F2F);
         }
         
         .video-btn {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #2196F3, #1976D2);
         }
         
         .exam-btn {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            background: linear-gradient(135deg, #4CAF50, #388E3C);
         }
         
         .resource-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
         }
         
-        .resource-btn:active {
-            transform: translateY(-1px);
+        .resource-btn i {
+            font-size: 1rem;
         }
+        /* ==================== نهاية تحسينات أطر الدروس ==================== */
         
         /* أنماط زر الامتحان النهائي */
         .module-exam-container {
             text-align: center;
-            margin: 40px 0;
-            padding: 20px;
-            width: 100%;
-            max-width: 900px;
+            margin: 30px 0;
         }
         
         .module-exam-btn {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            background-color: #9b59b6;
             color: white;
             border: none;
-            padding: 18px 40px;
-            font-size: 1.3rem;
-            border-radius: 15px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .module-exam-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .module-exam-btn:hover::before {
-            left: 100%;
+            gap: 10px;
         }
         
         .module-exam-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(155, 89, 182, 0.4);
+            background-color: #8e44ad;
+            transform: scale(1.05);
         }
         
         /* تحسينات للفوتر مع مواقع التواصل الاجتماعي */
@@ -591,26 +537,11 @@
             
             .chapters-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
             
             .main-content {
-                padding: 15px;
+                padding: 10px;
                 margin-top: 180px;
-            }
-            
-            .semester-container {
-                padding: 20px;
-            }
-            
-            .chapter-header {
-                padding: 15px;
-            }
-            
-            .resource-btn {
-                min-width: 90px;
-                padding: 10px 12px;
-                font-size: 0.9rem;
             }
             
             /* تعديلات الهاتف للفوتر */
@@ -622,6 +553,17 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.3rem;
+            }
+            
+            /* تعديلات الهاتف لأطر الدروس */
+            .chapter-card {
+                margin-bottom: 15px;
+            }
+            
+            .resource-btn {
+                min-width: 80px;
+                padding: 8px 12px;
+                font-size: 0.85rem;
             }
         }
         
@@ -673,10 +615,10 @@
             <h2 class="semester-title">Semestre 1</h2>
             
             <div class="chapters-grid">
-                <!-- الفصل 1 - مع علامة GRATUIT -->
+                <!-- الفصل 1 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
                     <div class="chapter-header">
-                        <div class="free-badge">GRATUIT</div>
+                        <span class="free-badge">GRATUIT</span>
                         <h3 class="chapter-title">
                             Prélèvements en biochimie partie 1
                             <i class="fas fa-chevron-down chapter-icon"></i>
@@ -799,22 +741,6 @@
             element.classList.toggle('active');
         }
         
-        // إضافة تأثيرات عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', function() {
-            // إضافة تأثير ظهور تدريجي للبطاقات
-            const chapterCards = document.querySelectorAll('.chapter-card');
-            chapterCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 + index * 150);
-            });
-        });
-        
         // إضافة مستمعي الأحداث لأزرار PDF و VIDEO
         document.querySelectorAll('.resource-btn').forEach(button => {
             button.addEventListener('click', function(event) {
@@ -824,14 +750,10 @@
                 const resourceType = this.classList.contains('pdf-btn') ? 'PDF' : 
                                    this.classList.contains('video-btn') ? 'VIDÉO' : 'EXAMEN';
                 
-                // إضافة تأثير نقر على الزر
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-                
                 if (resourceType !== 'EXAMEN') {
-                    // يمكنك إضافة أي كود إضافي هنا عند النقر على الزر
+                    // تم إزالة alert واستبداله بفتح الرابط مباشرة
+                    // alert(`Téléchargement du ${resourceType} pour: ${chapterTitle}`);
+                    // هنا يمكنك إضافة الكود لتحميل الملف أو فتحه
                 }
             });
         });
