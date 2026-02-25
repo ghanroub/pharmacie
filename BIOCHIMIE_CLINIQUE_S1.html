@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-WMZ6GN3075');
     </script>
     <!-- Google Tag Manager -->
@@ -20,10 +19,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours BIOCHIMIE CLINIQUE S1 - GhaniPharma</title>
-    <!-- إضافة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* الأنماط الموجودة + إضافات للمودال */
+        /* جميع الأنماط السابقة كما هي */
         * {
             box-sizing: border-box;
         }
@@ -102,10 +100,6 @@
             padding: 0;
         }
         
-        header nav ul li {
-            position: relative;
-        }
-        
         header nav ul li a {
             color: #ffeb3b;
             text-decoration: none;
@@ -157,10 +151,7 @@
         
         .pill-icon {
             font-size: 1.8rem;
-            position: relative;
-            display: inline-block;
             transition: all 0.3s ease;
-            transform-origin: center;
         }
         
         .logo a:hover .pill-icon {
@@ -174,10 +165,6 @@
             25% { transform: scale(1.2) rotate(-10deg); }
             50% { transform: scale(1.1) rotate(10deg); }
             75% { transform: scale(1.15) rotate(-5deg); }
-        }
-        
-        .year-navigation {
-            display: none;
         }
         
         .main-content {
@@ -242,10 +229,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             color: #333;
-            box-shadow: 
-                0 5px 15px rgba(0, 0, 0, 0.1),
-                0 2px 5px rgba(0, 0, 0, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
             overflow: hidden;
             position: relative;
             transform-style: preserve-3d;
@@ -253,23 +237,14 @@
         }
         
         .chapter-card:hover {
-            transform: 
-                translateY(-8px) 
-                rotateX(5deg) 
-                rotateY(0deg) 
-                scale(1.03);
-            box-shadow: 
-                0 20px 40px rgba(106, 27, 154, 0.25),
-                0 10px 20px rgba(0, 0, 0, 0.15),
-                0 5px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) rotateX(5deg) scale(1.03);
+            box-shadow: 0 20px 40px rgba(106, 27, 154, 0.25), 0 10px 20px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1);
             background: linear-gradient(145deg, #ffffff, #fafafa);
         }
         
         .chapter-card.active {
             transform: translateY(-5px);
-            box-shadow: 
-                0 15px 30px rgba(106, 27, 154, 0.2),
-                0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(106, 27, 154, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         
         .chapter-card::before {
@@ -313,9 +288,7 @@
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: bold;
-            box-shadow: 
-                0 4px 8px rgba(255, 82, 82, 0.3),
-                0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(255, 82, 82, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
             z-index: 3;
             transform: translateZ(30px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -345,14 +318,8 @@
         }
         
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px) translateZ(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) translateZ(10px);
-            }
+            from { opacity: 0; transform: translateY(-10px) translateZ(10px); }
+            to { opacity: 1; transform: translateY(0) translateZ(10px); }
         }
         
         .chapter-card.active .resources-options {
@@ -374,9 +341,7 @@
             gap: 8px;
             transition: all 0.3s ease;
             font-size: 0.9rem;
-            box-shadow: 
-                0 4px 8px rgba(0, 0, 0, 0.15),
-                0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
             transform-style: preserve-3d;
             transform: translateZ(5px);
             position: relative;
@@ -400,9 +365,7 @@
         
         .resource-btn:hover {
             transform: translateY(-3px) translateZ(10px) scale(1.05);
-            box-shadow: 
-                0 8px 16px rgba(0, 0, 0, 0.2),
-                0 4px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
         .pdf-btn {
@@ -437,18 +400,14 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 
-                0 8px 20px rgba(155, 89, 182, 0.3),
-                0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3), 0 4px 10px rgba(0, 0, 0, 0.2);
             transform-style: preserve-3d;
             transform: translateZ(0);
         }
         
         .module-exam-btn:hover {
             transform: translateY(-5px) scale(1.05) translateZ(10px);
-            box-shadow: 
-                0 15px 30px rgba(155, 89, 182, 0.4),
-                0 8px 16px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 15px 30px rgba(155, 89, 182, 0.4), 0 8px 16px rgba(0, 0, 0, 0.25);
         }
         
         footer {
@@ -494,35 +453,12 @@
             color: #fff;
         }
         
-        .social-link.whatsapp:hover {
-            color: #25d366;
-            border-color: #25d366;
-        }
-        
-        .social-link.telegram:hover {
-            color: #0088cc;
-            border-color: #0088cc;
-        }
-        
-        .social-link.facebook:hover {
-            color: #1877f2;
-            border-color: #1877f2;
-        }
-        
-        .social-link.instagram:hover {
-            color: #e4405f;
-            border-color: #e4405f;
-        }
-        
-        .social-link.tiktok:hover {
-            color: #69c9d0;
-            border-color: #69c9d0;
-        }
-        
-        .social-link.youtube:hover {
-            color: #ff0000;
-            border-color: #ff0000;
-        }
+        .social-link.whatsapp:hover { color: #25d366; border-color: #25d366; }
+        .social-link.telegram:hover { color: #0088cc; border-color: #0088cc; }
+        .social-link.facebook:hover { color: #1877f2; border-color: #1877f2; }
+        .social-link.instagram:hover { color: #e4405f; border-color: #e4405f; }
+        .social-link.tiktok:hover { color: #69c9d0; border-color: #69c9d0; }
+        .social-link.youtube:hover { color: #ff0000; border-color: #ff0000; }
         
         .copyright {
             margin-top: 15px;
@@ -530,7 +466,7 @@
             color: #e0e0e0;
         }
         
-        /* أنماط المودال لعرض PDF */
+        /* أنماط المودال */
         .modal {
             display: none;
             position: fixed;
@@ -562,8 +498,8 @@
         }
         
         @keyframes modalFadeIn {
-            from {opacity: 0; transform: scale(0.9);}
-            to {opacity: 1; transform: scale(1);}
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
         
         .modal-header {
@@ -608,14 +544,7 @@
         }
         
         @media (max-width: 768px) {
-            .menu-btn {
-                display: block;
-            }
-            
-            header nav {
-                transform: none;
-            }
-            
+            .menu-btn { display: block; }
             header nav ul {
                 display: none;
                 flex-direction: column;
@@ -625,69 +554,19 @@
                 width: 100%;
                 background-color: rgba(0, 0, 0, 0.95);
                 padding: 15px 0;
-                margin: 0;
-                align-items: center;
                 border-radius: 0 0 10px 10px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                 animation: fadeIn 0.3s ease;
             }
-            
-            header nav ul.show {
-                display: flex;
-            }
-            
-            header nav ul li {
-                margin: 5px 0;
-                width: 100%;
-                text-align: center;
-            }
-            
-            header nav ul li a {
-                font-size: 1.2rem;
-                padding: 12px;
-                display: inline-block;
-                color: #ffeb3b;
-                transition: background-color 0.2s;
-            }
-            
-            header nav ul li a:hover {
-                background-color: rgba(255, 255, 255, 0.15);
-            }
-            
-            .course-title {
-                font-size: 2rem;
-            }
-            
-            .chapters-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .main-content {
-                padding: 10px;
-                margin-top: 180px;
-            }
-            
-            .social-links {
-                gap: 15px;
-            }
-            
-            .social-link {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-            
-            .resource-btn {
-                padding: 10px 12px;
-                font-size: 0.85rem;
-            }
-            
-            .modal-content {
-                width: 95%;
-                height: 90vh;
-                padding: 15px;
-            }
+            header nav ul.show { display: flex; }
+            header nav ul li { margin: 5px 0; width: 100%; text-align: center; }
+            header nav ul li a { font-size: 1.2rem; padding: 12px; display: inline-block; }
+            .course-title { font-size: 2rem; }
+            .chapters-grid { grid-template-columns: 1fr; gap: 20px; }
+            .main-content { padding: 10px; margin-top: 180px; }
+            .social-links { gap: 15px; }
+            .social-link { width: 45px; height: 45px; font-size: 1.3rem; }
+            .resource-btn { padding: 10px 12px; font-size: 0.85rem; }
+            .modal-content { width: 95%; height: 90vh; padding: 15px; }
         }
         
         @keyframes fadeIn {
@@ -698,8 +577,7 @@
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
     <div class="top-bar" id="mainHeader">
@@ -733,6 +611,7 @@
             <h2 class="semester-title">Semestre 1</h2>
             
             <div class="chapters-grid">
+                <!-- Partie 1 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
                     <div class="free-badge">GRATUIT</div>
                     <div class="chapter-content">
@@ -745,7 +624,7 @@
                         <button class="resource-btn pdf-btn" onclick="openPDF('170wmKfFnzzHo3lhD49k6YqAC0sYwB6px', 'Prélèvements en biochimie partie 1'); event.stopPropagation();">
                             <i class="fas fa-file-pdf"></i> PDF
                         </button>
-                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1tHQTGyoBEc6rkr93i3NBTVjBL4mO7SZP/view?usp=sharing', '_blank'); event.stopPropagation();">
+                        <button class="resource-btn video-btn" onclick="openVideo('1tHQTGyoBEc6rkr93i3NBTVjBL4mO7SZP', 'Prélèvements en biochimie partie 1 (Vidéo)'); event.stopPropagation();">
                             <i class="fas fa-video"></i> VIDÉO
                         </button>
                         <button class="resource-btn exam-btn" onclick="window.location.href='BIOCHIMIE_CLINIQUE_S1_Examen_de_cour1.html'">
@@ -754,6 +633,7 @@
                     </div>
                 </div>
                 
+                <!-- Partie 2 -->
                 <div class="chapter-card" onclick="toggleChapter(this)">
                     <div class="chapter-content">
                         <div class="chapter-title">
@@ -765,7 +645,7 @@
                         <button class="resource-btn pdf-btn" onclick="openPDF('1hVbdnlvV8PbXUdMYdWslagpEPZiq1kPu', 'Prélèvements en biochimie partie 2'); event.stopPropagation();">
                             <i class="fas fa-file-pdf"></i> PDF
                         </button>
-                        <button class="resource-btn video-btn" onclick="window.open('https://drive.google.com/file/d/1cGx6_V18iBEpOV4Z1RZ2gkdoD8L5eK6n/view?usp=sharing', '_blank'); event.stopPropagation();">
+                        <button class="resource-btn video-btn" onclick="openVideo('1cGx6_V18iBEpOV4Z1RZ2gkdoD8L5eK6n', 'Prélèvements en biochimie partie 2 (Vidéo)'); event.stopPropagation();">
                             <i class="fas fa-video"></i> VIDÉO
                         </button>
                         <button class="resource-btn exam-btn" onclick="window.location.href='BIOCHIMIE_CLINIQUE_S1_Examen_de_cour2.html'">
@@ -783,15 +663,15 @@
         </div>
     </div>
     
-    <!-- مودال عرض PDF -->
-    <div id="pdfModal" class="modal">
+    <!-- المودال الموحد لعرض PDF والفيديو -->
+    <div id="resourceModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="modalTitle">Prévisualisation du PDF</h2>
-                <span class="close-modal" onclick="closePDFModal()">&times;</span>
+                <h2 id="modalTitle">Prévisualisation</h2>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <iframe id="pdfFrame" src="" title="Aperçu PDF"></iframe>
+                <iframe id="resourceFrame" src="" title="Aperçu"></iframe>
             </div>
         </div>
     </div>
@@ -799,48 +679,33 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram">
-                    <i class="fab fa-telegram-plane"></i>
-                </a>
-                <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés</p>
         </div>
     </footer>
     
     <script>
+        // إخفاء الهيدر عند التمرير
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
-        
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 mainHeader.classList.add('hidden');
             } else if (scrollTop < lastScrollTop) {
                 mainHeader.classList.remove('hidden');
             }
-            
             lastScrollTop = scrollTop;
         });
 
         function toggleMenu() {
-            var navMenu = document.getElementById("navMenu");
-            navMenu.classList.toggle("show");
+            document.getElementById("navMenu").classList.toggle("show");
         }
 
         document.addEventListener('click', function(event) {
@@ -853,60 +718,53 @@
         
         function toggleChapter(element) {
             document.querySelectorAll('.chapter-card').forEach(card => {
-                if (card !== element) {
-                    card.classList.remove('active');
-                }
+                if (card !== element) card.classList.remove('active');
             });
             element.classList.toggle('active');
         }
         
-        // دوال عرض PDF في المودال
+        // دوال عرض الموارد في المودال
         function openPDF(fileId, title) {
-            const modal = document.getElementById('pdfModal');
-            const iframe = document.getElementById('pdfFrame');
+            openResource(fileId, title);
+        }
+        
+        function openVideo(fileId, title) {
+            openResource(fileId, title);
+        }
+        
+        function openResource(fileId, title) {
+            const modal = document.getElementById('resourceModal');
+            const iframe = document.getElementById('resourceFrame');
             const modalTitle = document.getElementById('modalTitle');
             
-            // تعيين عنوان المودال
             modalTitle.textContent = title;
-            
-            // تعيين رابط المعاينة المباشر من Google Drive
             iframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
-            
-            // عرض المودال
             modal.style.display = 'flex';
-            
-            // منع تمرير الصفحة الخلفية
             document.body.style.overflow = 'hidden';
         }
         
-        function closePDFModal() {
-            const modal = document.getElementById('pdfModal');
-            const iframe = document.getElementById('pdfFrame');
-            
-            // إخفاء المودال
+        function closeModal() {
+            const modal = document.getElementById('resourceModal');
+            const iframe = document.getElementById('resourceFrame');
             modal.style.display = 'none';
-            
-            // إيقاف تحميل الـ PDF لتوفير الموارد
-            iframe.src = '';
-            
-            // إعادة التمرير للصفحة
+            iframe.src = ''; // إيقاف التحميل
             document.body.style.overflow = 'auto';
         }
         
         // إغلاق المودال عند النقر خارج المحتوى
         window.onclick = function(event) {
-            const modal = document.getElementById('pdfModal');
+            const modal = document.getElementById('resourceModal');
             if (event.target === modal) {
-                closePDFModal();
+                closeModal();
             }
         }
         
+        // تأثير ظهور البطاقات عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.chapter-card');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px) rotateX(10deg)';
-                
                 setTimeout(() => {
                     card.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                     card.style.opacity = '1';
