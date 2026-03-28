@@ -2,38 +2,65 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Test Explication</title>
+<title>Onchocercose</title>
 
 <style>
 body {
-    font-family: Arial;
-    margin: 30px;
-    line-height: 1.8;
+    font-family: "Segoe UI", Arial;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 30px;
 }
 
-/* الطريقة 2 */
+/* صندوق الدرس */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* العناوين */
+h2 {
+    color: #2c3e50;
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+}
+
+/* النص */
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* زر الشرح */
 .info-btn {
     cursor: pointer;
-    color: blue;
+    color: white;
+    background: #3498db;
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 12px;
     margin-left: 5px;
-    font-weight: bold;
 }
 
+/* نص الشرح */
 .info-text {
     display: none;
-    color: red;
-    margin-left: 10px;
+    background: #ecf0f1;
+    color: #c0392b;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 5px;
 }
 </style>
 
 <script>
 function toggleInfo(element) {
-    let text = element.nextElementSibling;
-    if (text.style.display === "none") {
-        text.style.display = "inline";
-    } else {
-        text.style.display = "none";
-    }
+    let text = element.parentElement.querySelector(".info-text");
+    text.style.display = (text.style.display === "block") ? "none" : "block";
 }
 </script>
 
@@ -41,39 +68,35 @@ function toggleInfo(element) {
 
 <body>
 
-<h2>🔹 الطريقة 1 (بدون JavaScript)</h2>
+<div class="card">
+
+<h2>Symptomatologie</h2>
 
 <p>
 Onchocercose sans manifestations cliniques 
-<details style="display:inline;">
-  <summary style="display:inline; cursor:pointer; color:blue;">ⓘ</summary>
-  <span style="color:red;">يعني المريض قد يكون مصاب دون ظهور أي أعراض</span>
-</details>
+<span class="info-btn" onclick="toggleInfo(this)">؟</span>
+<div class="info-text">المريض قد يكون حامل للطفيلي دون ظهور أعراض (خزان للعدوى)</div>
 </p>
 
 <p>
 Syndrome cutané : les onchodermites 
-<details style="display:inline;">
-  <summary style="display:inline; cursor:pointer; color:blue;">ⓘ</summary>
-  <span style="color:red;">إصابات جلدية ناتجة عن الطفيلي</span>
-</details>
+<span class="info-btn" onclick="toggleInfo(this)">؟</span>
+<div class="info-text">إصابات جلدية تسببها اليرقات داخل الجلد</div>
 </p>
 
-<hr>
-
-<h2>🔹 الطريقة 2 (باستعمال JavaScript)</h2>
+<p>
+Syndrome oculaire : kératites, iritis, choriorétinites 
+<span class="info-btn" onclick="toggleInfo(this)">؟</span>
+<div class="info-text">التهابات تصيب العين وقد تؤدي إلى العمى</div>
+</p>
 
 <p>
 Prurit 
-<span class="info-btn" onclick="toggleInfo(this)">ⓘ</span>
-<span class="info-text">حكة شديدة</span>
+<span class="info-btn" onclick="toggleInfo(this)">؟</span>
+<div class="info-text">حكة شديدة بسبب تفاعل الجسم مع الطفيلي</div>
 </p>
 
-<p>
-Urticaire 
-<span class="info-btn" onclick="toggleInfo(this)">ⓘ</span>
-<span class="info-text">حساسية جلدية (شرى)</span>
-</p>
+</div>
 
 </body>
 </html>
