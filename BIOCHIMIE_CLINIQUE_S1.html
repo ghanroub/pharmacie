@@ -1,102 +1,338 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Onchocercose</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Cours de Pharmacie : Onchocercose</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-    font-family: "Segoe UI", Arial;
-    background: #f5f7fa;
-    margin: 0;
-    padding: 30px;
-}
+        body {
+            background: #f0f7ff;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 2rem 1rem;
+            color: #1a2c3e;
+        }
 
-/* صندوق الدرس */
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    max-width: 800px;
-    margin: auto;
-}
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-/* العناوين */
-h2 {
-    color: #2c3e50;
-    border-left: 5px solid #3498db;
-    padding-left: 10px;
-}
+        /* Carte principale */
+        .course-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
 
-/* النص */
-p {
-    font-size: 16px;
-    color: #333;
-}
+        .course-header {
+            background: linear-gradient(135deg, #0b3b4f 0%, #1b5e6e 100%);
+            color: white;
+            padding: 1.8rem 2rem;
+        }
 
-/* زر الشرح */
-.info-btn {
-    cursor: pointer;
-    color: white;
-    background: #3498db;
-    border-radius: 50%;
-    padding: 3px 8px;
-    font-size: 12px;
-    margin-left: 5px;
-}
+        .course-header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
 
-/* نص الشرح */
-.info-text {
-    display: none;
-    background: #ecf0f1;
-    color: #c0392b;
-    padding: 8px;
-    border-radius: 8px;
-    margin-top: 5px;
-}
-</style>
+        .course-header p {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
 
-<script>
-function toggleInfo(element) {
-    let text = element.parentElement.querySelector(".info-text");
-    text.style.display = (text.style.display === "block") ? "none" : "block";
-}
-</script>
+        .course-content {
+            padding: 2rem;
+        }
 
+        /* Style des sections */
+        .section {
+            margin-bottom: 2.2rem;
+            border-left: 5px solid #2c9b77;
+            padding-left: 1.2rem;
+        }
+
+        .section h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #1b5e6e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 1.2rem 0 0.6rem 0;
+        }
+
+        /* Éléments interactifs */
+        .term-group {
+            margin: 0.8rem 0;
+            line-height: 1.5;
+        }
+
+        .term-text {
+            display: inline;
+            font-size: 1rem;
+        }
+
+        /* Bouton d'explication */
+        .explain-btn {
+            background: #eef2fa;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 8px;
+            color: #0f5b7a;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .explain-btn:hover {
+            background: #d4e0f0;
+            transform: scale(1.02);
+        }
+
+        /* Bloc d'explication arabe */
+        .explanation-ar {
+            display: none;
+            background: #fff8ed;
+            border-right: 4px solid #d4a373;
+            padding: 0.8rem 1rem;
+            margin: 0.6rem 0 0.6rem 1rem;
+            border-radius: 12px;
+            font-family: 'Segoe UI', 'Tahoma', 'Noto Sans Arabic', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #3b2a1f;
+            direction: rtl;
+            text-align: right;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .explanation-ar.visible {
+            display: block;
+        }
+
+        /* Liste des symptômes */
+        ul {
+            margin: 0.5rem 0 0.5rem 1.8rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            line-height: 1.45;
+        }
+
+        .badge {
+            background: #eef2fa;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1b5e6e;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            height: 1px;
+            background: #e0e9f0;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6c8b9b;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e9f0;
+        }
+
+        @media (max-width: 680px) {
+            .course-content {
+                padding: 1.5rem;
+            }
+            .section h2 {
+                font-size: 1.4rem;
+            }
+            .explain-btn {
+                width: 24px;
+                height: 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+<div class="container">
+    <div class="course-card">
+        <div class="course-header">
+            <h1>📘 Parasitologie médicale<br><span style="font-size:1.4rem;">Onchocercose (cécité des rivières)</span></h1>
+            <p>Synthèse clinique et épidémiologique – support pharmacie</p>
+        </div>
+        <div class="course-content">
 
-<div class="card">
+            <!-- Section intro -->
+            <div class="section">
+                <h2>📌 2 · Symptomatologie</h2>
+                <div class="term-group">
+                    <span class="term-text"><strong>Onchocercose sans manifestations cliniques</strong></span>
+                    <button class="explain-btn" data-explanation="أي يمكن أن يكون الشخص مصابًا دون ظهور أعراض، ويُعتبر خزانًا للطفيلي">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text">Lorsqu’elle se manifeste, l’onchocercose s’exprime cliniquement par <strong>trois syndromes</strong> :</span>
+                    <button class="explain-btn" data-explanation="عند ظهور الأعراض تتجلى في ثلاث متلازمات">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <ul style="margin-top: 10px;">
+                    <li><strong>• Le syndrome cutané</strong> : les onchodermites <button class="explain-btn" data-explanation="إصابات جلدية ناتجة عن الطفيلي">ⓘ</button><div class="explanation-ar"></div></li>
+                    <li><strong>• Le syndrome kystique</strong> : les onchocercomes <button class="explain-btn" data-explanation="تشكّل عقد/أكياس تحتوي على الديدان">ⓘ</button><div class="explanation-ar"></div></li>
+                    <li><strong>• Le syndrome oculaire</strong> : les kératites, iritis et choriorétinites <button class="explain-btn" data-explanation="التهابات تصيب أجزاء مختلفة من العين وقد تؤدي للعمى">ⓘ</button><div class="explanation-ar"></div></li>
+                </ul>
+            </div>
 
-<h2>Symptomatologie</h2>
+            <!-- Syndrome cutané détaillé -->
+            <div class="section">
+                <h2>🩺 Syndrome cutané</h2>
+                <div class="term-group">
+                    <span class="term-text"><strong>Prurit</strong>, urticaire, dermatose papulo-vésiculo-pustuleuse, lésions de grattage</span>
+                    <button class="explain-btn" data-explanation="حكة شديدة، شرى/حساسية جلدية، طفح جلدي يحتوي على حطاطات وحويصلات وبثور، آثار الحك">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text"><em>(surtout au niveau des lombes, des fesses et des cuisses)</em></span>
+                    <button class="explain-btn" data-explanation="خصوصًا أسفل الظهر والأرداف والفخذين">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text">À la longue, la peau peut s’épaissir donnant l’aspect de <strong>« peau de lézard »</strong></span>
+                    <button class="explain-btn" data-explanation="مع مرور الوقت، يثخن الجلد ليعطي مظهر « جلد السحلية »">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text">ou au contraire s’atrophier et se plisser.</span>
+                    <button class="explain-btn" data-explanation="أو تصبح رقيقة ومتجعدة">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text">Dans les foyers d’hyperendémie, on remarque chez les sujets les plus âgés une <strong>dépigmentation bilatérale des crêtes tibiales</strong> (pseudo vitiligo onchocerquien).</span>
+                    <button class="explain-btn" data-explanation="فقدان لون الجلد في الجهتين على مستوى عظم الساق – يشبه البهاق لكن سببه الطفيلي">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+            </div>
 
-<p>
-Onchocercose sans manifestations cliniques 
-<span class="info-btn" onclick="toggleInfo(this)">؟</span>
-<div class="info-text">المريض قد يكون حامل للطفيلي دون ظهور أعراض (خزان للعدوى)</div>
-</p>
+            <!-- Syndrome kystique -->
+            <div class="section">
+                <h2>🧬 Syndrome kystique</h2>
+                <div class="term-group">
+                    <span class="term-text">Les <strong>onchocercomes</strong> (nodules onchocerquiens) traduisent l’enkystement de plusieurs filaires adultes dans une capsule externe fibreuse ; ils sont indolores, durs, fibreux, roulant sous le doigt.</span>
+                    <button class="explain-btn" data-explanation="عقد جلدية، تكوّن كيس من عدة ديدان بالغة داخل غلاف ليفي؛ غير مؤلمة، قاسية، تتحرك تحت الأصابع عند لمسها">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text">Ils sont perçus là où les plans osseux sont superficiels <em>(surtout en regard du trochanter, de la crête iliaque et du gril costal en Afrique, dans la région cervico-céphalique en Amérique)</em>.</span>
+                    <button class="explain-btn" data-explanation="تظهر في المناطق التي يكون فيها العظم قريبًا من الجلد: الورك، الحوض، الأضلاع (أفريقيا) أو الرأس والرقبة (أمريكا)">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+            </div>
 
-<p>
-Syndrome cutané : les onchodermites 
-<span class="info-btn" onclick="toggleInfo(this)">؟</span>
-<div class="info-text">إصابات جلدية تسببها اليرقات داخل الجلد</div>
-</p>
+            <!-- Syndrome oculaire -->
+            <div class="section">
+                <h2>👁️ Syndrome oculaire</h2>
+                <div class="term-group">
+                    <span class="term-text">Les manifestations oculaires apparaissent après <strong>10 à 15 ans d’évolution</strong>.</span>
+                    <button class="explain-btn" data-explanation="تظهر بعد سنوات طويلة من الإصابة (10-15 سنة)">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+                <div class="term-group">
+                    <span class="term-text">Elles sont liées à l’action directe des microfilaires ou aux réactions de l’hôte. Les lésions sont bilatérales, aboutissant à la cécité.</span>
+                    <button class="explain-btn" data-explanation="بسبب تأثير اليرقات مباشرة أو بسبب رد فعل الجهاز المناعي. تصيب العينين معًا وقد تنتهي بالعمى">ⓘ</button>
+                    <div class="explanation-ar"></div>
+                </div>
+            </div>
 
-<p>
-Syndrome oculaire : kératites, iritis, choriorétinites 
-<span class="info-btn" onclick="toggleInfo(this)">؟</span>
-<div class="info-text">التهابات تصيب العين وقد تؤدي إلى العمى</div>
-</p>
-
-<p>
-Prurit 
-<span class="info-btn" onclick="toggleInfo(this)">؟</span>
-<div class="info-text">حكة شديدة بسبب تفاعل الجسم مع الطفيلي</div>
-</p>
-
+            <!-- Note hyperendémie / rappel dépigmentation -->
+            <hr>
+            <div class="term-group" style="background:#f8f9fc; padding:0.8rem; border-radius:18px;">
+                <span class="term-text">📌 Dans les foyers d’hyperendémie (zones de transmission intense), on observe souvent une dépigmentation bilatérale des crêtes tibiales chez les sujets âgés, pathognomonique de l’onchocercose avancée.</span>
+                <button class="explain-btn" data-explanation="مناطق الانتشار الشديد: يُلاحظ فقدان تصبغ جلدي ثنائي على عظمة الساق، علامة مميزة للمرض المزمن">ⓘ</button>
+                <div class="explanation-ar"></div>
+            </div>
+        </div>
+        <footer>
+            📖 Cliquez sur les icônes <span style="background:#eef2fa; padding:0 6px; border-radius:40px;">ⓘ</span> pour afficher/masquer les explications en arabe.
+        </footer>
+    </div>
 </div>
 
+<script>
+    (function() {
+        // Gestionnaire pour tous les boutons d'explication
+        const buttons = document.querySelectorAll('.explain-btn');
+        
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function(event) {
+                event.stopPropagation();
+                // Le div cible est le .explanation-ar suivant immédiatement le bouton
+                let explanationDiv = this.nextElementSibling;
+                // Vérifier que c'est bien un div avec la classe .explanation-ar
+                if (explanationDiv && explanationDiv.classList.contains('explanation-ar')) {
+                    const explanationText = this.getAttribute('data-explanation');
+                    // Si le div est vide ou n'a pas encore le texte, on le remplit une fois
+                    if (explanationDiv.innerText.trim() === '') {
+                        explanationDiv.innerText = explanationText;
+                    }
+                    // Toggle la classe visible
+                    explanationDiv.classList.toggle('visible');
+                } else {
+                    // Sécurité : si le bouton n'est pas suivi du bon élément, on crée (fallback)
+                    const newDiv = document.createElement('div');
+                    newDiv.className = 'explanation-ar visible';
+                    newDiv.innerText = this.getAttribute('data-explanation');
+                    this.parentNode.insertBefore(newDiv, this.nextSibling);
+                }
+            });
+        });
+        
+        // Optionnel : pré-remplir les divs d'explication pour éviter de le faire au premier clic
+        // (mais le code ci-dessus le fait au premier clic, ce qui est parfait)
+        // On peut aussi pré-remplir immédiatement pour être plus propre :
+        const allExplanationDivs = document.querySelectorAll('.explanation-ar');
+        allExplanationDivs.forEach(div => {
+            // chercher le bouton précédent
+            const previousBtn = div.previousElementSibling;
+            if (previousBtn && previousBtn.classList.contains('explain-btn') && previousBtn.getAttribute('data-explanation')) {
+                if (div.innerText.trim() === '') {
+                    div.innerText = previousBtn.getAttribute('data-explanation');
+                }
+            }
+        });
+    })();
+</script>
 </body>
 </html>
