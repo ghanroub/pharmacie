@@ -1,442 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Cours de Pharmacie – Onchocercose (long format)</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<title>Pharmacie - Test</title>
 
-        body {
-            background: #eef2f7;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            color: #1a2c3e;
-            line-height: 1.5;
-        }
+<style>
+body {
+    font-family: Arial;
+    background: #f5f7fa;
+    padding: 30px;
+}
 
-        /* Layout principal */
-        .layout {
-            display: flex;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem;
-            gap: 1.5rem;
-        }
+/* صندوق */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-        /* SOMMAIRE (sticky) */
-        .toc {
-            flex: 0 0 260px;
-            background: white;
-            border-radius: 24px;
-            padding: 1.2rem;
-            position: sticky;
-            top: 1rem;
-            height: fit-content;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            border: 1px solid #e2edf2;
-        }
-        .toc h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #1b5e6e;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .toc ul {
-            list-style: none;
-            padding: 0;
-        }
-        .toc li {
-            margin: 0.7rem 0;
-        }
-        .toc a {
-            text-decoration: none;
-            color: #2c5f6e;
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: block;
-            padding: 0.3rem 0.5rem;
-            border-radius: 12px;
-            transition: 0.2s;
-        }
-        .toc a:hover {
-            background: #e0f0f5;
-            color: #0a4b5e;
-        }
-        .toc input {
-            width: 100%;
-            padding: 0.6rem;
-            border: 1px solid #cbdbe2;
-            border-radius: 40px;
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-        }
+h2 {
+    color: #2c3e50;
+}
 
-        /* Contenu principal */
-        .main-content {
-            flex: 1;
-            background: white;
-            border-radius: 28px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-        .course-header {
-            background: linear-gradient(135deg, #0f4c5f, #1f6e7a);
-            color: white;
-            padding: 1.8rem 2rem;
-        }
-        .course-header h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        .course-body {
-            padding: 2rem;
-        }
+/* زر الشرح */
+.info-btn {
+    cursor: pointer;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    margin-left: 5px;
+}
 
-        /* SECTION ACCORDÉON */
-        .accordion-section {
-            margin-bottom: 1.2rem;
-            border: 1px solid #e2edf2;
-            border-radius: 20px;
-            background: #ffffff;
-            transition: 0.2s;
-        }
-        .accordion-header {
-            background: #f9fcfd;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 20px;
-            user-select: none;
-            color: #1b5e6e;
-        }
-        .accordion-header:hover {
-            background: #eef6f9;
-        }
-        .accordion-icon {
-            font-size: 1.4rem;
-            transition: transform 0.2s;
-        }
-        .accordion-section.collapsed .accordion-icon {
-            transform: rotate(-90deg);
-        }
-        .accordion-content {
-            padding: 0 1.5rem 1.2rem 1.5rem;
-            border-top: 1px solid #e9f0f3;
-            display: block;
-        }
-        .accordion-section.collapsed .accordion-content {
-            display: none;
-        }
+/* نص الشرح */
+.info-text {
+    display: none;
+    background: #ecf0f1;
+    padding: 8px;
+    border-radius: 8px;
+    color: #c0392b;
+    margin-top: 5px;
+}
 
-        /* Blocs d'explication arabe */
-        .term-group {
-            margin: 1rem 0;
-            line-height: 1.5;
-        }
-        .explain-btn {
-            background: #eef2fa;
-            border: none;
-            font-size: 1rem;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            cursor: pointer;
-            margin-left: 8px;
-            color: #0f5b7a;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
-        .explanation-ar {
-            display: none;
-            background: #fff8ed;
-            border-right: 4px solid #d4a373;
-            padding: 0.7rem 1rem;
-            margin: 0.6rem 0 0 1rem;
-            border-radius: 14px;
-            direction: rtl;
-            text-align: right;
-            font-size: 0.9rem;
-            color: #3b2a1f;
-        }
-        .explanation-ar.visible {
-            display: block;
-        }
-        ul, .simple-text {
-            margin: 0.5rem 0 0.5rem 1.5rem;
-        }
-        hr {
-            margin: 1rem 0;
-        }
-        .badge {
-            background: #e0f0f5;
-            padding: 0.2rem 0.6rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-        @media (max-width: 780px) {
-            .layout {
-                flex-direction: column;
-            }
-            .toc {
-                position: relative;
-                width: 100%;
-                max-height: none;
-            }
-        }
-        .search-highlight {
-            background-color: #fff3bf;
-            border-radius: 8px;
-        }
-        footer {
-            text-align: center;
-            font-size: 0.75rem;
-            color: #6c8b9b;
-            padding: 1.5rem;
-            border-top: 1px solid #e2edf2;
-        }
-    </style>
-</head>
-<body>
-<div class="layout">
-    <!-- SOMMAIRE avec recherche -->
-    <aside class="toc">
-        <h3>📚 Sommaire</h3>
-        <input type="text" id="searchInput" placeholder="🔍 Rechercher dans le cours..." autocomplete="off">
-        <ul id="tocList">
-            <li><a href="#intro-sympto">2. Symptomatologie générale</a></li>
-            <li><a href="#syndrome-cutane">Syndrome cutané</a></li>
-            <li><a href="#syndrome-kystique">Syndrome kystique</a></li>
-            <li><a href="#syndrome-oculaire">Syndrome oculaire</a></li>
-            <li><a href="#hyperendemie">Zones d’hyperendémie</a></li>
-            <li><a href="#prise-en-charge">Prise en charge (rappel)</a></li>
-        </ul>
-    </aside>
-
-    <main class="main-content">
-        <div class="course-header">
-            <h1>📘 Onchocercose (cécité des rivières)<br><span style="font-size: 1rem;">Cours long – Pharmacie & parasitologie</span></h1>
-        </div>
-        <div class="course-body" id="courseBody">
-
-            <!-- SECTION 1 : intro -->
-            <div id="intro-sympto" class="accordion-section">
-                <div class="accordion-header">
-                    <span>📌 2 · Symptomatologie – généralités</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="term-group">
-                        <span><strong>Onchocercose sans manifestations cliniques</strong></span>
-                        <button class="explain-btn" data-explanation="أي يمكن أن يكون الشخص مصابًا دون ظهور أعراض، ويُعتبر خزانًا للطفيلي">ⓘ</button>
-                        <div class="explanation-ar"></div>
-                    </div>
-                    <div class="term-group">
-                        <span>Lorsqu’elle se manifeste, l’onchocercose s’exprime par <strong>trois syndromes</strong> :</span>
-                        <button class="explain-btn" data-explanation="عند ظهور الأعراض تتجلى في ثلاث متلازمات">ⓘ</button>
-                        <div class="explanation-ar"></div>
-                    </div>
-                    <ul>
-                        <li>Syndrome cutané (onchodermites) <button class="explain-btn" data-explanation="إصابات جلدية ناتجة عن الطفيلي">ⓘ</button><div class="explanation-ar"></div></li>
-                        <li>Syndrome kystique (onchocercomes) <button class="explain-btn" data-explanation="تشكّل عقد/أكياس تحتوي على الديدان">ⓘ</button><div class="explanation-ar"></div></li>
-                        <li>Syndrome oculaire (kératites, iritis, choriorétinites) <button class="explain-btn" data-explanation="التهابات تصيب أجزاء مختلفة من العين وقد تؤدي للعمى">ⓘ</button><div class="explanation-ar"></div></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- SECTION 2 : cutané (longue) -->
-            <div id="syndrome-cutane" class="accordion-section">
-                <div class="accordion-header">
-                    <span>🩺 Syndrome cutané (détail)</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="term-group"><span><strong>Prurit</strong>, urticaire, dermatose papulo-vésiculo-pustuleuse, lésions de grattage</span><button class="explain-btn" data-explanation="حكة شديدة، شرى، طفح جلدي مع حطاطات وحويصلات وبثور، آثار الحك">ⓘ</button><div class="explanation-ar"></div></div>
-                    <div class="term-group"><span><em>(surtout au niveau des lombes, fesses et cuisses)</em></span><button class="explain-btn" data-explanation="خصوصًا أسفل الظهر والأرداف والفخذين">ⓘ</button><div class="explanation-ar"></div></div>
-                    <div class="term-group"><span>À la longue : épaississement → <strong>peau de lézard</strong></span><button class="explain-btn" data-explanation="مع مرور الوقت، يثخن الجلد ليعطي مظهر جلد السحلية">ⓘ</button><div class="explanation-ar"></div></div>
-                    <div class="term-group"><span>Ou atrophie et plissement cutané.</span><button class="explain-btn" data-explanation="أو تصبح رقيقة ومتجعدة">ⓘ</button><div class="explanation-ar"></div></div>
-                    <div class="term-group"><span><strong>Dépigmentation bilatérale des crêtes tibiales</strong> (pseudo vitiligo onchocerquien) chez les sujets âgés en zone hyperendémique.</span><button class="explain-btn" data-explanation="فقدان لون الجلد في الجهتين على عظمة الساق – يشبه البهاق لكن سببه الطفيلي">ⓘ</button><div class="explanation-ar"></div></div>
-                    <!-- ajout d'un exemple de texte long pour simuler un cours dense -->
-                    <p class="simple-text">📖 <strong>Physiopathologie cutanée :</strong> Les microfilaires migrent dans le derme, provoquant une inflammation chronique. La destruction des fibres élastiques et collagène mène à l’atrophie ou la lichénification.</p>
-                </div>
-            </div>
-
-            <!-- SECTION 3 : kystique -->
-            <div id="syndrome-kystique" class="accordion-section">
-                <div class="accordion-header">
-                    <span>🧬 Syndrome kystique (onchocercomes)</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="term-group"><span>Nodules indolores, durs, fibreux, roulant sous le doigt – enkystement de filaires adultes.</span><button class="explain-btn" data-explanation="عقد جلدية، تكوّن كيس من ديدان بالغة، غير مؤلمة، قاسية، تتحرك تحت الأصابع">ⓘ</button><div class="explanation-ar"></div></div>
-                    <div class="term-group"><span>Localisations selon les continents : trochanter, crête iliaque, gril costal (Afrique) ; région cervico-céphalique (Amérique).</span><button class="explain-btn" data-explanation="تظهر حيث العظم قريب من الجلد: الورك، الحوض، الأضلاع في أفريقيا، الرأس والرقبة في أمريكا">ⓘ</button><div class="explanation-ar"></div></div>
-                </div>
-            </div>
-
-            <!-- SECTION 4 : oculaire -->
-            <div id="syndrome-oculaire" class="accordion-section">
-                <div class="accordion-header">
-                    <span>👁️ Syndrome oculaire</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="term-group"><span>Apparition après <strong>10–15 ans</strong> d’évolution.</span><button class="explain-btn" data-explanation="تظهر بعد سنوات طويلة من الإصابة (10-15 سنة)">ⓘ</button><div class="explanation-ar"></div></div>
-                    <div class="term-group"><span>Lésions bilatérales liées aux microfilaires ou aux réactions immunitaires, aboutissant à la cécité.</span><button class="explain-btn" data-explanation="بسبب تأثير اليرقات مباشرة أو تفاعل المناعة، تصيب العينين معًا وقد تؤدي للعمى">ⓘ</button><div class="explanation-ar"></div></div>
-                    <p class="simple-text">🔬 <strong>Signes précoces :</strong> kératite ponctuée, puis sclérosante, iridocyclite, choriorétinite.</p>
-                </div>
-            </div>
-
-            <!-- SECTION 5 : hyperendémie -->
-            <div id="hyperendemie" class="accordion-section">
-                <div class="accordion-header">
-                    <span>🌍 Foyers d’hyperendémie & dépigmentation</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="term-group"><span>Dans les zones de transmission intense (hyperendémie) : dépigmentation bilatérale des crêtes tibiales très évocatrice.</span><button class="explain-btn" data-explanation="مناطق الانتشار الشديد: فقدان تصبغ ثنائي على عظمة الساق، علامة مميزة">ⓘ</button><div class="explanation-ar"></div></div>
-                    <p class="simple-text">Exemples de pays : Cameroun, RDC, Yémen, certaines régions d’Amérique centrale. La charge parasitaire est très élevée.</p>
-                </div>
-            </div>
-
-            <!-- SECTION 6 : traitement (ajout pour longueur) -->
-            <div id="prise-en-charge" class="accordion-section">
-                <div class="accordion-header">
-                    <span>💊 Prise en charge thérapeutique</span>
-                    <span class="accordion-icon">▼</span>
-                </div>
-                <div class="accordion-content">
-                    <p><strong>Ivermectine</strong> (Mectizan®) : traitement de masse annuel, efficace sur les microfilaires. Nodules : exérèse chirurgicale possible. Suivi ophtalmologique indispensable.</p>
-                    <div class="term-group"><span>Doxycycline : cible <em>Wolbachia</em>, stérilise les femelles adultes.</span><button class="explain-btn" data-explanation="دوكسي سايكلين يستهدف البكتيريا المتكافلة، يعقم الديدان الأنثوية">ⓘ</button><div class="explanation-ar"></div></div>
-                </div>
-            </div>
-            <footer>📖 Cliquez sur ⓘ pour voir l’explication en arabe – Les sections se replient pour alléger la lecture des longs cours.</footer>
-        </div>
-    </main>
-</div>
+/* توسيط الرسم */
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+</style>
 
 <script>
-    (function() {
-        // 1) GESTION ACCORDÉON : toutes les sections .accordion-section
-        const sections = document.querySelectorAll('.accordion-section');
-        sections.forEach(section => {
-            const header = section.querySelector('.accordion-header');
-            if (!header) return;
-            // par défaut : toutes dépliées ? on peut laisser ouvertes, mais l'utilisateur peut fermer
-            // ajouter la classe collapsed si on veut les fermer au départ (ici on les garde ouvertes)
-            // pour les longs cours, mieux vaut toutes ouvertes, l'utilisateur replie ce qu'il veut
-            header.addEventListener('click', (e) => {
-                e.stopPropagation();
-                section.classList.toggle('collapsed');
-            });
-        });
-
-        // 2) EXPLICATIONS ARABE (toggle)
-        const buttons = document.querySelectorAll('.explain-btn');
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function(event) {
-                event.stopPropagation();
-                let explanationDiv = this.nextElementSibling;
-                if (explanationDiv && explanationDiv.classList.contains('explanation-ar')) {
-                    if (explanationDiv.innerText.trim() === '') {
-                        explanationDiv.innerText = this.getAttribute('data-explanation') || '';
-                    }
-                    explanationDiv.classList.toggle('visible');
-                } else {
-                    // fallback : créer
-                    const newDiv = document.createElement('div');
-                    newDiv.className = 'explanation-ar visible';
-                    newDiv.innerText = this.getAttribute('data-explanation');
-                    this.parentNode.insertBefore(newDiv, this.nextSibling);
-                }
-            });
-            // pré-remplir les divs vides
-            const nextDiv = btn.nextElementSibling;
-            if (nextDiv && nextDiv.classList && nextDiv.classList.contains('explanation-ar') && nextDiv.innerText.trim() === '') {
-                nextDiv.innerText = btn.getAttribute('data-explanation') || '';
-            }
-        });
-
-        // 3) RECHERCHE EN TEMPS RÉEL (filtre les sections et surligne)
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                const query = this.value.trim().toLowerCase();
-                const allContents = document.querySelectorAll('.accordion-content');
-                // Retirer les surlignages précédents
-                document.querySelectorAll('.search-highlight').forEach(el => {
-                    const parent = el.parentNode;
-                    parent.replaceChild(document.createTextNode(el.textContent), el);
-                    parent.normalize();
-                });
-                if (query === '') {
-                    // réafficher toutes les sections (si cachées par filtre)
-                    sections.forEach(sec => sec.style.display = '');
-                    return;
-                }
-                // Parcourir chaque section
-                sections.forEach(section => {
-                    const contentDiv = section.querySelector('.accordion-content');
-                    if (!contentDiv) return;
-                    const text = contentDiv.innerText.toLowerCase();
-                    if (text.includes(query)) {
-                        section.style.display = '';
-                        // Surligner les occurrences dans le content (simple)
-                        highlightText(contentDiv, query);
-                    } else {
-                        section.style.display = 'none';
-                    }
-                });
-            });
-        }
-
-        function highlightText(container, term) {
-            const regex = new RegExp(`(${term})`, 'gi');
-            const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
-            const nodesToReplace = [];
-            while(walker.nextNode()) {
-                const node = walker.currentNode;
-                if (node.parentElement && node.parentElement.classList && node.parentElement.classList.contains('search-highlight')) continue;
-                if (node.textContent && regex.test(node.textContent)) {
-                    nodesToReplace.push(node);
-                }
-            }
-            nodesToReplace.forEach(node => {
-                const span = document.createElement('span');
-                span.innerHTML = node.textContent.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                node.parentNode.replaceChild(span, node);
-            });
-        }
-
-        // ancres smooth scroll
-        document.querySelectorAll('.toc a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Option : déplier la section si elle est repliée
-                    if (targetSection.classList.contains('collapsed')) {
-                        targetSection.classList.remove('collapsed');
-                    }
-                }
-            });
-        });
-    })();
+function toggleInfo(el) {
+    let text = el.parentElement.querySelector(".info-text");
+    text.style.display = (text.style.display === "block") ? "none" : "block";
+}
 </script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Structure chimique</h2>
+
+<p>
+Le benzène est un composé aromatique 
+<span class="info-btn" onclick="toggleInfo(this)">ⓘ</span>
+<div class="info-text">مركب عضوي حلقي مكوّن من 6 ذرات كربون</div>
+</p>
+
+<div class="center">
+
+<!-- الشكل السداسي -->
+<svg width="200" height="200">
+
+  <!-- الحلقة -->
+  <polygon points="100,20 170,60 170,140 100,180 30,140 30,60"
+           style="fill:none;stroke:black;stroke-width:2"/>
+
+  <!-- روابط داخلية (تقريب للبنزين) -->
+  <line x1="100" y1="20" x2="170" y2="140"
+        style="stroke:black;stroke-width:2"/>
+
+  <line x1="170" y1="60" x2="30" y2="140"
+        style="stroke:black;stroke-width:2"/>
+
+  <line x1="30" y1="60" x2="100" y2="180"
+        style="stroke:black;stroke-width:2"/>
+
+</svg>
+
+</div>
+
+</div>
+
 </body>
 </html>
