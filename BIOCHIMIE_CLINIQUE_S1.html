@@ -2,100 +2,159 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Pharmacie - Test</title>
+<title>Tétracyclines</title>
 
 <style>
 body {
     font-family: Arial;
-    background: #f5f7fa;
-    padding: 30px;
+    background: #f5f5f5;
+    padding: 20px;
 }
 
-/* صندوق */
-.card {
+.container {
     background: white;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 600px;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 900px;
     margin: auto;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 h2 {
-    color: #2c3e50;
+    color: red;
 }
 
-/* زر الشرح */
-.info-btn {
-    cursor: pointer;
-    background: #3498db;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 7px;
-    font-size: 12px;
-    margin-left: 5px;
+ul {
+    line-height: 1.8;
 }
 
-/* نص الشرح */
-.info-text {
-    display: none;
-    background: #ecf0f1;
-    padding: 8px;
-    border-radius: 8px;
-    color: #c0392b;
-    margin-top: 5px;
-}
-
-/* توسيط الرسم */
-.center {
+/* الرسم */
+.svg-box {
     text-align: center;
+    margin: 20px 0;
+}
+
+/* الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
-</style>
 
-<script>
-function toggleInfo(el) {
-    let text = el.parentElement.querySelector(".info-text");
-    text.style.display = (text.style.display === "block") ? "none" : "block";
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
 }
-</script>
+
+th {
+    background: #eee;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.blue {
+    color: blue;
+}
+</style>
 
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
 
-<h2>Structure chimique</h2>
+<h2>1- Définition et structure :</h2>
 
-<p>
-Le benzène est un composé aromatique 
-<span class="info-btn" onclick="toggleInfo(this)">ⓘ</span>
-<div class="info-text">مركب عضوي حلقي مكوّن من 6 ذرات كربون</div>
-</p>
+<ul>
+<li>Les tétracyclines sont des antibiotiques à large spectre.</li>
+<li>Elles agissent sur des bactéries intracellulaires.</li>
+<li>Possèdent un noyau naphtacène :</li>
+</ul>
 
-<div class="center">
+<div class="svg-box">
 
-<!-- الشكل السداسي -->
-<svg width="200" height="200">
+<!-- رسم 4 حلقات (نواة tetracycline) -->
+<svg width="400" height="200">
 
-  <!-- الحلقة -->
-  <polygon points="100,20 170,60 170,140 100,180 30,140 30,60"
-           style="fill:none;stroke:black;stroke-width:2"/>
+<!-- الحلقة 1 -->
+<polygon points="50,80 90,60 130,80 130,120 90,140 50,120"
+style="fill:none;stroke:black;stroke-width:2"/>
 
-  <!-- روابط داخلية (تقريب للبنزين) -->
-  <line x1="100" y1="20" x2="170" y2="140"
-        style="stroke:black;stroke-width:2"/>
+<!-- الحلقة 2 -->
+<polygon points="130,80 170,60 210,80 210,120 170,140 130,120"
+style="fill:none;stroke:black;stroke-width:2"/>
 
-  <line x1="170" y1="60" x2="30" y2="140"
-        style="stroke:black;stroke-width:2"/>
+<!-- الحلقة 3 -->
+<polygon points="210,80 250,60 290,80 290,120 250,140 210,120"
+style="fill:none;stroke:black;stroke-width:2"/>
 
-  <line x1="30" y1="60" x2="100" y2="180"
-        style="stroke:black;stroke-width:2"/>
+<!-- الحلقة 4 -->
+<polygon points="290,80 330,60 370,80 370,120 330,140 290,120"
+style="fill:none;stroke:black;stroke-width:2"/>
 
 </svg>
 
+<p><b>Noyau naphtacène (simplifié)</b></p>
+
 </div>
+
+<table>
+
+<tr>
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>R4</th>
+<th>DCI</th>
+<th>ND</th>
+<th>Année</th>
+</tr>
+
+<tr>
+<td>Cl</td>
+<td>CH3</td>
+<td>OH</td>
+<td>H</td>
+<td class="red">Chlortétracycline</td>
+<td class="blue">Auréomycine</td>
+<td>1948</td>
+</tr>
+
+<tr>
+<td>H</td>
+<td>CH3</td>
+<td>OH</td>
+<td>OH</td>
+<td class="red">Oxytétracycline</td>
+<td class="blue">Terramycine</td>
+<td>1950</td>
+</tr>
+
+<tr>
+<td>H</td>
+<td>CH3</td>
+<td>OH</td>
+<td>H</td>
+<td class="red">Tétracycline</td>
+<td class="blue">Tétracyne</td>
+<td>1953</td>
+</tr>
+
+<tr>
+<td>H</td>
+<td>H</td>
+<td>H</td>
+<td>OH</td>
+<td class="red">Doxycycline</td>
+<td class="blue">Vibramycine</td>
+<td>1958</td>
+</tr>
+
+</table>
 
 </div>
 
