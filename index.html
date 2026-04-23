@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-WMZ6GN3075');
     </script>
     <!-- Google Tag Manager -->
@@ -1552,12 +1551,47 @@
             if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) navMenu.classList.remove("show");
         });
         
-        // أزرار التنقل إلى السنوات
+        // ========== الانتقال السلس لجميع الروابط الداخلية (للهيدر ولأي رابط آخر) ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // نتأكد من أن الرابط ليس فارغاً ولا يشير إلى نفس الصفحة فقط
+            const targetId = anchor.getAttribute('href');
+            if (targetId === "#" || targetId === "") return;
+            // نتجنب الروابط التي تؤدي إلى صفحات أخرى (مثل commandez.html)
+            if (anchor.pathname !== window.location.pathname && anchor.pathname !== "") return;
+            
+            anchor.addEventListener('click', function(e) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault(); // نمنع السلوك الافتراضي
+                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // إغلاق القائمة في حالة الجوال بعد الضغط
+                    const navMenu = document.getElementById("navMenu");
+                    if (navMenu.classList.contains('show')) {
+                        navMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // أزرار التنقل إلى السنوات (تستفيد أيضاً من smooth scroll)
         document.querySelectorAll('.year-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const yearId = this.getAttribute('data-year');
                 const target = document.getElementById(yearId);
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (target) {
+                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
             });
         });
         
