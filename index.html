@@ -981,6 +981,11 @@
             .mobile-only {
                 display: none !important;
             }
+            
+            /* إخفاء زر الإغلاق (X) في الديسكتوب فقط */
+            .menu-close {
+                display: none;
+            }
         }
         
         .cards-container {
@@ -1088,7 +1093,7 @@
             header nav ul li a:hover {
                 background: rgba(255,255,255,0.15);
             }
-            /* زر الإغلاق داخل القائمة */
+            /* زر الإغلاق داخل القائمة (يظهر فقط في الهواتف) */
             .menu-close {
                 display: block;
                 text-align: right;
