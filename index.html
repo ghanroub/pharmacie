@@ -547,15 +547,25 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
+        .year-btn.active {
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            color: #1a1a2e;
+            box-shadow: 0 0 12px rgba(255,235,59,0.5);
+        }
         .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
         .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
         .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
         
+        /* إخفاء جميع السنوات بشكل افتراضي */
         .year-modules {
-            margin-bottom: 40px;
+            display: none;
         }
+        .year-modules.active-year {
+            display: block;
+        }
+        
         .year-title {
             font-size: 1.8rem;
             margin: 30px 0 20px;
@@ -982,7 +992,6 @@
                 display: none !important;
             }
             
-            /* إخفاء زر الإغلاق (X) في الديسكتوب فقط */
             .menu-close {
                 display: none;
             }
@@ -1035,12 +1044,11 @@
             display: none;
         }
         
-        /* ========== القائمة المنبثقة للهواتف (التعديل الرئيسي) ========== */
+        /* ========== القائمة المنبثقة للهواتف ========== */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
             }
-            /* إخفاء القائمة التقليدية وتحويلها إلى نافذة منبثقة */
             header nav {
                 transform: none;
             }
@@ -1093,7 +1101,6 @@
             header nav ul li a:hover {
                 background: rgba(255,255,255,0.15);
             }
-            /* زر الإغلاق داخل القائمة (يظهر فقط في الهواتف) */
             .menu-close {
                 display: block;
                 text-align: right;
@@ -1110,7 +1117,6 @@
                 transform: scale(1.1);
             }
             
-            /* تحسينات باقي العناصر للهواتف */
             .gallery {
                 height: 250px;
             }
@@ -1522,7 +1528,6 @@
             });
         }
         
-        // إغلاق القائمة عند النقر على أي رابط داخلي
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 closeMobileMenu();
@@ -1559,43 +1564,51 @@
             });
         });
         
-        // أزرار التنقل إلى السنوات
+        // ========== وظيفة تبديل السنوات (إظهار سنة واحدة فقط) ==========
+        function showYear(yearId) {
+            // إخفاء جميع أقسام السنوات
+            document.querySelectorAll('.year-modules').forEach(module => {
+                module.classList.remove('active-year');
+            });
+            // إظهار القسم المطلوب
+            const targetYear = document.getElementById(yearId);
+            if (targetYear) {
+                targetYear.classList.add('active-year');
+            }
+            // تحديث المظهر النشط للأزرار
+            document.querySelectorAll('.year-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-year') === yearId) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+        
+        // ربط الأزرار بحدث النقر
         document.querySelectorAll('.year-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
                 const yearId = this.getAttribute('data-year');
-                const target = document.getElementById(yearId);
-                if (target) {
-                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                if (yearId) {
+                    showYear(yearId);
+                    // اختياري: التمرير إلى قسم المواد بعد التغيير
+                    const modulesSection = document.getElementById('modules');
+                    if (modulesSection) {
+                        const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                        const elementPosition = modulesSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
                     closeMobileMenu();
                 }
             });
         });
         
-        function toggleSemesters(element) {
-            const semestersList = element.nextElementSibling;
-            if (!semestersList) return;
-            document.querySelectorAll('.subject-card ul').forEach(list => {
-                if (list !== semestersList && list.classList.contains('show')) {
-                    list.classList.remove('show');
-                    const header = list.closest('.subject-content')?.querySelector('h4');
-                    if (header) header.classList.remove('active');
-                }
-            });
-            semestersList.classList.toggle('show');
-            element.classList.toggle('active');
-        }
-        
-        function showAlert() {
-            const alertDiv = document.getElementById('alertMessage');
-            alertDiv.style.display = 'block';
-            setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
-        }
-        
-        // معرض الصور للهاتف
+        // إظهار السنة الأولى بشكل افتراضي عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
+            // تعيين السنة الأولى كنشطة
+            showYear('annee1');
+            
+            // باقي الوظائف الأخرى (المعرض، الإحصائيات، النموذج...) كما هي
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
                 if (galleryTrack) galleryTrack.style.display = 'none';
@@ -1661,6 +1674,26 @@
             const statsSection = document.getElementById('statistics');
             if (statsSection) observer.observe(statsSection);
         });
+        
+        function toggleSemesters(element) {
+            const semestersList = element.nextElementSibling;
+            if (!semestersList) return;
+            document.querySelectorAll('.subject-card ul').forEach(list => {
+                if (list !== semestersList && list.classList.contains('show')) {
+                    list.classList.remove('show');
+                    const header = list.closest('.subject-content')?.querySelector('h4');
+                    if (header) header.classList.remove('active');
+                }
+            });
+            semestersList.classList.toggle('show');
+            element.classList.toggle('active');
+        }
+        
+        function showAlert() {
+            const alertDiv = document.getElementById('alertMessage');
+            alertDiv.style.display = 'block';
+            setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
+        }
     </script>
 </body>
 </html>
