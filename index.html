@@ -1044,116 +1044,6 @@
             display: none;
         }
         
-        /* ---------- أنماط النافذة المنبثقة الجديدة لـ AI Chat ---------- */
-        .ai-popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            animation: fadeInPopup 0.3s ease;
-        }
-        
-        .ai-popup-container {
-            background: linear-gradient(145deg, #0f0f2a, #1a1a3e);
-            border-radius: 28px;
-            width: 90%;
-            max-width: 1000px;
-            height: 85%;
-            max-height: 700px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 235, 59, 0.2);
-            animation: slideUpPopup 0.3s ease;
-        }
-        
-        .ai-popup-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 24px;
-            background: rgba(0, 0, 0, 0.5);
-            border-bottom: 1px solid rgba(255, 235, 59, 0.3);
-        }
-        
-        .ai-popup-header h3 {
-            margin: 0;
-            color: #ffeb3b;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .ai-popup-header h3 i {
-            font-size: 1.4rem;
-            color: #00bcd4;
-        }
-        
-        .close-popup {
-            background: none;
-            border: none;
-            color: #ffeb3b;
-            font-size: 1.8rem;
-            cursor: pointer;
-            transition: transform 0.2s, color 0.2s;
-            line-height: 1;
-        }
-        
-        .close-popup:hover {
-            color: #ff5555;
-            transform: scale(1.1);
-        }
-        
-        .ai-iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
-            background: white;
-        }
-        
-        .ai-popup-footer {
-            padding: 10px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #aaa;
-            background: rgba(0, 0, 0, 0.4);
-            border-top: 1px solid rgba(255, 235, 59, 0.2);
-        }
-        
-        @keyframes fadeInPopup {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideUpPopup {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        @media (max-width: 768px) {
-            .ai-popup-container {
-                width: 95%;
-                height: 90%;
-                max-height: 90%;
-            }
-            .ai-popup-header h3 {
-                font-size: 1rem;
-            }
-            .close-popup {
-                font-size: 1.5rem;
-            }
-        }
-        /* ------------------------------------------------ */
-        
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -1385,8 +1275,8 @@
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li><a href="#modules"><i class="fas fa-book"></i> Modules</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                <!-- الزر الجديد للذكاء الاصطناعي -->
-                <li><a href="#" id="aiChatBtn"><i class="fas fa-robot"></i> AI Chat</a></li>
+                <!-- NOUVEAU BOUTON INTELLIGENCE ARTIFICIELLE -->
+                <li><a href="#" id="aiChatBtn"><i class="fas fa-robot"></i> Intelligence Artificielle</a></li>
             </ul>
         </nav>
     </header>
@@ -1691,20 +1581,6 @@
         </div>
     </section>
     
-    <!-- النافذة المنبثقة لـ AI Chat -->
-    <div id="aiPopup" class="ai-popup-overlay">
-        <div class="ai-popup-container">
-            <div class="ai-popup-header">
-                <h3><i class="fas fa-robot"></i> Assistant IA - Qwen</h3>
-                <button class="close-popup" id="closePopupBtn">&times;</button>
-            </div>
-            <iframe class="ai-iframe" src="https://chat.qwen.ai/" title="Qwen AI Chat" allow="clipboard-read; clipboard-write; autoplay; camera; microphone" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"></iframe>
-            <div class="ai-popup-footer">
-                <i class="fas fa-shield-alt"></i> Chat sécurisé - Posez vos questions librement
-            </div>
-        </div>
-    </div>
-    
     <footer>
         <div class="footer-content">
             <div class="social-links">
@@ -1918,46 +1794,18 @@
             setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
         }
 
-        // ---------- إظهار وإخفاء نافذة AI Chat ----------
+        // === Nouvelle fonction pour le bouton Intelligence Artificielle ===
         const aiBtn = document.getElementById('aiChatBtn');
-        const aiPopup = document.getElementById('aiPopup');
-        const closePopupBtn = document.getElementById('closePopupBtn');
-        
-        function openPopup() {
-            aiPopup.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // منع التمرير خلف النافذة
-        }
-        
-        function closePopup() {
-            aiPopup.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-        
         if (aiBtn) {
             aiBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                openPopup();
+                // Ouvre une fenêtre contextuelle (popup) avec l'URL de chat DeepSeek
+                // Dimensions raisonnables (largeur 1000px, hauteur 700px) et barres d'outils activées
+                window.open('https://chat.deepseek.com/', 'DeepSeekChat', 'width=1000,height=700,resizable=yes,scrollbars=yes,toolbar=yes,location=yes,menubar=yes');
+                // Ferme le menu mobile si ouvert
+                closeMobileMenu();
             });
         }
-        
-        if (closePopupBtn) {
-            closePopupBtn.addEventListener('click', closePopup);
-        }
-        
-        // إغلاق النافذة عند النقر على الخلفية (الـ overlay)
-        aiPopup.addEventListener('click', function(e) {
-            if (e.target === aiPopup) {
-                closePopup();
-            }
-        });
-        
-        // إغلاق النافذة بالضغط على زر Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && aiPopup.style.display === 'flex') {
-                closePopup();
-            }
-        });
-        // --------------------------------------------
     </script>
 </body>
 </html>
