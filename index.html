@@ -1044,6 +1044,85 @@
             display: none;
         }
         
+        /* Modal amélioré pour l'IA */
+        .ai-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .ai-modal-content {
+            background: #1e1e2f;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1300px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,235,59,0.3);
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .ai-modal-header {
+            padding: 15px 20px;
+            background: #0f0f1a;
+            border-bottom: 1px solid rgba(255,235,59,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffeb3b;
+        }
+        .ai-modal-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .close-ai-modal {
+            background: none;
+            border: none;
+            color: #ffeb3b;
+            font-size: 28px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .close-ai-modal:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+        .ai-modal-body {
+            flex: 1;
+            background: #fff;
+            position: relative;
+        }
+        .ai-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .ai-modal-content {
+                width: 95%;
+                height: 90vh;
+            }
+            .ai-modal-header h3 {
+                font-size: 1.1rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -1275,11 +1354,24 @@
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li><a href="#modules"><i class="fas fa-book"></i> Modules</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                <!-- NOUVEAU BOUTON INTELLIGENCE ARTIFICIELLE -->
+                <!-- BOUTON INTELLIGENCE ARTIFICIELLE AVEC MODAL -->
                 <li><a href="#" id="aiChatBtn"><i class="fas fa-robot"></i> Intelligence Artificielle</a></li>
             </ul>
         </nav>
     </header>
+    
+    <!-- Modal IA améliorée -->
+    <div id="aiModal" class="ai-modal">
+        <div class="ai-modal-content">
+            <div class="ai-modal-header">
+                <h3><i class="fas fa-robot"></i> DeepSeek - Assistant IA</h3>
+                <button class="close-ai-modal" id="closeAiModalBtn">&times;</button>
+            </div>
+            <div class="ai-modal-body">
+                <iframe src="https://chat.deepseek.com/" title="DeepSeek Chat"></iframe>
+            </div>
+        </div>
+    </div>
     
     <section id="intro" class="hero">
         <div class="container">
@@ -1793,19 +1885,40 @@
             alertDiv.style.display = 'block';
             setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
         }
-
-        // === Nouvelle fonction pour le bouton Intelligence Artificielle ===
-        const aiBtn = document.getElementById('aiChatBtn');
-        if (aiBtn) {
-            aiBtn.addEventListener('click', function(e) {
+        
+        // ===== Modal IA améliorée =====
+        const modal = document.getElementById('aiModal');
+        const aiBtnModal = document.getElementById('aiChatBtn');
+        const closeModalBtn = document.getElementById('closeAiModalBtn');
+        
+        function openAIModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // empêcher le défilement derrière
+        }
+        
+        function closeAIModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        
+        if (aiBtnModal) {
+            aiBtnModal.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Ouvre une fenêtre contextuelle (popup) avec l'URL de chat DeepSeek
-                // Dimensions raisonnables (largeur 1000px, hauteur 700px) et barres d'outils activées
-                window.open('https://chat.deepseek.com/', 'DeepSeekChat', 'width=1000,height=700,resizable=yes,scrollbars=yes,toolbar=yes,location=yes,menubar=yes');
-                // Ferme le menu mobile si ouvert
-                closeMobileMenu();
+                openAIModal();
+                closeMobileMenu(); // fermer le menu mobile si ouvert
             });
         }
+        
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeAIModal);
+        }
+        
+        // Fermer la modale en cliquant à l'extérieur du contenu
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeAIModal();
+            }
+        });
     </script>
 </body>
 </html>
