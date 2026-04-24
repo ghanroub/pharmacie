@@ -1044,6 +1044,87 @@
             display: none;
         }
         
+        /* ---------- ستايل النافذة المنبثقة الداخلية (Modal) ---------- */
+        .ai-modal {
+            display: none; /* مخفي في البداية */
+            position: fixed;
+            z-index: 10001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        .ai-modal-content {
+            background: linear-gradient(145deg, #0a0a2a, #1a1a3a);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1100px;
+            height: 85vh;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,235,59,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .ai-modal-header {
+            padding: 15px 20px;
+            background: rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(255,235,59,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffeb3b;
+        }
+        .ai-modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .close-modal {
+            color: #ffeb3b;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            line-height: 1;
+        }
+        .close-modal:hover {
+            transform: scale(1.2);
+            color: #fff;
+        }
+        .ai-modal-body {
+            flex: 1;
+            padding: 0;
+            background: #fff;
+        }
+        .ai-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .ai-modal-content {
+                width: 95%;
+                height: 90vh;
+                margin: 10% auto;
+            }
+            .ai-modal-header h3 {
+                font-size: 1.2rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -1275,11 +1356,24 @@
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li><a href="#modules"><i class="fas fa-book"></i> Modules</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                <!-- NOUVEAU BOUTON INTELLIGENCE ARTIFICIELLE -->
+                <!-- NOUVEAU BOUTON INTELLIGENCE ARTIFICIELLE (MODAL) -->
                 <li><a href="#" id="aiChatBtn"><i class="fas fa-robot"></i> Intelligence Artificielle</a></li>
             </ul>
         </nav>
     </header>
+    
+    <!-- النافذة المنبثقة (Modal) الخاصة بالذكاء الاصطناعي -->
+    <div id="aiModal" class="ai-modal">
+        <div class="ai-modal-content">
+            <div class="ai-modal-header">
+                <h3><i class="fas fa-robot"></i> Assistant IA - DeepSeek Chat</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="ai-modal-body">
+                <iframe src="https://chat.deepseek.com/" title="DeepSeek AI Chat" allow="fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
     
     <section id="intro" class="hero">
         <div class="container">
@@ -1772,6 +1866,44 @@
             }, { threshold: 0.3 });
             const statsSection = document.getElementById('statistics');
             if (statsSection) observer.observe(statsSection);
+            
+            // ===== إظهار وإخفاء نافذة الذكاء الاصطناعي (Modal) =====
+            const modal = document.getElementById('aiModal');
+            const aiBtn = document.getElementById('aiChatBtn');
+            const closeModal = document.querySelector('.close-modal');
+            
+            function openModal() {
+                if (modal) {
+                    modal.style.display = 'block';
+                    // منع التمرير في الخلفية (اختياري)
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+            
+            function closeModalFunc() {
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (aiBtn) {
+                aiBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                    closeMobileMenu(); // إغلاق القائمة إذا كانت مفتوحة
+                });
+            }
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', closeModalFunc);
+            }
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModalFunc();
+                }
+            });
         });
         
         function toggleSemesters(element) {
@@ -1792,30 +1924,6 @@
             const alertDiv = document.getElementById('alertMessage');
             alertDiv.style.display = 'block';
             setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
-        }
-
-        // === Fonction améliorée pour le bouton Intelligence Artificielle ===
-        const aiBtn = document.getElementById('aiChatBtn');
-        if (aiBtn) {
-            aiBtn.addEventListener('click', function(e) {
-                e.preventDefault();      // Empêche toute navigation par défaut
-                e.stopPropagation();     // Évite la propagation inutile
-
-                // Tentative d'ouverture d'une véritable fenêtre popup
-                const popup = window.open(
-                    'https://chat.deepseek.com/',
-                    'DeepSeekAIPopup',
-                    'popup,width=1000,height=700,resizable=yes,scrollbars=yes,toolbar=yes,location=yes'
-                );
-
-                // Si le navigateur bloque le popup, on affiche un message d'aide
-                if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-                    alert("⚠️ Votre navigateur a bloqué la fenêtre popup.\nVeuillez autoriser les popups pour ce site ou cliquer à nouveau sur le bouton.");
-                }
-
-                // Fermer le menu mobile si ouvert
-                closeMobileMenu();
-            });
         }
     </script>
 </body>
