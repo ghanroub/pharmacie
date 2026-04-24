@@ -17,7 +17,7 @@
     })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules, avec des examens pour chaque matière et pour chaque semestre. Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire. Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !">
     <meta name="keywords" content="pharmacie, études pharmaceutiques, cours pharmacie, TPs pharmacie, TDs pharmacie, examens pharmacie, étudiants pharmacie, ressources pédagogiques, GhaniPharma, sciences pharmaceutiques, غاني فارما, دروس صيدلة في الجزائر">
     <meta name="author" content="Ghani Rouabah">
@@ -228,18 +228,68 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .hero button {
-            background-color: #6a1b9a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
+        
+        /* === GALERIE CORRIGÉE : desktop défilant + mobile carrousel === */
+        .gallery {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto 20px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 12px 0;
+        }
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollGallery 50s linear infinite;
+            will-change: transform;
+        }
+        .gallery-track img {
+            height: 180px;
+            width: auto;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+            transition: transform 0.3s, filter 0.3s;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .hero button:hover {
-            background-color: #4a4a88;
+        .gallery-track img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.05);
         }
+        @keyframes scrollGallery {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .mobile-carousel {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mobile-carousel .carousel-img {
+            position: absolute;
+            max-width: 92%;
+            max-height: 210px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+        .mobile-carousel .carousel-img.active {
+            opacity: 1;
+            position: relative;
+        }
+        
         .hero .container {
             padding: 20px;
             max-width: 1200px;
@@ -248,36 +298,6 @@
             background-color: transparent;
             border: none;
         }
-        
-        /* Galerie corrigée */
-        .gallery {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            margin: 20px 0;
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 0;
-        }
-        .gallery-track {
-            display: flex;
-            width: max-content;
-            will-change: transform;
-        }
-        .gallery-track img {
-            height: 180px;
-            width: auto;
-            margin: 0 10px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .gallery-track img:hover {
-            transform: scale(1.05);
-        }
-        
         .sections-container {
             display: flex;
             flex-direction: column;
@@ -588,7 +608,6 @@
         .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
         .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
         
-        /* إخفاء جميع السنوات بشكل افتراضي */
         .year-modules {
             display: none;
         }
@@ -697,10 +716,6 @@
             color: #aaa;
             cursor: not-allowed;
             opacity: 0.7;
-        }
-        .subject-card ul li a.disabled-link:hover {
-            color: #aaa;
-            text-decoration: none;
         }
         
         .alert-message {
@@ -944,70 +959,6 @@
             color: #e0e0e0;
         }
         
-        @media (min-width: 769px) {
-            .dropdown:hover .dropdown-content {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            .desktop-only {
-                display: inline !important;
-            }
-            .mobile-only {
-                display: none !important;
-            }
-            .menu-close {
-                display: none;
-            }
-        }
-        
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .card {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-            border: 1px solid rgba(255, 235, 59, 0.3);
-            border-radius: 12px;
-            padding: 25px;
-            color: #fff;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ffeb3b, #00bcd4);
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 235, 59, 0.5);
-        }
-        
-        .card-icon,
-        .card h3,
-        .card p {
-            display: none;
-        }
-        
-        /* ========== القائمة المنبثقة للهواتف ========== */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -1080,9 +1031,11 @@
                 transform: scale(1.1);
             }
             
-            .gallery-track img {
-                height: 130px;
-                margin: 0 8px;
+            .gallery-track {
+                display: none !important;
+            }
+            .mobile-carousel {
+                display: flex !important;
             }
             
             .sections-container {
@@ -1200,6 +1153,28 @@
                 font-size: 0.9rem;
             }
         }
+        
+        @media (min-width: 769px) {
+            .mobile-carousel {
+                display: none !important;
+            }
+            .gallery-track {
+                display: flex !important;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+            .desktop-only {
+                display: inline !important;
+            }
+            .mobile-only {
+                display: none !important;
+            }
+            .menu-close {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1231,20 +1206,10 @@
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
-            <!-- Galerie corrigée : une seule piste avec toutes les images -->
-            <div class="gallery">
-                <div class="gallery-track" id="galleryTrack">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg" alt="Image 5">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg" alt="Image 6">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Chirality%2C%20a%20Primer%20(Updated).jfif" alt="Image 7">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg" alt="Image 8">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 9">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg" alt="Image 10">
-                </div>
+            <!-- NOUVELLE GALERIE : toutes les images visibles -->
+            <div class="gallery" id="dynamicGallery">
+                <div class="gallery-track" id="galleryTrack"></div>
+                <div class="mobile-carousel" id="mobileCarousel"></div>
             </div>
         </div>
         <div class="sections-container">
@@ -1300,6 +1265,7 @@
                     </div>
                 </div>
                 
+                <!-- 1ère Année -->
                 <div class="year-modules" id="annee1">
                     <div class="year-title" style="background: linear-gradient(135deg, #6a1b9a, #4a148c);">1ère Année</div>
                     <div class="subjects-container">
@@ -1317,6 +1283,7 @@
                     </div>
                 </div>
                 
+                <!-- 2ème Année -->
                 <div class="year-modules" id="annee2">
                     <div class="year-title" style="background: linear-gradient(135deg, #4a148c, #3f51b5);">2ème Année</div>
                     <div class="subjects-container">
@@ -1331,6 +1298,7 @@
                     </div>
                 </div>
                 
+                <!-- 3ème Année -->
                 <div class="year-modules" id="annee3">
                     <div class="year-title" style="background: linear-gradient(135deg, #3f51b5, #2196f3);">3ème Année</div>
                     <div class="subjects-container">
@@ -1343,6 +1311,7 @@
                     </div>
                 </div>
                 
+                <!-- 4ème Année (disponible) -->
                 <div class="year-modules" id="annee4">
                     <div class="year-title" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">4ème Année</div>
                     <div class="subjects-container">
@@ -1354,6 +1323,7 @@
                     </div>
                 </div>
                 
+                <!-- 5ème Année -->
                 <div class="year-modules" id="annee5">
                     <div class="year-title" style="background: linear-gradient(135deg, #00bcd4, #009688);">5ème Année</div>
                     <div class="subjects-container">
@@ -1434,6 +1404,89 @@
     </footer>
     
     <script>
+        // ---------- GALERIE COMPLETE (toutes les images) ----------
+        const GALLERY_IMAGES = [
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Chirality%2C%20a%20Primer%20(Updated).jfif",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg",
+            "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg"
+        ];
+
+        function buildFullGallery() {
+            const trackDiv = document.getElementById('galleryTrack');
+            const mobileDiv = document.getElementById('mobileCarousel');
+            if (!trackDiv || !mobileDiv) return;
+            trackDiv.innerHTML = '';
+            const doubleImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES];
+            doubleImages.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = "pharma illustration";
+                img.loading = "lazy";
+                trackDiv.appendChild(img);
+            });
+            mobileDiv.innerHTML = '';
+            GALLERY_IMAGES.forEach((src, idx) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'carousel-img';
+                img.alt = `slide ${idx+1}`;
+                if (idx === 0) img.classList.add('active');
+                mobileDiv.appendChild(img);
+            });
+            if (window.innerWidth <= 768) startMobileCarousel();
+        }
+        
+        let mobileInterval = null;
+        function startMobileCarousel() {
+            if (mobileInterval) clearInterval(mobileInterval);
+            const container = document.getElementById('mobileCarousel');
+            if (!container) return;
+            const images = container.querySelectorAll('.carousel-img');
+            if (images.length === 0) return;
+            let currentIndex = 0;
+            const showImage = (index) => {
+                images.forEach((img, i) => {
+                    if (i === index) img.classList.add('active');
+                    else img.classList.remove('active');
+                });
+            };
+            showImage(0);
+            mobileInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }, 4000);
+        }
+        
+        function stopMobileCarousel() { if (mobileInterval) { clearInterval(mobileInterval); mobileInterval = null; } }
+        
+        function handleGalleryResize() {
+            const isMobile = window.innerWidth <= 768;
+            const track = document.getElementById('galleryTrack');
+            const mobileDiv = document.getElementById('mobileCarousel');
+            if (!track || !mobileDiv) return;
+            if (isMobile) {
+                track.style.display = 'none';
+                mobileDiv.style.display = 'flex';
+                if (!mobileDiv.querySelector('.carousel-img')) buildFullGallery();
+                else startMobileCarousel();
+            } else {
+                track.style.display = 'flex';
+                mobileDiv.style.display = 'none';
+                stopMobileCarousel();
+                if (track.children.length === 0 || track.children.length !== GALLERY_IMAGES.length * 2) {
+                    buildFullGallery();
+                }
+            }
+        }
+        
+        // --- Autres scripts existants (header, stats, modules, etc.) ---
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
         window.addEventListener('scroll', function() {
@@ -1443,55 +1496,22 @@
             lastScrollTop = scrollTop;
         });
         
-        // قائمة منبثقة للهاتف
-        const navMenu = document.getElementById('navMenu');
-        const menuClose = document.getElementById('mobileMenuClose');
-        
         function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
             navMenu.classList.toggle('show');
-            if (navMenu.classList.contains('show')) {
-                document.addEventListener('click', outsideClickListener);
-            } else {
-                document.removeEventListener('click', outsideClickListener);
-            }
         }
-        
-        function closeMobileMenu() {
-            navMenu.classList.remove('show');
-            document.removeEventListener('click', outsideClickListener);
-        }
-        
-        function outsideClickListener(event) {
-            if (!navMenu.contains(event.target) && !event.target.closest('.menu-btn')) {
-                closeMobileMenu();
-            }
-        }
-        
-        if (menuClose) {
-            menuClose.addEventListener('click', function(e) {
-                e.stopPropagation();
-                closeMobileMenu();
-            });
-        }
-        
+        document.getElementById('mobileMenuClose')?.addEventListener('click', () => {
+            document.getElementById('navMenu').classList.remove('show');
+        });
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
-                closeMobileMenu();
+                document.getElementById('navMenu')?.classList.remove('show');
             });
         });
         
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
-                closeMobileMenu();
-            }
-        });
-        
-        // الانتقال السلس لجميع الروابط الداخلية
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const targetId = anchor.getAttribute('href');
             if (targetId === "#" || targetId === "") return;
-            if (anchor.pathname !== window.location.pathname && anchor.pathname !== "") return;
-            
             anchor.addEventListener('click', function(e) {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -1499,136 +1519,26 @@
                     const headerHeight = document.getElementById('mainHeader').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    closeMobileMenu();
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
             });
         });
         
-        // ========== Galerie à défilement infini ==========
-        function initInfiniteGallery() {
-            const track = document.getElementById('galleryTrack');
-            if (!track) return;
-            // Cloner les images pour créer un effet infini (au moins 2 jeux complets)
-            const images = Array.from(track.children);
-            if (images.length === 0) return;
-            // On duplique autant de fois que nécessaire pour que la largeur totale soit > 2 fois la fenêtre
-            // Mais une duplication simple suffit pour l'animation translateX(-50%).
-            // Pour plus de fluidité, on ajoute une deuxième copie.
-            images.forEach(img => {
-                const clone = img.cloneNode(true);
-                track.appendChild(clone);
-            });
-            // Optionnel : ajouter une troisième copie si peu d'images
-            if (images.length < 6) {
-                images.forEach(img => {
-                    const clone = img.cloneNode(true);
-                    track.appendChild(clone);
-                });
-            }
-            // Animation CSS définie dans le style
-        }
-        
-        // ========== وظيفة تبديل السنوات (إظهار سنة واحدة فقط) ==========
         function showYear(yearId) {
-            // إخفاء جميع أقسام السنوات
-            document.querySelectorAll('.year-modules').forEach(module => {
-                module.classList.remove('active-year');
-            });
-            // إظهار القسم المطلوب
+            document.querySelectorAll('.year-modules').forEach(mod => mod.classList.remove('active-year'));
             const targetYear = document.getElementById(yearId);
-            if (targetYear) {
-                targetYear.classList.add('active-year');
-            }
-            // تحديث المظهر النشط للأزرار
+            if (targetYear) targetYear.classList.add('active-year');
             document.querySelectorAll('.year-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getAttribute('data-year') === yearId) {
-                    btn.classList.add('active');
-                }
+                if (btn.getAttribute('data-year') === yearId) btn.classList.add('active');
             });
         }
         
-        // ربط الأزرار بحدث النقر
         document.querySelectorAll('.year-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 const yearId = this.getAttribute('data-year');
-                if (yearId) {
-                    showYear(yearId);
-                    const modulesSection = document.getElementById('modules');
-                    if (modulesSection) {
-                        const headerHeight = document.getElementById('mainHeader').offsetHeight;
-                        const elementPosition = modulesSection.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                    }
-                    closeMobileMenu();
-                }
+                if (yearId) showYear(yearId);
             });
-        });
-        
-        // إظهار السنة الأولى بشكل افتراضي عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialiser la galerie infinie
-            initInfiniteGallery();
-            
-            // تعيين السنة الأولى كنشطة
-            showYear('annee1');
-            
-            // نموذج الاتصال
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const statusMessage = document.getElementById('statusMessage');
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-                    statusMessage.style.display = 'none';
-                    try {
-                        const formData = new FormData(contactForm);
-                        const response = await fetch(contactForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
-                        if (response.ok) {
-                            statusMessage.textContent = '✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.';
-                            statusMessage.className = 'status-message status-success';
-                            statusMessage.style.display = 'block';
-                            contactForm.reset();
-                        } else throw new Error('Erreur lors de l\'envoi');
-                    } catch (error) {
-                        statusMessage.textContent = '❌ Erreur: ' + error.message;
-                        statusMessage.className = 'status-message status-error';
-                        statusMessage.style.display = 'block';
-                    } finally {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
-                        setTimeout(() => { if (statusMessage.style.display === 'block') statusMessage.style.display = 'none'; }, 8000);
-                    }
-                });
-            }
-            
-            // عد الإحصائيات
-            function animateStats() {
-                document.querySelectorAll('.stat-number').forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-target'));
-                    let current = 0;
-                    const step = target / 60;
-                    const timer = setInterval(() => {
-                        current += step;
-                        if (current >= target) { current = target; clearInterval(timer); }
-                        stat.textContent = Math.floor(current);
-                    }, 30);
-                });
-            }
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); observer.unobserve(entry.target); } });
-            }, { threshold: 0.3 });
-            const statsSection = document.getElementById('statistics');
-            if (statsSection) observer.observe(statsSection);
         });
         
         function toggleSemesters(element) {
@@ -1645,11 +1555,68 @@
             element.classList.toggle('active');
         }
         
-        function showAlert() {
+        window.showAlert = function() {
             const alertDiv = document.getElementById('alertMessage');
             alertDiv.style.display = 'block';
             setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
+        };
+        
+        // Formulaire contact
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMessage = document.getElementById('statusMessage');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                statusMessage.style.display = 'none';
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                    if (response.ok) {
+                        statusMessage.textContent = '✅ Votre message a été envoyé avec succès!';
+                        statusMessage.className = 'status-message status-success';
+                        statusMessage.style.display = 'block';
+                        contactForm.reset();
+                    } else throw new Error('Erreur');
+                } catch (error) {
+                    statusMessage.textContent = '❌ Erreur lors de l\'envoi';
+                    statusMessage.className = 'status-message status-error';
+                    statusMessage.style.display = 'block';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+                    setTimeout(() => { if (statusMessage.style.display === 'block') statusMessage.style.display = 'none'; }, 8000);
+                }
+            });
         }
+        
+        function animateStats() {
+            document.querySelectorAll('.stat-number').forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                let current = 0;
+                const step = target / 60;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    stat.textContent = Math.floor(current);
+                }, 30);
+            });
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); observer.unobserve(entry.target); } });
+        }, { threshold: 0.3 });
+        const statsSection = document.getElementById('statistics');
+        if (statsSection) observer.observe(statsSection);
+        
+        // Lancement final
+        window.addEventListener('DOMContentLoaded', () => {
+            buildFullGallery();
+            handleGalleryResize();
+            window.addEventListener('resize', handleGalleryResize);
+            showYear('annee1');
+        });
     </script>
 </body>
 </html>
