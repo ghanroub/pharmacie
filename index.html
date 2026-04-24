@@ -248,6 +248,36 @@
             background-color: transparent;
             border: none;
         }
+        
+        /* Galerie corrigée */
+        .gallery {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+        .gallery-track {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+        .gallery-track img {
+            height: 180px;
+            width: auto;
+            margin: 0 10px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-track img:hover {
+            transform: scale(1.05);
+        }
+        
         .sections-container {
             display: flex;
             flex-direction: column;
@@ -914,84 +944,17 @@
             color: #e0e0e0;
         }
         
-        .gallery {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            margin: 0 auto;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .gallery img {
-            position: absolute;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-        .gallery img.active {
-            opacity: 1;
-        }
-        
         @media (min-width: 769px) {
-            .gallery {
-                height: 200px;
-                justify-content: flex-start;
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 10px;
-                padding: 10px 0;
-                overflow: hidden;
-            }
-            
-            .gallery-track {
-                display: flex;
-                animation: scroll 60s linear infinite;
-                width: max-content;
-            }
-            
-            .gallery img {
-                position: static;
-                height: 150px;
-                width: auto;
-                margin: 0 15px;
-                border-radius: 8px;
-                object-fit: cover;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s;
-                opacity: 1;
-                max-width: none;
-                max-height: none;
-            }
-            
-            .gallery img:hover {
-                transform: scale(1.05);
-            }
-            
-            @keyframes scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-            }
-            
-            .gallery:hover .gallery-track {
-                animation-play-state: paused;
-            }
-            
             .dropdown:hover .dropdown-content {
                 display: block;
                 animation: fadeIn 0.3s ease;
             }
-
             .desktop-only {
                 display: inline !important;
             }
             .mobile-only {
                 display: none !important;
             }
-            
             .menu-close {
                 display: none;
             }
@@ -1117,27 +1080,11 @@
                 transform: scale(1.1);
             }
             
-            .gallery {
-                height: 250px;
+            .gallery-track img {
+                height: 130px;
+                margin: 0 8px;
             }
-            .gallery img {
-                width: 90%;
-                height: 90%;
-                object-fit: cover;
-                border-radius: 10px;
-                opacity: 0;
-                transition: opacity 1s ease-in-out;
-                position: absolute;
-                top: 5%;
-                left: 5%;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            }
-            .gallery img.active {
-                opacity: 1;
-            }
-            .gallery-track {
-                display: none !important;
-            }
+            
             .sections-container {
                 flex-direction: column;
                 gap: 20px;
@@ -1284,9 +1231,10 @@
         <div class="container">
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
+            <!-- Galerie corrigée : une seule piste avec toutes les images -->
             <div class="gallery">
-                <div class="gallery-track">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
+                <div class="gallery-track" id="galleryTrack">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1297,8 +1245,6 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg" alt="Image 9">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg" alt="Image 10">
                 </div>
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
             </div>
         </div>
         <div class="sections-container">
@@ -1564,6 +1510,30 @@
             });
         });
         
+        // ========== Galerie à défilement infini ==========
+        function initInfiniteGallery() {
+            const track = document.getElementById('galleryTrack');
+            if (!track) return;
+            // Cloner les images pour créer un effet infini (au moins 2 jeux complets)
+            const images = Array.from(track.children);
+            if (images.length === 0) return;
+            // On duplique autant de fois que nécessaire pour que la largeur totale soit > 2 fois la fenêtre
+            // Mais une duplication simple suffit pour l'animation translateX(-50%).
+            // Pour plus de fluidité, on ajoute une deuxième copie.
+            images.forEach(img => {
+                const clone = img.cloneNode(true);
+                track.appendChild(clone);
+            });
+            // Optionnel : ajouter une troisième copie si peu d'images
+            if (images.length < 6) {
+                images.forEach(img => {
+                    const clone = img.cloneNode(true);
+                    track.appendChild(clone);
+                });
+            }
+            // Animation CSS définie dans le style
+        }
+        
         // ========== وظيفة تبديل السنوات (إظهار سنة واحدة فقط) ==========
         function showYear(yearId) {
             // إخفاء جميع أقسام السنوات
@@ -1590,7 +1560,6 @@
                 const yearId = this.getAttribute('data-year');
                 if (yearId) {
                     showYear(yearId);
-                    // اختياري: التمرير إلى قسم المواد بعد التغيير
                     const modulesSection = document.getElementById('modules');
                     if (modulesSection) {
                         const headerHeight = document.getElementById('mainHeader').offsetHeight;
@@ -1605,24 +1574,11 @@
         
         // إظهار السنة الأولى بشكل افتراضي عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialiser la galerie infinie
+            initInfiniteGallery();
+            
             // تعيين السنة الأولى كنشطة
             showYear('annee1');
-            
-            // باقي الوظائف الأخرى (المعرض، الإحصائيات، النموذج...) كما هي
-            if (window.innerWidth <= 768) {
-                const galleryTrack = document.querySelector('.gallery-track');
-                if (galleryTrack) galleryTrack.style.display = 'none';
-                const images = document.querySelectorAll('.gallery img:not(.gallery-track img)');
-                let currentIndex = 0;
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % images.length;
-                    images[currentIndex].classList.add('active');
-                }
-                if (images.length) { images[currentIndex].classList.add('active'); setInterval(showNextImage, 5000); }
-            } else {
-                document.querySelectorAll('.gallery img:not(.gallery-track img)').forEach(img => img.style.display = 'none');
-            }
             
             // نموذج الاتصال
             const contactForm = document.getElementById('contactForm');
