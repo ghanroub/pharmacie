@@ -171,17 +171,17 @@
             75% { transform: scale(1.15) rotate(-5deg); }
         }
         
-        /* زر اللغة */
+        /* قائمة اللغة المنسدلة */
         .header-controls {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        .language-switch {
-            display: flex;
-            gap: 8px;
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
         }
-        .lang-btn {
+        .lang-dropbtn {
             background: rgba(255, 235, 59, 0.2);
             border: 1px solid #ffeb3b;
             color: #ffeb3b;
@@ -191,15 +191,40 @@
             font-weight: bold;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        .lang-btn.active {
-            background: #ffeb3b;
-            color: #1a1a2e;
-            border-color: #ffeb3b;
-        }
-        .lang-btn:hover:not(.active) {
+        .lang-dropbtn:hover {
             background: rgba(255, 235, 59, 0.4);
             transform: translateY(-2px);
+        }
+        .lang-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            min-width: 140px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            z-index: 2000;
+            right: 0;
+            border: 1px solid rgba(255, 235, 59, 0.3);
+            overflow: hidden;
+        }
+        .lang-dropdown-content a {
+            color: #ffeb3b;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.2s;
+            font-weight: normal;
+        }
+        .lang-dropdown-content a:hover {
+            background-color: rgba(255, 235, 59, 0.2);
+        }
+        .language-dropdown:hover .lang-dropdown-content {
+            display: block;
         }
         
         .dropdown-content {
@@ -1075,6 +1100,7 @@
             display: none;
         }
         
+        /* استجابة للجوال */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -1145,6 +1171,30 @@
             }
             .menu-close i:hover {
                 transform: scale(1.1);
+            }
+            
+            /* قائمة اللغة للجوال */
+            .language-dropdown {
+                position: static;
+            }
+            .lang-dropdown-content {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                max-width: 220px;
+                text-align: center;
+                background: rgba(0,0,0,0.95);
+                border-radius: 20px;
+                display: none;
+                z-index: 10001;
+            }
+            .lang-dropdown-content.show-mobile {
+                display: block;
+            }
+            .language-dropdown:hover .lang-dropdown-content {
+                display: none;
             }
             
             .gallery {
@@ -1285,10 +1335,6 @@
             .header-controls {
                 gap: 10px;
             }
-            .language-switch {
-                margin-left: 0;
-                margin-top: 0;
-            }
         }
     </style>
 </head>
@@ -1306,9 +1352,15 @@
             </a>
         </div>
         <div class="header-controls">
-            <div class="language-switch">
-                <button class="lang-btn" data-lang="fr">🇫🇷 FR</button>
-                <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+            <!-- قائمة اللغة المنسدلة -->
+            <div class="language-dropdown">
+                <button class="lang-dropbtn" id="langBtn">
+                    <span id="currentLangFlag">🇫🇷</span> <span id="currentLangText">FR</span> <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown-content" id="langDropdown">
+                    <a href="#" data-lang="fr">🇫🇷 Français</a>
+                    <a href="#" data-lang="en">🇬🇧 English</a>
+                </div>
             </div>
             <div class="menu-btn" onclick="toggleMobileMenu()">☰</div>
         </div>
@@ -1733,7 +1785,6 @@
             document.querySelectorAll('.nav-contact').forEach(el => el.innerText = t.nav_contact);
             document.querySelectorAll('.nav-watch').forEach(el => el.innerText = t.nav_watch);
             document.getElementById('about-title').innerText = t.about_title;
-            // تعديل النص الأول لاحتواء الرابط
             document.getElementById('about-p1').innerHTML = t.about_p1.replace('modules', '<a href="#modules" style="color:#00bcd4; text-decoration:none; font-weight:bold;">modules</a>');
             document.getElementById('about-p2').innerText = t.about_p2;
             document.getElementById('about-p3').innerText = t.about_p3;
@@ -1771,41 +1822,56 @@
             document.getElementById('submit-text').innerText = t.submit_text;
             document.getElementById('watch-title').innerText = t.watch_title;
             document.getElementById('watch-desc').innerText = t.watch_desc;
-            // ترجمة رسالة التنبيه
             const alertDiv = document.getElementById('alertMessage');
             if (alertDiv) alertDiv.innerText = t.alert_msg;
-            // ترجمة النصوص داخل الأزرار في وحدات المواد (لكل Semestre)
             document.querySelectorAll('.semester-text').forEach(el => {
                 let num = el.innerText.match(/\d+/);
                 if (num) el.innerText = `${t.semester} ${num[0]}`;
             });
-            // تحديث الحقول النائبة (placeholder)
             document.querySelector('#name').placeholder = t.label_name;
             document.querySelector('#email').placeholder = t.label_email;
             document.querySelector('#message').placeholder = t.label_message;
             
-            // تحديث أزرار اللغة النشطة
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
+            // تحديث زر اللغة (العلم والنص المختصر)
+            if (lang === 'fr') {
+                document.getElementById('currentLangFlag').innerHTML = '🇫🇷';
+                document.getElementById('currentLangText').innerHTML = 'FR';
+            } else {
+                document.getElementById('currentLangFlag').innerHTML = '🇬🇧';
+                document.getElementById('currentLangText').innerHTML = 'EN';
+            }
             localStorage.setItem('ghaniLang', lang);
             currentLang = lang;
         }
         
-        // إضافة مستمعي الأحداث لأزرار اللغة
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang');
+        // إدارة القائمة المنسدلة للغة
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        if (langBtn) {
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (window.innerWidth <= 768) {
+                    langDropdown.classList.toggle('show-mobile');
+                }
+            });
+            document.addEventListener('click', function() {
+                if (window.innerWidth <= 768) langDropdown.classList.remove('show-mobile');
+            });
+        }
+        
+        document.querySelectorAll('.lang-dropdown-content a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
                 applyLanguage(lang);
+                if (window.innerWidth <= 768) langDropdown.classList.remove('show-mobile');
             });
         });
         
-        // عند تحميل الصفحة، تطبيق اللغة المخزنة واستدعاء جميع الوظائف الأصلية
+        // باقي الكود الأصلي (نفسه دون تغيير)
         document.addEventListener('DOMContentLoaded', function() {
             applyLanguage(currentLang);
             
-            // إخفاء الرأس عند التمرير
             let lastScrollTop = 0;
             const mainHeader = document.getElementById('mainHeader');
             window.addEventListener('scroll', function() {
@@ -1815,7 +1881,6 @@
                 lastScrollTop = scrollTop;
             });
             
-            // القائمة المنسدلة للجوال
             const navMenu = document.getElementById('navMenu');
             const menuClose = document.getElementById('mobileMenuClose');
             function toggleMobileMenu() { navMenu.classList.toggle('show'); }
@@ -1825,7 +1890,6 @@
             document.querySelectorAll('#navMenu a').forEach(link => link.addEventListener('click', closeMobileMenu));
             window.addEventListener('resize', () => { if (window.innerWidth > 768 && navMenu.classList.contains('show')) closeMobileMenu(); });
             
-            // التنقل السلس
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 const targetId = anchor.getAttribute('href');
                 if (targetId === "#" || targetId === "") return;
@@ -1841,7 +1905,6 @@
                 });
             });
             
-            // تبديل السنوات
             function showYear(yearId) {
                 document.querySelectorAll('.year-modules').forEach(mod => mod.classList.remove('active-year'));
                 document.getElementById(yearId)?.classList.add('active-year');
@@ -1868,7 +1931,6 @@
             });
             showYear('annee1');
             
-            // معرض الصور
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
                 if (galleryTrack) galleryTrack.style.display = 'none';
@@ -1884,7 +1946,6 @@
                 document.querySelectorAll('.gallery img:not(.gallery-track img)').forEach(img => img.style.display = 'none');
             }
             
-            // إرسال النموذج
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const statusMessage = document.getElementById('statusMessage');
@@ -1915,7 +1976,6 @@
                 });
             }
             
-            // إحصائيات متحركة
             function animateStats() {
                 document.querySelectorAll('.stat-number').forEach(stat => {
                     const target = parseInt(stat.getAttribute('data-target'));
@@ -1935,7 +1995,6 @@
             if (statsSection) observer.observe(statsSection);
         });
         
-        // دوال مساعدة
         function toggleSemesters(element) {
             const semestersList = element.nextElementSibling;
             if (!semestersList) return;
