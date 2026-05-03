@@ -107,9 +107,18 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
+            transition: all 0.3s ease;
         }
         header nav ul li a:hover {
             color: #fff;
+        }
+        
+        /* رابط نشط في التنقل (Scroll Spy) */
+        header nav ul li a.active-link {
+            color: #fff;
+            background: rgba(255, 235, 59, 0.2);
+            border-radius: 20px;
+            padding: 8px 16px;
         }
         
         .logo a {
@@ -257,6 +266,17 @@
             gap: 30px;
         }
         
+        /* تأثيرات الظهور للأقسام */
+        .section, .stats-section, .modules-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .section.revealed, .stats-section.revealed, .modules-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .section {
             margin: 0;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
@@ -266,19 +286,8 @@
             color: #fff;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* تحسين سلاسة الحركة */
             position: relative;
             overflow: hidden;
-            /* --- إعدادات الظهور الأولي --- */
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        /* --- كلاس الظهور عند التمرير --- */
-        .section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         .section::before {
@@ -295,10 +304,6 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
             border-color: rgba(255, 235, 59, 0.5);
-        }
-        /* منع تأثير hover من التعارض مع تأثير الظهور */
-        .section.is-visible:hover {
-             transform: translateY(-5px);
         }
         
         .section h2 {
@@ -384,17 +389,8 @@
             color: #fff;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            /* --- للظهور التدريجي --- */
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .stats-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         .stats-section::before {
@@ -411,9 +407,6 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
             border-color: rgba(255, 235, 59, 0.5);
-        }
-        .stats-section.is-visible:hover {
-            transform: translateY(-5px);
         }
         
         .stats-section h2 {
@@ -453,14 +446,6 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            /* --- حركة إضافية للبطاقات الداخلية --- */
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-        .stat-card.is-visible {
-            opacity: 1;
-            transform: scale(1);
         }
         
         .stat-card::before {
@@ -474,12 +459,9 @@
         }
         
         .stat-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             background: linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(106, 27, 154, 0.2));
-        }
-        .stat-card.is-visible:hover {
-            transform: translateY(-8px) scale(1.02);
         }
         
         .stat-icon {
@@ -506,6 +488,7 @@
             font-weight: 600;
         }
         
+        /* ---------- قسم المواد الجديد ---------- */
         .modules-section {
             margin: 0;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
@@ -515,17 +498,8 @@
             color: #fff;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            /* --- للظهور التدريجي --- */
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .modules-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         .modules-section::before {
@@ -542,9 +516,6 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
             border-color: rgba(255, 235, 59, 0.5);
-        }
-        .modules-section.is-visible:hover {
-            transform: translateY(-5px);
         }
         
         .modules-section h2 {
@@ -565,45 +536,58 @@
             background-clip: text;
         }
         
+        /* تبويبات السنوات */
         .year-navigation {
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            padding: 8px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 235, 59, 0.2);
+            display: flex;
+            justify-content: center;
         }
+        
         .buttons-container {
             display: flex;
+            gap: 8px;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
         }
+        
         .year-btn {
-            background: linear-gradient(135deg, #6a1b9a, #4a148c);
-            color: white;
-            border: none;
-            padding: 10px 20px;
+            background: transparent;
+            color: #ffeb3b;
+            border: 2px solid transparent;
+            padding: 12px 25px;
             font-size: 1rem;
             font-weight: bold;
-            border-radius: 30px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
         }
+        
         .year-btn:hover {
+            background: rgba(255, 235, 59, 0.1);
+            border-color: rgba(255, 235, 59, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
+        
         .year-btn.active {
             background: linear-gradient(135deg, #ffeb3b, #ffc107);
             color: #1a1a2e;
-            box-shadow: 0 0 12px rgba(255,235,59,0.5);
+            border-color: #ffeb3b;
+            box-shadow: 0 8px 20px rgba(255, 235, 59, 0.4);
+            transform: translateY(0);
         }
-        .first-year { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
-        .second-year { background: linear-gradient(135deg, #4a148c, #3f51b5); }
-        .third-year { background: linear-gradient(135deg, #3f51b5, #2196f3); }
-        .fourth-year { background: linear-gradient(135deg, #2196f3, #00bcd4); }
-        .fifth-year { background: linear-gradient(135deg, #00bcd4, #009688); }
+        
+        /* إخفاء تدرجات الخلفية القديمة */
+        .first-year, .second-year, .third-year, .fourth-year, .fifth-year {
+            background: transparent;
+        }
         
         .year-modules {
             display: none;
@@ -621,114 +605,141 @@
             color: white;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
+        
         .subjects-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
+            gap: 30px;
             width: 100%;
         }
+        
         .subject-card {
-            background-color: rgba(0, 0, 0, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2), box-shadow 0.4s ease;
+            backdrop-filter: blur(8px);
+            position: relative;
             text-align: center;
-            backdrop-filter: blur(5px);
-            /* --- حركة ظهور للبطاقات --- */
-            opacity: 0;
-            transform: scale(0.95);
-        }
-        .subject-card.is-visible {
-            opacity: 1;
-            transform: scale(1);
         }
         
         .subject-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        .subject-card.is-visible:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 235, 59, 0.4);
         }
         
         .subject-image {
             width: 100%;
-            height: 170px;
+            height: 180px;
             background-size: cover;
             background-position: center;
             border-bottom: 2px solid rgba(255, 235, 59, 0.3);
-            transition: filter 0.3s ease;
+            transition: filter 0.4s ease, transform 0.4s ease;
         }
+        
+        .subject-card.available .subject-image {
+            filter: brightness(1.1);
+        }
+        
         .subject-card.grayscale .subject-image {
             filter: grayscale(80%) brightness(0.7);
         }
-        .subject-card.available .subject-image {
-            filter: none;
+        
+        /* شارة "متاح" */
+        .subject-card.available::after {
+            content: "متاح";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
+        
         .subject-content {
-            padding: 15px;
+            padding: 20px;
         }
+        
         .subject-card h4 {
             font-size: 1.3rem;
-            margin: 10px 0;
+            margin: 0 0 10px 0;
             color: #ffeb3b;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 16px;
+            border-radius: 12px;
+            transition: background 0.3s;
         }
-        .subject-card h4::after {
-            content: "\f078";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-left: 10px;
-            transition: transform 0.3s ease;
+        
+        .subject-card h4:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
-        .subject-card h4.active::after {
+        
+        .subject-card h4 i {
+            transition: transform 0.4s ease;
+            font-size: 1rem;
+            color: #00bcd4;
+        }
+        
+        .subject-card h4.active i {
             transform: rotate(180deg);
+            color: #ffeb3b;
         }
+        
         .subject-card ul {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 15px 0 0 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease;
+            transition: max-height 0.5s ease-in-out;
         }
+        
         .subject-card ul.show {
             max-height: 500px;
         }
+        
         .subject-card ul li {
             margin: 8px 0;
-            padding: 8px 12px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        
         .subject-card ul li:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 188, 212, 0.2);
+            transform: translateX(5px);
         }
+        
         .subject-card ul li a {
             color: #ffeb3b;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            display: block;
+            font-weight: 500;
+            flex: 1;
         }
-        .subject-card ul li a:hover {
-            color: white;
-            text-decoration: underline;
+        
+        .subject-card ul li i {
+            color: #4dd0e1;
+            font-size: 1rem;
         }
+        
         .subject-card ul li a.disabled-link {
-            color: #aaa;
+            color: #888;
             cursor: not-allowed;
-            opacity: 0.7;
-        }
-        .subject-card ul li a.disabled-link:hover {
-            color: #aaa;
-            text-decoration: none;
         }
         
         .alert-message {
@@ -972,7 +983,7 @@
             color: #e0e0e0;
         }
         
-        /* أنماط المعرض الجديد */
+        /* معرض الصور */
         .gallery {
             position: relative;
             width: 100%;
@@ -1070,7 +1081,7 @@
             padding: 25px;
             color: #fff;
             text-align: center;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -1079,13 +1090,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* تأثير ظهور للبطاقات الفارغة */
-            opacity: 0;
-            transform: scale(0.9);
-        }
-        .card.is-visible {
-            opacity: 1;
-            transform: scale(1);
         }
         
         .card::before {
@@ -1099,12 +1103,9 @@
         }
         
         .card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
             border-color: rgba(255, 235, 59, 0.5);
-        }
-        .card.is-visible:hover {
-            transform: translateY(-8px) scale(1.02);
         }
         
         .card-icon,
@@ -1206,118 +1207,11 @@
             .gallery-track {
                 display: none !important;
             }
-            .sections-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .section {
-                margin: 0;
-                padding: 20px;
-            }
-            .section h2 {
-                font-size: 1.8rem;
-            }
-            .section p {
-                font-size: 1rem;
-            }
-            .about-container {
-                flex-direction: column;
-            }
-            .about-image {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto 20px;
-            }
-            .stats-section {
-                padding: 20px;
-            }
-            .stats-section h2 {
-                font-size: 1.8rem;
-            }
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .stat-number {
-                font-size: 2.2rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-                transition: all 0.3s ease;
-            }
-            .dropdown-content.show {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            .dropdown-content a {
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-                color: #ffeb3b;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                transition: background-color 0.2s;
-            }
-            .dropdown-content a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            .contact-form {
-                padding: 0;
-            }
-            .submit-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            .cards-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .card {
-                padding: 20px;
-                min-height: 150px;
-            }
-            .social-links {
-                gap: 15px;
-            }
-            .social-link {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-            .desktop-only {
-                display: none !important;
-            }
-            .mobile-only {
-                display: inline !important;
-            }
             .subjects-container {
                 grid-template-columns: 1fr;
             }
-            .year-title {
-                font-size: 1.5rem;
-            }
-            .buttons-container {
-                flex-wrap: wrap;
-            }
             .year-btn {
-                padding: 8px 16px;
+                padding: 10px 18px;
                 font-size: 0.9rem;
             }
         }
@@ -1354,7 +1248,6 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <!-- للكمبيوتر: شريط متحرك -->
                 <div class="gallery-track">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
@@ -1394,8 +1287,7 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
-                    
-                    <!-- تكرار الصور لإنشاء تأثير حلقة مستمرة -->
+                    <!-- تكرار الصور لإنشاء حلقة مستمرة -->
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
@@ -1436,7 +1328,7 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
                 </div>
                 
-                <!-- للهاتف: الصور الفردية (سيتم عرضها كعرض شرائح) -->
+                <!-- للهاتف: الصور الفردية -->
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
@@ -1478,7 +1370,6 @@
             </div>
         </div>
         <div class="sections-container">
-            <!-- تمت إزالة تأثيرات الظهور المضمنة في الـ HTML والاعتماد على الـ Observer في JS -->
             <div id="about" class="section">
                 <h2><i class="fas fa-info-circle"></i> À propos</h2>
                 <div class="about-container">
@@ -1523,41 +1414,80 @@
                 
                 <div class="year-navigation">
                     <div class="buttons-container">
-                        <button class="year-btn first-year" data-year="annee1">1ère Année</button>
-                        <button class="year-btn second-year" data-year="annee2">2ème Année</button>
-                        <button class="year-btn third-year" data-year="annee3">3ème Année</button>
-                        <button class="year-btn fourth-year" data-year="annee4">4ème Année</button>
-                        <button class="year-btn fifth-year" data-year="annee5">5ème Année</button>
+                        <button class="year-btn active" data-year="annee1">1ère Année</button>
+                        <button class="year-btn" data-year="annee2">2ème Année</button>
+                        <button class="year-btn" data-year="annee3">3ème Année</button>
+                        <button class="year-btn" data-year="annee4">4ème Année</button>
+                        <button class="year-btn" data-year="annee5">5ème Année</button>
                     </div>
                 </div>
                 
                 <div class="year-modules" id="annee1">
                     <div class="year-title" style="background: linear-gradient(135deg, #6a1b9a, #4a148c);">1ère Année</div>
                     <div class="subjects-container">
-                        <!-- لم يتم تغيير المحتوى، فقط لإبقاء المثال مرتباً -->
-                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">ANATOMIE</h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
-                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(3).jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE</h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
-                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE</h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
-                        <!-- ... تابع بقية المحتوى بنفس الطريقة ... -->
-                        <!-- اختصاراً للمثال، تم إضافة عدد قليل فقط. تأكد من إضافة باقي البطاقات. -->
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">ANATOMIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(3).jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOLOGIE CELLULAIRE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOLOGIE VEGETALE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOSTATISTIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">CHIMIE GENERALE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Chirality%2C%20a%20Primer%20(Updated).jfif')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">CHIMIE ORGANIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">HISTOIRE DE LA PHARMACIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">INFORMATIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHYSIOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Client%20Challenge.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHYSIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Produits%20pharmaceutiques%20sur%20fond%20neutre.png')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">FRANCAIS MEDICAL <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
                     </div>
                 </div>
-                <!-- تابع تعريف باقي السنوات (annee2, annee3,...) بنفس الهيكل مع بطاقاتها الخاصة -->
+                
                 <div class="year-modules" id="annee2">
                     <div class="year-title" style="background: linear-gradient(135deg, #4a148c, #3f51b5);">2ème Année</div>
-                    <div class="subjects-container">...</div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/__files_hamster3d.com_stockbox_icon-hd720.jpg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOCHIMIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOPHYSIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(2).jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BOTANIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">CHIMIE MINERALE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">ANGLAIS MEDICAL <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">GENETIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download.jpg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHYSIOPATHOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                    </div>
                 </div>
+                
                 <div class="year-modules" id="annee3">
                     <div class="year-title" style="background: linear-gradient(135deg, #3f51b5, #2196f3);">3ème Année</div>
-                    <div class="subjects-container">...</div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">CHIMIE ANALYTIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Pourquoi%20l%27heure%20de%20vos%20repas%20est%20importante.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">CHIMIE THERAPEUTIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHARMACIE GALENIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHARMACOGNOSIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHARMACOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Symptoms%20of%20Heart%20Attack.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">SEMIOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                    </div>
                 </div>
+                
                 <div class="year-modules" id="annee4">
                     <div class="year-title" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">4ème Année</div>
-                    <div class="subjects-container">...</div>
+                    <div class="subjects-container">
+                        <div class="subject-card available"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">BIOCHIMIE CLINIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="BIOCHIMIE_CLINIQUE_S1.html">Semestre 1</a></li><li><a href="BIOCHIMIE_CLINIQUE_S2.html">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card available"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">HEMOBIOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="HEMOBIOLOGIE_S1.html">Semestre 1</a></li><li><a href="HEMOBIOLOGIE_S2.html">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card available"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">IMMUNOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="IMMUNOLOGIE_S1.html">Semestre 1</a></li><li><a href="IMMUNOLOGIE_S2.html">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card available"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">MICROBIOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="MICROBIOLOGIE_S1.html">Semestre 1</a></li><li><a href="MICROBIOLOGIE_S2.html">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                        <div class="subject-card available"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(8).jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PARASITOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="PARASITOLOGIE_S1.html">Semestre 1</a></li><li><a href="PARASITOLOGIE_S2.html">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                    </div>
                 </div>
+                
                 <div class="year-modules" id="annee5">
                     <div class="year-title" style="background: linear-gradient(135deg, #00bcd4, #009688);">5ème Année</div>
-                    <div class="subjects-container">...</div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">DROIT PHARMACEUTIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">EPIDEMIOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">GESTION PHARMACEUTIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">HYDROLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHARMACIE CLINIQUE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHARMACIE HOSPITALIERE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">PHARMACIE INDUSTRIELLE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li></ul></div></div>
+                        <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">TOXICOLOGIE <i class="fas fa-chevron-down"></i></h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 2</a></li><li><a href="#" onclick="showAlert(); return false;">Semestre 3</a></li></ul></div></div>
+                    </div>
                 </div>
             </div>
             
@@ -1677,142 +1607,83 @@
             }
         });
         
+        // التمرير السلس مع إزاحة
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            const targetId = anchor.getAttribute('href');
-            if (targetId === "#" || targetId === "") return;
-            if (anchor.pathname !== window.location.pathname && anchor.pathname !== "") return;
-            
             anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#" || targetId === "") return;
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
-                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                    
+                    const headerHeight = mainHeader.offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerHeight - 10;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     closeMobileMenu();
                 }
             });
         });
         
-        function showYear(yearId) {
-            document.querySelectorAll('.year-modules').forEach(module => {
-                module.classList.remove('active-year');
-            });
-            const targetYear = document.getElementById(yearId);
-            if (targetYear) {
-                targetYear.classList.add('active-year');
-                // عند تغيير السنة، أعد فحص البطاقات التي أصبحت ظاهرة لتطبيق التأثيرات عليها
-                setTimeout(() => {
-                    const newCards = targetYear.querySelectorAll('.subject-card');
-                    observer.observeForced(newCards);
-                }, 50);
-            }
-            document.querySelectorAll('.year-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-year') === yearId) {
-                    btn.classList.add('active');
+        // Scroll Spy
+        const sections = document.querySelectorAll('.section, .stats-section, .modules-section');
+        const navLinks = document.querySelectorAll('header nav ul li a');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const link = document.querySelector(`header nav ul li a[href="#${id}"]`);
+                if (entry.isIntersecting) {
+                    navLinks.forEach(l => l.classList.remove('active-link'));
+                    if (link) link.classList.add('active-link');
                 }
             });
+        }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+        sections.forEach(section => observer.observe(section));
+        
+        // تأثيرات الظهور
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
+            });
+        }, { threshold: 0.15 });
+        sections.forEach(section => revealObserver.observe(section));
+        
+        function showYear(yearId) {
+            document.querySelectorAll('.year-modules').forEach(module => module.classList.remove('active-year'));
+            document.querySelectorAll('.year-btn').forEach(btn => btn.classList.remove('active'));
+            const targetYear = document.getElementById(yearId);
+            if (targetYear) targetYear.classList.add('active-year');
+            const activeBtn = document.querySelector(`.year-btn[data-year="${yearId}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
         }
         
         document.querySelectorAll('.year-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function() {
                 const yearId = this.getAttribute('data-year');
                 if (yearId) {
                     showYear(yearId);
                     const modulesSection = document.getElementById('modules');
                     if (modulesSection) {
-                        const headerHeight = document.getElementById('mainHeader').offsetHeight;
-                        const elementPosition = modulesSection.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                        const headerHeight = mainHeader.offsetHeight;
+                        const pos = modulesSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        window.scrollTo({ top: pos, behavior: 'smooth' });
                     }
                     closeMobileMenu();
                 }
             });
         });
         
-        // --- نظام مراقبة التمرير المُحسَّن (Intersection Observer) ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // إذا كانت بطاقة إحصائية، أضف تأخيراً بسيطاً متسلسلاً
-                    if (entry.target.classList.contains('stat-card')) {
-                        const allStats = document.querySelectorAll('#statistics .stat-card');
-                        const index = Array.from(allStats).indexOf(entry.target);
-                        entry.target.style.transitionDelay = `${index * 0.1}s`;
-                    }
-                    // إذا كانت بطاقة مادة، أضف تأخيراً متسلسلاً أيضاً
-                    if (entry.target.classList.contains('subject-card')) {
-                        const allSubjects = document.querySelectorAll('.active-year .subject-card');
-                        const index = Array.from(allSubjects).indexOf(entry.target);
-                        entry.target.style.transitionDelay = `${index * 0.05}s`;
-                    }
-                    // للبطاقات في قسم "À Voir Aussi"
-                    if (entry.target.classList.contains('card')) {
-                        const allCards = document.querySelectorAll('#watch-also .card');
-                        const index = Array.from(allCards).indexOf(entry.target);
-                        entry.target.style.transitionDelay = `${index * 0.1}s`;
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.15, // تشغيل عندما يظهر 15% من العنصر
-            rootMargin: '0px 0px -50px 0px' // لبدء التأثير قبل قليل من الوصول للعنصر
-        });
-
-        // دالة مساعدة لمراقبة مجموعة من العناصر دفعة واحدة (تستخدم عند تغيير السنة)
-        observer.observeForced = function(elements) {
-            elements.forEach(el => {
-                if (!el.classList.contains('is-visible')) {
-                    observer.observe(el);
-                }
-            });
-        };
-
-        // بدء المراقبة على جميع العناصر المستهدفة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
             showYear('annee1');
             
-            // مراقبة الأقسام الرئيسية
-            document.querySelectorAll('.section, .stats-section, .modules-section').forEach(section => {
-                observer.observe(section);
-            });
-
-            // مراقبة بطاقات الإحصائيات
-            document.querySelectorAll('#statistics .stat-card').forEach(card => {
-                observer.observe(card);
-            });
-
-            // مراقبة بطاقات المواد للسنة النشطة الحالية
-            const activeYearCards = document.querySelectorAll('.active-year .subject-card');
-            observer.observeForced(activeYearCards);
-            
-            // مراقبة بطاقات "À Voir Aussi"
-            document.querySelectorAll('#watch-also .card').forEach(card => {
-                observer.observe(card);
-            });
-            
-            // معرض الصور للهاتف
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
                 if (galleryTrack) galleryTrack.style.display = 'none';
                 const images = document.querySelectorAll('.gallery img:not(.gallery-track img)');
                 let currentIndex = 0;
                 function showNextImage() {
-                    if (images.length > 0) {
-                        images[currentIndex].classList.remove('active');
-                        currentIndex = (currentIndex + 1) % images.length;
-                        images[currentIndex].classList.add('active');
-                    }
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
                 }
                 if (images.length) { 
                     images[currentIndex].classList.add('active'); 
@@ -1822,72 +1693,38 @@
                 document.querySelectorAll('.gallery img:not(.gallery-track img)').forEach(img => img.style.display = 'none');
             }
             
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const statusMessage = document.getElementById('statusMessage');
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-                    statusMessage.style.display = 'none';
-                    try {
-                        const formData = new FormData(contactForm);
-                        const response = await fetch(contactForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
-                        if (response.ok) {
-                            statusMessage.textContent = '✅ Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.';
-                            statusMessage.className = 'status-message status-success';
-                            statusMessage.style.display = 'block';
-                            contactForm.reset();
-                        } else throw new Error('Erreur lors de l\'envoi');
-                    } catch (error) {
-                        statusMessage.textContent = '❌ Erreur: ' + error.message;
-                        statusMessage.className = 'status-message status-error';
-                        statusMessage.style.display = 'block';
-                    } finally {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
-                        setTimeout(() => { if (statusMessage.style.display === 'block') statusMessage.style.display = 'none'; }, 8000);
+            // إحصائيات متحركة
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.stat-number').forEach(stat => {
+                            const target = parseInt(stat.getAttribute('data-target'));
+                            let current = 0;
+                            const step = target / 60;
+                            const timer = setInterval(() => {
+                                current += step;
+                                if (current >= target) { current = target; clearInterval(timer); }
+                                stat.textContent = Math.floor(current);
+                            }, 30);
+                        });
+                        statsObserver.unobserve(entry.target);
                     }
                 });
-            }
-            
-            function animateStats() {
-                document.querySelectorAll('.stat-number').forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-target'));
-                    let current = 0;
-                    const step = target / 60;
-                    const timer = setInterval(() => {
-                        current += step;
-                        if (current >= target) { current = target; clearInterval(timer); }
-                        stat.textContent = Math.floor(current);
-                    }, 30);
-                });
-            }
-            // مراقب منفصل لبدء عدّاد الإحصائيات عند ظهور القسم
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { 
-                    if (entry.isIntersecting) { 
-                        animateStats(); 
-                        statsObserver.unobserve(entry.target); 
-                    } 
-                });
-            }, { threshold: 0.5 });
+            }, { threshold: 0.3 });
             const statsSection = document.getElementById('statistics');
             if (statsSection) statsObserver.observe(statsSection);
         });
         
         function toggleSemesters(element) {
-            const semestersList = element.nextElementSibling;
-            if (!semestersList) return;
-            document.querySelectorAll('.subject-card ul').forEach(list => {
-                if (list !== semestersList && list.classList.contains('show')) {
+            const ul = element.nextElementSibling;
+            if (!ul) return;
+            document.querySelectorAll('.subject-card ul.show').forEach(list => {
+                if (list !== ul) {
                     list.classList.remove('show');
-                    const header = list.closest('.subject-content')?.querySelector('h4');
-                    if (header) header.classList.remove('active');
+                    list.previousElementSibling?.classList.remove('active');
                 }
             });
-            semestersList.classList.toggle('show');
+            ul.classList.toggle('show');
             element.classList.toggle('active');
         }
         
@@ -1896,6 +1733,32 @@
             alertDiv.style.display = 'block';
             setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
         }
+        
+        document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const statusMessage = document.getElementById('statusMessage');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            statusMessage.style.display = 'none';
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                if (response.ok) {
+                    statusMessage.textContent = '✅ Votre message a été envoyé avec succès!';
+                    statusMessage.className = 'status-message status-success';
+                    this.reset();
+                } else throw new Error('Erreur lors de l\'envoi');
+            } catch (error) {
+                statusMessage.textContent = '❌ Erreur: ' + error.message;
+                statusMessage.className = 'status-message status-error';
+            } finally {
+                statusMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+                setTimeout(() => { if (statusMessage.style.display === 'block') statusMessage.style.display = 'none'; }, 8000);
+            }
+        });
     </script>
 </body>
 </html>
