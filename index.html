@@ -17,7 +17,7 @@
     })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules, avec des examens pour chaque matière et pour chaque semestre. Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire. Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !">
     <meta name="keywords" content="pharmacie, études pharmaceutiques, cours pharmacie, TPs pharmacie, TDs pharmacie, examens pharmacie, étudiants pharmacie, ressources pédagogiques, GhaniPharma, sciences pharmaceutiques, غاني فارما, دروس صيدلة في الجزائر">
     <meta name="author" content="Ghani Rouabah">
@@ -522,6 +522,7 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            min-height: 200px; /* لكي لا يظهر فارغًا تمامًا */
         }
         
         .modules-section::before {
@@ -582,6 +583,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10; /* تأكيد ظهورها فوق أي عناصر أخرى */
         }
         .year-btn:hover {
             transform: translateY(-2px);
@@ -628,6 +631,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             backdrop-filter: blur(5px);
+            opacity: 1 !important; /* ضمان الظهور */
+            display: block !important; /* تجاوز أي إخفاء */
         }
         .subject-card:hover {
             transform: translateY(-5px);
@@ -640,6 +645,7 @@
             background-position: center;
             border-bottom: 2px solid rgba(255, 235, 59, 0.3);
             transition: filter 0.3s ease;
+            background-color: #1a1a2e; /* لون خلفية احتياطي لحين تحميل الصورة */
         }
         .subject-card.grayscale .subject-image {
             filter: grayscale(80%) brightness(0.7);
@@ -649,6 +655,7 @@
         }
         .subject-content {
             padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7); /* خلفية للنصوص */
         }
         .subject-card h4 {
             font-size: 1.3rem;
@@ -1094,13 +1101,13 @@
             }
             header nav ul {
                 position: fixed;
-                top: 10%; /* تغيير من 50% إلى 10% لتظهر من أعلى */
+                top: 10%;
                 left: 50%;
-                transform: translateX(-50%); /* إزالة translateY */
+                transform: translateX(-50%);
                 width: 85%;
                 max-width: 320px;
-                max-height: 80vh; /* تحديد أقصى ارتفاع */
-                overflow-y: auto; /* تمرير داخلي إذا كان المحتوى طويلاً */
+                max-height: 80vh;
+                overflow-y: auto;
                 background: linear-gradient(145deg, #0a0a2a, #1a1a3a);
                 backdrop-filter: blur(25px);
                 border-radius: 28px;
@@ -1295,18 +1302,15 @@
                 font-size: 0.9rem;
             }
             
-            /* ====== FIX POUR MODULES SUR MOBILE ====== */
-            .modules-section {
-                overflow: visible !important;
-            }
+            /* ضمان ظهور محتوى السنة النشطة على الهواتف */
             .year-modules.active-year {
                 display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
             }
-            .subject-card h4 {
-                font-size: 1.2rem;
-            }
-            .subject-card ul li a {
-                font-size: 0.9rem;
+            .subject-card {
+                opacity: 1 !important;
+                display: block !important;
             }
         }
     </style>
@@ -1509,7 +1513,7 @@
                 
                 <div class="year-navigation">
                     <div class="buttons-container">
-                        <button class="year-btn first-year" data-year="annee1">1ère Année</button>
+                        <button class="year-btn first-year active" data-year="annee1">1ère Année</button>
                         <button class="year-btn second-year" data-year="annee2">2ème Année</button>
                         <button class="year-btn third-year" data-year="annee3">3ème Année</button>
                         <button class="year-btn fourth-year" data-year="annee4">4ème Année</button>
@@ -1517,7 +1521,6 @@
                     </div>
                 </div>
                 
-                <!-- إضافة class active-year مباشرة لضمان الظهور حتى لو فشل الجافاسكريبت -->
                 <div class="year-modules active-year" id="annee1">
                     <div class="year-title" style="background: linear-gradient(135deg, #6a1b9a, #4a148c);">1ère Année</div>
                     <div class="subjects-container">
@@ -1733,6 +1736,14 @@
             });
         });
         
+        // عند النقر على رابط "Modules" نجعل القسم مرئيًا يدويًا
+        document.querySelector('a[href="#modules"]').addEventListener('click', function(e) {
+            const modulesSection = document.getElementById('modules');
+            if (modulesSection) {
+                modulesSection.classList.add('visible');
+            }
+        });
+        
         // Animation d'apparition des sections (Intersection Observer)
         const fadeElements = document.querySelectorAll('.section, .stats-section, .modules-section');
         const fadeObserver = new IntersectionObserver((entries) => {
@@ -1771,14 +1782,16 @@
         updateActiveLink();
         
         document.addEventListener('DOMContentLoaded', function() {
-            // تأكيد إظهار السنة الأولى فوراً (بالإضافة إلى الفعل اليدوي في HTML)
+            // إظهار السنة الأولى افتراضيًا
             showYear('annee1');
-            // إعادة المحاولة بعد 100ms للتأكد من اكتمال كل شيء
-            setTimeout(function() {
-                if (!document.getElementById('annee1').classList.contains('active-year')) {
+            
+            // احتياطي: إذا لم يتم عرض السنة الأولى بعد تحميل الصفحة، حاول مرة أخرى بعد 200ms
+            setTimeout(() => {
+                const activeYear = document.querySelector('.year-modules.active-year');
+                if (!activeYear) {
                     showYear('annee1');
                 }
-            }, 100);
+            }, 200);
             
             // Galerie mobile / desktop
             if (window.innerWidth <= 768) {
