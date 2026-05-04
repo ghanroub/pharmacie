@@ -58,13 +58,22 @@
             z-index: -1;
         }
         
-        /* إضافة الانتقال السلس وارتفاع الرأس الثابت */
-        html {
-            scroll-behavior: smooth;
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffeb3b, #00bcd4);
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 5px rgba(0,188,212,0.5);
         }
         
         header {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
             color: #ffeb3b;
             padding: 20px 15px;
             display: flex;
@@ -74,11 +83,17 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            transition: transform 0.4s ease-in-out;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), background 0.3s;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
         
         header.hidden {
             transform: translateY(-100%);
+        }
+        
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 12px 15px;
         }
         
         .menu-btn {
@@ -89,14 +104,13 @@
             padding: 5px 10px;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         .menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.5);
+            transform: scale(1.05);
         }
-        header nav {
-            transform: translateX(-35px);
-        }
+        
         header nav ul {
             list-style: none;
             display: flex;
@@ -112,9 +126,33 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 30px;
+            position: relative;
+        }
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(90deg, #ffeb3b, #00bcd4);
+            transition: transform 0.3s ease;
+            border-radius: 2px;
+        }
+        header nav ul li a.active {
+            color: white;
+            background: rgba(255,235,59,0.15);
+        }
+        header nav ul li a.active::after {
+            transform: translateX(-50%) scaleX(1);
         }
         header nav ul li a:hover {
-            color: #fff;
+            color: white;
+            background: rgba(255,235,59,0.1);
         }
         
         .logo a {
@@ -176,6 +214,18 @@
             75% { transform: scale(1.15) rotate(-5deg); }
         }
         
+        /* Fade-in animation for sections */
+        .section, .stats-section, .modules-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .section.visible, .stats-section.visible, .modules-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Rest of your existing CSS (keep all styles from original) */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -568,6 +618,11 @@
         }
         .year-modules.active-year {
             display: block;
+            animation: fadeSlideUp 0.4s ease;
+        }
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .year-title {
@@ -623,6 +678,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.2s;
         }
         .subject-card h4::after {
             content: "\f078";
@@ -918,7 +974,6 @@
             color: #e0e0e0;
         }
         
-        /* أنماط المعرض الجديد */
         .gallery {
             position: relative;
             width: 100%;
@@ -1052,9 +1107,6 @@
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
-            }
-            header nav {
-                transform: none;
             }
             header nav ul {
                 position: fixed;
@@ -1257,29 +1309,12 @@
                 font-size: 0.9rem;
             }
         }
-        
-        /* ===== تحسينات الانتقال والتمييز ===== */
-        /* تأثير التمييز عند الوصول للقسم */
-        .section.highlight, 
-        .stats-section.highlight, 
-        .modules-section.highlight {
-            transition: all 0.3s ease-out;
-            box-shadow: 0 0 0 2px #ffeb3b, 0 0 0 4px #00bcd4, 0 8px 32px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
-            border-color: #ffeb3b;
-        }
-        
-        /* تحسين ظهور القوائم المنسدلة على سطح المكتب */
-        @media (min-width: 769px) {
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
+    <div class="progress-bar" id="progressBar"></div>
     <div id="alertMessage" class="alert-message">
         Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.
     </div>
@@ -1294,7 +1329,6 @@
         <nav>
             <ul id="navMenu">
                 <li class="menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></li>
-                
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li><a href="#modules"><i class="fas fa-book"></i> Modules</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -1618,60 +1652,43 @@
     </footer>
     
     <script>
+        // ==================== PROGRESS BAR ====================
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+        
+        // ==================== HIDE/SHOW HEADER & SCROLL EFFECT ====================
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop && scrollTop > 100) mainHeader.classList.add('hidden');
             else if (scrollTop < lastScrollTop) mainHeader.classList.remove('hidden');
+            if (scrollTop > 50) mainHeader.classList.add('scrolled');
+            else mainHeader.classList.remove('scrolled');
             lastScrollTop = scrollTop;
-        });
-        
-        // ========== تحسينات الانتقال بين الأقسام ==========
-        // إضافة تأثير التمييز للقسم المستهدف
-        function highlightSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.classList.add('highlight');
-                setTimeout(() => {
-                    section.classList.remove('highlight');
-                }, 1000);
-            }
-        }
-        
-        // دالة التمرير المحسنة مع مراعاة ارتفاع الرأس الثابت
-        function scrollToElement(element, offset = 80) {
-            if (!element) return;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-        
-        // إعادة تعريف سلوك جميع الروابط الداخلية
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            const targetId = anchor.getAttribute('href');
-            if (targetId === "#" || targetId === "") return;
-            // نتأكد أنه رابط داخلي حقيقي وليس رابط مشروط آخر
-            if (anchor.pathname !== window.location.pathname && anchor.pathname !== "") return;
             
-            anchor.addEventListener('click', function(e) {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    const headerHeight = mainHeader.offsetHeight;
-                    scrollToElement(targetElement, headerHeight);
-                    // إضافة تأثير التمييز بعد الانتهاء من التمرير (تقريباً)
-                    setTimeout(() => {
-                        highlightSection(targetId.substring(1));
-                    }, 500);
-                    closeMobileMenu();
+            // Update active nav link based on visible section
+            const sections = document.querySelectorAll('.section, .stats-section, .modules-section');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - mainHeader.offsetHeight - 50;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+                    current = section.getAttribute('id');
                 }
             });
+            document.querySelectorAll('#navMenu a').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href').substring(1);
+                if (href === current) link.classList.add('active');
+            });
         });
         
+        // ==================== MOBILE MENU ====================
         const navMenu = document.getElementById('navMenu');
         const menuClose = document.getElementById('mobileMenuClose');
         
@@ -1714,6 +1731,31 @@
             }
         });
         
+        // ==================== SMOOTH SCROLL WITH OFFSET ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            const targetId = anchor.getAttribute('href');
+            if (targetId === "#" || targetId === "") return;
+            if (anchor.pathname !== window.location.pathname && anchor.pathname !== "") return;
+            
+            anchor.addEventListener('click', function(e) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    closeMobileMenu();
+                }
+            });
+        });
+        
+        // ==================== YEAR MODULES ====================
         function showYear(yearId) {
             document.querySelectorAll('.year-modules').forEach(module => {
                 module.classList.remove('active-year');
@@ -1737,22 +1779,33 @@
                     showYear(yearId);
                     const modulesSection = document.getElementById('modules');
                     if (modulesSection) {
-                        const headerHeight = mainHeader.offsetHeight;
-                        scrollToElement(modulesSection, headerHeight);
-                        // إضافة تأثير التمييز لقسم الوحدات
-                        setTimeout(() => {
-                            highlightSection('modules');
-                        }, 600);
+                        const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                        const elementPosition = modulesSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     }
                     closeMobileMenu();
                 }
             });
         });
         
+        // ==================== SCROLL REVEAL (FADE IN SECTIONS) ====================
+        const revealElements = document.querySelectorAll('.section, .stats-section, .modules-section');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // ==================== DOMContentLoaded ====================
         document.addEventListener('DOMContentLoaded', function() {
             showYear('annee1');
             
-            // معرض الصور: للهاتف (عرض الشرائح) وللكمبيوتر (التمرير التلقائي)
+            // Gallery - mobile slideshow
             if (window.innerWidth <= 768) {
                 const galleryTrack = document.querySelector('.gallery-track');
                 if (galleryTrack) galleryTrack.style.display = 'none';
@@ -1771,6 +1824,7 @@
                 document.querySelectorAll('.gallery img:not(.gallery-track img)').forEach(img => img.style.display = 'none');
             }
             
+            // Contact form
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const statusMessage = document.getElementById('statusMessage');
@@ -1801,6 +1855,7 @@
                 });
             }
             
+            // Stats animation
             function animateStats() {
                 document.querySelectorAll('.stat-number').forEach(stat => {
                     const target = parseInt(stat.getAttribute('data-target'));
@@ -1813,11 +1868,11 @@
                     }, 30);
                 });
             }
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); observer.unobserve(entry.target); } });
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); statsObserver.unobserve(entry.target); } });
             }, { threshold: 0.3 });
             const statsSection = document.getElementById('statistics');
-            if (statsSection) observer.observe(statsSection);
+            if (statsSection) statsObserver.observe(statsSection);
         });
         
         function toggleSemesters(element) {
