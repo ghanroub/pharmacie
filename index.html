@@ -17,7 +17,7 @@
     })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules, avec des examens pour chaque matière et pour chaque semestre. Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire. Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !">
     <meta name="keywords" content="pharmacie, études pharmaceutiques, cours pharmacie, TPs pharmacie, TDs pharmacie, examens pharmacie, étudiants pharmacie, ressources pédagogiques, GhaniPharma, sciences pharmaceutiques, غاني فارما, دروس صيدلة في الجزائر">
     <meta name="author" content="Ghani Rouabah">
@@ -56,6 +56,33 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
+        }
+        
+        /* --- تحسين الانتقال إلى الأقسام (Smooth Scroll) --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* إضافة مساحة علوية للعناصر التي بها ID لتجنب تغطية الهيدر لها */
+        #about, #modules, #contact, #statistics, #watch-also, #intro {
+            scroll-margin-top: 80px;
+            transition: all 0.3s ease;
+        }
+
+        /* تأثير بصري عند النقر على القسم */
+        .section-highlight {
+            animation: highlight-section 0.8s ease;
+        }
+
+        @keyframes highlight-section {
+            0% {
+                background-color: rgba(255, 235, 59, 0.3);
+                box-shadow: 0 0 0 2px rgba(255, 235, 59, 0.6);
+            }
+            100% {
+                background-color: transparent;
+                box-shadow: none;
+            }
         }
         
         header {
@@ -107,6 +134,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
+            transition: color 0.3s ease;
         }
         header nav ul li a:hover {
             color: #fff;
@@ -1038,7 +1066,6 @@
             border-color: rgba(255, 235, 59, 0.5);
         }
         
-        /* إخفاء المحتوى الداخلي للبطاقات لأنها فارغة */
         .card-icon,
         .card h3,
         .card p {
@@ -1264,7 +1291,7 @@
     
     <header id="mainHeader">
         <div class="logo">
-            <a href="index.html">
+            <a href="#intro">
                 <span class="pill-icon">💊</span> GhaniPharma
             </a>
         </div>
@@ -1272,6 +1299,7 @@
         <nav>
             <ul id="navMenu">
                 <li class="menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></li>
+                
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li><a href="#modules"><i class="fas fa-book"></i> Modules</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -1285,8 +1313,9 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
+                <!-- للكمبيوتر: شريط متحرك -->
                 <div class="gallery-track">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1313,19 +1342,20 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg" alt="Image 25">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Symptoms%20of%20Heart%20Attack.jpeg" alt="Image 26">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif" alt="Image 27">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 27">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 28">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 29">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 30">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 31">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 32">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 33">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 34">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 28">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 29">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 30">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 31">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 32">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 33">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 34">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 35">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 36">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 37">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 38">
                     
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
+                    <!-- تكرار الصور لإنشاء تأثير حلقة مستمرة -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1352,20 +1382,21 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg" alt="Image 25">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Symptoms%20of%20Heart%20Attack.jpeg" alt="Image 26">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif" alt="Image 27">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 27">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 28">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 29">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 30">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 31">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 32">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 33">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 34">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 28">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 29">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 30">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 31">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 32">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 33">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 34">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 35">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 36">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 37">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 38">
                 </div>
                 
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
+                <!-- للهاتف: الصور الفردية (سيتم عرضها كعرض شرائح) -->
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1392,17 +1423,17 @@
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg" alt="Image 25">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Symptoms%20of%20Heart%20Attack.jpeg" alt="Image 26">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif" alt="Image 27">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 27">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 28">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 29">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 30">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 31">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 32">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 33">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 34">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 28">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 29">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 30">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 31">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 32">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 33">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 34">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 35">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 36">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 37">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 38">
             </div>
         </div>
         <div class="sections-container">
@@ -1631,68 +1662,56 @@
             });
         }
         
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMobileMenu();
-            });
-        });
+        // --- تحسين الانتقال إلى الأقسام (Smooth Scrolling) ---
+        const allInternalLinks = document.querySelectorAll('a[href^="#"]');
         
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
-                closeMobileMenu();
-            }
-        });
-        
-        // ======================== تحسين الانتقال إلى الأقسام ========================
-        function smoothScrollToSection(targetId) {
-            const targetElement = document.querySelector(targetId);
-            if (!targetElement) return;
-            
-            // منع السلوك الافتراضي للرابط
-            event.preventDefault();
-            
-            // حساب ارتفاع الهيدر الثابت + مسافة إضافية صغيرة للحصول على مظهر أفضل
-            const headerHeight = document.getElementById('mainHeader').offsetHeight;
-            const extraOffset = 20; // مسافة إضافية بسيطة
-            
-            // الحصول على موقع العنصر
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - extraOffset;
-            
-            // تنفيذ التمرير السلس
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-        
-        // إضافة حدث النقر لجميع الروابط التي تبدأ بـ #
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            const targetId = anchor.getAttribute('href');
-            // تجاهل الروابط التي لا تحتوي على معرف حقيقي أو الروابط التي تشير إلى صفحة أخرى
-            if (targetId === "#" || targetId === "") return;
-            if (anchor.pathname !== window.location.pathname && anchor.pathname !== "") return;
-            
+        allInternalLinks.forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                const targetElement = document.querySelector(targetId);
+                const hash = this.getAttribute('href');
+                
+                // تجنب التعامل مع الروابط الفارغة أو التي ليست أقساماً داخل الصفحة
+                if (hash === "#" || hash === "" || hash === "#0") return;
+                
+                const targetElement = document.querySelector(hash);
+                
                 if (targetElement) {
                     e.preventDefault();
-                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
-                    const extraOffset = 20; // هامش صغير لتحسين المظهر
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - extraOffset;
                     
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // إغلاق القائمة في حالة الجوال بعد النقر
+                    // إغلاق القائمة في حالة الجوال
                     closeMobileMenu();
+                    
+                    // إضافة تأثير بصري (تحديد القسم)
+                    targetElement.classList.add('section-highlight');
+                    setTimeout(() => {
+                        targetElement.classList.remove('section-highlight');
+                    }, 800);
+                    
+                    // استخدام الطريقة الأصلية للتمرير السلس
+                    try {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                        });
+                    } catch (error) {
+                        // لو المتصفح قديم، نستخدم الطريقة البديلة
+                        const headerHeight = document.getElementById('mainHeader')?.offsetHeight || 0;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // تحديث الـ URL بدون إعادة تحميل الصفحة
+                    if (history.pushState) {
+                        history.pushState(null, null, hash);
+                    } else {
+                        location.hash = hash;
+                    }
                 }
             });
         });
-        // =========================================================================
         
         function showYear(yearId) {
             document.querySelectorAll('.year-modules').forEach(module => {
@@ -1718,9 +1737,8 @@
                     const modulesSection = document.getElementById('modules');
                     if (modulesSection) {
                         const headerHeight = document.getElementById('mainHeader').offsetHeight;
-                        const extraOffset = 20;
                         const elementPosition = modulesSection.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - extraOffset;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
                         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     }
                     closeMobileMenu();
