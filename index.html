@@ -33,6 +33,10 @@
         * {
             box-sizing: border-box;
         }
+        /* 1. تحسين تجربة التمرير العامة */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -57,32 +61,17 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: -1;
         }
-        
-        /* --- تحسين الانتقال إلى الأقسام (Smooth Scroll) --- */
-        html {
-            scroll-behavior: smooth;
+        /* 2. تأثير الظهور التدريجي */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            visibility: hidden;
         }
-
-        /* إضافة مساحة علوية للعناصر التي بها ID لتجنب تغطية الهيدر لها */
-        #about, #modules, #contact, #statistics, #watch-also, #intro {
-            scroll-margin-top: 80px;
-            transition: all 0.3s ease;
-        }
-
-        /* تأثير بصري عند النقر على القسم */
-        .section-highlight {
-            animation: highlight-section 0.8s ease;
-        }
-
-        @keyframes highlight-section {
-            0% {
-                background-color: rgba(255, 235, 59, 0.3);
-                box-shadow: 0 0 0 2px rgba(255, 235, 59, 0.6);
-            }
-            100% {
-                background-color: transparent;
-                box-shadow: none;
-            }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
         }
         
         header {
@@ -134,7 +123,6 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1rem;
-            transition: color 0.3s ease;
         }
         header nav ul li a:hover {
             color: #fff;
@@ -199,28 +187,6 @@
             75% { transform: scale(1.15) rotate(-5deg); }
         }
         
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 0;
-            border-radius: 0 0 10px 10px;
-        }
-        .dropdown-content a {
-            color: #ffeb3b;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.2s;
-        }
-        .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
         .hero {
             color: #fff;
             padding: 100px 20px;
@@ -905,35 +871,12 @@
             color: #fff;
         }
         
-        .social-link.whatsapp:hover {
-            color: #25d366;
-            border-color: #25d366;
-        }
-        
-        .social-link.telegram:hover {
-            color: #0088cc;
-            border-color: #0088cc;
-        }
-        
-        .social-link.facebook:hover {
-            color: #1877f2;
-            border-color: #1877f2;
-        }
-        
-        .social-link.instagram:hover {
-            color: #e4405f;
-            border-color: #e4405f;
-        }
-        
-        .social-link.tiktok:hover {
-            color: #69c9d0;
-            border-color: #69c9d0;
-        }
-        
-        .social-link.youtube:hover {
-            color: #ff0000;
-            border-color: #ff0000;
-        }
+        .social-link.whatsapp:hover { color: #25d366; border-color: #25d366; }
+        .social-link.telegram:hover { color: #0088cc; border-color: #0088cc; }
+        .social-link.facebook:hover { color: #1877f2; border-color: #1877f2; }
+        .social-link.instagram:hover { color: #e4405f; border-color: #e4405f; }
+        .social-link.tiktok:hover { color: #69c9d0; border-color: #69c9d0; }
+        .social-link.youtube:hover { color: #ff0000; border-color: #ff0000; }
         
         .copyright {
             margin-top: 15px;
@@ -941,7 +884,6 @@
             color: #e0e0e0;
         }
         
-        /* أنماط المعرض الجديد */
         .gallery {
             position: relative;
             width: 100%;
@@ -995,36 +937,19 @@
                 max-height: none;
             }
             
-            .gallery img:hover {
-                transform: scale(1.05);
-            }
+            .gallery img:hover { transform: scale(1.05); }
             
             @keyframes scroll {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(-50%); }
             }
             
-            .gallery:hover .gallery-track {
-                animation-play-state: paused;
-            }
-            
-            .dropdown:hover .dropdown-content {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-
-            .desktop-only {
-                display: inline !important;
-            }
-            .mobile-only {
-                display: none !important;
-            }
-            
-            .menu-close {
-                display: none;
-            }
+            .gallery:hover .gallery-track { animation-play-state: paused; }
+            .desktop-only { display: inline !important; }
+            .mobile-only { display: none !important; }
+            .menu-close { display: none; }
         }
-        
+        لا توجد---هذا-الأنماط-في-الكود-الأصلي
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1066,19 +991,9 @@
             border-color: rgba(255, 235, 59, 0.5);
         }
         
-        .card-icon,
-        .card h3,
-        .card p {
-            display: none;
-        }
-        
         @media (max-width: 768px) {
-            .menu-btn {
-                display: block;
-            }
-            header nav {
-                transform: none;
-            }
+            .menu-btn { display: block; }
+            header nav { transform: none; }
             header nav ul {
                 position: fixed;
                 top: 50%;
@@ -1113,9 +1028,7 @@
                 border-bottom: 1px solid rgba(255,235,59,0.2);
                 padding-bottom: 8px;
             }
-            header nav ul li:last-child {
-                border-bottom: none;
-            }
+            header nav ul li:last-child { border-bottom: none; }
             header nav ul li a {
                 font-size: 1.3rem;
                 padding: 12px;
@@ -1125,9 +1038,7 @@
                 transition: background 0.2s;
                 border-radius: 12px;
             }
-            header nav ul li a:hover {
-                background: rgba(255,255,255,0.15);
-            }
+            header nav ul li a:hover { background: rgba(255,255,255,0.15); }
             .menu-close {
                 display: block;
                 text-align: right;
@@ -1137,16 +1048,9 @@
                 margin-bottom: 15px;
                 padding: 0 5px;
             }
-            .menu-close i {
-                transition: transform 0.2s;
-            }
-            .menu-close i:hover {
-                transform: scale(1.1);
-            }
+            .menu-close i:hover { transform: scale(1.1); }
             
-            .gallery {
-                height: 250px;
-            }
+            .gallery { height: 250px; }
             .gallery img {
                 width: 90%;
                 height: 90%;
@@ -1159,126 +1063,33 @@
                 left: 5%;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             }
-            .gallery img.active {
-                opacity: 1;
-            }
-            .gallery-track {
-                display: none !important;
-            }
-            .sections-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .section {
-                margin: 0;
-                padding: 20px;
-            }
-            .section h2 {
-                font-size: 1.8rem;
-            }
-            .section p {
-                font-size: 1rem;
-            }
-            .about-container {
-                flex-direction: column;
-            }
-            .about-image {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto 20px;
-            }
-            .stats-section {
-                padding: 20px;
-            }
-            .stats-section h2 {
-                font-size: 1.8rem;
-            }
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .stat-number {
-                font-size: 2.2rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-                transition: all 0.3s ease;
-            }
-            .dropdown-content.show {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            .dropdown-content a {
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-                color: #ffeb3b;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                transition: background-color 0.2s;
-            }
-            .dropdown-content a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            .contact-form {
-                padding: 0;
-            }
-            .submit-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            .cards-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .card {
-                padding: 20px;
-                min-height: 150px;
-            }
-            .social-links {
-                gap: 15px;
-            }
-            .social-link {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-            .desktop-only {
-                display: none !important;
-            }
-            .mobile-only {
-                display: inline !important;
-            }
-            .subjects-container {
-                grid-template-columns: 1fr;
-            }
-            .year-title {
-                font-size: 1.5rem;
-            }
-            .buttons-container {
-                flex-wrap: wrap;
-            }
-            .year-btn {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
+            .gallery img.active { opacity: 1; }
+            .gallery-track { display: none !important; }
+            .sections-container { flex-direction: column; gap: 20px; }
+            .section { margin: 0; padding: 20px; }
+            .section h2 { font-size: 1.8rem; }
+            .section p { font-size: 1rem; }
+            .about-container { flex-direction: column; }
+            .about-image { flex: 0 0 auto; width: 100%; max-width: 300px; margin: 0 auto 20px; }
+            .stats-section { padding: 20px; }
+            .stats-section h2 { font-size: 1.8rem; }
+            .stats-container { grid-template-columns: 1fr; gap: 20px; }
+            .stat-number { font-size: 2.2rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .form-row { flex-direction: column; gap: 0; }
+            .contact-form { padding: 0; }
+            .submit-btn { padding: 12px 25px; font-size: 1rem; }
+            .cards-container { grid-template-columns: 1fr; gap: 20px; }
+            .card { padding: 20px; min-height: 150px; }
+            .social-links { gap: 15px; }
+            .social-link { width: 45px; height: 45px; font-size: 1.3rem; }
+            .desktop-only { display: none !important; }
+            .mobile-only { display: inline !important; }
+            .subjects-container { grid-template-columns: 1fr; }
+            .year-title { font-size: 1.5rem; }
+            .buttons-container { flex-wrap: wrap; }
+            .year-btn { padding: 8px 16px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -1291,7 +1102,7 @@
     
     <header id="mainHeader">
         <div class="logo">
-            <a href="#intro">
+            <a href="index.html">
                 <span class="pill-icon">💊</span> GhaniPharma
             </a>
         </div>
@@ -1299,7 +1110,6 @@
         <nav>
             <ul id="navMenu">
                 <li class="menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></li>
-                
                 <li><a href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
                 <li><a href="#modules"><i class="fas fa-book"></i> Modules</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -1313,9 +1123,8 @@
             <h1>Bienvenue sur GhaniPharma</h1>
             <p>votre passerelle vers le savoir pharmaceutique</p>
             <div class="gallery">
-                <!-- للكمبيوتر: شريط متحرك -->
                 <div class="gallery-track">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1342,20 +1151,19 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg" alt="Image 25">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Symptoms%20of%20Heart%20Attack.jpeg" alt="Image 26">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif" alt="Image 27">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 28">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 29">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 30">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 31">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 32">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 33">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 34">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 35">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 36">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 37">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 38">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 27">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 28">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 29">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 30">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 31">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 32">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 33">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 34">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
                     
-                    <!-- تكرار الصور لإنشاء تأثير حلقة مستمرة -->
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1382,21 +1190,20 @@
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg" alt="Image 25">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Symptoms%20of%20Heart%20Attack.jpeg" alt="Image 26">
                     <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif" alt="Image 27">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 28">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 29">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 30">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 31">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 32">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 33">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 34">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 35">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 36">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 37">
-                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 38">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 27">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 28">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 29">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 30">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 31">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 32">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 33">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 34">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
                 </div>
                 
-                <!-- للهاتف: الصور الفردية (سيتم عرضها كعرض شرائح) -->
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 1">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Image 27">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Image 2">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Image 3">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Image 4">
@@ -1423,21 +1230,21 @@
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg" alt="Image 25">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Symptoms%20of%20Heart%20Attack.jpeg" alt="Image 26">
                 <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif" alt="Image 27">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 28">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 29">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 30">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 31">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 32">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 33">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 34">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 35">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 36">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 37">
-                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 38">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg" alt="Image 27">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg" alt="Image 28">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg" alt="Image 29">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(8).jpeg" alt="Image 30">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/download(1)(1).png" alt="Image 31">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg" alt="Image 32">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg" alt="Image 33">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg" alt="Image 34">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif" alt="Image 35">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png" alt="Image 36">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif" alt="Image 37">
             </div>
         </div>
         <div class="sections-container">
-            <div id="about" class="section">
+            <div id="about" class="section fade-in-section">
                 <h2><i class="fas fa-info-circle"></i> À propos</h2>
                 <div class="about-container">
                     <div class="about-image">
@@ -1454,7 +1261,7 @@
                 </div>
             </div>
             
-            <div id="statistics" class="stats-section">
+            <div id="statistics" class="stats-section fade-in-section">
                 <h2><i class="fas fa-chart-line"></i> Nos Statistiques</h2>
                 <div class="stats-container">
                     <div class="stat-card">
@@ -1475,7 +1282,7 @@
                 </div>
             </div>
             
-            <div id="modules" class="modules-section">
+            <div id="modules" class="modules-section fade-in-section">
                 <h2><i class="fas fa-book"></i> Modules Disponibles</h2>
                 <p>Liste des modules disponibles pour les étudiants en pharmacie (toutes années). Cliquez sur un module pour voir les semestres.</p>
                 
@@ -1558,7 +1365,7 @@
                 </div>
             </div>
             
-            <div id="contact" class="section">
+            <div id="contact" class="section fade-in-section">
                 <h2><i class="fas fa-envelope"></i> Contact</h2>
                 <div class="about-container">
                     <div class="about-content">
@@ -1598,7 +1405,7 @@
                 </div>
             </div>
             
-            <div id="watch-also" class="section">
+            <div id="watch-also" class="section fade-in-section">
                 <h2><i class="fas fa-eye"></i> À Voir Aussi</h2>
                 <p>Découvrez d'autres ressources et contenus qui pourraient vous intéresser.</p>
                 <div class="cards-container">
@@ -1623,6 +1430,7 @@
     </footer>
     
     <script>
+        // 3. JavaScript محسن للقائمة، التمرير، وتأثير الظهور
         let lastScrollTop = 0;
         const mainHeader = document.getElementById('mainHeader');
         window.addEventListener('scroll', function() {
@@ -1662,55 +1470,32 @@
             });
         }
         
-        // --- تحسين الانتقال إلى الأقسام (Smooth Scrolling) ---
-        const allInternalLinks = document.querySelectorAll('a[href^="#"]');
-        
-        allInternalLinks.forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const hash = this.getAttribute('href');
-                
-                // تجنب التعامل مع الروابط الفارغة أو التي ليست أقساماً داخل الصفحة
-                if (hash === "#" || hash === "" || hash === "#0") return;
-                
-                const targetElement = document.querySelector(hash);
-                
-                if (targetElement) {
-                    e.preventDefault();
-                    
-                    // إغلاق القائمة في حالة الجوال
-                    closeMobileMenu();
-                    
-                    // إضافة تأثير بصري (تحديد القسم)
-                    targetElement.classList.add('section-highlight');
-                    setTimeout(() => {
-                        targetElement.classList.remove('section-highlight');
-                    }, 800);
-                    
-                    // استخدام الطريقة الأصلية للتمرير السلس
-                    try {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start',
-                        });
-                    } catch (error) {
-                        // لو المتصفح قديم، نستخدم الطريقة البديلة
-                        const headerHeight = document.getElementById('mainHeader')?.offsetHeight || 0;
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                closeMobileMenu();
+                // 4. معالجة النقرات على روابط التمرير لتجنب التداخل مع Smooth Scrolling
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerHeight = document.getElementById('mainHeader').offsetHeight;
                         const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px للهامش
+                        
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
                         });
                     }
-                    
-                    // تحديث الـ URL بدون إعادة تحميل الصفحة
-                    if (history.pushState) {
-                        history.pushState(null, null, hash);
-                    } else {
-                        location.hash = hash;
-                    }
                 }
             });
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+                closeMobileMenu();
+            }
         });
         
         function showYear(yearId) {
@@ -1756,6 +1541,7 @@
                 const images = document.querySelectorAll('.gallery img:not(.gallery-track img)');
                 let currentIndex = 0;
                 function showNextImage() {
+                    if (images.length === 0) return;
                     images[currentIndex].classList.remove('active');
                     currentIndex = (currentIndex + 1) % images.length;
                     images[currentIndex].classList.add('active');
@@ -1815,6 +1601,23 @@
             }, { threshold: 0.3 });
             const statsSection = document.getElementById('statistics');
             if (statsSection) observer.observe(statsSection);
+            
+            // 5. تفعيل تأثير الظهور التدريجي
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // بمجرد ظهور العنصر، نتوقف عن مراقبته لتفادي إعادة التشغيل
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // يبدأ التأثير عندما يكون 10% من العنصر مرئيًا
+            });
+            
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                fadeObserver.observe(section);
+            });
         });
         
         function toggleSemesters(element) {
@@ -1833,8 +1636,10 @@
         
         function showAlert() {
             const alertDiv = document.getElementById('alertMessage');
-            alertDiv.style.display = 'block';
-            setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
+            if (alertDiv) {
+                alertDiv.style.display = 'block';
+                setTimeout(() => { alertDiv.style.display = 'none'; }, 3000);
+            }
         }
     </script>
 </body>
