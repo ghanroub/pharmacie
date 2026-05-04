@@ -17,7 +17,7 @@
     })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules, avec des examens pour chaque matière et pour chaque semestre. Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire. Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !">
     <meta name="keywords" content="pharmacie, études pharmaceutiques, cours pharmacie, TPs pharmacie, TDs pharmacie, examens pharmacie, étudiants pharmacie, ressources pédagogiques, GhaniPharma, sciences pharmaceutiques, غاني فارما, دروس صيدلة في الجزائر">
     <meta name="author" content="Ghani Rouabah">
@@ -1294,6 +1294,20 @@
                 padding: 8px 16px;
                 font-size: 0.9rem;
             }
+            
+            /* ====== FIX POUR MODULES SUR MOBILE ====== */
+            .modules-section {
+                overflow: visible !important;
+            }
+            .year-modules.active-year {
+                display: block !important;
+            }
+            .subject-card h4 {
+                font-size: 1.2rem;
+            }
+            .subject-card ul li a {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -1503,7 +1517,8 @@
                     </div>
                 </div>
                 
-                <div class="year-modules" id="annee1">
+                <!-- إضافة class active-year مباشرة لضمان الظهور حتى لو فشل الجافاسكريبت -->
+                <div class="year-modules active-year" id="annee1">
                     <div class="year-title" style="background: linear-gradient(135deg, #6a1b9a, #4a148c);">1ère Année</div>
                     <div class="subjects-container">
                         <div class="subject-card grayscale"><div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg')"></div><div class="subject-content"><h4 onclick="toggleSemesters(this)">ANATOMIE</h4><ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul></div></div>
@@ -1688,10 +1703,6 @@
             }
         });
         
-        // Supprimer l'ancien comportement des ancres pour éviter conflit avec le scroll-behavior CSS
-        // On ne fait que laisser le CSS gérer, mais on supprime les preventDefault inutiles.
-        // Les liens d'ancrage fonctionnent maintenant avec scroll-padding-top.
-        
         function showYear(yearId) {
             document.querySelectorAll('.year-modules').forEach(module => {
                 module.classList.remove('active-year');
@@ -1760,7 +1771,14 @@
         updateActiveLink();
         
         document.addEventListener('DOMContentLoaded', function() {
+            // تأكيد إظهار السنة الأولى فوراً (بالإضافة إلى الفعل اليدوي في HTML)
             showYear('annee1');
+            // إعادة المحاولة بعد 100ms للتأكد من اكتمال كل شيء
+            setTimeout(function() {
+                if (!document.getElementById('annee1').classList.contains('active-year')) {
+                    showYear('annee1');
+                }
+            }, 100);
             
             // Galerie mobile / desktop
             if (window.innerWidth <= 768) {
