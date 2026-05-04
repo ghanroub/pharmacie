@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-    <!-- Google tag -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,351 +9,2479 @@
       gtag('js', new Date());
       gtag('config', 'G-WMZ6GN3075');
     </script>
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules...">
-    <meta name="keywords" content="pharmacie, études pharmaceutiques, GhaniPharma">
-    <title>GhaniPharma</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules, avec des examens pour chaque matière et pour chaque semestre. Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire. Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !">
+    <meta name="keywords" content="pharmacie, études pharmaceutiques, cours pharmacie, TPs pharmacie, TDs pharmacie, examens pharmacie, étudiants pharmacie, ressources pédagogiques, GhaniPharma, sciences pharmaceutiques, غاني فارما, دروس صيدلة في الجزائر">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="GhaniPharma">
+    <meta property="og:description" content="Votre plateforme complète pour les études pharmaceutiques">
+    <meta property="og:image" content="url-لصورة-الموقع">
+    <meta name="theme-color" content="#6a1b9a">
+    <title>GhaniPharma - منصة دراسية لطلاب الصيدلة</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #6a1b9a;
-            --accent: #ffeb3b;
-            --dark: #0f0f1e;
+        /* ========== الأساسيات ========== */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
-
-        * { box-sizing: border-box; }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
             margin: 0;
+            padding: 0;
             color: #333;
+            direction: ltr;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             background: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/2Q%3D%3D.jpeg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
-            min-height: 100vh;
+            line-height: 1.6;
         }
+        
         body::before {
             content: '';
             position: fixed;
-            inset: 0;
-            background: rgba(15, 15, 30, 0.7);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
             z-index: -1;
         }
-
+        
+        /* ========== شريط التقدم ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffeb3b, #00bcd4, #ffeb3b);
+            background-size: 200% 100%;
+            z-index: 9999;
+            transition: width 0.15s ease;
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+            animation: gradientShift 3s linear infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* ========== الهيدر ========== */
         header {
-            background: rgba(15, 15, 30, 0.95);
+            background: rgba(10, 10, 42, 0.92);
             backdrop-filter: blur(12px);
-            color: var(--accent);
-            padding: 18px 15px;
+            color: #ffeb3b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            transition: all 0.4s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            border-bottom: 1px solid rgba(255, 235, 59, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
+        
         header.hidden { transform: translateY(-100%); }
-
-        .logo a {
-            color: #00bcd4;
-            font-size: 1.6rem;
-            font-weight: bold;
-            text-decoration: none;
+        
+        .menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #ffeb3b;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
-
-        nav ul {
+        .menu-btn:hover { background: rgba(255, 235, 59, 0.2); transform: scale(1.05); }
+        
+        header nav { transform: translateX(-35px); }
+        header nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 8px;
             margin: 0;
             padding: 0;
         }
-        nav a {
-            color: var(--accent);
+        header nav ul li { position: relative; }
+        header nav ul li a {
+            color: #ffeb3b;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.3s;
+            font-size: 0.95rem;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        nav a:hover { color: white; }
-
-        /* Sections */
-        .section {
-            background: rgba(15, 15, 30, 0.92);
-            border-radius: 16px;
-            padding: 3rem 2.5rem;
-            margin: 2.5rem auto;
-            max-width: 1200px;
+        header nav ul li a:hover,
+        header nav ul li a.active {
+            color: #fff;
+            background: rgba(255, 235, 59, 0.15);
+            box-shadow: 0 0 12px rgba(255, 235, 59, 0.3);
+        }
+        header nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #ffeb3b;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.6; transform: translateX(-50%) scale(1.3); }
+        }
+        
+        .logo a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            padding: 6px 16px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo a::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.6s;
+        }
+        .logo a:hover::before { left: 100%; }
+        .logo a:hover {
+            color: #4dd0e1;
+            background: rgba(0, 188, 212, 0.12);
+            transform: scale(1.03);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
+        }
+        .pill-icon {
+            font-size: 1.9rem;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .logo a:hover .pill-icon {
+            animation: pillBounce 0.7s ease;
+            color: #ff4081;
+            text-shadow: 0 0 12px rgba(255, 64, 129, 0.6);
+        }
+        @keyframes pillBounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.25) rotate(-8deg); }
+            50% { transform: scale(1.15) rotate(8deg); }
+            75% { transform: scale(1.18) rotate(-4deg); }
+        }
+        
+        /* ========== القوائم المنسدلة ========== */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 15, 45, 0.95);
+            backdrop-filter: blur(10px);
+            min-width: 180px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            z-index: 100;
+            border-radius: 0 0 12px 12px;
             border: 1px solid rgba(255, 235, 59, 0.2);
+            overflow: hidden;
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dropdown-content a {
+            color: #e0e0e0;
+            padding: 12px 18px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.25s ease;
+            font-size: 0.9rem;
+        }
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover {
+            background: rgba(255, 235, 59, 0.15);
+            color: #ffeb3b;
+            padding-left: 22px;
+        }
+        
+        /* ========== الهيرو ========== */
+        .hero {
+            color: #fff;
+            padding: 120px 20px 60px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            color: #ffeb3b;
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+            animation: fadeInUp 1s ease forwards;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+            font-weight: 800;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 35px;
+            color: #f5f5f5;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero button {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.35s ease;
+            box-shadow: 0 5px 20px rgba(106, 27, 154, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+        .hero button:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(106, 27, 154, 0.6);
+            background: linear-gradient(135deg, #7b2cbf, #5a189a);
+        }
+        .hero .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+        
+        /* ========== المعرض ========== */
+        .gallery {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        .gallery-track {
+            display: flex;
+            animation: scroll 70s linear infinite;
+            width: max-content;
+            padding: 10px 0;
+        }
+        .gallery-track:hover { animation-play-state: paused; }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .gallery img {
+            height: 240px;
+            width: auto;
+            margin: 0 12px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 2px solid transparent;
+        }
+        .gallery img:hover {
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 188, 212, 0.4);
+            border-color: rgba(255, 235, 59, 0.5);
+        }
+        
+        /* ========== حاوية الأقسام ========== */
+        .sections-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            gap: 35px;
+            padding: 0 20px;
+        }
+        
+        /* ========== الأقسام العامة ========== */
+        .section {
+            background: linear-gradient(135deg, rgba(15, 15, 45, 0.92), rgba(26, 26, 58, 0.88));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 235, 59, 0.25);
+            border-radius: 20px;
+            padding: 35px;
+            color: #fff;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease;
         }
         .section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        .hero {
-            padding: 140px 20px 100px;
-            text-align: center;
-            color: white;
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffeb3b, #00bcd4, #ff4081);
+            background-size: 300% 100%;
+            animation: gradientFlow 4s linear infinite;
         }
-
-        /* Modules Improved */
-        .modules-section h2 {
-            text-align: center;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
-
-        #moduleSearch {
-            width: 100%;
-            max-width: 520px;
-            margin: 0 auto 2rem;
-            padding: 16px 20px;
-            border-radius: 50px;
-            border: 2px solid rgba(255,235,59,0.3);
-            background: rgba(255,255,255,0.1);
-            color: white;
+        .section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+            border-color: rgba(255, 235, 59, 0.45);
+        }
+        .section h2 {
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            margin-bottom: 28px;
+            color: #ffeb3b;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+            font-weight: 700;
+        }
+        .section h2 i {
+            font-size: 1.9rem;
+            background: linear-gradient(135deg, #ffeb3b, #ffc107, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: iconGlow 2s ease-in-out infinite alternate;
+        }
+        @keyframes iconGlow {
+            from { filter: drop-shadow(0 0 5px rgba(255, 235, 59, 0.5)); }
+            to { filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.8)); }
+        }
+        .section p {
             font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e8e8e8;
+            text-align: justify;
+            margin-bottom: 15px;
         }
-
-        .year-tabs {
+        .section a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            position: relative;
+        }
+        .section a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0;
+            width: 0; height: 2px;
+            background: #00bcd4;
+            transition: width 0.3s ease;
+        }
+        .section a:hover { color: #4dd0e1; }
+        .section a:hover::after { width: 100%; }
+        
+        /* ========== قسم "عن الموقع" ========== */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .about-image {
+            flex: 0 0 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+            transition: all 0.45s ease;
+            border: 3px solid rgba(255, 235, 59, 0.35);
+            position: relative;
+        }
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(0,188,212,0.15));
+            pointer-events: none;
+        }
+        .about-image:hover {
+            transform: scale(1.04) rotate(1deg);
+            box-shadow: 0 18px 50px rgba(0, 188, 212, 0.35);
+            border-color: rgba(255, 235, 59, 0.65);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .about-image:hover img { transform: scale(1.08); }
+        .about-content { flex: 1; min-width: 280px; }
+        
+        /* ========== قسم الإحصائيات ========== */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(15, 15, 45, 0.92), rgba(26, 26, 58, 0.88));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 235, 59, 0.25);
+            border-radius: 20px;
+            padding: 35px;
+            color: #fff;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .stats-section.visible { opacity: 1; transform: translateY(0); }
+        .stats-section h2 {
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            margin-bottom: 30px;
+            color: #ffeb3b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 15px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.12), rgba(106, 27, 154, 0.12));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffeb3b, #00bcd4);
+        }
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 188, 212, 0.3);
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.18), rgba(106, 27, 154, 0.18));
+            border-color: rgba(0, 188, 212, 0.4);
+        }
+        .stat-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #ffeb3b, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffeb3b;
+            margin-bottom: 6px;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 1.15rem;
+            color: #d0d0d0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ========== قسم الموديولات ========== */
+        .modules-section {
+            background: linear-gradient(135deg, rgba(15, 15, 45, 0.92), rgba(26, 26, 58, 0.88));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 235, 59, 0.25);
+            border-radius: 20px;
+            padding: 35px;
+            color: #fff;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .modules-section.visible { opacity: 1; transform: translateY(0); }
+        .modules-section h2 {
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            margin-bottom: 20px;
+            color: #ffeb3b;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .modules-section > p {
+            text-align: center;
+            color: #c5c5c5;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        /* شريط البحث */
+        .modules-search {
+            background: rgba(0, 0, 0, 0.35);
+            padding: 16px 22px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        .modules-search:focus-within {
+            border-color: #00bcd4;
+            box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.2);
+            background: rgba(0, 0, 0, 0.45);
+        }
+        .modules-search .search-icon {
+            color: #ffeb3b;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .modules-search input {
+            flex: 1;
+            padding: 10px 5px;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+            color: white;
+            font-size: 1.05rem;
+            outline: none;
+        }
+        .modules-search input::placeholder {
+            color: rgba(255, 255, 255, 0.55);
+            font-style: italic;
+        }
+        
+        /* تبديل طريقة العرض */
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+        .view-btn {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #e0e0e0;
+            padding: 9px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .view-btn:hover, .view-btn.active {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            border-color: #ffeb3b;
+            color: #ffeb3b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106, 27, 154, 0.35);
+        }
+        
+        /* أزرار السنوات */
+        .year-navigation {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 18px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 235, 59, 0.2);
+        }
+        .buttons-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 2.5rem;
+            gap: 10px;
         }
-
         .year-btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            background: rgba(106,27,154,0.8);
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
             color: white;
+            border: none;
+            padding: 11px 22px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 28px;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            position: relative;
+            overflow: hidden;
         }
-
+        .year-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .year-btn:hover::before { left: 100%; }
+        .year-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.5);
+        }
         .year-btn.active {
-            background: linear-gradient(135deg, var(--accent), #ffc107);
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
             color: #1a1a2e;
-            transform: scale(1.08);
-            box-shadow: 0 8px 20px rgba(255,235,59,0.4);
+            box-shadow: 0 0 0 3px rgba(255,235,59,0.3), 0 6px 20px rgba(255,193,7,0.4);
+            font-weight: 700;
         }
-
+        .year-btn i { font-size: 0.9rem; }
+        
+        /* عناوين السنوات */
+        .year-modules { display: none; animation: fadeIn 0.5s ease; }
+        .year-modules.active-year { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .year-title {
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            margin: 25px 0 25px;
+            padding: 14px 22px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(106,27,154,0.9), rgba(74,20,140,0.9));
+        }
+        
+        /* حاوية المواد */
         .subjects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 22px;
+            width: 100%;
         }
-
+        
+        /* بطاقات المواد */
         .subject-card {
-            background: rgba(255,255,255,0.08);
+            background: linear-gradient(135deg, rgba(20, 20, 50, 0.9), rgba(30, 30, 70, 0.85));
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255,235,59,0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transform: translateY(25px);
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
-
+        .subject-card.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .subject-card:hover {
-            transform: translateY(-15px) scale(1.04);
-            box-shadow: 0 25px 50px rgba(106, 27, 154, 0.45);
-            border-color: var(--accent);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 18px 45px rgba(0, 188, 212, 0.35);
+            border-color: rgba(0, 188, 212, 0.45);
+            z-index: 5;
         }
-
+        .subject-card.available {
+            border: 2px solid rgba(0, 188, 212, 0.55);
+        }
+        .subject-card.available::after {
+            content: '✓ Disponible';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #4caf50, #43a047);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+            animation: badgeBounce 2.5s ease-in-out infinite;
+            z-index: 2;
+            letter-spacing: 0.3px;
+        }
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateY(0); }
+            45%, 55% { transform: translateY(-4px); }
+            50% { transform: translateY(-6px); }
+        }
         .subject-image {
-            height: 185px;
+            width: 100%;
+            height: 165px;
             background-size: cover;
             background-position: center;
-            transition: transform 0.6s ease;
+            border-bottom: 2px solid rgba(255, 235, 59, 0.35);
+            transition: filter 0.4s ease, transform 0.4s ease;
+            position: relative;
         }
-
+        .subject-card.grayscale .subject-image {
+            filter: grayscale(75%) brightness(0.75);
+        }
+        .subject-card.available .subject-image {
+            filter: none;
+        }
         .subject-card:hover .subject-image {
-            transform: scale(1.12);
+            transform: scale(1.05);
         }
-
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4));
+            pointer-events: none;
+            z-index: 1;
+        }
         .subject-content {
-            padding: 1.3rem;
+            padding: 18px 16px 20px;
+            position: relative;
+            z-index: 2;
         }
-
         .subject-card h4 {
-            color: var(--accent);
-            margin-bottom: 12px;
+            font-size: 1.25rem;
+            margin: 8px 0 14px;
+            color: #ffeb3b;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            transition: color 0.3s ease;
+            padding: 5px 0;
         }
-
+        .subject-card h4:hover { color: #ffc107; }
+        .subject-card h4 i {
+            font-size: 0.85rem;
+            transition: transform 0.35s ease;
+            color: #00bcd4;
+        }
+        .subject-card h4.active i { transform: rotate(180deg); }
         .subject-card ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
         }
-
-        .subject-card ul.show {
-            max-height: 400px;
+        .subject-card ul.show { max-height: 400px; }
+        .subject-card ul li {
+            margin: 8px 0;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
         }
-
-        /* Alert */
+        .subject-card ul li:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #00bcd4;
+            transform: translateX(4px);
+        }
+        .subject-card ul li a {
+            color: #ffeb3b;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .subject-card ul li a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        .subject-card ul li a.disabled-link {
+            color: #999;
+            cursor: not-allowed;
+            opacity: 0.75;
+        }
+        .subject-card ul li a.disabled-link:hover {
+            color: #999;
+            text-decoration: none;
+            transform: none;
+        }
+        .subject-card ul li a i { font-size: 0.85rem; }
+        
+        /* عرض القائمة */
+        .subjects-container.list-view {
+            grid-template-columns: 1fr !important;
+            gap: 16px;
+        }
+        .subjects-container.list-view .subject-card {
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            min-height: auto;
+        }
+        .subjects-container.list-view .subject-image {
+            width: 140px;
+            height: 110px;
+            border-bottom: none;
+            border-right: 2px solid rgba(255, 235, 59, 0.35);
+            flex-shrink: 0;
+        }
+        .subjects-container.list-view .subject-content {
+            padding: 16px 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .subjects-container.list-view .subject-card h4 {
+            margin: 0 0 10px;
+            font-size: 1.3rem;
+        }
+        .subjects-container.list-view .subject-card ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-height: none !important;
+        }
+        .subjects-container.list-view .subject-card ul li {
+            margin: 0;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+        }
+        
+        /* رسالة التنبيه */
         .alert-message {
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.95);
-            color: #ff5555;
-            padding: 25px 35px;
-            border-radius: 12px;
+            transform: translate(-50%, -50%) scale(0.95);
+            background: linear-gradient(135deg, rgba(30, 30, 60, 0.98), rgba(20, 20, 45, 0.98));
+            color: #ff6b6b;
+            padding: 22px 35px;
+            border-radius: 16px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-align: center;
             z-index: 10000;
+            box-shadow: 0 0 40px rgba(255, 107, 107, 0.5), 0 10px 30px rgba(0, 0, 0, 0.4);
             display: none;
-            animation: fadeInOut 3s forwards;
+            animation: alertPop 3.2s ease-in-out forwards;
+            border: 2px solid #ff6b6b;
+            backdrop-filter: blur(12px);
+            max-width: 90%;
+            line-height: 1.5;
         }
-
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
-            10%, 90% { opacity: 1; }
+        @keyframes alertPop {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+            12% { opacity: 1; transform: translate(-50%, -50%) scale(1.02); }
+            20% { transform: translate(-50%, -50%) scale(1); }
+            85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+        }
+        
+        /* ========== نموذج الاتصال ========== */
+        .contact-form {
+            margin-top: 28px;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+        }
+        .contact-form h3 {
+            color: #ffeb3b;
+            margin: 0 0 22px;
+            font-size: 1.55rem;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-weight: 700;
+        }
+        .contact-form h3 i { color: #00bcd4; }
+        .form-group {
+            margin-bottom: 22px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            color: #ffeb3b;
+            font-weight: 600;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid rgba(255, 255, 255, 0.28);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.09);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.35s ease;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00bcd4;
+            background: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.22);
+            transform: translateY(-2px);
+        }
+        .form-group textarea {
+            min-height: 145px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            box-shadow: 0 5px 18px rgba(106, 27, 154, 0.35);
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #7b2cbf, #5a189a);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(106, 27, 154, 0.55);
+        }
+        .submit-btn:active { transform: translateY(-1px); }
+        .submit-btn:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        .form-row { display: flex; gap: 18px; flex-wrap: wrap; }
+        .form-row .form-group { flex: 1; min-width: 200px; }
+        .status-message {
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 22px 0;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+            font-size: 1rem;
+            animation: slideIn 0.4s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .status-success {
+            background: rgba(76, 175, 80, 0.18);
+            color: #66bb6a;
+            border: 1.5px solid #66bb6a;
+        }
+        .status-error {
+            background: rgba(244, 67, 54, 0.18);
+            color: #ef5350;
+            border: 1.5px solid #ef5350;
+        }
+        
+        /* ========== الفوتر ========== */
+        footer {
+            background: linear-gradient(180deg, rgba(10,10,42,0.95), rgba(15,15,50,0.98));
+            color: #ffeb3b;
+            text-align: center;
+            padding: 35px 20px 25px;
+            width: 100%;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 235, 59, 0.2);
+        }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.15), rgba(0, 188, 212, 0.15));
+            color: #ffeb3b;
+            font-size: 1.45rem;
+            transition: all 0.35s ease;
+            text-decoration: none;
+            border: 2px solid rgba(255, 235, 59, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+        .social-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-6px) scale(1.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
+        .social-link:hover::before { opacity: 1; }
+        .social-link.whatsapp:hover { background: linear-gradient(135deg, #25d366, #128c7e); border-color: #25d366; }
+        .social-link.telegram:hover { background: linear-gradient(135deg, #0088cc, #0077b5); border-color: #0088cc; }
+        .social-link.facebook:hover { background: linear-gradient(135deg, #1877f2, #166fe5); border-color: #1877f2; }
+        .social-link.instagram:hover { background: linear-gradient(135deg, #e4405f, #c13584); border-color: #e4405f; }
+        .social-link.tiktok:hover { background: linear-gradient(135deg, #69c9d0, #000); border-color: #69c9d0; }
+        .social-link.youtube:hover { background: linear-gradient(135deg, #ff0000, #cc0000); border-color: #ff0000; }
+        .copyright {
+            margin-top: 18px;
+            font-size: 0.95rem;
+            color: #c5c5c5;
+            line-height: 1.6;
+        }
+        .copyright a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .copyright a:hover { color: #4dd0e1; text-decoration: underline; }
+        
+        /* ========== زر العودة للأعلى ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: #ffeb3b;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: 2px solid rgba(255, 235, 59, 0.3);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 12px 35px rgba(106, 27, 154, 0.6);
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            color: #1a1a2e;
+        }
+        .back-to-top i { transition: transform 0.3s ease; }
+        .back-to-top:hover i { transform: translateY(-3px); }
+        
+        /* ========== سكيليتون للتحميل ========== */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.08) 25%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.6s infinite linear;
+            border-radius: 10px;
+        }
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ========== Responsive ========== */
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-content { display: block; }
+            .desktop-only { display: inline !important; }
+            .mobile-only { display: none !important; }
+            .menu-close { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-btn { display: block; }
+            header nav { transform: none; }
+            header nav ul {
+                position: fixed;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%) scale(0.94);
+                width: 88%;
+                max-width: 340px;
+                background: linear-gradient(145deg, #0f0f2d, #1a1a3a);
+                backdrop-filter: blur(30px);
+                border-radius: 24px;
+                box-shadow: 0 30px 60px rgba(0,0,0,0.55), 0 0 0 1000px rgba(0,0,0,0.75);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                padding: 28px 22px;
+                z-index: 2000;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease;
+                border: 1.5px solid rgba(255,235,59,0.45);
+                pointer-events: none;
+            }
+            header nav ul.show {
+                opacity: 1; visibility: visible;
+                transform: translate(-50%, -50%) scale(1);
+                pointer-events: auto;
+            }
+            header nav ul li {
+                margin: 6px 0;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,235,59,0.18);
+                padding-bottom: 10px;
+            }
+            header nav ul li:last-child { border-bottom: none; }
+            header nav ul li a {
+                font-size: 1.25rem;
+                padding: 13px 10px;
+                display: block;
+                font-weight: 600;
+            }
+            .menu-close {
+                display: block;
+                text-align: right;
+                font-size: 1.9rem;
+                color: #ffeb3b;
+                cursor: pointer;
+                margin-bottom: 12px;
+                padding: 0 5px;
+                transition: transform 0.25s ease;
+            }
+            .menu-close:hover { transform: scale(1.15) rotate(90deg); }
+            
+            .gallery { height: 220px; }
+            .gallery-track { display: none !important; }
+            .gallery img:not(.gallery-track img) {
+                width: 92%; height: 88%;
+                object-fit: cover;
+                border-radius: 14px;
+                opacity: 0;
+                transition: opacity 0.8s ease-in-out;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+            }
+            .gallery img.active { opacity: 1; }
+            
+            .sections-container { gap: 28px; padding: 0 15px; }
+            .section { padding: 28px 22px; margin: 0; }
+            .section h2 { font-size: 1.75rem; }
+            .section p { font-size: 1.03rem; }
+            
+            .about-container { flex-direction: column; text-align: center; }
+            .about-image { flex: 0 0 auto; width: 100%; max-width: 280px; margin: 0 auto 22px; }
+            
+            .stats-section { padding: 28px 22px; }
+            .stats-section h2 { font-size: 1.75rem; }
+            .stats-container { grid-template-columns: 1fr; gap: 22px; }
+            .stat-number { font-size: 2.6rem; }
+            .stat-label { font-size: 1.05rem; }
+            
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                display: none;
+                background: rgba(0,0,0,0.35);
+                padding: 0; margin: 8px 0 0;
+                border-radius: 10px;
+                box-shadow: none;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            .dropdown-content.show { display: block; animation: fadeIn 0.3s ease; }
+            .dropdown-content a {
+                padding: 13px 18px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+            .dropdown-content a:last-child { border-bottom: none; }
+            
+            .form-row { flex-direction: column; gap: 0; }
+            .contact-form { padding: 0; }
+            .submit-btn { padding: 14px 28px; font-size: 1.05rem; }
+            
+            .cards-container { grid-template-columns: 1fr; gap: 22px; }
+            .card { padding: 24px 20px; min-height: 160px; }
+            
+            .social-links { gap: 14px; }
+            .social-link { width: 48px; height: 48px; font-size: 1.3rem; }
+            
+            .desktop-only { display: none !important; }
+            .mobile-only { display: inline !important; }
+            
+            .subjects-container { grid-template-columns: 1fr; }
+            .year-title { font-size: 1.55rem; padding: 12px 18px; }
+            .buttons-container { gap: 8px; }
+            .year-btn { padding: 9px 18px; font-size: 0.9rem; }
+            .view-toggle { justify-content: center; }
+            
+            .subject-card h4 { font-size: 1.2rem; }
+            .subject-image { height: 150px; }
+        }
+        
+        /* تحسينات إضافية للوصولية */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* تحسينات الطباعة */
+        @media print {
+            header, footer, .back-to-top, .scroll-progress { display: none !important; }
+            body { background: white; color: black; }
+            .section { background: white; color: black; border: 1px solid #ccc; box-shadow: none; }
         }
     </style>
 </head>
 <body>
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- رسالة التنبيه -->
     <div id="alertMessage" class="alert-message">
-        Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.
+        <i class="fas fa-info-circle"></i> Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.
     </div>
-
+    
+    <!-- شريط التقدم -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- الهيدر -->
     <header id="mainHeader">
         <div class="logo">
-            <a href="#"><span>💊</span> GhaniPharma</a>
+            <a href="#intro" onclick="scrollToSection('intro')">
+                <span class="pill-icon">💊</span> GhaniPharma
+            </a>
+        </div>
+        <div class="menu-btn" onclick="toggleMobileMenu()" aria-label="القائمة" role="button" tabindex="0">
+            <i class="fas fa-bars"></i>
         </div>
         <nav>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#modules">Modules</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul id="navMenu">
+                <li class="menu-close" id="mobileMenuClose" onclick="closeMobileMenu()" role="button" tabindex="0">
+                    <i class="fas fa-times"></i>
+                </li>
+                <li><a href="#about" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="#modules" onclick="scrollToSection('modules')"><i class="fas fa-book"></i> Modules</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#watch-also" onclick="scrollToSection('watch-also')"><i class="fas fa-eye"></i> À Voir</a></li>
             </ul>
         </nav>
     </header>
-
+    
+    <!-- الهيرو -->
     <section id="intro" class="hero">
-        <h1>Bienvenue sur GhaniPharma</h1>
-        <p>votre passerelle vers le savoir pharmaceutique</p>
-    </section>
-
-    <!-- About -->
-    <div class="section" id="about">
-        <h2><i class="fas fa-info-circle"></i> À propos</h2>
-        <p>Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules...</p>
-    </div>
-
-    <!-- Modules Section - Improved -->
-    <div class="section modules-section" id="modules">
-        <h2><i class="fas fa-book"></i> Modules Disponibles</h2>
-        
-        <input type="text" id="moduleSearch" placeholder="🔍 Rechercher un module (ex: Biochimie, Immunologie...)">
-
-        <div class="year-tabs">
-            <button class="year-btn active" data-year="annee1">1ère Année</button>
-            <button class="year-btn" data-year="annee2">2ème Année</button>
-            <button class="year-btn" data-year="annee3">3ème Année</button>
-            <button class="year-btn" data-year="annee4">4ème Année</button>
-            <button class="year-btn" data-year="annee5">5ème Année</button>
-        </div>
-
-        <!-- السنوات (استبدلت الـ HTML القديم بالمحسن) -->
-        <div id="annee1" class="year-modules active-year">
-            <div class="subjects-container">
-                <!-- أضف هنا جميع البطاقات من الكود الأصلي -->
-                <!-- مثال: -->
-                <div class="subject-card grayscale">
-                    <div class="subject-image" style="background-image: url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg')"></div>
-                    <div class="subject-content">
-                        <h4 onclick="toggleSemesters(this)">ANATOMIE</h4>
-                        <ul><li><a href="#" onclick="showAlert(); return false;">Semestre 1</a></li></ul>
-                    </div>
+        <div class="container">
+            <h1>Bienvenue sur GhaniPharma</h1>
+            <p>Votre passerelle vers le savoir pharmaceutique - Cours, TDs, TPs et examens pour toutes les années d'études en pharmacie</p>
+            
+            <!-- المعرض -->
+            <div class="gallery">
+                <div class="gallery-track">
+                    <!-- الصور المتكررة للتمرير اللانهائي -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Pharmacie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Anatomie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Biologie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Plantes" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg" alt="Stats" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg" alt="Maths" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Chirality%2C%20a%20Primer%20(Updated).jfif" alt="Chimie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg" alt="Histoire" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg" alt="Info" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Produits%20pharmaceutiques%20sur%20fond%20neutre.png" alt="Médicaments" loading="lazy">
+                    <!-- تكرار للتمرير -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Pharmacie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Anatomie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Biologie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Plantes" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg" alt="Stats" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg" alt="Maths" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Chirality%2C%20a%20Primer%20(Updated).jfif" alt="Chimie" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg" alt="Histoire" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg" alt="Info" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Produits%20pharmaceutiques%20sur%20fond%20neutre.png" alt="Médicaments" loading="lazy">
                 </div>
-                <!-- ... باقي المواد ... -->
+                <!-- صور الهاتف (عرض شرائح) -->
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Capture%20d'%C3%A9cran%202025-07-13%20075647.png" alt="Pharmacie" loading="lazy" class="mobile-gallery">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg" alt="Anatomie" loading="lazy" class="mobile-gallery">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/t%C3%A9l%C3%A9chargement%20(3).jpeg" alt="Biologie" loading="lazy" class="mobile-gallery">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg" alt="Plantes" loading="lazy" class="mobile-gallery">
+                <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg" alt="Stats" loading="lazy" class="mobile-gallery">
             </div>
         </div>
-
-        <!-- باقي السنوات (annee2, annee3, annee4, annee5) -->
-        <!-- انسخ من الكود الأصلي وضعها داخل div مشابهة -->
-    </div>
-
-    <!-- Contact and other sections -->
-
+        
+        <!-- حاوية الأقسام -->
+        <div class="sections-container">
+            
+            <!-- قسم عن الموقع -->
+            <div id="about" class="section">
+                <h2><i class="fas fa-info-circle"></i> À propos</h2>
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_arrqzcarrqzcarrq.png" alt="GhaniPharma - منصة دراسية" loading="lazy">
+                    </div>
+                    <div class="about-content">
+                        <p>Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs <a href="#modules" style="color:#00bcd4;font-weight:700;">modules</a>, avec des examens pour chaque matière et pour chaque semestre.</p>
+                        <p>Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, avec des contenus fiables, simples et adaptés au programme universitaire algérien.</p>
+                        <p>Que vous soyez en première année ou en fin de cycle, GhaniPharma est votre compagnon de réussite ! 🎓💊</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الإحصائيات -->
+            <div id="statistics" class="stats-section">
+                <h2><i class="fas fa-chart-line"></i> Nos Statistiques</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-number" data-target="2038">0</div>
+                        <div class="stat-label">Visiteurs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Contributeurs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="stat-number" data-target="19">0</div>
+                        <div class="stat-label">Leçons</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الموديولات (المُحسّن) -->
+            <div id="modules" class="modules-section">
+                <h2><i class="fas fa-book-medical"></i> Modules Disponibles</h2>
+                <p style="text-align:center;color:#c5c5c5;margin-bottom:25px;">
+                    <i class="fas fa-search"></i> ابحث عن المادة أو اختر السنة الدراسية لعرض المحتوى المتاح
+                </p>
+                
+                <!-- شريط البحث -->
+                <div class="modules-search">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="moduleSearch" placeholder="ابحث عن مادة... (مثال: Biochimie, Pharmacologie, Anatomie)" 
+                           onkeyup="filterModules()" aria-label="بحث عن مادة دراسية" autocomplete="off">
+                </div>
+                
+                <!-- تبديل طريقة العرض -->
+                <div class="view-toggle">
+                    <button class="view-btn active" onclick="setView('grid')" title="عرض شبكي" aria-pressed="true">
+                        <i class="fas fa-th-large"></i> Grille
+                    </button>
+                    <button class="view-btn" onclick="setView('list')" title="عرض قائمة" aria-pressed="false">
+                        <i class="fas fa-list"></i> Liste
+                    </button>
+                </div>
+                
+                <!-- أزرار السنوات -->
+                <div class="year-navigation">
+                    <div class="buttons-container">
+                        <button class="year-btn first-year active" data-year="annee1" onclick="showYear('annee1', this)">
+                            <i class="fas fa-1"></i> 1ère Année
+                        </button>
+                        <button class="year-btn second-year" data-year="annee2" onclick="showYear('annee2', this)">
+                            <i class="fas fa-2"></i> 2ème Année
+                        </button>
+                        <button class="year-btn third-year" data-year="annee3" onclick="showYear('annee3', this)">
+                            <i class="fas fa-3"></i> 3ème Année
+                        </button>
+                        <button class="year-btn fourth-year" data-year="annee4" onclick="showYear('annee4', this)">
+                            <i class="fas fa-4"></i> 4ème Année
+                        </button>
+                        <button class="year-btn fifth-year" data-year="annee5" onclick="showYear('annee5', this)">
+                            <i class="fas fa-5"></i> 5ème Année
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- السنة الأولى -->
+                <div class="year-modules active-year" id="annee1">
+                    <div class="year-title" style="background:linear-gradient(135deg,#6a1b9a,#4a148c);">
+                        <i class="fas fa-graduation-cap"></i> 1ère Année
+                    </div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale" data-subject="anatomie corps humain système">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    ANATOMIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="biologie cellulaire cellule">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(3).jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BIOLOGIE CELLULAIRE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="biologie végétale plantes botanique">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BIOLOGIE VÉGÉTALE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="biostatistique statistiques probabilités">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BIOSTATISTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="chimie générale chimie atomes molécules">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    CHIMIE GÉNÉRALE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="chimie organique molécules carbone">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Chirality%2C%20a%20Primer%20(Updated).jfif')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    CHIMIE ORGANIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="histoire pharmacie médecine antique">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    HISTOIRE DE LA PHARMACIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="informatique programmation ordinateur">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    INFORMATIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="physiologie corps fonctions biologiques">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHYSIOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="physique mécanique énergie">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Client%20Challenge.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHYSIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="français médical langue terminologie">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Produits%20pharmaceutiques%20sur%20fond%20neutre.png')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    FRANÇAIS MÉDICAL <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- السنة الثانية -->
+                <div class="year-modules" id="annee2">
+                    <div class="year-title" style="background:linear-gradient(135deg,#4a148c,#3f51b5);">
+                        <i class="fas fa-graduation-cap"></i> 2ème Année
+                    </div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale" data-subject="biochimie protéines enzymes métabolisme">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/__files_hamster3d.com_stockbox_icon-hd720.jpg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BIOCHIMIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="biophysique physique biologique ondes">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BIOPHYSIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="botanique plantes classification">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(2).jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BOTANIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="chimie analytique dosage analyse">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    CHIMIE ANALYTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="chimie minérale éléments inorganiques">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    CHIMIE MINÉRALE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="anglais médical langue terminologie">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    ANGLAIS MÉDICAL <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="génétique ADN hérédité chromosomes">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    GÉNÉTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="physiopathologie maladies mécanismes">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download.jpg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHYSIOPATHOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- السنة الثالثة -->
+                <div class="year-modules" id="annee3">
+                    <div class="year-title" style="background:linear-gradient(135deg,#3f51b5,#2196f3);">
+                        <i class="fas fa-graduation-cap"></i> 3ème Année
+                    </div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale" data-subject="chimie analytique dosage HPLC">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    CHIMIE ANALYTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="chimie thérapeutique médicaments traitement">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Pourquoi%20l%27heure%20de%20vos%20repas%20est%20importante.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    CHIMIE THÉRAPEUTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="pharmacie galénique formulation comprimés">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHARMACIE GALÉNIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="pharmacognosie plantes médicinales">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHARMACOGNOSIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="pharmacologie médicaments effets">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHARMACOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="sémiologie symptômes diagnostic">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/Symptoms%20of%20Heart%20Attack.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    SÉMIOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- السنة الرابعة (المتاحة) -->
+                <div class="year-modules" id="annee4">
+                    <div class="year-title" style="background:linear-gradient(135deg,#2196f3,#00bcd4);">
+                        <i class="fas fa-graduation-cap"></i> 4ème Année
+                    </div>
+                    <div class="subjects-container">
+                        <div class="subject-card available" data-subject="biochimie clinique sang glucose enzymes">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    BIOCHIMIE CLINIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="BIOCHIMIE_CLINIQUE_S1.html"><i class="fas fa-file-alt"></i> Semestre 1</a></li>
+                                    <li><a href="BIOCHIMIE_CLINIQUE_S2.html"><i class="fas fa-file-alt"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card available" data-subject="hémobiologie sang globules hémoglobine">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/FFFFFFFFLHI.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    HÉMOBIOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="HEMOBIOLOGIE_S1.html"><i class="fas fa-file-alt"></i> Semestre 1</a></li>
+                                    <li><a href="HEMOBIOLOGIE_S2.html"><i class="fas fa-file-alt"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card available" data-subject="immunologie anticorps défense immunitaire">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    IMMUNOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="IMMUNOLOGIE_S1.html"><i class="fas fa-file-alt"></i> Semestre 1</a></li>
+                                    <li><a href="IMMUNOLOGIE_S2.html"><i class="fas fa-file-alt"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card available" data-subject="microbiologie bactéries virus culture">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    MICROBIOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="MICROBIOLOGIE_S1.html"><i class="fas fa-file-alt"></i> Semestre 1</a></li>
+                                    <li><a href="MICROBIOLOGIE_S2.html"><i class="fas fa-file-alt"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card available" data-subject="parasitologie parasites protozoaires helminthes">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma/t%C3%A9l%C3%A9chargement%20(8).jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PARASITOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="PARASITOLOGIE_S1.html"><i class="fas fa-file-alt"></i> Semestre 1</a></li>
+                                    <li><a href="PARASITOLOGIE_S2.html"><i class="fas fa-file-alt"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- السنة الخامسة -->
+                <div class="year-modules" id="annee5">
+                    <div class="year-title" style="background:linear-gradient(135deg,#00bcd4,#009688);">
+                        <i class="fas fa-graduation-cap"></i> 5ème Année
+                    </div>
+                    <div class="subjects-container">
+                        <div class="subject-card grayscale" data-subject="droit pharmaceutique législation réglementation">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    DROIT PHARMACEUTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="épidémiologie maladies santé publique">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    ÉPIDÉMIOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="gestion pharmaceutique administration pharmacie">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    GESTION PHARMACEUTIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="hydrologie eau minérale thermale">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    HYDROLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="pharmacie clinique patient traitement">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHARMACIE CLINIQUE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="pharmacie hospitalière hôpital médicaments">
+                            <div class="subject-image" style="background-image:url('')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHARMACIE HOSPITALIÈRE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="pharmacie industrielle production fabrication">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    PHARMACIE INDUSTRIELLE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="subject-card grayscale" data-subject="toxicologie poisons substances dangereuses">
+                            <div class="subject-image" style="background-image:url('https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif')" loading="lazy"></div>
+                            <div class="subject-content">
+                                <h4 onclick="toggleSemesters(this)" role="button" tabindex="0" aria-expanded="false">
+                                    TOXICOLOGIE <i class="fas fa-chevron-down"></i>
+                                </h4>
+                                <ul>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 1</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 2</a></li>
+                                    <li><a href="#" onclick="showAlert();return false;" class="disabled-link"><i class="fas fa-lock"></i> Semestre 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الاتصال -->
+            <div id="contact" class="section">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <div class="about-container">
+                    <div class="about-content">
+                        <p>Vous avez une question, une suggestion ou vous souhaitez collaborer avec nous ?</p>
+                        <p>N'hésitez pas à nous contacter par :</p>
+                        <p style="margin:15px 0;">
+                            <a href="tel:+213555079282" style="color:#00bcd4;font-weight:600;"><i class="fas fa-phone"></i> Téléphone</a> | 
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ghanipharmadz@gmail.com&su=Contact%20GhaniPharma" target="_blank" class="desktop-only" style="color:#00bcd4;font-weight:600;"><i class="fas fa-envelope"></i> Gmail</a>
+                            <a href="mailto:ghanipharmadz@gmail.com" class="mobile-only" style="color:#00bcd4;font-weight:600;"><i class="fas fa-envelope"></i> Email</a> | 
+                            <a href="https://wa.me/213555079282" target="_blank" style="color:#00bcd4;font-weight:600;"><i class="fab fa-whatsapp"></i> WhatsApp</a> | 
+                            <a href="https://t.me/ghanirouabah" target="_blank" style="color:#00bcd4;font-weight:600;"><i class="fab fa-telegram"></i> Telegram</a>
+                        </p>
+                        <p>Nous vous répondrons dans les plus brefs délais. Merci de votre visite ! 🙏</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Instant%20Messaging%20Market%20Key%20Players%20%26%20Trades%20Report%20to%202028.jpeg" alt="Contact GhaniPharma" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- نموذج الاتصال -->
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> Envoyez-nous un message</h3>
+                    <div id="statusMessage" class="status-message"></div>
+                    <form id="contactForm" action="https://formspree.io/f/mqaneerv" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
+                        <input type="hidden" name="_replyto" value="ghanipharmadz@gmail.com">
+                        <input type="hidden" name="_language" value="fr">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Votre nom</label>
+                                <input type="text" id="name" name="name" required placeholder="Entrez votre nom complet" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Votre email</label>
+                                <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com" autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment-dots"></i> Votre message</label>
+                            <textarea id="message" name="message" required placeholder="Décrivez votre demande ou suggestion..." autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- قسم "أنظر أيضاً" -->
+            <div id="watch-also" class="section">
+                <h2><i class="fas fa-lightbulb"></i> Ressources Utiles</h2>
+                <p>Découvrez d'autres ressources et contenus qui pourraient vous intéresser dans vos études pharmaceutiques.</p>
+                <div class="cards-container">
+                    <div class="card">
+                        <i class="fas fa-graduation-cap" style="font-size:2.5rem;color:#ffeb3b;margin-bottom:15px;"></i>
+                        <h3 style="color:#ffeb3b;margin:10px 0;">Conseils d'Étude</h3>
+                        <p style="color:#d0d0d0;font-size:0.95rem;">Techniques efficaces pour réussir vos examens en pharmacie</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-book-reader" style="font-size:2.5rem;color:#00bcd4;margin-bottom:15px;"></i>
+                        <h3 style="color:#ffeb3b;margin:10px 0;">Bibliothèque Numérique</h3>
+                        <p style="color:#d0d0d0;font-size:0.95rem;">Accès à des livres et références scientifiques en ligne</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-users" style="font-size:2.5rem;color:#4caf50;margin-bottom:15px;"></i>
+                        <h3 style="color:#ffeb3b;margin:10px 0;">Communauté Étudiante</h3>
+                        <p style="color:#d0d0d0;font-size:0.95rem;">Rejoignez notre groupe pour échanger et s'entraider</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">
+                &copy; 2025 <strong>GhaniPharma</strong>. Tous droits réservés.<br>
+                <small style="color:#999;">Créé avec ❤️ par <a href="https://ghanirouabah.github.io" target="_blank">Ghani Rouabah</a> pour la communauté pharmaceutique algérienne</small>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- الجافاسكريبت -->
     <script>
-        // Header Scroll Hide
+        // === إدارة الهيدر المتحرك ===
         let lastScrollTop = 0;
-        const header = document.getElementById('mainHeader');
-        window.addEventListener('scroll', () => {
-            let st = window.pageYOffset;
-            if (st > lastScrollTop && st > 100) header.classList.add('hidden');
-            else header.classList.remove('hidden');
-            lastScrollTop = st;
+        const mainHeader = document.getElementById('mainHeader');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                mainHeader.classList.add('hidden');
+            } else if (scrollTop < lastScrollTop) {
+                mainHeader.classList.remove('hidden');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, { passive: true });
+        
+        // === شريط التقدم ===
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+            
+            // زر العودة للأعلى
+            const backToTop = document.querySelector('.back-to-top');
+            if (scrollTop > 400) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        }, { passive: true });
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // === ظهور الأقسام عند التمرير ===
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    updateActiveNav(entry.target.id);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '-70px 0px -10% 0px' });
+        
+        document.querySelectorAll('.section, .modules-section, .stats-section').forEach(section => {
+            sectionObserver.observe(section);
         });
-
-        // Smooth Scroll
+        
+        function updateActiveNav(sectionId) {
+            document.querySelectorAll('header nav ul li a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // === القائمة المحمولة ===
+        const navMenu = document.getElementById('navMenu');
+        const menuClose = document.getElementById('mobileMenuClose');
+        
+        function toggleMobileMenu() {
+            navMenu.classList.toggle('show');
+            if (navMenu.classList.contains('show')) {
+                document.addEventListener('click', outsideClickListener);
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.removeEventListener('click', outsideClickListener);
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function closeMobileMenu() {
+            navMenu.classList.remove('show');
+            document.removeEventListener('click', outsideClickListener);
+            document.body.style.overflow = '';
+        }
+        
+        function outsideClickListener(event) {
+            if (!navMenu.contains(event.target) && !event.target.closest('.menu-btn')) {
+                closeMobileMenu();
+            }
+        }
+        
+        if (menuClose) {
+            menuClose.addEventListener('click', (e) => { e.stopPropagation(); closeMobileMenu(); });
+        }
+        
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('show')) closeMobileMenu();
+        });
+        
+        // === التمرير السلس للروابط ===
+        function scrollToSection(sectionId) {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        }
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#" || targetId === "") return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
                     e.preventDefault();
-                    const offset = 80;
-                    const topPos = target.getBoundingClientRect().top + window.scrollY - offset;
-                    window.scrollTo({ top: topPos, behavior: 'smooth' });
+                    scrollToSection(targetId);
+                    history.pushState(null, null, targetId);
+                    closeMobileMenu();
                 }
             });
         });
-
-        // Section Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+        
+        // === إدارة سنوات الدراسة ===
+        function showYear(yearId, btn) {
+            document.querySelectorAll('.year-modules').forEach(module => {
+                module.classList.remove('active-year');
+                module.style.display = 'none';
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
-
-        // Year Tabs
-        document.querySelectorAll('.year-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                document.querySelectorAll('.year-modules').forEach(year => {
-                    year.classList.remove('active-year');
-                    if (year.id === btn.dataset.year) year.classList.add('active-year');
+            const targetYear = document.getElementById(yearId);
+            if (targetYear) {
+                targetYear.style.display = 'block';
+                setTimeout(() => targetYear.classList.add('active-year'), 30);
+                loadSubjectCards(yearId);
+            }
+            document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            
+            // تحديث العنوان
+            const yearText = btn ? btn.textContent.replace(/[0-9]/g, '').trim() : yearId;
+            document.title = `${yearText} - GhaniPharma`;
+            history.pushState(null, null, `#modules`);
+        }
+        
+        // === تحميل بطاقات المواد بتأثير ===
+        function loadSubjectCards(yearId) {
+            const container = document.getElementById(yearId);
+            if (!container) return;
+            const cards = container.querySelectorAll('.subject-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('loaded');
+                }, index * 60);
+            });
+        }
+        
+        // === تبديل طريقة العرض ===
+        function setView(viewType) {
+            const container = document.querySelector('.subjects-container');
+            const buttons = document.querySelectorAll('.view-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
+            event.currentTarget.classList.add('active');
+            event.currentTarget.setAttribute('aria-pressed', 'true');
+            
+            if (viewType === 'list') {
+                container.classList.add('list-view');
+            } else {
+                container.classList.remove('list-view');
+            }
+        }
+        
+        // === البحث عن المواد ===
+        function filterModules() {
+            const searchTerm = document.getElementById('moduleSearch').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.subject-card');
+            let visibleCount = 0;
+            
+            cards.forEach(card => {
+                const subjectData = card.getAttribute('data-subject') || '';
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const matches = title.includes(searchTerm) || subjectData.includes(searchTerm);
+                
+                if (matches || searchTerm === '') {
+                    card.style.display = '';
+                    setTimeout(() => card.classList.add('loaded'), 80);
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('loaded');
+                }
+            });
+            
+            // رسالة عند عدم وجود نتائج
+            const container = document.querySelector('.subjects-container');
+            let noResultMsg = container.querySelector('.no-results');
+            if (searchTerm && visibleCount === 0) {
+                if (!noResultMsg) {
+                    noResultMsg = document.createElement('div');
+                    noResultMsg.className = 'no-results';
+                    noResultMsg.style.cssText = 'grid-column:1/-1;text-align:center;padding:30px;color:#ffeb3b;font-size:1.1rem;';
+                    noResultMsg.innerHTML = '<i class="fas fa-search"></i> Aucun module trouvé pour "' + document.getElementById('moduleSearch').value + '"';
+                    container.appendChild(noResultMsg);
+                }
+            } else if (noResultMsg) {
+                noResultMsg.remove();
+            }
+        }
+        
+        // === تبديل عرض الفصول ===
+        function toggleSemesters(element) {
+            const semestersList = element.nextElementSibling;
+            if (!semestersList) return;
+            
+            // إغلاق القوائم الأخرى
+            document.querySelectorAll('.subject-card ul').forEach(list => {
+                if (list !== semestersList && list.classList.contains('show')) {
+                    list.classList.remove('show');
+                    const header = list.closest('.subject-content')?.querySelector('h4');
+                    if (header) {
+                        header.classList.remove('active');
+                        header.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+            
+            // تبديل القائمة الحالية
+            semestersList.classList.toggle('show');
+            element.classList.toggle('active');
+            element.setAttribute('aria-expanded', semestersList.classList.contains('show'));
+            
+            // تحديث أيقونة السهم
+            const icon = element.querySelector('.fa-chevron-down');
+            if (icon) {
+                icon.style.transform = semestersList.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+            }
+        }
+        
+        // === رسالة التنبيه ===
+        function showAlert() {
+            const alertDiv = document.getElementById('alertMessage');
+            alertDiv.style.display = 'block';
+            setTimeout(() => { alertDiv.style.display = 'none'; }, 3500);
+        }
+        
+        // === عداد الإحصائيات ===
+        function animateStats() {
+            document.querySelectorAll('.stat-number').forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current).toLocaleString('fr-FR');
+                }, 35);
+            });
+        }
+        
+        // === معرض الصور للهاتف ===
+        function initMobileGallery() {
+            if (window.innerWidth <= 768) {
+                const track = document.querySelector('.gallery-track');
+                if (track) track.style.display = 'none';
+                const images = document.querySelectorAll('.gallery .mobile-gallery');
+                if (images.length === 0) return;
+                
+                let currentIndex = 0;
+                images[currentIndex].classList.add('active');
+                
+                function showNext() {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
+                }
+                setInterval(showNext, 4500);
+            } else {
+                document.querySelectorAll('.gallery .mobile-gallery').forEach(img => img.style.display = 'none');
+            }
+        }
+        
+        // === نموذج الاتصال ===
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMessage = document.getElementById('statusMessage');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                statusMessage.style.display = 'none';
+                
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        statusMessage.textContent = '✅ Votre message a été envoyé avec succès! Nous vous répondrons bientôt.';
+                        statusMessage.className = 'status-message status-success';
+                        statusMessage.style.display = 'block';
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Erreur de serveur');
+                    }
+                } catch (error) {
+                    statusMessage.textContent = '❌ Erreur: ' + error.message + '. Veuillez réessayer.';
+                    statusMessage.className = 'status-message status-error';
+                    statusMessage.style.display = 'block';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+                    setTimeout(() => { if (statusMessage.style.display === 'block') statusMessage.style.display = 'none'; }, 10000);
+                }
+            });
+        }
+        
+        // === دعم لوحة المفاتيح ===
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileGallery();
+            
+            // تحميل السنة الأولى افتراضياً
+            showYear('annee1', document.querySelector('.year-btn.first-year'));
+            
+            // دعم Enter للقوائم
+            document.querySelectorAll('.subject-card h4').forEach(header => {
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleSemesters(this);
+                    }
                 });
             });
-        });
-
-        // Search
-        document.getElementById('moduleSearch').addEventListener('keyup', function() {
-            const filter = this.value.toLowerCase();
-            document.querySelectorAll('.subject-card').forEach(card => {
-                const text = card.textContent.toLowerCase();
-                card.style.display = text.includes(filter) ? '' : 'none';
+            
+            // دعم Escape لإغلاق القائمة المحمولة
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navMenu.classList.contains('show')) {
+                    closeMobileMenu();
+                }
             });
+            
+            // مراقبة قسم الإحصائيات
+            const statsSection = document.getElementById('statistics');
+            if (statsSection) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        animateStats();
+                        statsObserver.unobserve(statsSection);
+                    }
+                }, { threshold: 0.4 });
+                statsObserver.observe(statsSection);
+            }
         });
-
-        function toggleSemesters(el) {
-            const ul = el.nextElementSibling;
-            document.querySelectorAll('.subject-card ul').forEach(list => {
-                if (list !== ul) list.classList.remove('show');
+        
+        // === تحسينات الأداء ===
+        // تأخير تحميل الصور غير المرئية
+        if ('loading' in HTMLImageElement.prototype) {
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                img.src = img.dataset.src || img.src;
             });
-            ul.classList.toggle('show');
         }
-
-        function showAlert() {
-            const alert = document.getElementById('alertMessage');
-            alert.style.display = 'block';
-            setTimeout(() => alert.style.display = 'none', 3000);
-        }
+        
+        // منع التمرير الزائد
+        document.addEventListener('touchmove', function(e) {
+            if (navMenu.classList.contains('show')) {
+                e.stopPropagation();
+            }
+        }, { passive: false });
     </script>
 </body>
 </html>
