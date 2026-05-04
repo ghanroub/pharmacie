@@ -1084,6 +1084,7 @@
             display: none;
         }
         
+        /* === إصلاح القائمة المنبثقة للهواتف === */
         @media (max-width: 768px) {
             .menu-btn {
                 display: block;
@@ -1093,11 +1094,13 @@
             }
             header nav ul {
                 position: fixed;
-                top: 50%;
+                top: 10%; /* تغيير من 50% إلى 10% لتظهر من أعلى */
                 left: 50%;
-                transform: translate(-50%, -50%) scale(0.9);
+                transform: translateX(-50%); /* إزالة translateY */
                 width: 85%;
                 max-width: 320px;
+                max-height: 80vh; /* تحديد أقصى ارتفاع */
+                overflow-y: auto; /* تمرير داخلي إذا كان المحتوى طويلاً */
                 background: linear-gradient(145deg, #0a0a2a, #1a1a3a);
                 backdrop-filter: blur(25px);
                 border-radius: 28px;
@@ -1116,7 +1119,7 @@
             header nav ul.show {
                 opacity: 1;
                 visibility: visible;
-                transform: translate(-50%, -50%) scale(1);
+                transform: translateX(-50%);
                 pointer-events: auto;
             }
             header nav ul li {
