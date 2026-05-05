@@ -1147,17 +1147,6 @@
                 </div>
             </section>
 
-            <!-- ==================== القسم 2: الموديولات ==================== -->
-            <section class="section-block" id="section-modules">
-                <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules Disponibles</h2>
-                <p class="section-subtitle reveal reveal-delay-1">
-                    Sélectionnez votre année pour découvrir les modules disponibles. 
-                    Cliquez sur une matière pour voir les semestres.
-                </p>
-                <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
-                <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
-            </section>
-
             <!-- ==================== القسم 3: حول ==================== -->
             <section class="section-block" id="section-about">
                 <div class="about-grid">
@@ -1200,11 +1189,25 @@
                     </div>
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-number" data-target="1">0</span>
                         <span class="stat-label">Années Couvertes</span>
                     </div>
                 </div>
             </section>
+            
+            
+            <!-- ==================== القسم 2: الموديولات ==================== -->
+            <section class="section-block" id="section-modules">
+                <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules Disponibles</h2>
+                <p class="section-subtitle reveal reveal-delay-1">
+                    Sélectionnez votre année pour découvrir les modules disponibles. 
+                    Cliquez sur une matière pour voir les semestres.
+                </p>
+                <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
+                <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
+            </section>
+
+
 
             <!-- ==================== القسم 4: الاتصال ==================== -->
             <section class="section-block" id="section-contact">
@@ -1405,7 +1408,7 @@
                     { name: "DROIT PHARMACEUTIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png", sems: [1], available: false, externalImg: true },
                     { name: "EPIDEMIOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg", sems: [1], available: false, externalImg: true },
                     { name: "GESTION PHARMACEUTIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg", sems: [1], available: false, externalImg: true },
-                    { name: "HYDROLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg", sems: [1,2], available: false, externalImg: true },
+                    { name: "HYDRO-BROMATOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg", sems: [1,2], available: false, externalImg: true },
                     { name: "PHARMACIE CLINIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif", sems: [1,2], available: false, externalImg: true },
                     { name: "PHARMACIE HOSPITALIERE", img: "", sems: [1], available: false },
                     { name: "PHARMACIE INDUSTRIELLE", img: "16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png", sems: [1,2], available: false },
@@ -1580,7 +1583,7 @@
         if (statsRow) statsObserver.observe(statsRow);
 
         // ==================== تحديث النقاط الجانبية عند التمرير ====================
-        const sections = ['home', 'modules', 'about', 'contact'];
+        const sections = ['home', 'about', 'modules', 'contact'];
         const dots = document.querySelectorAll('.dot');
         const navLinks = document.querySelectorAll('.nav-link');
 
