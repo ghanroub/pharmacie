@@ -32,7 +32,6 @@
     <style>
         /* ==================== متغيرات CSS للوضعين ==================== */
         :root {
-            /* الوضع الليلي (الافتراضي) */
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
             --bg-card: rgba(10, 10, 30, 0.75);
@@ -148,7 +147,6 @@
             100% { opacity: 0; transform: translateX(350px) translateY(350px); }
         }
 
-        /* في الوضع النهاري نخفي النجوم */
         [data-theme="light"] .star,
         [data-theme="light"] .shooting-star {
             opacity: 0.3 !important;
@@ -227,6 +225,7 @@
             gap: 15px;
         }
 
+        /* --- Menu normal horizontal (grand écran) --- */
         .nav-links {
             display: flex;
             align-items: center;
@@ -270,6 +269,96 @@
             height: 3px;
             background: var(--primary);
             border-radius: 3px;
+        }
+
+        /* ==================== POPUP MOBILE MENU ==================== */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%;
+            max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .mobile-menu-overlay.open .mobile-menu-popup {
+            transform: scale(1);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            background: var(--bg-glass);
+            border-radius: 60px;
+            color: var(--text-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .mobile-nav-link:hover {
+            border-color: var(--primary);
+            background: rgba(0,188,212,0.1);
+            transform: translateX(6px);
+        }
+
+        .mobile-nav-link i {
+            color: var(--primary);
+            width: 28px;
+            font-size: 1.3rem;
         }
 
         /* ==================== زر تبديل الوضع ==================== */
@@ -404,7 +493,6 @@
             border-bottom: none;
         }
 
-        /* تأثير الظهور عند التمرير */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -1028,29 +1116,10 @@
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-
+            /* Cacher le menu horizontal normal */
             .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: var(--nav-bg);
-                backdrop-filter: blur(30px);
-                -webkit-backdrop-filter: blur(30px);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
-                transform: translateX(100%);
-                transition: transform 0.4s ease;
-                z-index: 999;
+                display: none !important;
             }
-
-            .nav-links.open { transform: translateX(0); }
-
-            .nav-link { font-size: 1.2rem; padding: 15px 35px; }
-
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.8rem; }
             .subjects-grid { grid-template-columns: 1fr; }
@@ -1099,7 +1168,8 @@
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul class="nav-links" id="navLinks">
+                <!-- Menu horizontal (affiché uniquement sur desktop) -->
+                <ul class="nav-links" id="navLinksDesktop">
                     <li><button class="nav-link active" data-nav="home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Accueil</button></li>
                     <li><button class="nav-link" data-nav="about" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> À propos</button></li>
                     <li><button class="nav-link" data-nav="modules" onclick="scrollToSection('modules')"><i class="fas fa-book"></i> Modules</button></li>
@@ -1108,6 +1178,23 @@
             </div>
         </div>
     </nav>
+
+    <!-- POPUP MOBILE MENU (overlay) -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="home"><i class="fas fa-home"></i> Accueil</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="about"><i class="fas fa-info-circle"></i> À propos</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="modules"><i class="fas fa-book"></i> Modules</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </div>
 
     <!-- التنقل الجانبي (النقاط) -->
     <div class="side-dots">
@@ -1147,7 +1234,7 @@
                 </div>
             </section>
 
-            <!-- ==================== القسم 3: حول ==================== -->
+            <!-- ==================== القسم 2: حول ==================== -->
             <section class="section-block" id="section-about">
                 <div class="about-grid">
                     <div class="about-image-container reveal">
@@ -1195,8 +1282,7 @@
                 </div>
             </section>
             
-            
-            <!-- ==================== القسم 2: الموديولات ==================== -->
+            <!-- ==================== القسم 3: الموديولات ==================== -->
             <section class="section-block" id="section-modules">
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules Disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
@@ -1206,8 +1292,6 @@
                 <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
                 <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
             </section>
-
-
 
             <!-- ==================== القسم 4: الاتصال ==================== -->
             <section class="section-block" id="section-contact">
@@ -1457,8 +1541,18 @@
                     behavior: 'smooth'
                 });
             }
-            // إغلاق قائمة الموبايل
-            document.getElementById('navLinks').classList.remove('open');
+            // إغلاق البوب آب mobile
+            closeMobileMenu();
+        }
+
+        // Fonctions pour mobile popup
+        function openMobileMenu() {
+            document.getElementById('mobileMenuOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenuOverlay').classList.remove('open');
+            document.body.style.overflow = '';
         }
 
         // ==================== بناء أزرار السنوات ====================
@@ -1611,7 +1705,8 @@
         // ==================== تحديث النقاط الجانبية عند التمرير ====================
         const sections = ['home', 'about', 'modules', 'contact'];
         const dots = document.querySelectorAll('.dot');
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link'); // desktop
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         function updateActiveSection() {
             const scrollPos = window.scrollY + window.innerHeight / 3;
@@ -1657,7 +1752,6 @@
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
-        // تحميل الوضع المحفوظ
         const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlElement.setAttribute('data-theme', savedTheme);
 
@@ -1668,14 +1762,18 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // ==================== قائمة الموبايل ====================
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('open');
+        // ==================== قائمة الموبايل (popup) ====================
+        document.getElementById('menuToggle').addEventListener('click', openMobileMenu);
+        document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
+        // fermer en cliquant sur le fond (overlay)
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeMobileMenu();
         });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('open');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = link.getAttribute('data-nav-mobile');
+                if (section) scrollToSection(section);
             });
         });
 
