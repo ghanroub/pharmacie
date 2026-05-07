@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="GhaniPharma - Plateforme Pédagogique Pharmaceutique">
     <meta name="theme-color" content="#0a0a1a">
-    <title>GhaniPharma | test</title>
+    <title>GhaniPharma | Plateforme Pédagogique</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -829,6 +829,7 @@
             background-size: cover;
             background-position: center;
             position: relative;
+            cursor: pointer;
         }
 
         .subject-card-img::after {
@@ -850,60 +851,16 @@
             font-weight: 700;
             color: var(--text-heading);
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            user-select: none;
         }
 
-        .subject-card-title i {
-            transition: transform 0.4s ease;
-            color: var(--primary);
-        }
-
-        .subject-card-title.expanded i {
-            transform: rotate(180deg);
-        }
-
-        .semester-list {
-            list-style: none;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-
-        .semester-list.show {
-            max-height: 350px;
-        }
-
-        .semester-list li {
-            margin: 8px 0;
-        }
-
-        .sem-link {
-            display: block;
-            padding: 11px 20px;
-            background: rgba(128, 128, 128, 0.06);
-            border-radius: 12px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .sem-link:hover {
-            background: rgba(0, 188, 212, 0.15);
+        .subject-card-title a {
             color: var(--text-heading);
-            transform: translateX(5px);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .sem-link.disabled {
-            color: #888;
-            cursor: not-allowed;
-            pointer-events: none;
-            background: rgba(128, 128, 128, 0.03);
+        .subject-card-title a:hover {
+            color: var(--primary);
         }
 
         .availability-badge {
@@ -1204,12 +1161,14 @@
                         Votre passerelle vers le savoir pharmaceutique. Des cours et des examens pour toutes les années d'études en pharmacie.
                     </p>
                     <div class="hero-buttons reveal reveal-delay-3">
-                        <button class="btn btn-primary" onclick="scrollToSection('modules')">
-                            <i class="fas fa-book-open"></i> Explorer les Modules
-                        </button>
+                        
                         <button class="btn btn-outline" onclick="scrollToSection('about')">
                             <i class="fas fa-info-circle"></i> En Savoir Plus
                         </button>
+                        <button class="btn btn-primary" onclick="scrollToSection('modules')">
+                            <i class="fas fa-book-open"></i> Explorer les Modules
+                        </button>
+                    
                     </div>
                 </div>
 
@@ -1223,7 +1182,7 @@
             <section class="section-block" id="section-about">
                 <div class="about-grid">
                     <div class="about-image-container reveal">
-                        <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_arrqzcarrqzcarrq.png" alt="GhaniPharma">
+                        <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_wis0hwis0hwis0hw.png" alt="GhaniPharma">
                     </div>
                     <div>
                         <h2 class="section-title reveal reveal-delay-1">À propos de nous</h2>
@@ -1246,7 +1205,7 @@
                 <div class="stats-row reveal reveal-delay-4">
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-users"></i></div>
-                        <span class="stat-number" data-target="2038">0</span>
+                        <span class="stat-number" data-target="2419">0</span>
                         <span class="stat-label">Visiteurs</span>
                     </div>
                     <div class="stat-box">
@@ -1272,7 +1231,7 @@
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules Disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
                     Sélectionnez votre année pour découvrir les modules disponibles. 
-                    Cliquez sur une matière pour voir les semestres.
+                    Cliquez sur une matière ou son image pour y accéder directement.
                 </p>
                 <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
                 <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
@@ -1387,18 +1346,18 @@
             "%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg",
             "Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg",
             "Chirality%2C%20a%20Primer%20(Updated).jfif",
-            "G.Ebers(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg",
+            "G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg",
             "Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg",
             "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg",
             "Client%20Challenge.jpeg",
             "Produits%20pharmaceutiques%20sur%20fond%20neutre.png",
-            "files_hamster3d.com_stockbox_icon-hd720.jpg",
+            "__files_hamster3d.com_stockbox_icon-hd720.jpg",
             "Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg",
             "t%C3%A9l%C3%A9chargement%20(2).jpeg",
-            "Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20%20Premium%20AI-generated%20image.jpeg",
-            "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif",
+            "Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg",
+            "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif",
             "Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
-            "download.jpg",
+            "Capture%20d'%C3%A9cran%202026-05-05%20184719.png",
             "ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png",
             "15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg",
             "Pourquoi%20l'heure%20de%20vos%20repas%20est%20importante.jpeg",
@@ -1407,7 +1366,7 @@
             "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg",
             "Symptoms%20of%20Heart%20Attack.jpeg",
             "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif",
-            "FFFFFFFLHI.jpeg",
+            "FFFFFFFFLHI.jpeg",
             "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg",
             "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
             "t%C3%A9l%C3%A9chargement%20(8).jpeg",
@@ -1566,7 +1525,7 @@
             });
         }
 
-        // ==================== بناء كروت المواد ====================
+        // ==================== بناء كروت المواد (معدلة - بدون semestres) ====================
         function buildSubjects(yearId) {
             const container = document.getElementById('subjectsGrid');
             const data = modulesData[yearId];
@@ -1597,50 +1556,44 @@
                     ? '<span class="availability-badge badge-available">Disponible</span>'
                     : '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
 
-                const semestersHTML = sub.sems.map(s => {
-                    if (sub.available && sub.links && sub.links[s]) {
-                        return `<li><a href="${sub.links[s]}" class="sem-link">Semestre ${s}</a></li>`;
-                    } else if (sub.available && !sub.links) {
-                        return `<li><a href="#" class="sem-link" onclick="showToast(); return false;">Semestre ${s}</a></li>`;
+                // Déterminer le lien pour la matière
+                let linkHref = '#';
+                let linkOnClick = '';
+                
+                if (sub.available && sub.links) {
+                    // Chercher le premier semestre avec un lien disponible
+                    const availableSem = sub.sems.find(s => sub.links[s]);
+                    if (availableSem) {
+                        linkHref = sub.links[availableSem];
                     } else {
-                        return `<li><span class="sem-link disabled">Semestre ${s}</span></li>`;
+                        linkOnClick = 'onclick="showToast(); return false;"';
                     }
-                }).join('');
+                } else {
+                    linkOnClick = 'onclick="showToast(); return false;"';
+                }
+
+                // Image cliquable
+                const imageHTML = `<a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
+                    <div class="subject-card-img" style="background-image:url('${imgSrc}')"></div>
+                </a>`;
+
+                // Titre cliquable
+                const titleHTML = `<a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
+                    <span>${sub.name}</span>
+                </a>`;
 
                 return `
                     <div class="subject-card ${availabilityClass}">
-                        <div class="subject-card-img" style="background-image:url('${imgSrc}')"></div>
+                        ${imageHTML}
                         <div class="subject-card-body">
-                            <div class="subject-card-title" onclick="toggleSemesters(this)">
-                                <span>${sub.name}</span>
-                                <i class="fas fa-chevron-down"></i>
+                            <div class="subject-card-title">
+                                ${titleHTML}
                             </div>
                             ${badgeHTML}
-                            <ul class="semester-list">
-                                ${semestersHTML}
-                            </ul>
                         </div>
                     </div>
                 `;
             }).join('');
-        }
-
-        // ==================== توسيع/طي قائمة السداسيات ====================
-        function toggleSemesters(titleEl) {
-            const card = titleEl.closest('.subject-card');
-            const list = card.querySelector('.semester-list');
-            const isOpen = list.classList.contains('show');
-
-            document.querySelectorAll('.semester-list.show').forEach(l => {
-                if (l !== list) {
-                    l.classList.remove('show');
-                    const otherTitle = l.closest('.subject-card')?.querySelector('.subject-card-title');
-                    if (otherTitle) otherTitle.classList.remove('expanded');
-                }
-            });
-
-            list.classList.toggle('show');
-            titleEl.classList.toggle('expanded');
         }
 
         // ==================== رسالة التنبيه ====================
