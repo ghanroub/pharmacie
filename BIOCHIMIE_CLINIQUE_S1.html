@@ -417,22 +417,27 @@
             -webkit-backdrop-filter: blur(15px);
         }
 
-        /* ==================== أزرار التنقل بين السداسيات ==================== */
+        /* ==================== أزرار التنقل بين السداسيات - ثابتة ==================== */
+        .semester-tabs-wrapper {
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 15px 0;
+            margin: 30px 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
         .semester-tabs {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            margin: 30px 0;
-            position: sticky;
-            top: 85px;
-            z-index: 50;
-            padding: 15px 0;
-            background: var(--nav-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 20px;
-            border: 1px solid var(--border-glass);
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
         }
 
         .semester-tab {
@@ -463,16 +468,11 @@
             box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
         }
 
-        .semester-tab.disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
         /* ==================== محتوى السداسيات ==================== */
         .semester-content {
             display: none;
             animation: fadeSlideIn 0.5s ease;
+            padding-top: 20px;
         }
 
         .semester-content.active {
@@ -523,7 +523,7 @@
             font-size: 1rem;
         }
 
-        /* ==================== كروت الدروس ==================== */
+        /* ==================== كروت الدروس - بدون سهم ==================== */
         .lessons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -594,17 +594,6 @@
             font-size: 0.9rem;
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        .lesson-arrow {
-            color: var(--primary);
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-            align-self: center;
-        }
-
-        .lesson-card:hover .lesson-arrow {
-            transform: translateX(5px);
         }
 
         /* ==================== قسم قريباً ==================== */
@@ -725,10 +714,11 @@
             .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
             .section-icon { width: 45px; height: 45px; font-size: 1.2rem; }
             .page-description { padding: 20px; font-size: 0.95rem; }
+            .semester-tabs { padding: 0 15px; }
         }
 
         @media (max-width: 480px) {
-            .semester-tabs { gap: 8px; padding: 10px; }
+            .semester-tabs { gap: 8px; }
             .semester-tab { padding: 8px 16px; font-size: 0.8rem; }
             .lesson-card { padding: 18px; }
         }
@@ -805,9 +795,11 @@
                     </p>
                 </div>
             </div>
+        </div>
 
-            <!-- أزرار التنقل بين السداسيات -->
-            <div class="semester-tabs reveal" id="semesterTabs">
+        <!-- أزرار التنقل بين السداسيات - ثابتة -->
+        <div class="semester-tabs-wrapper" id="semesterTabsWrapper">
+            <div class="semester-tabs" id="semesterTabs">
                 <button class="semester-tab active-tab" data-sem="s1" onclick="showSemester('s1')">
                     <i class="fas fa-1"></i> Semestre 1
                 </button>
@@ -818,6 +810,9 @@
                     <i class="fas fa-3"></i> Semestre 3
                 </button>
             </div>
+        </div>
+
+        <div class="container">
 
             <!-- ==================== SEMESTRE 1 ==================== -->
             <div class="semester-content active" id="content-s1">
@@ -840,7 +835,6 @@
                             <h3 class="lesson-title">Introduction à la Biochimie Clinique</h3>
                             <p class="lesson-desc">Concepts fondamentaux, rappels biochimiques et applications cliniques.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-1" onclick="showToast(); return false;">
@@ -851,7 +845,6 @@
                             <h3 class="lesson-title">Métabolisme des Glucides</h3>
                             <p class="lesson-desc">Glycolyse, néoglucogenèse, régulation hormonale et pathologies associées.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
@@ -862,7 +855,6 @@
                             <h3 class="lesson-title">Métabolisme des Lipides</h3>
                             <p class="lesson-desc">Lipoprotéines, cholestérol, triglycérides et dyslipidémies.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
@@ -873,7 +865,6 @@
                             <h3 class="lesson-title">Métabolisme des Protéines</h3>
                             <p class="lesson-desc">Acides aminés, protéines plasmatiques et exploration biologique.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
@@ -884,7 +875,6 @@
                             <h3 class="lesson-title">Enzymologie Clinique</h3>
                             <p class="lesson-desc">Enzymes d'intérêt diagnostique, cinétique enzymatique et interprétation.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
@@ -895,7 +885,6 @@
                             <h3 class="lesson-title">Exploration de la Fonction Hépatique</h3>
                             <p class="lesson-desc">Tests hépatiques, bilirubine, enzymes hépatiques et interprétation clinique.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
                 </div>
             </div>
@@ -921,7 +910,6 @@
                             <h3 class="lesson-title">Exploration de la Fonction Rénale</h3>
                             <p class="lesson-desc">Urée, créatinine, clairance, ionogramme et équilibre acido-basique.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-1" onclick="showToast(); return false;">
@@ -932,7 +920,6 @@
                             <h3 class="lesson-title">Équilibre Hydro-Électrolytique</h3>
                             <p class="lesson-desc">Sodium, potassium, chlore, bicarbonates et déséquilibres hydro-électrolytiques.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
@@ -943,7 +930,6 @@
                             <h3 class="lesson-title">Exploration du Métabolisme Phospho-Calcique</h3>
                             <p class="lesson-desc">Calcium, phosphore, PTH, vitamine D et pathologies osseuses.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
@@ -954,7 +940,6 @@
                             <h3 class="lesson-title">Marqueurs Tumoraux</h3>
                             <p class="lesson-desc">Principaux marqueurs tumoraux, sensibilité, spécificité et applications cliniques.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
@@ -965,7 +950,6 @@
                             <h3 class="lesson-title">Exploration Endocrinienne</h3>
                             <p class="lesson-desc">Hormones thyroïdiennes, corticosurrénales, sexuelles et exploration dynamique.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
 
                     <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
@@ -976,7 +960,6 @@
                             <h3 class="lesson-title">Biochimie des Liquides Biologiques</h3>
                             <p class="lesson-desc">Analyse du LCR, liquide pleural, ascite et autres liquides biologiques.</p>
                         </div>
-                        <i class="fas fa-chevron-right lesson-arrow"></i>
                     </a>
                 </div>
             </div>
@@ -1066,23 +1049,20 @@
             // إعادة تشغيل تأثير الظهور للعناصر المرئية داخل المحتوى الجديد
             setTimeout(() => {
                 targetContent.querySelectorAll('.reveal').forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight && rect.bottom > 0) {
-                        el.classList.add('visible');
-                    }
+                    el.classList.add('visible');
                 });
             }, 100);
         }
 
         // ==================== رسالة التنبيه ====================
         function showToast() {
-            const toast = document.getElementById('toast');
+            let toast = document.getElementById('toast');
             if (!toast) {
-                const newToast = document.createElement('div');
-                newToast.className = 'toast';
-                newToast.id = 'toast';
-                newToast.textContent = 'Cette leçon sera disponible prochainement.';
-                document.body.appendChild(newToast);
+                toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.id = 'toast';
+                toast.textContent = 'Cette leçon sera disponible prochainement.';
+                document.body.appendChild(toast);
                 
                 const style = document.createElement('style');
                 style.textContent = `
@@ -1109,16 +1089,10 @@
                     }
                 `;
                 document.head.appendChild(style);
-                
-                setTimeout(() => newToast.classList.add('show'), 10);
-                setTimeout(() => {
-                    newToast.classList.remove('show');
-                    setTimeout(() => newToast.remove(), 400);
-                }, 3000);
-            } else {
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 3000);
             }
+            
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
         // ==================== تأثير الظهور عند التمرير ====================
@@ -1130,7 +1104,16 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        // مراقبة جميع عناصر reveal الحالية والمستقبلية
+        function observeRevealElements() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (!el.classList.contains('visible')) {
+                    revealObserver.observe(el);
+                }
+            });
+        }
+        
+        observeRevealElements();
 
         // ==================== شريط التنقل - الإخفاء عند التمرير ====================
         let lastScrollTop = 0;
