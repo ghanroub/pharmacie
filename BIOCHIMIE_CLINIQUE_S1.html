@@ -1,162 +1,1106 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<title>Tétracyclines</title>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours de Biochimie Clinique - Semestres 1, 2 et 3 - GhaniPharma">
+    <meta name="keywords" content="biochimie clinique, pharmacie, cours, GhaniPharma, semestre 1, semestre 2, semestre 3">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Biochimie Clinique - GhaniPharma">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Biochimie Clinique | GhaniPharma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ==================== متغيرات CSS للوضعين ==================== */
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --btn-hover-shadow: rgba(0, 188, 212, 0.5);
+            --card-hover-border: rgba(0, 188, 212, 0.5);
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(255, 255, 255, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+        }
 
-<style>
-body {
-    font-family: Arial;
-    background: #f5f5f5;
-    padding: 20px;
-}
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --btn-hover-shadow: rgba(0, 151, 167, 0.4);
+            --card-hover-border: rgba(0, 151, 167, 0.5);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-border: rgba(0, 0, 0, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+        }
 
-.container {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    max-width: 900px;
-    margin: auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+        /* ==================== الأساسيات ==================== */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-h2 {
-    color: red;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-ul {
-    line-height: 1.8;
-}
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
 
-/* الرسم */
-.svg-box {
-    text-align: center;
-    margin: 20px 0;
-}
+        /* ==================== الخلفية ==================== */
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
 
-/* الجدول */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
 
-th {
-    background: #eee;
-}
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
+        }
 
-.red {
-    color: red;
-    font-weight: bold;
-}
+        [data-theme="light"] .star {
+            animation: none !important;
+            opacity: 0.15 !important;
+        }
 
-.blue {
-    color: blue;
-}
-</style>
+        /* ==================== شريط التنقل العلوي ==================== */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
 
+        .top-nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--text-heading);
+            transform: scale(1.05);
+        }
+
+        .nav-logo .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            border: 2px solid var(--border-glass);
+            background: transparent;
+            color: var(--text-heading);
+            font-family: inherit;
+        }
+
+        .btn-back:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 188, 212, 0.2);
+        }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
+        }
+
+        .theme-toggle i {
+            transition: all 0.5s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
+        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
+        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
+        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
+
+        /* ==================== المحتوى الرئيسي ==================== */
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-top: 90px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ==================== رأس الصفحة ==================== */
+        .page-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .subject-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .header-image {
+            width: 100%;
+            max-width: 700px;
+            height: 280px;
+            border-radius: 24px;
+            margin: 0 auto 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-glass);
+        }
+
+        /* ==================== أزرار التنقل بين السداسيات ==================== */
+        .semester-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+            position: sticky;
+            top: 85px;
+            z-index: 50;
+            padding: 15px 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid var(--border-glass);
+        }
+
+        .semester-tab {
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-glass);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .semester-tab:hover {
+            border-color: rgba(128, 128, 128, 0.4);
+            color: var(--text-heading);
+        }
+
+        .semester-tab.active-tab {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
+        }
+
+        .semester-tab.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* ==================== أقسام المحتوى ==================== */
+        .semester-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 180px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-glass);
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-heading);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* ==================== كروت الدروس ==================== */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .lesson-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--card-hover-border);
+        }
+
+        .lesson-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(0, 188, 212, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+            border: 1px solid rgba(0, 188, 212, 0.2);
+        }
+
+        .lesson-content {
+            flex: 1;
+        }
+
+        .lesson-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 6px;
+        }
+
+        .lesson-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .lesson-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-lesson {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-pdf {
+            background: rgba(255, 107, 107, 0.15);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-pdf:hover {
+            background: rgba(255, 107, 107, 0.3);
+            transform: translateX(3px);
+        }
+
+        .btn-video {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-video:hover {
+            background: rgba(76, 175, 80, 0.3);
+            transform: translateX(3px);
+        }
+
+        .btn-exam {
+            background: rgba(255, 152, 0, 0.15);
+            color: #ff9800;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+
+        .btn-exam:hover {
+            background: rgba(255, 152, 0, 0.3);
+            transform: translateX(3px);
+        }
+
+        /* ==================== قسم قريباً ==================== */
+        .coming-soon {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .coming-soon-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .coming-soon-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .coming-soon-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ==================== تذييل الموقع ==================== */
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-top: 40px;
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== رسالة التنبيه ==================== */
+        .toast {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-30px);
+            background: #1a1a2e;
+            color: #ff6b6b;
+            padding: 16px 35px;
+            border-radius: 50px;
+            z-index: 10000;
+            font-weight: 600;
+            border: 1px solid #ff6b6b;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ==================== Reveal Animation ==================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ==================== الميديا كويريز ==================== */
+        @media (max-width: 992px) {
+            .lessons-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .header-image { height: 200px; height: 180px; }
+            .lessons-grid { grid-template-columns: 1fr; }
+            .container { padding: 0 15px; }
+            .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
+            .section-icon { width: 45px; height: 45px; font-size: 1.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .semester-tabs { gap: 8px; padding: 10px; }
+            .semester-tab { padding: 8px 16px; font-size: 0.8rem; }
+            .lesson-card { padding: 18px; }
+            .btn-back { padding: 10px 18px; font-size: 0.85rem; }
+        }
+    </style>
 </head>
+<body data-theme="dark">
 
-<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="container">
+    <!-- خلفية النجوم -->
+    <div class="universe-bg">
+        <div class="stars" id="starsContainer"></div>
+    </div>
 
-<h2>1- Définition et structure :</h2>
+    <!-- رسالة التنبيه -->
+    <div class="toast" id="toast">Cette ressource sera disponible prochainement.</div>
 
-<ul>
-<li>Les tétracyclines sont des antibiotiques à large spectre.</li>
-<li>Elles agissent sur des bactéries intracellulaires.</li>
-<li>Possèdent un noyau naphtacène :</li>
-</ul>
+    <!-- شريط التنقل العلوي -->
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">💊</span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème" title="Changer le thème">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Retour
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<div class="svg-box">
+    <!-- المحتوى الرئيسي -->
+    <div class="main-wrapper">
+        <div class="container">
 
-<!-- رسم 4 حلقات (نواة tetracycline) -->
-<svg width="400" height="200">
+            <!-- رأس الصفحة -->
+            <div class="page-header">
+                <div class="subject-badge reveal">
+                    <i class="fas fa-flask"></i> 4ème Année Pharmacie
+                </div>
+                <h1 class="page-title reveal reveal-delay-1">Biochimie Clinique</h1>
+                <p class="page-subtitle reveal reveal-delay-2">
+                    Explorez les cours, examens et ressources de Biochimie Clinique pour les trois semestres.
+                </p>
+                <div class="header-image reveal reveal-delay-3" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif');"></div>
+            </div>
 
-<!-- الحلقة 1 -->
-<polygon points="50,80 90,60 130,80 130,120 90,140 50,120"
-style="fill:none;stroke:black;stroke-width:2"/>
+            <!-- أزرار التنقل بين السداسيات -->
+            <div class="semester-tabs reveal" id="semesterTabs">
+                <button class="semester-tab active-tab" data-sem="s1" onclick="scrollToSemester('s1')">
+                    <i class="fas fa-1"></i> Semestre 1
+                </button>
+                <button class="semester-tab" data-sem="s2" onclick="scrollToSemester('s2')">
+                    <i class="fas fa-2"></i> Semestre 2
+                </button>
+                <button class="semester-tab disabled" data-sem="s3" onclick="scrollToSemester('s3')">
+                    <i class="fas fa-3"></i> Semestre 3
+                </button>
+            </div>
 
-<!-- الحلقة 2 -->
-<polygon points="130,80 170,60 210,80 210,120 170,140 130,120"
-style="fill:none;stroke:black;stroke-width:2"/>
+            <!-- ==================== SEMESTRE 1 ==================== -->
+            <section class="semester-section reveal" id="semester-s1">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-1"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Semestre 1</h2>
+                        <p class="section-subtitle">Cours et ressources du premier semestre</p>
+                    </div>
+                </div>
 
-<!-- الحلقة 3 -->
-<polygon points="210,80 250,60 290,80 290,120 250,140 210,120"
-style="fill:none;stroke:black;stroke-width:2"/>
+                <div class="lessons-grid">
+                    <!-- درس 1 -->
+                    <div class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Introduction à la Biochimie Clinique</h3>
+                            <p class="lesson-desc">Concepts fondamentaux, rappels biochimiques et applications cliniques.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- الحلقة 4 -->
-<polygon points="290,80 330,60 370,80 370,120 330,140 290,120"
-style="fill:none;stroke:black;stroke-width:2"/>
+                    <!-- درس 2 -->
+                    <div class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Métabolisme des Glucides</h3>
+                            <p class="lesson-desc">Glycolyse, néoglucogenèse, régulation hormonale et pathologies associées.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-</svg>
+                    <!-- درس 3 -->
+                    <div class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Métabolisme des Lipides</h3>
+                            <p class="lesson-desc">Lipoprotéines, cholestérol, triglycérides et dyslipidémies.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-<p><b>Noyau naphtacène (simplifié)</b></p>
+                    <!-- درس 4 -->
+                    <div class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Métabolisme des Protéines</h3>
+                            <p class="lesson-desc">Acides aminés, protéines plasmatiques et exploration biologique.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-</div>
+                    <!-- درس 5 -->
+                    <div class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Enzymologie Clinique</h3>
+                            <p class="lesson-desc">Enzymes d'intérêt diagnostique, cinétique enzymatique et interprétation.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-<table>
+                    <!-- درس 6 -->
+                    <div class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Exploration de la Fonction Hépatique</h3>
+                            <p class="lesson-desc">Tests hépatiques, bilirubine, enzymes hépatiques et interprétation clinique.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-<tr>
-<th>R1</th>
-<th>R2</th>
-<th>R3</th>
-<th>R4</th>
-<th>DCI</th>
-<th>ND</th>
-<th>Année</th>
-</tr>
+                    <!-- امتحان -->
+                    <div class="lesson-card reveal reveal-delay-3" style="border-color: rgba(255, 152, 0, 0.3);">
+                        <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
+                            <i class="fas fa-file-alt" style="color: #ff9800;"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Examen S1 - Biochimie Clinique</h3>
+                            <p class="lesson-desc">Examen complet du premier semestre avec corrigé.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-exam" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> Examen + Corrigé
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<tr>
-<td>Cl</td>
-<td>CH3</td>
-<td>OH</td>
-<td>H</td>
-<td class="red">Chlortétracycline</td>
-<td class="blue">Auréomycine</td>
-<td>1948</td>
-</tr>
+            <!-- ==================== SEMESTRE 2 ==================== -->
+            <section class="semester-section reveal" id="semester-s2">
+                <div class="section-header">
+                    <div class="section-icon" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">
+                        <i class="fas fa-2"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Semestre 2</h2>
+                        <p class="section-subtitle">Cours et ressources du deuxième semestre</p>
+                    </div>
+                </div>
 
-<tr>
-<td>H</td>
-<td>CH3</td>
-<td>OH</td>
-<td>OH</td>
-<td class="red">Oxytétracycline</td>
-<td class="blue">Terramycine</td>
-<td>1950</td>
-</tr>
+                <div class="lessons-grid">
+                    <!-- درس 1 -->
+                    <div class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Exploration de la Fonction Rénale</h3>
+                            <p class="lesson-desc">Urée, créatinine, clairance, ionogramme et équilibre acido-basique.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-<tr>
-<td>H</td>
-<td>CH3</td>
-<td>OH</td>
-<td>H</td>
-<td class="red">Tétracycline</td>
-<td class="blue">Tétracyne</td>
-<td>1953</td>
-</tr>
+                    <!-- درس 2 -->
+                    <div class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Équilibre Hydro-Électrolytique</h3>
+                            <p class="lesson-desc">Sodium, potassium, chlore, bicarbonates et déséquilibres hydro-électrolytiques.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-<tr>
-<td>H</td>
-<td>H</td>
-<td>H</td>
-<td>OH</td>
-<td class="red">Doxycycline</td>
-<td class="blue">Vibramycine</td>
-<td>1958</td>
-</tr>
+                    <!-- درس 3 -->
+                    <div class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Exploration du Métabolisme Phospho-Calcique</h3>
+                            <p class="lesson-desc">Calcium, phosphore, PTH, vitamine D et pathologies osseuses.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-</table>
+                    <!-- درس 4 -->
+                    <div class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Marqueurs Tumoraux</h3>
+                            <p class="lesson-desc">Principaux marqueurs tumoraux, sensibilité, spécificité et applications cliniques.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-</div>
+                    <!-- درس 5 -->
+                    <div class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Exploration Endocrinienne</h3>
+                            <p class="lesson-desc">Hormones thyroïdiennes, corticosurrénales, sexuelles et exploration dynamique.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-pdf" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> PDF
+                                </a>
+                                <a href="#" class="btn-lesson btn-video" onclick="showToast(); return false;">
+                                    <i class="fas fa-play"></i> Vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- امتحان -->
+                    <div class="lesson-card reveal reveal-delay-3" style="border-color: rgba(255, 152, 0, 0.3);">
+                        <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
+                            <i class="fas fa-file-alt" style="color: #ff9800;"></i>
+                        </div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">Examen S2 - Biochimie Clinique</h3>
+                            <p class="lesson-desc">Examen complet du deuxième semestre avec corrigé.</p>
+                            <div class="lesson-actions">
+                                <a href="#" class="btn-lesson btn-exam" onclick="showToast(); return false;">
+                                    <i class="fas fa-download"></i> Examen + Corrigé
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SEMESTRE 3 (قريباً) ==================== -->
+            <section class="semester-section reveal" id="semester-s3">
+                <div class="section-header">
+                    <div class="section-icon" style="background: linear-gradient(135deg, #9e9e9e, #757575);">
+                        <i class="fas fa-3"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Semestre 3</h2>
+                        <p class="section-subtitle">Contenu à venir prochainement</p>
+                    </div>
+                </div>
+
+                <div class="coming-soon">
+                    <div class="coming-soon-icon">⏳</div>
+                    <h3 class="coming-soon-title">Bientôt Disponible</h3>
+                    <p class="coming-soon-text">
+                        Le contenu du Semestre 3 de Biochimie Clinique est en cours de préparation. 
+                        Revenez bientôt pour découvrir les nouveaux cours et examens !
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- تذييل الموقع -->
+    <footer class="site-footer">
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // ==================== توليد النجوم ====================
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            
+            for (let i = 0; i < 80; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            
+            container.appendChild(fragment);
+        }
+        createStars();
+
+        // ==================== التمرير إلى السداسي ====================
+        function scrollToSemester(semId) {
+            const section = document.getElementById(`semester-${semId}`);
+            if (section) {
+                const navHeight = document.getElementById('topNav').offsetHeight + 80;
+                const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: sectionTop - navHeight,
+                    behavior: 'smooth'
+                });
+            }
+            updateActiveTab(semId);
+        }
+
+        // ==================== تحديث التبويب النشط ====================
+        function updateActiveTab(semId) {
+            document.querySelectorAll('.semester-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+                if (tab.dataset.sem === semId) {
+                    tab.classList.add('active-tab');
+                }
+            });
+        }
+
+        // ==================== تحديث التبويب عند التمرير ====================
+        const semesterSections = ['s1', 's2', 's3'];
+        
+        function updateActiveTabOnScroll() {
+            const scrollPos = window.scrollY + 200;
+            
+            semesterSections.forEach(semId => {
+                const section = document.getElementById(`semester-${semId}`);
+                if (section) {
+                    const top = section.getBoundingClientRect().top + window.pageYOffset;
+                    const bottom = top + section.offsetHeight;
+                    
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        updateActiveTab(semId);
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveTabOnScroll, { passive: true });
+
+        // ==================== رسالة التنبيه ====================
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // ==================== تأثير الظهور عند التمرير ====================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== شريط التنقل - الإخفاء عند التمرير ====================
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const topNav = document.getElementById('topNav');
+            if (scrollTop > lastScrollTop && scrollTop > 150) {
+                topNav.classList.add('hidden');
+            } else if (scrollTop < lastScrollTop) {
+                topNav.classList.remove('hidden');
+            }
+            lastScrollTop = scrollTop;
+        }, { passive: true });
+
+        // ==================== تبديل الوضع الليلي/النهاري ====================
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // ==================== التهيئة الأولية ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            updateActiveTabOnScroll();
+        });
+    </script>
 </body>
 </html>
