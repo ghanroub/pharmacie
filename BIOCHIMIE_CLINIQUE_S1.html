@@ -115,12 +115,33 @@
             50% { opacity: 0.8; transform: scale(1.8); }
         }
 
+        .shooting-star {
+            position: absolute;
+            width: 120px;
+            height: 1.5px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+            animation: shoot 4s ease-in-out infinite;
+            animation-delay: var(--shoot-delay);
+            opacity: 0;
+        }
+
+        @keyframes shoot {
+            0% { opacity: 0; transform: translateX(0) translateY(0); }
+            4% { opacity: 1; }
+            12% { opacity: 0; transform: translateX(350px) translateY(350px); }
+            100% { opacity: 0; transform: translateX(350px) translateY(350px); }
+        }
+
+        [data-theme="light"] .star,
+        [data-theme="light"] .shooting-star {
+            opacity: 0.3 !important;
+        }
         [data-theme="light"] .star {
             animation: none !important;
             opacity: 0.15 !important;
         }
 
-        /* ==================== شريط التنقل العلوي - مثل الصفحة الرئيسية ==================== */
+        /* ==================== شريط التنقل العلوي ==================== */
         .top-nav {
             position: fixed;
             top: 0;
@@ -369,7 +390,7 @@
         /* ==================== رأس الصفحة ==================== */
         .page-header {
             text-align: center;
-            padding: 50px 20px 30px;
+            padding: 60px 20px 40px;
         }
 
         .subject-badge {
@@ -403,41 +424,48 @@
             50% { background-position: 100% 50%; }
         }
 
-        .page-description {
-            max-width: 800px;
-            margin: 0 auto 25px;
-            padding: 25px 30px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
+        .page-definition {
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
             line-height: 1.8;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            padding: 20px 25px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        /* ==================== أزرار التنقل بين السداسيات - ثابتة ==================== */
-        .semester-tabs-wrapper {
-            position: sticky;
-            top: 70px;
-            z-index: 100;
-            padding: 15px 0;
-            margin: 30px 0;
-            background: var(--nav-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-glass);
+        .header-image {
+            width: 100%;
+            max-width: 700px;
+            height: 280px;
+            border-radius: 24px;
+            margin: 0 auto 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-glass);
         }
 
+        /* ==================== أزرار التنقل بين السداسيات ==================== */
         .semester-tabs {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 30px;
+            margin: 30px 0;
+            position: sticky;
+            top: 85px;
+            z-index: 50;
+            padding: 15px 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid var(--border-glass);
         }
 
         .semester-tab {
@@ -471,23 +499,17 @@
         /* ==================== محتوى السداسيات ==================== */
         .semester-content {
             display: none;
-            animation: fadeSlideIn 0.5s ease;
-            padding-top: 20px;
+            margin-bottom: 40px;
         }
 
         .semester-content.active {
             display: block;
+            animation: fadeIn 0.5s ease;
         }
 
-        @keyframes fadeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section-header {
@@ -523,13 +545,12 @@
             font-size: 1rem;
         }
 
-        /* ==================== كروت الدروس - بدون سهم ==================== */
+        /* ==================== كروت الدروس ==================== */
         .lessons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 22px;
             margin-top: 25px;
-            margin-bottom: 20px;
         }
 
         .lesson-card {
@@ -541,10 +562,8 @@
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             cursor: pointer;
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
             text-decoration: none;
+            display: block;
             color: inherit;
         }
 
@@ -552,6 +571,13 @@
             transform: translateY(-8px);
             box-shadow: var(--shadow-card);
             border-color: var(--card-hover-border);
+        }
+
+        .lesson-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 12px;
         }
 
         .lesson-icon {
@@ -566,16 +592,6 @@
             color: var(--primary);
             flex-shrink: 0;
             border: 1px solid rgba(0, 188, 212, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .lesson-card:hover .lesson-icon {
-            background: rgba(0, 188, 212, 0.2);
-            transform: scale(1.1);
-        }
-
-        .lesson-content {
-            flex: 1;
         }
 
         .lesson-title {
@@ -583,11 +599,6 @@
             font-weight: 700;
             color: var(--text-heading);
             margin-bottom: 6px;
-            transition: color 0.3s ease;
-        }
-
-        .lesson-card:hover .lesson-title {
-            color: var(--primary);
         }
 
         .lesson-desc {
@@ -596,43 +607,19 @@
             line-height: 1.6;
         }
 
-        /* ==================== قسم قريباً ==================== */
-        .coming-soon {
-            text-align: center;
-            padding: 80px 20px;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-        }
-
-        .coming-soon-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .coming-soon-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .coming-soon-text {
-            color: var(--text-secondary);
+        .lesson-arrow {
+            display: flex;
+            justify-content: flex-end;
+            color: var(--primary);
             font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto;
+            transition: transform 0.3s ease;
         }
 
-        /* ==================== تذييل الموقع - مثل الصفحة الرئيسية ==================== */
+        .lesson-card:hover .lesson-arrow {
+            transform: translateX(5px);
+        }
+
+        /* ==================== تذييل الموقع ==================== */
         .site-footer {
             text-align: center;
             padding: 50px 20px;
@@ -640,7 +627,6 @@
             background: var(--bg-card);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            margin-top: 40px;
         }
 
         .social-links {
@@ -709,16 +695,15 @@
             .nav-links { display: none !important; }
             .page-title { font-size: 1.8rem; }
             .section-title { font-size: 1.5rem; }
+            .header-image { height: 200px; }
             .lessons-grid { grid-template-columns: 1fr; }
             .container { padding: 0 15px; }
             .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
             .section-icon { width: 45px; height: 45px; font-size: 1.2rem; }
-            .page-description { padding: 20px; font-size: 0.95rem; }
-            .semester-tabs { padding: 0 15px; }
         }
 
         @media (max-width: 480px) {
-            .semester-tabs { gap: 8px; }
+            .semester-tabs { gap: 8px; padding: 10px; }
             .semester-tab { padding: 8px 16px; font-size: 0.8rem; }
             .lesson-card { padding: 18px; }
         }
@@ -734,7 +719,7 @@
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- شريط التنقل العلوي - مثل الصفحة الرئيسية -->
+    <!-- شريط التنقل العلوي (مطابق للصفحة الرئيسية) -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -751,7 +736,6 @@
                 </button>
                 <ul class="nav-links" id="navLinksDesktop">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li><a href="index.html#section-modules" class="nav-link"><i class="fas fa-book"></i> Modules</a></li>
                     <li><a href="index.html#section-contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -769,7 +753,6 @@
             </div>
             <div>
                 <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
                 <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
                 <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
@@ -786,20 +769,17 @@
                     <i class="fas fa-flask"></i> 4ème Année Pharmacie
                 </div>
                 <h1 class="page-title reveal reveal-delay-1">Biochimie Clinique</h1>
-                <div class="page-description reveal reveal-delay-2">
-                    <p>
-                        <strong>La Biochimie Clinique</strong> est une discipline fondamentale des sciences pharmaceutiques qui étudie les aspects biochimiques des pathologies humaines. Elle permet l'exploration fonctionnelle des organes et le diagnostic biologique des maladies à travers l'analyse quantitative et qualitative des constituants des liquides biologiques (sang, urine, LCR...).
-                    </p>
-                    <p style="margin-top: 12px;">
-                        Cette matière couvre l'étude du métabolisme des glucides, lipides, protéines, l'enzymologie clinique, l'exploration des fonctions hépatique, rénale, endocrinienne, ainsi que les marqueurs tumoraux et l'équilibre hydro-électrolytique.
-                    </p>
-                </div>
+                <p class="page-definition reveal reveal-delay-2">
+                    <i class="fas fa-info-circle" style="color: var(--primary); margin-right: 8px;"></i>
+                    La biochimie clinique est une discipline fondamentale qui étudie les modifications biochimiques 
+                    survenant dans l'organisme lors de processus pathologiques. Elle permet le diagnostic, le pronostic 
+                    et le suivi thérapeutique des maladies par l'analyse des liquides biologiques.
+                </p>
+                <div class="header-image reveal reveal-delay-3" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif');"></div>
             </div>
-        </div>
 
-        <!-- أزرار التنقل بين السداسيات - ثابتة -->
-        <div class="semester-tabs-wrapper" id="semesterTabsWrapper">
-            <div class="semester-tabs" id="semesterTabs">
+            <!-- أزرار التنقل بين السداسيات -->
+            <div class="semester-tabs reveal" id="semesterTabs">
                 <button class="semester-tab active-tab" data-sem="s1" onclick="showSemester('s1')">
                     <i class="fas fa-1"></i> Semestre 1
                 </button>
@@ -810,13 +790,10 @@
                     <i class="fas fa-3"></i> Semestre 3
                 </button>
             </div>
-        </div>
-
-        <div class="container">
 
             <!-- ==================== SEMESTRE 1 ==================== -->
             <div class="semester-content active" id="content-s1">
-                <div class="section-header reveal">
+                <div class="section-header">
                     <div class="section-icon">
                         <i class="fas fa-1"></i>
                     </div>
@@ -827,63 +804,108 @@
                 </div>
 
                 <div class="lessons-grid">
-                    <a href="#" class="lesson-card reveal reveal-delay-1" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Introduction à la Biochimie Clinique</h3>
+                                <p class="lesson-desc">Concepts fondamentaux, rappels biochimiques et applications cliniques.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Introduction à la Biochimie Clinique</h3>
-                            <p class="lesson-desc">Concepts fondamentaux, rappels biochimiques et applications cliniques.</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-1" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
-                        </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Métabolisme des Glucides</h3>
-                            <p class="lesson-desc">Glycolyse, néoglucogenèse, régulation hormonale et pathologies associées.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
 
-                    <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Métabolisme des Glucides</h3>
+                                <p class="lesson-desc">Glycolyse, néoglucogenèse, régulation hormonale et pathologies associées.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Métabolisme des Lipides</h3>
-                            <p class="lesson-desc">Lipoprotéines, cholestérol, triglycérides et dyslipidémies.</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
-                        </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Métabolisme des Protéines</h3>
-                            <p class="lesson-desc">Acides aminés, protéines plasmatiques et exploration biologique.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
 
-                    <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Métabolisme des Lipides</h3>
+                                <p class="lesson-desc">Lipoprotéines, cholestérol, triglycérides et dyslipidémies.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Enzymologie Clinique</h3>
-                            <p class="lesson-desc">Enzymes d'intérêt diagnostique, cinétique enzymatique et interprétation.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
 
-                    <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Métabolisme des Protéines</h3>
+                                <p class="lesson-desc">Acides aminés, protéines plasmatiques et exploration biologique.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Exploration de la Fonction Hépatique</h3>
-                            <p class="lesson-desc">Tests hépatiques, bilirubine, enzymes hépatiques et interprétation clinique.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Enzymologie Clinique</h3>
+                                <p class="lesson-desc">Enzymes d'intérêt diagnostique, cinétique enzymatique et interprétation.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Exploration de la Fonction Hépatique</h3>
+                                <p class="lesson-desc">Tests hépatiques, bilirubine, enzymes hépatiques et interprétation clinique.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-3" style="border-color: rgba(255, 152, 0, 0.3);">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
+                                <i class="fas fa-file-alt" style="color: #ff9800;"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Examen S1 - Biochimie Clinique</h3>
+                                <p class="lesson-desc">Examen complet du premier semestre avec corrigé.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow" style="color: #ff9800;">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
                 </div>
@@ -891,7 +913,7 @@
 
             <!-- ==================== SEMESTRE 2 ==================== -->
             <div class="semester-content" id="content-s2">
-                <div class="section-header reveal">
+                <div class="section-header">
                     <div class="section-icon" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">
                         <i class="fas fa-2"></i>
                     </div>
@@ -902,63 +924,93 @@
                 </div>
 
                 <div class="lessons-grid">
-                    <a href="#" class="lesson-card reveal reveal-delay-1" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Exploration de la Fonction Rénale</h3>
+                                <p class="lesson-desc">Urée, créatinine, clairance, ionogramme et équilibre acido-basique.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Exploration de la Fonction Rénale</h3>
-                            <p class="lesson-desc">Urée, créatinine, clairance, ionogramme et équilibre acido-basique.</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-1" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
-                        </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Équilibre Hydro-Électrolytique</h3>
-                            <p class="lesson-desc">Sodium, potassium, chlore, bicarbonates et déséquilibres hydro-électrolytiques.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
 
-                    <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Équilibre Hydro-Électrolytique</h3>
+                                <p class="lesson-desc">Sodium, potassium, chlore, bicarbonates et déséquilibres hydro-électrolytiques.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Exploration du Métabolisme Phospho-Calcique</h3>
-                            <p class="lesson-desc">Calcium, phosphore, PTH, vitamine D et pathologies osseuses.</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-2" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
-                        </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Marqueurs Tumoraux</h3>
-                            <p class="lesson-desc">Principaux marqueurs tumoraux, sensibilité, spécificité et applications cliniques.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
 
-                    <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Exploration du Métabolisme Phospho-Calcique</h3>
+                                <p class="lesson-desc">Calcium, phosphore, PTH, vitamine D et pathologies osseuses.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Exploration Endocrinienne</h3>
-                            <p class="lesson-desc">Hormones thyroïdiennes, corticosurrénales, sexuelles et exploration dynamique.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
 
-                    <a href="#" class="lesson-card reveal reveal-delay-3" onclick="showToast(); return false;">
-                        <div class="lesson-icon">
-                            <i class="fas fa-book-medical"></i>
+                    <a href="#" class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Marqueurs Tumoraux</h3>
+                                <p class="lesson-desc">Principaux marqueurs tumoraux, sensibilité, spécificité et applications cliniques.</p>
+                            </div>
                         </div>
-                        <div class="lesson-content">
-                            <h3 class="lesson-title">Biochimie des Liquides Biologiques</h3>
-                            <p class="lesson-desc">Analyse du LCR, liquide pleural, ascite et autres liquides biologiques.</p>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Exploration Endocrinienne</h3>
+                                <p class="lesson-desc">Hormones thyroïdiennes, corticosurrénales, sexuelles et exploration dynamique.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-3" style="border-color: rgba(255, 152, 0, 0.3);">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
+                                <i class="fas fa-file-alt" style="color: #ff9800;"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Examen S2 - Biochimie Clinique</h3>
+                                <p class="lesson-desc">Examen complet du deuxième semestre avec corrigé.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow" style="color: #ff9800;">
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
                 </div>
@@ -966,8 +1018,8 @@
 
             <!-- ==================== SEMESTRE 3 ==================== -->
             <div class="semester-content" id="content-s3">
-                <div class="section-header reveal">
-                    <div class="section-icon" style="background: linear-gradient(135deg, #9e9e9e, #757575);">
+                <div class="section-header">
+                    <div class="section-icon" style="background: linear-gradient(135deg, #ff9800, #f44336);">
                         <i class="fas fa-3"></i>
                     </div>
                     <div>
@@ -976,20 +1028,28 @@
                     </div>
                 </div>
 
-                <div class="coming-soon">
-                    <div class="coming-soon-icon">⏳</div>
-                    <h3 class="coming-soon-title">Bientôt Disponible</h3>
-                    <p class="coming-soon-text">
-                        Le contenu du Semestre 3 de Biochimie Clinique est en cours de préparation. 
-                        Revenez bientôt pour découvrir les nouveaux cours et examens !
-                    </p>
+                <div class="lessons-grid">
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Bientôt disponible</h3>
+                                <p class="lesson-desc">Le contenu du Semestre 3 est en cours de préparation.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- تذييل الموقع - مثل الصفحة الرئيسية -->
+    <!-- تذييل الموقع (مطابق للصفحة الرئيسية) -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1008,7 +1068,7 @@
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
             
-            for (let i = 0; i < 80; i++) {
+            for (let i = 0; i < 180; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.left = Math.random() * 100 + '%';
@@ -1021,78 +1081,42 @@
                 fragment.appendChild(star);
             }
             
+            for (let i = 0; i < 4; i++) {
+                const shootingStar = document.createElement('div');
+                shootingStar.className = 'shooting-star';
+                shootingStar.style.left = Math.random() * 50 + '%';
+                shootingStar.style.top = Math.random() * 30 + '%';
+                shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
+                fragment.appendChild(shootingStar);
+            }
+            
             container.appendChild(fragment);
         }
         createStars();
 
-        // ==================== إظهار/إخفاء محتوى السداسيات ====================
+        // ==================== إظهار السداسي المحدد ====================
         function showSemester(semId) {
             // إخفاء جميع المحتويات
             document.querySelectorAll('.semester-content').forEach(content => {
                 content.classList.remove('active');
             });
             
-            // إظهار المحتوى المطلوب
+            // إزالة active من جميع الأزرار
+            document.querySelectorAll('.semester-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            
+            // إظهار المحتوى المحدد
             const targetContent = document.getElementById(`content-${semId}`);
             if (targetContent) {
                 targetContent.classList.add('active');
             }
             
-            // تحديث التبويب النشط
-            document.querySelectorAll('.semester-tab').forEach(tab => {
-                tab.classList.remove('active-tab');
-                if (tab.dataset.sem === semId) {
-                    tab.classList.add('active-tab');
-                }
-            });
-
-            // إعادة تشغيل تأثير الظهور للعناصر المرئية داخل المحتوى الجديد
-            setTimeout(() => {
-                targetContent.querySelectorAll('.reveal').forEach(el => {
-                    el.classList.add('visible');
-                });
-            }, 100);
-        }
-
-        // ==================== رسالة التنبيه ====================
-        function showToast() {
-            let toast = document.getElementById('toast');
-            if (!toast) {
-                toast = document.createElement('div');
-                toast.className = 'toast';
-                toast.id = 'toast';
-                toast.textContent = 'Cette leçon sera disponible prochainement.';
-                document.body.appendChild(toast);
-                
-                const style = document.createElement('style');
-                style.textContent = `
-                    .toast {
-                        position: fixed;
-                        top: 100px;
-                        left: 50%;
-                        transform: translateX(-50%) translateY(-30px);
-                        background: #1a1a2e;
-                        color: #ff6b6b;
-                        padding: 16px 35px;
-                        border-radius: 50px;
-                        z-index: 10000;
-                        font-weight: 600;
-                        border: 1px solid #ff6b6b;
-                        box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
-                        opacity: 0;
-                        pointer-events: none;
-                        transition: all 0.4s ease;
-                    }
-                    .toast.show {
-                        opacity: 1;
-                        transform: translateX(-50%) translateY(0);
-                    }
-                `;
-                document.head.appendChild(style);
+            // تفعيل الزر المناسب
+            const targetTab = document.querySelector(`[data-sem="${semId}"]`);
+            if (targetTab) {
+                targetTab.classList.add('active-tab');
             }
-            
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
         // ==================== تأثير الظهور عند التمرير ====================
@@ -1104,16 +1128,7 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-        // مراقبة جميع عناصر reveal الحالية والمستقبلية
-        function observeRevealElements() {
-            document.querySelectorAll('.reveal').forEach(el => {
-                if (!el.classList.contains('visible')) {
-                    revealObserver.observe(el);
-                }
-            });
-        }
-        
-        observeRevealElements();
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // ==================== شريط التنقل - الإخفاء عند التمرير ====================
         let lastScrollTop = 0;
@@ -1142,7 +1157,13 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // ==================== قائمة الموبايل ====================
+        // ==================== قائمة الموبايل (popup) ====================
+        document.getElementById('menuToggle').addEventListener('click', openMobileMenu);
+        document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeMobileMenu();
+        });
+
         function openMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.add('open');
             document.body.style.overflow = 'hidden';
@@ -1151,12 +1172,6 @@
             document.getElementById('mobileMenuOverlay').classList.remove('open');
             document.body.style.overflow = '';
         }
-
-        document.getElementById('menuToggle').addEventListener('click', openMobileMenu);
-        document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
-        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeMobileMenu();
-        });
     </script>
 </body>
 </html>
