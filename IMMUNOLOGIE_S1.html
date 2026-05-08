@@ -1,1 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur les Anxiolytiques - Partie 1 - GhaniPharma">
+    <meta name="keywords" content="pharmacie, anxiolytiques, benzodiazépines, cours pharmacie, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Anxiolytiques (Partie 1) - GhaniPharma">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Anxiolytiques (Partie 1) | GhaniPharma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ========== Variables identiques au site principal ========== */
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --btn-hover-shadow: rgba(0, 188, 212, 0.5);
+            --card-hover-border: rgba(0, 188, 212, 0.5);
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(255, 255, 255, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+        }
 
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --btn-hover-shadow: rgba(0, 151, 167, 0.4);
+            --card-hover-border: rgba(0, 151, 167, 0.5);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-border: rgba(0, 0, 0, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden; transition: background 0.5s ease;
+        }
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .star {
+            position: absolute; background: white; border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite; animation-delay: var(--delay); opacity: 0;
+        }
+        @keyframes twinkle {
+            0%,100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
+        }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
+
+        /* Header */
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass); transition: all 0.4s ease; padding: 0 20px;
+        }
+        .top-nav.hidden { transform: translateY(-100%); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--accent); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; transition: all 0.3s ease; }
+        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .logo-icon {
+            width: 42px; height: 42px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+            color: white; animation: pulse 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(0,188,212,0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); }
+        }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        .nav-link {
+            position: relative; padding: 10px 22px; color: var(--text-secondary); text-decoration: none;
+            font-weight: 500; border-radius: 30px; transition: all 0.3s ease; cursor: pointer; border: none;
+            background: none; font-size: 0.95rem; white-space: nowrap; font-family: inherit;
+        }
+        .nav-link:hover { color: var(--text-heading); background: rgba(128,128,128,0.1); }
+        .nav-link.active { color: #fff; background: rgba(0,188,212,0.2); }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+            width: 22px; height: 3px; background: var(--primary); border-radius: 3px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1100;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
+        .mobile-menu-popup {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-glass);
+            border-radius: 32px; width: 85%; max-width: 320px; padding: 30px 20px 40px; text-align: center;
+            transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
+        .mobile-menu-close {
+            position: absolute; top: 20px; right: 20px; background: var(--bg-glass); border: 1px solid var(--border-glass);
+            border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .mobile-menu-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
+        .mobile-nav-link {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            padding: 16px 20px; margin: 12px 0; background: var(--bg-glass); border-radius: 60px;
+            color: var(--text-heading); font-size: 1.2rem; font-weight: 600; text-decoration: none;
+            transition: all 0.2s ease; border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover { border-color: var(--primary); background: rgba(0,188,212,0.1); transform: translateX(6px); }
+        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
+
+        .theme-toggle {
+            width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-glass);
+            background: var(--bg-glass); cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: var(--accent); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden;
+        }
+        .theme-toggle:hover { transform: rotate(30deg) scale(1.1); border-color: var(--accent); box-shadow: 0 0 25px rgba(255,235,59,0.3); }
+        .theme-toggle i { transition: all 0.5s ease; }
+        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
+        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
+        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
+        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
+
+        .menu-toggle {
+            display: none; background: none; border: none; color: var(--text-heading);
+            font-size: 1.8rem; cursor: pointer; padding: 10px; transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover { transform: rotate(90deg); }
+
+        /* Side dots */
+        .side-dots {
+            position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
+            display: flex; flex-direction: column; gap: 22px;
+        }
+        .dot {
+            width: 12px; height: 12px; background: rgba(128,128,128,0.3); border-radius: 50%;
+            cursor: pointer; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; border: 2px solid transparent;
+        }
+        .dot:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 18px rgba(255,235,59,0.5); }
+        .dot.active { background: var(--primary); border-color: var(--primary); transform: scale(1.7); box-shadow: 0 0 28px rgba(0,188,212,0.6); }
+        .dot-tooltip {
+            position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,0.9); color: #fff; padding: 6px 18px; border-radius: 20px;
+            font-size: 0.8rem; white-space: nowrap; pointer-events: none; opacity: 0;
+            transition: opacity 0.3s ease; font-weight: 500;
+        }
+        .dot:hover .dot-tooltip { opacity: 1; }
+
+        /* Main layout */
+        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+
+        .section-block {
+            padding: 80px 0; position: relative;
+            border-bottom: 1px solid var(--border-glass); transition: all 0.5s ease;
+        }
+        .section-block:last-of-type { border-bottom: none; }
+
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .hero-section {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; min-height: 60vh; padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0, 188, 212, 0.1); border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px; border-radius: 50px; font-size: 0.9rem; color: var(--primary); margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900;
+            background: var(--gradient-hero); background-size: 300% 300%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite; margin-bottom: 20px; letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%,100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 600px; margin-bottom: 30px; }
+
+        .section-title {
+            font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;
+        }
+        .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; }
+
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px;
+            padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .card img { max-width: 100%; border-radius: 12px; display: block; margin: 15px auto; }
+
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #999; padding: 10px 15px; text-align: left; }
+        th { background: rgba(0, 188, 212, 0.15); }
+
+        .site-footer {
+            text-align: center; padding: 50px 20px; border-top: 1px solid var(--footer-border);
+            background: var(--bg-card); backdrop-filter: blur(10px);
+        }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
+        .social-link {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(128,128,128,0.06); display: flex; align-items: center; justify-content: center;
+            color: var(--text-heading); text-decoration: none; font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid var(--border-glass);
+        }
+        .social-link:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+
+        @media (max-width: 992px) { .side-dots { display: none; } }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .hero-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 15px; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">💊</span> GhaniPharma</a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom:20px;"><span class="logo-icon" style="font-size:3rem;display:inline-block;">💊</span><h3 style="color:var(--accent);margin-top:5px;">GhaniPharma</h3></div>
+            <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+            <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+
+    <div class="side-dots">
+        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Intro</span></div>
+        <div class="dot" data-dot="structure"><span class="dot-tooltip">Structure</span></div>
+        <div class="dot" data-dot="mode-action"><span class="dot-tooltip">Mode d'action</span></div>
+        <div class="dot" data-dot="voies"><span class="dot-tooltip">Voies d'accès</span></div>
+        <div class="dot" data-dot="physico"><span class="dot-tooltip">Caractères</span></div>
+        <div class="dot" data-dot="rsa"><span class="dot-tooltip">Relation S/A</span></div>
+        <div class="dot" data-dot="autres"><span class="dot-tooltip">Autres BZD</span></div>
+        <div class="dot" data-dot="pharmaco"><span class="dot-tooltip">Pharmaco</span></div>
+        <div class="dot" data-dot="nonbzd"><span class="dot-tooltip">Non‑BZD</span></div>
+        <div class="dot" data-dot="comparaison"><span class="dot-tooltip">Comparaison</span></div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <!-- Hero -->
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-brain"></i> Chimie Thérapeutique</div>
+                <h1 class="hero-title reveal reveal-delay-1">Anxiolytiques</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">Partie 1 : Benzodiazépines et anxiolytiques non‑benzodiazépiniques. Cours de 3<sup>ème</sup> année – Dr. ALLEL. L</p>
+            </section>
+
+            <!-- Introduction -->
+            <section class="section-block" id="section-intro-content">
+                <h2 class="section-title reveal">I. Introduction</h2>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary)">I.1 L'anxiété</h3>
+                    <p>Sentiment exacerbé d'angoisse et d'appréhension pouvant prendre plusieurs formes : anxiété généralisée, phobies, attaques de panique, syndrome post‑traumatique. Manifestations psychologiques (angoisse, irritabilité) et physiques (palpitations, tension musculaire, insomnies). Peut aussi se manifester par des troubles obsessionnels compulsifs (TOC).</p>
+
+                    <h3 style="color:var(--primary); margin-top:20px;">I.2 Neurobiologie</h3>
+                    <p>La sérotonine, le GABA et la noradrénaline sont les principaux neurotransmetteurs impliqués. Des taux bas de sérotonine sont associés à l'anxiété et à la dépression. L'hypernoradrénalinergie est liée aux manifestations psychosomatiques.</p>
+
+                    <h3 style="color:var(--primary); margin-top:20px;">I.3 Les anxiolytiques</h3>
+                    <p>Tranquillisants mineurs, ils dépriment le SNC, réduisent les tensions et induisent une relaxation. Deux grandes classes :</p>
+                    <ul>
+                        <li><strong>Benzodiazépines</strong> (découvertes années 1950, classe majeure).</li>
+                        <li><strong>Non‑benzodiazépiniques</strong> : buspirone, hydroxyzine, étifoxine, ISRS.</li>
+                    </ul>
+                    <p>Ils agissent sur les récepteurs GABA<sub>A</sub> (BZD, étifoxine), sur la sérotonine (buspirone, ISRS) ou sur l'histamine (hydroxyzine).</p>
+                </div>
+            </section>
+
+            <!-- Benzodiazépines - Structure -->
+            <section class="section-block" id="section-structure">
+                <h2 class="section-title reveal">II. Les Benzodiazépines</h2>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary)">II.1 Structure</h3>
+                    <p>Cycle benzénique accolé à un hétérocycle diazépine. Les <strong>1,4‑benzodiazépines</strong> (N en 1 et 4) constituent la série majoritaire, chef de file : chlordiazépoxide.</p>
+                    <!-- Insère ici l'image de la structure générale des 1,4-BZD -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/1_4_benzo_structure.png" alt="Structure 1,4-benzodiazépine" style="max-width:300px;">
+                    <p class="img-note" style="text-align:center; color:var(--text-secondary);">Figure 1 : Structure des 1,4‑benzodiazépines</p>
+                    <p>Il existe aussi des dérivés tricycliques : <strong>triazolobenzodiazépines</strong>.</p>
+                    <!-- Insère l'image d'un exemple de triazolobenzodiazépine -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/triazolobzd.png" alt="Triazolobenzodiazépine" style="max-width:250px;">
+                </div>
+            </section>
+
+            <!-- Mode d'action -->
+            <section class="section-block" id="section-mode-action">
+                <h2 class="section-title reveal">II.2 Mode d'action</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>Se fixent sur un site spécifique du complexe GABA<sub>A</sub>. Augmentent la fréquence d'ouverture des canaux chlorure → hyperpolarisation → inhibition neuronale.</p>
+                </div>
+            </section>
+
+            <!-- Voies d'accès -->
+            <section class="section-block" id="section-voies">
+                <h2 class="section-title reveal">II.3 Voies d'accès</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>Exemple du diazépam (7-chloro-1-méthyl-5-phényl-1,4-benzodiazépin-2-one).</p>
+                    <!-- Schéma de synthèse -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/voie_diazepam.png" alt="Voie de synthèse diazépam" style="max-width:100%;">
+                    <ol>
+                        <li>Amidification (SN)</li>
+                        <li>Amination (SN)</li>
+                        <li>Cyclisation avec déshydratation (AN)</li>
+                        <li>N‑alkylation (SN)</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Caractères physico-chimiques -->
+            <section class="section-block" id="section-physico">
+                <h2 class="section-title reveal">II.4 Caractéristiques physico-chimiques</h2>
+                <div class="card reveal reveal-delay-1">
+                    <ul>
+                        <li>Solides cristallins blancs, jaunes ou orange.</li>
+                        <li>Insolubles dans l'eau, solubles dans l'alcool.</li>
+                        <li>Absorption UV max 230-325 nm ; photodégradation.</li>
+                        <li>Décomposition hydrolytique en milieu acide à chaud (ouverture du cycle → 2-aminobenzophénones).</li>
+                        <li>Caractère acido‑basique variable : azote iminique (base faible), triazole (base faible), lactame (acide faible).</li>
+                        <li>Lipophiles (passage transplacentaire et barrière hémato-encéphalique).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Relation structure-activité -->
+            <section class="section-block" id="section-rsa">
+                <h2 class="section-title reveal">II.5 Relation structure-activité</h2>
+                <div class="card reveal reveal-delay-1">
+                    <!-- Image du noyau numéroté -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/rsa_bzd.png" alt="Noyau benzodiazépine numéroté" style="max-width:250px;">
+                    <ol>
+                        <li><strong>Position 7</strong> : groupe attracteur d'électrons nécessaire. 7-halogéno → anxiolytique ; 7-nitro → hypnotique/antiépileptique.</li>
+                        <li><strong>Positions 6,8,9</strong> : substitution défavorable.</li>
+                        <li><strong>N<sup>1</sup></strong> : alkyle, halogénoalkyle ou aminoalkyle augmentent l'activité.</li>
+                        <li><strong>Réduction du C=O en 2</strong> en CH<sub>2</sub> : dérivés actifs.</li>
+                        <li><strong>Hydroxylation en 3</strong> augmente la polarité et raccourcit la demi‑vie ; alkylation en 3 diminue l'activité.</li>
+                        <li><strong>Saturation ou migration de la double liaison 4,5</strong> diminue l'activité.</li>
+                        <li><strong>Cycle A</strong> peut être un thiophène (thiénodiazépines).</li>
+                        <li><strong>Phényle en 5</strong> (ou pyridyle, cyclohexényle) favorable ; substitution électro‑attractrice en 2' ou 2',6' optimale.</li>
+                        <li><strong>Triazolobenzodiazépines</strong> : puissantes, le groupe attracteur en 7 n'est pas toujours requis.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Autres benzodiazépines -->
+            <section class="section-block" id="section-autres">
+                <h2 class="section-title reveal">II.6 Autres benzodiazépines</h2>
+                <div class="card reveal reveal-delay-1">
+                    <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap;">
+                        <div style="text-align:center;">
+                            <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/clobazam.png" alt="Clobazam" style="max-width:180px;">
+                            <p>Clobazam (1,5‑benzodiazépine)</p>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/tofisopam.png" alt="Tofisopam" style="max-width:180px;">
+                            <p>Tofisopam (2,3‑benzodiazépine)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pharmacologie et indications -->
+            <section class="section-block" id="section-pharmaco">
+                <h2 class="section-title reveal">II.7 Aspects pharmacologiques et indications</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>Propriétés : anxiolytique, antiépileptique, myorelaxante, sédative, amnésiante.</p>
+                    <p>La demi‑vie guide l'indication : courte → hypnotique ; longue → anxiolytique.</p>
+                    <p><strong>Indications :</strong></p>
+                    <ul>
+                        <li>Anxiété (indication principale)</li>
+                        <li>Hypnotiques (nitrazépam, estazolam)</li>
+                        <li>Prémédication anesthésique / explorations</li>
+                        <li>Sevrage alcoolique</li>
+                        <li>Anti‑épileptique (diazépam, clonazépam)</li>
+                        <li>Myorelaxants (tétrazépam)</li>
+                    </ul>
+                    <p>Traitement à doses progressives, arrêt progressif. Durée maximale : 12 semaines (pharmacodépendance).</p>
+                </div>
+            </section>
+
+            <!-- Anxiolytiques non-benzodiazépiniques -->
+            <section class="section-block" id="section-nonbzd">
+                <h2 class="section-title reveal">III. Anxiolytiques non‑benzodiazépiniques</h2>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary)">III.1 Étifoxine</h3>
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/etifoxine.png" alt="Étifoxine" style="max-width:200px; float:right; margin-left:20px;">
+                    <p>Classe des benzoxazines. Double mécanisme sur le GABA<sub>A</sub> :</p>
+                    <ul>
+                        <li>Action directe : modulation allostérique positive sur un site distinct des BZD.</li>
+                        <li>Action indirecte : augmentation de la production cérébrale de neurostéroïdes (alloprégnanolone) via la protéine de translocation mitochondriale.</li>
+                    </ul>
+
+                    <h3 style="color:var(--primary); margin-top:30px;">III.2 Hydroxyzine</h3>
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/hydroxyzine.png" alt="Hydroxyzine" style="max-width:250px; float:right; margin-left:20px;">
+                    <p>Antihistaminique antagoniste H<sub>1</sub> central et périphérique, dérivé de la pipérazine.</p>
+
+                    <h3 style="color:var(--primary); margin-top:30px;">III.3 Buspirone et ISRS</h3>
+                    <p>Agonistes des récepteurs 5‑HT<sub>1A</sub>. La buspirone comporte un motif azaspirodécanedione relié par une chaîne butyle à une pyrimidinylpipérazine.</p>
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/buspirone.png" alt="Buspirone" style="max-width:300px;">
+                    <p>La <strong>paroxétine</strong> (ISRS) est également utilisée dans l'anxiété.</p>
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/paroxetine.png" alt="Paroxétine" style="max-width:200px;">
+                </div>
+            </section>
+
+            <!-- Comparaison -->
+            <section class="section-block" id="section-comparaison">
+                <h2 class="section-title reveal">IV. Comparaison des classes d'anxiolytiques</h2>
+                <div class="card reveal reveal-delay-1">
+                    <!-- Tableau 1 : avantages/inconvénients -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/tableau_avantages.png" alt="Tableau avantages/inconvénients" style="max-width:100%; margin-bottom:20px;">
+                    <!-- Tableau 2 : effets secondaires -->
+                    <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/main/images/anxiolytiques/tableau_effets_secondaires.png" alt="Tableau effets secondaires" style="max-width:100%;">
+                </div>
+            </section>
+
+            <!-- Bibliographie -->
+            <section class="section-block" id="section-biblio" style="border-bottom: none;">
+                <h2 class="section-title reveal">Bibliographie</h2>
+                <div class="card reveal reveal-delay-1" style="font-size:0.9rem; color:var(--text-secondary);">
+                    <p>1. Abraham DJ (ed) <em>Burger's Medicinal Chemistry and Drug Discovery</em> (6th edn). New Jersey: John Wiley, 2007.</p>
+                    <p>2. <em>Traité de Chimie Thérapeutique, Médicaments actifs sur le système nerveux central</em>; Lavoisier; 2011.</p>
+                    <p>3. Wilson and Grisvold's <em>Textbook of Organic Medicinal and Pharmaceutical Chemistry</em>; (11th edn), 2004.</p>
+                    <p>4. V. Alagarsamy <em>Textbook of Medicinal Chemistry</em> (vol.1). Elsevier, 2010.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Stars
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            const frag = document.createDocumentFragment();
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                frag.appendChild(star);
+            }
+            container.appendChild(frag);
+        }
+        createStars();
+
+        // Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Side dots
+        const sectionIDs = ['intro', 'structure', 'mode-action', 'voies', 'physico', 'rsa', 'autres', 'pharmaco', 'nonbzd', 'comparaison'];
+        const dots = document.querySelectorAll('.dot');
+        function updateActiveDot() {
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = 'intro';
+            sectionIDs.forEach(id => {
+                const el = document.getElementById('section-' + id);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+            dots.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
+        }
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                document.getElementById('section-' + dot.dataset.dot).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; });
+        closeBtn.addEventListener('click', () => { overlay.classList.remove('open'); document.body.style.overflow = ''; });
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) { overlay.classList.remove('open'); document.body.style.overflow = ''; } });
+
+        // Hide nav on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        const saved = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', saved);
+        themeToggle.addEventListener('click', () => {
+            const cur = htmlEl.getAttribute('data-theme');
+            const next = cur === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    </script>
+</body>
+</html>
