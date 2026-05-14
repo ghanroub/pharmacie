@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur l'Introduction à la Mycologie Médicale - GhaniPharma">
-    <meta name="keywords" content="pharmacie, mycologie médicale, champignons, mycoses, cours pharmacie, GhaniPharma">
+    <meta name="description" content="Cours complet sur la Maladie de Von Willebrand - Hémobiologie et Transfusion Sanguine - GhaniPharma">
+    <meta name="keywords" content="pharmacie, maladie de Willebrand, VWD, hémostase, facteur Willebrand, hémobiologie, cours pharmacie, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
-    <meta name="og:title" content="Introduction à la Mycologie Médicale - GhaniPharma">
+    <meta property="og:title" content="Maladie de Von Willebrand - GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
-    <title>Introduction à la Mycologie Médicale | GhaniPharma</title>
+    <title>Maladie de Von Willebrand | GhaniPharma</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <style>
-        /* ==================== CSS Variables (identical to main site) ==================== */
+        /* ========== Variables identiques au site principal ========== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -60,7 +60,6 @@
             --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
         }
 
-        /* ==================== Base ==================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -78,7 +77,6 @@
             background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
             overflow: hidden; transition: background 0.5s ease;
         }
-
         .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
         .star {
             position: absolute; background: white; border-radius: 50%;
@@ -88,12 +86,9 @@
             0%,100% { opacity: 0.15; transform: scale(1); }
             50% { opacity: 0.8; transform: scale(1.8); }
         }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
 
-        [data-theme="light"] .star {
-            animation: none !important; opacity: 0.15 !important;
-        }
-
-        /* ==================== Header (identical) ==================== */
+        /* Header */
         .top-nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
@@ -113,7 +108,6 @@
             50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); }
         }
         .nav-right { display: flex; align-items: center; gap: 15px; }
-        /* desktop menu */
         .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
         .nav-link {
             position: relative; padding: 10px 22px; color: var(--text-secondary); text-decoration: none;
@@ -127,7 +121,6 @@
             width: 22px; height: 3px; background: var(--primary); border-radius: 3px;
         }
 
-        /* Mobile menu overlay */
         .mobile-menu-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1100;
@@ -157,7 +150,6 @@
         .mobile-nav-link:hover { border-color: var(--primary); background: rgba(0,188,212,0.1); transform: translateX(6px); }
         .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
 
-        /* Theme toggle */
         .theme-toggle {
             width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-glass);
             background: var(--bg-glass); cursor: pointer; display: flex; align-items: center; justify-content: center;
@@ -177,7 +169,7 @@
         }
         .menu-toggle:hover { transform: rotate(90deg); }
 
-        /* ==================== Side dots (adapted for lesson sections) ==================== */
+        /* Side dots */
         .side-dots {
             position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
             display: flex; flex-direction: column; gap: 22px;
@@ -197,13 +189,12 @@
         }
         .dot:hover .dot-tooltip { opacity: 1; }
 
-        /* ==================== Main content ==================== */
+        /* Main layout */
         .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
 
         .section-block {
-            padding: 80px 0; position: relative; min-height: auto;
-            display: flex; flex-direction: column; justify-content: center;
+            padding: 80px 0; position: relative;
             border-bottom: 1px solid var(--border-glass); transition: all 0.5s ease;
         }
         .section-block:last-of-type { border-bottom: none; }
@@ -233,7 +224,7 @@
             0%,100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 600px; margin-bottom: 30px; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 700px; margin-bottom: 30px; }
 
         .section-title {
             font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;
@@ -242,16 +233,34 @@
         }
         .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; }
 
-        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-        th, td { border: 1px solid #999; padding: 10px 15px; text-align: left; }
-        th { background: rgba(0, 188, 212, 0.15); }
         .card {
             background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px;
             padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             margin-bottom: 30px;
         }
+        .card img { max-width: 100%; border-radius: 12px; display: block; margin: 15px auto; }
 
-        /* Footer */
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid var(--border-glass); padding: 12px 15px; text-align: left; }
+        th { background: rgba(0, 188, 212, 0.15); color: var(--text-heading); font-weight: 600; }
+        td { color: var(--text-primary); }
+        tr:nth-child(even) { background: rgba(128,128,128,0.05); }
+
+        .highlight-box {
+            background: rgba(0, 188, 212, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
         .site-footer {
             text-align: center; padding: 50px 20px; border-top: 1px solid var(--footer-border);
             background: var(--bg-card); backdrop-filter: blur(10px);
@@ -273,32 +282,21 @@
             .hero-title { font-size: 1.8rem; }
             .section-title { font-size: 1.6rem; }
             .container { padding: 0 15px; }
+            .two-col { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body data-theme="dark">
 
-    <!-- Star background -->
-    <div class="universe-bg">
-        <div class="stars" id="starsContainer"></div>
-    </div>
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
 
-    <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">💊</span>
-                GhaniPharma
-            </a>
+            <a href="index.html" class="nav-logo"><span class="logo-icon">💊</span> GhaniPharma</a>
             <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinksDesktop">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links">
                     <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
                     <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
@@ -308,641 +306,466 @@
         </div>
     </nav>
 
-    <!-- Mobile menu overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
-            <div style="margin-bottom: 20px;">
-                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
-                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
-            </div>
-            <div>
-                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
-                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
-                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
+            <div style="margin-bottom:20px;"><span class="logo-icon" style="font-size:3rem;display:inline-block;">💊</span><h3 style="color:var(--accent);margin-top:5px;">GhaniPharma</h3></div>
+            <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+            <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
         </div>
     </div>
 
-    <!-- Side dots for lesson navigation -->
     <div class="side-dots">
-        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
-        <div class="dot" data-dot="generalites"><span class="dot-tooltip">Généralités</span></div>
-        <div class="dot" data-dot="morphologie"><span class="dot-tooltip">Morphologie</span></div>
-        <div class="dot" data-dot="physiologie"><span class="dot-tooltip">Physiologie</span></div>
-        <div class="dot" data-dot="reproduction"><span class="dot-tooltip">Reproduction</span></div>
-        <div class="dot" data-dot="role"><span class="dot-tooltip">Rôle pathogène</span></div>
-        <div class="dot" data-dot="contamination"><span class="dot-tooltip">Contamination</span></div>
+        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Intro</span></div>
+        <div class="dot" data-dot="definition"><span class="dot-tooltip">Définition</span></div>
+        <div class="dot" data-dot="fonctions"><span class="dot-tooltip">Fonctions</span></div>
+        <div class="dot" data-dot="transmission"><span class="dot-tooltip">Transmission</span></div>
+        <div class="dot" data-dot="classification"><span class="dot-tooltip">Classification</span></div>
+        <div class="dot" data-dot="diag-clinique"><span class="dot-tooltip">Diag. Clinique</span></div>
+        <div class="dot" data-dot="diag-bio"><span class="dot-tooltip">Diag. Bio</span></div>
+        <div class="dot" data-dot="traitement"><span class="dot-tooltip">Traitement</span></div>
+        <div class="dot" data-dot="conclusion"><span class="dot-tooltip">Conclusion</span></div>
+        <div class="dot" data-dot="references"><span class="dot-tooltip">Références</span></div>
     </div>
 
-    <!-- Main content -->
     <div class="main-wrapper">
         <div class="container">
 
             <!-- Hero -->
             <section class="hero-section" id="section-intro">
-                <div class="hero-badge reveal">
-                    <i class="fas fa-flask"></i> Mycologie Médicale
-                </div>
-                <h1 class="hero-title reveal reveal-delay-1">Introduction à la Mycologie Médicale</h1>
-                <p class="hero-subtitle reveal reveal-delay-2">
-                    Science des champignons microscopiques responsables des mycoses chez l'homme et les animaux — Dr Latreche.F
-                </p>
+                <div class="hero-badge reveal"><i class="fas fa-tint"></i> Hémobiologie et Transfusion Sanguine</div>
+                <h1 class="hero-title reveal reveal-delay-1">Maladie de Von Willebrand</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">Cours complet : diagnostic clinique et biologique, classification et prise en charge thérapeutique. Rédigé par ABBASSEN N.</p>
             </section>
 
-            <!-- I – Introduction -->
-            <section class="section-block" id="section-intro-content">
-                <h2 class="section-title reveal">I – Introduction</h2>
+            <!-- Introduction et Objectifs -->
+            <section class="section-block" id="section-definition">
+                <h2 class="section-title reveal">I. Introduction et Objectifs</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p>La <strong>mycologie</strong> est la science qui étudie les <strong>champignons</strong> (appelés aussi <strong>mycètes</strong>).</p>
-                    <p>En <strong>mycologie médicale</strong>, on s'intéresse plus particulièrement aux <strong>champignons microscopiques</strong> responsables de maladies chez l'homme et les animaux : ces maladies sont appelées <strong>mycoses</strong>.</p>
+                    <p>La maladie de Von Willebrand est une <strong>maladie constitutionnelle de l'hémostase</strong>, caractérisée par un déficit quantitatif ou qualitatif du <strong>facteur Willebrand (VWF)</strong>.</p>
+                    
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-bullseye"></i> Objectifs d'apprentissage</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Comprendre comment poser le bon diagnostic.</li>
+                            <li>Connaître les manifestations hémorragiques de la maladie.</li>
+                            <li>Maîtriser les analyses de laboratoire nécessaires :
+                                <ul style="margin-top: 8px;">
+                                    <li>Tests de dépistage.</li>
+                                    <li>Tests spécialisés de 1<sup>er</sup> niveau (diagnostic du type).</li>
+                                    <li>Tests de 2<sup>ème</sup> niveau (détermination des sous-types et classification).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <!-- II – Généralités sur les champignons -->
-            <section class="section-block" id="section-generalites">
-                <h2 class="section-title reveal">II – Généralités sur les champignons</h2>
+            <!-- Définition -->
+            <section class="section-block" id="section-fonctions">
+                <h2 class="section-title reveal">II. Définition</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p>Les champignons sont des <strong>eucaryotes</strong> : leurs cellules possèdent un <strong>noyau véritable</strong> contenant l'ADN (contrairement aux bactéries, qui sont des <strong>procaryotes</strong> sans noyau).</p>
-                    <p>Ils ne contiennent pas de <strong>chlorophylle</strong> (pigment permettant la photosynthèse).<br>
-                    → Ils sont donc <strong>incapables de fabriquer leur propre nourriture</strong> à partir de la lumière.</p>
-                    <p>Ils se nourrissent de <strong>matière organique déjà fabriquée</strong> (glucides, lipides, protides).<br>
-                    Selon leur mode de vie, on distingue :</p>
-                    <ul style="padding-left: 20px; list-style: disc;">
-                        <li><strong>Saprophytes</strong> : ils vivent sur des matières en décomposition (sans nuire à l'environnement).</li>
-                        <li><strong>Symbiotiques</strong> : ils vivent en association bénéfique avec un autre organisme.</li>
-                        <li><strong>Parasites</strong> : ils vivent aux dépens d'un hôte (homme ou animal) et provoquent une <strong>mycose</strong>.</li>
+                    <p>La maladie de Von Willebrand est <strong>la plus fréquente des maladies hémorragiques héréditaires</strong>. Elle est due à un déficit ou à un dysfonctionnement d'une protéine sanguine essentielle : le <strong>facteur Willebrand (VWF)</strong>.</p>
+                    
+                    <p style="margin-top: 15px;">Le VWF est indispensable à la coagulation du sang et assure <strong>deux rôles fondamentaux</strong> :</p>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Transporteur du facteur VIII (FVIII)</strong> : il permet la circulation et la stabilité du FVIII dans le sang, protéine nécessaire à la formation de la fibrine.</li>
+                        <li><strong>Adhésion plaquettaire</strong> : il est essentiel à la formation de l'agrégat plaquettaire (appelé « clou plaquettaire » ou thrombus blanc), qui s'associe à la fibrine pour former un caillot solide et arrêter le saignement.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Fonctions du VWF -->
+            <section class="section-block" id="section-transmission">
+                <h2 class="section-title reveal">III. Fonctions du Facteur de Willebrand</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>Pour bien comprendre la maladie, il faut retenir les deux fonctions vitales du VWF :</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Adhésion des plaquettes</strong> au site de la lésion vasculaire (notamment via le collagène exposé sous l'endothélium).</li>
+                        <li><strong>Transport du facteur VIII (FVIII)</strong> dans la circulation sanguine, sous forme d'un complexe FVIII-VWF.</li>
+                    </ul>
+                    
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <p style="margin: 0;"><i class="fas fa-lightbulb" style="color: var(--accent);"></i> <strong>Schéma conceptuel :</strong> Le VWF s'interpose entre la paroi lésée (collagène) et les plaquettes (via le récepteur GPIb), tout en protégeant le FVIII de sa dégradation rapide.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transmission -->
+            <section class="section-block" id="section-classification">
+                <h2 class="section-title reveal">IV. Transmission et Génétique</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>La maladie de Von Willebrand est une pathologie <strong>génétique et héréditaire</strong>.</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Le gène codant pour le VWF est situé sur le <strong>chromosome n°12</strong>.</li>
+                        <li>Une <strong>mutation</strong> de ce gène altère la production ou la fonction du VWF.</li>
+                        <li><strong>Mode de transmission</strong> : le plus souvent <strong>autosomique dominant</strong> (un seul parent porteur du gène muté peut transmettre la maladie à l'enfant).</li>
                     </ul>
                 </div>
             </section>
 
-            <!-- III – Morphologie des champignons -->
-            <section class="section-block" id="section-morphologie">
-                <h2 class="section-title reveal">III – Morphologie des champignons</h2>
+            <!-- Classification -->
+            <section class="section-block" id="section-diag-clinique">
+                <h2 class="section-title reveal">V. Classification de la Maladie</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p>L'ensemble de la structure d'un champignon s'appelle le <strong>thalle</strong>.<br>
-                    On distingue trois grands types de thalles.</p>
-
-                    <h3 style="color:var(--primary); margin-top: 20px;">a) Le thalle filamenteux</h3>
-                    <p>Il est composé de filaments allongés appelés <strong>filaments mycéliens</strong> (ou <strong>hyphes</strong>).<br>
-                    L'ensemble de ces filaments forme le <strong>mycmycélium</strongélium</strong>.</>.</p>
-                   p>
-                    <p> <p>Ces filamentsCes filaments peuvent être :</ peuvent être :</pp>
-                    <ul style>
-                    <ul style="padding-left:="padding-left: 20px; list-style 20px; list-style: disc: disc;">
-                       ;">
-                        <li <li><strong><strong>Septés (>Septés (cloisoncloisonnésnés)</strong)</strong> :> : des cl des cloisonsoisons appelées appelées <strong <strong>se>septa</pta</strong>strong> divisent divisent le filament le filament en compart en compartimentsiments.<br.<br>
-                        →>
-                        → Les sept Les septa sonta sont <strong <strong>in>incomplets</completsstrong</strong> (> (ils ontils ont des pores), ce des pores qui permet), ce qui permet la circulation la circulation du cyt du cytoplasmeoplasme et des et des nutrim nutriments.<brents.<br>
-                        →>
-                        → Exemple Exemple : les : les <strong <strong>d>dermatophytesermatophytes</strong</strong> (> (champchampignonsignons responsables des responsables des mycos mycoses dees de la peau la peau, des, des ong ongles,les, des che des cheveuxveux).).<br<br>
-                        →>
-                        → Ces champ Ces champignonsignons sont aussi sont aussi appelés appelés <strong <strong>ch>champignampignons supons supérieursérieurs</strong</strong>.</>.</lili>
-                       >
-                        <li <li><strong>><strong>Non septNon septés (és (non clonon cloisonnisonnés)</és)</strong>strong> : filaments : filaments sans cl sans cloisonsoisons, form, formant unant un long tube long tube continu.<br continu.<br>
-                        →>
-                        → On les On les appelle aussi appelle aussi <strong <strong>fil>filaments sipaments siphonnhonnés</és</strong>strong> ou ou <strong> <strong>céncénocytiquesocytiques</strong</strong>>.<br.<br>
-                        →>
-                        → Exemple Exemple : les : les <strong <strong>M>Mucorucorales</ales</strong>strong> (ch (champignampignons infons inférieursérieurs).</).</lili>
-                    </>
-                    </ulul>
-
-                   >
-
-                    <h3 <h3 style=" style="color:var(--color:var(--primary);primary); margin-top margin-top: : 20px20px;">b;">b) Le) Le thalle thalle levuriforme levur (ouiforme (ou levure levure)</h)</h33>
-                   >
-                    <p> <p>Le champLe champignon estignon est réduit réduit à une à une <strong <strong>cell>cellule uniqueule unique</strong</strong>, qui>, qui se reprodu se reproduit parit par <strong <strong>bour>bourgeonnementgeonnement</strong</strong>>.<br.<br>
-                    Il>
-                    Il n'y n'y a pas a pas de véritable de véritable mycé mycélium fillium filamenteuxamenteux.<br.<br>
-                   >
-                    → Ex → Exemple typemple typique :ique : <strong <strong>Cand>Candida</ida</strong>strong> (respons (responsable deable de candidoses candidoses).</).</pp>
-
-                   >
-
-                    <h3 <h3 style=" style="color:color:var(--var(--primary);primary); margin-top margin-top: : 20px20px;">c;">c) Les) Les champign champignons dimons dimorphiquesorphiques</h</h33>
-                   >
-                    <p>Ces champ <p>Ces champignons peuvent exignons peuvent exister sousister sous <strong <strong>de>deux formesux formes différentes</ différentes</strong>strong> selon la selon la température : température :</p</p>
-                   >
-                    <ul style=" <ul style="padding-leftpadding-left: : 20px20px; list; list-style:-style: disc disc;">
-                       ;">
-                        <li <li><strong>><strong>À À 25°25°C</C</strong>strong> (d (dans laans la nature ou nature ou en labor en laboratoire)atoire) : ils : ils se présent se présentent sousent sous forme forme <strong> <strong>filamentefilamenteuse</use</strong>strong> (my (mycéliumcélium).</).</lili>
-                       >
-                        <li <li><strong>><strong>À À 37°37°C</C</strong>strong> (d (dans leans le corps hum corps humain,ain, état paras état parasitaireitaire)) : ils : ils prenn prennent uneent une forme forme <strong>levur <strong>levuriformeiforme</strong</strong> (> (unicellunicellulaire).ulaire).</li</li>
-                   >
-                    </ul </ul>
-                   >
-                    <p <p>→>→ Cette capacité Cette capacité leur permet leur permet de s de s'adapter'adapter à l à l'environ'environnement denement de l'h l'hôte.</ôte.</pp>
-                </>
-                </divdiv>
-            </section>
+                    <p>La maladie de Von Willebrand se divise en plusieurs types selon la nature du déficit :</p>
+                    <table style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Caractéristique</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Type 1</strong></td>
+                                <td>Déficit quantitatif partiel (forme la plus fréquente et la plus légère).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Type 2</strong></td>
+                                <td>Déficit qualitatif (dysfonctionnement du VWF). Comprend plusieurs sous-types (2A, 2B, 2M, 2N).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Type 3</strong></td>
+                                <td>Déficit quantitatif sévère (absence quasi-totale de VWF).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
-            <!-->
-
-            <!-- IV – IV – Physi Physiologie desologie des champign champignonsons -->
-            -->
-            <section class <section class="section="section-block"-block" id=" id="section-phsection-physiysiologieologie">
-               ">
-                <h2 <h2 class=" class="section-title reveal">section-title reveal">IV –IV – Physi Physiologie desologie des champign champignons (ons (conditions deconditions de vie)</ vie)</h2h2>
-               >
-                <div <div class=" class="card revealcard reveal reveal-del reveal-delay-ay-11">
-                   ">
-                    <ul style <ul style="padding="padding-left: 20-left: 20px;px; list-style list-style: disc: disc;">
-                       ;">
-                        <li <li><strong><strong>Nutrition>Nutrition</strong</strong> :> : ils sont ils sont <strong <strong>h>hétérotétérotrophes</rophes</strong>strong> (non (non chlorophylliens chlorophylliens, ne, ne font pas font pas la photos la photosynthèseynthèse).</).</lili>
-                       >
-                        <li <li><strong>><strong>GlucoseGlucose</strong</strong> :> : tous les tous les champign champignons utilisons utilisent leent le glucose comme glucose comme source d source d'énergie'énergie.</li.</li>
-                       >
-                        <li <li><strong><strong>Vit>Vitamines</amines</strong>strong> : certains : certains ont besoin ont besoin de vitam de vitamines,ines, notamment la notamment la <strong <strong>vit>vitamine Bamine B1</1</strong>strong>.</li.</li>
-                       >
-                        <li <li><strong><strong>O>Oxygxygène</ène</strong>strong> : ils : ils sont sont <strong> <strong>aéaérobies</strongrobies> (</strong> (ils ontils ont besoin d besoin d'oxy'oxygènegène pour vivre pour vivre).).</li>
-                        <li</li>
-                        <li><strong>><strong>EauEau</strong</strong> :> : indispensable ; indispensable ; les champ les champignonsignons pouss poussent malent mal sur les sur les milieux milieux trop sec trop secs.</s.</lili>
-                       >
-                        <li <li><strong>><strong>TempératureTempérature</strong</strong>> :
-                            :
-                            <ul style <ul style="="padding-left: 20px;">
-                                <li>Mycospadding-left: 20px;">
-                                <li>Mycoses superfices superficiellesielles → optimum → optimum vers vers <strong> <strong>25-27°25-27°C</C</strong>strong>.</li.</li>
-                               >
-                                <li <li>My>Mycosescoses profondes profondes (d (dans leans le corps) corps) → optimum vers → optimum vers <strong>37° <strong>C</37°strong>C</strong>.</li.</li>
-                           >
-                            </ul </ul>
-                       >
-                        </li </li>
-                       >
-                        <li <li><strong><strong>pH</strong>pH</strong> :> : ils pré ils préfèrentfèrent un milieu un milieu <strong <strong>ac>acide</ide</strong>strong> (pH (pH 5 5,5,5 à  à 6).</li6).</li>
-                       >
-                        <li <li><strong><strong>L>Lumière</strongumière</strong> :> : elle influence elle influence la la <strong <strong>pigmentation>pigmentation</strong</strong> des> des colonies ( colonies (coulecouleur visible sur lesur visible sur les cultures). cultures).</li</li>
-                   >
-                    </ul </ul>
-               >
-                </div </div>
-           >
-            </section>
-
-            <!-- V </section>
-
-            <!-- V – Reproduction – Reproduction des champ des champignonsignons -->
-            -->
-            <section <section class=" class="section-block" idsection-block" id="section="section-reproduction-reproduction">
-               ">
-                <h <h2 class2 class="section="section-title reveal">V-title reveal">V – Reproduction – Reproduction des champ des champignonsignons</h</h22>
-               >
-                <div class <div class="card="card reveal reveal reveal reveal-delay-delay-1-1">
-                   ">
-                    <p <p>Les>Les champign champignons peuventons peuvent se reprodu se reproduire deire de deux man deux manières :ières : <strong <strong>sex>sexuéeuée</strong</strong> et> et <strong <strong>asexuée>asexuée</strong</strong>.</>.</p>
-
-                   p>
-
-                    <h3 style="color: <h3 style="color:var(--var(--primary);primary); margin-top margin-top: : 20px20px;">a;">a)) Reproduction Reproduction sexu sexuée</ée</h3h3>
-                   >
-                    <p <p>Elle>Elle résulte résulte de la de la <strong <strong>fusion de deux>fusion de deux filaments</ filaments</strong>strong> (con (conjugaison nucléjugaison nucléaire)aire) et about et aboutit àit à la formation de <strong la formation de <strong>sp>spores sexuées</strong>.<brores sexuées</strong>.<br>
-                    Ces spores>
-                    Ces spores sont de sont de trois grands trois grands types, types, qui serv qui servent àent à classer classer les champ les champignonsignons.</p>
-                   .</p <ul>
-                    <ul style=" style="padding-leftpadding-left: : 20px20px; list; list-style:-style: disc disc;">
-                       ;">
-                        <li <li><strong>><strong>ZygZygosporesospores</strong</strong> :> : spores n spores nues (ues (non enfernon enferméesmées dans une dans une envel enveloppeoppe).).<br<br>
-                        →>
-                        → Exemple Exemple : : <strong> <strong>RhizRhizopus</opus</strong>strong> (ch (champignonampignon des mois des moisissuresissures du pain du pain).</).</lili>
-                       >
-                        <li <li><strong>A><strong>Ascospscospores</ores</strong>strong> : spores : spores contenues contenues dans une dans une poche poche appelée appelée <strong <strong>as>asque</que</strong>strong>.<br.<br>
-                        → Ces>
-                        → Ces champ champignignons sontons sont appelés <strong appelés <strong>As>Ascomyccomycètes</ètes</strong>strong>.</.</lili>
-                       >
-                        <li <li><strong><strong>Bas>Basidiospidiospores</ores</strong>strong> : spores : spores qui naissent par qui naissent par bourgeon bourgeonnement ànement à l' l'extrextrémité deémité de quatre cor quatre cornes portnes portées parées par une cellule en forme une cellule en forme de mass de massue appelue appeléeée < <strong>strong>basidebaside</strong</strong>>.<br.<br>
-                        →>
-                        → Ces champ Ces champignonsignons sont appel sont appelésés <strong> <strong>BasidiBasidiomycètesomycètes</strong</strong> (> (exempleexemple : les : les champign champignons àons à chape chapeau,au, mais aussi mais aussi certains champ certains champignonsignons microscop microscopiques).iques).</li</li>
-                   >
-                    </ul </ul>
-
-                   >
-
-                    <h <h3 style3 style="color="color:var(--primary:var(--primary); margin); margin-top:-top: 20 20px;">px;">b) Reproduction asexuéeb) Reproduction asexuée</h</h33>
-                   >
-                    <p> <p>Elle est beaucoupElle est beaucoup plus plus fréqu fréquente etente et rapide rapide. Elle. Elle se fait se fait par formation par formation de de <strong> <strong>sporesspores asexu asexuées</ées</strong>strong> appelées appelées <strong <strong>con>conidiesidies</strong</strong> (> (ou parfoisou parfois simplement spores simplement spores).).<br<br>
-                    On>
-                    On disting distingue plusieursue plusieurs modes : modes :</p</p>
-
-                   >
-
-                    <p <p><strong><strong>1>1. Sp. Spores formées àores formées à l'int l'intérieur deérieur de vés vésiculesicules</strong</strong><br><br>
-                   >
-                    → Typ → Typique desique des champign champignons infons inférieursérieurs.<br>
-                   .<br>
-                    Les spores Les spores ne sont ne sont libér libérées queées que lorsque la lorsque la paroi paroi de la de la vés vésicule seicule se rompt rompt.<br.<br>
-                   >
-                    Ce sont Ce sont souvent des souvent des <strong <strong>sp>spores deores de résistance résistance</strong</strong> (> (elles survivent longtempselles survivent longtemps dans le dans le milieu).</p milieu).</p>
-
-                   >
-
-                    <p <p><strong><strong>2>2. Sp. Spores formores formées surées sur des filaments des filaments (ch (champignampignons supons supérieursérieurs)</strong)</strong></p>
-                   ></p>
-                    <ul <ul style=" style="padding-left: padding-left: 20px20px; list; list-style:-style: disc disc;">
-                       ;">
-                        <li <li><strong>><strong>BlastBlastosporesospores</strong> :</strong> : obtenues obtenues par par <strong> <strong>bourgeonbourgeonnement</nement</strong>strong> à partir à partir d'une d'une cellule mère cellule mère (une (une levure levure ou un ou un article de article de filament). filament).<br<br>
-                       >
-                        → C → C'est le'est le mode de mode de reproduction des reproduction des levures levures.</li.</li>
-                       >
-                        <li><strong>Th <li><strong>Thallospallospores</ores</strong> : issuesstrong> : issues de la de la transformation direct transformation directe de d'un segment'un segment du filament du filament.<br.<br>
-                       >
-                        On dist On distingueingue :
-                            :
-                            <ul <ul style=" style="padding-leftpadding-left: : 20px20px;">
-                               ;">
-                                <li <li><strong><strong>Ar>Arthospthospores</ores</strong>strong> : le : le filament se fragmente en plusieurs filament se fragmente en plusieurs petits éléments petits éléments (d (désarticésarticulation).ulation).</li</li>
-                               >
-                                <li <li><strong><strong>Alle>Alleuriospuriospores</ores</strong> : sporesstrong> : spores portées portées sur un sur un filament spécialisé filament spécialisé.<br.<br>
-                                Elles>
-                                Elles peuvent être peuvent être :
-                                    :
-                                    <ul <ul style=" style="padding-leftpadding-left: : 20px20px;">
-                                       ;">
-                                        <li <li>Un>Unicellicellulairesulaires : : <strong> <strong>microconmicroconidiesidies</strong</strong>.</>.</lili>
-                                       >
-                                        <li> <li>PluricPluricellulellulaires :aires : <strong <strong>macro>macroconidconidies</ies</strong>strong> (plus (plusieurs cellieurs cellules).ules).</li</li>
-                                   >
-                                    </ul </ul>
-                               >
-                                </li>
-                            </ul </li>
+            <!-- Diagnostic Clinique -->
+            <section class="section-block" id="section-diag-bio">
+                <h2 class="section-title reveal">VI. Diagnostic Clinique</h2>
+                
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary); margin-bottom:15px;">A. Gravité et localisation des symptômes</h3>
+                    <p>La sévérité des signes hémorragiques dépend directement du type de la maladie.</p>
+                    
+                    <h4 style="margin-top: 20px; color: var(--text-heading);">1. Types 1 et 2</h4>
+                    <p>Les hémorragies sont généralement <strong>spontanées ou provoquées par un traumatisme</strong>, avec deux grands tableaux :</p>
+                    
+                    <div class="two-col" style="margin-top: 15px;">
+                        <div class="highlight-box" style="margin: 0;">
+                            <h5 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-hand-dots"></i> Atteinte cutanée</h5>
+                            <ul style="margin-left: 18px;">
+                                <li>Saignement prolongé après une coupure.</li>
+                                <li>Ecchymoses (bleus) fréquents.</li>
                             </ul>
-                       >
-                        </li </li>
-                   >
-                    </ul </ul>
+                        </div>
+                        <div class="highlight-box" style="margin: 0;">
+                            <h5 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-head-side-cough"></i> Atteinte muqueuse</h5>
+                            <ul style="margin-left: 18px;">
+                                <li>Épistaxis (saignements de nez).</li>
+                                <li>Gingivorragies (saignements des gencives).</li>
+                                <li>Ménorragies (règles abondantes).</li>
+                                <li>Saignements prolongés après un accouchement.</li>
+                                <li>Hémorragies digestives.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box" style="margin-top: 20px; border-left-color: var(--accent);">
+                        <p style="margin: 0;"><i class="fas fa-exclamation-triangle" style="color: var(--accent);"></i> <strong>Important :</strong> Même une forme modérée comporte un risque hémorragique après un acte chirurgical ou un traumatisme bénin. Ce risque peut être prévenu par des mesures thérapeutiques adaptées.</p>
+                    </div>
 
-                   >
+                    <h4 style="margin-top: 25px; color: var(--text-heading);">2. Type 3 (forme sévère)</h4>
+                    <p>En plus des hémorragies cutanéo-muqueuses, il existe un risque de <strong>saignements internes graves</strong> localisés dans :</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Les muscles (hématomes).</li>
+                        <li>Les articulations (hémarthroses).</li>
+                        <li>Les viscères ou le cerveau.</li>
+                    </ul>
+                </div>
 
-                    <p <p><strong><strong>3>3. Les. Les chlam chlamydospydospores</ores</strongstrong><br><br>
-                    →>
-                    → Spores Spores à à <strong> <strong>paroi très épaisse</strong>paroi très épaisse</strong> (forme (forme de rés de résistance).istance).<br<br>
-                   >
-                    Elles peuvent Elles peuvent se former se former :</ :</pp>
-                   >
-                    <ul style <ul style="padding="padding-left:-left: 20 20px;px; list-style list-style: disc;">
-                       : disc;">
-                        <li>entre <li>entre deux cell deux cellulesules (<strong> (<strong>intercalintercalaires</aires</strong>)strong>)</li</li>
-                       >
-                        <li <li>ou>ou à l à l'ext'extrérémitémité d'un filament d'un filament (<strong> (<strong>terminalesterminales</strong</strong>)</>)</li>
-                    </li>
-                    </ulul>
-                   >
-                    <p> <p>EllesElles apparaissent apparaissent lorsque les lorsque les conditions dev conditions deviennent défiennent défavorablesavorables (man (manque deque de nourriture nourriture, f, froid,roid, séche sécheresse…).</resse…).</pp>
-                </>
-                </divdiv>
-            </>
-            </sectionsection>
+                <div class="card reveal reveal-delay-2" style="margin-top: 30px;">
+                    <h3 style="color:var(--primary); margin-bottom:15px;">B. Évaluation de la tendance hémorragique</h3>
+                    <p>Pour poser le diagnostic clinique, le médecin doit évaluer :</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>L'<strong>âge d'apparition</strong> des symptômes hémorragiques.</li>
+                        <li>Le caractère <strong>spontané</strong> et/ou <strong>post-traumatique</strong>.</li>
+                        <li>La <strong>fréquence</strong> des hémorragies.</li>
+                        <li>Les <strong>localisations</strong> des saignements.</li>
+                        <li>La <strong>nécessité de transfusion</strong> ou d'intervention chirurgicale.</li>
+                    </ul>
 
-            <!-->
-
-            <!-- VI – VI – Rôle Rôle pathog pathogène :ène : les my les mycoses -->
-            <section class="section-blockcoses -->
-            <section class="section-block" id" id="section-role="section-role">
-               ">
-                <h <h2 class2 class="section="section-title reveal">VI-title reveal">VI – R – Rôle pathôle pathogèneogène : les : les mycos mycoses</es</h2h2>
-               >
-                <div <div class=" class="card revealcard reveal reveal-del reveal-delay-ay-11">
-                   ">
-                    <p> <p>Les champLes champignonsignons parasites prov parasites provoquentoquent des des <strong> <strong>mycosmycoses</es</strong>,strong>, classées classées selon la selon la <strong <strong>prof>profondeurondeur de de l' l'infection</infection</strong>strong>.</p.</p>
-                    <table>
-                       >
-                    <table>
-                        <thead <thead><tr><tr><th>Type</><th>thType</th><th>><th>ExempleExemple</th</th></tr></tr></thead></thead>
-                       >
-                        <tbody <tbody>
-                           >
-                            <tr <tr><td><td><strong>><strong>Mycoses superficMycoses superficiellesielles</strong</strong></td></td><td><td>D>Dermatophermatophytiesyties (atte (atteinte deinte de la peau la peau, des, des ong ongles,les, des che des cheveuxveux)</td)</td></tr></tr>
-                           >
-                            <tr <tr><td><td><strong><strong>My>Mycosescoses sous-c sous-cutanéesutanées</strong></td><td>Spor</strong></td><td>Sporotrichotrichose (ose (infection duinfection du derme derme et de et de l'h l'hypodermypoderme)</e)</td></td></trtr>
-                           >
-                            <tr <tr><td><td><strong>><strong>MycosMycoses profondes profondes (es (systsystémiques)</strong></tdémiques)</strong></td><td><td>Aspergill>Aspergillose (ose (poumons,poumons, parfois dissémin parfois disséminée)</ée)</td></td></trtr>
-                        </tbody>
-                        </tbody>
-                    </>
-                    </tabletable>
-                   >
-                    <p><strong> <p><strong>Caractéristiques généralCaractéristiques générales deses des mycos mycoses :es :</strong</strong></p></p>
-                   >
-                    <ul <ul style=" style="padding-leftpadding-left: : 20px20px; list; list-style:-style: disc disc;">
-                       ;">
-                        <li <li><strong>><strong>ÉvolutionÉvolution chronique chronique ou sub ou subaiguaiguë</strong>ë</strong> (l (lente,ente, durable). durable).</li</li>
-                       >
-                        <li <li><strong>><strong>PeuPeu ou pas ou pas de fi de fièvreèvre</strong</strong> (sauf dans les formes invas> (sauf dans les formes invasives gravesives graves avec septic avec septicémie).émie).</li</li>
-                       >
-                        <li <li><strong><strong>Pas>Pas de modification de modification importante de importante de la formule la formule sanguine sanguine</strong</strong> (> (FNSFNS normale). normale).</li</li>
-                       >
-                        <li <li><strong><strong>G>Généralénéralement nonement non contagie contagieuses</strong>,uses</strong>, sauf sauf exceptions exceptions :
-                            :
-                            <ul style <ul style="padding="padding-left:-left: 20 20pxpx;">
-                               ;">
-                                <li <li><strong>><strong>TeignTeignes</es</strong>strong> (cont (contagionagion directe directe homme → homme → homme ou homme ou animal → animal → homme). homme).</li</li>
-                               >
-                                <li><strong <li><strong>Candid>Candidoses vaginaloses vaginales</es</strong>strong> (trans (transmission lorsmission lors des rapp des rapports sexorts sexuels).uels).</li</li>
-                           >
-                            </ul </ul>
-                       >
-                        </li </li>
-                   >
-                    </ul </ul>
-               >
-                </div </div>
-           >
-            </section </section>
-
-           >
-
-            <!-- VII <!-- VII – M – Modes deodes de contamination contamination -->
-            -->
-            <section class <section class="section="section-block"-block" id=" id="section-contsection-contaminationamination">
-               ">
-                <h2 <h2 class=" class="section-titlesection-title reveal"> reveal">VII –VII – Modes Modes de contamination de contamination (vo (voies deies de pénét pénétration)</ration)</h2h2>
-               >
-                <div <div class=" class="card revealcard reveal reveal-del reveal-delay-1ay-1">
-                   ">
-                    <p> <p>Les champLes champignonsignons pénèt pénètrent dansrent dans l' l'organismeorganisme par différentes par différentes voies voies :</ :</pp>
-                   >
-                    <ol style <ol style="padding="padding-left:-left: 20 20pxpx;">
-                       ;">
-                        <li <li><strong>><strong>VoieVoie transcut transcutanéeanée : :</strong</strong><br><br>
-                       >
-                        Par une Par une blessure blessure (pi (piqûqûre dre d'ép'épine,ine, acte acte chirurgical chirurgical, petit, petit traumatisme traumatisme).).<br<br>
-                        →>
-                        → Exemple Exemple : : <strong>S <strong>Sporothporothrix</strong>rix</strong>.</li.</li>
-                       >
-                        <li <li><strong><strong>Vo>Voie respirie respiratoire :atoire :</strong</strong><br><br>
-                       >
-                        Inhalation Inhalation de spores de spores présentes dans l présentes dans l'air'air.<.<brbr>
-                       >
-                        → Ex → Exemple :emple : <strong <strong>As>Aspergillus</strongpergillus</strong>.</>.</lili>
-                       >
-                        <li <li><strong>><strong>Contact directContact direct :</ :</strongstrong><br><br>
-                        Avec>
-                        Avec une personne une personne ou un ou un animal infect animal infectéé.<br>
-                        →.<br>
-                        → Exemple Exemple : : <strong> <strong>teignteignes,es, candidoses candidoses cutan cutanées</strong>ées</.</listrong>.</li>
-                       >
-                        <li <li><strong>Vo><strong>Voie digestiveie digestive :</ :</strongstrong><br>
-                        Ing><br>
-                        Ingestion deestion de champign champignons ou de spores.<brons ou de spores.<br>
-                       >
-                        → Ex → Exemple :emple : <strong <strong>Crypt>Cryptococcus neoococcus neoformansformans</strong</strong> (> (peutpeut aussi passer aussi passer par le par le poumon poumon).</).</lili>
-                       >
-                        <li <li><strong>><strong>DisséDisséminationmination par voie par voie sanguine sanguine :</ :</strongstrong><br><br>
-                        Les>
-                        Les champign champignons peuventons peuvent se prop se propager parager par le sang le sang vers différents vers différents organes organes (my (mycosescoses profondes profondes dissé disséminéesminées).</li>
-                    </ol>
-                </).</li>
-                    </ol>
-                </divdiv>
-            </>
-            </sectionsection>
-
-            <!-->
-
-            <!-- Résumé Résumé -->
-            -->
-            <section <section class=" class="section-blocksection-block" id" id="section="section-resume-resume" style" style="border="border-bottom:-bottom: none;">
-                none;">
-                <h2 <h2 class="section-title class="section-title reveal"> reveal">RésRésumé duumé du cours</ cours</h2h2>
-               >
-                <div <div class=" class="card revealcard reveal reveal-del reveal-delay-ay-1"1" style=" style="font-sizefont-size:0:0.95.95remrem;">
-                   ;">
-                    <p> <p>LaLa <strong> <strong>mycmycologie médologie médicaleicale</strong</strong> étud> étudie lesie les champign champignons microscons microscopiquesopiques path pathogènesogènes pour l pour l'homme.'homme. Ces organism Ces organismeses <strong> <strong>euceucaryotesaryotes</strong</strong>,>, <strong> <strong>hétéhétérotrophesrotrophes</strong</strong> et> et <strong <strong>non chlorophylliens>non chlorophylliens</strong> se présentent</strong> se présentent sous différentes sous différentes formes morph formes morphologiques (ologiques (filamentefilamenteuse,use, levur levuriforme ouiforme ou dimorph dimorphique).ique). Leur Leur reproduction peut reproduction peut être sex être sexuéeuée ou asex ou asexuéeuée, cette, cette dernière étant la dernière étant la plus fréqu plus fréquente.ente. Les Les <strong> <strong>mycosmycoses</strong> qu'ilses</strong> qu'ils provoqu provoquent sontent sont classées classées selon la selon la profonde profondeur deur de l' l'atteinte tissulaireatteinte et se tissulaire caracté et serisent caractérisent par une par une évolution évolution chronique chronique, l, l'absence'absence de fi de fièvreèvre et une et une FNS FNS normale. La contamination normale. se fait La contamination se fait principal principalement parement par voie trans voie transcutancutanée,ée, respiratoire respiratoire, par, par contact direct contact direct ou ou par voie par voie digestive.</ digestive.</pp>
-                    <p style>
-                    <p style="text-align:="text-align: center; center; margin-top margin-top: : 15px15px; color; color: var(--primary: var(--primary););"><em>"><em>— Dr— Dr Latre Latreche.Fche.F</em</em></p></p>
-               >
-                </div </div>
-            </section>
+                    <h4 style="margin-top: 20px; color: var(--text-heading);">Manifestations hémorragiques typiques à rechercher :</h4>
+                    <div class="two-col" style="margin-top: 10px;">
+                        <ul style="margin-left: 20px;">
+                            <li>Ecchymoses spontanées ou après traumatismes minimes.</li>
+                            <li>Gingivorragies.</li>
+                            <li>Épistaxis.</li>
+                        </ul>
+                        <ul style="margin-left: 20px;">
+                            <li>Ménorragies.</li>
+                            <li>Hémorragies gastro-intestinales.</li>
+                            <li>Hémorragies post-chirurgicales, post-extraction dentaire, post-traumatiques ou post-accouchement.</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
-       >
+            <!-- Diagnostic Biologique -->
+            <section class="section-block" id="section-traitement">
+                <h2 class="section-title reveal">VII. Diagnostic Biologique</h2>
+                
+                <div class="card reveal reveal-delay-1">
+                    <p>L'exclusion ou la confirmation de la maladie de Willebrand <strong>ne peut se faire sans analyses de laboratoire</strong>.</p>
+                    
+                    <h3 style="color:var(--primary); margin: 25px 0 15px;">A. Tests de dépistage (Screening)</h3>
+                    
+                    <h4 style="color: var(--text-heading); margin-bottom: 10px;">1. Hémostase primaire (fonction plaquettaire) :</h4>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li>Temps de saignement.</li>
+                        <li>Taux de plaquettes.</li>
+                        <li><strong>PFA-100</strong> (analyseur de fonction plaquettaire in vitro).</li>
+                        <li>Étude des fonctions plaquettaires.</li>
+                    </ul>
 
-        </div </div>
-   >
-    </div </div>
+                    <h4 style="color: var(--text-heading); margin-bottom: 10px;">2. Coagulation :</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>TQ</strong> (Temps de Quick / Prothrombine).</li>
+                        <li><strong>TCA</strong> (Temps de Céphaline Activé).</li>
+                    </ul>
+                </div>
 
-   >
+                <div class="card reveal reveal-delay-2" style="margin-top: 30px;">
+                    <h3 style="color:var(--primary); margin-bottom:15px;">B. Tests spécialisés de 1<sup>er</sup> niveau (Diagnostic du type)</h3>
+                    <p>Ces tests permettent de différencier un déficit quantitatif d'un déficit qualitatif.</p>
+                    
+                    <table style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Type de déficit</th>
+                                <th>Examen</th>
+                                <th>Signification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Quantitatif</strong></td>
+                                <td>Dosage du <strong>VWF:Ag</strong> (antigène)</td>
+                                <td>Mesure la concentration en VWF.</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Qualitatif</strong></td>
+                                <td><strong>VWF:Rco</strong> (activité de liaison aux plaquettes par la ristocétine)</td>
+                                <td>Évalue la capacité du VWF à fixer les plaquettes.</td>
+                            </tr>
+                            <tr>
+                                <td>Dosage du <strong>FVIII:C</strong></td>
+                                <td>Évalue le taux de facteur VIII circulant (souvent bas car le VWF le transporte).</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <!-- Footer <!-- Footer -->
-    -->
-    <footer <footer class=" class="site-footersite-footer">
-       ">
-        <div <div class=" class="social-lsocial-linksinks">
-           ">
-            <a href <a href="https="https://what://whatsappsapp.com/ch.com/channel/annel/00290029VbVb7H7Hh2h2E8E8fewxfewxLyVLyVJbhJbh2c2c" class" class="social="social-link whatsapp"-link whatsapp" target="_ target="_blank"blank" title=" title="WhatsAppWhatsApp"><i"><i class=" class="fab fafab fa-what-whatsappsapp"></i"></i></a></a>
-           >
-            <a <a href=" href="https://https://t.met.me/ghan/ghanipharmaipharma" class="social" class="social-link telegram-link telegram" target" target="_blank" title="_blank" title="Tele="Telegramgram"><i class"><i class="fab="fab fa-te fa-telegramlegram-plane"></-plane"></i></i></aa>
-           >
-            <a href <a href="https://www="https://www.facebook.com.facebook.com/gh/ghani.ani.rouabrouabah.ah.20252025" class" class="social="social-link facebook-link facebook" target" target="_blank="_blank" title" title="Facebook="Facebook"><i"><i class=" class="fab fafab fa-facebook-facebook-f"></-f"></i></ai></a>
-           >
-            <a href <a href="https="https://www://www.instagram.instagram.com/.com/ghanighani.rou.rouabahabah/" class/" class="social="social-link inst-link instagram"agram" target="_ target="_blank"blank" title=" title="InstagramInstagram"><i class"><i class="fab="fab fa-inst fa-instagram"></agram"></i></i></aa>
-           >
-            <a href <a href="https="https://www://www.tikt.tiktok.comok.com/@gh/@ghani.ani.rouabrouabah" class="ah"social-link class="social-link tikt tiktok"ok" target="_ target="_blank"blank" title=" title="TikTikTokTok"><i class"><i class="="fabfab fa-t fa-tiktokiktok"></i"></i></a></a>
-            <a>
-            <a href=" href="https://https://www.youtubewww.youtube.com/@.com/@GhaniGhani-Rouabah-Rouabah" class" class="social="social-link youtube-link youtube" target" target="_blank="_blank" title" title="YouTube="YouTube"><i"><i class=" class="fab fa-youtubefab fa"></i-youtube"></i></a></a>
-       >
-        </div </div>
-       >
-        <p <p class=" class="copyright">&copy;copyright">&copy; 202 2025 GhaniPh5 GhaniPharma.arma. Tous Tous droits rés droits réservéservés.</p>
-   .</p>
-    </footer </footer>
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <h5 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-flask"></i> Précisions techniques</h5>
+                        <p style="margin-bottom: 8px;"><strong>VWF:Ag :</strong> ELISA (référence mais laborieux) vs LIA (automatisé, haute précision). Bonne corrélation entre les deux, mais seuil de détection plus bas avec ELISA.</p>
+                        <p style="margin: 0;"><strong>VWF:Rco :</strong> Sensibilité et précision parfois faibles. Attention aux faux résultats bas dus aux variations génétiques <strong>p.Asp1472His</strong> et <strong>p.Pro1476Ser</strong> qui interfèrent avec la liaison des plaquettes en présence de ristocétine.</p>
+                    </div>
+                </div>
+
+                <div class="card reveal reveal-delay-3" style="margin-top: 30px;">
+                    <h3 style="color:var(--primary); margin-bottom:15px;">C. Tests de 2<sup>ème</sup> niveau (Détermination des sous-types)</h3>
+                    <p>Ces examens permettent de classer précisément la maladie et d'orienter le traitement :</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>RIPA</strong> (Ristocetine Induced Platelet Aggregation) : à faible dose de ristocétine.</li>
+                        <li><strong>Étude de la liaison VWF-FVIII</strong> : recherche du sous-type 2N.</li>
+                        <li><strong>Étude de la liaison VWF-collagène</strong>.</li>
+                        <li><strong>Analyse des multimères de VWF</strong> : visualisation des différentes formes moléculaires du VWF (essentielle pour distinguer 2A, 2B, etc.).</li>
+                        <li><strong>Dosage des propéptides du VWF (VWFpp)</strong> : permet d'évaluer la synthèse et la sécrétion du VWF.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Traitement -->
+            <section class="section-block" id="section-conclusion">
+                <h2 class="section-title reveal">VIII. Traitement</h2>
+                
+                <div class="card reveal reveal-delay-1">
+                    <p>Il <strong>n'existe pas de traitement curatif</strong> de la maladie de Von Willebrand. Cependant, une prise en charge adaptée et un suivi régulier permettent de prévenir ou de limiter efficacement les risques hémorragiques.</p>
+                    
+                    <h3 style="color:var(--primary); margin: 25px 0 15px;">A. Traitement médicamenteux (correction du déficit)</h3>
+                    <p>Lorsque cela est nécessaire, deux approches sont possibles :</p>
+
+                    <div class="two-col" style="margin-top: 20px;">
+                        <div class="highlight-box" style="margin: 0;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-syringe"></i> 1. La Desmopressine (DDAVP)</h4>
+                            <ul style="margin-left: 18px;">
+                                <li><strong>Voie</strong> : intraveineuse ou inhalation intra-nasale.</li>
+                                <li><strong>Mécanisme</strong> : libère le VWF endogène des réserves endothéliales.</li>
+                                <li><strong>Efficacité</strong> :
+                                    <ul style="margin-top: 5px;">
+                                        <li>Surtout efficace dans le <strong>Type 1</strong>.</li>
+                                        <li>Rarement efficace dans le <strong>Type 2</strong>.</li>
+                                        <li><strong>Jamais efficace</strong> dans le <strong>Type 3</strong> (absence de réserve).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box" style="margin: 0;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-vial"></i> 2. Concentrés plasmatiques de VWF</h4>
+                            <ul style="margin-left: 18px;">
+                                <li><strong>Voie</strong> : intraveineuse.</li>
+                                <li><strong>Composition</strong> : concentrés riches en VWF, parfois associés au FVIII (notamment lors de la première injection).</li>
+                                <li><strong>Efficacité</strong> : efficaces dans <strong>tous les types</strong> de la maladie.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 20px; border-left-color: var(--accent);">
+                        <p style="margin: 0;"><i class="fas fa-clock" style="color: var(--accent);"></i> <strong>Durée d'action :</strong> L'efficacité de ces produits est limitée dans le temps (quelques heures seulement), mais suffisante pour prévenir ou réduire un épisode de saignement.</p>
+                    </div>
+
+                    <h3 style="color:var(--primary); margin: 25px 0 15px;">B. Stratégie thérapeutique personnalisée</h3>
+                    <p>Le traitement est défini par le médecin spécialiste en fonction :</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Du <strong>type de maladie</strong>.</li>
+                        <li>De la <strong>situation clinique</strong> (accident hémorragique imprévu, accouchement, intervention chirurgicale, extraction dentaire...).</li>
+                    </ul>
+
+                    <h4 style="margin-top: 15px; color: var(--text-heading);">Modalités d'instauration :</h4>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Traitement curatif</strong> : pour soigner un accident hémorragique imprévu.</li>
+                        <li><strong>Traitement préventif (prophylactique)</strong> : institué chaque fois que possible avant une situation à risque pour prévenir une complication.</li>
+                    </ul>
+
+                    <h3 style="color:var(--primary); margin: 25px 0 15px;">C. Gestion des saignements mineurs et mesures préventives</h3>
+                    <p>En dehors des accidents et des situations à haut risque, la correction du déficit en VWF n'est <strong>pas toujours nécessaire</strong>, notamment pour les saignements mineurs qui se tarissent spontanément.</p>
+                    
+                    <p style="margin-top: 10px;"><strong>Mesures simples de prévention à respecter :</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Compression locale</strong> pendant quelques minutes sur une plaie cutanée ou sur les narines en cas d'épistaxis.</li>
+                        <li><strong>Contre-indications médicamenteuses</strong> : éviter l'aspirine et les anti-inflammatoires non stéroïdiens (AINS) qui aggravent le risque hémorragique.</li>
+                        <li>Éviter les <strong>injections intramusculaires</strong> autant que possible.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="section-block" id="section-references">
+                <h2 class="section-title reveal">IX. Conclusion</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>Le diagnostic de la maladie de Von Willebrand représente un <strong>véritable défi clinique et biologique</strong> pour plusieurs raisons :</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Son <strong>hétérogénéité</strong> (formes cliniques et biologiques très variées).</li>
+                        <li>La <strong>multiplicité des tests</strong> nécessaires pour affirmer le diagnostic.</li>
+                        <li>La nécessité de <strong>répéter les tests</strong> plusieurs fois, car les résultats peuvent fluctuer.</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <p style="margin: 0;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> <strong>Un bon diagnostic est indispensable</strong> pour instaurer le traitement approprié et assurer une prise en charge optimale du patient.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Références -->
+            <section class="section-block" style="border-bottom: none;">
+                <h2 class="section-title reveal">X. Références</h2>
+                <div class="card reveal reveal-delay-1" style="font-size:0.95rem; color:var(--text-secondary);">
+                    <p style="margin-bottom: 10px;">1. Levy JP, Varet B, et coll. <em>Physiologie de l'hémostase primaire</em>. Hématologie et transfusion. Paris : Collection Abrégés Masson, 2001.</p>
+                    <p style="margin-bottom: 10px;">2. Bellucci, Sylvia. <em>Physiologie de l'hémostase primaire</em>. EMC - Hématologie, 2005.</p>
+                    <p style="margin-bottom: 10px;">3. Annie Bezéaud, Marie-Claude Guillin. <em>Physiologie de la coagulation</em>. EMC - Hématologie, 2001.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
 
     <script>
-
-    <script>
-        // =>
-        // ==================== Create stars=================== Create stars ================= ======================
-        function=
-        function createStars createStars()() {
-            const {
-            const container = container = document.getElementById document.getElementById('stars('starsContainerContainer');
-            const');
-            const fragment = fragment = document.create document.createDocumentFragment();
-           DocumentFragment();
-            for ( for (let i = let i = 0;0; i i < 150 < 150; i; i++)++) {
-                const {
-                const star = star = document.createElement document.createElement('div');
-               ('div');
-                star.class star.className =Name = 'star 'star';
-               ';
-                star.style star.style.left =.left = Math.random Math.random() *() * 100 100 + '% + '%';
-               ';
-                star.style.top = star.style.top = Math.random Math.random() *() * 100 100 + '%';
-                + '%';
-                const size const size = Math = Math.random().random() *  * 3 + 13 + 1;
-               ;
-                star.style star.style.width =.width = size + size + 'px 'px';
-               ';
-                star.style.height = star.style.height = size + 'px size + 'px';
-                star.style';
-                star.style.setProperty.setProperty('--duration',('--duration', Math.random Math.random() *() * 4 4 +  + 2 +2 + 's 's');
-               ');
-                star.style star.style.setProperty.setProperty('--delay',('-- Math.randomdelay', Math.random() *() * 5 5 + ' + 'ss');
-                fragment');
-                fragment.appendChild(.appendChild(starstar);
+        // Stars
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            const frag = document.createDocumentFragment();
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                frag.appendChild(star);
             }
-            container);
-            }
-            container.appendChild(f.appendChild(fragmentragment);
-       );
+            container.appendChild(frag);
         }
-        create }
-        createStarsStars();
+        createStars();
 
-        //();
+        // Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ================= ==================== Reve=== Reveal animational animation ================= ======================
-        const=
-        const revealObserver revealObserver = new = new Intersection IntersectionObserver((Observer((entries)entries) => => {
-            entries {
-            entries.forEach(.forEach(entry =>entry => { if { if (entry (entry.isInters.isIntersecting)ecting) entry.target.classList.add entry.target.classList.add('visible('visible');'); });
-        }, });
-        }, { threshold { threshold: : 0.150.15 });
-        document });
-        document.querySelectorAll.querySelectorAll('.reve('.reveal').al').forEach(elforEach(el => reveal => revealObserver.Observer.observeobserve(el(el));
-
-        //));
-
-        // ================= ==================== Side=== Side dots navigation dots navigation ================= ======================
-        const=
-        const sectionIDs sectionIDs = [' = ['intro', 'introintro', 'intro-content',-content', 'general 'generalites',ites', 'm 'morphologieorphologie', '', 'physiphysiologie',ologie', 're 'reproduction', 'roleproduction', 'role', '', 'contaminationcontamination'];
-       '];
-        const dots = document const dots = document.querySelectorAll.querySelectorAll('.dot('.dot');
-
-       ');
-
-        function update function updateActiveDotActiveDot()() {
-            const {
-            const scrollPos scrollPos = window = window.scroll.scrollY +Y + window.inner window.innerHeight /Height / 3 3;
-           ;
-            const nav const navH =H = document.getElementById document.getElementById('top('topNav').Nav').offsetHeight;
-            let active = 'introoffsetHeight;
+        // Side dots
+        const sectionIDs = ['intro', 'definition', 'fonctions', 'transmission', 'classification', 'diag-clinique', 'diag-bio', 'traitement', 'conclusion', 'references'];
+        const dots = document.querySelectorAll('.dot');
+        function updateActiveDot() {
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
             let active = 'intro';
-            section';
-            sectionIDs.forEach(id =>IDs.forEach(id => {
-                const el = document {
-                const el = document.getElementById('.getElementById('section-'section-' + id + id);
-               );
-                if ( if (el)el) {
-                    {
-                    const top const top = el = el.getB.getBoundingClientoundingClientRect().Rect().top +top + window.page window.pageYOffsetYOffset - nav - navHH;
-                    const;
-                    const bottom = bottom = top + top + el. el.offsetHeightoffsetHeight;
-                   ;
-                    if ( if (scrollPosscrollPos >= top >= top && scroll && scrollPosPos < bottom) < bottom) active = active = id id;
-               ;
+            sectionIDs.forEach(id => {
+                const el = document.getElementById('section-' + id);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
                 }
-            }
             });
-            dots });
-            dots.forEach(d.forEach(d => d => d.classList.t.classList.toggle('oggle('active',active', d.dat d.dataset.dotaset.dot === active === active));
-       ));
+            dots.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
         }
-        }
-        window.addEventListener window.addEventListener('scroll('scroll', update', updateActiveDotActiveDot, {, { passive: passive: true true });
-
-        dots });
-
-        dots.forEach(d.forEach(dot =>ot => {
-            {
-            dot.addEventListener dot.addEventListener('click('click', ()', () => => {
-                const {
-                const targetId targetId = dot = dot.dataset.dataset.dot.dot;
-               ;
-                document.getElementById(' document.getElementById('section-'section-' + target + targetId).Id).scrollIntoscrollIntoView({View({ behavior: behavior: 's 'smooth'mooth' });
-            });
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                document.getElementById('section-' + dot.dataset.dot).scrollIntoView({ behavior: 'smooth' });
             });
         });
-        });
 
-        });
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; });
+        closeBtn.addEventListener('click', () => { overlay.classList.remove('open'); document.body.style.overflow = ''; });
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) { overlay.classList.remove('open'); document.body.style.overflow = ''; } });
 
-        // = // ======================================= Mobile menu Mobile menu ================= ======================
-        const=
-        const menuToggle menuToggle = document = document.getElementById('.getElementById('menuTogglemenuToggle');
-       ');
-        const mobile const mobileOverlayOverlay = document.getElementById(' = document.getElementById('mobileMenumobileMenuOverlayOverlay');
-       ');
-        const close const closeBtn =Btn = document.getElementById document.getElementById('close('closeMobileMenuMobileMenu');
-       ');
-        menuToggle menuToggle.addEventListener('click',.addEventListener('click', () => () => {
-            {
-            mobileOver mobileOverlay.classListlay.classList.add('.add('openopen');
-            document');
-            document.body.style.body.style.overflow.overflow = ' = 'hiddenhidden';
-       ';
-        });
-        close });
-        closeBtn.addEventListenerBtn.addEventListener('click('click', ()', () => => {
-            mobile {
-            mobileOverlayOverlay.classList.remove.classList.remove('open('open');
-           ');
-            document.body document.body.style..style.overflow =overflow = '';
-        '';
-        });
-        });
-        mobileOver mobileOverlay.addEventListenerlay.addEventListener('click('click', (', (e) =>e) => {
-            if {
-            if (e.target === (e.target === mobileOver mobileOverlay)lay) {
-                {
-                mobileOver mobileOverlay.classListlay.classList.remove('open');
-                document.remove('open');
-                document.body.style.body.style.overflow.overflow = = '';
-            '';
-            }
-        }
-        });
+        // Hide nav on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
 
-        // });
-
-        // ================= ==================== Hide=== Hide nav on nav on scroll = scroll ======================================
-       =
-        let last let lastScroll =Scroll = 0 0;
-       ;
-        window.addEventListener window.addEventListener('scroll('scroll', ()', () => => {
-            const {
-            const st = st = window.page window.pageYOffsetYOffset || document || document.document.documentElement.scElement.scrollToprollTop;
-           ;
-            const nav const nav = document = document.getElementById('.getElementById('topNavtopNav');
-           ');
-            if ( if (st >st > lastScroll lastScroll && st > 150) nav.classList.add('hidden');
-            else if ( && st > 150) nav.classList.add('hidden');
-            else if (stst < lastScroll < lastScroll) nav) nav.classList.remove.classList.remove('hidden('hidden');
-           ');
-            lastScroll lastScroll = st = st;
-       ;
-        }, { passive: }, { passive: true true });
-
-        // });
-
-        // ================= ==================== Theme=== Theme toggle = toggle ======================================
-        const theme=
-        const themeToggle =Toggle = document.getElementById('theme document.getElementById('themeToggleToggle');
-        const');
-        const htmlEl htmlEl = document = document.document.documentElementElement;
-        const;
-        const saved = saved = localStorage.getItem localStorage.getItem('theme('theme') || 'dark') ||';
- 'dark       ';
-        htmlEl htmlEl.setAttribute.setAttribute('data('data-theme-theme', saved', saved);
-       );
-        themeToggle themeToggle.addEventListener('.addEventListener('click',click', () => () => {
-            {
-            const cur const cur = html = htmlEl.getEl.getAttribute('Attribute('data-thedata-thememe');
-            const');
-            const next = next = cur === cur === 'dark 'dark' ?' ? 'light 'light'' : : 'dark 'dark';
-           ';
-            htmlEl.setAttribute htmlEl('data.setAttribute('data-theme-theme', next', next);
-           );
-            localStorage.set localStorage.setItem('Item('theme',theme', next next);
-       );
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        const saved = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', saved);
+        themeToggle.addEventListener('click', () => {
+            const cur = htmlEl.getAttribute('data-theme');
+            const next = cur === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
-    </ });
-    </scriptscript>
+    </script>
 </body>
-</body>
-</>
-</htmlhtml>
-```>
+</html>
