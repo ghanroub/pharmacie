@@ -225,6 +225,7 @@
             gap: 15px;
         }
 
+        /* --- Menu normal horizontal (grand écran) --- */
         .nav-links {
             display: flex;
             align-items: center;
@@ -253,7 +254,6 @@
             background: rgba(128, 128, 128, 0.1);
         }
 
-        /* --- التعديل الجديد: إضافة حالة النشاط للأزرار --- */
         .nav-link.active {
             color: #fff;
             background: rgba(0, 188, 212, 0.2);
@@ -270,52 +270,6 @@
             background: var(--primary);
             border-radius: 3px;
         }
-
-        .theme-toggle {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 2px solid var(--border-glass);
-            background: var(--bg-glass);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--accent);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(30deg) scale(1.1);
-            border-color: var(--accent);
-            box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
-        }
-
-        .theme-toggle i {
-            transition: all 0.5s ease;
-        }
-
-        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
-        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
-        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
-        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
-        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-heading);
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-toggle:hover { transform: rotate(90deg); }
 
         /* ==================== POPUP MOBILE MENU ==================== */
         .mobile-menu-overlay {
@@ -407,6 +361,54 @@
             font-size: 1.3rem;
         }
 
+        /* ==================== زر تبديل الوضع ==================== */
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
+        }
+
+        .theme-toggle i {
+            transition: all 0.5s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
+        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
+        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
+        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
+
+        /* ==================== زر القائمة للموبايل ==================== */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover { transform: rotate(90deg); }
+
         /* ==================== المحتوى الرئيسي ==================== */
         .main-wrapper {
             position: relative;
@@ -483,7 +485,7 @@
             border: 1px solid var(--border-glass);
         }
 
-        /* ==================== أزرار التنقل بين السداسيات ==================== */
+        /* ==================== أزرار التنقل بين السداسيات - بدون إطار خلفي ==================== */
         .semester-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -718,7 +720,10 @@
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-            .nav-links { display: none !important; }
+            /* Cacher le menu horizontal normal */
+            .nav-links {
+                display: none !important;
+            }
             .page-title { font-size: 1.8rem; }
             .section-title { font-size: 1.5rem; }
             .header-image { height: 200px; }
@@ -745,7 +750,7 @@
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- ==================== [تم التعديل] شريط التنقل العلوي مطابق للصفحة الرئيسية ==================== -->
+    <!-- شريط التنقل العلوي -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -760,18 +765,18 @@
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <!-- تم تغيير الروابط إلى أزرار مع دوال التمرير -->
+                <!-- Menu horizontal (affiché uniquement sur desktop) -->
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><button class="nav-link active" data-nav="home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Accueil</button></li>
-                    <li><button class="nav-link" data-nav="about" onclick="window.location.href='index.html#section-about'"><i class="fas fa-info-circle"></i> À propos</button></li>
-                    <li><button class="nav-link" data-nav="modules" onclick="window.location.href='index.html#section-modules'"><i class="fas fa-book"></i> Modules</button></li>
-                    <li><button class="nav-link" data-nav="contact" onclick="window.location.href='index.html#section-contact'"><i class="fas fa-envelope"></i> Contact</button></li>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a href="index.html#section-modules" class="nav-link active"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a href="index.html#section-contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- POPUP MOBILE MENU -->
+    <!-- POPUP MOBILE MENU (overlay) -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -786,14 +791,14 @@
                 <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
-    </nav>
+    </div>
 
     <!-- المحتوى الرئيسي -->
     <div class="main-wrapper">
         <div class="container">
 
             <!-- رأس الصفحة -->
-            <div class="page-header" id="section-home">
+            <div class="page-header">
                 <div class="subject-badge reveal">
                     <i class="fas fa-microscope"></i> 4ème Année Pharmacie
                 </div>
@@ -829,37 +834,173 @@
                         <p class="section-subtitle">Cours et ressources du premier semestre</p>
                     </div>
                 </div>
+
                 <div class="lessons-grid">
                     <a href="#" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
-                            <div class="lesson-icon"><i class="fas fa-bacteria"></i></div>
-                            <div><h3 class="lesson-title">Structure et anatomie fonctionnelle des bactéries</h3><p class="lesson-desc">Morphologie, paroi cellulaire, membrane, capsule, flagelles, pili, endospore et leurs rôles.</p></div>
+                            <div class="lesson-icon">
+                                <i class="fas fa-bacteria"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Structure et anatomie fonctionnelle des bactéries</h3>
+                                <p class="lesson-desc">Morphologie, paroi cellulaire, membrane, capsule, flagelles, pili, endospore et leurs rôles.</p>
+                            </div>
                         </div>
-                        <div class="lesson-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
+
                     <a href="#" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
-                            <div class="lesson-icon"><i class="fas fa-vial"></i></div>
-                            <div><h3 class="lesson-title">Physiologie bactérienne</h3><p class="lesson-desc">Croissance, nutrition, métabolisme, facteurs environnementaux, reproduction et classifications.</p></div>
+                            <div class="lesson-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Physiologie bactérienne</h3>
+                                <p class="lesson-desc">Croissance, nutrition, métabolisme, facteurs environnementaux, reproduction et classifications.</p>
+                            </div>
                         </div>
-                        <div class="lesson-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
+
                     <a href="#" class="lesson-card reveal reveal-delay-2">
                         <div class="lesson-card-header">
-                            <div class="lesson-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                            <div><h3 class="lesson-title">Relation hôte - bactérie</h3><p class="lesson-desc">Symbiose, microbiote, pouvoir pathogène, virulence, toxines et mécanismes de défense de l'hôte.</p></div>
+                            <div class="lesson-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Relation hôte - bactérie</h3>
+                                <p class="lesson-desc">Symbiose, microbiote, pouvoir pathogène, virulence, toxines et mécanismes de défense de l'hôte.</p>
+                            </div>
                         </div>
-                        <div class="lesson-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
                 </div>
             </div>
 
-            <!-- SEMESTRE 2 & 3 restent inchangés -->
+            <!-- ==================== SEMESTRE 2 ==================== -->
             <div class="semester-content" id="content-s2">
-                <!-- ... contenu existant ... -->
+                <div class="section-header">
+                    <div class="section-icon" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">
+                        <i class="fas fa-2"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Semestre 2</h2>
+                        <p class="section-subtitle">Cours et ressources du deuxième semestre</p>
+                    </div>
+                </div>
+
+                <div class="lessons-grid">
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-streptococcus"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Les streptocoques</h3>
+                                <p class="lesson-desc">Classification, facteurs de virulence, pathologies associées (angine, scarlatine, infections invasives) et diagnostic.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-1">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-diplococcus"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Les neisseriaceae</h3>
+                                <p class="lesson-desc">Neisseria meningitidis, Neisseria gonorrhoeae : structure, pouvoir pathogène, diagnostic et traitements.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-bacillus"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Listeria et corynebacterium</h3>
+                                <p class="lesson-desc">Listeria monocytogenes (listériose), Corynebacterium diphtheriae (diphtérie) : épidémiologie, physiopathologie et prise en charge.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-2">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Examen cyto-bactériologique des urines (ECBU)</h3>
+                                <p class="lesson-desc">Prélèvement, analyse, interprétation des résultats, antibiogramme et infections urinaires.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="#" class="lesson-card reveal reveal-delay-3">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Examen cytobactériologique du liquide céphalorachidien (LCR)</h3>
+                                <p class="lesson-desc">Indications, prélèvement, analyse cytologique et bactériologique, méningites et autres pathologies du SNC.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
             </div>
+
+            <!-- ==================== SEMESTRE 3 ==================== -->
             <div class="semester-content" id="content-s3">
-                <!-- ... contenu existant ... -->
+                <div class="section-header">
+                    <div class="section-icon" style="background: linear-gradient(135deg, #ff9800, #f44336);">
+                        <i class="fas fa-3"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Semestre 3</h2>
+                        <p class="section-subtitle">Aucun contenu pour le semestre 3</p>
+                    </div>
+                </div>
+
+                <div class="lessons-grid">
+                    <a href="#" class="lesson-card reveal reveal-delay-1" style="border-color: rgba(255, 152, 0, 0.3);">
+                        <div class="lesson-card-header">
+                            <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div>
+                                <h3 class="lesson-title">Aucun contenu disponible</h3>
+                                <p class="lesson-desc">Le contenu du Semestre 3 n'est pas encore disponible. Veuillez revenir ultérieurement.</p>
+                            </div>
+                        </div>
+                        <div class="lesson-arrow" style="color: #ff9800;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -883,6 +1024,7 @@
         function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
+            
             for (let i = 0; i < 180; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
@@ -895,6 +1037,7 @@
                 star.style.setProperty('--delay', Math.random() * 5 + 's');
                 fragment.appendChild(star);
             }
+            
             for (let i = 0; i < 4; i++) {
                 const shootingStar = document.createElement('div');
                 shootingStar.className = 'shooting-star';
@@ -903,24 +1046,41 @@
                 shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
                 fragment.appendChild(shootingStar);
             }
+            
             container.appendChild(fragment);
         }
         createStars();
 
         // ==================== إظهار السداسي المحدد ====================
         function showSemester(semId) {
-            document.querySelectorAll('.semester-content').forEach(content => content.classList.remove('active'));
-            document.querySelectorAll('.semester-tab').forEach(tab => tab.classList.remove('active-tab'));
+            document.querySelectorAll('.semester-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.semester-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            
             const targetContent = document.getElementById(`content-${semId}`);
-            if (targetContent) targetContent.classList.add('active');
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+            
             const targetTab = document.querySelector(`[data-sem="${semId}"]`);
-            if (targetTab) targetTab.classList.add('active-tab');
+            if (targetTab) {
+                targetTab.classList.add('active-tab');
+            }
         }
 
         // ==================== تأثير الظهور عند التمرير ====================
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
         }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // ==================== شريط التنقل - الإخفاء عند التمرير ====================
@@ -928,27 +1088,21 @@
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const topNav = document.getElementById('topNav');
-            if (scrollTop > lastScrollTop && scrollTop > 150) topNav.classList.add('hidden');
-            else if (scrollTop < lastScrollTop) topNav.classList.remove('hidden');
+            if (scrollTop > lastScrollTop && scrollTop > 150) {
+                topNav.classList.add('hidden');
+            } else if (scrollTop < lastScrollTop) {
+                topNav.classList.remove('hidden');
+            }
             lastScrollTop = scrollTop;
         }, { passive: true });
-
-        // ==================== [تمت الإضافة] دالة التمرير إلى القسم ====================
-        function scrollToSection(sectionName) {
-            const section = document.getElementById(`section-${sectionName}`);
-            if (section) {
-                const navHeight = document.getElementById('topNav').offsetHeight;
-                const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-                window.scrollTo({ top: sectionTop - navHeight - 10, behavior: 'smooth' });
-            }
-            closeMobileMenu();
-        }
 
         // ==================== تبديل الوضع الليلي/النهاري ====================
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
+
         const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlElement.setAttribute('data-theme', savedTheme);
+
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -957,11 +1111,20 @@
         });
 
         // ==================== قائمة الموبايل (popup) ====================
-        function openMobileMenu() { document.getElementById('mobileMenuOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeMobileMenu() { document.getElementById('mobileMenuOverlay').classList.remove('open'); document.body.style.overflow = ''; }
+        function openMobileMenu() {
+            document.getElementById('mobileMenuOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenuOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
         document.getElementById('menuToggle').addEventListener('click', openMobileMenu);
         document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
-        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) { if (e.target === this) closeMobileMenu(); });
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeMobileMenu();
+        });
     </script>
 </body>
 </html>
