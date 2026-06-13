@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
@@ -19,13 +19,13 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>QCM : ANOMALIES BÉNIGNES DE LA LIGNÉE LEUCOCYTAIRE - GhaniPharma</title>
-    <meta name="description" content="QCM sur les anomalies bénignes de la lignée leucocytaire. 15 questions, 45 minutes.">
+    <title>QCM: BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE - GhaniPharma</title>
+    <meta name="description" content="QCM on benign anomalies of the leukocyte lineage. 15 questions, 45 minutes.">
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ==================== متغيرات CSS للوضعين (مطابقة للـ index) ==================== */
+        /* ==================== CSS Variables for both themes (matching index) ==================== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -47,7 +47,7 @@
             --input-bg: rgba(255, 255, 255, 0.05);
             --input-border: rgba(255, 255, 255, 0.15);
             --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
-            /* ألوان الامتحان */
+            /* Exam colors */
             --q-bg: rgba(20, 20, 40, 0.8);
             --q-border: rgba(255,255,255,0.08);
             --q-text: #e0e0e0;
@@ -97,7 +97,7 @@
             --timer-color: #b8860b;
         }
 
-        /* ==================== الأساسيات ==================== */
+        /* ==================== Basics ==================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         html {
@@ -114,7 +114,7 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
-        /* ==================== الخلفية ==================== */
+        /* ==================== Background ==================== */
         .universe-bg {
             position: fixed;
             top: 0;
@@ -176,7 +176,7 @@
             opacity: 0.15 !important;
         }
 
-        /* ==================== شريط التنقل العلوي ==================== */
+        /* ==================== Top Navigation Bar ==================== */
         .top-nav {
             position: fixed;
             top: 0;
@@ -245,7 +245,7 @@
             gap: 15px;
         }
 
-        /* --- Menu normal horizontal (grand écran) --- */
+        /* --- Normal horizontal menu (large screen) --- */
         .nav-links {
             display: flex;
             align-items: center;
@@ -364,7 +364,7 @@
             font-size: 1.3rem;
         }
 
-        /* ==================== زر تبديل الوضع ==================== */
+        /* ==================== Theme Toggle Button ==================== */
         .theme-toggle {
             width: 44px;
             height: 44px;
@@ -398,7 +398,7 @@
         [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
         [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
 
-        /* ==================== زر القائمة للموبايل ==================== */
+        /* ==================== Mobile Menu Button ==================== */
         .menu-toggle {
             display: none;
             background: none;
@@ -412,7 +412,7 @@
 
         .menu-toggle:hover { transform: rotate(90deg); }
 
-        /* ==================== المحتوى الرئيسي ==================== */
+        /* ==================== Main Content ==================== */
         .main-wrapper {
             position: relative;
             z-index: 1;
@@ -425,7 +425,7 @@
             padding: 0 20px;
         }
 
-        /* ==================== قسم الامتحان ==================== */
+        /* ==================== Exam Section ==================== */
         .exam-header {
             text-align: center;
             margin-bottom: 30px;
@@ -686,7 +686,7 @@
             transform: translateY(-4px);
         }
 
-        /* نتائج الامتحان */
+        /* Exam Results */
         .result-container {
             display: none;
             text-align: center;
@@ -830,7 +830,7 @@
             box-shadow: 0 15px 35px rgba(253, 187, 45, 0.5);
         }
 
-        /* ==================== تذييل الموقع ==================== */
+        /* ==================== Footer ==================== */
         .site-footer {
             text-align: center;
             padding: 40px 20px;
@@ -882,7 +882,7 @@
             font-size: 0.9rem;
         }
 
-        /* ==================== الميديا كويريز ==================== */
+        /* ==================== Media Queries ==================== */
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .nav-links { display: none !important; }
@@ -906,12 +906,12 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- خلفية النجوم -->
+    <!-- Star Background -->
     <div class="universe-bg">
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- شريط التنقل العلوي (مطابق للـ index) -->
+    <!-- Top Navigation Bar (matching index) -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -919,7 +919,7 @@
                 GhaniPharma
             </a>
             <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème" title="Changer le thème">
+                <button class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
@@ -927,9 +927,9 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="modules.html" class="nav-link"><i class="fas fa-book"></i> Modules</a></li>
-                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
                     <li><a href="index.html#section-contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
@@ -944,59 +944,59 @@
                 <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
-            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
             <a href="modules.html" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
-            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> About</a>
             <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
         </div>
     </div>
 
-    <!-- المحتوى الرئيسي -->
+    <!-- Main Content -->
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- رأس الامتحان -->
+            <!-- Exam Header -->
             <div class="exam-header">
                 <div class="exam-badge">
-                    <i class="fas fa-flask"></i> QCM Hématologie
+                    <i class="fas fa-flask"></i> QCM Hematology
                 </div>
-                <h1 class="exam-title">LES ANOMALIES BÉNIGNES DE LA LIGNÉE LEUCOCYTAIRE</h1>
+                <h1 class="exam-title">BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE</h1>
                 <div class="exam-description">
                     <i class="fas fa-info-circle"></i> 
-                    QCM de 15 questions. Vous avez <strong>45 minutes</strong> pour répondre. 
-                    Note totale sur <strong>20 points</strong>. Chaque question peut avoir une ou plusieurs bonnes réponses.
+                    QCM of 15 questions. You have <strong>45 minutes</strong> to answer. 
+                    Total score out of <strong>20 points</strong>. Each question may have one or more correct answers.
                 </div>
             </div>
 
-            <!-- حاوية الامتحان -->
+            <!-- Exam Container -->
             <div class="exam-container" id="examContainer">
                 <div class="exam-info">
                     <div class="timer">
-                        <i class="fas fa-clock"></i> Temps restant: <span id="time">45:00</span>
+                        <i class="fas fa-clock"></i> Time remaining: <span id="time">45:00</span>
                     </div>
                     <div class="progress">
-                        <i class="fas fa-check-circle"></i> Questions répondues: <span id="answered">0</span>/<span id="total-qs">15</span>
+                        <i class="fas fa-check-circle"></i> Questions answered: <span id="answered">0</span>/<span id="total-qs">15</span>
                     </div>
                 </div>
 
                 <div class="exam-content" id="examContent">
                     <div class="questions-container" id="questions-container">
-                        <!-- سيتم ملء الأسئلة ديناميكيًا -->
+                        <!-- Questions will be filled dynamically -->
                     </div>
                     
                     <div class="actions">
                         <button class="btn btn-primary" id="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Soumettre l'examen
+                            <i class="fas fa-paper-plane"></i> Submit Exam
                         </button>
                         <button class="btn btn-outline" id="reset-btn">
-                            <i class="fas fa-undo"></i> Recommencer
+                            <i class="fas fa-undo"></i> Start Over
                         </button>
                     </div>
                 </div>
 
-                <!-- نتائج الامتحان -->
+                <!-- Exam Results -->
                 <div class="result-container" id="result-container">
-                    <h2 class="result-header">Résultats de l'examen</h2>
+                    <h2 class="result-header">Exam Results</h2>
                     <div class="score" id="final-score">0/20</div>
                     <div class="score-text" id="score-text"></div>
                     
@@ -1005,20 +1005,20 @@
                     <div class="legend">
                         <div class="legend-item">
                             <div class="legend-color full-points"></div>
-                            <span>Point complet (1,33)</span>
+                            <span>Full point (1.33)</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color partial-points"></div>
-                            <span>Points partiels</span>
+                            <span>Partial points</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color zero-points"></div>
-                            <span>Zéro point</span>
+                            <span>Zero points</span>
                         </div>
                     </div>
                     
                     <button class="restart-btn" id="restart-btn">
-                        <i class="fas fa-redo"></i> Refaire l'examen
+                        <i class="fas fa-redo"></i> Retake Exam
                     </button>
                 </div>
             </div>
@@ -1026,7 +1026,7 @@
         </div>
     </div>
 
-    <!-- تذييل الموقع (مطابق للـ index) -->
+    <!-- Footer (matching index) -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1036,11 +1036,11 @@
             <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+        <p class="copyright">&copy; 2025 GhaniPharma. All rights reserved.</p>
     </footer>
 
     <script>
-        // ==================== توليد النجوم ====================
+        // ==================== Generate Stars ====================
         function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -1071,66 +1071,66 @@
         }
         createStars();
 
-        // ==================== قاعدة بيانات الأسئلة (لم تتغير) ====================
+        // ==================== Question Database (unchanged) ====================
         const questions = [
             {
                 id: 1,
-                text: "Concernant les mécanismes physiopathologiques pouvant modifier le taux de leucocytes circulants, lesquels sont cités ?",
+                text: "Regarding the pathophysiological mechanisms that can modify the circulating leukocyte count, which ones are mentioned?",
                 correctAnswers: ["a", "c", "d"],
                 options: [
-                    { id: "a", text: "Anomalies de production médullaire." },
-                    { id: "b", text: "Anomalies de la fonction phagocytaire." },
-                    { id: "c", text: "Anomalies de répartition entre pool circulant et pool marginal." },
-                    { id: "d", text: "Anomalies périphériques anormales (destruction, séquestration)." }
+                    { id: "a", text: "Abnormalities of medullary production." },
+                    { id: "b", text: "Abnormalities of phagocytic function." },
+                    { id: "c", text: "Abnormalities of distribution between circulating pool and marginal pool." },
+                    { id: "d", text: "Abnormal peripheral anomalies (destruction, sequestration)." }
                 ]
             },
             {
                 id: 2,
-                text: "Pour interpréter une formule leucocytaire, quelle démarche est indispensable ?",
+                text: "To interpret a leukocyte formula, which approach is essential?",
                 correctAnswers: ["b", "c", "d"],
                 options: [
-                    { id: "a", text: "Se fier uniquement aux pourcentages (valeurs relatives)." },
-                    { id: "b", text: "Convertir les pourcentages en valeurs absolues (par mm³)." },
-                    { id: "c", text: "Multiplier le pourcentage de chaque lignée par la numération leucocytaire totale." },
-                    { id: "d", text: "Comparer les valeurs obtenues aux normes de l'adulte sain." }
+                    { id: "a", text: "Rely solely on percentages (relative values)." },
+                    { id: "b", text: "Convert percentages to absolute values (per mm³)." },
+                    { id: "c", text: "Multiply the percentage of each lineage by the total leukocyte count." },
+                    { id: "d", text: "Compare the obtained values to the norms of a healthy adult." }
                 ]
             },
             {
                 id: 3,
-                text: "Quelles sont les valeurs seuils définissant une hyperleucocytose chez l'adulte ?",
+                text: "What are the threshold values defining hyperleukocytosis in adults?",
                 correctAnswers: ["b", "c"],
                 options: [
-                    { id: "a", text: "GB > 4000/mm³" },
-                    { id: "b", text: "GB > 10000/mm³" },
-                    { id: "c", text: "GB > 10 G/L" },
-                    { id: "d", text: "GB < 4000/mm³" }
+                    { id: "a", text: "WBC > 4000/mm³" },
+                    { id: "b", text: "WBC > 10000/mm³" },
+                    { id: "c", text: "WBC > 10 G/L" },
+                    { id: "d", text: "WBC < 4000/mm³" }
                 ]
             },
             {
                 id: 4,
-                text: "Parmi les étiologies suivantes, lesquelles peuvent provoquer une neutrophilie (PNN > 7500/mm³) ?",
+                text: "Among the following etiologies, which can cause neutrophilia (PMN > 7500/mm³)?",
                 correctAnswers: ["a", "c", "d"],
                 options: [
-                    { id: "a", text: "Infection bactérienne aiguë (ex : abcès, angine)." },
-                    { id: "b", text: "Carence en vitamine B12." },
-                    { id: "c", text: "Exercice physique intense ou stress aigu." },
-                    { id: "d", text: "Prise de corticostéroïdes." }
+                    { id: "a", text: "Acute bacterial infection (e.g., abscess, tonsillitis)." },
+                    { id: "b", text: "Vitamin B12 deficiency." },
+                    { id: "c", text: "Intense physical exercise or acute stress." },
+                    { id: "d", text: "Corticosteroid intake." }
                 ]
             },
             {
                 id: 5,
-                text: "Concernant l'hyperéosinophilie (PNE > 500/mm³), quelles causes sont évoquées ?",
+                text: "Regarding hypereosinophilia (PNE > 500/mm³), which causes are mentioned?",
                 correctAnswers: ["a", "b"],
                 options: [
-                    { id: "a", text: "Infections parasitaires (ex : helminthiases)." },
-                    { id: "b", text: "Réactions allergiques (ex : asthme, eczéma)." },
-                    { id: "c", text: "Infections virales aiguës (ex : grippe)." },
-                    { id: "d", text: "Hypothyroïdie." }
+                    { id: "a", text: "Parasitic infections (e.g., helminthiases)." },
+                    { id: "b", text: "Allergic reactions (e.g., asthma, eczema)." },
+                    { id: "c", text: "Acute viral infections (e.g., flu)." },
+                    { id: "d", text: "Hypothyroidism." }
                 ]
             },
             {
                 id: 6,
-                text: "Une hyperlymphocytose chez l'adulte est définie par un taux supérieur à :",
+                text: "Hyperlymphocytosis in adults is defined by a count greater than:",
                 correctAnswers: ["b"],
                 options: [
                     { id: "a", text: "1500/mm³" },
@@ -1141,111 +1141,111 @@
             },
             {
                 id: 7,
-                text: "Quelles pathologies peuvent se présenter avec une lymphocytose aiguë à lymphocytes atypiques ?",
+                text: "Which pathologies can present with acute lymphocytosis with atypical lymphocytes?",
                 correctAnswers: ["a", "b"],
                 options: [
-                    { id: "a", text: "Mononucléose infectieuse (EBV)." },
-                    { id: "b", text: "Toxoplasmose." },
-                    { id: "c", text: "Rubéole." },
-                    { id: "d", text: "Tuberculose active." }
+                    { id: "a", text: "Infectious mononucleosis (EBV)." },
+                    { id: "b", text: "Toxoplasmosis." },
+                    { id: "c", text: "Rubella." },
+                    { id: "d", text: "Active tuberculosis." }
                 ]
             },
             {
                 id: 8,
-                text: "Concernant la monocytose (monocytes > 1000/mm³), quelles étiologies sont mentionnées ?",
+                text: "Regarding monocytosis (monocytes > 1000/mm³), which etiologies are mentioned?",
                 correctAnswers: ["a", "b", "c"],
                 options: [
-                    { id: "a", text: "Infections bactériennes (brucellose, salmonellose)." },
-                    { id: "b", text: "Infections parasitaires (toxoplasmose, paludisme)." },
-                    { id: "c", text: "Maladies auto-immunes (lupus, polyarthrite rhumatoïde)." },
-                    { id: "d", text: "Carence en fer." }
+                    { id: "a", text: "Bacterial infections (brucellosis, salmonellosis)." },
+                    { id: "b", text: "Parasitic infections (toxoplasmosis, malaria)." },
+                    { id: "c", text: "Autoimmune diseases (lupus, rheumatoid arthritis)." },
+                    { id: "d", text: "Iron deficiency." }
                 ]
             },
             {
                 id: 9,
-                text: "Une neutropénie est définie par un taux de PNN inférieur à :",
+                text: "Neutropenia is defined by a PMN count lower than:",
                 correctAnswers: ["a"],
                 options: [
                     { id: "a", text: "1500/mm³" },
                     { id: "b", text: "7500/mm³" },
-                    { id: "c", text: "200/mm³ (agranulocytose)." },
+                    { id: "c", text: "200/mm³ (agranulocytosis)." },
                     { id: "d", text: "4000/mm³" }
                 ]
             },
             {
                 id: 10,
-                text: "Parmi les causes de neutropénie acquise, lesquelles sont citées ?",
+                text: "Among the causes of acquired neutropenia, which are mentioned?",
                 correctAnswers: ["a", "b", "c"],
                 options: [
-                    { id: "a", text: "Carence en vitamine B12 ou folates." },
-                    { id: "b", text: "Infection virale (grippe, VIH)." },
-                    { id: "c", text: "Médicaments (antimitotiques, certains antibiotiques)." },
-                    { id: "d", text: "Exercice physique extrême." }
+                    { id: "a", text: "Vitamin B12 or folate deficiency." },
+                    { id: "b", text: "Viral infection (flu, HIV)." },
+                    { id: "c", text: "Medications (antimitotics, certain antibiotics)." },
+                    { id: "d", text: "Extreme physical exercise." }
                 ]
             },
             {
                 id: 11,
-                text: "Concernant la lymphopénie (lymphocytes < 1000/mm³), quelles situations sont évoquées ?",
+                text: "Regarding lymphopenia (lymphocytes < 1000/mm³), which situations are mentioned?",
                 correctAnswers: ["a", "b", "c"],
                 options: [
-                    { id: "a", text: "Déficit immunitaire acquis (SIDA)." },
-                    { id: "b", text: "Radiothérapie ou chimiothérapie." },
-                    { id: "c", text: "Traitement par corticostéroïdes." },
-                    { id: "d", text: "Hyperthyroïdie." }
+                    { id: "a", text: "Acquired immune deficiency (AIDS)." },
+                    { id: "b", text: "Radiotherapy or chemotherapy." },
+                    { id: "c", text: "Corticosteroid treatment." },
+                    { id: "d", text: "Hyperthyroidism." }
                 ]
             },
             {
                 id: 12,
-                text: "Quelles anomalies morphologiques peuvent être observées au niveau des PNN ?",
+                text: "Which morphological abnormalities can be observed in PMNs?",
                 correctAnswers: ["a", "b", "c"],
                 options: [
-                    { id: "a", text: "Hypersegmentation nucléaire (carence en B12/folates)." },
-                    { id: "b", text: "Hyposegmentation nucléaire (sepsis, anomalie de Pelger-Huët)." },
-                    { id: "c", text: "Hypergranulation cytoplasmique." },
-                    { id: "d", text: "Présence de granulations azurophiles géantes." }
+                    { id: "a", text: "Nuclear hypersegmentation (B12/folate deficiency)." },
+                    { id: "b", text: "Nuclear hyposegmentation (sepsis, Pelger-Huët anomaly)." },
+                    { id: "c", text: "Cytoplasmic hypergranulation." },
+                    { id: "d", text: "Presence of giant azurophilic granules." }
                 ]
             },
             {
                 id: 13,
-                text: "Concernant les lymphocytes atypiques, quelle affirmation est correcte ?",
+                text: "Regarding atypical lymphocytes, which statement is correct?",
                 correctAnswers: ["a", "c"],
                 options: [
-                    { id: "a", text: "Ils sont caractéristiques des syndromes mononucléosiques (ex : MNI)." },
-                    { id: "b", text: "Ils indiquent toujours une hémopathie maligne." },
-                    { id: "c", text: "Ils correspondent à des lymphocytes activés ou stimulés." },
-                    { id: "d", text: "Leur présence est pathognomonique d'une leucémie aiguë lymphoblastique." }
+                    { id: "a", text: "They are characteristic of mononucleosis syndromes (e.g., IM)." },
+                    { id: "b", text: "They always indicate a malignant hemopathy." },
+                    { id: "c", text: "They correspond to activated or stimulated lymphocytes." },
+                    { id: "d", text: "Their presence is pathognomonic of acute lymphoblastic leukemia." }
                 ]
             },
             {
                 id: 14,
-                text: "Dans la démarche diagnostique d'une anomalie leucocytaire bénigne, quels éléments sont essentiels ?",
+                text: "In the diagnostic approach to a benign leukocyte anomaly, which elements are essential?",
                 correctAnswers: ["a", "b", "d"],
                 options: [
-                    { id: "a", text: "Un interrogatoire détaillé (âge, médicaments...)." },
-                    { id: "b", text: "Un examen clinique complet." },
-                    { id: "c", text: "La réalisation systématique d'un myélogramme en première intention." },
-                    { id: "d", text: "Des examens complémentaires ciblés (VS, hémocultures, etc.)." }
+                    { id: "a", text: "A detailed interview (age, medications...)." },
+                    { id: "b", text: "A complete clinical examination." },
+                    { id: "c", text: "Systematic performance of a myelogram as first-line." },
+                    { id: "d", text: "Targeted additional tests (ESR, blood cultures, etc.)." }
                 ]
             },
             {
                 id: 15,
-                text: "Quelle affirmation concernant l'équilibre leucocytaire est correcte ?",
+                text: "Which statement regarding leukocyte balance is correct?",
                 correctAnswers: ["b"],
                 options: [
-                    { id: "a", text: "Sa perturbation nécessite toujours un traitement immunomodulateur." },
-                    { id: "b", text: "Il se rétablit généralement avec le traitement de la cause sous-jacente." },
-                    { id: "c", text: "Les anomalies bénignes sont toujours symptomatiques." },
-                    { id: "d", text: "La surveillance par hémogramme est inutile une fois le diagnostic posé." }
+                    { id: "a", text: "Its disturbance always requires immunomodulatory treatment." },
+                    { id: "b", text: "It generally restores with treatment of the underlying cause." },
+                    { id: "c", text: "Benign anomalies are always symptomatic." },
+                    { id: "d", text: "Monitoring by hemogram is useless once the diagnosis is made." }
                 ]
             }
         ];
 
-        // المتغيرات العامة للامتحان
+        // Global exam variables
         const pointsPerQuestion = 20 / 15;
         let timeLeft = 45 * 60;
         let timerInterval;
 
-        // تهيئة الامتحان
+        // Initialize exam
         function initExam() {
             displayAllQuestions();
             updateProgress();
@@ -1256,7 +1256,7 @@
             document.getElementById('restart-btn').addEventListener('click', restartExam);
         }
 
-        // عرض جميع الأسئلة
+        // Display all questions
         function displayAllQuestions() {
             const container = document.getElementById('questions-container');
             let questionsHTML = '';
@@ -1287,7 +1287,7 @@
             
             container.innerHTML = questionsHTML;
             
-            // مستمعات الأحداث
+            // Event listeners
             document.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     const optionElement = this.closest('.option');
@@ -1301,7 +1301,7 @@
             });
         }
 
-        // جمع الإجابات
+        // Collect student answers
         function collectStudentAnswers() {
             const userAnswers = {};
             questions.forEach(question => {
@@ -1318,7 +1318,7 @@
             return userAnswers;
         }
 
-        // تحديث عداد التقدم
+        // Update progress counter
         function updateProgress() {
             const userAnswers = collectStudentAnswers();
             const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
@@ -1326,7 +1326,7 @@
             document.getElementById('total-qs').textContent = questions.length;
         }
 
-        // المؤقت
+        // Timer
         function startTimer() {
             timerInterval = setInterval(function() {
                 timeLeft--;
@@ -1342,7 +1342,7 @@
             }, 1000);
         }
 
-        // تصحيح الامتحان
+        // Grade exam
         function submitExam() {
             clearInterval(timerInterval);
             const userAnswers = collectStudentAnswers();
@@ -1360,7 +1360,7 @@
                         score: 0,
                         correctChoices: correctList,
                         studentChoices: studentList,
-                        note: 'Aucune réponse sélectionnée'
+                        note: 'No answer selected'
                     };
                     return;
                 }
@@ -1378,7 +1378,7 @@
                         score: 0,
                         correctChoices: correctList,
                         studentChoices: studentList,
-                        note: 'Contient une mauvaise réponse'
+                        note: 'Contains an incorrect answer'
                     };
                     return;
                 }
@@ -1391,7 +1391,7 @@
                         score: pointsPerQuestion,
                         correctChoices: correctList,
                         studentChoices: studentList,
-                        note: 'Réponse complète'
+                        note: 'Complete answer'
                     };
                     totalScore += pointsPerQuestion;
                 } else if (correctSelected === 0) {
@@ -1399,7 +1399,7 @@
                         score: 0,
                         correctChoices: correctList,
                         studentChoices: studentList,
-                        note: 'Aucune bonne réponse sélectionnée'
+                        note: 'No correct answer selected'
                     };
                 } else {
                     const score = (correctSelected / totalCorrect) * pointsPerQuestion;
@@ -1407,7 +1407,7 @@
                         score: parseFloat(score.toFixed(4)),
                         correctChoices: correctList,
                         studentChoices: studentList,
-                        note: `Partiel (${correctSelected}/${totalCorrect})`
+                        note: `Partial (${correctSelected}/${totalCorrect})`
                     };
                     totalScore += score;
                 }
@@ -1416,7 +1416,7 @@
             displayResults(totalScore, maxScore, results);
         }
 
-        // عرض النتائج
+        // Display results
         function displayResults(totalScore, maxScore, results) {
             const percentage = ((totalScore / maxScore) * 100).toFixed(2);
             
@@ -1424,7 +1424,7 @@
             document.getElementById('score-text').textContent = getScoreMessage(percentage);
             
             const feedback = document.getElementById('feedback');
-            let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Détails de la correction:</h3>';
+            let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Correction Details:</h3>';
             
             questions.forEach(question => {
                 const questionId = `q${question.id}`;
@@ -1441,7 +1441,7 @@
                 
                 const studentChoicesText = result.studentChoices.length > 0 
                     ? result.studentChoices.join(', ')
-                    : 'Aucune';
+                    : 'None';
                 
                 detailsHTML += `
                     <div class="question-result ${resultClass}">
@@ -1450,8 +1450,8 @@
                             <span>${result.score.toFixed(4)} point</span>
                         </div>
                         <div class="result-details">
-                            <div>Réponses correctes: <span class="correct-answers">${result.correctChoices.join(', ')}</span></div>
-                            <div>Vos réponses: <span class="student-answers">${studentChoicesText}</span></div>
+                            <div>Correct answers: <span class="correct-answers">${result.correctChoices.join(', ')}</span></div>
+                            <div>Your answers: <span class="student-answers">${studentChoicesText}</span></div>
                             <div class="note">${result.note}</div>
                         </div>
                     </div>
@@ -1466,12 +1466,12 @@
         }
 
         function getScoreMessage(percentage) {
-            if (percentage >= 90) return "Excellent! Maîtrise parfaite des anomalies bénignes de la lignée leucocytaire!";
-            if (percentage >= 80) return "Très bien! Excellentes connaissances en hématologie cellulaire!";
-            if (percentage >= 70) return "Bien! Bonnes connaissances sur les anomalies leucocytaires!";
-            if (percentage >= 60) return "Passable! Révision des anomalies leucocytaires recommandée!";
-            if (percentage >= 40) return "Faible! Étudiez davantage les anomalies de la lignée blanche!";
-            return "Très faible! Travaillez plus l'hématologie cellulaire!";
+            if (percentage >= 90) return "Excellent! Perfect mastery of benign anomalies of the leukocyte lineage!";
+            if (percentage >= 80) return "Very good! Excellent knowledge in cellular hematology!";
+            if (percentage >= 70) return "Good! Solid knowledge of leukocyte anomalies!";
+            if (percentage >= 60) return "Fair! Review of leukocyte anomalies recommended!";
+            if (percentage >= 40) return "Low! Study the anomalies of the white lineage more thoroughly!";
+            return "Very low! You need to work harder on cellular hematology!";
         }
 
         function resetExam() {
@@ -1494,9 +1494,9 @@
             startTimer();
         }
 
-        // ==================== وظائف عامة من الـ index ====================
+        // ==================== General Functions from index ====================
 
-        // إخفاء/إظهار الهيدر عند التمرير
+        // Hide/show header on scroll
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1509,7 +1509,7 @@
             lastScrollTop = scrollTop;
         }, { passive: true });
 
-        // القائمة المنبثقة للموبايل
+        // Mobile popup menu
         document.getElementById('menuToggle').addEventListener('click', function() {
             document.getElementById('mobileMenuOverlay').classList.add('open');
             document.body.style.overflow = 'hidden';
@@ -1527,7 +1527,7 @@
             }
         });
 
-        // تبديل الوضع الليلي/النهاري
+        // Dark/Light theme toggle
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1540,7 +1540,7 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // بدء الامتحان عند تحميل الصفحة
+        // Start exam on page load
         document.addEventListener('DOMContentLoaded', initExam);
     </script>
 </body>
