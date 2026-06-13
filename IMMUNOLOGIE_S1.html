@@ -45,11 +45,18 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
             --input-bg: rgba(255, 255, 255, 0.05);
             --input-border: rgba(255, 255, 255, 0.15);
-            --option-bg: rgba(255, 255, 255, 0.05);
-            --option-hover: rgba(0, 188, 212, 0.1);
-            --option-selected: rgba(0, 188, 212, 0.2);
-            --text-question: #2c3e50;
-            --bg-question: rgba(255, 255, 255, 0.9);
+            
+            /* متغيرات خاصة بالأسئلة في الوضع الليلي */
+            --question-bg: rgba(20, 25, 45, 0.85);
+            --question-text-color: #f0f0f0;
+            --question-number-text: #e0e0e0;
+            --option-bg: rgba(255, 255, 255, 0.04);
+            --option-hover-bg: rgba(0, 188, 212, 0.12);
+            --option-selected-bg: rgba(0, 188, 212, 0.2);
+            --option-text: #d0d0d0;
+            --option-border: rgba(255, 255, 255, 0.1);
+            --question-gradient-line: linear-gradient(90deg, #00bcd4, #ffeb3b);
+            
             --correct-bg: rgba(76, 175, 80, 0.15);
             --wrong-bg: rgba(244, 67, 54, 0.15);
             --partial-bg: rgba(255, 193, 7, 0.15);
@@ -78,11 +85,24 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
             --input-bg: rgba(0, 0, 0, 0.03);
             --input-border: rgba(0, 0, 0, 0.15);
+            
+            /* متغيرات خاصة بالأسئلة في الوضع النهاري */
+            --question-bg: rgba(255, 255, 255, 0.95);
+            --question-text-color: #1a202c;
+            --question-number-text: #2d3748;
             --option-bg: rgba(0, 0, 0, 0.02);
-            --option-hover: rgba(0, 151, 167, 0.1);
-            --option-selected: rgba(0, 151, 167, 0.2);
-            --text-question: #1a202c;
-            --bg-question: rgba(255, 255, 255, 0.95);
+            --option-hover-bg: rgba(0, 151, 167, 0.08);
+            --option-selected-bg: rgba(0, 151, 167, 0.15);
+            --option-text: #333;
+            --option-border: rgba(0, 0, 0, 0.1);
+            --question-gradient-line: linear-gradient(90deg, #0097a7, #d4a900);
+            
+            --correct-bg: rgba(76, 175, 80, 0.1);
+            --wrong-bg: rgba(244, 67, 54, 0.1);
+            --partial-bg: rgba(255, 193, 7, 0.1);
+            --correct-border: #4caf50;
+            --wrong-border: #f44336;
+            --partial-border: #ffc107;
         }
 
         /* ==================== الأساسيات ==================== */
@@ -331,14 +351,16 @@
         }
 
         .question {
-            background: var(--bg-question);
+            background: var(--question-bg);
             border-radius: 20px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--border-glass);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .question:hover {
@@ -354,13 +376,13 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: var(--question-gradient-line);
         }
 
         .question-number {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--text-heading);
+            color: var(--question-number-text);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -382,7 +404,7 @@
         .question-text {
             font-size: 1.1rem;
             margin-bottom: 20px;
-            color: var(--text-question);
+            color: var(--question-text-color);
             font-weight: 600;
             line-height: 1.6;
         }
@@ -398,13 +420,21 @@
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid var(--border-glass);
+            border: 2px solid var(--option-border);
             overflow: hidden;
         }
 
-        .option:hover { background: var(--option-hover); transform: translateX(5px); border-color: var(--primary); }
+        .option:hover { 
+            background: var(--option-hover-bg); 
+            transform: translateX(5px); 
+            border-color: var(--primary); 
+        }
 
-        .option.selected { background: var(--option-selected); border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 188, 212, 0.2); }
+        .option.selected { 
+            background: var(--option-selected-bg); 
+            border-color: var(--primary); 
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.2); 
+        }
 
         .option-label {
             display: flex;
@@ -414,9 +444,20 @@
             cursor: pointer;
         }
 
-        .option input { margin-right: 12px; transform: scale(1.2); cursor: pointer; accent-color: var(--primary); }
+        .option input { 
+            margin-right: 12px; 
+            transform: scale(1.2); 
+            cursor: pointer; 
+            accent-color: var(--primary); 
+        }
 
-        .option-label span { cursor: pointer; flex-grow: 1; font-size: 0.95rem; color: var(--text-primary); font-weight: 500; }
+        .option-label span { 
+            cursor: pointer; 
+            flex-grow: 1; 
+            font-size: 0.95rem; 
+            color: var(--option-text); 
+            font-weight: 500; 
+        }
 
         /* ==================== أزرار الإجراءات ==================== */
         .actions {
