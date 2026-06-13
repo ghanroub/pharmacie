@@ -19,12 +19,13 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>QCM DE : LES ANOMALIES BENIGNES DE LA LIGNEE LEUCOCYTAIRE - GhaniPharma</title>
+    <title>QCM : ANOMALIES BÉNIGNES DE LA LIGNÉE LEUCOCYTAIRE - GhaniPharma</title>
+    <meta name="description" content="QCM sur les anomalies bénignes de la lignée leucocytaire. 15 questions, 45 minutes.">
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ==================== متغيرات CSS للوضعين ==================== */
+        /* ==================== متغيرات CSS للوضعين (مطابقة للـ index) ==================== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -45,24 +46,20 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
             --input-bg: rgba(255, 255, 255, 0.05);
             --input-border: rgba(255, 255, 255, 0.15);
-            
-            /* متغيرات خاصة بالأسئلة في الوضع الليلي */
-            --question-bg: rgba(20, 25, 45, 0.85);
-            --question-text-color: #f0f0f0;
-            --question-number-text: #e0e0e0;
-            --option-bg: rgba(255, 255, 255, 0.04);
-            --option-hover-bg: rgba(0, 188, 212, 0.12);
-            --option-selected-bg: rgba(0, 188, 212, 0.2);
-            --option-text: #d0d0d0;
-            --option-border: rgba(255, 255, 255, 0.1);
-            --question-gradient-line: linear-gradient(90deg, #00bcd4, #ffeb3b);
-            
-            --correct-bg: rgba(76, 175, 80, 0.15);
-            --wrong-bg: rgba(244, 67, 54, 0.15);
-            --partial-bg: rgba(255, 193, 7, 0.15);
-            --correct-border: #4caf50;
-            --wrong-border: #f44336;
-            --partial-border: #ffc107;
+            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            /* ألوان الامتحان */
+            --q-bg: rgba(20, 20, 40, 0.8);
+            --q-border: rgba(255,255,255,0.08);
+            --q-text: #e0e0e0;
+            --q-number-bg: linear-gradient(135deg, #4facfe, #00f2fe);
+            --option-bg: rgba(255,255,255,0.03);
+            --option-hover-bg: rgba(0,188,212,0.08);
+            --option-selected-bg: rgba(0,188,212,0.15);
+            --option-selected-border: #00bcd4;
+            --correct-bg: rgba(76,175,80,0.1);
+            --partial-bg: rgba(255,193,7,0.1);
+            --wrong-bg: rgba(244,67,54,0.1);
+            --timer-color: #ffeb3b;
         }
 
         [data-theme="light"] {
@@ -85,30 +82,27 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
             --input-bg: rgba(0, 0, 0, 0.03);
             --input-border: rgba(0, 0, 0, 0.15);
-            
-            /* متغيرات خاصة بالأسئلة في الوضع النهاري */
-            --question-bg: rgba(255, 255, 255, 0.95);
-            --question-text-color: #1a202c;
-            --question-number-text: #2d3748;
-            --option-bg: rgba(0, 0, 0, 0.02);
-            --option-hover-bg: rgba(0, 151, 167, 0.08);
-            --option-selected-bg: rgba(0, 151, 167, 0.15);
-            --option-text: #333;
-            --option-border: rgba(0, 0, 0, 0.1);
-            --question-gradient-line: linear-gradient(90deg, #0097a7, #d4a900);
-            
-            --correct-bg: rgba(76, 175, 80, 0.1);
-            --wrong-bg: rgba(244, 67, 54, 0.1);
-            --partial-bg: rgba(255, 193, 7, 0.1);
-            --correct-border: #4caf50;
-            --wrong-border: #f44336;
-            --partial-border: #ffc107;
+            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            --q-bg: rgba(255,255,255,0.85);
+            --q-border: rgba(0,0,0,0.08);
+            --q-text: #2d3748;
+            --q-number-bg: linear-gradient(135deg, #0097a7, #26c6da);
+            --option-bg: rgba(0,0,0,0.02);
+            --option-hover-bg: rgba(0,151,167,0.05);
+            --option-selected-bg: rgba(0,151,167,0.1);
+            --option-selected-border: #0097a7;
+            --correct-bg: rgba(76,175,80,0.08);
+            --partial-bg: rgba(255,193,7,0.08);
+            --wrong-bg: rgba(244,67,54,0.08);
+            --timer-color: #b8860b;
         }
 
         /* ==================== الأساسيات ==================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -118,8 +112,6 @@
             line-height: 1.7;
             min-height: 100vh;
             transition: background 0.5s ease, color 0.5s ease;
-            display: flex;
-            flex-direction: column;
         }
 
         /* ==================== الخلفية ==================== */
@@ -135,7 +127,14 @@
             transition: background 0.5s ease;
         }
 
-        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
 
         .star {
             position: absolute;
@@ -151,6 +150,27 @@
             50% { opacity: 0.8; transform: scale(1.8); }
         }
 
+        .shooting-star {
+            position: absolute;
+            width: 120px;
+            height: 1.5px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+            animation: shoot 4s ease-in-out infinite;
+            animation-delay: var(--shoot-delay);
+            opacity: 0;
+        }
+
+        @keyframes shoot {
+            0% { opacity: 0; transform: translateX(0) translateY(0); }
+            4% { opacity: 1; }
+            12% { opacity: 0; transform: translateX(350px) translateY(350px); }
+            100% { opacity: 0; transform: translateX(350px) translateY(350px); }
+        }
+
+        [data-theme="light"] .star,
+        [data-theme="light"] .shooting-star {
+            opacity: 0.3 !important;
+        }
         [data-theme="light"] .star {
             animation: none !important;
             opacity: 0.15 !important;
@@ -171,7 +191,9 @@
             padding: 0 20px;
         }
 
-        .top-nav.hidden { transform: translateY(-100%); }
+        .top-nav.hidden {
+            transform: translateY(-100%);
+        }
 
         .nav-container {
             max-width: 1400px;
@@ -194,7 +216,10 @@
             transition: all 0.3s ease;
         }
 
-        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .nav-logo:hover {
+            color: var(--text-heading);
+            transform: scale(1.05);
+        }
 
         .nav-logo .logo-icon {
             width: 42px;
@@ -214,9 +239,19 @@
             50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
         }
 
-        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        /* --- Menu normal horizontal (grand écran) --- */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
 
         .nav-link {
             position: relative;
@@ -234,8 +269,102 @@
             font-family: inherit;
         }
 
-        .nav-link:hover { color: var(--text-heading); background: rgba(128, 128, 128, 0.1); }
+        .nav-link:hover {
+            color: var(--text-heading);
+            background: rgba(128, 128, 128, 0.1);
+        }
 
+        /* ==================== POPUP MOBILE MENU ==================== */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%;
+            max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .mobile-menu-overlay.open .mobile-menu-popup {
+            transform: scale(1);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            background: var(--bg-glass);
+            border-radius: 60px;
+            color: var(--text-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .mobile-nav-link:hover {
+            border-color: var(--primary);
+            background: rgba(0,188,212,0.1);
+            transform: translateX(6px);
+        }
+
+        .mobile-nav-link i {
+            color: var(--primary);
+            width: 28px;
+            font-size: 1.3rem;
+        }
+
+        /* ==================== زر تبديل الوضع ==================== */
         .theme-toggle {
             width: 44px;
             height: 44px;
@@ -259,31 +388,60 @@
             box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
         }
 
-        .theme-toggle i { transition: all 0.5s ease; }
+        .theme-toggle i {
+            transition: all 0.5s ease;
+        }
+
         [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
         [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
         [data-theme="light"] .theme-toggle .fa-moon { display: none; }
         [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
         [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
 
+        /* ==================== زر القائمة للموبايل ==================== */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover { transform: rotate(90deg); }
+
         /* ==================== المحتوى الرئيسي ==================== */
         .main-wrapper {
             position: relative;
             z-index: 1;
             padding-top: 90px;
-            flex: 1;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
-        /* ==================== ترويسة الامتحان ==================== */
+        /* ==================== قسم الامتحان ==================== */
         .exam-header {
             text-align: center;
             margin-bottom: 30px;
+        }
+
+        .exam-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
         .exam-title {
@@ -296,6 +454,7 @@
             background-clip: text;
             animation: gradientShift 6s ease-in-out infinite;
             margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         @keyframes gradientShift {
@@ -305,58 +464,68 @@
 
         .exam-description {
             color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
             background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            padding: 15px 25px;
+            padding: 15px 20px;
             border-radius: 16px;
-            line-height: 1.6;
+            border: 1px solid var(--border-glass);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            display: inline-block;
         }
 
-        /* ==================== بطاقة الامتحان ==================== */
-        .exam-card {
+        .exam-container {
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
             border-radius: 24px;
-            padding: 30px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             box-shadow: var(--shadow-card);
         }
 
         .exam-info {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
+            align-items: center;
             background: var(--bg-glass);
             padding: 15px 20px;
             border-radius: 16px;
             margin-bottom: 25px;
-            color: var(--text-heading);
             border: 1px solid var(--border-glass);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .timer { font-weight: 600; color: var(--accent); }
-        .progress { color: var(--text-secondary); }
+        .timer {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--timer-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-        /* ==================== الأسئلة ==================== */
+        .progress {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
         .questions-container {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
         .question {
-            background: var(--question-bg);
+            background: var(--q-bg);
+            border: 1px solid var(--q-border);
             border-radius: 20px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-glass);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
@@ -364,9 +533,9 @@
         }
 
         .question:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-card);
             border-color: var(--card-hover-border);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
         }
 
         .question::before {
@@ -375,96 +544,106 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: var(--question-gradient-line);
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
         .question-number {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--question-number-text);
+            color: var(--text-heading);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
         .question-number span {
-            background: linear-gradient(135deg, var(--primary), #4facfe);
+            background: var(--q-number-bg);
             color: white;
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 12px;
-            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .question-text {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: var(--question-text-color);
+            font-size: 1.05rem;
             font-weight: 600;
-            line-height: 1.6;
+            color: var(--q-text);
+            margin-bottom: 18px;
+            line-height: 1.5;
         }
 
-        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
 
-        @media (max-width: 768px) { .options { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .options {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .option {
             display: flex;
             align-items: center;
+            padding: 0;
             background: var(--option-bg);
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid var(--option-border);
+            border: 2px solid var(--border-glass);
             overflow: hidden;
         }
 
-        .option:hover { 
-            background: var(--option-hover-bg); 
-            transform: translateX(5px); 
-            border-color: var(--primary); 
+        .option:hover {
+            background: var(--option-hover-bg);
+            transform: translateX(4px);
+            border-color: var(--primary);
         }
 
-        .option.selected { 
-            background: var(--option-selected-bg); 
-            border-color: var(--primary); 
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.2); 
+        .option.selected {
+            background: var(--option-selected-bg);
+            border-color: var(--option-selected-border);
+            box-shadow: 0 0 12px rgba(0, 188, 212, 0.15);
         }
 
         .option-label {
             display: flex;
             align-items: center;
             width: 100%;
-            padding: 15px;
+            height: 100%;
+            padding: 14px 18px;
             cursor: pointer;
+            gap: 12px;
         }
 
-        .option input { 
-            margin-right: 12px; 
-            transform: scale(1.2); 
-            cursor: pointer; 
-            accent-color: var(--primary); 
+        .option input[type="checkbox"] {
+            transform: scale(1.3);
+            cursor: pointer;
+            accent-color: var(--primary);
         }
 
-        .option-label span { 
-            cursor: pointer; 
-            flex-grow: 1; 
-            font-size: 0.95rem; 
-            color: var(--option-text); 
-            font-weight: 500; 
+        .option-label span {
+            cursor: pointer;
+            flex-grow: 1;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
-        /* ==================== أزرار الإجراءات ==================== */
         .actions {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
@@ -472,7 +651,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 35px;
+            padding: 14px 30px;
             border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
@@ -485,14 +664,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: linear-gradient(135deg, #28a745, #20c997);
             color: #fff;
-            box-shadow: var(--shadow-btn);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px var(--btn-hover-shadow);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.5);
         }
 
         .btn-outline {
@@ -501,33 +680,24 @@
             border: 2px solid var(--border-glass);
         }
 
-        .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-5px); }
-
-        .btn-accent {
-            background: linear-gradient(135deg, #fdbb2d, #f7a900);
-            color: #1a1a2e;
-            box-shadow: 0 4px 15px rgba(253, 187, 45, 0.3);
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-4px);
         }
 
-        .btn-accent:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(253, 187, 45, 0.5); }
-
-        /* ==================== نتائج التصحيح ==================== */
+        /* نتائج الامتحان */
         .result-container {
             display: none;
             text-align: center;
-            padding: 40px 20px;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            padding: 30px;
         }
 
         .result-header {
             font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 20px;
-            background: var(--gradient-hero);
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -537,40 +707,128 @@
             font-size: 5rem;
             font-weight: 900;
             color: var(--accent);
-            margin: 20px 0;
-            text-shadow: 0 0 30px rgba(255, 235, 59, 0.3);
+            margin: 15px 0;
+            text-shadow: 0 0 20px rgba(255,235,59,0.3);
         }
 
-        .score-text { font-size: 1.2rem; margin-bottom: 30px; color: var(--text-secondary); }
+        .score-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            padding: 0 15px;
+        }
 
-        .feedback { background: var(--bg-glass); padding: 25px; border-radius: 20px; margin-top: 20px; text-align: left; border: 1px solid var(--border-glass); }
+        .feedback {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            margin-top: 20px;
+        }
 
-        .feedback h3 { color: var(--text-heading); margin-bottom: 20px; font-size: 1.3rem; }
+        .feedback h3 {
+            color: var(--text-heading);
+            margin-bottom: 15px;
+        }
 
-        .question-result { padding: 18px; margin-bottom: 15px; border-radius: 16px; border: 1px solid var(--border-glass); transition: all 0.3s ease; }
+        .question-result {
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border-glass);
+        }
 
-        .question-result.correct { background: var(--correct-bg); border-color: var(--correct-border); }
-        .question-result.partial { background: var(--partial-bg); border-color: var(--partial-border); }
-        .question-result.wrong { background: var(--wrong-bg); border-color: var(--wrong-border); }
+        .question-result.correct {
+            background: var(--correct-bg);
+            border-color: rgba(76,175,80,0.3);
+        }
 
-        .question-result-header { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 8px; color: var(--text-heading); flex-wrap: wrap; }
+        .question-result.partial {
+            background: var(--partial-bg);
+            border-color: rgba(255,193,7,0.3);
+        }
 
-        .result-details { font-size: 0.9rem; color: var(--text-secondary); }
+        .question-result.wrong {
+            background: var(--wrong-bg);
+            border-color: rgba(244,67,54,0.3);
+        }
 
-        .correct-answers { color: var(--correct-border); font-weight: 600; }
-        .student-answers { color: var(--primary); font-weight: 600; }
+        .question-result-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-heading);
+            flex-wrap: wrap;
+            gap: 5px;
+        }
 
-        .note { font-style: italic; margin-top: 8px; color: var(--text-secondary); }
+        .result-details {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
 
-        .legend { display: flex; justify-content: center; gap: 25px; margin-top: 25px; flex-wrap: wrap; }
+        .correct-answers {
+            color: #4caf50;
+            font-weight: 700;
+        }
 
-        .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-secondary); }
+        .student-answers {
+            color: var(--primary);
+            font-weight: 700;
+        }
 
-        .legend-color { width: 20px; height: 20px; border-radius: 6px; }
+        .note {
+            font-style: italic;
+            margin-top: 5px;
+            color: var(--text-secondary);
+        }
 
-        .full-points { background: var(--correct-border); }
-        .partial-points { background: var(--partial-border); }
-        .zero-points { background: var(--wrong-border); }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 18px;
+            height: 18px;
+            border-radius: 5px;
+        }
+
+        .full-points { background: rgba(76,175,80,0.3); }
+        .partial-points { background: rgba(255,193,7,0.3); }
+        .zero-points { background: rgba(244,67,54,0.3); }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #fdbb2d, #f7a900);
+            color: #1a1a2e;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 15px 35px;
+            margin-top: 25px;
+            box-shadow: 0 8px 25px rgba(253, 187, 45, 0.3);
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(253, 187, 45, 0.5);
+        }
 
         /* ==================== تذييل الموقع ==================== */
         .site-footer {
@@ -580,9 +838,8 @@
             background: var(--bg-card);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            z-index: 1;
             position: relative;
-            margin-top: auto;
+            z-index: 1;
         }
 
         .social-links {
@@ -594,8 +851,8 @@
         }
 
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: rgba(128, 128, 128, 0.06);
             display: flex;
@@ -603,7 +860,7 @@
             justify-content: center;
             color: var(--text-heading);
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid var(--border-glass);
         }
@@ -620,19 +877,27 @@
         .social-link.tiktok:hover { background: #000; border-color: #69c9d0; color: #fff; }
         .social-link.youtube:hover { background: #ff0000; border-color: #ff0000; color: #fff; }
 
-        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
 
-        /* ==================== تحسينات للجوال ==================== */
+        /* ==================== الميديا كويريز ==================== */
         @media (max-width: 768px) {
-            .container { padding: 0 15px; }
-            .exam-card { padding: 20px 15px; }
-            .exam-title { font-size: 1.6rem; }
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .exam-title { font-size: 1.5rem; }
+            .container { padding: 0 10px; }
+            .exam-container { padding: 15px; }
+            .question { padding: 18px; }
+            .btn { padding: 12px 22px; font-size: 0.9rem; }
             .score { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 480px) {
             .actions { flex-direction: column; align-items: center; }
             .btn { width: 100%; justify-content: center; }
-            .exam-info { flex-direction: column; align-items: center; text-align: center; }
-            .nav-links { display: none; }
-            .question { padding: 20px 15px; }
+            .exam-info { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -646,7 +911,7 @@
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- شريط التنقل العلوي -->
+    <!-- شريط التنقل العلوي (مطابق للـ index) -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -658,65 +923,110 @@
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
-                <ul class="nav-links">
-                    <li><a href="commandez.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Commandez</a></li>
-                    <li><a href="index.html#about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
                     <li><a href="modules.html" class="nav-link"><i class="fas fa-book"></i> Modules</a></li>
-                    <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a href="index.html#section-contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- POPUP MOBILE MENU -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 15px;">
+                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="modules.html" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+
     <!-- المحتوى الرئيسي -->
     <div class="main-wrapper">
         <div class="container">
+
+            <!-- رأس الامتحان -->
             <div class="exam-header">
-                <h1 class="exam-title">QCM DE : LES ANOMALIES BENIGNES DE LA LIGNEE LEUCOCYTAIRE</h1>
+                <div class="exam-badge">
+                    <i class="fas fa-flask"></i> QCM Hématologie
+                </div>
+                <h1 class="exam-title">LES ANOMALIES BÉNIGNES DE LA LIGNÉE LEUCOCYTAIRE</h1>
                 <div class="exam-description">
-                    QCM sur les anomalies bénignes de la lignée leucocytaire. L'examen se compose de 15 questions. Vous avez 45 minutes pour répondre à toutes les questions.
+                    <i class="fas fa-info-circle"></i> 
+                    QCM de 15 questions. Vous avez <strong>45 minutes</strong> pour répondre. 
+                    Note totale sur <strong>20 points</strong>. Chaque question peut avoir une ou plusieurs bonnes réponses.
                 </div>
             </div>
-            
-            <div class="exam-card">
+
+            <!-- حاوية الامتحان -->
+            <div class="exam-container" id="examContainer">
                 <div class="exam-info">
-                    <div class="timer">⏱ Temps restant: <span id="time">45:00</span></div>
-                    <div class="progress">📝 Questions: <span id="answered">0</span>/<span id="total-qs">15</span> répondues</div>
+                    <div class="timer">
+                        <i class="fas fa-clock"></i> Temps restant: <span id="time">45:00</span>
+                    </div>
+                    <div class="progress">
+                        <i class="fas fa-check-circle"></i> Questions répondues: <span id="answered">0</span>/<span id="total-qs">15</span>
+                    </div>
                 </div>
-                
-                <div class="exam-content" id="exam-content">
+
+                <div class="exam-content" id="examContent">
                     <div class="questions-container" id="questions-container">
                         <!-- سيتم ملء الأسئلة ديناميكيًا -->
                     </div>
                     
                     <div class="actions">
-                        <button class="btn btn-primary" id="submit-btn"><i class="fas fa-check-circle"></i> Soumettre l'examen</button>
-                        <button class="btn btn-outline" id="reset-btn"><i class="fas fa-redo-alt"></i> Recommencer</button>
+                        <button class="btn btn-primary" id="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Soumettre l'examen
+                        </button>
+                        <button class="btn btn-outline" id="reset-btn">
+                            <i class="fas fa-undo"></i> Recommencer
+                        </button>
                     </div>
                 </div>
-                
+
+                <!-- نتائج الامتحان -->
                 <div class="result-container" id="result-container">
-                    <h2 class="result-header">📊 Résultats de l'examen</h2>
+                    <h2 class="result-header">Résultats de l'examen</h2>
                     <div class="score" id="final-score">0/20</div>
                     <div class="score-text" id="score-text"></div>
                     
-                    <div class="feedback" id="feedback">
-                        <!-- سيتم ملء التقييم ديناميكيًا -->
-                    </div>
+                    <div class="feedback" id="feedback"></div>
                     
                     <div class="legend">
-                        <div class="legend-item"><div class="legend-color full-points"></div> Point complet (1,33)</div>
-                        <div class="legend-item"><div class="legend-color partial-points"></div> Points partiels</div>
-                        <div class="legend-item"><div class="legend-color zero-points"></div> Zéro point</div>
+                        <div class="legend-item">
+                            <div class="legend-color full-points"></div>
+                            <span>Point complet (1,33)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color partial-points"></div>
+                            <span>Points partiels</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color zero-points"></div>
+                            <span>Zéro point</span>
+                        </div>
                     </div>
                     
-                    <button class="btn btn-accent" id="restart-btn" style="margin-top:25px;"><i class="fas fa-sync-alt"></i> Refaire l'examen</button>
+                    <button class="restart-btn" id="restart-btn">
+                        <i class="fas fa-redo"></i> Refaire l'examen
+                    </button>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <!-- تذييل الموقع -->
+    <!-- تذييل الموقع (مطابق للـ index) -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -733,9 +1043,9 @@
         // ==================== توليد النجوم ====================
         function createStars() {
             const container = document.getElementById('starsContainer');
-            if (!container) return;
             const fragment = document.createDocumentFragment();
-            for (let i = 0; i < 100; i++) {
+            
+            for (let i = 0; i < 180; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.left = Math.random() * 100 + '%';
@@ -747,11 +1057,21 @@
                 star.style.setProperty('--delay', Math.random() * 5 + 's');
                 fragment.appendChild(star);
             }
+            
+            for (let i = 0; i < 4; i++) {
+                const shootingStar = document.createElement('div');
+                shootingStar.className = 'shooting-star';
+                shootingStar.style.left = Math.random() * 50 + '%';
+                shootingStar.style.top = Math.random() * 30 + '%';
+                shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
+                fragment.appendChild(shootingStar);
+            }
+            
             container.appendChild(fragment);
         }
         createStars();
 
-        // ==================== قاعدة البيانات: الأسئلة والإجابات الصحيحة ====================
+        // ==================== قاعدة بيانات الأسئلة (لم تتغير) ====================
         const questions = [
             {
                 id: 1,
@@ -920,7 +1240,7 @@
             }
         ];
 
-        // المتغيرات العامة
+        // المتغيرات العامة للامتحان
         const pointsPerQuestion = 20 / 15;
         let timeLeft = 45 * 60;
         let timerInterval;
@@ -936,15 +1256,15 @@
             document.getElementById('restart-btn').addEventListener('click', restartExam);
         }
 
-        // عرض جميع الأسئلة في صفحة واحدة
+        // عرض جميع الأسئلة
         function displayAllQuestions() {
             const container = document.getElementById('questions-container');
-            
             let questionsHTML = '';
+            
             questions.forEach((question) => {
                 const questionId = `q${question.id}`;
-                
                 let optionsHTML = '';
+                
                 question.options.forEach(option => {
                     optionsHTML += `
                         <div class="option" data-question="${questionId}" data-option="${option.id}">
@@ -967,6 +1287,7 @@
             
             container.innerHTML = questionsHTML;
             
+            // مستمعات الأحداث
             document.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     const optionElement = this.closest('.option');
@@ -978,14 +1299,9 @@
                     updateProgress();
                 });
             });
-            
-            document.querySelectorAll('.option-label').forEach(label => {
-                label.addEventListener('click', function(e) {
-                    setTimeout(updateProgress, 10);
-                });
-            });
         }
 
+        // جمع الإجابات
         function collectStudentAnswers() {
             const userAnswers = {};
             questions.forEach(question => {
@@ -993,13 +1309,16 @@
                 const selectedOptions = [];
                 question.options.forEach(option => {
                     const checkbox = document.getElementById(`${questionId}_${option.id}`);
-                    if (checkbox && checkbox.checked) selectedOptions.push(option.id);
+                    if (checkbox && checkbox.checked) {
+                        selectedOptions.push(option.id);
+                    }
                 });
                 userAnswers[questionId] = selectedOptions;
             });
             return userAnswers;
         }
 
+        // تحديث عداد التقدم
         function updateProgress() {
             const userAnswers = collectStudentAnswers();
             const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
@@ -1007,6 +1326,7 @@
             document.getElementById('total-qs').textContent = questions.length;
         }
 
+        // المؤقت
         function startTimer() {
             timerInterval = setInterval(function() {
                 timeLeft--;
@@ -1014,6 +1334,7 @@
                 const seconds = timeLeft % 60;
                 document.getElementById('time').textContent = 
                     `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
                     submitExam();
@@ -1021,6 +1342,7 @@
             }, 1000);
         }
 
+        // تصحيح الامتحان
         function submitExam() {
             clearInterval(timerInterval);
             const userAnswers = collectStudentAnswers();
@@ -1034,17 +1356,30 @@
                 const studentList = userAnswers[questionId] || [];
                 
                 if (studentList.length === 0) {
-                    results[questionId] = { score: 0, correctChoices: correctList, studentChoices: studentList, note: 'Aucune réponse sélectionnée' };
+                    results[questionId] = {
+                        score: 0,
+                        correctChoices: correctList,
+                        studentChoices: studentList,
+                        note: 'Aucune réponse sélectionnée'
+                    };
                     return;
                 }
                 
                 let hasWrongAnswer = false;
                 for (const choice of studentList) {
-                    if (!correctList.includes(choice)) { hasWrongAnswer = true; break; }
+                    if (!correctList.includes(choice)) {
+                        hasWrongAnswer = true;
+                        break;
+                    }
                 }
                 
                 if (hasWrongAnswer) {
-                    results[questionId] = { score: 0, correctChoices: correctList, studentChoices: studentList, note: 'Contient une mauvaise réponse' };
+                    results[questionId] = {
+                        score: 0,
+                        correctChoices: correctList,
+                        studentChoices: studentList,
+                        note: 'Contient une mauvaise réponse'
+                    };
                     return;
                 }
                 
@@ -1052,13 +1387,28 @@
                 const totalCorrect = correctList.length;
                 
                 if (correctSelected === totalCorrect) {
-                    results[questionId] = { score: pointsPerQuestion, correctChoices: correctList, studentChoices: studentList, note: 'Réponse complète' };
+                    results[questionId] = {
+                        score: pointsPerQuestion,
+                        correctChoices: correctList,
+                        studentChoices: studentList,
+                        note: 'Réponse complète'
+                    };
                     totalScore += pointsPerQuestion;
                 } else if (correctSelected === 0) {
-                    results[questionId] = { score: 0, correctChoices: correctList, studentChoices: studentList, note: 'Aucune bonne réponse sélectionnée' };
+                    results[questionId] = {
+                        score: 0,
+                        correctChoices: correctList,
+                        studentChoices: studentList,
+                        note: 'Aucune bonne réponse sélectionnée'
+                    };
                 } else {
                     const score = (correctSelected / totalCorrect) * pointsPerQuestion;
-                    results[questionId] = { score: parseFloat(score.toFixed(4)), correctChoices: correctList, studentChoices: studentList, note: `Partiel (${correctSelected}/${totalCorrect})` };
+                    results[questionId] = {
+                        score: parseFloat(score.toFixed(4)),
+                        correctChoices: correctList,
+                        studentChoices: studentList,
+                        note: `Partiel (${correctSelected}/${totalCorrect})`
+                    };
                     totalScore += score;
                 }
             });
@@ -1066,24 +1416,32 @@
             displayResults(totalScore, maxScore, results);
         }
 
+        // عرض النتائج
         function displayResults(totalScore, maxScore, results) {
             const percentage = ((totalScore / maxScore) * 100).toFixed(2);
+            
             document.getElementById('final-score').textContent = `${totalScore.toFixed(2)}/${maxScore}`;
             document.getElementById('score-text').textContent = getScoreMessage(percentage);
             
             const feedback = document.getElementById('feedback');
-            let detailsHTML = '<h3>Détails de la correction:</h3>';
+            let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Détails de la correction:</h3>';
             
             questions.forEach(question => {
                 const questionId = `q${question.id}`;
                 const result = results[questionId];
                 let resultClass = '';
                 
-                if (Math.abs(result.score - pointsPerQuestion) < 0.001) resultClass = 'correct';
-                else if (result.score > 0) resultClass = 'partial';
-                else resultClass = 'wrong';
+                if (Math.abs(result.score - pointsPerQuestion) < 0.001) {
+                    resultClass = 'correct';
+                } else if (result.score > 0) {
+                    resultClass = 'partial';
+                } else {
+                    resultClass = 'wrong';
+                }
                 
-                const studentChoicesText = result.studentChoices.length > 0 ? result.studentChoices.join(', ') : 'Aucune';
+                const studentChoicesText = result.studentChoices.length > 0 
+                    ? result.studentChoices.join(', ')
+                    : 'Aucune';
                 
                 detailsHTML += `
                     <div class="question-result ${resultClass}">
@@ -1102,50 +1460,74 @@
             
             feedback.innerHTML = detailsHTML;
             
-            document.getElementById('exam-content').style.display = 'none';
+            document.getElementById('examContent').style.display = 'none';
             document.querySelector('.exam-info').style.display = 'none';
             document.getElementById('result-container').style.display = 'block';
         }
 
         function getScoreMessage(percentage) {
             if (percentage >= 90) return "Excellent! Maîtrise parfaite des anomalies bénignes de la lignée leucocytaire!";
-            else if (percentage >= 80) return "Très bien! Excellentes connaissances en hématologie cellulaire!";
-            else if (percentage >= 70) return "Bien! Bonnes connaissances sur les anomalies leucocytaires!";
-            else if (percentage >= 60) return "Passable! Révision des anomalies leucocytaires recommandée!";
-            else if (percentage >= 40) return "Faible! Étudiez davantage les anomalies de la lignée blanche!";
-            else return "Très faible! Travaillez plus l'hématologie cellulaire!";
+            if (percentage >= 80) return "Très bien! Excellentes connaissances en hématologie cellulaire!";
+            if (percentage >= 70) return "Bien! Bonnes connaissances sur les anomalies leucocytaires!";
+            if (percentage >= 60) return "Passable! Révision des anomalies leucocytaires recommandée!";
+            if (percentage >= 40) return "Faible! Étudiez davantage les anomalies de la lignée blanche!";
+            return "Très faible! Travaillez plus l'hématologie cellulaire!";
         }
 
         function resetExam() {
-            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
             updateProgress();
         }
 
         function restartExam() {
             timeLeft = 45 * 60;
-            document.getElementById('exam-content').style.display = 'block';
+            document.getElementById('examContent').style.display = 'block';
             document.querySelector('.exam-info').style.display = 'flex';
             document.getElementById('result-container').style.display = 'none';
             resetExam();
             clearInterval(timerInterval);
             startTimer();
-            window.scrollTo({ top: document.querySelector('.exam-card').offsetTop - 100, behavior: 'smooth' });
         }
 
-        document.addEventListener('DOMContentLoaded', initExam);
+        // ==================== وظائف عامة من الـ index ====================
 
-        // ==================== شريط التنقل - الإخفاء عند التمرير ====================
+        // إخفاء/إظهار الهيدر عند التمرير
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const topNav = document.getElementById('topNav');
-            if (scrollTop > lastScrollTop && scrollTop > 150) topNav.classList.add('hidden');
-            else if (scrollTop < lastScrollTop) topNav.classList.remove('hidden');
+            if (scrollTop > lastScrollTop && scrollTop > 150) {
+                topNav.classList.add('hidden');
+            } else if (scrollTop < lastScrollTop) {
+                topNav.classList.remove('hidden');
+            }
             lastScrollTop = scrollTop;
         }, { passive: true });
 
-        // ==================== تبديل الوضع الليلي/النهاري ====================
+        // القائمة المنبثقة للموبايل
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mobileMenuOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        document.getElementById('closeMobileMenu').addEventListener('click', function() {
+            document.getElementById('mobileMenuOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // تبديل الوضع الليلي/النهاري
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1157,6 +1539,9 @@
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
+
+        // بدء الامتحان عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', initExam);
     </script>
 </body>
 </html>
