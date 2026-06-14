@@ -409,6 +409,61 @@
 
         .menu-toggle:hover { transform: rotate(90deg); }
 
+        /* ==================== Side Navigation (Dots) - For semester navigation ==================== */
+        .side-dots {
+            position: fixed;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .dot:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+        }
+
+        .dot.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+        }
+
+        .dot-tooltip {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.9);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+
+        .dot:hover .dot-tooltip { opacity: 1; }
+
         /* ==================== Main Content ==================== */
         .main-wrapper {
             position: relative;
@@ -485,17 +540,123 @@
             border: 1px solid var(--border-glass);
         }
 
-        /* ==================== Semester Navigation Tabs - No background frame ==================== */
+        /* ==================== Image Gallery (matched with homepage) ==================== */
+        .gallery-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+
+        .gallery-track {
+            display: flex;
+            animation: scroll 70s linear infinite;
+            width: max-content;
+            gap: 20px;
+        }
+
+        .gallery-wrapper:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
+        .gallery-item {
+            width: 190px;
+            height: 130px;
+            border-radius: 14px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.12);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ==================== Stats Row (matched with homepage) ==================== */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .stat-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--card-hover-border);
+        }
+
+        .stat-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* ==================== Semester Navigation Tabs - Matched with year-tabs ==================== */
         .semester-tabs {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             margin: 30px 0 40px;
         }
 
         .semester-tab {
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
@@ -503,7 +664,7 @@
             border: 2px solid var(--border-glass);
             background: transparent;
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: inherit;
             display: flex;
             align-items: center;
@@ -511,10 +672,10 @@
         }
 
         .semester-tab:hover {
-            border-color: var(--primary);
+            border-color: rgba(128, 128, 128, 0.4);
             color: var(--text-heading);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.15);
         }
 
         .semester-tab.active-tab {
@@ -566,6 +727,11 @@
             font-size: 2rem;
             font-weight: 800;
             color: var(--text-heading);
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
         }
 
         .section-subtitle {
@@ -577,14 +743,14 @@
         .lessons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 22px;
+            gap: 25px;
             margin-top: 25px;
         }
 
         .lesson-card {
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
-            border-radius: 18px;
+            border-radius: 20px;
             padding: 25px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(15px);
@@ -593,10 +759,11 @@
             text-decoration: none;
             display: block;
             color: inherit;
+            overflow: hidden;
         }
 
         .lesson-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-card);
             border-color: var(--card-hover-border);
         }
@@ -627,6 +794,11 @@
             font-weight: 700;
             color: var(--text-heading);
             margin-bottom: 6px;
+            transition: color 0.3s ease;
+        }
+
+        .lesson-card:hover .lesson-title {
+            color: var(--primary);
         }
 
         .lesson-desc {
@@ -645,6 +817,31 @@
 
         .lesson-card:hover .lesson-arrow {
             transform: translateX(5px);
+        }
+
+        /* ==================== Toast Notification ==================== */
+        .toast {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-30px);
+            background: #1a1a2e;
+            color: #ff9800;
+            padding: 16px 35px;
+            border-radius: 50px;
+            z-index: 10000;
+            font-weight: 600;
+            border: 1px solid #ff9800;
+            box-shadow: 0 10px 40px rgba(255, 152, 0, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
         /* ==================== Footer ==================== */
@@ -700,8 +897,8 @@
         /* ==================== Reveal Animation ==================== */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
 
         .reveal.visible {
@@ -712,15 +909,17 @@
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
 
         /* ==================== Media Queries ==================== */
         @media (max-width: 992px) {
+            .side-dots { display: none; }
             .lessons-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
         }
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-            /* Hide normal horizontal menu */
             .nav-links {
                 display: none !important;
             }
@@ -731,12 +930,15 @@
             .container { padding: 0 15px; }
             .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
             .section-icon { width: 45px; height: 45px; font-size: 1.2rem; }
+            .gallery-item { width: 140px; height: 100px; }
+            .stat-number { font-size: 2.2rem; }
         }
 
         @media (max-width: 480px) {
             .semester-tabs { gap: 8px; }
             .semester-tab { padding: 8px 16px; font-size: 0.8rem; }
             .lesson-card { padding: 18px; }
+            .gallery-item { width: 110px; height: 75px; }
         }
     </style>
 </head>
@@ -749,6 +951,9 @@
     <div class="universe-bg">
         <div class="stars" id="starsContainer"></div>
     </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Semester 3 content is not yet available. Please check back later.</div>
 
     <!-- Top Navigation Bar -->
     <nav class="top-nav" id="topNav">
@@ -793,12 +998,19 @@
         </div>
     </div>
 
+    <!-- Side Navigation (Dots) - Navigate between semesters -->
+    <div class="side-dots" id="sideDots">
+        <div class="dot active" data-dot="s1"><span class="dot-tooltip">Semester 1</span></div>
+        <div class="dot" data-dot="s2"><span class="dot-tooltip">Semester 2</span></div>
+        <div class="dot" data-dot="s3"><span class="dot-tooltip">Semester 3</span></div>
+    </div>
+
     <!-- Main Content -->
     <div class="main-wrapper">
         <div class="container">
 
             <!-- Page Header -->
-            <div class="page-header">
+            <div class="page-header" id="pageTop">
                 <div class="subject-badge reveal">
                     <i class="fas fa-microscope"></i> 4th Year Pharmacy
                 </div>
@@ -810,22 +1022,51 @@
                 <div class="header-image reveal reveal-delay-3" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/ghanipharma2/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg');"></div>
             </div>
 
+            <!-- Image Gallery (matched with homepage) -->
+            <div class="gallery-wrapper reveal reveal-delay-3" id="galleryWrapper">
+                <div class="gallery-track" id="galleryTrack"></div>
+            </div>
+
+            <!-- Statistics Row (matched with homepage) -->
+            <div class="stats-row reveal reveal-delay-4" id="statsRowMicro">
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-bacteria"></i></div>
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">Semesters</span>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Lessons</span>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-flask"></i></div>
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Practical Topics</span>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <span class="stat-number" data-target="2">0</span>
+                    <span class="stat-label">Available Semesters</span>
+                </div>
+            </div>
+
             <!-- Semester Navigation Tabs -->
             <div class="semester-tabs reveal" id="semesterTabs">
-                <button class="semester-tab active-tab" data-sem="s1" onclick="showSemester('s1')">
+                <button class="semester-tab active-tab" data-sem="s1">
                     <i class="fas fa-1"></i> Semester 1
                 </button>
-                <button class="semester-tab" data-sem="s2" onclick="showSemester('s2')">
+                <button class="semester-tab" data-sem="s2">
                     <i class="fas fa-2"></i> Semester 2
                 </button>
-                <button class="semester-tab" data-sem="s3" onclick="showSemester('s3')">
+                <button class="semester-tab" data-sem="s3">
                     <i class="fas fa-3"></i> Semester 3
                 </button>
             </div>
 
             <!-- ==================== SEMESTER 1 ==================== -->
             <div class="semester-content active" id="content-s1">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-icon">
                         <i class="fas fa-1"></i>
                     </div>
@@ -885,7 +1126,7 @@
 
             <!-- ==================== SEMESTER 2 ==================== -->
             <div class="semester-content" id="content-s2">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-icon" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">
                         <i class="fas fa-2"></i>
                     </div>
@@ -975,7 +1216,7 @@
 
             <!-- ==================== SEMESTER 3 ==================== -->
             <div class="semester-content" id="content-s3">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-icon" style="background: linear-gradient(135deg, #ff9800, #f44336);">
                         <i class="fas fa-3"></i>
                     </div>
@@ -986,7 +1227,7 @@
                 </div>
 
                 <div class="lessons-grid">
-                    <a href="#" class="lesson-card reveal reveal-delay-1" style="border-color: rgba(255, 152, 0, 0.3);">
+                    <a href="#" class="lesson-card reveal reveal-delay-1" style="border-color: rgba(255, 152, 0, 0.3);" onclick="showToast(); return false;">
                         <div class="lesson-card-header">
                             <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
                                 <i class="fas fa-ban"></i>
@@ -1051,6 +1292,39 @@
         }
         createStars();
 
+        // ==================== Image Gallery (microbiology-themed) ====================
+        const galleryImagesMicro = [
+            "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
+            "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg",
+            "FFFFFFFFLHI.jpeg",
+            "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg",
+            "Symptoms%20of%20Heart%20Attack.jpeg",
+            "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif",
+            "Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
+            "t%C3%A9l%C3%A9chargement%20(8).jpeg"
+        ];
+
+        const BASE_IMG_GALLERY = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
+
+        function buildGalleryMicro() {
+            const track = document.getElementById('galleryTrack');
+            if (!track) return;
+            const allImages = [...galleryImagesMicro, ...galleryImagesMicro];
+            const fragment = document.createDocumentFragment();
+            
+            allImages.forEach(img => {
+                const imgEl = document.createElement('img');
+                imgEl.src = BASE_IMG_GALLERY + img;
+                imgEl.alt = 'Microbiology image';
+                imgEl.className = 'gallery-item';
+                imgEl.loading = 'lazy';
+                fragment.appendChild(imgEl);
+            });
+            
+            track.appendChild(fragment);
+        }
+        buildGalleryMicro();
+
         // ==================== Show Selected Semester ====================
         function showSemester(semId) {
             document.querySelectorAll('.semester-content').forEach(content => {
@@ -1070,7 +1344,42 @@
             if (targetTab) {
                 targetTab.classList.add('active-tab');
             }
+
+            // Update side dots
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.dataset.dot === semId) {
+                    dot.classList.add('active');
+                }
+            });
+
+            // Scroll to the semester tabs area
+            const tabsSection = document.getElementById('semesterTabs');
+            if (tabsSection) {
+                const navHeight = document.getElementById('topNav').offsetHeight;
+                const targetPos = tabsSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({
+                    top: targetPos,
+                    behavior: 'smooth'
+                });
+            }
         }
+
+        // ==================== Semester Tabs Click Events ====================
+        document.querySelectorAll('.semester-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const semId = this.dataset.sem;
+                showSemester(semId);
+            });
+        });
+
+        // ==================== Side Dots Click Events ====================
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const semId = this.dataset.dot;
+                showSemester(semId);
+            });
+        });
 
         // ==================== Reveal on Scroll Effect ====================
         const revealObserver = new IntersectionObserver((entries) => {
@@ -1079,9 +1388,35 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== Animated Statistics Counter ====================
+        const statsObserverMicro = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stat-number').forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                stat.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = Math.floor(current);
+                            }
+                        }, 40);
+                    });
+                    statsObserverMicro.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        const statsRowMicro = document.getElementById('statsRowMicro');
+        if (statsRowMicro) statsObserverMicro.observe(statsRowMicro);
 
         // ==================== Navigation Bar - Hide on Scroll ====================
         let lastScrollTop = 0;
@@ -1110,6 +1445,13 @@
             localStorage.setItem('theme', newTheme);
         });
 
+        // ==================== Toast Notification ====================
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
         // ==================== Mobile Menu (popup) ====================
         function openMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.add('open');
@@ -1124,6 +1466,13 @@
         document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
         document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
             if (e.target === this) closeMobileMenu();
+        });
+
+        // ==================== Initialization ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Expose functions globally
+            window.showSemester = showSemester;
+            window.showToast = showToast;
         });
     </script>
 </body>
