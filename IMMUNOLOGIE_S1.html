@@ -445,7 +445,7 @@
         /* ==================== Exam Section (adjusted to match reference page) ==================== */
         .exam-header {
             text-align: center;
-            padding: 60px 20px 40px;      /* matching .page-header */
+            padding: 60px 20px 40px;
         }
 
         .exam-badge {
@@ -481,11 +481,11 @@
 
         .exam-description {
             color: var(--text-secondary);
-            font-size: 1.1rem;             /* was 1rem */
-            max-width: 800px;              /* was 600px */
+            font-size: 1.1rem;
+            max-width: 800px;
             margin: 0 auto;
             background: var(--bg-card);
-            padding: 20px 25px;            /* matching .page-definition */
+            padding: 20px 25px;
             border-radius: 16px;
             border: 1px solid var(--border-glass);
             backdrop-filter: blur(10px);
@@ -532,10 +532,11 @@
             font-weight: 500;
         }
 
-        .questions-container {
+        /* ✅ حاوية عرض سؤال واحد */
+        .question-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .question {
@@ -548,12 +549,12 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            animation: fadeSlideIn 0.4s ease;
         }
 
-        .question:hover {
-            border-color: var(--card-hover-border);
-            box-shadow: var(--shadow-card);
-            transform: translateY(-2px);
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .question::before {
@@ -704,6 +705,29 @@
             transform: translateY(-4px);
         }
 
+        .btn-next {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
+        }
+
+        .btn-next:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 188, 212, 0.6);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #1a1a2e;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(247, 151, 30, 0.4);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(247, 151, 30, 0.6);
+        }
+
         /* Exam Results */
         .result-container {
             display: none;
@@ -743,6 +767,8 @@
             padding: 20px;
             text-align: left;
             margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
         }
 
         .feedback h3 {
@@ -1015,12 +1041,19 @@
                 </div>
 
                 <div class="exam-content" id="examContent">
-                    <div class="questions-container" id="questions-container">
-                        <!-- Questions will be filled dynamically -->
+                    <!-- ✅ حاوية السؤال الواحد -->
+                    <div class="question-wrapper" id="questionWrapper">
+                        <!-- سيتم ملؤها ديناميكياً -->
                     </div>
 
-                    <div class="actions">
-                        <button class="btn btn-primary" id="submit-btn">
+                    <div class="actions" id="actionsBar">
+                        <button class="btn btn-outline" id="prev-btn" style="display:none;">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button class="btn btn-next" id="next-btn">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-submit" id="submit-btn" style="display:none;">
                             <i class="fas fa-paper-plane"></i> Submit Exam
                         </button>
                         <button class="btn btn-outline" id="reset-btn">
@@ -1279,6 +1312,13 @@
         const pointsPerQuestion = 20 / 15;
         let timeLeft = 45 * 60;
         let timerInterval;
+        let currentQuestionIndex = 0;
+
+        // ✅ تخزين إجابات المستخدم لكل سؤال
+        let userAnswers = {};
+        questions.forEach(q => {
+            userAnswers[`q${q.id}`] = [];
+        });
 
         // ==================== Reveal on Scroll (from reference page) ====================
         const revealObserver = new IntersectionObserver((entries) => {
@@ -1291,88 +1331,113 @@
 
         // Initialize exam
         function initExam() {
-            displayAllQuestions();
+            displayQuestion(currentQuestionIndex);
             updateProgress();
             startTimer();
 
+            document.getElementById('next-btn').addEventListener('click', goToNext);
+            document.getElementById('prev-btn').addEventListener('click', goToPrev);
             document.getElementById('submit-btn').addEventListener('click', submitExam);
             document.getElementById('reset-btn').addEventListener('click', resetExam);
             document.getElementById('restart-btn').addEventListener('click', restartExam);
 
-            // Observe all elements with .reveal class (header, container, and later questions)
+            // Observe all elements with .reveal class
             document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
         }
 
-        // Display all questions with staggered reveal effect
-        function displayAllQuestions() {
-            const container = document.getElementById('questions-container');
-            let questionsHTML = '';
+        // ✅ عرض سؤال واحد فقط
+        function displayQuestion(index) {
+            const wrapper = document.getElementById('questionWrapper');
+            const question = questions[index];
+            const questionId = `q${question.id}`;
 
-            questions.forEach((question, index) => {
-                const questionId = `q${question.id}`;
-                let optionsHTML = '';
-
-                question.options.forEach(option => {
-                    optionsHTML += `
-                        <div class="option" data-question="${questionId}" data-option="${option.id}">
-                            <label class="option-label" for="${questionId}_${option.id}">
-                                <input type="checkbox" id="${questionId}_${option.id}" value="${option.id}">
-                                <span>${option.id}) ${option.text}</span>
-                            </label>
-                        </div>
-                    `;
-                });
-
-                // Each question will have .reveal class and a calculated delay
-                const delay = (index * 0.05).toFixed(2);
-                questionsHTML += `
-                    <div class="question reveal" style="transition-delay: ${delay}s;">
-                        <div class="question-number">Question <span>${question.id}</span></div>
-                        <div class="question-text">${question.text}</div>
-                        <div class="options">${optionsHTML}</div>
+            let optionsHTML = '';
+            question.options.forEach(option => {
+                const isChecked = userAnswers[questionId].includes(option.id) ? 'checked' : '';
+                optionsHTML += `
+                    <div class="option ${isChecked ? 'selected' : ''}" data-question="${questionId}" data-option="${option.id}">
+                        <label class="option-label" for="${questionId}_${option.id}">
+                            <input type="checkbox" id="${questionId}_${option.id}" value="${option.id}" ${isChecked}>
+                            <span>${option.id}) ${option.text}</span>
+                        </label>
                     </div>
                 `;
             });
 
-            container.innerHTML = questionsHTML;
+            wrapper.innerHTML = `
+                <div class="question">
+                    <div class="question-number">Question <span>${question.id}</span> / 15</div>
+                    <div class="question-text">${question.text}</div>
+                    <div class="options">${optionsHTML}</div>
+                </div>
+            `;
 
-            // Observe the newly added question elements
-            container.querySelectorAll('.question.reveal').forEach(q => revealObserver.observe(q));
-
-            // Event listeners for checkboxes
-            document.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
+            // إضافة مستمعي الأحداث للخيارات
+            wrapper.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     const optionElement = this.closest('.option');
+                    const qId = optionElement.dataset.question;
+                    const optId = optionElement.dataset.option;
+
                     if (this.checked) {
                         optionElement.classList.add('selected');
+                        if (!userAnswers[qId].includes(optId)) {
+                            userAnswers[qId].push(optId);
+                        }
                     } else {
                         optionElement.classList.remove('selected');
+                        userAnswers[qId] = userAnswers[qId].filter(id => id !== optId);
                     }
                     updateProgress();
                 });
             });
+
+            // تحديث أزرار التنقل
+            updateNavigationButtons(index);
         }
 
-        // Collect student answers
-        function collectStudentAnswers() {
-            const userAnswers = {};
-            questions.forEach(question => {
-                const questionId = `q${question.id}`;
-                const selectedOptions = [];
-                question.options.forEach(option => {
-                    const checkbox = document.getElementById(`${questionId}_${option.id}`);
-                    if (checkbox && checkbox.checked) {
-                        selectedOptions.push(option.id);
-                    }
-                });
-                userAnswers[questionId] = selectedOptions;
-            });
-            return userAnswers;
+        // ✅ تحديث أزرار التنقل
+        function updateNavigationButtons(index) {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (index === 0) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'inline-flex';
+            }
+
+            if (index === questions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-flex';
+            } else {
+                nextBtn.style.display = 'inline-flex';
+                submitBtn.style.display = 'none';
+            }
         }
 
-        // Update progress counter
+        // ✅ الانتقال للسؤال التالي
+        function goToNext() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+                // تمرير للأعلى عند الانتقال
+                document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // ✅ الانتقال للسؤال السابق
+        function goToPrev() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+                document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // تحديث عداد التقدم
         function updateProgress() {
-            const userAnswers = collectStudentAnswers();
             const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
             document.getElementById('answered').textContent = answeredCount;
             document.getElementById('total-qs').textContent = questions.length;
@@ -1397,7 +1462,6 @@
         // Grade exam
         function submitExam() {
             clearInterval(timerInterval);
-            const userAnswers = collectStudentAnswers();
             let totalScore = 0;
             const maxScore = 20;
             const results = {};
@@ -1527,12 +1591,12 @@
         }
 
         function resetExam() {
-            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = false;
+            // إعادة تعيين جميع الإجابات
+            questions.forEach(q => {
+                userAnswers[`q${q.id}`] = [];
             });
-            document.querySelectorAll('.option').forEach(option => {
-                option.classList.remove('selected');
-            });
+            currentQuestionIndex = 0;
+            displayQuestion(currentQuestionIndex);
             updateProgress();
         }
 
