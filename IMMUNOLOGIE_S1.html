@@ -2,26 +2,40 @@
 <html lang="en" data-theme="dark">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075">
+    </script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WMZ6GN3075');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-WMZ6GN3075');
     </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K8Z979C9');
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>QCM: BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE - GhaniPharma</title>
     <meta name="description" content="QCM on benign anomalies of the leukocyte lineage. 15 questions, 45 minutes.">
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
+    <link rel="icon" type="image/x-icon"
+    href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -46,20 +60,29 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
             --input-bg: rgba(255, 255, 255, 0.05);
             --input-border: rgba(255, 255, 255, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            --overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
             /* Exam-specific colors */
             --q-bg: rgba(20, 20, 40, 0.8);
-            --q-border: rgba(255,255,255,0.08);
+            --q-border: rgba(255, 255, 255, 0.08);
             --q-text: #e0e0e0;
             --q-number-bg: linear-gradient(135deg, #4facfe, #00f2fe);
-            --option-bg: rgba(255,255,255,0.03);
-            --option-hover-bg: rgba(0,188,212,0.08);
-            --option-selected-bg: rgba(0,188,212,0.15);
+            --option-bg: rgba(255, 255, 255, 0.03);
+            --option-hover-bg: rgba(0, 188, 212, 0.08);
+            --option-selected-bg: rgba(0, 188, 212, 0.15);
             --option-selected-border: #00bcd4;
-            --correct-bg: rgba(76,175,80,0.1);
-            --partial-bg: rgba(255,193,7,0.1);
-            --wrong-bg: rgba(244,67,54,0.1);
+            --correct-bg: rgba(76, 175, 80, 0.1);
+            --partial-bg: rgba(255, 193, 7, 0.1);
+            --wrong-bg: rgba(244, 67, 54, 0.1);
             --timer-color: #ffeb3b;
+            /* Result option item colors */
+            --result-correct-bg: rgba(76, 175, 80, 0.12);
+            --result-correct-border: rgba(76, 175, 80, 0.35);
+            --result-correct-text: #4caf50;
+            --result-wrong-bg: rgba(244, 67, 54, 0.12);
+            --result-wrong-border: rgba(244, 67, 54, 0.35);
+            --result-wrong-text: #f44336;
+            --result-neutral-bg: transparent;
+            --result-neutral-text: #a0a0b0;
         }
 
         [data-theme="light"] {
@@ -82,23 +105,35 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
             --input-bg: rgba(0, 0, 0, 0.03);
             --input-border: rgba(0, 0, 0, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-            --q-bg: rgba(255,255,255,0.85);
-            --q-border: rgba(0,0,0,0.08);
+            --overlay-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            --q-bg: rgba(255, 255, 255, 0.85);
+            --q-border: rgba(0, 0, 0, 0.08);
             --q-text: #2d3748;
             --q-number-bg: linear-gradient(135deg, #0097a7, #26c6da);
-            --option-bg: rgba(0,0,0,0.02);
-            --option-hover-bg: rgba(0,151,167,0.05);
-            --option-selected-bg: rgba(0,151,167,0.1);
+            --option-bg: rgba(0, 0, 0, 0.02);
+            --option-hover-bg: rgba(0, 151, 167, 0.05);
+            --option-selected-bg: rgba(0, 151, 167, 0.1);
             --option-selected-border: #0097a7;
-            --correct-bg: rgba(76,175,80,0.08);
-            --partial-bg: rgba(255,193,7,0.08);
-            --wrong-bg: rgba(244,67,54,0.08);
+            --correct-bg: rgba(76, 175, 80, 0.08);
+            --partial-bg: rgba(255, 193, 7, 0.08);
+            --wrong-bg: rgba(244, 67, 54, 0.08);
             --timer-color: #b8860b;
+            --result-correct-bg: rgba(76, 175, 80, 0.1);
+            --result-correct-border: rgba(76, 175, 80, 0.4);
+            --result-correct-text: #2e7d32;
+            --result-wrong-bg: rgba(244, 67, 54, 0.1);
+            --result-wrong-border: rgba(244, 67, 54, 0.4);
+            --result-wrong-text: #c62828;
+            --result-neutral-bg: transparent;
+            --result-neutral-text: #6b7280;
         }
 
         /* ==================== Basics ==================== */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         html {
             scroll-behavior: smooth;
@@ -146,37 +181,56 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.8); }
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.8);
+            }
         }
 
         .shooting-star {
             position: absolute;
             width: 120px;
             height: 1.5px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), transparent);
             animation: shoot 4s ease-in-out infinite;
             animation-delay: var(--shoot-delay);
             opacity: 0;
         }
 
         @keyframes shoot {
-            0% { opacity: 0; transform: translateX(0) translateY(0); }
-            4% { opacity: 1; }
-            12% { opacity: 0; transform: translateX(350px) translateY(350px); }
-            100% { opacity: 0; transform: translateX(350px) translateY(350px); }
+            0% {
+                opacity: 0;
+                transform: translateX(0) translateY(0);
+            }
+            4% {
+                opacity: 1;
+            }
+            12% {
+                opacity: 0;
+                transform: translateX(350px) translateY(350px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(350px) translateY(350px);
+            }
         }
 
         [data-theme="light"] .star,
         [data-theme="light"] .shooting-star {
             opacity: 0.3 !important;
         }
+
         [data-theme="light"] .star {
             animation: none !important;
             opacity: 0.15 !important;
         }
 
-        /* ==================== Top Navigation Bar (مطابق تماماً للصفحة المرجعية) ==================== */
+        /* ==================== Top Navigation Bar ==================== */
         .top-nav {
             position: fixed;
             top: 0;
@@ -235,8 +289,13 @@
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
-            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
+            }
         }
 
         .nav-right {
@@ -245,7 +304,6 @@
             gap: 15px;
         }
 
-        /* --- القائمة الأفقية (تظهر على الشاشات الكبيرة) --- */
         .nav-links {
             display: flex;
             align-items: center;
@@ -291,14 +349,14 @@
             border-radius: 3px;
         }
 
-        /* ==================== POPUP MOBILE MENU (مطابق تماماً للصفحة المرجعية) ==================== */
+        /* ==================== POPUP MOBILE MENU ==================== */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             z-index: 1100;
             display: flex;
@@ -325,7 +383,7 @@
             text-align: center;
             transform: scale(0.9);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         .mobile-menu-overlay.open .mobile-menu-popup {
@@ -348,7 +406,7 @@
         }
 
         .mobile-menu-close:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: rotate(90deg);
         }
 
@@ -371,7 +429,7 @@
 
         .mobile-nav-link:hover {
             border-color: var(--primary);
-            background: rgba(0,188,212,0.1);
+            background: rgba(0, 188, 212, 0.1);
             transform: translateX(6px);
         }
 
@@ -381,7 +439,7 @@
             font-size: 1.3rem;
         }
 
-        /* ==================== Theme Toggle Button (مطابق تماماً للصفحة المرجعية) ==================== */
+        /* ==================== Theme Toggle Button ==================== */
         .theme-toggle {
             width: 44px;
             height: 44px;
@@ -409,13 +467,24 @@
             transition: all 0.5s ease;
         }
 
-        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
-        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
-        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
-        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
-        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
+        [data-theme="dark"] .theme-toggle .fa-moon {
+            display: inline-block;
+        }
+        [data-theme="dark"] .theme-toggle .fa-sun {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-moon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-sun {
+            display: inline-block;
+            color: #f39c12;
+        }
+        [data-theme="light"] .theme-toggle {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
 
-        /* ==================== Mobile Menu Button (مطابق تماماً للصفحة المرجعية) ==================== */
+        /* ==================== Mobile Menu Button ==================== */
         .menu-toggle {
             display: none;
             background: none;
@@ -427,7 +496,9 @@
             transition: transform 0.3s ease;
         }
 
-        .menu-toggle:hover { transform: rotate(90deg); }
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
 
         /* ==================== Main Content ==================== */
         .main-wrapper {
@@ -442,7 +513,7 @@
             padding: 0 30px;
         }
 
-        /* ==================== Exam Section (adjusted to match reference page) ==================== */
+        /* ==================== Exam Section ==================== */
         .exam-header {
             text-align: center;
             padding: 60px 20px 40px;
@@ -475,8 +546,13 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .exam-description {
@@ -553,8 +629,14 @@
         }
 
         @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .question::before {
@@ -587,7 +669,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.85rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .question-text {
@@ -750,7 +832,7 @@
             font-weight: 900;
             color: var(--accent);
             margin: 15px 0;
-            text-shadow: 0 0 20px rgba(255,235,59,0.3);
+            text-shadow: 0 0 20px rgba(255, 235, 59, 0.3);
         }
 
         .score-text {
@@ -767,50 +849,145 @@
             padding: 20px;
             text-align: left;
             margin-top: 20px;
-            max-height: 500px;
+            max-height: 600px;
             overflow-y: auto;
         }
 
         .feedback h3 {
             color: var(--text-heading);
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .question-result {
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 14px;
+            border-radius: 14px;
             border: 1px solid var(--border-glass);
+            transition: all 0.2s ease;
         }
 
         .question-result.correct {
             background: var(--correct-bg);
-            border-color: rgba(76,175,80,0.3);
+            border-color: rgba(76, 175, 80, 0.3);
         }
 
         .question-result.partial {
             background: var(--partial-bg);
-            border-color: rgba(255,193,7,0.3);
+            border-color: rgba(255, 193, 7, 0.3);
         }
 
         .question-result.wrong {
             background: var(--wrong-bg);
-            border-color: rgba(244,67,54,0.3);
+            border-color: rgba(244, 67, 54, 0.3);
         }
 
         .question-result-header {
             display: flex;
             justify-content: space-between;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--text-heading);
             flex-wrap: wrap;
             gap: 5px;
         }
 
+        .question-result-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* ========== NEW: Options display inside results ========== */
+        .options-result-list {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin: 10px 0 12px;
+        }
+
+        .option-result-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            border: 1.5px solid transparent;
+            transition: all 0.2s ease;
+            line-height: 1.4;
+        }
+
+        .option-result-item.correct-option {
+            background: var(--result-correct-bg);
+            border-color: var(--result-correct-border);
+            color: var(--result-correct-text);
+            font-weight: 500;
+        }
+
+        .option-result-item.wrong-selected {
+            background: var(--result-wrong-bg);
+            border-color: var(--result-wrong-border);
+            color: var(--result-wrong-text);
+            font-weight: 500;
+        }
+
+        .option-result-item.neutral-option {
+            background: var(--result-neutral-bg);
+            border-color: var(--border-glass);
+            color: var(--result-neutral-text);
+        }
+
+        .option-result-item .option-mark {
+            font-size: 1.15rem;
+            min-width: 26px;
+            text-align: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .option-result-item .option-letter {
+            font-weight: 700;
+            min-width: 24px;
+            flex-shrink: 0;
+            color: inherit;
+        }
+
+        .option-result-item .option-text {
+            flex-grow: 1;
+            color: inherit;
+        }
+
+        /* Student choice indicator */
+        .option-result-item .student-choice-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            flex-shrink: 0;
+        }
+
+        .option-result-item.correct-option .student-choice-badge {
+            background: rgba(76, 175, 80, 0.25);
+            color: var(--result-correct-text);
+        }
+
+        .option-result-item.wrong-selected .student-choice-badge {
+            background: rgba(244, 67, 54, 0.25);
+            color: var(--result-wrong-text);
+        }
+
+        /* ========== End of new result options styles ========== */
+
         .result-details {
             font-size: 0.9rem;
             color: var(--text-secondary);
+            margin-top: 4px;
         }
 
         .correct-answers {
@@ -825,8 +1002,10 @@
 
         .note {
             font-style: italic;
-            margin-top: 5px;
+            margin-top: 8px;
             color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-align: right;
         }
 
         .legend {
@@ -851,9 +1030,15 @@
             border-radius: 5px;
         }
 
-        .full-points { background: rgba(76,175,80,0.3); }
-        .partial-points { background: rgba(255,193,7,0.3); }
-        .zero-points { background: rgba(244,67,54,0.3); }
+        .full-points {
+            background: rgba(76, 175, 80, 0.3);
+        }
+        .partial-points {
+            background: rgba(255, 193, 7, 0.3);
+        }
+        .zero-points {
+            background: rgba(244, 67, 54, 0.3);
+        }
 
         .restart-btn {
             background: linear-gradient(135deg, #fdbb2d, #f7a900);
@@ -867,6 +1052,7 @@
             cursor: pointer;
             border: none;
             transition: all 0.3s ease;
+            font-family: inherit;
         }
 
         .restart-btn:hover {
@@ -874,7 +1060,7 @@
             box-shadow: 0 15px 35px rgba(253, 187, 45, 0.5);
         }
 
-        /* ==================== Footer (مطابق تماماً للصفحة المرجعية) ==================== */
+        /* ==================== Footer ==================== */
         .site-footer {
             text-align: center;
             padding: 50px 20px;
@@ -911,22 +1097,46 @@
 
         .social-link:hover {
             transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .social-link.whatsapp:hover { background: #25d366; border-color: #25d366; color: #fff; }
-        .social-link.telegram:hover { background: #0088cc; border-color: #0088cc; color: #fff; }
-        .social-link.facebook:hover { background: #1877f2; border-color: #1877f2; color: #fff; }
-        .social-link.instagram:hover { background: #e4405f; border-color: #e4405f; color: #fff; }
-        .social-link.tiktok:hover { background: #000; border-color: #69c9d0; color: #fff; }
-        .social-link.youtube:hover { background: #ff0000; border-color: #ff0000; color: #fff; }
+        .social-link.whatsapp:hover {
+            background: #25d366;
+            border-color: #25d366;
+            color: #fff;
+        }
+        .social-link.telegram:hover {
+            background: #0088cc;
+            border-color: #0088cc;
+            color: #fff;
+        }
+        .social-link.facebook:hover {
+            background: #1877f2;
+            border-color: #1877f2;
+            color: #fff;
+        }
+        .social-link.instagram:hover {
+            background: #e4405f;
+            border-color: #e4405f;
+            color: #fff;
+        }
+        .social-link.tiktok:hover {
+            background: #000;
+            border-color: #69c9d0;
+            color: #fff;
+        }
+        .social-link.youtube:hover {
+            background: #ff0000;
+            border-color: #ff0000;
+            color: #fff;
+        }
 
         .copyright {
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
 
-        /* ==================== Reveal Animation (from reference page) ==================== */
+        /* ==================== Reveal Animation ==================== */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -938,41 +1148,85 @@
             transform: translateY(0);
         }
 
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
 
         /* ==================== Media Queries ==================== */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none !important; }
-            .exam-title { font-size: 1.5rem; }
-            .container { padding: 0 15px; }
-            .exam-container { padding: 15px; }
-            .question { padding: 18px; }
-            .btn { padding: 12px 22px; font-size: 0.9rem; }
-            .score { font-size: 3.5rem; }
-            .exam-header { padding: 40px 15px 30px; }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none !important;
+            }
+            .exam-title {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .exam-container {
+                padding: 15px;
+            }
+            .question {
+                padding: 18px;
+            }
+            .btn {
+                padding: 12px 22px;
+                font-size: 0.9rem;
+            }
+            .score {
+                font-size: 3.5rem;
+            }
+            .exam-header {
+                padding: 40px 15px 30px;
+            }
+            .option-result-item {
+                flex-wrap: wrap;
+                gap: 6px;
+                padding: 10px 12px;
+            }
+            .option-result-item .option-mark {
+                min-width: 22px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .actions { flex-direction: column; align-items: center; }
-            .btn { width: 100%; justify-content: center; }
-            .exam-info { flex-direction: column; text-align: center; }
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .exam-info {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body data-theme="dark">
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Star Background -->
     <div class="universe-bg">
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- Top Navigation Bar (تطابق تام مع الصفحة المرجعية) -->
+    <!-- Top Navigation Bar -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -997,7 +1251,7 @@
         </div>
     </nav>
 
-    <!-- POPUP MOBILE MENU (تطابق تام مع الصفحة المرجعية) -->
+    <!-- POPUP MOBILE MENU -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -1016,7 +1270,7 @@
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- Exam Header (now with reveal classes) -->
+            <!-- Exam Header -->
             <div class="exam-header">
                 <div class="exam-badge reveal">
                     <i class="fas fa-flask"></i> QCM Hematology
@@ -1029,14 +1283,15 @@
                 </div>
             </div>
 
-            <!-- Exam Container (with reveal) -->
+            <!-- Exam Container -->
             <div class="exam-container reveal reveal-delay-3" id="examContainer">
                 <div class="exam-info">
                     <div class="timer">
                         <i class="fas fa-clock"></i> Time remaining: <span id="time">45:00</span>
                     </div>
                     <div class="progress">
-                        <i class="fas fa-check-circle"></i> Questions answered: <span id="answered">0</span>/<span id="total-qs">15</span>
+                        <i class="fas fa-check-circle"></i> Questions answered: <span id="answered">0</span>/<span
+                        id="total-qs">15</span>
                     </div>
                 </div>
 
@@ -1094,267 +1349,264 @@
         </div>
     </div>
 
-    <!-- Footer (مطابق تماماً للصفحة المرجعية) -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="social-links">
-            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 GhaniPharma. All rights reserved.</p>
-    </footer>
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank"
+            title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i
+            class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank"
+            title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank"
+            title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i
+            class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank"
+        title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p class="copyright">&copy; 2025 GhaniPharma. All rights reserved.</p>
+</footer>
 
-    <script>
-        // ==================== Generate Stars ====================
-        function createStars() {
-            const container = document.getElementById('starsContainer');
-            const fragment = document.createDocumentFragment();
+<script>
+    // ==================== Generate Stars ====================
+    function createStars() {
+        const container = document.getElementById('starsContainer');
+        const fragment = document.createDocumentFragment();
 
-            for (let i = 0; i < 180; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                const size = Math.random() * 3 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
-                star.style.setProperty('--delay', Math.random() * 5 + 's');
-                fragment.appendChild(star);
-            }
-
-            for (let i = 0; i < 4; i++) {
-                const shootingStar = document.createElement('div');
-                shootingStar.className = 'shooting-star';
-                shootingStar.style.left = Math.random() * 50 + '%';
-                shootingStar.style.top = Math.random() * 30 + '%';
-                shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
-                fragment.appendChild(shootingStar);
-            }
-
-            container.appendChild(fragment);
+        for (let i = 0; i < 180; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+            star.style.setProperty('--delay', Math.random() * 5 + 's');
+            fragment.appendChild(star);
         }
-        createStars();
 
-        // ==================== Question Database (unchanged) ====================
-        const questions = [
-            {
-                id: 1,
-                text: "Regarding the pathophysiological mechanisms that can modify the circulating leukocyte count, which ones are mentioned?",
-                correctAnswers: ["a", "c", "d"],
-                options: [
-                    { id: "a", text: "Abnormalities of medullary production." },
-                    { id: "b", text: "Abnormalities of phagocytic function." },
-                    { id: "c", text: "Abnormalities of distribution between circulating pool and marginal pool." },
-                    { id: "d", text: "Abnormal peripheral anomalies (destruction, sequestration)." }
-                ]
-            },
-            {
-                id: 2,
-                text: "To interpret a leukocyte formula, which approach is essential?",
-                correctAnswers: ["b", "c", "d"],
-                options: [
-                    { id: "a", text: "Rely solely on percentages (relative values)." },
-                    { id: "b", text: "Convert percentages to absolute values (per mm³)." },
-                    { id: "c", text: "Multiply the percentage of each lineage by the total leukocyte count." },
-                    { id: "d", text: "Compare the obtained values to the norms of a healthy adult." }
-                ]
-            },
-            {
-                id: 3,
-                text: "What are the threshold values defining hyperleukocytosis in adults?",
-                correctAnswers: ["b", "c"],
-                options: [
-                    { id: "a", text: "WBC > 4000/mm³" },
-                    { id: "b", text: "WBC > 10000/mm³" },
-                    { id: "c", text: "WBC > 10 G/L" },
-                    { id: "d", text: "WBC < 4000/mm³" }
-                ]
-            },
-            {
-                id: 4,
-                text: "Among the following etiologies, which can cause neutrophilia (PMN > 7500/mm³)?",
-                correctAnswers: ["a", "c", "d"],
-                options: [
-                    { id: "a", text: "Acute bacterial infection (e.g., abscess, tonsillitis)." },
-                    { id: "b", text: "Vitamin B12 deficiency." },
-                    { id: "c", text: "Intense physical exercise or acute stress." },
-                    { id: "d", text: "Corticosteroid intake." }
-                ]
-            },
-            {
-                id: 5,
-                text: "Regarding hypereosinophilia (PNE > 500/mm³), which causes are mentioned?",
-                correctAnswers: ["a", "b"],
-                options: [
-                    { id: "a", text: "Parasitic infections (e.g., helminthiases)." },
-                    { id: "b", text: "Allergic reactions (e.g., asthma, eczema)." },
-                    { id: "c", text: "Acute viral infections (e.g., flu)." },
-                    { id: "d", text: "Hypothyroidism." }
-                ]
-            },
-            {
-                id: 6,
-                text: "Hyperlymphocytosis in adults is defined by a count greater than:",
-                correctAnswers: ["b"],
-                options: [
-                    { id: "a", text: "1500/mm³" },
-                    { id: "b", text: "4000/mm³" },
-                    { id: "c", text: "7000/mm³" },
-                    { id: "d", text: "11000/mm³" }
-                ]
-            },
-            {
-                id: 7,
-                text: "Which pathologies can present with acute lymphocytosis with atypical lymphocytes?",
-                correctAnswers: ["a", "b"],
-                options: [
-                    { id: "a", text: "Infectious mononucleosis (EBV)." },
-                    { id: "b", text: "Toxoplasmosis." },
-                    { id: "c", text: "Rubella." },
-                    { id: "d", text: "Active tuberculosis." }
-                ]
-            },
-            {
-                id: 8,
-                text: "Regarding monocytosis (monocytes > 1000/mm³), which etiologies are mentioned?",
-                correctAnswers: ["a", "b", "c"],
-                options: [
-                    { id: "a", text: "Bacterial infections (brucellosis, salmonellosis)." },
-                    { id: "b", text: "Parasitic infections (toxoplasmosis, malaria)." },
-                    { id: "c", text: "Autoimmune diseases (lupus, rheumatoid arthritis)." },
-                    { id: "d", text: "Iron deficiency." }
-                ]
-            },
-            {
-                id: 9,
-                text: "Neutropenia is defined by a PMN count lower than:",
-                correctAnswers: ["a"],
-                options: [
-                    { id: "a", text: "1500/mm³" },
-                    { id: "b", text: "7500/mm³" },
-                    { id: "c", text: "200/mm³ (agranulocytosis)." },
-                    { id: "d", text: "4000/mm³" }
-                ]
-            },
-            {
-                id: 10,
-                text: "Among the causes of acquired neutropenia, which are mentioned?",
-                correctAnswers: ["a", "b", "c"],
-                options: [
-                    { id: "a", text: "Vitamin B12 or folate deficiency." },
-                    { id: "b", text: "Viral infection (flu, HIV)." },
-                    { id: "c", text: "Medications (antimitotics, certain antibiotics)." },
-                    { id: "d", text: "Extreme physical exercise." }
-                ]
-            },
-            {
-                id: 11,
-                text: "Regarding lymphopenia (lymphocytes < 1000/mm³), which situations are mentioned?",
-                correctAnswers: ["a", "b", "c"],
-                options: [
-                    { id: "a", text: "Acquired immune deficiency (AIDS)." },
-                    { id: "b", text: "Radiotherapy or chemotherapy." },
-                    { id: "c", text: "Corticosteroid treatment." },
-                    { id: "d", text: "Hyperthyroidism." }
-                ]
-            },
-            {
-                id: 12,
-                text: "Which morphological abnormalities can be observed in PMNs?",
-                correctAnswers: ["a", "b", "c"],
-                options: [
-                    { id: "a", text: "Nuclear hypersegmentation (B12/folate deficiency)." },
-                    { id: "b", text: "Nuclear hyposegmentation (sepsis, Pelger-Huët anomaly)." },
-                    { id: "c", text: "Cytoplasmic hypergranulation." },
-                    { id: "d", text: "Presence of giant azurophilic granules." }
-                ]
-            },
-            {
-                id: 13,
-                text: "Regarding atypical lymphocytes, which statement is correct?",
-                correctAnswers: ["a", "c"],
-                options: [
-                    { id: "a", text: "They are characteristic of mononucleosis syndromes (e.g., IM)." },
-                    { id: "b", text: "They always indicate a malignant hemopathy." },
-                    { id: "c", text: "They correspond to activated or stimulated lymphocytes." },
-                    { id: "d", text: "Their presence is pathognomonic of acute lymphoblastic leukemia." }
-                ]
-            },
-            {
-                id: 14,
-                text: "In the diagnostic approach to a benign leukocyte anomaly, which elements are essential?",
-                correctAnswers: ["a", "b", "d"],
-                options: [
-                    { id: "a", text: "A detailed interview (age, medications...)." },
-                    { id: "b", text: "A complete clinical examination." },
-                    { id: "c", text: "Systematic performance of a myelogram as first-line." },
-                    { id: "d", text: "Targeted additional tests (ESR, blood cultures, etc.)." }
-                ]
-            },
-            {
-                id: 15,
-                text: "Which statement regarding leukocyte balance is correct?",
-                correctAnswers: ["b"],
-                options: [
-                    { id: "a", text: "Its disturbance always requires immunomodulatory treatment." },
-                    { id: "b", text: "It generally restores with treatment of the underlying cause." },
-                    { id: "c", text: "Benign anomalies are always symptomatic." },
-                    { id: "d", text: "Monitoring by hemogram is useless once the diagnosis is made." }
-                ]
+        for (let i = 0; i < 4; i++) {
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            shootingStar.style.left = Math.random() * 50 + '%';
+            shootingStar.style.top = Math.random() * 30 + '%';
+            shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
+            fragment.appendChild(shootingStar);
+        }
+
+        container.appendChild(fragment);
+    }
+    createStars();
+
+    // ==================== Question Database ====================
+    const questions = [{
+        id: 1,
+        text: "Regarding the pathophysiological mechanisms that can modify the circulating leukocyte count, which ones are mentioned?",
+        correctAnswers: ["a", "c", "d"],
+        options: [
+            { id: "a", text: "Abnormalities of medullary production." },
+            { id: "b", text: "Abnormalities of phagocytic function." },
+            { id: "c",
+                text: "Abnormalities of distribution between circulating pool and marginal pool." },
+            { id: "d", text: "Abnormal peripheral anomalies (destruction, sequestration)." }
+        ]
+    }, {
+        id: 2,
+        text: "To interpret a leukocyte formula, which approach is essential?",
+        correctAnswers: ["b", "c", "d"],
+        options: [
+            { id: "a", text: "Rely solely on percentages (relative values)." },
+            { id: "b", text: "Convert percentages to absolute values (per mm³)." },
+            { id: "c",
+                text: "Multiply the percentage of each lineage by the total leukocyte count." },
+            { id: "d", text: "Compare the obtained values to the norms of a healthy adult." }
+        ]
+    }, {
+        id: 3,
+        text: "What are the threshold values defining hyperleukocytosis in adults?",
+        correctAnswers: ["b", "c"],
+        options: [
+            { id: "a", text: "WBC > 4000/mm³" },
+            { id: "b", text: "WBC > 10000/mm³" },
+            { id: "c", text: "WBC > 10 G/L" },
+            { id: "d", text: "WBC < 4000/mm³" }
+        ]
+    }, {
+        id: 4,
+        text: "Among the following etiologies, which can cause neutrophilia (PMN > 7500/mm³)?",
+        correctAnswers: ["a", "c", "d"],
+        options: [
+            { id: "a", text: "Acute bacterial infection (e.g., abscess, tonsillitis)." },
+            { id: "b", text: "Vitamin B12 deficiency." },
+            { id: "c", text: "Intense physical exercise or acute stress." },
+            { id: "d", text: "Corticosteroid intake." }
+        ]
+    }, {
+        id: 5,
+        text: "Regarding hypereosinophilia (PNE > 500/mm³), which causes are mentioned?",
+        correctAnswers: ["a", "b"],
+        options: [
+            { id: "a", text: "Parasitic infections (e.g., helminthiases)." },
+            { id: "b", text: "Allergic reactions (e.g., asthma, eczema)." },
+            { id: "c", text: "Acute viral infections (e.g., flu)." },
+            { id: "d", text: "Hypothyroidism." }
+        ]
+    }, {
+        id: 6,
+        text: "Hyperlymphocytosis in adults is defined by a count greater than:",
+        correctAnswers: ["b"],
+        options: [
+            { id: "a", text: "1500/mm³" },
+            { id: "b", text: "4000/mm³" },
+            { id: "c", text: "7000/mm³" },
+            { id: "d", text: "11000/mm³" }
+        ]
+    }, {
+        id: 7,
+        text: "Which pathologies can present with acute lymphocytosis with atypical lymphocytes?",
+        correctAnswers: ["a", "b"],
+        options: [
+            { id: "a", text: "Infectious mononucleosis (EBV)." },
+            { id: "b", text: "Toxoplasmosis." },
+            { id: "c", text: "Rubella." },
+            { id: "d", text: "Active tuberculosis." }
+        ]
+    }, {
+        id: 8,
+        text: "Regarding monocytosis (monocytes > 1000/mm³), which etiologies are mentioned?",
+        correctAnswers: ["a", "b", "c"],
+        options: [
+            { id: "a", text: "Bacterial infections (brucellosis, salmonellosis)." },
+            { id: "b", text: "Parasitic infections (toxoplasmosis, malaria)." },
+            { id: "c", text: "Autoimmune diseases (lupus, rheumatoid arthritis)." },
+            { id: "d", text: "Iron deficiency." }
+        ]
+    }, {
+        id: 9,
+        text: "Neutropenia is defined by a PMN count lower than:",
+        correctAnswers: ["a"],
+        options: [
+            { id: "a", text: "1500/mm³" },
+            { id: "b", text: "7500/mm³" },
+            { id: "c", text: "200/mm³ (agranulocytosis)." },
+            { id: "d", text: "4000/mm³" }
+        ]
+    }, {
+        id: 10,
+        text: "Among the causes of acquired neutropenia, which are mentioned?",
+        correctAnswers: ["a", "b", "c"],
+        options: [
+            { id: "a", text: "Vitamin B12 or folate deficiency." },
+            { id: "b", text: "Viral infection (flu, HIV)." },
+            { id: "c", text: "Medications (antimitotics, certain antibiotics)." },
+            { id: "d", text: "Extreme physical exercise." }
+        ]
+    }, {
+        id: 11,
+        text: "Regarding lymphopenia (lymphocytes < 1000/mm³), which situations are mentioned?",
+        correctAnswers: ["a", "b", "c"],
+        options: [
+            { id: "a", text: "Acquired immune deficiency (AIDS)." },
+            { id: "b", text: "Radiotherapy or chemotherapy." },
+            { id: "c", text: "Corticosteroid treatment." },
+            { id: "d", text: "Hyperthyroidism." }
+        ]
+    }, {
+        id: 12,
+        text: "Which morphological abnormalities can be observed in PMNs?",
+        correctAnswers: ["a", "b", "c"],
+        options: [
+            { id: "a", text: "Nuclear hypersegmentation (B12/folate deficiency)." },
+            { id: "b", text: "Nuclear hyposegmentation (sepsis, Pelger-Huët anomaly)." },
+            { id: "c", text: "Cytoplasmic hypergranulation." },
+            { id: "d", text: "Presence of giant azurophilic granules." }
+        ]
+    }, {
+        id: 13,
+        text: "Regarding atypical lymphocytes, which statement is correct?",
+        correctAnswers: ["a", "c"],
+        options: [
+            { id: "a",
+                text: "They are characteristic of mononucleosis syndromes (e.g., IM)." },
+            { id: "b", text: "They always indicate a malignant hemopathy." },
+            { id: "c", text: "They correspond to activated or stimulated lymphocytes." },
+            { id: "d",
+                text: "Their presence is pathognomonic of acute lymphoblastic leukemia." }
+        ]
+    }, {
+        id: 14,
+        text: "In the diagnostic approach to a benign leukocyte anomaly, which elements are essential?",
+        correctAnswers: ["a", "b", "d"],
+        options: [
+            { id: "a", text: "A detailed interview (age, medications...)." },
+            { id: "b", text: "A complete clinical examination." },
+            { id: "c", text: "Systematic performance of a myelogram as first-line." },
+            { id: "d", text: "Targeted additional tests (ESR, blood cultures, etc.)." }
+        ]
+    }, {
+        id: 15,
+        text: "Which statement regarding leukocyte balance is correct?",
+        correctAnswers: ["b"],
+        options: [
+            { id: "a",
+            text: "Its disturbance always requires immunomodulatory treatment." },
+            { id: "b",
+                text: "It generally restores with treatment of the underlying cause." },
+            { id: "c", text: "Benign anomalies are always symptomatic." },
+            { id: "d",
+            text: "Monitoring by hemogram is useless once the diagnosis is made." }
+        ]
+    }];
+
+    // Global exam variables
+    const pointsPerQuestion = 20 / 15;
+    let timeLeft = 45 * 60;
+    let timerInterval;
+    let currentQuestionIndex = 0;
+
+    // ✅ تخزين إجابات المستخدم لكل سؤال
+    let userAnswers = {};
+    questions.forEach(q => {
+        userAnswers[`q${q.id}`] = [];
+    });
+
+    // ==================== Reveal on Scroll ====================
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
-        ];
-
-        // Global exam variables
-        const pointsPerQuestion = 20 / 15;
-        let timeLeft = 45 * 60;
-        let timerInterval;
-        let currentQuestionIndex = 0;
-
-        // ✅ تخزين إجابات المستخدم لكل سؤال
-        let userAnswers = {};
-        questions.forEach(q => {
-            userAnswers[`q${q.id}`] = [];
         });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-        // ==================== Reveal on Scroll (from reference page) ====================
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    // Initialize exam
+    function initExam() {
+        displayQuestion(currentQuestionIndex);
+        updateProgress();
+        startTimer();
 
-        // Initialize exam
-        function initExam() {
-            displayQuestion(currentQuestionIndex);
-            updateProgress();
-            startTimer();
+        document.getElementById('next-btn').addEventListener('click', goToNext);
+        document.getElementById('prev-btn').addEventListener('click', goToPrev);
+        document.getElementById('submit-btn').addEventListener('click', submitExam);
+        document.getElementById('reset-btn').addEventListener('click', resetExam);
+        document.getElementById('restart-btn').addEventListener('click', restartExam);
 
-            document.getElementById('next-btn').addEventListener('click', goToNext);
-            document.getElementById('prev-btn').addEventListener('click', goToPrev);
-            document.getElementById('submit-btn').addEventListener('click', submitExam);
-            document.getElementById('reset-btn').addEventListener('click', resetExam);
-            document.getElementById('restart-btn').addEventListener('click', restartExam);
+        // Observe all elements with .reveal class
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    }
 
-            // Observe all elements with .reveal class
-            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-        }
+    // ✅ عرض سؤال واحد فقط
+    function displayQuestion(index) {
+        const wrapper = document.getElementById('questionWrapper');
+        const question = questions[index];
+        const questionId = `q${question.id}`;
 
-        // ✅ عرض سؤال واحد فقط
-        function displayQuestion(index) {
-            const wrapper = document.getElementById('questionWrapper');
-            const question = questions[index];
-            const questionId = `q${question.id}`;
-
-            let optionsHTML = '';
-            question.options.forEach(option => {
-                const isChecked = userAnswers[questionId].includes(option.id) ? 'checked' : '';
-                optionsHTML += `
+        let optionsHTML = '';
+        question.options.forEach(option => {
+            const isChecked = userAnswers[questionId].includes(option.id) ? 'checked' : '';
+            optionsHTML += `
                     <div class="option ${isChecked ? 'selected' : ''}" data-question="${questionId}" data-option="${option.id}">
                         <label class="option-label" for="${questionId}_${option.id}">
                             <input type="checkbox" id="${questionId}_${option.id}" value="${option.id}" ${isChecked}>
@@ -1362,9 +1614,9 @@
                         </label>
                     </div>
                 `;
-            });
+        });
 
-            wrapper.innerHTML = `
+        wrapper.innerHTML = `
                 <div class="question">
                     <div class="question-number">Question <span>${question.id}</span> / 15</div>
                     <div class="question-text">${question.text}</div>
@@ -1372,292 +1624,326 @@
                 </div>
             `;
 
-            // إضافة مستمعي الأحداث للخيارات
-            wrapper.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    const optionElement = this.closest('.option');
-                    const qId = optionElement.dataset.question;
-                    const optId = optionElement.dataset.option;
+        // إضافة مستمعي الأحداث للخيارات
+        wrapper.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const optionElement = this.closest('.option');
+                const qId = optionElement.dataset.question;
+                const optId = optionElement.dataset.option;
 
-                    if (this.checked) {
-                        optionElement.classList.add('selected');
-                        if (!userAnswers[qId].includes(optId)) {
-                            userAnswers[qId].push(optId);
-                        }
-                    } else {
-                        optionElement.classList.remove('selected');
-                        userAnswers[qId] = userAnswers[qId].filter(id => id !== optId);
+                if (this.checked) {
+                    optionElement.classList.add('selected');
+                    if (!userAnswers[qId].includes(optId)) {
+                        userAnswers[qId].push(optId);
                     }
-                    updateProgress();
-                });
-            });
-
-            // تحديث أزرار التنقل
-            updateNavigationButtons(index);
-        }
-
-        // ✅ تحديث أزرار التنقل
-        function updateNavigationButtons(index) {
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const submitBtn = document.getElementById('submit-btn');
-
-            if (index === 0) {
-                prevBtn.style.display = 'none';
-            } else {
-                prevBtn.style.display = 'inline-flex';
-            }
-
-            if (index === questions.length - 1) {
-                nextBtn.style.display = 'none';
-                submitBtn.style.display = 'inline-flex';
-            } else {
-                nextBtn.style.display = 'inline-flex';
-                submitBtn.style.display = 'none';
-            }
-        }
-
-        // ✅ الانتقال للسؤال التالي
-        function goToNext() {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                displayQuestion(currentQuestionIndex);
-                // تمرير للأعلى عند الانتقال
-                document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // ✅ الانتقال للسؤال السابق
-        function goToPrev() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                displayQuestion(currentQuestionIndex);
-                document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // تحديث عداد التقدم
-        function updateProgress() {
-            const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
-            document.getElementById('answered').textContent = answeredCount;
-            document.getElementById('total-qs').textContent = questions.length;
-        }
-
-        // Timer
-        function startTimer() {
-            timerInterval = setInterval(function() {
-                timeLeft--;
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                document.getElementById('time').textContent =
-                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    submitExam();
-                }
-            }, 1000);
-        }
-
-        // Grade exam
-        function submitExam() {
-            clearInterval(timerInterval);
-            let totalScore = 0;
-            const maxScore = 20;
-            const results = {};
-
-            questions.forEach(question => {
-                const questionId = `q${question.id}`;
-                const correctList = question.correctAnswers;
-                const studentList = userAnswers[questionId] || [];
-
-                if (studentList.length === 0) {
-                    results[questionId] = {
-                        score: 0,
-                        correctChoices: correctList,
-                        studentChoices: studentList,
-                        note: 'No answer selected'
-                    };
-                    return;
-                }
-
-                let hasWrongAnswer = false;
-                for (const choice of studentList) {
-                    if (!correctList.includes(choice)) {
-                        hasWrongAnswer = true;
-                        break;
-                    }
-                }
-
-                if (hasWrongAnswer) {
-                    results[questionId] = {
-                        score: 0,
-                        correctChoices: correctList,
-                        studentChoices: studentList,
-                        note: 'Contains an incorrect answer'
-                    };
-                    return;
-                }
-
-                const correctSelected = studentList.length;
-                const totalCorrect = correctList.length;
-
-                if (correctSelected === totalCorrect) {
-                    results[questionId] = {
-                        score: pointsPerQuestion,
-                        correctChoices: correctList,
-                        studentChoices: studentList,
-                        note: 'Complete answer'
-                    };
-                    totalScore += pointsPerQuestion;
-                } else if (correctSelected === 0) {
-                    results[questionId] = {
-                        score: 0,
-                        correctChoices: correctList,
-                        studentChoices: studentList,
-                        note: 'No correct answer selected'
-                    };
                 } else {
-                    const score = (correctSelected / totalCorrect) * pointsPerQuestion;
-                    results[questionId] = {
-                        score: parseFloat(score.toFixed(4)),
-                        correctChoices: correctList,
-                        studentChoices: studentList,
-                        note: `Partial (${correctSelected}/${totalCorrect})`
-                    };
-                    totalScore += score;
+                    optionElement.classList.remove('selected');
+                    userAnswers[qId] = userAnswers[qId].filter(id => id !== optId);
                 }
+                updateProgress();
             });
+        });
 
-            displayResults(totalScore, maxScore, results);
+        // تحديث أزرار التنقل
+        updateNavigationButtons(index);
+    }
+
+    // ✅ تحديث أزرار التنقل
+    function updateNavigationButtons(index) {
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        if (index === 0) {
+            prevBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'inline-flex';
         }
 
-        // Display results
-        function displayResults(totalScore, maxScore, results) {
-            const percentage = ((totalScore / maxScore) * 100).toFixed(2);
+        if (index === questions.length - 1) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-flex';
+        } else {
+            nextBtn.style.display = 'inline-flex';
+            submitBtn.style.display = 'none';
+        }
+    }
 
-            document.getElementById('final-score').textContent = `${totalScore.toFixed(2)}/${maxScore}`;
-            document.getElementById('score-text').textContent = getScoreMessage(percentage);
+    // ✅ الانتقال للسؤال التالي
+    function goToNext() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            displayQuestion(currentQuestionIndex);
+            document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
 
-            const feedback = document.getElementById('feedback');
-            let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Correction Details:</h3>';
+    // ✅ الانتقال للسؤال السابق
+    function goToPrev() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            displayQuestion(currentQuestionIndex);
+            document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
 
-            questions.forEach(question => {
-                const questionId = `q${question.id}`;
-                const result = results[questionId];
-                let resultClass = '';
+    // تحديث عداد التقدم
+    function updateProgress() {
+        const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
+        document.getElementById('answered').textContent = answeredCount;
+        document.getElementById('total-qs').textContent = questions.length;
+    }
 
-                if (Math.abs(result.score - pointsPerQuestion) < 0.001) {
-                    resultClass = 'correct';
-                } else if (result.score > 0) {
-                    resultClass = 'partial';
+    // Timer
+    function startTimer() {
+        timerInterval = setInterval(function() {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('time').textContent =
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                submitExam();
+            }
+        }, 1000);
+    }
+
+    // Grade exam
+    function submitExam() {
+        clearInterval(timerInterval);
+        let totalScore = 0;
+        const maxScore = 20;
+        const results = {};
+
+        questions.forEach(question => {
+            const questionId = `q${question.id}`;
+            const correctList = question.correctAnswers;
+            const studentList = userAnswers[questionId] || [];
+
+            if (studentList.length === 0) {
+                results[questionId] = {
+                    score: 0,
+                    correctChoices: correctList,
+                    studentChoices: studentList,
+                    note: 'No answer selected'
+                };
+                return;
+            }
+
+            let hasWrongAnswer = false;
+            for (const choice of studentList) {
+                if (!correctList.includes(choice)) {
+                    hasWrongAnswer = true;
+                    break;
+                }
+            }
+
+            if (hasWrongAnswer) {
+                results[questionId] = {
+                    score: 0,
+                    correctChoices: correctList,
+                    studentChoices: studentList,
+                    note: 'Contains an incorrect answer'
+                };
+                return;
+            }
+
+            const correctSelected = studentList.length;
+            const totalCorrect = correctList.length;
+
+            if (correctSelected === totalCorrect) {
+                results[questionId] = {
+                    score: pointsPerQuestion,
+                    correctChoices: correctList,
+                    studentChoices: studentList,
+                    note: 'Complete answer'
+                };
+                totalScore += pointsPerQuestion;
+            } else if (correctSelected === 0) {
+                results[questionId] = {
+                    score: 0,
+                    correctChoices: correctList,
+                    studentChoices: studentList,
+                    note: 'No correct answer selected'
+                };
+            } else {
+                const score = (correctSelected / totalCorrect) * pointsPerQuestion;
+                results[questionId] = {
+                    score: parseFloat(score.toFixed(4)),
+                    correctChoices: correctList,
+                    studentChoices: studentList,
+                    note: `Partial (${correctSelected}/${totalCorrect})`
+                };
+                totalScore += score;
+            }
+        });
+
+        displayResults(totalScore, maxScore, results);
+    }
+
+    // ==================== ✅✅✅ UPDATED: Display results with ALL options shown ====================
+    function displayResults(totalScore, maxScore, results) {
+        const percentage = ((totalScore / maxScore) * 100).toFixed(2);
+
+        document.getElementById('final-score').textContent = `${totalScore.toFixed(2)}/${maxScore}`;
+        document.getElementById('score-text').textContent = getScoreMessage(percentage);
+
+        const feedback = document.getElementById('feedback');
+        let detailsHTML =
+            '<h3><i class="fas fa-clipboard-check"></i> Correction Details:</h3>';
+
+        questions.forEach(question => {
+            const questionId = `q${question.id}`;
+            const result = results[questionId];
+            let resultClass = '';
+
+            if (Math.abs(result.score - pointsPerQuestion) < 0.001) {
+                resultClass = 'correct';
+            } else if (result.score > 0) {
+                resultClass = 'partial';
+            } else {
+                resultClass = 'wrong';
+            }
+
+            // Build the options list with visual indicators
+            let optionsListHTML = '<div class="options-result-list">';
+            question.options.forEach(option => {
+                const isCorrect = result.correctChoices.includes(option.id);
+                const isSelected = result.studentChoices.includes(option.id);
+
+                let itemClass = '';
+                let markHTML = '';
+
+                if (isCorrect) {
+                    // Correct answer → always show ✅
+                    itemClass = 'correct-option';
+                    markHTML = '<span class="option-mark">✅</span>';
+                } else if (isSelected && !isCorrect) {
+                    // Wrong answer selected by student → show ❌
+                    itemClass = 'wrong-selected';
+                    markHTML = '<span class="option-mark">❌</span>';
                 } else {
-                    resultClass = 'wrong';
+                    // Wrong answer not selected → neutral (no mark)
+                    itemClass = 'neutral-option';
+                    markHTML = '<span class="option-mark"></span>';
                 }
 
-                const studentChoicesText = result.studentChoices.length > 0
-                    ? result.studentChoices.join(', ')
-                    : 'None';
+                // Add a small badge if the student selected this option
+                let studentBadge = '';
+                if (isSelected) {
+                    studentBadge =
+                        '<span class="student-choice-badge">Your choice</span>';
+                }
 
-                detailsHTML += `
+                optionsListHTML += `
+                        <div class="option-result-item ${itemClass}">
+                            ${markHTML}
+                            <span class="option-letter">${option.id})</span>
+                            <span class="option-text">${option.text}</span>
+                            ${studentBadge}
+                        </div>
+                    `;
+            });
+            optionsListHTML += '</div>';
+
+            detailsHTML += `
                     <div class="question-result ${resultClass}">
                         <div class="question-result-header">
                             <span>Question ${question.id}</span>
                             <span>${result.score.toFixed(4)} point</span>
                         </div>
-                        <div class="result-details">
-                            <div>Correct answers: <span class="correct-answers">${result.correctChoices.join(', ')}</span></div>
-                            <div>Your answers: <span class="student-answers">${studentChoicesText}</span></div>
-                            <div class="note">${result.note}</div>
-                        </div>
+                        <div class="question-result-text">${question.text}</div>
+                        ${optionsListHTML}
+                        <div class="note">${result.note}</div>
                     </div>
                 `;
-            });
-
-            feedback.innerHTML = detailsHTML;
-
-            document.getElementById('examContent').style.display = 'none';
-            document.querySelector('.exam-info').style.display = 'none';
-            document.getElementById('result-container').style.display = 'block';
-        }
-
-        function getScoreMessage(percentage) {
-            if (percentage >= 90) return "Excellent! Perfect mastery of benign anomalies of the leukocyte lineage!";
-            if (percentage >= 80) return "Very good! Excellent knowledge in cellular hematology!";
-            if (percentage >= 70) return "Good! Solid knowledge of leukocyte anomalies!";
-            if (percentage >= 60) return "Fair! Review of leukocyte anomalies recommended!";
-            if (percentage >= 40) return "Low! Study the anomalies of the white lineage more thoroughly!";
-            return "Very low! You need to work harder on cellular hematology!";
-        }
-
-        function resetExam() {
-            // إعادة تعيين جميع الإجابات
-            questions.forEach(q => {
-                userAnswers[`q${q.id}`] = [];
-            });
-            currentQuestionIndex = 0;
-            displayQuestion(currentQuestionIndex);
-            updateProgress();
-        }
-
-        function restartExam() {
-            timeLeft = 45 * 60;
-            document.getElementById('examContent').style.display = 'block';
-            document.querySelector('.exam-info').style.display = 'flex';
-            document.getElementById('result-container').style.display = 'none';
-            resetExam();
-            clearInterval(timerInterval);
-            startTimer();
-        }
-
-        // ==================== General Functions from index ====================
-
-        // Hide/show header on scroll
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const topNav = document.getElementById('topNav');
-            if (scrollTop > lastScrollTop && scrollTop > 150) {
-                topNav.classList.add('hidden');
-            } else if (scrollTop < lastScrollTop) {
-                topNav.classList.remove('hidden');
-            }
-            lastScrollTop = scrollTop;
-        }, { passive: true });
-
-        // Mobile popup menu
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('mobileMenuOverlay').classList.add('open');
-            document.body.style.overflow = 'hidden';
         });
 
-        document.getElementById('closeMobileMenu').addEventListener('click', function() {
-            document.getElementById('mobileMenuOverlay').classList.remove('open');
+        feedback.innerHTML = detailsHTML;
+
+        document.getElementById('examContent').style.display = 'none';
+        document.querySelector('.exam-info').style.display = 'none';
+        document.getElementById('result-container').style.display = 'block';
+    }
+
+    function getScoreMessage(percentage) {
+        if (percentage >= 90) return "Excellent! Perfect mastery of benign anomalies of the leukocyte lineage!";
+        if (percentage >= 80) return "Very good! Excellent knowledge in cellular hematology!";
+        if (percentage >= 70) return "Good! Solid knowledge of leukocyte anomalies!";
+        if (percentage >= 60) return "Fair! Review of leukocyte anomalies recommended!";
+        if (percentage >= 40) return "Low! Study the anomalies of the white lineage more thoroughly!";
+        return "Very low! You need to work harder on cellular hematology!";
+    }
+
+    function resetExam() {
+        questions.forEach(q => {
+            userAnswers[`q${q.id}`] = [];
+        });
+        currentQuestionIndex = 0;
+        displayQuestion(currentQuestionIndex);
+        updateProgress();
+    }
+
+    function restartExam() {
+        timeLeft = 45 * 60;
+        document.getElementById('examContent').style.display = 'block';
+        document.querySelector('.exam-info').style.display = 'flex';
+        document.getElementById('result-container').style.display = 'none';
+        resetExam();
+        clearInterval(timerInterval);
+        startTimer();
+    }
+
+    // ==================== General Functions ====================
+
+    // Hide/show header on scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const topNav = document.getElementById('topNav');
+        if (scrollTop > lastScrollTop && scrollTop > 150) {
+            topNav.classList.add('hidden');
+        } else if (scrollTop < lastScrollTop) {
+            topNav.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+
+    // Mobile popup menu
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        document.getElementById('mobileMenuOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+
+    document.getElementById('closeMobileMenu').addEventListener('click', function() {
+        document.getElementById('mobileMenuOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+    });
+
+    document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('open');
             document.body.style.overflow = '';
-        });
+        }
+    });
 
-        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('open');
-                document.body.style.overflow = '';
-            }
-        });
+    // Dark/Light theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
 
-        // Dark/Light theme toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        htmlElement.setAttribute('data-theme', savedTheme);
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Start exam on page load
-        document.addEventListener('DOMContentLoaded', initExam);
-    </script>
+    // Start exam on page load
+    document.addEventListener('DOMContentLoaded', initExam);
+</script>
 </body>
 </html>
