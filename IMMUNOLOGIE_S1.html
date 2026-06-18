@@ -512,12 +512,53 @@
             padding: 0 30px;
         }
 
+        /* ==================== Shared Module Header ==================== */
+        .module-header {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        .module-header .exam-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .module-header .exam-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            line-height: 1.2;
+        }
+
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
         /* ==================== Tabs Switch (Lesson / Exam) ==================== */
         .tabs-container {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin: 30px 0 20px;
+            margin: 30px 0 30px;
             flex-wrap: wrap;
         }
 
@@ -639,61 +680,6 @@
             }
         }
 
-        .exam-header {
-            text-align: center;
-            padding: 60px 20px 40px;
-        }
-
-        .exam-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 188, 212, 0.1);
-            border: 1px solid rgba(0, 188, 212, 0.3);
-            padding: 8px 22px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .exam-title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 900;
-            background: var(--gradient-hero);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 6s ease-in-out infinite;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        @keyframes gradientShift {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .exam-description {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 20px 25px;
-            border-radius: 16px;
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            line-height: 1.8;
-        }
-
         .exam-container {
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
@@ -733,7 +719,6 @@
             font-weight: 500;
         }
 
-        /* ✅ حاوية عرض سؤال واحد */
         .question-wrapper {
             display: flex;
             flex-direction: column;
@@ -924,7 +909,6 @@
             box-shadow: 0 15px 35px rgba(247, 151, 30, 0.6);
         }
 
-        /* Exam Results */
         .result-container {
             display: none;
             text-align: center;
@@ -1094,22 +1078,6 @@
             color: var(--result-wrong-text);
         }
 
-        .result-details {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        .correct-answers {
-            color: #4caf50;
-            font-weight: 700;
-        }
-
-        .student-answers {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
         .note {
             font-style: italic;
             margin-top: 8px;
@@ -1276,7 +1244,7 @@
             .nav-links {
                 display: none !important;
             }
-            .exam-title {
+            .module-header .exam-title {
                 font-size: 1.5rem;
             }
             .container {
@@ -1294,9 +1262,6 @@
             }
             .score {
                 font-size: 3.5rem;
-            }
-            .exam-header {
-                padding: 40px 15px 30px;
             }
             .option-result-item {
                 flex-wrap: wrap;
@@ -1387,8 +1352,16 @@
     <div class="main-wrapper">
         <div class="container">
 
+            <!-- Shared Module Header -->
+            <div class="module-header reveal">
+                <div class="exam-badge">
+                    <i class="fas fa-flask"></i> Hematology Module
+                </div>
+                <h1 class="exam-title">BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE</h1>
+            </div>
+
             <!-- Tabs Switch Buttons -->
-            <div class="tabs-container reveal">
+            <div class="tabs-container reveal reveal-delay-1">
                 <button class="tab-btn active" id="tabLesson">
                     <i class="fas fa-file-pdf"></i> Lesson
                 </button>
@@ -1398,7 +1371,7 @@
             </div>
 
             <!-- Lesson Section (PDF) -->
-            <div class="lesson-section reveal reveal-delay-1" id="lessonSection">
+            <div class="lesson-section reveal reveal-delay-2" id="lessonSection">
                 <div class="pdf-container">
                     <!-- Replace the src below with your actual PDF link -->
                     <iframe src="about:blank" title="Lesson PDF" allowfullscreen>
@@ -1409,21 +1382,8 @@
             </div>
 
             <!-- Exam Section -->
-            <div class="exam-section hidden reveal reveal-delay-1" id="examSection">
-                <!-- Exam Header -->
-                <div class="exam-header">
-                    <div class="exam-badge">
-                        <i class="fas fa-flask"></i> QCM Hematology
-                    </div>
-                    <h1 class="exam-title">BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE</h1>
-                    <div class="exam-description">
-                        <i class="fas fa-info-circle"></i>
-                        QCM of 15 questions. You have <strong>45 minutes</strong> to answer.
-                        Total score out of <strong>20 points</strong>. Each question may have one or more correct answers.
-                    </div>
-                </div>
-
-                <!-- Exam Container -->
+            <div class="exam-section hidden reveal reveal-delay-2" id="examSection">
+                <!-- Exam Container (no header) -->
                 <div class="exam-container" id="examContainer">
                     <div class="exam-info">
                         <div class="timer">
@@ -1546,12 +1506,38 @@
     const lessonSection = document.getElementById('lessonSection');
     const examSection = document.getElementById('examSection');
 
+    function pauseTimer() {
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+    }
+
+    function resumeTimer() {
+        // استئناف المؤقت فقط إذا كان الامتحان قيد التقدم ولم يتم عرض النتيجة
+        const resultContainer = document.getElementById('result-container');
+        if (!timerInterval && resultContainer.style.display !== 'block' && document.getElementById('examContent').style.display !== 'none') {
+            startTimer();
+        }
+    }
+
     function switchTab(activeTab, inactiveTab, showSection, hideSection) {
         activeTab.classList.add('active');
         inactiveTab.classList.remove('active');
         showSection.classList.remove('hidden');
         hideSection.classList.add('hidden');
-        // إعادة تشغيل تأثير الظهور للقسم الظاهر إذا كان يحتوي على عناصر reveal
+
+        // إيقاف المؤقت عند مغادرة قسم الامتحان
+        if (hideSection === examSection) {
+            pauseTimer();
+        }
+
+        // استئناف المؤقت عند العودة لقسم الامتحان
+        if (showSection === examSection) {
+            resumeTimer();
+        }
+
+        // إعادة تشغيل تأثير الظهور للقسم الظاهر
         showSection.querySelectorAll('.reveal').forEach(el => {
             el.classList.remove('visible');
             void el.offsetWidth;
@@ -1568,11 +1554,6 @@
     tabExam.addEventListener('click', function() {
         if (!tabExam.classList.contains('active')) {
             switchTab(tabExam, tabLesson, examSection, lessonSection);
-            // عند التبديل إلى الامتحان، تأكد من أن حالة الامتحان مرئية ومنتعشة
-            if (document.getElementById('result-container').style.display === 'block') {
-                // إذا كانت النتيجة معروضة، يمكن تركها أو العودة إلى الأسئلة حسب الرغبة
-                // هنا سنبقي النتيجة كما هي إذا كانت ظاهرة، ولن نعيد تعيينها
-            }
         }
     });
 
@@ -1584,8 +1565,7 @@
         options: [
             { id: "a", text: "Abnormalities of medullary production." },
             { id: "b", text: "Abnormalities of phagocytic function." },
-            { id: "c",
-                text: "Abnormalities of distribution between circulating pool and marginal pool." },
+            { id: "c", text: "Abnormalities of distribution between circulating pool and marginal pool." },
             { id: "d", text: "Abnormal peripheral anomalies (destruction, sequestration)." }
         ]
     }, {
@@ -1595,8 +1575,7 @@
         options: [
             { id: "a", text: "Rely solely on percentages (relative values)." },
             { id: "b", text: "Convert percentages to absolute values (per mm³)." },
-            { id: "c",
-                text: "Multiply the percentage of each lineage by the total leukocyte count." },
+            { id: "c", text: "Multiply the percentage of each lineage by the total leukocyte count." },
             { id: "d", text: "Compare the obtained values to the norms of a healthy adult." }
         ]
     }, {
@@ -1704,12 +1683,10 @@
         text: "Regarding atypical lymphocytes, which statement is correct?",
         correctAnswers: ["a", "c"],
         options: [
-            { id: "a",
-                text: "They are characteristic of mononucleosis syndromes (e.g., IM)." },
+            { id: "a", text: "They are characteristic of mononucleosis syndromes (e.g., IM)." },
             { id: "b", text: "They always indicate a malignant hemopathy." },
             { id: "c", text: "They correspond to activated or stimulated lymphocytes." },
-            { id: "d",
-                text: "Their presence is pathognomonic of acute lymphoblastic leukemia." }
+            { id: "d", text: "Their presence is pathognomonic of acute lymphoblastic leukemia." }
         ]
     }, {
         id: 14,
@@ -1726,13 +1703,10 @@
         text: "Which statement regarding leukocyte balance is correct?",
         correctAnswers: ["b"],
         options: [
-            { id: "a",
-            text: "Its disturbance always requires immunomodulatory treatment." },
-            { id: "b",
-                text: "It generally restores with treatment of the underlying cause." },
+            { id: "a", text: "Its disturbance always requires immunomodulatory treatment." },
+            { id: "b", text: "It generally restores with treatment of the underlying cause." },
             { id: "c", text: "Benign anomalies are always symptomatic." },
-            { id: "d",
-            text: "Monitoring by hemogram is useless once the diagnosis is made." }
+            { id: "d", text: "Monitoring by hemogram is useless once the diagnosis is made." }
         ]
     }];
 
@@ -1742,7 +1716,7 @@
     let timerInterval;
     let currentQuestionIndex = 0;
 
-    // ✅ تخزين إجابات المستخدم لكل سؤال
+    // تخزين إجابات المستخدم لكل سؤال
     let userAnswers = {};
     questions.forEach(q => {
         userAnswers[`q${q.id}`] = [];
@@ -1757,11 +1731,10 @@
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    // Initialize exam
+    // Initialize exam (without starting timer automatically)
     function initExam() {
         displayQuestion(currentQuestionIndex);
         updateProgress();
-        startTimer();
 
         document.getElementById('next-btn').addEventListener('click', goToNext);
         document.getElementById('prev-btn').addEventListener('click', goToPrev);
@@ -1773,7 +1746,7 @@
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     }
 
-    // ✅ عرض سؤال واحد فقط
+    // عرض سؤال واحد فقط
     function displayQuestion(index) {
         const wrapper = document.getElementById('questionWrapper');
         const question = questions[index];
@@ -1820,11 +1793,10 @@
             });
         });
 
-        // تحديث أزرار التنقل
         updateNavigationButtons(index);
     }
 
-    // ✅ تحديث أزرار التنقل
+    // تحديث أزرار التنقل
     function updateNavigationButtons(index) {
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
@@ -1845,7 +1817,6 @@
         }
     }
 
-    // ✅ الانتقال للسؤال التالي
     function goToNext() {
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
@@ -1854,7 +1825,6 @@
         }
     }
 
-    // ✅ الانتقال للسؤال السابق
     function goToPrev() {
         if (currentQuestionIndex > 0) {
             currentQuestionIndex--;
@@ -1863,14 +1833,12 @@
         }
     }
 
-    // تحديث عداد التقدم
     function updateProgress() {
         const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
         document.getElementById('answered').textContent = answeredCount;
         document.getElementById('total-qs').textContent = questions.length;
     }
 
-    // Timer
     function startTimer() {
         timerInterval = setInterval(function() {
             timeLeft--;
@@ -1881,14 +1849,17 @@
 
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
+                timerInterval = null;
                 submitExam();
             }
         }, 1000);
     }
 
-    // Grade exam
     function submitExam() {
-        clearInterval(timerInterval);
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
         let totalScore = 0;
         const maxScore = 20;
         const results = {};
@@ -1959,7 +1930,6 @@
         displayResults(totalScore, maxScore, results);
     }
 
-    // ==================== ✅✅✅ UPDATED: Display results with ALL options shown ====================
     function displayResults(totalScore, maxScore, results) {
         const percentage = ((totalScore / maxScore) * 100).toFixed(2);
 
@@ -1967,8 +1937,7 @@
         document.getElementById('score-text').textContent = getScoreMessage(percentage);
 
         const feedback = document.getElementById('feedback');
-        let detailsHTML =
-            '<h3><i class="fas fa-clipboard-check"></i> Correction Details:</h3>';
+        let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Correction Details:</h3>';
 
         questions.forEach(question => {
             const questionId = `q${question.id}`;
@@ -2004,8 +1973,7 @@
 
                 let studentBadge = '';
                 if (isSelected) {
-                    studentBadge =
-                        '<span class="student-choice-badge">Your choice</span>';
+                    studentBadge = '<span class="student-choice-badge">Your choice</span>';
                 }
 
                 optionsListHTML += `
@@ -2063,7 +2031,10 @@
         document.querySelector('.exam-info').style.display = 'flex';
         document.getElementById('result-container').style.display = 'none';
         resetExam();
-        clearInterval(timerInterval);
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
         startTimer();
     }
 
@@ -2113,7 +2084,7 @@
         localStorage.setItem('theme', newTheme);
     });
 
-    // Start exam on page load
+    // Start exam setup (but timer not started until user clicks exam tab)
     document.addEventListener('DOMContentLoaded', initExam);
 </script>
 </body>
