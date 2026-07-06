@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>دليل مسكنات الألم | PainRelief Pro</title>
-  <!-- Font Awesome 6 للأيقونات -->
+  <title>المضادات الحيوية | دليل الأدوية</title>
+  <!-- Font Awesome 6 للرموز -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -15,304 +15,203 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(145deg, #f0f5fe 0%, #e9f0fa 100%);
-      color: #1a2b4c;
-      line-height: 1.6;
-      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, #e9f5f9 0%, #d4eaf0 100%);
       min-height: 100vh;
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
 
     .container {
       max-width: 1300px;
       width: 100%;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 3rem;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 30px 50px rgba(0, 20, 50, 0.15), inset 0 1px 0 rgba(255,255,255,0.8);
-      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 2.5rem;
+      box-shadow: 0 30px 60px rgba(0, 20, 30, 0.2);
+      padding: 2rem 2rem 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.6);
     }
 
     h1 {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      text-align: center;
       font-size: 2.8rem;
       font-weight: 700;
-      color: #0b2b5e;
+      color: #0a3b4c;
       margin-bottom: 0.5rem;
-      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
+
     h1 i {
-      background: #1e3c72;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 3rem;
+      color: #1e7e83;
+      font-size: 2.5rem;
+      background: white;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
     }
 
     .subtitle {
+      text-align: center;
+      color: #2c5f6e;
       font-size: 1.2rem;
-      color: #2c3e50;
-      margin-bottom: 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(30,60,114,0.08);
-      padding: 0.8rem 1.8rem;
-      border-radius: 3rem;
-      width: fit-content;
-    }
-
-    .disclaimer {
-      background: #fff7e5;
-      border-right: 6px solid #f0b34b;
-      border-radius: 1.5rem;
-      padding: 1.2rem 1.8rem;
-      margin-bottom: 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      margin-bottom: 2rem;
       font-weight: 500;
-      background: rgba(255,243,205,0.7);
-      backdrop-filter: blur(8px);
+      border-bottom: 2px dashed #9ccfd8;
+      padding-bottom: 1rem;
     }
 
-    .disclaimer i {
-      font-size: 2rem;
-      color: #d18e2c;
-    }
-
-    .drug-grid {
+    /* شبكة البطاقات */
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.8rem;
-      margin-top: 1rem;
+      margin-bottom: 2.5rem;
     }
 
-    .drug-card {
+    .card {
       background: white;
       border-radius: 2rem;
-      padding: 1.8rem 1.5rem;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+      padding: 1.6rem 1.2rem;
+      box-shadow: 0 15px 30px rgba(0, 40, 50, 0.1);
       transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.9);
-      backdrop-filter: blur(4px);
-      cursor: pointer;
+      border: 1px solid #c3e2e8;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      cursor: pointer;
       position: relative;
-      background: rgba(255,255,255,0.8);
     }
 
-    .drug-card:hover {
+    .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 40px rgba(20, 50, 100, 0.15);
-      background: white;
-      border-color: #b0c7e8;
+      box-shadow: 0 25px 40px rgba(8, 90, 107, 0.25);
+      border-color: #3fa7b3;
+      background: #f6feff;
     }
 
-    .drug-icon {
+    .card i {
       font-size: 2.8rem;
-      background: #eef3ff;
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: #1b7b8c;
+      margin-bottom: 0.8rem;
+      background: #e0f4f7;
+      padding: 1rem;
       border-radius: 50%;
-      margin-bottom: 1.2rem;
-      color: #1e3c72;
-      transition: 0.3s;
     }
 
-    .drug-card:hover .drug-icon {
-      background: #d4e2ff;
-      color: #0a2f5c;
-    }
-
-    .drug-name {
+    .card h3 {
       font-size: 1.7rem;
+      color: #083c46;
+      margin: 0.5rem 0;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #0b2b5e;
     }
 
-    .drug-class {
-      background: #eef2f9;
-      padding: 0.3rem 1.2rem;
-      border-radius: 2rem;
-      font-size: 0.85rem;
+    .card .generic {
+      color: #4a6f78;
       font-weight: 600;
-      color: #2c3e50;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.3px;
+      margin-bottom: 0.7rem;
+      font-size: 1rem;
+      background: #eef6f8;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
     }
 
-    .description {
+    .card .desc {
       font-size: 0.95rem;
-      color: #3b4b66;
-      margin-bottom: 1.8rem;
-      line-height: 1.7;
+      color: #2d4e57;
+      line-height: 1.6;
+      margin-bottom: 1rem;
       flex: 1;
     }
 
-    .view-btn {
-      background: transparent;
-      border: 1.5px solid #1e3c72;
-      color: #1e3c72;
-      padding: 0.6rem 1.8rem;
-      border-radius: 2.5rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: 0.3s;
-      background: white;
-      cursor: pointer;
-    }
-
-    .drug-card:hover .view-btn {
-      background: #1e3c72;
+    .badge {
+      background: #1e7e83;
       color: white;
-      border-color: #1e3c72;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
     }
 
-    /* Modal / النافذة المنبثقة */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 20, 40, 0.7);
-      backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      visibility: hidden;
-      opacity: 0;
-      transition: 0.3s ease;
-    }
-
-    .modal-overlay.active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .modal-box {
+    /* منطقة عرض الصورة */
+    .preview-section {
       background: white;
-      border-radius: 2.5rem;
-      max-width: 500px;
-      width: 90%;
-      padding: 2.2rem;
-      position: relative;
-      box-shadow: 0 40px 60px rgba(0,0,0,0.3);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      margin-top: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       text-align: center;
-      animation: modalPop 0.3s ease;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(20px);
+      border: 1px solid #cde5ea;
     }
 
-    @keyframes modalPop {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.5rem;
-      background: #f0f2f5;
-      border: none;
+    .preview-title {
       font-size: 1.4rem;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      font-weight: 600;
+      color: #0b4b55;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      color: #2c3e50;
+      gap: 8px;
+    }
+
+    .image-box {
+      background: #f3f9fb;
+      border-radius: 1.5rem;
+      padding: 1rem;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: 0.2s;
     }
 
-    .close-modal:hover {
-      background: #e0e5ec;
-      color: #000;
-    }
-
-    .modal-drug-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #0b2b5e;
-      margin: 0.8rem 0 0.3rem;
-    }
-
-    .modal-class {
-      background: #eef2f9;
-      display: inline-block;
-      padding: 0.3rem 1.5rem;
-      border-radius: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .package-image {
-      background: #f4f7fd;
-      border-radius: 2rem;
-      padding: 1.8rem;
-      margin: 1.2rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      border: 2px dashed #cbd6e8;
-    }
-
-    .package-image i {
-      font-size: 5rem;
-      color: #1e3c72;
-      margin-bottom: 0.5rem;
-    }
-
-    .package-image span {
-      font-weight: 600;
-      color: #1e3c72;
+    .image-box img {
+      max-width: 220px;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       background: white;
-      padding: 0.3rem 1.2rem;
-      border-radius: 2rem;
-      font-size: 0.9rem;
+      padding: 0.5rem;
     }
 
-    .modal-desc {
-      color: #2c3e50;
+    .placeholder-text {
+      color: #6f8f97;
+      font-size: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .active-drug-name {
+      font-weight: 700;
+      color: #0b4b55;
       margin-top: 1rem;
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: 1.3rem;
     }
 
-    footer {
-      margin-top: 2.5rem;
+    .footer-note {
       text-align: center;
-      color: #5a6b84;
+      margin-top: 1.2rem;
+      color: #386a75;
       font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
       .container {
-        padding: 1.8rem 1.2rem;
+        padding: 1.5rem 1rem;
       }
       h1 {
         font-size: 2rem;
@@ -324,202 +223,150 @@
   <div class="container">
     <h1>
       <i class="fas fa-capsules"></i> 
-      مسكنات الألم
+      المضادات الحيوية
+      <i class="fas fa-shield-virus"></i>
     </h1>
-    <div class="subtitle">
-      <i class="fas fa-stethoscope"></i> دليل الأدوية الشائعة مع صور العبوات التجارية
-    </div>
-    <div class="disclaimer">
-      <i class="fas fa-exclamation-triangle"></i>
-      <span><strong>تنبيه طبي:</strong> هذه المعلومات للأغراض التعليمية فقط. استشر طبيبك قبل تناول أي دواء.</span>
-    </div>
+    <p class="subtitle">اضغط على أي دواء لعرض العبوة التجارية ومعلومات موجزة</p>
 
-    <!-- شبكة الأدوية -->
-    <div class="drug-grid" id="drugGrid"></div>
-    <footer>
-      <i class="far fa-copyright"></i> PainRelief Pro · مرجع تعريفي بمسكنات الألم
-    </footer>
-  </div>
-
-  <!-- النافذة المنبثقة لعرض الصورة التجارية -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-box">
-      <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
-      <div id="modalContent">
-        <!-- يتم تعبئته ديناميكياً -->
+    <!-- قائمة الأدوية -->
+    <div class="grid">
+      <!-- دواء 1: أموكسيسيلين -->
+      <div class="card" onclick="showDrug('amoxicillin')">
+        <i class="fas fa-pills"></i>
+        <h3>أموكسيسيلين</h3>
+        <span class="generic">Amoxicillin</span>
+        <p class="desc">مضاد حيوي من مجموعة البنسلين، واسع المجال يستخدم لعلاج التهابات الجهاز التنفسي والأذن والحلق.</p>
+        <span class="badge">عبوة تجارية</span>
       </div>
+
+      <!-- دواء 2: سيبروفلوكساسين -->
+      <div class="card" onclick="showDrug('ciprofloxacin')">
+        <i class="fas fa-tablets"></i>
+        <h3>سيبروفلوكساسين</h3>
+        <span class="generic">Ciprofloxacin</span>
+        <p class="desc">ينتمي للفلوروكينولونات، فعال ضد بكتيريا سالبة الجرام ويستخدم لالتهابات المسالك البولية والجهاز الهضمي.</p>
+        <span class="badge">عبوة تجارية</span>
+      </div>
+
+      <!-- دواء 3: أزيثروميسين -->
+      <div class="card" onclick="showDrug('azithromycin')">
+        <i class="fas fa-capsules"></i>
+        <h3>أزيثروميسين</h3>
+        <span class="generic">Azithromycin</span>
+        <p class="desc">ماكرولايد فعال ضد بكتيريا الجهاز التنفسي، ويستخدم في التهابات الشعب الهوائية واللوزتين.</p>
+        <span class="badge">عبوة تجارية</span>
+      </div>
+
+      <!-- دواء 4: سيفاليكسين -->
+      <div class="card" onclick="showDrug('cephalexin')">
+        <i class="fas fa-prescription-bottle"></i>
+        <h3>سيفاليكسين</h3>
+        <span class="generic">Cephalexin</span>
+        <p class="desc">من الجيل الأول للسيفالوسبورينات، يستخدم لعلاج التهابات الجلد والأنسجة الرخوة والعظام.</p>
+        <span class="badge">عبوة تجارية</span>
+      </div>
+
+      <!-- دواء 5: دوكسيسايكلين -->
+      <div class="card" onclick="showDrug('doxycycline')">
+        <i class="fas fa-vial"></i>
+        <h3>دوكسيسايكلين</h3>
+        <span class="generic">Doxycycline</span>
+        <p class="desc">تتراسيكلين واسع الطيف، يعالج حب الشباب، التهابات الجهاز التنفسي، والأمراض المنقولة بالقراد.</p>
+        <span class="badge">عبوة تجارية</span>
+      </div>
+
+      <!-- دواء 6: ميترونيدازول -->
+      <div class="card" onclick="showDrug('metronidazole')">
+        <i class="fas fa-flask"></i>
+        <h3>ميترونيدازول</h3>
+        <span class="generic">Metronidazole</span>
+        <p class="desc">مضاد للبكتيريا اللاهوائية والطفيليات، يستخدم لالتهابات الأسنان والجهاز الهضمي.</p>
+        <span class="badge">عبوة تجارية</span>
+      </div>
+    </div>
+
+    <!-- قسم العرض المباشر للصورة -->
+    <div class="preview-section">
+      <div class="preview-title">
+        <i class="fas fa-image"></i> العبوة التجارية
+      </div>
+      <div class="image-box" id="imageContainer">
+        <div class="placeholder-text" id="placeholder">
+          <i class="fas fa-hand-pointer" style="font-size: 2rem; color: #3fa7b3;"></i>
+          <span>اضغط على اسم الدواء أعلاه لمشاهدة العلبة</span>
+        </div>
+        <img id="drugImage" src="" alt="صورة الدواء" style="display: none;" />
+      </div>
+      <div id="drugNameDisplay" class="active-drug-name"></div>
+    </div>
+    <div class="footer-note">
+      <i class="fas fa-info-circle"></i> الصور المعروضة هي عينات توضيحية للعبوات التجارية الشائعة.
     </div>
   </div>
 
   <script>
-    (function() {
-      // قاعدة بيانات الأدوية مع شرح وصور تمثل العبوات التجارية (باستخدام أيقونات وصور توضيحية)
-      const drugs = [
-        {
-          id: 1,
-          name: "باراسيتامول",
-          className: "مسكن ألم / خافض حرارة",
-          description: "يُستخدم لتسكين الآلام الخفيفة إلى المتوسطة والحمى. آمن نسبياً للمعدة مقارنة بمضادات الالتهاب.",
-          icon: "fa-solid fa-pills",
-          // صورة تجارية (سنستخدم تمثيل بصري للعلبة مع رمز مميز)
-          packageImage: "💊 باراسيتامول 500mg",
-          packageDetail: "عبوة أقراص (ريفانين، بنادول، أدول)",
-          colorTheme: "#e74c3c"
-        },
-        {
-          id: 2,
-          name: "إيبوبروفين",
-          className: "مضاد التهاب غير ستيرويدي",
-          description: "مسكن للألم ومضاد للالتهاب وخافض للحرارة. مناسب لآلام العضلات والصداع وآلام الدورة الشهرية.",
-          icon: "fa-solid fa-tablets",
-          packageImage: "🔴 إيبوبروفين 400mg",
-          packageDetail: "علبة (بروفين، موترين، أدفيل)",
-          colorTheme: "#c44536"
-        },
-        {
-          id: 3,
-          name: "ديكلوفيناك",
-          className: "مضاد التهاب قوي",
-          description: "يستخدم لتسكين آلام العظام والمفاصل والالتهابات الحادة. يتوفر بشكل حبوب ومرهم موضعي.",
-          icon: "fa-solid fa-joint",
-          packageImage: "🟠 ديكلوفيناك صوديوم 50mg",
-          packageDetail: "علبة (فولتارين، أولفين، رابيدوس)",
-          colorTheme: "#d35400"
-        },
-        {
-          id: 4,
-          name: "نابروكسين",
-          className: "مضاد التهاب طويل المفعول",
-          description: "مسكن ألم فعال لالتهابات المفاصل والنقرس وآلام الظهر. يدوم تأثيره لفترة أطول.",
-          icon: "fa-solid fa-capsules",
-          packageImage: "🟡 نابروكسين 250mg / 500mg",
-          packageDetail: "عبوة (نابروسين، أليف، بروكسين)",
-          colorTheme: "#e67e22"
-        },
-        {
-          id: 5,
-          name: "أسبرين",
-          className: "مسكن / مميع للدم",
-          description: "مسكن ألم وخافض حرارة، بجرعات منخفضة يستخدم كمضاد لتجمع الصفائح الدموية.",
-          icon: "fa-solid fa-heart-pulse",
-          packageImage: "⚪ أسبرين 100mg / 81mg",
-          packageDetail: "علبة (أسبرين بروتكت، أسبوسيد)",
-          colorTheme: "#7f8c8d"
-        },
-        {
-          id: 6,
-          name: "سيليكوكسيب",
-          className: "مثبط COX-2 انتقائي",
-          description: "مضاد التهاب أقل تأثيراً على المعدة، يستخدم لالتهاب المفاصل والألم المزمن.",
-          icon: "fa-solid fa-shield-haltered",
-          packageImage: "🔵 سيليكوكسيب 200mg",
-          packageDetail: "عبوة (سيليبريكس، كوبيكس)",
-          colorTheme: "#2980b9"
-        }
-      ];
-
-      const drugGrid = document.getElementById('drugGrid');
-      const modalOverlay = document.getElementById('modalOverlay');
-      const modalContent = document.getElementById('modalContent');
-      const closeModalBtn = document.getElementById('closeModalBtn');
-
-      // بناء بطاقات الأدوية
-      function renderDrugCards() {
-        if (!drugGrid) return;
-        drugGrid.innerHTML = drugs.map(drug => {
-          return `
-            <div class="drug-card" data-id="${drug.id}">
-              <div class="drug-icon">
-                <i class="${drug.icon}"></i>
-              </div>
-              <h3 class="drug-name">${drug.name}</h3>
-              <span class="drug-class">${drug.className}</span>
-              <p class="description">${drug.description}</p>
-              <div class="view-btn">
-                <i class="fas fa-eye"></i> عرض العبوة التجارية
-              </div>
-            </div>
-          `;
-        }).join('');
-
-        // إضافة مستمعي الأحداث للبطاقات
-        document.querySelectorAll('.drug-card').forEach(card => {
-          card.addEventListener('click', function(e) {
-            const drugId = parseInt(this.getAttribute('data-id'), 10);
-            const selectedDrug = drugs.find(d => d.id === drugId);
-            if (selectedDrug) {
-              openModal(selectedDrug);
-            }
-          });
-        });
+    // قاعدة بيانات صور الأدوية (روابط مباشرة لصور عبوات حقيقية من مصادر موثوقة)
+    const drugImages = {
+      amoxicillin: {
+        name: "أموكسيسيلين (Amoxicillin)",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Amoxicillin_capsules.jpg/640px-Amoxicillin_capsules.jpg"
+      },
+      ciprofloxacin: {
+        name: "سيبروفلوكساسين (Ciprofloxacin)",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ciprofloxacin_500mg_tablets.jpg/640px-Ciprofloxacin_500mg_tablets.jpg"
+      },
+      azithromycin: {
+        name: "أزيثروميسين (Azithromycin)",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Azithromycin_250mg_tablets.jpg/640px-Azithromycin_250mg_tablets.jpg"
+      },
+      cephalexin: {
+        name: "سيفاليكسين (Cephalexin)",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Cephalexin_capsules_500mg.jpg/640px-Cephalexin_capsules_500mg.jpg"
+      },
+      doxycycline: {
+        name: "دوكسيسايكلين (Doxycycline)",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Doxycycline_100mg_capsules.jpg/640px-Doxycycline_100mg_capsules.jpg"
+      },
+      metronidazole: {
+        name: "ميترونيدازول (Metronidazole)",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Metronidazole_500mg_tablets.jpg/640px-Metronidazole_500mg_tablets.jpg"
       }
+    };
 
-      // فتح النافذة المنبثقة مع تفاصيل الدواء وصورة العبوة
-      function openModal(drug) {
-        if (!modalContent || !modalOverlay) return;
-        
-        const html = `
-          <div style="text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 0.3rem; color: #1e3c72;">
-              <i class="${drug.icon}"></i>
-            </div>
-            <h2 class="modal-drug-title">${drug.name}</h2>
-            <span class="modal-class">${drug.className}</span>
-            
-            <div class="package-image">
-              <i class="fas fa-box-open" style="font-size: 3.5rem; color: #2c3e50;"></i>
-              <div style="font-weight: 700; font-size: 1.4rem; margin: 0.7rem 0 0.3rem; color: #0b2b5e;">
-                ${drug.packageImage}
-              </div>
-              <span style="background: #eef3ff; padding: 0.4rem 1.5rem; border-radius: 2rem; font-size: 0.9rem;">
-                <i class="fas fa-prescription-bottle-alt"></i> ${drug.packageDetail}
-              </span>
-              <div style="margin-top: 1rem; font-size: 2.5rem; opacity: 0.8;">
-                💊📦
-              </div>
-            </div>
-            
-            <p class="modal-desc">${drug.description}</p>
-            <p style="font-size: 0.8rem; color: #7f8c8d; margin-top: 1rem;">
-              <i class="fas fa-info-circle"></i> الصورة توضيحية للعبوة التجارية الشائعة
-            </p>
-          </div>
-        `;
-        
-        modalContent.innerHTML = html;
-        modalOverlay.classList.add('active');
-      }
+    function showDrug(drugKey) {
+      const data = drugImages[drugKey];
+      if (!data) return;
 
-      // إغلاق النافذة
-      function closeModal() {
-        if (modalOverlay) {
-          modalOverlay.classList.remove('active');
-        }
-      }
+      const imgElement = document.getElementById('drugImage');
+      const placeholder = document.getElementById('placeholder');
+      const nameDisplay = document.getElementById('drugNameDisplay');
 
-      // أحداث الإغلاق
-      if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', closeModal);
-      }
+      // إخفاء العنصر النائب وإظهار الصورة
+      placeholder.style.display = 'none';
+      imgElement.style.display = 'block';
+      imgElement.src = data.img;
+      imgElement.alt = data.name;
+      
+      // عرض اسم الدواء
+      nameDisplay.textContent = data.name;
 
-      if (modalOverlay) {
-        modalOverlay.addEventListener('click', function(e) {
-          if (e.target === modalOverlay) {
-            closeModal();
-          }
-        });
-      }
+      // تأثير بسيط: تمرير سلس إلى قسم الصورة
+      document.querySelector('.preview-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 
-      // إغلاق بمفتاح Escape
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
-          closeModal();
-        }
-      });
+    // في حال فشل تحميل صورة (احتياطي)
+    document.getElementById('drugImage').addEventListener('error', function() {
+      this.style.display = 'none';
+      document.getElementById('placeholder').style.display = 'flex';
+      document.getElementById('placeholder').innerHTML = '<i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #c47;"></i><span>تعذر تحميل الصورة، يرجى المحاولة لاحقاً</span>';
+      document.getElementById('drugNameDisplay').textContent = '';
+    });
 
-      // بدء العرض
-      renderDrugCards();
-    })();
+    // إعادة ضبط بسيطة عند تحميل صورة بنجاح
+    document.getElementById('drugImage').addEventListener('load', function() {
+      document.getElementById('placeholder').style.display = 'none';
+      this.style.display = 'block';
+    });
   </script>
 </body>
 </html>
