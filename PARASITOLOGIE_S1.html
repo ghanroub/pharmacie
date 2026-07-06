@@ -2,27 +2,24 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل مسكنات الألم - 3D</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>دليل مسكنات الألم – علب ثلاثية الأبعاد</title>
     <style>
         :root {
-            --bg: #0f172a;
-            --surface: #1e293b;
-            --surface-light: #273448;
+            --bg: #0b1120;
+            --surface: #151e2f;
+            --surface-light: #1e2a3d;
             --primary: #4f8ef7;
-            --primary-glow: #4f8ef766;
-            --accent-teal: #2dd4bf;
-            --accent-amber: #f59e0b;
-            --accent-rose: #f43f5e;
+            --primary-glow: #4f8ef744;
+            --accent: #2dd4bf;
             --text: #e2e8f0;
             --text-muted: #94a3b8;
-            --text-light: #cbd5e1;
-            --border: #334155;
-            --radius: 18px;
-            --radius-sm: 10px;
-            --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.5);
-            --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
-            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --border: #2d3a50;
+            --radius: 20px;
+            --radius-sm: 12px;
+            --shadow-lg: 0 25px 60px rgba(0,0,0,0.6);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --safe-bottom: env(safe-area-inset-bottom, 16px);
         }
 
         * {
@@ -32,7 +29,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Tajawal', 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+            font-family: 'Tajawal', 'Segoe UI', 'Cairo', sans-serif;
             background: var(--bg);
             color: var(--text);
             height: 100vh;
@@ -41,27 +38,28 @@
             display: flex;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
+            position: relative;
         }
 
-        /* ========== SIDEBAR ========== */
+        /* ========== DESKTOP SIDEBAR ========== */
         .sidebar {
-            width: 420px;
-            min-width: 420px;
+            width: 400px;
+            min-width: 400px;
             height: 100vh;
             background: var(--surface);
             border-left: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            z-index: 10;
+            z-index: 20;
             box-shadow: var(--shadow-lg);
-            position: relative;
             overflow-y: auto;
             overflow-x: hidden;
             scrollbar-width: thin;
             scrollbar-color: var(--border) transparent;
+            transition: transform 0.25s ease;
         }
         .sidebar::-webkit-scrollbar {
-            width: 5px;
+            width: 4px;
         }
         .sidebar::-webkit-scrollbar-track {
             background: transparent;
@@ -72,7 +70,7 @@
         }
 
         .sidebar-header {
-            padding: 28px 24px 20px;
+            padding: 24px 20px 16px;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -80,56 +78,55 @@
             z-index: 5;
             backdrop-filter: blur(10px);
         }
-        .sidebar-header .logo-icon {
-            font-size: 2.4rem;
-            margin-bottom: 4px;
+        .sidebar-header .logo {
+            font-size: 2rem;
+            margin-bottom: 2px;
         }
         .sidebar-header h1 {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+            background: linear-gradient(135deg, #e2e8f0, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .sidebar-header .subtitle {
-            font-size: 0.85rem;
+        .subtitle {
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 2px;
-            font-weight: 500;
+            margin-top: 4px;
         }
 
         .drug-list {
-            padding: 12px 16px;
+            padding: 10px 14px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             flex: 1;
         }
+
         .drug-card {
             background: var(--surface-light);
             border: 2px solid transparent;
             border-radius: var(--radius-sm);
-            padding: 16px 18px;
+            padding: 14px 16px;
             cursor: pointer;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
         }
         .drug-card:hover {
-            border-color: #4f8ef744;
-            background: #273448dd;
+            border-color: #4f8ef733;
+            background: #253348;
             transform: translateX(-4px);
-            box-shadow: 0 6px 20px rgba(79, 142, 247, 0.15);
         }
         .drug-card.active {
             border-color: var(--primary);
-            background: #1e3050;
-            box-shadow: 0 0 28px var(--primary-glow), 0 8px 24px rgba(0, 0, 0, 0.4);
+            background: #1a3050;
+            box-shadow: 0 0 28px var(--primary-glow);
             transform: translateX(-4px);
         }
         .drug-card.active::before {
@@ -138,21 +135,21 @@
             right: 0;
             top: 0;
             bottom: 0;
-            width: 5px;
+            width: 4px;
             background: var(--primary);
             border-radius: 0 0 0 6px;
         }
         .drug-card .drug-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            flex-shrink: 0;
             font-weight: bold;
             color: #fff;
+            flex-shrink: 0;
         }
         .drug-card .drug-info {
             flex: 1;
@@ -160,219 +157,253 @@
         }
         .drug-card .drug-name {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--text);
-            letter-spacing: -0.2px;
         }
         .drug-card .drug-class {
-            font-size: 0.78rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             margin-top: 2px;
         }
         .drug-card .arrow {
-            font-size: 1.2rem;
             color: var(--text-muted);
+            font-size: 1rem;
             transition: var(--transition);
-            flex-shrink: 0;
         }
         .drug-card.active .arrow {
             color: var(--primary);
             transform: translateX(-6px);
         }
 
-        /* Info Panel inside sidebar */
         .info-panel {
-            margin: 8px 16px 20px;
-            padding: 20px 18px;
-            background: #1a2940;
+            margin: 8px 14px 20px;
+            padding: 18px;
+            background: #1a2840;
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            position: sticky;
-            bottom: 12px;
-            box-shadow: var(--shadow-card);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.4);
         }
         .info-panel h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 6px;
             color: #fff;
         }
-        .info-panel .info-row {
+        .info-row {
             display: flex;
-            gap: 8px;
-            margin: 6px 0;
-            font-size: 0.85rem;
+            gap: 6px;
+            margin: 4px 0;
+            font-size: 0.8rem;
             color: var(--text-muted);
             flex-wrap: wrap;
         }
-        .info-panel .info-row span.label {
+        .info-row span.label {
             font-weight: 600;
             color: var(--text-light);
-            white-space: nowrap;
         }
-        .info-panel .warning {
+        .warning {
             margin-top: 10px;
-            padding: 10px 12px;
+            padding: 10px;
             background: #7f1d1d33;
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #fca5a5;
-            border: 1px solid #7f1d1d55;
+            border: 1px solid #7f1d1d44;
             line-height: 1.5;
         }
-        .info-panel .warning strong {
-            color: #f87171;
-        }
 
-        /* ========== 3D VIEWER ========== */
+        /* ========== VIEWER ========== */
         .viewer-container {
             flex: 1;
             position: relative;
-            background: radial-gradient(ellipse at center, #1a2740 0%, #0b1220 70%);
-            cursor: grab;
+            background: radial-gradient(ellipse at center, #1a2538 0%, #060b14 80%);
             overflow: hidden;
-        }
-        .viewer-container:active {
-            cursor: grabbing;
+            touch-action: pan-x pan-y pinch-zoom;
         }
         .viewer-container canvas {
             display: block;
         }
         .viewer-overlay {
             position: absolute;
-            top: 28px;
-            left: 28px;
-            right: 28px;
+            top: 20px;
+            left: 20px;
+            right: 20px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             pointer-events: none;
-            z-index: 5;
+            z-index: 10;
         }
         .viewer-label {
             background: #00000088;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(16px);
             border: 1px solid #ffffff22;
             border-radius: 30px;
             padding: 10px 22px;
             color: #fff;
             font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: -0.3px;
+            font-size: 0.95rem;
             pointer-events: auto;
-            transition: var(--transition);
         }
         .viewer-hint {
-            background: #00000066;
+            background: #00000055;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 8px 16px;
-            color: #ffffff99;
-            font-size: 0.75rem;
+            padding: 6px 14px;
+            color: #ffffffaa;
+            font-size: 0.7rem;
             pointer-events: auto;
-            letter-spacing: 0.2px;
-        }
-        .viewer-hint span {
-            animation: pulse-dot 1.6s infinite;
-            display: inline-block;
-            margin: 0 2px;
-        }
-        @keyframes pulse-dot {
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-            50% {
-                opacity: 1;
-            }
         }
 
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 900px) {
+        /* ========== MOBILE BOTTOM BAR ========== */
+        @media (max-width: 768px) {
             body {
                 flex-direction: column;
             }
             .sidebar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
                 width: 100%;
                 min-width: 100%;
                 height: auto;
-                max-height: 45vh;
+                max-height: 130px;
+                flex-direction: row;
+                overflow-x: auto;
+                overflow-y: hidden;
+                background: var(--surface);
                 border-left: none;
-                border-bottom: 1px solid var(--border);
-                flex-shrink: 0;
+                border-top: 1px solid var(--border);
+                padding: 8px 10px calc(8px + var(--safe-bottom));
+                z-index: 30;
+                scrollbar-width: none;
+                box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
             }
-            .viewer-container {
-                flex: 1;
-                min-height: 55vh;
+            .sidebar::-webkit-scrollbar {
+                display: none;
             }
-            .sidebar-header {
-                padding: 16px 18px 12px;
-            }
-            .sidebar-header h1 {
-                font-size: 1.4rem;
+            .sidebar-header, .info-panel {
+                display: none;
             }
             .drug-list {
-                padding: 8px 10px;
-                gap: 5px;
+                flex-direction: row;
+                gap: 10px;
+                padding: 0;
+                flex: 1;
+                align-items: center;
             }
             .drug-card {
-                padding: 12px 14px;
-                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                padding: 8px 12px;
+                min-width: 75px;
+                border-radius: 16px;
+                white-space: nowrap;
+                transform: none;
+            }
+            .drug-card:hover {
+                transform: none;
+            }
+            .drug-card.active {
+                transform: scale(1.05);
             }
             .drug-card .drug-icon {
                 width: 38px;
                 height: 38px;
                 font-size: 1.2rem;
+                border-radius: 10px;
+            }
+            .drug-card .drug-info {
+                text-align: center;
             }
             .drug-card .drug-name {
-                font-size: 0.9rem;
+                font-size: 0.7rem;
+                font-weight: 700;
+                line-height: 1.2;
             }
-            .info-panel {
-                margin: 6px 10px 12px;
-                padding: 14px;
+            .drug-card .drug-class {
+                display: none;
             }
-        }
-        @media (max-width: 480px) {
-            .sidebar {
-                max-height: 38vh;
+            .drug-card .arrow {
+                display: none;
             }
+
             .viewer-container {
-                min-height: 62vh;
+                flex: 1;
+                height: 100%;
             }
             .viewer-overlay {
-                top: 12px;
+                top: 10px;
                 left: 10px;
                 right: 10px;
             }
             .viewer-label {
                 font-size: 0.8rem;
-                padding: 8px 14px;
+                padding: 6px 14px;
+            }
+            .viewer-hint {
+                font-size: 0.65rem;
+                padding: 4px 10px;
+            }
+
+            /* Floating info card for mobile */
+            .mobile-info-card {
+                position: fixed;
+                bottom: 150px;
+                left: 16px;
+                right: 16px;
+                background: #1e293bdd;
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--border);
+                border-radius: 20px;
+                padding: 16px;
+                z-index: 40;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+                display: none;
+                pointer-events: auto;
+                animation: slideUp 0.3s ease;
+            }
+            .mobile-info-card.active {
+                display: block;
+            }
+            @keyframes slideUp {
+                from { transform: translateY(30px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            .mobile-info-card .close-btn {
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                background: #ffffff22;
+                border: none;
+                color: #fff;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                font-size: 1rem;
+                cursor: pointer;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ==================== SIDEBAR ==================== -->
+    <!-- ==================== SIDEBAR (desktop) ==================== -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <div class="logo-icon">💊</div>
+            <div class="logo">💊</div>
             <h1>دليل مسكنات الألم</h1>
-            <p class="subtitle">اضغط على أي دواء لعرض نموذج ثلاثي الأبعاد</p>
+            <p class="subtitle">اضغط على الدواء لعرض العلبة ثلاثية الأبعاد</p>
         </div>
-        <div class="drug-list" id="drugList">
-            <!-- Dynamically filled -->
-        </div>
+        <div class="drug-list" id="drugList"></div>
         <div class="info-panel" id="infoPanel">
             <h3 id="infoTitle">باراسيتامول</h3>
-            <div class="info-row"><span class="label">التصنيف:</span> <span id="infoClass">مسكن ألم وخافض حرارة</span></div>
-            <div class="info-row"><span class="label">الاستخدامات:</span> <span id="infoUses">الصداع، آلام العضلات، الحمى</span></div>
-            <div class="info-row"><span class="label">الاسم العلمي:</span> <span id="infoScientific">Paracetamol / Acetaminophen</span></div>
-            <div class="warning" id="infoWarning">
-                <strong>⚠ تحذير:</strong> <span id="infoWarningText">لا تتجاوز الجرعة اليومية الموصى بها (4 غرام للبالغين). استشر الطبيب قبل الاستخدام المطول.</span>
-            </div>
+            <div class="info-row"><span class="label">التصنيف:</span> <span id="infoClass">مسكن وخافض حرارة</span></div>
+            <div class="info-row"><span class="label">الاستخدامات:</span> <span id="infoUses">الصداع، الحمى</span></div>
+            <div class="info-row"><span class="label">الاسم العلمي:</span> <span id="infoScientific">Paracetamol</span></div>
+            <div class="warning"><strong>⚠ تحذير:</strong> <span id="infoWarningText">لا تتجاوز الجرعة المحددة.</span></div>
         </div>
     </aside>
 
@@ -380,8 +411,18 @@
     <div class="viewer-container" id="viewerContainer">
         <div class="viewer-overlay">
             <div class="viewer-label" id="viewerLabel">💊 باراسيتامول</div>
-            <div class="viewer-hint">🖱 اسحب للتدوير <span>●</span> التكبير بالعجلة</div>
+            <div class="viewer-hint">🖱 اسحب للتدوير | 🔍 للتكبير</div>
         </div>
+    </div>
+
+    <!-- Mobile floating info (hidden by default) -->
+    <div class="mobile-info-card" id="mobileInfoCard">
+        <button class="close-btn" id="closeMobileInfo">✕</button>
+        <h3 id="mobileInfoTitle" style="margin-bottom:6px;color:#fff;"></h3>
+        <div class="info-row"><span class="label">التصنيف:</span> <span id="mobileInfoClass"></span></div>
+        <div class="info-row"><span class="label">الاستخدام:</span> <span id="mobileInfoUses"></span></div>
+        <div class="info-row"><span class="label">العلمي:</span> <span id="mobileInfoScientific"></span></div>
+        <div class="warning" style="margin-top:8px;"><span id="mobileInfoWarning"></span></div>
     </div>
 
     <!-- ==================== THREE.JS IMPORT MAP ==================== -->
@@ -398,141 +439,112 @@
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-        // ==================== DRUG DATA ====================
+        // ==================== DRUG DATA WITH BOX INFO ====================
         const drugData = [
             {
                 id: 'paracetamol',
                 name: 'باراسيتامول',
                 nameEn: 'Paracetamol',
                 class: 'مسكن ألم وخافض حرارة',
-                uses: 'الصداع، آلام العضلات، الحمى، آلام الأسنان',
-                scientific: 'Paracetamol / Acetaminophen',
-                warning: 'لا تتجاوز الجرعة اليومية الموصى بها (4 غرام للبالغين). تجنب استخدامه مع الكحول. استشر الطبيب قبل الاستخدام المطول.',
+                uses: 'الصداع، آلام العضلات، الحمى',
+                scientific: 'Paracetamol',
+                warning: 'لا تتجاوز 4 غرام يومياً. تجنب الكحول.',
                 icon: '🔵',
                 iconBg: '#3b82f6',
-                type: 'tablet',
-                color: '#f5f5f0',
-                colorHex: 0xf5f5f0,
-                radius: 1.45,
-                height: 0.28,
-                hasScore: false,
-                roughness: 0.55,
-                metalness: 0.02,
+                boxColor: '#1e5abf',
+                boxAccent: '#f5f5f0',
+                dosage: '500 mg أقراص',
+                brand: 'باراسيتامول',
             },
             {
                 id: 'ibuprofen',
                 name: 'ايبوبروفين',
                 nameEn: 'Ibuprofen',
-                class: 'مضاد التهاب غير ستيرويدي (NSAID)',
-                uses: 'الالتهابات، آلام المفاصل، الصداع، آلام الظهر، الحمى',
+                class: 'مضاد التهاب (NSAID)',
+                uses: 'الالتهابات، آلام المفاصل، الصداع',
                 scientific: 'Ibuprofen',
-                warning: 'يجب تناوله مع الطعام لتقليل تهيج المعدة. لا يستخدم مع قرحة المعدة أو مشاكل الكلى. استشر الطبيب في حالات الحمل.',
+                warning: 'يؤخذ مع الطعام. لا يستخدم لقرحة المعدة.',
                 icon: '🟠',
                 iconBg: '#f97316',
-                type: 'tablet',
-                color: '#f4a460',
-                colorHex: 0xf4a460,
-                radius: 1.35,
-                height: 0.32,
-                hasScore: false,
-                roughness: 0.5,
-                metalness: 0.03,
+                boxColor: '#e05a2c',
+                boxAccent: '#ffffff',
+                dosage: '400 mg أقراص',
+                brand: 'ايبوبروفين',
             },
             {
                 id: 'aspirin',
                 name: 'أسبرين',
                 nameEn: 'Aspirin',
-                class: 'مسكن ومضاد التهاب ومضاد تخثر',
-                uses: 'الصداع، آلام خفيفة إلى متوسطة، الوقاية من الجلطات القلبية',
+                class: 'مسكن ومضاد تخثر',
+                uses: 'الصداع، الوقاية من الجلطات',
                 scientific: 'Acetylsalicylic Acid',
-                warning: 'لا يستخدم للأطفال تحت 12 سنة (خطر متلازمة راي). يزيد خطر النزيف. تجنب استخدامه مع مميعات الدم الأخرى.',
+                warning: 'يمنع للأطفال. يزيد خطر النزيف.',
                 icon: '⚪',
                 iconBg: '#94a3b8',
-                type: 'tablet-scored',
-                color: '#fafaf7',
-                colorHex: 0xfafaf7,
-                radius: 1.5,
-                height: 0.26,
-                hasScore: true,
-                roughness: 0.5,
-                metalness: 0.02,
+                boxColor: '#d1d5db',
+                boxAccent: '#1f2937',
+                dosage: '100 mg أقراص',
+                brand: 'أسبرين',
             },
             {
                 id: 'diclofenac',
                 name: 'ديكلوفيناك',
                 nameEn: 'Diclofenac',
-                class: 'مضاد التهاب غير ستيرويدي قوي (NSAID)',
-                uses: 'آلام المفاصل، الروماتيزم، النقرس، آلام ما بعد الجراحة',
-                scientific: 'Diclofenac Sodium/Potassium',
-                warning: 'يستخدم تحت إشراف طبي. قد يسبب تهيج المعدة وارتفاع ضغط الدم. لا يستخدم لمرضى القلب بدون استشارة.',
+                class: 'مضاد التهاب قوي (NSAID)',
+                uses: 'آلام المفاصل، الروماتيزم',
+                scientific: 'Diclofenac Sodium',
+                warning: 'تحت إشراف طبي. قد يرفع الضغط.',
                 icon: '🟤',
                 iconBg: '#a16252',
-                type: 'tablet',
-                color: '#c4956a',
-                colorHex: 0xc4956a,
-                radius: 1.3,
-                height: 0.36,
-                hasScore: false,
-                roughness: 0.45,
-                metalness: 0.04,
+                boxColor: '#8b5a3c',
+                boxAccent: '#f5e6d3',
+                dosage: '50 mg أقراص',
+                brand: 'ديكلوفيناك',
             },
             {
                 id: 'naproxen',
                 name: 'نابروكسين',
                 nameEn: 'Naproxen',
-                class: 'مضاد التهاب طويل المفعول (NSAID)',
-                uses: 'التهاب المفاصل، آلام العضلات المزمنة، الصداع النصفي، آلام الدورة الشهرية',
+                class: 'مضاد التهاب طويل المفعول',
+                uses: 'التهاب المفاصل، الصداع النصفي',
                 scientific: 'Naproxen Sodium',
-                warning: 'طويل المفعول (يؤخذ كل 8-12 ساعة). يجب تناوله مع الطعام. لا يستخدم مع قرحة المعدة أو مشاكل الكلى.',
+                warning: 'طويل المفعول، مع الطعام.',
                 icon: '🔷',
                 iconBg: '#2563eb',
-                type: 'capsule',
-                color: '#3b7ddd',
-                colorHex: 0x3b7ddd,
-                capsuleRadius: 0.65,
-                capsuleLength: 1.6,
-                roughness: 0.35,
-                metalness: 0.06,
+                boxColor: '#1d4ed8',
+                boxAccent: '#e0e7ff',
+                dosage: '250 mg أقراص',
+                brand: 'نابروكسين',
             },
             {
                 id: 'tramadol',
                 name: 'ترامادول',
                 nameEn: 'Tramadol',
-                class: 'مسكن ألم أفيوني متوسط القوة',
-                uses: 'آلام متوسطة إلى شديدة، آلام ما بعد الجراحة، الآلام المزمنة',
-                scientific: 'Tramadol Hydrochloride',
-                warning: 'يسبب الإدمان ولا يصرف إلا بوصفة طبية. لا يوقف فجأة. تجنب قيادة المركبات أثناء استخدامه. خطر التفاعل مع أدوية أخرى.',
+                class: 'مسكن أفيوني متوسط',
+                uses: 'آلام متوسطة إلى شديدة',
+                scientific: 'Tramadol HCl',
+                warning: 'يسبب الإدمان، بوصفة طبية فقط.',
                 icon: '🟢',
                 iconBg: '#22c55e',
-                type: 'capsule-twotone',
-                colorTop: '#4ade80',
-                colorTopHex: 0x4ade80,
-                colorBottom: '#f5f5f0',
-                colorBottomHex: 0xf5f5f0,
-                capsuleRadius: 0.6,
-                capsuleLength: 1.7,
-                roughness: 0.3,
-                metalness: 0.05,
-                splitRatio: 0.42,
+                boxColor: '#15803d',
+                boxAccent: '#dcfce7',
+                dosage: '50 mg كبسولات',
+                brand: 'ترامادول',
             },
             {
                 id: 'morphine',
                 name: 'مورفين',
                 nameEn: 'Morphine',
-                class: 'مسكن ألم أفيوني قوي',
-                uses: 'آلام شديدة جداً، آلام السرطان، آلام ما بعد العمليات الكبرى',
+                class: 'مسكن أفيوني قوي',
+                uses: 'آلام شديدة، آلام السرطان',
                 scientific: 'Morphine Sulfate',
-                warning: 'مادة مخدرة خاضعة لرقابة مشددة. تستخدم فقط في المستشفيات أو تحت إشراف طبي مباشر. خطر كبير للإدمان وتثبيط التنفس.',
+                warning: 'رقابة مشددة، خطر الإدمان.',
                 icon: '🔴',
                 iconBg: '#ef4444',
-                type: 'tablet-small',
-                color: '#fefefe',
-                colorHex: 0xfefefe,
-                radius: 1.05,
-                height: 0.3,
-                hasScore: false,
-                roughness: 0.5,
-                metalness: 0.02,
+                boxColor: '#b91c1c',
+                boxAccent: '#fee2e2',
+                dosage: '10 mg أمبولات',
+                brand: 'مورفين',
             },
         ];
 
@@ -545,13 +557,15 @@
         const infoWarningText = document.getElementById('infoWarningText');
         const viewerLabel = document.getElementById('viewerLabel');
         const viewerContainer = document.getElementById('viewerContainer');
+        const mobileInfoCard = document.getElementById('mobileInfoCard');
+        const closeMobileBtn = document.getElementById('closeMobileInfo');
 
         let activeDrugId = 'paracetamol';
-        let currentModel = null;
-        let modelGroup = new THREE.Group();
+        let currentModelGroup = new THREE.Group();
+        const textureCache = new Map();
 
         // ==================== BUILD DRUG LIST ====================
-        drugData.forEach((drug) => {
+        drugData.forEach(drug => {
             const card = document.createElement('div');
             card.className = 'drug-card';
             card.dataset.drugId = drug.id;
@@ -570,13 +584,11 @@
 
         // ==================== THREE.JS SETUP ====================
         const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x060b14, 0.00012);
 
-        // Subtle fog for depth
-        scene.fog = new THREE.FogExp2(0x0b1220, 0.00015);
-
-        const camera = new THREE.PerspectiveCamera(45, viewerContainer.clientWidth / viewerContainer.clientHeight, 0.5, 50);
-        camera.position.set(4.5, 2.8, 7.5);
-        camera.lookAt(0, 0, 0);
+        const camera = new THREE.PerspectiveCamera(45, viewerContainer.clientWidth / viewerContainer.clientHeight, 0.5, 30);
+        camera.position.set(5.2, 3.2, 8.2);
+        camera.lookAt(0, 0.4, 0);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(viewerContainer.clientWidth, viewerContainer.clientHeight);
@@ -584,505 +596,330 @@
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.1;
+        renderer.toneMappingExposure = 1.0;
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         viewerContainer.appendChild(renderer.domElement);
 
-        // OrbitControls
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.08;
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 1.6;
-        controls.minDistance = 3.5;
-        controls.maxDistance = 14;
-        controls.maxPolarAngle = Math.PI * 0.7;
-        controls.target.set(0, 0.15, 0);
+        controls.autoRotateSpeed = 0.9;
+        controls.minDistance = 3.8;
+        controls.maxDistance = 12;
+        controls.maxPolarAngle = Math.PI * 0.65;
+        controls.target.set(0, 0.25, 0);
         controls.update();
 
         // ==================== LIGHTING ====================
-        // Ambient light
-        const ambientLight = new THREE.AmbientLight(0x8899bb, 1.6);
+        const ambientLight = new THREE.AmbientLight(0x8899bb, 1.5);
         scene.add(ambientLight);
 
-        // Key light (sun-like)
-        const keyLight = new THREE.DirectionalLight(0xffeedd, 5.5);
-        keyLight.position.set(8, 10, 4);
+        const keyLight = new THREE.DirectionalLight(0xfff5e6, 6.5);
+        keyLight.position.set(7, 9, 5);
         keyLight.castShadow = true;
-        keyLight.shadow.mapSize.width = 1024;
-        keyLight.shadow.mapSize.height = 1024;
+        keyLight.shadow.mapSize.set(1024, 1024);
         keyLight.shadow.camera.near = 0.5;
-        keyLight.shadow.camera.far = 40;
-        keyLight.shadow.camera.left = -8;
-        keyLight.shadow.camera.right = 8;
-        keyLight.shadow.camera.top = 8;
-        keyLight.shadow.camera.bottom = -8;
-        keyLight.shadow.bias = -0.0003;
-        keyLight.shadow.normalBias = 0.02;
+        keyLight.shadow.camera.far = 35;
+        keyLight.shadow.camera.left = -7;
+        keyLight.shadow.camera.right = 7;
+        keyLight.shadow.camera.top = 7;
+        keyLight.shadow.camera.bottom = -7;
+        keyLight.shadow.bias = -0.0002;
         scene.add(keyLight);
 
-        // Fill light
-        const fillLight = new THREE.DirectionalLight(0xaaccff, 1.8);
-        fillLight.position.set(-3, 2, -2);
+        const fillLight = new THREE.DirectionalLight(0xaaccff, 1.6);
+        fillLight.position.set(-3, 1.5, -3);
         scene.add(fillLight);
 
-        // Rim light
-        const rimLight = new THREE.DirectionalLight(0xffffff, 2.5);
+        const rimLight = new THREE.DirectionalLight(0xffffff, 1.8);
         rimLight.position.set(0, 1, -5);
         scene.add(rimLight);
 
-        // Bottom bounce
-        const bounceLight = new THREE.DirectionalLight(0x8899cc, 1.2);
-        bounceLight.position.set(0, -1, 2);
-        scene.add(bounceLight);
+        const bottomLight = new THREE.DirectionalLight(0x8899cc, 1.0);
+        bottomLight.position.set(0, -0.5, 2);
+        scene.add(bottomLight);
 
         // ==================== PLATFORM ====================
-        const platformGeom = new THREE.CylinderGeometry(2.0, 2.1, 0.15, 64);
-        const platformMat = new THREE.MeshStandardMaterial({
-            color: 0x2a3040,
-            roughness: 0.35,
-            metalness: 0.5,
-        });
+        const platformGeom = new THREE.CylinderGeometry(2.1, 2.2, 0.18, 64);
+        const platformMat = new THREE.MeshStandardMaterial({ color: 0x2a3648, roughness: 0.4, metalness: 0.5 });
         const platform = new THREE.Mesh(platformGeom, platformMat);
-        platform.position.y = -1.2;
+        platform.position.y = -1.4;
         platform.castShadow = true;
         platform.receiveShadow = true;
         scene.add(platform);
 
-        // Subtle ring on platform
-        const ringGeom = new THREE.TorusGeometry(1.9, 0.04, 32, 80);
-        const ringMat = new THREE.MeshStandardMaterial({
-            color: 0x4f8ef7,
-            roughness: 0.2,
-            metalness: 0.7,
-            emissive: 0x1a3a60,
-            emissiveIntensity: 0.5,
-        });
+        const ringGeom = new THREE.TorusGeometry(2.05, 0.05, 32, 80);
+        const ringMat = new THREE.MeshStandardMaterial({ color: 0x4f8ef7, roughness: 0.2, metalness: 0.7, emissive: 0x1a3a60, emissiveIntensity: 0.4 });
         const ring = new THREE.Mesh(ringGeom, ringMat);
         ring.rotation.x = -Math.PI / 2;
-        ring.position.y = -1.12;
+        ring.position.y = -1.3;
         ring.receiveShadow = true;
         scene.add(ring);
 
-        // ==================== PARTICLE BACKGROUND ====================
+        // Particles
         const particlesGeom = new THREE.BufferGeometry();
-        const particlesCount = 180;
-        const positions = new Float32Array(particlesCount * 3);
-        for (let i = 0; i < particlesCount; i++) {
-            positions[i * 3] = (Math.random() - 0.5) * 14;
-            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
-            positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+        const count = 160;
+        const posArray = new Float32Array(count * 3);
+        for (let i = 0; i < count; i++) {
+            posArray[i * 3] = (Math.random() - 0.5) * 12;
+            posArray[i * 3 + 1] = (Math.random() - 0.5) * 8;
+            posArray[i * 3 + 2] = (Math.random() - 0.5) * 10;
         }
-        particlesGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particlesMat = new THREE.PointsMaterial({
-            color: 0x4f8ef7,
-            size: 0.025,
-            transparent: true,
-            opacity: 0.5,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-        });
+        particlesGeom.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMat = new THREE.PointsMaterial({ color: 0x4f8ef7, size: 0.02, transparent: true, opacity: 0.4, blending: THREE.AdditiveBlending, depthWrite: false });
         const particles = new THREE.Points(particlesGeom, particlesMat);
         scene.add(particles);
 
-        // ==================== MODEL GROUP ====================
-        modelGroup = new THREE.Group();
-        scene.add(modelGroup);
+        // Model container
+        currentModelGroup = new THREE.Group();
+        scene.add(currentModelGroup);
 
-        // ==================== MODEL CREATION FUNCTIONS ====================
-        function createTabletModel(radius, height, colorHex, roughness, metalness, hasScore = false) {
+        // ==================== TEXTURE GENERATION ====================
+        function createBoxTextures(drug) {
+            const cacheKey = drug.id;
+            if (textureCache.has(cacheKey)) return textureCache.get(cacheKey);
+
+            const size = 512;
+            const frontCanvas = document.createElement('canvas');
+            frontCanvas.width = size;
+            frontCanvas.height = size;
+            const ctx = frontCanvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = drug.boxColor;
+            ctx.fillRect(0, 0, size, size);
+
+            // White label panel
+            ctx.fillStyle = drug.boxAccent;
+            const panelX = 40, panelY = 60, panelW = size - 80, panelH = size - 180;
+            ctx.fillRect(panelX, panelY, panelW, panelH);
+            ctx.strokeStyle = '#00000033';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(panelX, panelY, panelW, panelH);
+
+            // Drug name Arabic
+            ctx.fillStyle = '#111827';
+            ctx.font = 'bold 68px "Tajawal", "Cairo", "Segoe UI", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.direction = 'rtl';
+            ctx.fillText(drug.name, size/2, panelY + 100);
+
+            // Dosage
+            ctx.font = '32px "Tajawal", "Segoe UI", sans-serif';
+            ctx.fillStyle = '#374151';
+            ctx.fillText(drug.dosage, size/2, panelY + 170);
+
+            // Brand name small
+            ctx.font = 'italic 26px "Tajawal", sans-serif';
+            ctx.fillStyle = '#1f2937';
+            ctx.fillText(drug.nameEn, size/2, panelY + 230);
+
+            // Decorative line
+            ctx.beginPath();
+            ctx.strokeStyle = drug.boxColor;
+            ctx.lineWidth = 6;
+            ctx.moveTo(panelX+20, panelY+120);
+            ctx.lineTo(panelX+panelW-20, panelY+120);
+            ctx.stroke();
+
+            const frontTexture = new THREE.CanvasTexture(frontCanvas);
+            frontTexture.colorSpace = THREE.SRGBColorSpace;
+            frontTexture.wrapS = THREE.ClampToEdgeWrapping;
+            frontTexture.wrapT = THREE.ClampToEdgeWrapping;
+
+            // Side texture (simplified vertical text)
+            const sideCanvas = document.createElement('canvas');
+            sideCanvas.width = size;
+            sideCanvas.height = size;
+            const sctx = sideCanvas.getContext('2d');
+            sctx.fillStyle = drug.boxColor;
+            sctx.fillRect(0, 0, size, size);
+            sctx.fillStyle = '#ffffffcc';
+            sctx.font = 'bold 42px "Tajawal", sans-serif';
+            sctx.textAlign = 'center';
+            sctx.save();
+            sctx.translate(size/2, size/2);
+            sctx.rotate(-Math.PI/2);
+            sctx.fillText(drug.name, 0, 10);
+            sctx.restore();
+            sctx.font = '24px "Tajawal"';
+            sctx.fillStyle = '#ffffff99';
+            sctx.fillText(drug.dosage, size/2, size-50);
+            const sideTexture = new THREE.CanvasTexture(sideCanvas);
+            sideTexture.colorSpace = THREE.SRGBColorSpace;
+
+            // Top texture
+            const topCanvas = document.createElement('canvas');
+            topCanvas.width = size;
+            topCanvas.height = size;
+            const tctx = topCanvas.getContext('2d');
+            tctx.fillStyle = drug.boxColor;
+            tctx.fillRect(0, 0, size, size);
+            tctx.fillStyle = '#ffffffdd';
+            tctx.font = 'bold 30px "Tajawal"';
+            tctx.textAlign = 'center';
+            tctx.fillText(drug.nameEn, size/2, size/2);
+            const topTexture = new THREE.CanvasTexture(topCanvas);
+            topTexture.colorSpace = THREE.SRGBColorSpace;
+
+            const textures = { front: frontTexture, side: sideTexture, top: topTexture };
+            textureCache.set(cacheKey, textures);
+            return textures;
+        }
+
+        function createMedicineBox(drug) {
+            const textures = createBoxTextures(drug);
+            const w = 2.0, h = 1.1, d = 3.8; // width, height, depth (realistic box proportions)
+            const geometry = new THREE.BoxGeometry(w, h, d);
+
+            const materials = [
+                new THREE.MeshStandardMaterial({ map: textures.side, roughness: 0.55, metalness: 0.05 }), // right
+                new THREE.MeshStandardMaterial({ map: textures.side, roughness: 0.55, metalness: 0.05 }), // left
+                new THREE.MeshStandardMaterial({ map: textures.top, roughness: 0.55, metalness: 0.05 }), // top
+                new THREE.MeshStandardMaterial({ map: textures.top, roughness: 0.55, metalness: 0.05 }), // bottom
+                new THREE.MeshStandardMaterial({ map: textures.front, roughness: 0.55, metalness: 0.05 }), // front
+                new THREE.MeshStandardMaterial({ map: textures.front, roughness: 0.55, metalness: 0.05 }), // back
+            ];
+
+            const box = new THREE.Mesh(geometry, materials);
+            box.castShadow = true;
+            box.receiveShadow = true;
+            box.position.y = 0.55; // sit on platform
+
+            // Group for rotation centering
             const group = new THREE.Group();
+            group.add(box);
 
-            // Main tablet body
-            const geom = new THREE.CylinderGeometry(radius, radius, height, 64, 1);
-            const mat = new THREE.MeshStandardMaterial({
-                color: colorHex,
-                roughness: roughness,
-                metalness: metalness,
-            });
-            const tablet = new THREE.Mesh(geom, mat);
-            tablet.castShadow = true;
-            tablet.receiveShadow = true;
-            group.add(tablet);
-
-            // Beveled edge rings for realism
-            const edgeGeomTop = new THREE.TorusGeometry(radius - 0.04, 0.06, 16, 64);
-            const edgeMat = new THREE.MeshStandardMaterial({
-                color: colorHex,
-                roughness: roughness * 0.7,
-                metalness: metalness,
-            });
-            const edgeTop = new THREE.Mesh(edgeGeomTop, edgeMat);
-            edgeTop.rotation.x = Math.PI / 2;
-            edgeTop.position.y = height / 2;
-            edgeTop.castShadow = true;
-            group.add(edgeTop);
-
-            const edgeBottom = new THREE.Mesh(edgeGeomTop.clone(), edgeMat);
-            edgeBottom.rotation.x = Math.PI / 2;
-            edgeBottom.position.y = -height / 2;
-            edgeBottom.castShadow = true;
-            group.add(edgeBottom);
-
-            // Score line (cross) for aspirin
-            if (hasScore) {
-                const scoreColor = 0xd5d5d0;
-                const scoreMat = new THREE.MeshStandardMaterial({
-                    color: scoreColor,
-                    roughness: 0.7,
-                    metalness: 0.01,
-                });
-                const scoreLength = radius * 1.5;
-                const scoreWidth = 0.06;
-                const scoreDepth = 0.04;
-
-                const score1Geom = new THREE.BoxGeometry(scoreLength, scoreDepth, scoreWidth);
-                const score1 = new THREE.Mesh(score1Geom, scoreMat);
-                score1.position.y = height / 2 + 0.005;
-                score1.castShadow = true;
-                group.add(score1);
-
-                const score2Geom = new THREE.BoxGeometry(scoreWidth, scoreDepth, scoreLength);
-                const score2 = new THREE.Mesh(score2Geom, scoreMat);
-                score2.position.y = height / 2 + 0.005;
-                score2.castShadow = true;
-                group.add(score2);
-            }
+            // Add subtle glossy edge lines
+            const edgeGeom = new THREE.EdgesGeometry(geometry);
+            const edgeLine = new THREE.LineSegments(edgeGeom, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.25 }));
+            box.add(edgeLine);
 
             return group;
         }
 
-        function createCapsuleModel(radius, cylinderLength, colorHex, roughness, metalness) {
-            const group = new THREE.Group();
-            const capsuleGeom = new THREE.CapsuleGeometry(radius, cylinderLength, 32, 48);
-            const capsuleMat = new THREE.MeshStandardMaterial({
-                color: colorHex,
-                roughness: roughness,
-                metalness: metalness,
-            });
-            const capsule = new THREE.Mesh(capsuleGeom, capsuleMat);
-            capsule.castShadow = true;
-            capsule.receiveShadow = true;
-            group.add(capsule);
-            return group;
-        }
-
-        function createTwoToneCapsuleModel(radius, cylinderLength, topColorHex, bottomColorHex, roughness, metalness,
-        splitRatio = 0.4) {
-            const group = new THREE.Group();
-            const totalHeight = cylinderLength + radius * 2;
-            const splitY = totalHeight * (splitRatio - 0.5);
-            const topCylinderHeight = cylinderLength * splitRatio + radius - splitY;
-            const bottomCylinderHeight = cylinderLength * (1 - splitRatio) + radius + splitY;
-
-            // Top sphere cap
-            const topSphereGeom = new THREE.SphereGeometry(radius, 48, 32, 0, Math.PI * 2, 0, Math.PI / 2);
-            const topMat = new THREE.MeshStandardMaterial({
-                color: topColorHex,
-                roughness: roughness,
-                metalness: metalness,
-            });
-            const topSphere = new THREE.Mesh(topSphereGeom, topMat);
-            topSphere.position.y = cylinderLength / 2;
-            topSphere.castShadow = true;
-            topSphere.receiveShadow = true;
-            group.add(topSphere);
-
-            // Bottom sphere cap
-            const bottomSphereGeom = new THREE.SphereGeometry(radius, 48, 32, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2);
-            const bottomMat = new THREE.MeshStandardMaterial({
-                color: bottomColorHex,
-                roughness: roughness,
-                metalness: metalness,
-            });
-            const bottomSphere = new THREE.Mesh(bottomSphereGeom, bottomMat);
-            bottomSphere.position.y = -cylinderLength / 2;
-            bottomSphere.castShadow = true;
-            bottomSphere.receiveShadow = true;
-            group.add(bottomSphere);
-
-            // Top cylinder portion
-            if (topCylinderHeight > 0.01) {
-                const topCylGeom = new THREE.CylinderGeometry(radius, radius, topCylinderHeight, 48, 1);
-                const topCyl = new THREE.Mesh(topCylGeom, topMat);
-                topCyl.position.y = cylinderLength / 2 - topCylinderHeight / 2;
-                topCyl.castShadow = true;
-                topCyl.receiveShadow = true;
-                group.add(topCyl);
-            }
-
-            // Bottom cylinder portion
-            if (bottomCylinderHeight > 0.01) {
-                const bottomCylGeom = new THREE.CylinderGeometry(radius, radius, bottomCylinderHeight, 48, 1);
-                const bottomCyl = new THREE.Mesh(bottomCylGeom, bottomMat);
-                bottomCyl.position.y = -cylinderLength / 2 + bottomCylinderHeight / 2;
-                bottomCyl.castShadow = true;
-                bottomCyl.receiveShadow = true;
-                group.add(bottomCyl);
-            }
-
-            // Thin ring at the split to hide seam
-            const ringGeom = new THREE.TorusGeometry(radius + 0.015, 0.03, 16, 48);
-            const ringMat = new THREE.MeshStandardMaterial({
-                color: 0xdddddd,
-                roughness: 0.3,
-                metalness: 0.1,
-            });
-            const splitRing = new THREE.Mesh(ringGeom, ringMat);
-            splitRing.rotation.x = Math.PI / 2;
-            splitRing.position.y = splitY;
-            splitRing.castShadow = true;
-            group.add(splitRing);
-
-            return group;
-        }
-
-        // ==================== BUILD MODEL FOR DRUG ====================
-        function buildModelForDrug(drug) {
-            const group = new THREE.Group();
-
-            switch (drug.type) {
-                case 'tablet':
-                case 'tablet-scored':
-                case 'tablet-small': {
-                    const tabletGroup = createTabletModel(
-                        drug.radius,
-                        drug.height,
-                        drug.colorHex,
-                        drug.roughness,
-                        drug.metalness,
-                        drug.hasScore || false
-                    );
-                    group.add(tabletGroup);
-                    break;
-                }
-                case 'capsule': {
-                    const capsuleGroup = createCapsuleModel(
-                        drug.capsuleRadius,
-                        drug.capsuleLength,
-                        drug.colorHex,
-                        drug.roughness,
-                        drug.metalness
-                    );
-                    // Rotate capsule to be horizontal for visual interest
-                    capsuleGroup.rotation.z = Math.PI / 7;
-                    capsuleGroup.rotation.x = Math.PI / 12;
-                    group.add(capsuleGroup);
-                    break;
-                }
-                case 'capsule-twotone': {
-                    const twotoneGroup = createTwoToneCapsuleModel(
-                        drug.capsuleRadius,
-                        drug.capsuleLength,
-                        drug.colorTopHex,
-                        drug.colorBottomHex,
-                        drug.roughness,
-                        drug.metalness,
-                        drug.splitRatio
-                    );
-                    twotoneGroup.rotation.z = Math.PI / 6;
-                    twotoneGroup.rotation.x = Math.PI / 10;
-                    group.add(twotoneGroup);
-                    break;
-                }
-                default: {
-                    const fallback = createTabletModel(1.4, 0.3, 0xeeeeee, 0.5, 0.02, false);
-                    group.add(fallback);
-                }
-            }
-
-            // Add subtle glow beneath the pill
-            const glowGeom = new THREE.PlaneGeometry(drug.radius * 2.8 || 3.2, drug.radius * 2.8 || 3.2);
-            const glowMat = new THREE.ShaderMaterial({
-                uniforms: {
-                    uColor: { value: new THREE.Color(drug.colorHex || 0xffffff) },
-                    uTime: { value: 0 },
-                },
-                vertexShader: /* glsl */ `
-                    varying vec2 vUv;
-                    void main() {
-                        vUv = uv;
-                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-                    }
-                `,
-                fragmentShader: /* glsl */ `
-                    varying vec2 vUv;
-                    uniform vec3 uColor;
-                    uniform float uTime;
-                    void main() {
-                        float dist = length(vUv - 0.5) * 2.0;
-                        float alpha = smoothstep(1.0, 0.0, dist) * 0.25;
-                        alpha *= 0.6 + 0.4 * sin(uTime * 2.0 + dist * 4.0) * 0.5 + 0.5;
-                        gl_FragColor = vec4(uColor, alpha);
-                    }
-                `,
-                transparent: true,
-                depthWrite: false,
-                blending: THREE.AdditiveBlending,
-            });
-            const glowPlane = new THREE.Mesh(glowGeom, glowMat);
-            glowPlane.rotation.x = -Math.PI / 2;
-            glowPlane.position.y = -1.05;
-            glowPlane.name = 'glowPlane';
-            group.add(glowPlane);
-
-            return group;
-        }
-
-        // ==================== SELECT DRUG ====================
         function selectDrug(drugId) {
-            if (activeDrugId === drugId && currentModel) return;
+            if (activeDrugId === drugId && currentModelGroup.children.length > 0) return;
             activeDrugId = drugId;
 
-            // Update cards
-            document.querySelectorAll('.drug-card').forEach((card) => {
+            document.querySelectorAll('.drug-card').forEach(card => {
                 card.classList.toggle('active', card.dataset.drugId === drugId);
             });
 
-            // Find drug data
-            const drug = drugData.find((d) => d.id === drugId);
+            const drug = drugData.find(d => d.id === drugId);
             if (!drug) return;
 
-            // Update info panel
+            // Update desktop info
             infoTitle.textContent = drug.name;
             infoClass.textContent = drug.class;
             infoUses.textContent = drug.uses;
             infoScientific.textContent = drug.scientific;
             infoWarningText.textContent = drug.warning;
-            viewerLabel.textContent = `💊 ${drug.name}`;
+            viewerLabel.textContent = `📦 ${drug.name}`;
+
+            // Update mobile info card
+            document.getElementById('mobileInfoTitle').textContent = drug.name;
+            document.getElementById('mobileInfoClass').textContent = drug.class;
+            document.getElementById('mobileInfoUses').textContent = drug.uses;
+            document.getElementById('mobileInfoScientific').textContent = drug.scientific;
+            document.getElementById('mobileInfoWarning').textContent = drug.warning;
 
             // Remove old model
-            while (modelGroup.children.length > 0) {
-                const child = modelGroup.children[0];
+            while (currentModelGroup.children.length) {
+                const child = currentModelGroup.children[0];
                 disposeObjectRecursive(child);
-                modelGroup.remove(child);
+                currentModelGroup.remove(child);
             }
 
-            // Build new model
-            const newModel = buildModelForDrug(drug);
-            modelGroup.add(newModel);
-            currentModel = newModel;
+            const newModel = createMedicineBox(drug);
+            currentModelGroup.add(newModel);
 
-            // Brief scale animation
-            modelGroup.scale.set(0.01, 0.01, 0.01);
+            // Entrance animation
+            currentModelGroup.scale.set(0.01, 0.01, 0.01);
             const startTime = performance.now();
-            const animDuration = 500;
-
-            function animateScale(now) {
+            function animScale(now) {
                 const elapsed = now - startTime;
-                const t = Math.min(elapsed / animDuration, 1.0);
-                // Ease-out elastic
-                const val = 1 - Math.pow(1 - t, 3);
-                const eased = val * (1 + 0.3 * Math.sin(t * Math.PI * 3) * (1 - t));
-                const s = 0.01 + (1 - 0.01) * eased;
-                modelGroup.scale.setScalar(Math.max(0.01, s));
-                if (t < 1) {
-                    requestAnimationFrame(animateScale);
-                } else {
-                    modelGroup.scale.setScalar(1);
-                }
+                const t = Math.min(elapsed / 450, 1);
+                const ease = 1 - Math.pow(1 - t, 3);
+                const s = 0.01 + (1 - 0.01) * ease;
+                currentModelGroup.scale.setScalar(s);
+                if (t < 1) requestAnimationFrame(animScale);
+                else currentModelGroup.scale.setScalar(1);
             }
-            requestAnimationFrame(animateScale);
+            requestAnimationFrame(animScale);
 
-            // Scroll to card in sidebar
-            const cardEl = document.querySelector(`.drug-card[data-drug-id="${drugId}"]`);
-            if (cardEl) {
-                cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // On mobile, show floating info card
+            if (window.innerWidth <= 768) {
+                mobileInfoCard.classList.add('active');
             }
         }
 
         function disposeObjectRecursive(obj) {
             if (!obj) return;
-            if (obj.geometry) obj.geometry.dispose();
-            if (obj.material) {
-                if (Array.isArray(obj.material)) {
-                    obj.material.forEach((m) => disposeMaterial(m));
-                } else {
-                    disposeMaterial(obj.material);
-                }
-            }
-            if (obj.children && obj.children.length > 0) {
-                for (let i = obj.children.length - 1; i >= 0; i--) {
-                    disposeObjectRecursive(obj.children[i]);
-                }
-            }
-        }
-
-        function disposeMaterial(mat) {
-            if (!mat) return;
-            Object.keys(mat).forEach((key) => {
-                const val = mat[key];
-                if (val && val.isTexture) {
-                    val.dispose();
+            obj.traverse(child => {
+                if (child.geometry) child.geometry.dispose();
+                if (child.material) {
+                    if (Array.isArray(child.material)) child.material.forEach(m => disposeMaterial(m));
+                    else disposeMaterial(child.material);
                 }
             });
+        }
+        function disposeMaterial(mat) {
+            if (!mat) return;
+            if (mat.map) mat.map.dispose();
             mat.dispose();
         }
 
+        // Mobile close info button
+        closeMobileBtn.addEventListener('click', () => {
+            mobileInfoCard.classList.remove('active');
+        });
+
+        // Close mobile info when tapping outside? not needed.
+
         // ==================== ANIMATION LOOP ====================
         const clock = new THREE.Clock();
-
         function animate() {
             requestAnimationFrame(animate);
-
             const dt = Math.min(clock.getDelta(), 0.1);
             controls.update();
-
-            // Rotate particles slowly
-            particles.rotation.y += dt * 0.08;
-            particles.rotation.x += dt * 0.03;
-
-            // Update glow plane time uniform
-            if (currentModel) {
-                currentModel.traverse((child) => {
-                    if (child.name === 'glowPlane' && child.material.uniforms) {
-                        child.material.uniforms.uTime.value += dt;
-                    }
-                });
-            }
-
-            // Pulse the platform ring
-            const pulse = 1 + Math.sin(performance.now() * 0.002) * 0.15;
-            ring.scale.setScalar(pulse);
-            ring.material.emissiveIntensity = 0.3 + Math.sin(performance.now() * 0.003) * 0.35;
-
+            particles.rotation.y += dt * 0.07;
+            ring.scale.setScalar(1 + Math.sin(performance.now()*0.002)*0.12);
+            ring.material.emissiveIntensity = 0.3 + Math.sin(performance.now()*0.003)*0.3;
             renderer.render(scene, camera);
         }
 
-        // ==================== RESIZE HANDLER ====================
-        function onResize() {
+        window.addEventListener('resize', () => {
             const w = viewerContainer.clientWidth;
             const h = viewerContainer.clientHeight;
             camera.aspect = w / Math.max(h, 1);
             camera.updateProjectionMatrix();
             renderer.setSize(w, h);
-        }
-        window.addEventListener('resize', onResize);
-        window.addEventListener('orientationchange', () => setTimeout(onResize, 150));
+            if (window.innerWidth <= 768) {
+                mobileInfoCard.classList.remove('active');
+            }
+        });
 
-        // ==================== KEYBOARD NAVIGATION ====================
+        // Keyboard navigation
         window.addEventListener('keydown', (e) => {
-            const currentIndex = drugData.findIndex((d) => d.id === activeDrugId);
+            const idx = drugData.findIndex(d => d.id === activeDrugId);
             if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
                 e.preventDefault();
-                const nextIndex = (currentIndex + 1) % drugData.length;
-                selectDrug(drugData[nextIndex].id);
+                const next = (idx + 1) % drugData.length;
+                selectDrug(drugData[next].id);
             } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
                 e.preventDefault();
-                const prevIndex = (currentIndex - 1 + drugData.length) % drugData.length;
-                selectDrug(drugData[prevIndex].id);
+                const prev = (idx - 1 + drugData.length) % drugData.length;
+                selectDrug(drugData[prev].id);
             } else if (e.key === 'r' || e.key === 'R') {
                 controls.autoRotate = !controls.autoRotate;
             }
         });
 
-        // ==================== INIT ====================
+        // Initialize
         selectDrug('paracetamol');
         animate();
-        onResize();
-
-        console.log('💊 دليل مسكنات الألم ثلاثي الأبعاد - جاهز للاستخدام');
-        console.log('🖱 اسحب الماوس للتدوير | 🔍 عجلة الماوس للتكبير | ⌨ مفاتيح الأسهم للتنقل | R لإيقاف/تشغيل التدوير التلقائي');
     </script>
 </body>
 </html>
