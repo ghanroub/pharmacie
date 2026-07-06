@@ -1,1609 +1,616 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل مسكنات الألم الشامل | Pain Relievers Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0d6b6e;
-            --primary-light: #0f8b8f;
-            --primary-dark: #09494b;
-            --accent: #e8a850;
-            --accent-light: #f0c27a;
-            --bg: #f5f7f9;
-            --bg-card: #ffffff;
-            --text: #1a1d21;
-            --text-light: #4a5568;
-            --text-muted: #718096;
-            --border: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.10), 0 8px 16px rgba(0, 0, 0, 0.06);
-            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.14), 0 10px 20px rgba(0, 0, 0, 0.08);
-            --radius-sm: 10px;
-            --radius: 16px;
-            --radius-lg: 20px;
-            --radius-xl: 24px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>مسكنات الألم | دليل الأدوية ثلاثي الأبعاد</title>
+  <!-- خطوط عربية من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+      background: linear-gradient(145deg, #f0f4f8 0%, #d9e2ec 100%);
+      font-family: 'Tajawal', 'Cairo', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      margin: 0;
+      position: relative;
+    }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
+    /* خلفية زخرفية ناعمة */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.4) 0%, rgba(203, 213, 225, 0.2) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
 
-        body {
-            font-family: 'Tajawal', 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            min-height: 100vh;
-        }
+    .main-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1300px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 3.5rem;
+      box-shadow: 0 35px 70px rgba(0, 20, 40, 0.25), inset 0 2px 8px rgba(255,255,255,0.8);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.7);
+    }
 
-        /* ========== HEADER / NAVBAR ========== */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border);
-            padding: 0 2rem;
-            transition: var(--transition);
-        }
-        .navbar-inner {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 68px;
-        }
-        .navbar-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-            text-decoration: none;
-            letter-spacing: -0.3px;
-        }
-        .navbar-logo .logo-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(13, 107, 110, 0.3);
-        }
-        .navbar-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-        .navbar-links a {
-            text-decoration: none;
-            color: var(--text-light);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition-fast);
-            position: relative;
-            padding: 6px 0;
-        }
-        .navbar-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--primary);
-            border-radius: 4px;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        .navbar-links a:hover {
-            color: var(--primary);
-        }
-        .navbar-links a:hover::after {
-            transform: scaleX(1);
-        }
-        .btn-nav {
-            background: var(--primary);
-            color: #fff !important;
-            padding: 10px 22px !important;
-            border-radius: 50px;
-            font-weight: 600 !important;
-            transition: var(--transition) !important;
-            box-shadow: 0 4px 14px rgba(13, 107, 110, 0.3);
-        }
-        .btn-nav:hover {
-            background: var(--primary-dark) !important;
-            box-shadow: 0 6px 20px rgba(13, 107, 110, 0.4);
-            transform: translateY(-2px);
-        }
-        .btn-nav::after {
-            display: none !important;
-        }
+    /* العنوان الرئيسي */
+    .header {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
 
-        /* Mobile nav toggle */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.6rem;
-            color: var(--text);
-            padding: 8px;
-        }
-        @media (max-width: 900px) {
-            .navbar-links {
-                display: none;
-                position: absolute;
-                top: 68px;
-                right: 0;
-                left: 0;
-                background: #fff;
-                flex-direction: column;
-                padding: 1.5rem 2rem;
-                gap: 1rem;
-                border-bottom: 2px solid var(--border);
-                box-shadow: var(--shadow-lg);
-                border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-            }
-            .navbar-links.active {
-                display: flex;
-            }
-            .nav-toggle {
-                display: block;
-            }
-        }
+    .header h1 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      background: linear-gradient(to left, #0b3d5f, #1a6b9e, #0f4c6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+      margin-bottom: 0.25rem;
+      text-shadow: 2px 2px 8px rgba(0,160,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-        /* ========== HERO SECTION ========== */
-        .hero {
-            background: linear-gradient(160deg, #e8f5f5 0%, #d4ecec 30%, #f0f7f7 60%, #fdf6ed 100%);
-            padding: 5rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -120px;
-            right: -120px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(13, 107, 110, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(232, 168, 80, 0.10) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(13, 107, 110, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.3px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-        }
-        .hero h1 span {
-            color: var(--accent);
-            position: relative;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-        }
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        .hero-stat {
-            background: #fff;
-            padding: 1.2rem 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            min-width: 120px;
-        }
-        .hero-stat .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .hero-stat .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .hero-stats {
-                gap: 1rem;
-            }
-            .hero-stat {
-                padding: 0.9rem 1.2rem;
-                min-width: 90px;
-            }
-            .hero-stat .stat-number {
-                font-size: 1.4rem;
-            }
-        }
+    .header h1 i {
+      background: #0b3d5f;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #1e4b6b, #0a3142);
+      box-shadow: 0 12px 20px rgba(0,80,120,0.4);
+      -webkit-text-fill-color: white;
+    }
 
-        /* ========== MAIN CONTAINER ========== */
-        .main-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #2c4b60;
+      font-weight: 500;
+      background: rgba(255,255,255,0.6);
+      display: inline-block;
+      padding: 0.4rem 2rem;
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
+      margin-top: 0.5rem;
+    }
 
-        /* ========== SECTION HEADERS ========== */
-        .section-header {
-            text-align: center;
-            margin: 3.5rem 0 2rem;
-        }
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-        }
-        .section-header .section-line {
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 4px;
-            margin: 0 auto;
-        }
-        .section-header p {
-            color: var(--text-muted);
-            margin-top: 0.8rem;
-            font-size: 0.95rem;
-        }
+    /* شبكة الأدوية */
+    .drugs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      justify-content: center;
+      align-items: stretch;
+    }
 
-        /* ========== INFO CARDS (general sections) ========== */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .info-card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            padding: 1.8rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        .info-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-            border-color: #cce5e5;
-        }
-        .info-card .card-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .info-card .card-icon.green {
-            background: #e6f7f0;
-            color: #0d6b6e;
-        }
-        .info-card .card-icon.orange {
-            background: #fef4e8;
-            color: #e8a850;
-        }
-        .info-card .card-icon.red {
-            background: #fde8e8;
-            color: #c53030;
-        }
-        .info-card .card-icon.blue {
-            background: #e8f0fe;
-            color: #2b6cb0;
-        }
-        .info-card h3 {
-            font-weight: 700;
-            font-size: 1.15rem;
-            margin-bottom: 0.6rem;
-            color: var(--text);
-        }
-        .info-card p,
-        .info-card ul {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-        .info-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .info-card ul li {
-            padding: 4px 0;
-            padding-right: 20px;
-            position: relative;
-        }
-        .info-card ul li::before {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
+    /* بطاقة الدواء */
+    .drug-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 2.2rem;
+      padding: 1.8rem 1.2rem 1.8rem;
+      box-shadow: 0 25px 45px rgba(0, 32, 64, 0.2), inset 0 1px 10px white;
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transform-style: preserve-3d;
+      perspective: 800px;
+    }
 
-        /* ========== DRUG CARDS GRID ========== */
-        .drugs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1.4rem;
-            margin-bottom: 2rem;
-        }
-        .drug-card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            padding: 1.6rem;
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            user-select: none;
-        }
-        .drug-card:hover {
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-5px);
-        }
-        .drug-card:active {
-            transform: scale(0.97);
-            transition: var(--transition-fast);
-        }
-        .drug-card .drug-icon-mini {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #fff;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-        }
-        .drug-card h3 {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text);
-            margin-bottom: 4px;
-        }
-        .drug-card .brand-name {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        .drug-card .drug-category {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            background: #f7fafc;
-            padding: 4px 12px;
-            border-radius: 50px;
-            display: inline-block;
-        }
-        .drug-card .click-hint {
-            position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            opacity: 0;
-            transition: opacity 0.3s;
-            white-space: nowrap;
-        }
-        .drug-card:hover .click-hint {
-            opacity: 1;
-        }
-        .drug-card::after {
-            content: '';
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            opacity: 0.04;
-            transition: var(--transition);
-            pointer-events: none;
-        }
-        .drug-card:hover::after {
-            width: 200px;
-            height: 200px;
-            top: -80px;
-            right: -80px;
-        }
+    .drug-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 35px 55px rgba(0, 82, 136, 0.35), inset 0 0 0 2px rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
+    }
 
-        /* ========== MODAL OVERLAY ========== */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.35s ease;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-        }
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        .modal {
-            background: #fff;
-            border-radius: var(--radius-xl);
-            width: 92%;
-            max-width: 900px;
-            max-height: 88vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            transform: translateY(30px) scale(0.96);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            padding: 2rem;
-        }
-        .modal-overlay.active .modal {
-            transform: translateY(0) scale(1);
-        }
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            left: 20px;
-            background: #f1f5f9;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            color: var(--text);
-            transition: var(--transition-fast);
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-close:hover {
-            background: #e2e8f0;
-            color: #c53030;
-        }
-        .modal-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-        @media (max-width: 750px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .modal {
-                padding: 1.2rem;
-                max-height: 92vh;
-            }
-        }
+    .drug-icon {
+      font-size: 3.4rem;
+      color: #0f4c6b;
+      margin-bottom: 0.7rem;
+      background: #e2edf7;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
 
-        /* ========== 3D CUBE ========== */
-        .cube-perspective {
-            perspective: 900px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            min-height: 340px;
-        }
-        .cube-container {
-            width: 200px;
-            height: 240px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: autoRotate 14s infinite linear;
-            cursor: grab;
-            transition: filter 0.3s;
-        }
-        .cube-container:active {
-            cursor: grabbing;
-        }
-        .cube-container.paused {
-            animation-play-state: paused;
-        }
-        @keyframes autoRotate {
-            0% {
-                transform: rotateY(0deg) rotateX(-8deg);
-            }
-            100% {
-                transform: rotateY(360deg) rotateX(-8deg);
-            }
-        }
-        .cube-face {
-            position: absolute;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-weight: 700;
-            border-radius: 6px;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-        }
-        /* Front & Back */
-        .cube-face.front {
-            width: 200px;
-            height: 240px;
-            transform: translateZ(40px);
-        }
-        .cube-face.back {
-            width: 200px;
-            height: 240px;
-            transform: translateZ(-40px) rotateY(180deg);
-        }
-        /* Left & Right */
-        .cube-face.left {
-            width: 80px;
-            height: 240px;
-            transform: translateX(-100px) rotateY(-90deg);
-        }
-        .cube-face.right {
-            width: 80px;
-            height: 240px;
-            transform: translateX(100px) rotateY(90deg);
-        }
-        /* Top & Bottom */
-        .cube-face.top {
-            width: 200px;
-            height: 80px;
-            transform: translateY(-120px) rotateX(90deg);
-        }
-        .cube-face.bottom {
-            width: 200px;
-            height: 80px;
-            transform: translateY(120px) rotateX(-90deg);
-        }
-        .cube-face .face-content {
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            width: 100%;
-            height: 100%;
-        }
-        .cube-face .face-brand {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        .cube-face .face-dosage {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-        }
-        .cube-face .face-generic {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.75);
-            font-weight: 400;
-        }
-        .cube-face .face-logo-sm {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 4px;
-            letter-spacing: 1px;
-        }
-        /* Side faces (left/right) - vertical text */
-        .cube-face.left .face-content,
-        .cube-face.right .face-content {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: #fff;
-        }
-        /* Top/Bottom faces */
-        .cube-face.top .face-content,
-        .cube-face.bottom .face-content {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .rotation-slider-container {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        .rotation-slider-container label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 4px;
-        }
-        .rotation-slider {
-            width: 180px;
-            accent-color: var(--primary);
-            cursor: pointer;
-        }
-        .btn-reset-rotation {
-            display: inline-block;
-            margin-top: 6px;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 6px 16px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 0.8rem;
-            transition: var(--transition-fast);
-        }
-        .btn-reset-rotation:hover {
-            background: var(--primary-dark);
-        }
+    .drug-card:hover .drug-icon {
+      background: #0f4c6b;
+      color: white;
+      transform: rotateY(15deg);
+    }
 
-        /* ========== DRUG INFO IN MODAL ========== */
-        .drug-detail h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-            margin-bottom: 4px;
-        }
-        .drug-detail .detail-brand {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .drug-detail .detail-section {
-            margin-bottom: 1rem;
-        }
-        .drug-detail .detail-section h4 {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
-            font-size: 0.95rem;
-        }
-        .drug-detail .detail-section p,
-        .drug-detail .detail-section ul {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        .drug-detail .detail-section ul {
-            padding-right: 18px;
-            list-style: disc;
-        }
-        .drug-detail .detail-section ul li {
-            margin-bottom: 3px;
-        }
-        .drug-detail .detail-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 1rem;
-        }
-        .drug-detail .detail-tag {
-            background: #f0f7f7;
-            color: var(--primary);
-            padding: 5px 14px;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            font-weight: 500;
-        }
+    .drug-name {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: #083047;
+      margin: 0.5rem 0 0.2rem;
+    }
 
-        /* ========== FOOTER ========== */
-        .footer {
-            background: #1a1d21;
-            color: #ccc;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.85rem;
-            margin-top: 3rem;
-        }
-        .footer a {
-            color: var(--accent-light);
-            text-decoration: none;
-        }
-        .footer .disclaimer {
-            color: #888;
-            font-size: 0.75rem;
-            margin-top: 0.8rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
+    .drug-sub {
+      color: #2f5a72;
+      font-weight: 500;
+      font-size: 1rem;
+      background: rgba(15, 76, 107, 0.1);
+      padding: 0.3rem 1.2rem;
+      border-radius: 20px;
+      margin: 0.5rem 0;
+    }
 
-        /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar {
-            width: 7px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e0;
-            border-radius: 6px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a0aec0;
-        }
+    .btn-view {
+      background: #0f4c6b;
+      border: none;
+      color: white;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.7rem 1.8rem;
+      border-radius: 3rem;
+      margin-top: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: 0.3s;
+      box-shadow: 0 10px 15px rgba(0,80,120,0.3);
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #135b7a, #08344a);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
 
-        /* ========== ANIMATIONS ========== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        .delay-1 {
-            animation-delay: 0.1s;
-            opacity: 0;
-        }
-        .delay-2 {
-            animation-delay: 0.2s;
-            opacity: 0;
-        }
-        .delay-3 {
-            animation-delay: 0.3s;
-            opacity: 0;
-        }
-        .delay-4 {
-            animation-delay: 0.4s;
-            opacity: 0;
-        }
-        .delay-5 {
-            animation-delay: 0.5s;
-            opacity: 0;
-        }
-    </style>
+    .btn-view:hover {
+      background: #1f6b91;
+      box-shadow: 0 15px 25px #0b3d5f80;
+      transform: scale(1.05);
+    }
+
+    /* منطقة العرض الثلاثية الأبعاد */
+    .display-section {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 2.8rem;
+      padding: 2rem 2rem 2.2rem;
+      margin-top: 0.8rem;
+      box-shadow: inset 0 5px 15px rgba(255,255,255,0.8), 0 30px 45px rgba(0, 20, 40, 0.3);
+      border: 1px solid rgba(255,255,255,0.8);
+      transition: all 0.4s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .viewer-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0a3142;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.2rem;
+    }
+
+    .product-box {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      width: 100%;
+    }
+
+    /* حاوية الصورة ثلاثية الأبعاد */
+    .box-3d-container {
+      flex: 1 1 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1200px;
+      min-height: 280px;
+    }
+
+    .box-3d {
+      width: 220px;
+      height: 280px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5));
+    }
+
+    .box-3d:active {
+      cursor: grabbing;
+    }
+
+    /* تمثيل العلبة التجارية ثلاثية الأبعاد باستخدام وجوه */
+    .face {
+      position: absolute;
+      width: 180px;
+      height: 240px;
+      background: linear-gradient(145deg, #f9f9fb, #d4dce4);
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3), inset 0 -5px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      border: 2px solid rgba(255,255,255,0.9);
+      font-weight: bold;
+      overflow: hidden;
+    }
+
+    .face.front {
+      background: linear-gradient(135deg, #e9f2fa, #bdd3e8);
+      transform: translateZ(100px);
+    }
+    .face.back {
+      background: linear-gradient(135deg, #cbdbe9, #9bb7ce);
+      transform: rotateY(180deg) translateZ(100px);
+    }
+    .face.right {
+      background: linear-gradient(135deg, #d9e6f5, #aac2db);
+      transform: rotateY(90deg) translateZ(100px);
+      width: 200px;
+    }
+    .face.left {
+      background: linear-gradient(135deg, #d0dfef, #a0bcd6);
+      transform: rotateY(-90deg) translateZ(100px);
+      width: 200px;
+    }
+    .face.top {
+      background: #eef3fa;
+      transform: rotateX(90deg) translateZ(100px);
+      height: 200px;
+      width: 180px;
+      border-radius: 20px;
+    }
+    .face.bottom {
+      background: #b6c8da;
+      transform: rotateX(-90deg) translateZ(140px);
+      height: 200px;
+      width: 180px;
+    }
+
+    .brand-name {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #022b3f;
+      text-shadow: 2px 2px 0 white;
+      background: rgba(255,255,255,0.5);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+
+    .drug-desc-panel {
+      flex: 1 1 350px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      text-align: right;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      border: 1px solid white;
+    }
+
+    .drug-desc-panel h3 {
+      font-family: 'Cairo', sans-serif;
+      color: #043753;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .desc-text {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #1e3b4a;
+      font-weight: 500;
+    }
+
+    .rotate-hint {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #2f5568;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #eaf0f5;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .main-container {
+        padding: 1.5rem;
+      }
+      .box-3d {
+        width: 180px;
+        height: 240px;
+      }
+      .face {
+        width: 150px;
+        height: 200px;
+      }
+      .face.front { transform: translateZ(80px); }
+      .face.back { transform: rotateY(180deg) translateZ(80px); }
+      .face.right { transform: rotateY(90deg) translateZ(80px); width: 160px; }
+      .face.left { transform: rotateY(-90deg) translateZ(80px); width: 160px; }
+    }
+  </style>
 </head>
 <body>
+<div class="main-container">
+  <div class="header">
+    <h1>
+      <i class="fas fa-capsules"></i> مسكنات الألم
+      <i class="fas fa-prescription-bottle-medical"></i>
+    </h1>
+    <div class="subtitle">دليل الأدوية · اضغط على الدواء لمشاهدة العلبة ثلاثية الأبعاد</div>
+  </div>
 
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-inner">
-            <a href="#" class="navbar-logo">
-                <span class="logo-icon">💊</span>
-                <span>دليل المسكنات</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="القائمة">☰</button>
-            <ul class="navbar-links" id="navLinks">
-                <li><a href="#about">عن المسكنات</a></li>
-                <li><a href="#uses">الاستعمالات</a></li>
-                <li><a href="#contraindications">الموانع</a></li>
-                <li><a href="#interactions">التفاعلات</a></li>
-                <li><a href="#drugs-list">الأدوية</a></li>
-                <li><a href="#drugs-list" class="btn-nav">تصفح الأدوية</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- قائمة الأدوية -->
+  <div class="drugs-grid" id="drugGrid">
+    <!-- البيانات يتم توليدها ديناميكياً عبر JavaScript -->
+  </div>
 
-    <!-- ==================== HERO ==================== -->
-    <header class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">🩺 مرجع طبي موثوق</span>
-            <h1>دليل <span>مسكنات الألم</span> الشامل</h1>
-            <p>كل ما تحتاج معرفته عن مسكنات الألم: استعمالاتها، موانع استعمالها، تفاعلاتها الدوائية، جرعاتها، وأشكالها المتوفرة. اضغط على أي دواء لمشاهدة العلبة التجارية ثلاثية الأبعاد.</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">أدوية مشمولة</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="stat-number">3D</div>
-                    <div class="stat-label">عرض ثلاثي الأبعاد</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">معلومات محدثة</div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- ==================== MAIN CONTENT ==================== -->
-    <div class="main-container">
-
-        <!-- About Section -->
-        <div class="section-header" id="about">
-            <h2>ما هي مسكنات الألم؟</h2>
-            <div class="section-line"></div>
-            <p>نظرة عامة على مسكنات الألم وتصنيفاتها</p>
-        </div>
-        <div class="info-grid">
-            <div class="info-card animate-in delay-1">
-                <div class="card-icon green">📋</div>
-                <h3>تعريف مسكنات الألم</h3>
-                <p>مسكنات الألم هي أدوية تُستخدم لتخفيف أو إزالة الألم دون التسبب في فقدان الوعي. تعمل عبر آليات مختلفة في الجهاز العصبي المركزي والمحيطي لتقليل الإحساس بالألم. تتنوع بين مسكنات بسيطة تُصرف بدون وصفة طبية وأخرى قوية تتطلب وصفة طبية.</p>
-            </div>
-            <div class="info-card animate-in delay-2">
-                <div class="card-icon orange">🔬</div>
-                <h3>آلية العمل</h3>
-                <p>تعمل معظم مسكنات الألم عن طريق تثبيط إنزيمات الأكسدة الحلقية (COX) مما يقلل إنتاج البروستاغلاندينات المسببة للألم والالتهاب. أما المسكنات الأفيونية فتعمل على مستقبلات الأفيون في الدماغ والحبل الشوكي لتغيير الإحساس بالألم.</p>
-            </div>
-            <div class="info-card animate-in delay-3">
-                <div class="card-icon blue">📊</div>
-                <h3>تصنيف المسكنات</h3>
-                <p>تُصنف مسكنات الألم إلى: مسكنات غير أفيونية (باراسيتامول، مضادات الالتهاب غير الستيرويدية)، ومسكنات أفيونية ضعيفة (ترامادول، كودايين)، ومسكنات أفيونية قوية (مورفين، أوكسيكودون). يختلف كل صنف في قوته واستعمالاته وآثاره الجانبية.</p>
-            </div>
-        </div>
-
-        <!-- Uses Section -->
-        <div class="section-header" id="uses">
-            <h2>استعمالات مسكنات الألم</h2>
-            <div class="section-line"></div>
-            <p>الحالات التي تُستخدم فيها مسكنات الألم</p>
-        </div>
-        <div class="info-grid">
-            <div class="info-card animate-in delay-1">
-                <div class="card-icon green">✅</div>
-                <h3>الاستعمالات الشائعة</h3>
-                <ul>
-                    <li>الصداع بأنواعه (التوتري، النصفي)</li>
-                    <li>آلام الأسنان واللثة</li>
-                    <li>آلام العضلات والمفاصل</li>
-                    <li>آلام الظهر والرقبة</li>
-                    <li>آلام الدورة الشهرية</li>
-                    <li>الآلام بعد العمليات الجراحية</li>
-                    <li>آلام التهاب المفاصل والعظام</li>
-                    <li>خفض الحرارة المرتفعة</li>
-                </ul>
-            </div>
-            <div class="info-card animate-in delay-2">
-                <div class="card-icon orange">🏥</div>
-                <h3>الاستعمالات الطبية الخاصة</h3>
-                <ul>
-                    <li>آلام الأعصاب والاعتلال العصبي</li>
-                    <li>آلام السرطان المزمنة</li>
-                    <li>آلام الحروق والإصابات الشديدة</li>
-                    <li>المغص الكلوي والحالب</li>
-                    <li>آلام ما بعد الولادة</li>
-                    <li>النوبات القلبية (الأسبرين بجرعة منخفضة)</li>
-                    <li>الآلام الروماتيزمية المزمنة</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Contraindications Section -->
-        <div class="section-header" id="contraindications">
-            <h2>موانع الاستعمال والتحذيرات</h2>
-            <div class="section-line"></div>
-            <p>الحالات التي يُمنع فيها استخدام مسكنات الألم</p>
-        </div>
-        <div class="info-grid">
-            <div class="info-card animate-in delay-1">
-                <div class="card-icon red">⚠️</div>
-                <h3>موانع الاستعمال المطلقة</h3>
-                <ul>
-                    <li>الحساسية المعروفة للدواء أو مكوناته</li>
-                    <li>القرحة الهضمية النشطة (لمضادات الالتهاب)</li>
-                    <li>الفشل الكبدي الحاد (للاستخدام المزمن للباراسيتامول)</li>
-                    <li>الفشل الكلوي المتقدم</li>
-                    <li>اضطرابات النزيف (لمضادات الالتهاب)</li>
-                    <li>الربو الحساس للأسبرين</li>
-                    <li>الحمل في الأشهر الأخيرة (لمضادات الالتهاب)</li>
-                </ul>
-            </div>
-            <div class="info-card animate-in delay-2">
-                <div class="card-icon orange">⚕️</div>
-                <h3>تحذيرات واحتياطات</h3>
-                <ul>
-                    <li>الحمل والرضاعة (استشارة الطبيب ضرورية)</li>
-                    <li>كبار السن (زيادة الحساسية للآثار الجانبية)</li>
-                    <li>الأطفال (الجرعات تعتمد على الوزن)</li>
-                    <li>أمراض القلب وارتفاع ضغط الدم</li>
-                    <li>تاريخ من نزيف الجهاز الهضمي</li>
-                    <li>الاستخدام المتزامن مع أدوية أخرى</li>
-                    <li>الإدمان على المواد الأفيونية</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Interactions Section -->
-        <div class="section-header" id="interactions">
-            <h2>التفاعلات الدوائية</h2>
-            <div class="section-line"></div>
-            <p>أهم التفاعلات بين مسكنات الألم والأدوية الأخرى</p>
-        </div>
-        <div class="info-grid">
-            <div class="info-card animate-in delay-1">
-                <div class="card-icon red">🔄</div>
-                <h3>تفاعلات دوائية هامة</h3>
-                <ul>
-                    <li>مضادات التخثر (وارفارين) + مضادات الالتهاب = زيادة خطر النزيف</li>
-                    <li>المسكنات الأفيونية + المهدئات = تثبيط تنفسي خطير</li>
-                    <li>مضادات الالتهاب + أدوية الضغط = تقليل فعالية أدوية الضغط</li>
-                    <li>الباراسيتامول + الكحول = زيادة سمية الكبد</li>
-                    <li>الترامادول + مثبطات استرداد السيروتونين = خطر متلازمة السيروتونين</li>
-                </ul>
-            </div>
-            <div class="info-card animate-in delay-2">
-                <div class="card-icon blue">💡</div>
-                <h3>نصائح لتجنب التفاعلات</h3>
-                <ul>
-                    <li>أخبر طبيبك عن جميع الأدوية التي تتناولها</li>
-                    <li>تجنب الجمع بين أكثر من مسكن دون استشارة</li>
-                    <li>اقرأ النشرة الدوائية بعناية</li>
-                    <li>تجنب الكحول أثناء تناول المسكنات</li>
-                    <li>استشر الصيدلي قبل تناول أي دواء جديد</li>
-                    <li>لا تتجاوز الجرعة الموصى بها أبداً</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ==================== DRUGS LIST ==================== -->
-        <div class="section-header" id="drugs-list">
-            <h2>الأدوية المتوفرة</h2>
-            <div class="section-line"></div>
-            <p>اضغط على أي دواء لعرض التفاصيل الكاملة والعلبة ثلاثية الأبعاد</p>
-        </div>
-        <div class="drugs-grid" id="drugsGrid">
-            <!-- Drug cards generated by JavaScript -->
-        </div>
-
+  <!-- نافذة العرض الثلاثية الأبعاد والشرح -->
+  <div class="display-section" id="displayArea">
+    <div class="viewer-title">
+      <i class="fas fa-cube"></i> <span id="selectedDrugTitle">اختر دواءً</span>
     </div>
-
-    <!-- ==================== MODAL ==================== -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal" id="modal">
-            <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
-            <div class="modal-body" id="modalBody">
-                <!-- 3D Cube -->
-                <div>
-                    <div class="cube-perspective" id="cubePerspective">
-                        <div class="cube-container" id="cubeContainer">
-                            <div class="cube-face front" id="faceFront"><div class="face-content"><span class="face-brand"></span><span class="face-dosage"></span><span class="face-generic"></span></div></div>
-                            <div class="cube-face back" id="faceBack"><div class="face-content"><span class="face-brand"></span><span class="face-dosage"></span><span class="face-logo-sm">®</span></div></div>
-                            <div class="cube-face left" id="faceLeft"><div class="face-content"><span>الجرعة حسب الوصفة</span></div></div>
-                            <div class="cube-face right" id="faceRight"><div class="face-content"><span>يحفظ بعيداً عن الضوء</span></div></div>
-                            <div class="cube-face top" id="faceTop"><div class="face-content"><span>💊</span><span>للاستعمال الفموي</span></div></div>
-                            <div class="cube-face bottom" id="faceBottom"><div class="face-content"><span>📦</span><span>يحفظ في درجة حرارة الغرفة</span></div></div>
-                        </div>
-                    </div>
-                    <div class="rotation-slider-container">
-                        <label for="rotationSlider">🖐️ تدوير يدوي:</label>
-                        <input type="range" class="rotation-slider" id="rotationSlider" min="0" max="360" value="0" title="تدوير العلبة">
-                        <br>
-                        <button class="btn-reset-rotation" id="btnResetRotation">🔄 تدوير تلقائي</button>
-                    </div>
-                </div>
-                <!-- Drug Details -->
-                <div class="drug-detail" id="drugDetail">
-                    <!-- Populated by JS -->
-                </div>
-            </div>
+    <div class="product-box">
+      <div class="box-3d-container">
+        <div class="box-3d" id="box3d">
+          <div class="face front"><span class="brand-name" id="frontBrand">💊</span></div>
+          <div class="face back"><span class="brand-name" id="backBrand">💊</span></div>
+          <div class="face right"><span class="brand-name">💊</span></div>
+          <div class="face left"><span class="brand-name">💊</span></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
         </div>
+      </div>
+      <div class="drug-desc-panel" id="descPanel">
+        <h3><i class="fas fa-info-circle"></i> <span id="drugDynamicName">...</span></h3>
+        <p class="desc-text" id="drugDescription">اضغط على أي مسكن للألم من الأعلى لعرض تفاصيله وصورة العلبة ثلاثية الأبعاد.</p>
+        <div class="rotate-hint">
+          <i class="fas fa-arrows-spin"></i> اسحب الصندوق ثلاثي الأبعاد لتدويره (تفاعل بالماوس)
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <p>© 2026 <strong>دليل مسكنات الألم الشامل</strong> | جميع الحقوق محفوظة</p>
-        <p class="disclaimer">
-            ⚠️ <strong>تنبيه هام:</strong> المعلومات الواردة في هذه الصفحة هي لأغراض تعليمية وتثقيفية فقط، ولا تغني عن استشارة الطبيب أو الصيدلي. لا تتناول أي دواء دون وصفة طبية مناسبة. الجرعات المذكورة هي جرعات عامة وقد تختلف حسب الحالة الفردية. في حالات الطوارئ، اتصل بالإسعاف فوراً.
-        </p>
-    </footer>
+<script>
+  (function() {
+    // قاعدة بيانات الأدوية مع شرح وصورة توضيحية (نستخدم أيقونات ونصوص للعلبة)
+    const drugsData = [
+      {
+        id: 'paracetamol',
+        name: 'باراسيتامول',
+        brand: 'بانادول / أدول',
+        icon: 'fa-solid fa-pills',
+        description: 'مسكن ألم وخافض حرارة شائع. يعمل على الجهاز العصبي المركزي. آمن للاستخدام قصير المدى بالجرعات الموصى بها. يستخدم للصداع وآلام الأسنان والعضلات.',
+        colorTheme: '#1e6b9b'
+      },
+      {
+        id: 'ibuprofen',
+        name: 'ايبوبروفين',
+        brand: 'بروفين / موترين',
+        icon: 'fa-solid fa-capsules',
+        description: 'مضاد التهاب غير ستيرويدي (NSAID). يخفف الألم والالتهاب والتورم. مناسب لآلام المفاصل والعضلات وتشنجات الدورة الشهرية. يُفضل تناوله مع الطعام.',
+        colorTheme: '#b34141'
+      },
+      {
+        id: 'diclofenac',
+        name: 'ديكلوفيناك',
+        brand: 'فولتارين / كاتافلام',
+        icon: 'fa-solid fa-tablets',
+        description: 'مسكن قوي مضاد للالتهابات. يستخدم لآلام الظهر والنقرس والإصابات الرياضية. يتوفر بشكل حبوب ومراهم موضعية. يحتاج وصفة طبية في بعض التراكيز.',
+        colorTheme: '#b37b2e'
+      },
+      {
+        id: 'aspirin',
+        name: 'أسبرين',
+        brand: 'أسبرين / أسبوسيد',
+        icon: 'fa-solid fa-prescription-bottle',
+        description: 'مسكن ألم ومضاد للالتهابات ومميع للدم بجرعات منخفضة. فعال للصداع وآلام الأسنان. لا يستخدم للأطفال بسبب متلازمة راي. استشر طبيبك قبل الاستخدام المطول.',
+        colorTheme: '#6b8e5a'
+      },
+      {
+        id: 'naproxen',
+        name: 'نابروكسين',
+        brand: 'نابروسين / أليف',
+        icon: 'fa-solid fa-file-medical',
+        description: 'ينتمي لمضادات الالتهاب غير الستيرويدية. طويل المفعول ويستخدم لعلاج التهاب المفاصل والنقرس وآلام العضلات. يؤخذ عادة كل 12 ساعة.',
+        colorTheme: '#4f6d7a'
+      }
+    ];
 
-    <script>
-        (function() {
-            // ==================== DRUG DATA ====================
-            const drugs = [{
-                id: 'paracetamol',
-                genericName: 'باراسيتامول',
-                genericNameEn: 'Paracetamol (Acetaminophen)',
-                brandName: 'بانادول',
-                brandNameEn: 'Panadol',
-                category: 'مسكن ألم وخافض حرارة',
-                categoryClass: 'green',
-                iconBg: 'linear-gradient(135deg, #1a73e8, #4a9af5)',
-                iconLetter: 'ب',
-                colors: {
-                    primary: '#1a73e8',
-                    secondary: '#4a9af5',
-                    dark: '#0d4a9e',
-                    light: '#c5ddfc',
-                    accent: '#ffffff'
-                },
-                uses: ['الصداع', 'آلام الأسنان', 'آلام العضلات', 'آلام الدورة الشهرية', 'خفض الحرارة', 'آلام
-                    التهاب المفاصل الخفيفة
-                ', 'آلام ما بعد العمليات'],
-                contraindications: ['فرط الحساسية للباراسيتامول', 'الفشل الكبدي الحاد', 'إدمان الكحول المزمن'],
-                interactions: ['يزيد الكحول من سمية الكبد', 'يقلل مع الفينيتوين من فعاليته', 'يزيد الوارفارين خطر النزيف
-                    مع الجرعات العالية
-                ', 'الكوليسترامين يقلل الامتصاص'],
-                dosage: 'البالغون: 500-1000 ملغ كل 4-6 ساعات (الحد الأقصى 4 غ/يوم). الأطفال: 10-15 ملغ/كغ كل 4-6 ساعات.',
-                forms: ['أقراص 500 ملغ', 'أقراص 1000 ملغ', 'شراب 120 ملغ/5 مل', 'تحاميل 250 ملغ', 'أمبولات وريدية 1000
-                    ملغ / 100 مل
-                '],
-                description: 'مسكن ألم من الجيل الأول وخافض حرارة فعال. يعمل مركزياً على الجهاز العصبي المركزي. يتميز بأمانه النسبي على المعدة مقارنة بمضادات الالتهاب.',
-            }, {
-                id: 'ibuprofen',
-                genericName: 'ايبوبروفين',
-                genericNameEn: 'Ibuprofen',
-                brandName: 'بروفين',
-                brandNameEn: 'Brufen',
-                category: 'مضاد التهاب غير ستيرويدي',
-                categoryClass: 'orange',
-                iconBg: 'linear-gradient(135deg, #e85530, #f5784a)',
-                iconLetter: 'ب',
-                colors: {
-                    primary: '#e85530',
-                    secondary: '#f5784a',
-                    dark: '#b3301a',
-                    light: '#fdd4c8',
-                    accent: '#ffffff'
-                },
-                uses: ['آلام المفاصل والروماتيزم', 'آلام العضلات', 'الصداع النصفي', 'آلام الأسنان', 'خفض الحرارة',
-                    'آلام الدورة الشهرية', 'الالتهابات الحادة'
-                ],
-                contraindications: ['القرحة الهضمية', 'الفشل الكلوي', 'الحمل في الأشهر الأخيرة', 'الربو الحساس للأسبرين',
-                    'اضطرابات النزيف'
-                ],
-                interactions: ['يزيد خطر النزيف مع الوارفارين', 'يقلل فعالية أدوية ضغط الدم', 'يزيد سمية الميثوتريكسات',
-                    'يزيد خطر القرحة مع الكورتيكوستيرويدات', 'يقلل إفراز الليثيوم'
-                ],
-                dosage: 'البالغون: 200-400 ملغ كل 6-8 ساعات (الحد الأقصى 2400 ملغ/يوم). الأطفال: 5-10 ملغ/كغ كل 6-8 ساعات.',
-                forms: ['أقراص 200 ملغ', 'أقراص 400 ملغ', 'أقراص 600 ملغ', 'شراب 100 ملغ/5 مل', 'جل موضعي 5%',
-                    'أمبولات حقن'
-                ],
-                description: 'مضاد التهاب غير ستيرويدي واسع الاستعمال. يجمع بين التأثير المسكن والمضاد للالتهاب وخافض الحرارة. يُفضل تناوله مع الطعام لتقليل تأثيره على المعدة.',
-            }, {
-                id: 'diclofenac',
-                genericName: 'ديكلوفيناك',
-                genericNameEn: 'Diclofenac',
-                brandName: 'فولتارين',
-                brandNameEn: 'Voltaren',
-                category: 'مضاد التهاب غير ستيرويدي قوي',
-                categoryClass: 'orange',
-                iconBg: 'linear-gradient(135deg, #e8a020, #f0c040)',
-                iconLetter: 'ف',
-                colors: {
-                    primary: '#e8a020',
-                    secondary: '#f0c040',
-                    dark: '#b07810',
-                    light: '#fdf0d0',
-                    accent: '#1a3a5c'
-                },
-                uses: ['آلام المفاصل الحادة', 'التهاب المفاصل الروماتويدي', 'النقرس الحاد', 'آلام الظهر', 'آلام ما بعد
-                    العمليات
-                ', 'المغص الكلوي', 'الإصابات الرياضية'],
-                contraindications: ['القرحة الهضمية النشطة', 'الفشل الكلوي المتوسط إلى الشديد', 'أمراض القلب الإقفارية',
-                    'الحمل', 'الربو الحساس لمضادات الالتهاب'
-                ],
-                interactions: ['يزيد خطر النزيف مع مضادات التخثر', 'يرفع مستويات الديجوكسين', 'يزيد سمية السيكلوسبورين
-                    الكلوية
-                ', 'يقلل فعالية مدرات البول', 'يزيد خطر القرحة مع الأسبرين'],
-                dosage: 'البالغون: 50 ملغ كل 8 ساعات أو 75 ملغ كل 12 ساعة (أقراص ممتدة التحرر). الجرعة القصوى 150 ملغ/يوم.',
-                forms: ['أقراص 50 ملغ', 'أقراص ممتدة التحرر 75-100 ملغ', 'جل موضعي 1%', 'حقن عضلية 75 ملغ/3 مل',
-                    'قطرات عينية'
-                ],
-                description: 'مضاد التهاب غير ستيرويدي قوي وفعال. يتميز بسرعة امتصاصه وتأثيره القوي في تخفيف الألم والالتهاب. يتوفر بأشكال متعددة تشمل الموضعي والفموي والحقن.',
-            }, {
-                id: 'aspirin',
-                genericName: 'أسبرين',
-                genericNameEn: 'Aspirin (Acetylsalicylic Acid)',
-                brandName: 'أسبرين',
-                brandNameEn: 'Aspirin',
-                category: 'مسكن ألم ومضاد للصفيحات',
-                categoryClass: 'blue',
-                iconBg: 'linear-gradient(135deg, #2d7d46, #4aad5e)',
-                iconLetter: 'أ',
-                colors: {
-                    primary: '#2d7d46',
-                    secondary: '#4aad5e',
-                    dark: '#1a4d28',
-                    light: '#d4f0dc',
-                    accent: '#ffffff'
-                },
-                uses: ['الصداع', 'آلام العضلات', 'خفض الحرارة', 'الوقاية من الجلطات القلبية', 'الوقاية من السكتات
-                    الدماغية', 'الحمى الروماتيزمية', 'الذئبة الحمامية'],
-                contraindications: ['القرحة الهضمية', 'اضطرابات النزيف', 'الأطفال أقل من 16 سنة (خطر متلازمة راي)',
-                    'الربو الحساس للأسبرين', 'الحمل', 'الفشل الكلوي الحاد'],
-                interactions: ['يزيد خطر النزيف مع مضادات التخثر', 'يقلل فعالية البروبينسيد', 'يزيد سمية الميثوتريكسات',
-                    'يزيد خطر نقص السكر مع السلفونيليوريا', 'يقلل فعالية السبيرونولاكتون'],
-                dosage: 'للبالغين كمسكن: 300-900 ملغ كل 4-6 ساعات (الحد الأقصى 4 غ/يوم). للوقاية من الجلطات: 75-100 ملغ/يوم.',
-                forms: ['أقراص 100 ملغ (واقي للقلب)', 'أقراص 300 ملغ', 'أقراص 500 ملغ', 'أقراص فوارة', 'أقراص مغلفة
-                    معوياً
-                '],
-                description: 'من أقدم المسكنات وأكثرها استعمالاً. يتميز بتأثيره الثلاثي: مسكن للألم، مضاد للالتهاب، ومضاد لتجمع الصفيحات الدموية. الجرعات المنخفضة تستخدم للوقاية من أمراض القلب والأوعية الدموية.',
-            }, {
-                id: 'naproxen',
-                genericName: 'نابروكسين',
-                genericNameEn: 'Naproxen',
-                brandName: 'نابروسين',
-                brandNameEn: 'Naprosyn',
-                category: 'مضاد التهاب غير ستيرويدي طويل المفعول',
-                categoryClass: 'orange',
-                iconBg: 'linear-gradient(135deg, #0f7b8a, #2dabb8)',
-                iconLetter: 'ن',
-                colors: {
-                    primary: '#0f7b8a',
-                    secondary: '#2dabb8',
-                    dark: '#095560',
-                    light: '#d0f2f6',
-                    accent: '#ffffff'
-                },
-                uses: ['التهاب المفاصل الروماتويدي', 'التهاب الفقار المقسط', 'النقرس الحاد', 'آلام الدورة الشهرية',
-                    'الصداع النصفي', 'آلام العظام المزمنة', 'الإصابات الرياضية'],
-                contraindications: ['القرحة الهضمية', 'الفشل الكلوي', 'أمراض القلب غير المسيطر عليها', 'الحمل',
-                    'فرط الحساسية لمضادات الالتهاب'],
-                interactions: ['يزيد خطر النزيف مع مضادات التخثر', 'يرفع ضغط الدم مع أدوية الضغط', 'يزيد سمية الليثيوم',
-                    'يقلل فعالية مدرات البول', 'يزيد خطر القرحة مع الستيرويدات'],
-                dosage: 'البالغون: 250-500 ملغ كل 12 ساعة. للحالات الحادة: 500 ملغ ثم 250 ملغ كل 6-8 ساعات. الحد الأقصى 1250 ملغ/يوم.',
-                forms: ['أقراص 250 ملغ', 'أقراص 500 ملغ', 'أقراص ممتدة التحرر', 'جل موضعي', 'تحاميل'],
-                description: 'مضاد التهاب غير ستيرويدي طويل المفعول، يتميز بعمر نصف طويل يتيح تناوله مرتين يومياً فقط. فعال في الآلام المزمنة والحالات الالتهابية المستمرة.',
-            }, {
-                id: 'celecoxib',
-                genericName: 'سيليكوكسيب',
-                genericNameEn: 'Celecoxib',
-                brandName: 'سيليبريكس',
-                brandNameEn: 'Celebrex',
-                category: 'مثبط COX-2 انتقائي',
-                categoryClass: 'green',
-                iconBg: 'linear-gradient(135deg, #7b3fa3, #9b5fc0)',
-                iconLetter: 'س',
-                colors: {
-                    primary: '#7b3fa3',
-                    secondary: '#9b5fc0',
-                    dark: '#4d1f6e',
-                    light: '#e8d8f6',
-                    accent: '#f5e050'
-                },
-                uses: ['التهاب المفاصل الروماتويدي', 'التهاب المفاصل التنكسي', 'آلام العمود الفقري', 'آلام الدورة الشهرية',
-                    'الألم بعد العمليات', 'التهاب الفقار المقسط'],
-                contraindications: ['أمراض القلب الإقفارية', 'الفشل القلبي', 'الفشل الكلوي', 'الحمل', 'حساسية
-                    السلفوناميدات', 'القرحة الهضمية النشطة'],
-                interactions: ['يزيد خطر النزيف مع الوارفارين', 'يرفع مستويات الليثيوم', 'يقلل فعالية مثبطات الإنزيم
-                    المحول', 'يزيد خطر السمية الكلوية مع السيكلوسبورين', 'يتفاعل مع الفلوكونازول'],
-                dosage: 'البالغون: 100-200 ملغ كل 12 ساعة. للحالات الحادة: 400 ملغ كجرعة أولى ثم 200 ملغ كل 12 ساعة. الحد الأقصى 400 ملغ/يوم.',
-                forms: ['كبسولات 100 ملغ', 'كبسولات 200 ملغ', 'كبسولات 400 ملغ'],
-                description: 'مثبط انتقائي لأنزيم COX-2، مما يقلل الالتهاب والألم مع تأثير أقل على المعدة مقارنة بمضادات الالتهاب التقليدية. مناسب للمرضى المعرضين لخطر القرحة الهضمية لكن يجب الحذر في مرضى القلب.',
-            }, {
-                id: 'tramadol',
-                genericName: 'ترامادول',
-                genericNameEn: 'Tramadol',
-                brandName: 'ترامال',
-                brandNameEn: 'Tramal',
-                category: 'مسكن ألم أفيوني متوسط',
-                categoryClass: 'red',
-                iconBg: 'linear-gradient(135deg, #2d8a4e, #3dba60)',
-                iconLetter: 'ت',
-                colors: {
-                    primary: '#2d8a4e',
-                    secondary: '#3dba60',
-                    dark: '#1a5c30',
-                    light: '#d0f0db',
-                    accent: '#ffffff'
-                },
-                uses: ['الآلام المتوسطة إلى الشديدة', 'آلام ما بعد العمليات', 'آلام السرطان', 'آلام الأعصاب', 'آلام
-                    الظهر المزمنة', 'الإصابات الشديدة'],
-                contraindications: ['الإدمان على المواد الأفيونية', 'الحمل', 'الصرع غير المسيطر عليه', 'الفشل الكلوي
-                    الحاد', 'الفشل الكبدي', 'الأطفال أقل من 12 سنة'],
-                interactions: ['خطر متلازمة السيروتونين مع مثبطات استرداد السيروتونين', 'يزيد التثبيط التنفسي مع
-                    البنزوديازيبينات', 'يقلل فعالية مع الكاربامازيبين', 'يزيد خطر النوبات مع مضادات الذهان', 'يتفاعل مع
-                    مثبطات أكسيداز أحادي الأمين'],
-                dosage: 'البالغون: 50-100 ملغ كل 4-6 ساعات (الحد الأقصى 400 ملغ/يوم). البدء بـ 50 ملغ للمسنين. لا يتجاوز 300 ملغ/يوم للمرضى فوق 75 سنة.',
-                forms: ['أقراص 50 ملغ', 'أقراص 100 ملغ', 'أقراص ممتدة التحرر 100-200 ملغ', 'حقن عضلية/وريدية 50 ملغ/مل',
-                    'نقط فموية 100 ملغ/مل'],
-                description: 'مسكن ألم أفيوني متوسط القوة يعمل مركزياً. يجمع بين التأثير على مستقبلات الأفيون وتثبيط إعادة قبط النورإبينفرين والسيروتونين. فعال في الآلام المتوسطة لكنه يحمل خطر الإدمان مع الاستخدام المطول.',
-            }, {
-                id: 'ketorolac',
-                genericName: 'كيتورولاك',
-                genericNameEn: 'Ketorolac',
-                brandName: 'كيتولاك',
-                brandNameEn: 'Ketolac',
-                category: 'مضاد التهاب غير ستيرويدي قوي (استعمال قصير)',
-                categoryClass: 'red',
-                iconBg: 'linear-gradient(135deg, #c42030, #e84050)',
-                iconLetter: 'ك',
-                colors: {
-                    primary: '#c42030',
-                    secondary: '#e84050',
-                    dark: '#8a1018',
-                    light: '#fdd4d8',
-                    accent: '#ffffff'
-                },
-                uses: ['الآلام الحادة الشديدة', 'آلام ما بعد العمليات', 'المغص الكلوي الحاد', 'آلام الحروق', 'الآلام بعد
-                    إصابات الحوادث', 'ألم الأسنان الشديد'],
-                contraindications: ['القرحة الهضمية', 'الفشل الكلوي', 'اضطرابات النزيف', 'الحمل والرضاعة', 'الأطفال أقل
-                    من 16 سنة', 'الاستعمال لأكثر من 5 أيام'],
-                interactions: ['يزيد خطر النزيف مع مضادات التخثر', 'يزيد سمية الكلى مع الميثوتريكسات', 'يقلل فعالية مدرات
-                    البول', 'يزيد خطر القرحة مع الستيرويدات', 'لا يجمع مع مضادات التجلط'],
-                dosage: 'البالغون: 10 ملغ كل 4-6 ساعات (فموي). للحقن: 10-30 ملغ كل 4-6 ساعات. المدة القصوى للاستعمال 5 أيام. الجرعة القصوى 40 ملغ/يوم للفموي و90 ملغ/يوم للحقن.',
-                forms: ['أقراص 10 ملغ', 'حقن عضلية 30 ملغ/مل', 'حقن وريدية', 'نقط عينية'],
-                description: 'مضاد التهاب غير ستيرويدي قوي جداً يُستخدم حصراً للآلام الحادة ولفترة قصيرة (لا تتجاوز 5 أيام). فعاليته تعادل المورفين في بعض الحالات لكنه لا يسبب الإدمان. يجب الحذر الشديد من آثاره على الكلى والمعدة.',
-            }];
+    const drugGrid = document.getElementById('drugGrid');
+    const box3d = document.getElementById('box3d');
+    const frontBrandSpan = document.getElementById('frontBrand');
+    const backBrandSpan = document.getElementById('backBrand');
+    const drugDynamicName = document.getElementById('drugDynamicName');
+    const drugDescription = document.getElementById('drugDescription');
+    const selectedDrugTitle = document.getElementById('selectedDrugTitle');
 
-            // ==================== DOM ELEMENTS ====================
-            const drugsGrid = document.getElementById('drugsGrid');
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalClose = document.getElementById('modalClose');
-            const modalBody = document.getElementById('modalBody');
-            const cubeContainer = document.getElementById('cubeContainer');
-            const rotationSlider = document.getElementById('rotationSlider');
-            const btnResetRotation = document.getElementById('btnResetRotation');
-            const drugDetail = document.getElementById('drugDetail');
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
+    // تفعيل السحب لتدوير العلبة ثلاثية الأبعاد
+    let isDragging = false;
+    let startX, startY;
+    let currentRotateX = -15; // زاوية افتراضية طفيفة
+    let currentRotateY = 25;
 
-            // Face elements
-            const faceFront = document.getElementById('faceFront');
-            const faceBack = document.getElementById('faceBack');
-            const faceLeft = document.getElementById('faceLeft');
-            const faceRight = document.getElementById('faceRight');
-            const faceTop = document.getElementById('faceTop');
-            const faceBottom = document.getElementById('faceBottom');
+    function updateBoxRotation() {
+      if (box3d) {
+        box3d.style.transform = `rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
+      }
+    }
 
-            let currentDrug = null;
-            let isDragging = false;
-            let dragStartX = 0;
-            let dragCurrentRotation = 0;
-            let autoRotationPaused = false;
+    // تعيين الزاوية الابتدائية
+    updateBoxRotation();
 
-            // ==================== BUILD DRUG CARDS ====================
-            function buildDrugCards() {
-                drugsGrid.innerHTML = '';
-                drugs.forEach((drug, index) => {
-                    const card = document.createElement('div');
-                    card.className = 'drug-card animate-in';
-                    card.style.animationDelay = `${index * 0.06}s`;
-                    card.style.opacity = '0';
-                    card.setAttribute('data-drug-id', drug.id);
-                    card.innerHTML = `
-                            <div class="drug-icon-mini" style="background:${drug.iconBg};" aria-hidden="true">${drug.iconLetter}</div>
-                            <h3>${drug.genericName}</h3>
-                            <div class="brand-name">${drug.brandName} <small>(${drug.brandNameEn})</small></div>
-                            <span class="drug-category">${drug.category}</span>
-                            <div class="click-hint">👆 اضغط للتفاصيل والعرض ثلاثي الأبعاد</div>
-                        `;
-                    card.addEventListener('click', () => openModal(drug));
-                    drugsGrid.appendChild(card);
+    function handleMouseDown(e) {
+      e.preventDefault();
+      isDragging = true;
+      startX = e.clientX || (e.touches && e.touches[0].clientX);
+      startY = e.clientY || (e.touches && e.touches[0].clientY);
+      box3d.style.cursor = 'grabbing';
+    }
 
-                    // Trigger animation
-                    requestAnimationFrame(() => {
-                        card.style.opacity = '1';
-                    });
-                });
-            }
+    function handleMouseMove(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+      const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+      
+      const deltaX = clientX - startX;
+      const deltaY = clientY - startY;
+      
+      currentRotateY += deltaX * 0.5;
+      currentRotateX -= deltaY * 0.5;
+      
+      // حدود بسيطة
+      currentRotateX = Math.max(-50, Math.min(50, currentRotateX));
+      currentRotateY = currentRotateY % 360;
+      
+      updateBoxRotation();
+      
+      startX = clientX;
+      startY = clientY;
+    }
 
-            // ==================== OPEN MODAL ====================
-            function openModal(drug) {
-                currentDrug = drug;
-                updateCubeFaces(drug);
-                updateDrugDetail(drug);
-                resetCubeRotation();
-                modalOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                rotationSlider.value = 0;
-                autoRotationPaused = false;
-                cubeContainer.classList.remove('paused');
-                cubeContainer.style.transform = 'rotateY(0deg) rotateX(-8deg)';
-            }
+    function handleMouseUp() {
+      if (isDragging) {
+        isDragging = false;
+        box3d.style.cursor = 'grab';
+      }
+    }
 
-            function closeModal() {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-                currentDrug = null;
-                autoRotationPaused = false;
-                cubeContainer.classList.remove('paused');
-            }
+    // ربط الأحداث بالصندوق
+    box3d.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    
+    // دعم اللمس
+    box3d.addEventListener('touchstart', handleMouseDown, {passive: false});
+    window.addEventListener('touchmove', handleMouseMove, {passive: false});
+    window.addEventListener('touchend', handleMouseUp);
+    
+    // منع السحب الافتراضي للصور
+    box3d.addEventListener('dragstart', (e) => e.preventDefault());
 
-            // ==================== UPDATE 3D CUBE FACES ====================
-            function updateCubeFaces(drug) {
-                const c = drug.colors;
-                const gradFront = `linear-gradient(170deg, ${c.primary} 0%, ${c.dark} 60%, ${c.primary} 100%)`;
-                const gradSide = `linear-gradient(170deg, ${c.dark} 0%, ${c.primary} 100%)`;
-                const gradTopBottom = `linear-gradient(170deg, ${c.secondary} 0%, ${c.primary} 100%)`;
+    // دالة عرض دواء محدد
+    function displayDrug(drug) {
+      if (!drug) return;
+      
+      // تحديث النص على الوجوه الأمامية والخلفية
+      frontBrandSpan.textContent = drug.brand;
+      backBrandSpan.textContent = drug.brand;
+      
+      // تحديث لوحة الوصف
+      drugDynamicName.textContent = drug.name;
+      drugDescription.textContent = drug.description;
+      selectedDrugTitle.textContent = drug.name + ' (' + drug.brand + ')';
+      
+      // إعادة تعيين الدوران قليلاً لمشهد جديد
+      currentRotateX = -10;
+      currentRotateY = 30;
+      updateBoxRotation();
+    }
 
-                // Front face
-                faceFront.style.background = gradFront;
-                faceFront.querySelector('.face-brand').textContent = drug.brandNameEn;
-                faceFront.querySelector('.face-dosage').textContent = drug.forms[0] || '';
-                faceFront.querySelector('.face-generic').textContent = drug.genericNameEn;
+    // بناء بطاقات الأدوية
+    function buildDrugCards() {
+      drugGrid.innerHTML = '';
+      drugsData.forEach(drug => {
+        const card = document.createElement('div');
+        card.className = 'drug-card';
+        card.setAttribute('data-drug-id', drug.id);
+        card.innerHTML = `
+          <div class="drug-icon">
+            <i class="${drug.icon}"></i>
+          </div>
+          <div class="drug-name">${drug.name}</div>
+          <div class="drug-sub">${drug.brand}</div>
+          <button class="btn-view"><i class="fas fa-eye"></i> عرض العلبة</button>
+        `;
+        
+        card.addEventListener('click', (e) => {
+          // منع تشغيل الحدث إذا كان الضغط على الزر فقط (لكننا نريد السلوك نفسه)
+          displayDrug(drug);
+          // تمرير ناعم للعرض
+          document.getElementById('displayArea').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+        
+        drugGrid.appendChild(card);
+      });
+    }
 
-                // Back face
-                faceBack.style.background = gradFront;
-                faceBack.querySelector('.face-brand').textContent = drug.brandNameEn;
-                faceBack.querySelector('.face-dosage').textContent = drug.genericName;
-                faceBack.querySelector('.face-logo-sm').textContent = '®';
+    // تحميل افتراضي لأول دواء
+    function setDefaultDrug() {
+      if (drugsData.length > 0) {
+        displayDrug(drugsData[0]);
+      }
+    }
 
-                // Left face
-                faceLeft.style.background = gradSide;
-                faceLeft.querySelector('.face-content span').textContent = drug.brandNameEn + ' | ' + drug.genericName;
+    buildDrugCards();
+    setDefaultDrug();
 
-                // Right face
-                faceRight.style.background = gradSide;
-                faceRight.querySelector('.face-content span').textContent = '📋 ' + drug.category;
-
-                // Top face
-                faceTop.style.background = gradTopBottom;
-                faceTop.querySelector('.face-content span:first-child').textContent = '💊';
-                faceTop.querySelector('.face-content span:last-child').textContent = drug.brandNameEn;
-
-                // Bottom face
-                faceBottom.style.background = gradTopBottom;
-                faceBottom.querySelector('.face-content span:first-child').textContent = '📦';
-                faceBottom.querySelector('.face-content span:last-child').textContent = 'يحفظ بدرجة حرارة الغرفة';
-            }
-
-            // ==================== UPDATE DRUG DETAIL ====================
-            function updateDrugDetail(drug) {
-                drugDetail.innerHTML = `
-                        <h2>${drug.genericName}</h2>
-                        <div class="detail-brand">${drug.brandName} (${drug.brandNameEn}) — ${drug.category}</div>
-                        <div class="detail-section">
-                            <h4>📝 الوصف</h4>
-                            <p>${drug.description}</p>
-                        </div>
-                        <div class="detail-section">
-                            <h4>✅ الاستعمالات</h4>
-                            <ul>${drug.uses.map(u => `<li>${u}</li>`).join('')}</ul>
-                        </div>
-                        <div class="detail-section">
-                            <h4>⚠️ موانع الاستعمال</h4>
-                            <ul>${drug.contraindications.map(c => `<li>${c}</li>`).join('')}</ul>
-                        </div>
-                        <div class="detail-section">
-                            <h4>🔄 التفاعلات الدوائية</h4>
-                            <ul>${drug.interactions.map(i => `<li>${i}</li>`).join('')}</ul>
-                        </div>
-                        <div class="detail-section">
-                            <h4>💉 الجرعات</h4>
-                            <p>${drug.dosage}</p>
-                        </div>
-                        <div class="detail-section">
-                            <h4>💊 الأشكال المتوفرة</h4>
-                            <ul>${drug.forms.map(f => `<li>${f}</li>`).join('')}</ul>
-                        </div>
-                        <div class="detail-tags">
-                            <span class="detail-tag">${drug.category}</span>
-                            <span class="detail-tag">${drug.genericNameEn}</span>
-                            <span class="detail-tag">${drug.brandNameEn}</span>
-                        </div>
-                    `;
-            }
-
-            // ==================== CUBE ROTATION ====================
-            function resetCubeRotation() {
-                cubeContainer.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                cubeContainer.style.transform = 'rotateY(0deg) rotateX(-8deg)';
-                cubeContainer.classList.remove('paused');
-                autoRotationPaused = false;
-                rotationSlider.value = 0;
-                setTimeout(() => {
-                    cubeContainer.style.transition = '';
-                }, 700);
-            }
-
-            function setCubeRotation(degrees) {
-                cubeContainer.style.transition = 'none';
-                cubeContainer.style.transform = `rotateY(${degrees}deg) rotateX(-8deg)`;
-            }
-
-            // Rotation slider
-            rotationSlider.addEventListener('input', function() {
-                const deg = parseFloat(this.value);
-                cubeContainer.classList.add('paused');
-                autoRotationPaused = true;
-                setCubeRotation(deg);
-            });
-
-            rotationSlider.addEventListener('change', function() {
-                // Keep paused after manual adjustment
-                cubeContainer.classList.add('paused');
-                autoRotationPaused = true;
-            });
-
-            btnResetRotation.addEventListener('click', function() {
-                rotationSlider.value = 0;
-                autoRotationPaused = false;
-                cubeContainer.classList.remove('paused');
-                cubeContainer.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                cubeContainer.style.transform = 'rotateY(0deg) rotateX(-8deg)';
-                setTimeout(() => {
-                    cubeContainer.style.transition = '';
-                }, 700);
-            });
-
-            // Mouse drag on cube
-            const cubePerspective = document.getElementById('cubePerspective');
-            cubePerspective.addEventListener('mousedown', function(e) {
-                if (!currentDrug) return;
-                isDragging = true;
-                dragStartX = e.clientX;
-                const currentTransform = cubeContainer.style.transform || '';
-                const match = currentTransform.match(/rotateY\(([-\d.]+)deg\)/);
-                dragCurrentRotation = match ? parseFloat(match[1]) : 0;
-                cubeContainer.classList.add('paused');
-                autoRotationPaused = true;
-                cubeContainer.style.transition = 'none';
-                e.preventDefault();
-            });
-
-            window.addEventListener('mousemove', function(e) {
-                if (!isDragging || !currentDrug) return;
-                const deltaX = e.clientX - dragStartX;
-                const newRotation = dragCurrentRotation + deltaX * 0.5;
-                setCubeRotation(newRotation);
-                rotationSlider.value = ((newRotation % 360) + 360) % 360;
-            });
-
-            window.addEventListener('mouseup', function() {
-                if (isDragging) {
-                    isDragging = false;
-                    // Stay paused after drag
-                    cubeContainer.classList.add('paused');
-                    autoRotationPaused = true;
-                }
-            });
-
-            // Touch events for mobile
-            cubePerspective.addEventListener('touchstart', function(e) {
-                if (!currentDrug || e.touches.length !== 1) return;
-                isDragging = true;
-                dragStartX = e.touches[0].clientX;
-                const currentTransform = cubeContainer.style.transform || '';
-                const match = currentTransform.match(/rotateY\(([-\d.]+)deg\)/);
-                dragCurrentRotation = match ? parseFloat(match[1]) : 0;
-                cubeContainer.classList.add('paused');
-                autoRotationPaused = true;
-                cubeContainer.style.transition = 'none';
-            }, { passive: false });
-
-            cubePerspective.addEventListener('touchmove', function(e) {
-                if (!isDragging || !currentDrug) return;
-                const deltaX = e.touches[0].clientX - dragStartX;
-                const newRotation = dragCurrentRotation + deltaX * 0.5;
-                setCubeRotation(newRotation);
-                rotationSlider.value = ((newRotation % 360) + 360) % 360;
-            }, { passive: false });
-
-            cubePerspective.addEventListener('touchend', function() {
-                if (isDragging) {
-                    isDragging = false;
-                    cubeContainer.classList.add('paused');
-                    autoRotationPaused = true;
-                }
-            });
-
-            // ==================== MODAL CLOSE ====================
-            modalClose.addEventListener('click', closeModal);
-            modalOverlay.addEventListener('click', function(e) {
-                if (e.target === modalOverlay) {
-                    closeModal();
-                }
-            });
-
-            // Close with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-
-            // ==================== MOBILE NAV ====================
-            navToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-
-            // Close mobile nav when a link is clicked
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-
-            // ==================== INIT ====================
-            buildDrugCards();
-
-            // Scroll animation for elements already in view
-            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.target.classList.contains('animate-in') && entry
-                        .target.style.opacity === '0') {
-                        entry.target.style.opacity = '1';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
-
-            console.log('✅ دليل مسكنات الألم الشامل جاهز | Comprehensive Pain Relievers Guide Ready');
-            console.log('💊 ' + drugs.length + ' أدوية متوفرة مع عرض ثلاثي الأبعاد');
-            console.log('🖐️ يمكنك تدوير العلب بالسحب أو شريط التمرير');
-        })();
-    </script>
+    // للتأكد من أن المؤشر grab يظهر بعد التهيئة
+    box3d.style.cursor = 'grab';
+  })();
+</script>
 </body>
 </html>
