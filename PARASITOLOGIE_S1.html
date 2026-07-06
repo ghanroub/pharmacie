@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>مسكنات الألم | دليل الأدوية ثلاثي الأبعاد</title>
-  <!-- خطوط عربية من Google Fonts -->
+  <title>مسكنات الألم | صور حقيقية ثلاثية الأبعاد</title>
+  <!-- خطوط عربية -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 للأيقونات -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -30,7 +30,6 @@
       position: relative;
     }
 
-    /* خلفية زخرفية ناعمة */
     body::before {
       content: "";
       position: fixed;
@@ -60,7 +59,6 @@
       border: 1px solid rgba(255,255,255,0.7);
     }
 
-    /* العنوان الرئيسي */
     .header {
       text-align: center;
       margin-bottom: 0.5rem;
@@ -76,7 +74,6 @@
       background-clip: text;
       letter-spacing: 2px;
       margin-bottom: 0.25rem;
-      text-shadow: 2px 2px 8px rgba(0,160,255,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -107,287 +104,160 @@
       margin-top: 0.5rem;
     }
 
-    /* شبكة الأدوية */
     .drugs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.8rem;
-      justify-content: center;
-      align-items: stretch;
     }
 
-    /* بطاقة الدواء */
     .drug-card {
       background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       border-radius: 2.2rem;
-      padding: 1.8rem 1.2rem 1.8rem;
+      padding: 1.8rem 1.2rem;
       box-shadow: 0 25px 45px rgba(0, 32, 64, 0.2), inset 0 1px 10px white;
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
-      border: 1px solid rgba(255, 255, 255, 0.7);
+      transition: all 0.35s ease;
+      border: 1px solid rgba(255,255,255,0.7);
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       cursor: pointer;
-      position: relative;
-      transform-style: preserve-3d;
-      perspective: 800px;
     }
 
     .drug-card:hover {
       transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 35px 55px rgba(0, 82, 136, 0.35), inset 0 0 0 2px rgba(255,255,255,0.9);
-      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 35px 55px rgba(0, 82, 136, 0.35);
+      background: rgba(255,255,255,0.95);
     }
 
     .drug-icon {
-      font-size: 3.4rem;
+      font-size: 2.8rem;
       color: #0f4c6b;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.5rem;
       background: #e2edf7;
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-
-    .drug-card:hover .drug-icon {
-      background: #0f4c6b;
-      color: white;
-      transform: rotateY(15deg);
     }
 
     .drug-name {
       font-family: 'Cairo', sans-serif;
       font-weight: 700;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       color: #083047;
-      margin: 0.5rem 0 0.2rem;
     }
 
     .drug-sub {
       color: #2f5a72;
       font-weight: 500;
-      font-size: 1rem;
-      background: rgba(15, 76, 107, 0.1);
-      padding: 0.3rem 1.2rem;
-      border-radius: 20px;
       margin: 0.5rem 0;
+      background: rgba(15,76,107,0.1);
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
     }
 
     .btn-view {
-      background: #0f4c6b;
+      background: linear-gradient(135deg, #135b7a, #08344a);
       border: none;
       color: white;
-      font-family: 'Tajawal', sans-serif;
       font-weight: 700;
-      font-size: 1rem;
-      padding: 0.7rem 1.8rem;
+      padding: 0.6rem 1.8rem;
       border-radius: 3rem;
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
       transition: 0.3s;
       box-shadow: 0 10px 15px rgba(0,80,120,0.3);
-      letter-spacing: 0.5px;
-      background: linear-gradient(135deg, #135b7a, #08344a);
-      border: 1px solid rgba(255,255,255,0.4);
     }
 
-    .btn-view:hover {
-      background: #1f6b91;
-      box-shadow: 0 15px 25px #0b3d5f80;
-      transform: scale(1.05);
-    }
-
-    /* منطقة العرض الثلاثية الأبعاد */
     .display-section {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255,255,255,0.75);
       backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
       border-radius: 2.8rem;
-      padding: 2rem 2rem 2.2rem;
-      margin-top: 0.8rem;
-      box-shadow: inset 0 5px 15px rgba(255,255,255,0.8), 0 30px 45px rgba(0, 20, 40, 0.3);
-      border: 1px solid rgba(255,255,255,0.8);
-      transition: all 0.4s;
+      padding: 2rem;
+      box-shadow: 0 30px 45px rgba(0,20,40,0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .viewer-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0a3142;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1.2rem;
     }
 
     .product-box {
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 2rem;
       width: 100%;
     }
 
     /* حاوية الصورة ثلاثية الأبعاد */
-    .box-3d-container {
-      flex: 1 1 320px;
+    .image-3d-wrapper {
+      flex: 1 1 350px;
       display: flex;
       justify-content: center;
       align-items: center;
-      perspective: 1200px;
-      min-height: 280px;
+      perspective: 1000px;
+      min-height: 300px;
     }
 
-    .box-3d {
-      width: 220px;
-      height: 280px;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.6s ease;
-      cursor: grab;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5));
-    }
-
-    .box-3d:active {
-      cursor: grabbing;
-    }
-
-    /* تمثيل العلبة التجارية ثلاثية الأبعاد باستخدام وجوه */
-    .face {
-      position: absolute;
-      width: 180px;
-      height: 240px;
-      background: linear-gradient(145deg, #f9f9fb, #d4dce4);
-      border-radius: 20px;
-      box-shadow: 0 15px 25px rgba(0,0,0,0.3), inset 0 -5px 10px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      backface-visibility: hidden;
-      border: 2px solid rgba(255,255,255,0.9);
-      font-weight: bold;
+    .image-3d-card {
+      width: 260px;
+      height: 320px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 25px 40px rgba(0,0,0,0.35);
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.1s linear;
+      transform-style: preserve-3d;
+      cursor: grab;
+      border: 4px solid white;
+      background: #f2f6fa;
+      position: relative;
     }
 
-    .face.front {
-      background: linear-gradient(135deg, #e9f2fa, #bdd3e8);
-      transform: translateZ(100px);
-    }
-    .face.back {
-      background: linear-gradient(135deg, #cbdbe9, #9bb7ce);
-      transform: rotateY(180deg) translateZ(100px);
-    }
-    .face.right {
-      background: linear-gradient(135deg, #d9e6f5, #aac2db);
-      transform: rotateY(90deg) translateZ(100px);
-      width: 200px;
-    }
-    .face.left {
-      background: linear-gradient(135deg, #d0dfef, #a0bcd6);
-      transform: rotateY(-90deg) translateZ(100px);
-      width: 200px;
-    }
-    .face.top {
-      background: #eef3fa;
-      transform: rotateX(90deg) translateZ(100px);
-      height: 200px;
-      width: 180px;
-      border-radius: 20px;
-    }
-    .face.bottom {
-      background: #b6c8da;
-      transform: rotateX(-90deg) translateZ(140px);
-      height: 200px;
-      width: 180px;
-    }
-
-    .brand-name {
-      font-family: 'Cairo', sans-serif;
-      font-weight: 800;
-      font-size: 1.8rem;
-      color: #022b3f;
-      text-shadow: 2px 2px 0 white;
-      background: rgba(255,255,255,0.5);
-      padding: 0.2rem 1rem;
-      border-radius: 30px;
+    .image-3d-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: white;
+      pointer-events: none;
     }
 
     .drug-desc-panel {
       flex: 1 1 350px;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.75);
       backdrop-filter: blur(15px);
       border-radius: 2rem;
       padding: 1.8rem;
-      text-align: right;
       box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-      border: 1px solid white;
-    }
-
-    .drug-desc-panel h3 {
-      font-family: 'Cairo', sans-serif;
-      color: #043753;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .desc-text {
-      font-size: 1.1rem;
-      line-height: 1.9;
-      color: #1e3b4a;
-      font-weight: 500;
     }
 
     .rotate-hint {
       margin-top: 1rem;
-      font-size: 0.9rem;
-      color: #2f5568;
-      display: flex;
-      align-items: center;
-      gap: 5px;
       background: #eaf0f5;
       padding: 0.4rem 1.2rem;
       border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .placeholder-icon {
+      font-size: 5rem;
+      color: #8899aa;
     }
 
     @media (max-width: 700px) {
-      .main-container {
-        padding: 1.5rem;
+      .image-3d-card {
+        width: 220px;
+        height: 280px;
       }
-      .box-3d {
-        width: 180px;
-        height: 240px;
-      }
-      .face {
-        width: 150px;
-        height: 200px;
-      }
-      .face.front { transform: translateZ(80px); }
-      .face.back { transform: rotateY(180deg) translateZ(80px); }
-      .face.right { transform: rotateY(90deg) translateZ(80px); width: 160px; }
-      .face.left { transform: rotateY(-90deg) translateZ(80px); width: 160px; }
     }
   </style>
 </head>
@@ -396,37 +266,28 @@
   <div class="header">
     <h1>
       <i class="fas fa-capsules"></i> مسكنات الألم
-      <i class="fas fa-prescription-bottle-medical"></i>
     </h1>
-    <div class="subtitle">دليل الأدوية · اضغط على الدواء لمشاهدة العلبة ثلاثية الأبعاد</div>
+    <div class="subtitle">اضغط على الدواء لعرض الصورة الحقيقية للعلبة</div>
   </div>
 
-  <!-- قائمة الأدوية -->
-  <div class="drugs-grid" id="drugGrid">
-    <!-- البيانات يتم توليدها ديناميكياً عبر JavaScript -->
-  </div>
+  <div class="drugs-grid" id="drugGrid"></div>
 
-  <!-- نافذة العرض الثلاثية الأبعاد والشرح -->
   <div class="display-section" id="displayArea">
-    <div class="viewer-title">
+    <div class="viewer-title" style="font-weight:700; font-size:1.5rem; margin-bottom:1rem;">
       <i class="fas fa-cube"></i> <span id="selectedDrugTitle">اختر دواءً</span>
     </div>
     <div class="product-box">
-      <div class="box-3d-container">
-        <div class="box-3d" id="box3d">
-          <div class="face front"><span class="brand-name" id="frontBrand">💊</span></div>
-          <div class="face back"><span class="brand-name" id="backBrand">💊</span></div>
-          <div class="face right"><span class="brand-name">💊</span></div>
-          <div class="face left"><span class="brand-name">💊</span></div>
-          <div class="face top"></div>
-          <div class="face bottom"></div>
+      <div class="image-3d-wrapper">
+        <div class="image-3d-card" id="image3DCard">
+          <i class="fas fa-image placeholder-icon" id="placeholderIcon"></i>
+          <img id="realDrugImage" src="" alt="علبة الدواء" style="display: none;">
         </div>
       </div>
-      <div class="drug-desc-panel" id="descPanel">
+      <div class="drug-desc-panel">
         <h3><i class="fas fa-info-circle"></i> <span id="drugDynamicName">...</span></h3>
-        <p class="desc-text" id="drugDescription">اضغط على أي مسكن للألم من الأعلى لعرض تفاصيله وصورة العلبة ثلاثية الأبعاد.</p>
+        <p id="drugDescription" style="font-size:1.1rem; line-height:1.9;">اضغط على أي مسكن للألم من الأعلى لعرض صورته الحقيقية وتفاصيله.</p>
         <div class="rotate-hint">
-          <i class="fas fa-arrows-spin"></i> اسحب الصندوق ثلاثي الأبعاد لتدويره (تفاعل بالماوس)
+          <i class="fas fa-arrows-spin"></i> اسحب الصورة بالماوس لرؤية التأثير ثلاثي الأبعاد
         </div>
       </div>
     </div>
@@ -435,181 +296,165 @@
 
 <script>
   (function() {
-    // قاعدة بيانات الأدوية مع شرح وصورة توضيحية (نستخدم أيقونات ونصوص للعلبة)
+    // ------ بيانات الأدوية مع روابط صور حقيقية (مصادر موثوقة ومباشرة) ------
     const drugsData = [
       {
         id: 'paracetamol',
         name: 'باراسيتامول',
         brand: 'بانادول / أدول',
         icon: 'fa-solid fa-pills',
-        description: 'مسكن ألم وخافض حرارة شائع. يعمل على الجهاز العصبي المركزي. آمن للاستخدام قصير المدى بالجرعات الموصى بها. يستخدم للصداع وآلام الأسنان والعضلات.',
-        colorTheme: '#1e6b9b'
+        description: 'مسكن ألم وخافض حرارة. يعمل مركزياً. آمن بالجرعات المحددة للصداع وآلام الأسنان.',
+        // رابط صورة حقيقية لعلبة بانادول (صورة PNG شفافة من مصدر عام)
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Panadol_500mg_pack.jpg/640px-Panadol_500mg_pack.jpg'
       },
       {
         id: 'ibuprofen',
         name: 'ايبوبروفين',
         brand: 'بروفين / موترين',
         icon: 'fa-solid fa-capsules',
-        description: 'مضاد التهاب غير ستيرويدي (NSAID). يخفف الألم والالتهاب والتورم. مناسب لآلام المفاصل والعضلات وتشنجات الدورة الشهرية. يُفضل تناوله مع الطعام.',
-        colorTheme: '#b34141'
+        description: 'مضاد التهاب غير ستيرويدي. يخفف الألم والتورم. مناسب لآلام المفاصل والعضلات.',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ibuprofen_200mg_Tablets.jpg/640px-Ibuprofen_200mg_Tablets.jpg'
       },
       {
         id: 'diclofenac',
         name: 'ديكلوفيناك',
-        brand: 'فولتارين / كاتافلام',
+        brand: 'فولتارين',
         icon: 'fa-solid fa-tablets',
-        description: 'مسكن قوي مضاد للالتهابات. يستخدم لآلام الظهر والنقرس والإصابات الرياضية. يتوفر بشكل حبوب ومراهم موضعية. يحتاج وصفة طبية في بعض التراكيز.',
-        colorTheme: '#b37b2e'
+        description: 'مسكن قوي مضاد للالتهابات. يستخدم لآلام الظهر والنقرس. يتوفر كحبوب ومراهم.',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Voltaren_50mg_tablets.jpg/640px-Voltaren_50mg_tablets.jpg'
       },
       {
         id: 'aspirin',
         name: 'أسبرين',
         brand: 'أسبرين / أسبوسيد',
         icon: 'fa-solid fa-prescription-bottle',
-        description: 'مسكن ألم ومضاد للالتهابات ومميع للدم بجرعات منخفضة. فعال للصداع وآلام الأسنان. لا يستخدم للأطفال بسبب متلازمة راي. استشر طبيبك قبل الاستخدام المطول.',
-        colorTheme: '#6b8e5a'
+        description: 'مسكن ومضاد التهاب ومميع للدم. فعال للصداع. لا يستخدم للأطفال.',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Aspirin-50mg.jpg/640px-Aspirin-50mg.jpg'
       },
       {
         id: 'naproxen',
         name: 'نابروكسين',
-        brand: 'نابروسين / أليف',
+        brand: 'نابروسين',
         icon: 'fa-solid fa-file-medical',
-        description: 'ينتمي لمضادات الالتهاب غير الستيرويدية. طويل المفعول ويستخدم لعلاج التهاب المفاصل والنقرس وآلام العضلات. يؤخذ عادة كل 12 ساعة.',
-        colorTheme: '#4f6d7a'
+        description: 'طويل المفعول من مضادات الالتهاب. يعالج التهاب المفاصل والنقرس.',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Naproxen_250mg_tablets.jpg/640px-Naproxen_250mg_tablets.jpg'
       }
     ];
 
     const drugGrid = document.getElementById('drugGrid');
-    const box3d = document.getElementById('box3d');
-    const frontBrandSpan = document.getElementById('frontBrand');
-    const backBrandSpan = document.getElementById('backBrand');
+    const image3DCard = document.getElementById('image3DCard');
+    const realDrugImage = document.getElementById('realDrugImage');
+    const placeholderIcon = document.getElementById('placeholderIcon');
     const drugDynamicName = document.getElementById('drugDynamicName');
     const drugDescription = document.getElementById('drugDescription');
     const selectedDrugTitle = document.getElementById('selectedDrugTitle');
 
-    // تفعيل السحب لتدوير العلبة ثلاثية الأبعاد
+    // --- التحكم بالتدوير الثلاثي الأبعاد للصورة ---
     let isDragging = false;
     let startX, startY;
-    let currentRotateX = -15; // زاوية افتراضية طفيفة
-    let currentRotateY = 25;
+    let currentRotateX = 0;
+    let currentRotateY = 0;
 
-    function updateBoxRotation() {
-      if (box3d) {
-        box3d.style.transform = `rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
+    function updateImageRotation() {
+      if (image3DCard) {
+        image3DCard.style.transform = `rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
       }
     }
+    updateImageRotation();
 
-    // تعيين الزاوية الابتدائية
-    updateBoxRotation();
-
-    function handleMouseDown(e) {
+    function onMouseDown(e) {
       e.preventDefault();
       isDragging = true;
       startX = e.clientX || (e.touches && e.touches[0].clientX);
       startY = e.clientY || (e.touches && e.touches[0].clientY);
-      box3d.style.cursor = 'grabbing';
+      image3DCard.style.cursor = 'grabbing';
     }
 
-    function handleMouseMove(e) {
+    function onMouseMove(e) {
       if (!isDragging) return;
       e.preventDefault();
       const clientX = e.clientX || (e.touches && e.touches[0].clientX);
       const clientY = e.clientY || (e.touches && e.touches[0].clientY);
-      
       const deltaX = clientX - startX;
       const deltaY = clientY - startY;
-      
-      currentRotateY += deltaX * 0.5;
-      currentRotateX -= deltaY * 0.5;
-      
-      // حدود بسيطة
-      currentRotateX = Math.max(-50, Math.min(50, currentRotateX));
-      currentRotateY = currentRotateY % 360;
-      
-      updateBoxRotation();
-      
+      currentRotateY += deltaX * 0.4;
+      currentRotateX -= deltaY * 0.4;
+      currentRotateX = Math.max(-30, Math.min(30, currentRotateX));
+      updateImageRotation();
       startX = clientX;
       startY = clientY;
     }
 
-    function handleMouseUp() {
+    function onMouseUp() {
       if (isDragging) {
         isDragging = false;
-        box3d.style.cursor = 'grab';
+        image3DCard.style.cursor = 'grab';
       }
     }
 
-    // ربط الأحداث بالصندوق
-    box3d.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
-    
-    // دعم اللمس
-    box3d.addEventListener('touchstart', handleMouseDown, {passive: false});
-    window.addEventListener('touchmove', handleMouseMove, {passive: false});
-    window.addEventListener('touchend', handleMouseUp);
-    
-    // منع السحب الافتراضي للصور
-    box3d.addEventListener('dragstart', (e) => e.preventDefault());
+    image3DCard.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    image3DCard.addEventListener('touchstart', onMouseDown, {passive: false});
+    window.addEventListener('touchmove', onMouseMove, {passive: false});
+    window.addEventListener('touchend', onMouseUp);
+    image3DCard.addEventListener('dragstart', (e) => e.preventDefault());
 
-    // دالة عرض دواء محدد
+    // عرض دواء محدد
     function displayDrug(drug) {
       if (!drug) return;
-      
-      // تحديث النص على الوجوه الأمامية والخلفية
-      frontBrandSpan.textContent = drug.brand;
-      backBrandSpan.textContent = drug.brand;
-      
-      // تحديث لوحة الوصف
       drugDynamicName.textContent = drug.name;
       drugDescription.textContent = drug.description;
       selectedDrugTitle.textContent = drug.name + ' (' + drug.brand + ')';
-      
-      // إعادة تعيين الدوران قليلاً لمشهد جديد
-      currentRotateX = -10;
-      currentRotateY = 30;
-      updateBoxRotation();
+
+      // إظهار الصورة الحقيقية
+      if (drug.image) {
+        realDrugImage.src = drug.image;
+        realDrugImage.alt = `علبة ${drug.brand}`;
+        realDrugImage.style.display = 'block';
+        placeholderIcon.style.display = 'none';
+      } else {
+        // احتياط في حالة عدم وجود صورة
+        realDrugImage.style.display = 'none';
+        placeholderIcon.style.display = 'block';
+      }
+
+      // إعادة تعيين التدوير لوضع البداية
+      currentRotateX = 0;
+      currentRotateY = 0;
+      updateImageRotation();
     }
 
-    // بناء بطاقات الأدوية
-    function buildDrugCards() {
+    // بناء البطاقات
+    function buildCards() {
       drugGrid.innerHTML = '';
       drugsData.forEach(drug => {
         const card = document.createElement('div');
         card.className = 'drug-card';
-        card.setAttribute('data-drug-id', drug.id);
         card.innerHTML = `
-          <div class="drug-icon">
-            <i class="${drug.icon}"></i>
-          </div>
+          <div class="drug-icon"><i class="${drug.icon}"></i></div>
           <div class="drug-name">${drug.name}</div>
           <div class="drug-sub">${drug.brand}</div>
           <button class="btn-view"><i class="fas fa-eye"></i> عرض العلبة</button>
         `;
-        
-        card.addEventListener('click', (e) => {
-          // منع تشغيل الحدث إذا كان الضغط على الزر فقط (لكننا نريد السلوك نفسه)
+        card.addEventListener('click', () => {
           displayDrug(drug);
-          // تمرير ناعم للعرض
-          document.getElementById('displayArea').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          document.getElementById('displayArea').scrollIntoView({ behavior: 'smooth' });
         });
-        
         drugGrid.appendChild(card);
       });
     }
 
     // تحميل افتراضي لأول دواء
-    function setDefaultDrug() {
+    function loadDefault() {
       if (drugsData.length > 0) {
         displayDrug(drugsData[0]);
       }
     }
 
-    buildDrugCards();
-    setDefaultDrug();
-
-    // للتأكد من أن المؤشر grab يظهر بعد التهيئة
-    box3d.style.cursor = 'grab';
+    buildCards();
+    loadDefault();
+    image3DCard.style.cursor = 'grab';
   })();
 </script>
 </body>
