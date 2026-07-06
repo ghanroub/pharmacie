@@ -1,703 +1,1088 @@
-
-html_content = '''<!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur la Mycologie Médicale - GhaniPharma">
-    <meta name="keywords" content="pharmacie, mycologie médicale, champignons, mycoses, cours pharmacie, GhaniPharma">
-    <meta name="author" content="Ghani Rouabah">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Mycologie Médicale - GhaniPharma">
-    <meta name="theme-color" content="#0a0a1a">
-    <title>Mycologie Médicale | GhaniPharma</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل مسكنات الألم - 3D</title>
     <style>
-        /* ==================== CSS Variables (identical to main site) ==================== */
         :root {
-            --bg-primary: #0a0a1a;
-            --bg-secondary: #1b2735;
-            --bg-card: rgba(10, 10, 30, 0.75);
-            --bg-glass: rgba(255, 255, 255, 0.03);
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --text-primary: #e0e0e0;
-            --text-secondary: #a0a0b0;
-            --text-heading: #ffffff;
-            --accent: #ffeb3b;
-            --primary: #00bcd4;
-            --btn-hover-shadow: rgba(0, 188, 212, 0.5);
-            --card-hover-border: rgba(0, 188, 212, 0.5);
-            --nav-bg: rgba(10, 10, 26, 0.85);
-            --footer-border: rgba(255, 255, 255, 0.08);
-            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
-            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
-            --input-bg: rgba(255, 255, 255, 0.05);
-            --input-border: rgba(255, 255, 255, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-light: #273448;
+            --primary: #4f8ef7;
+            --primary-glow: #4f8ef766;
+            --accent-teal: #2dd4bf;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-light: #cbd5e1;
+            --border: #334155;
+            --radius: 18px;
+            --radius-sm: 10px;
+            --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.5);
+            --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        [data-theme="light"] {
-            --bg-primary: #f0f4f8;
-            --bg-secondary: #e8edf2;
-            --bg-card: rgba(255, 255, 255, 0.85);
-            --bg-glass: rgba(255, 255, 255, 0.5);
-            --border-glass: rgba(0, 0, 0, 0.1);
-            --text-primary: #2d3748;
-            --text-secondary: #4a5568;
-            --text-heading: #1a202c;
-            --accent: #d4a900;
-            --primary: #0097a7;
-            --btn-hover-shadow: rgba(0, 151, 167, 0.4);
-            --card-hover-border: rgba(0, 151, 167, 0.5);
-            --nav-bg: rgba(255, 255, 255, 0.9);
-            --footer-border: rgba(0, 0, 0, 0.1);
-            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
-            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
-            --input-bg: rgba(0, 0, 0, 0.03);
-            --input-border: rgba(0, 0, 0, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* ==================== Base ==================== */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Segoe UI', 'Tajawal', 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            width: 420px;
+            min-width: 420px;
+            height: 100vh;
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow-y: auto;
             overflow-x: hidden;
-            line-height: 1.7;
-            min-height: 100vh;
-            transition: background 0.5s ease, color 0.5s ease;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+        .sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
         }
 
-        .universe-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            overflow: hidden; transition: background 0.5s ease;
+        .sidebar-header {
+            padding: 28px 24px 20px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            z-index: 5;
+            backdrop-filter: blur(10px);
+        }
+        .sidebar-header .logo-icon {
+            font-size: 2.4rem;
+            margin-bottom: 4px;
+        }
+        .sidebar-header h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .sidebar-header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+            font-weight: 500;
         }
 
-        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-        .star {
-            position: absolute; background: white; border-radius: 50%;
-            animation: twinkle var(--duration) ease-in-out infinite; animation-delay: var(--delay); opacity: 0;
+        .drug-list {
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
         }
-        @keyframes twinkle {
-            0%,100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.8); }
+        .drug-card {
+            background: var(--surface-light);
+            border: 2px solid transparent;
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
-
-        [data-theme="light"] .star {
-            animation: none !important; opacity: 0.15 !important;
+        .drug-card:hover {
+            border-color: #4f8ef744;
+            background: #273448dd;
+            transform: translateX(-4px);
+            box-shadow: 0 6px 20px rgba(79, 142, 247, 0.15);
         }
-
-        /* ==================== Header (identical) ==================== */
-        .top-nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border-bottom: 1px solid var(--border-glass); transition: all 0.4s ease; padding: 0 20px;
+        .drug-card.active {
+            border-color: var(--primary);
+            background: #1e3050;
+            box-shadow: 0 0 28px var(--primary-glow), 0 8px 24px rgba(0, 0, 0, 0.4);
+            transform: translateX(-4px);
         }
-        .top-nav.hidden { transform: translateY(-100%); }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--accent); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; transition: all 0.3s ease; }
-        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
-        .logo-icon {
-            width: 42px; height: 42px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
-            color: white; animation: pulse 2.5s ease-in-out infinite;
+        .drug-card.active::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: var(--primary);
+            border-radius: 0 0 0 6px;
         }
-        @keyframes pulse {
-            0%,100% { box-shadow: 0 0 0 0 rgba(0,188,212,0.4); }
-            50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); }
+        .drug-card .drug-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: #fff;
         }
-        .nav-right { display: flex; align-items: center; gap: 15px; }
-        /* desktop menu */
-        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
-        .nav-link {
-            position: relative; padding: 10px 22px; color: var(--text-secondary); text-decoration: none;
-            font-weight: 500; border-radius: 30px; transition: all 0.3s ease; cursor: pointer; border: none;
-            background: none; font-size: 0.95rem; white-space: nowrap; font-family: inherit;
+        .drug-card .drug-info {
+            flex: 1;
+            min-width: 0;
         }
-        .nav-link:hover { color: var(--text-heading); background: rgba(128,128,128,0.1); }
-        .nav-link.active { color: #fff; background: rgba(0,188,212,0.2); }
-        .nav-link.active::after {
-            content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
-            width: 22px; height: 3px; background: var(--primary); border-radius: 3px;
+        .drug-card .drug-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text);
+            letter-spacing: -0.2px;
         }
-
-        /* Mobile menu overlay */
-        .mobile-menu-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1100;
-            display: flex; align-items: center; justify-content: center;
-            visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease;
+        .drug-card .drug-class {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
         }
-        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
-        .mobile-menu-popup {
-            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-glass);
-            border-radius: 32px; width: 85%; max-width: 320px; padding: 30px 20px 40px; text-align: center;
-            transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        .drug-card .arrow {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+            flex-shrink: 0;
         }
-        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
-        .mobile-menu-close {
-            position: absolute; top: 20px; right: 20px; background: var(--bg-glass); border: 1px solid var(--border-glass);
-            border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; color: var(--text-heading);
-            cursor: pointer; transition: all 0.2s;
-        }
-        .mobile-menu-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
-        .mobile-nav-link {
-            display: flex; align-items: center; justify-content: center; gap: 12px;
-            padding: 16px 20px; margin: 12px 0; background: var(--bg-glass); border-radius: 60px;
-            color: var(--text-heading); font-size: 1.2rem; font-weight: 600; text-decoration: none;
-            transition: all 0.2s ease; border: 1px solid transparent;
-        }
-        .mobile-nav-link:hover { border-color: var(--primary); background: rgba(0,188,212,0.1); transform: translateX(6px); }
-        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
-
-        /* Theme toggle */
-        .theme-toggle {
-            width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-glass);
-            background: var(--bg-glass); cursor: pointer; display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; color: var(--accent); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden;
-        }
-        .theme-toggle:hover { transform: rotate(30deg) scale(1.1); border-color: var(--accent); box-shadow: 0 0 25px rgba(255,235,59,0.3); }
-        .theme-toggle i { transition: all 0.5s ease; }
-        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
-        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
-        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
-        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
-        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
-
-        .menu-toggle {
-            display: none; background: none; border: none; color: var(--text-heading);
-            font-size: 1.8rem; cursor: pointer; padding: 10px; transition: transform 0.3s ease;
-        }
-        .menu-toggle:hover { transform: rotate(90deg); }
-
-        /* ==================== Side dots (adapted for lesson sections) ==================== */
-        .side-dots {
-            position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
-            display: flex; flex-direction: column; gap: 22px;
-        }
-        .dot {
-            width: 12px; height: 12px; background: rgba(128,128,128,0.3); border-radius: 50%;
-            cursor: pointer; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative; border: 2px solid transparent;
-        }
-        .dot:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 18px rgba(255,235,59,0.5); }
-        .dot.active { background: var(--primary); border-color: var(--primary); transform: scale(1.7); box-shadow: 0 0 28px rgba(0,188,212,0.6); }
-        .dot-tooltip {
-            position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
-            background: rgba(0,0,0,0.9); color: #fff; padding: 6px 18px; border-radius: 20px;
-            font-size: 0.8rem; white-space: nowrap; pointer-events: none; opacity: 0;
-            transition: opacity 0.3s ease; font-weight: 500;
-        }
-        .dot:hover .dot-tooltip { opacity: 1; }
-
-        /* ==================== Main content ==================== */
-        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
-
-        .section-block {
-            padding: 80px 0; position: relative; min-height: auto;
-            display: flex; flex-direction: column; justify-content: center;
-            border-bottom: 1px solid var(--border-glass); transition: all 0.5s ease;
-        }
-        .section-block:last-of-type { border-bottom: none; }
-
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-
-        .hero-section {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; min-height: 60vh; padding: 40px 20px;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(0, 188, 212, 0.1); border: 1px solid rgba(0, 188, 212, 0.3);
-            padding: 8px 22px; border-radius: 50px; font-size: 0.9rem; color: var(--primary); margin-bottom: 30px;
-        }
-        .hero-title {
-            font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900;
-            background: var(--gradient-hero); background-size: 300% 300%;
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            animation: gradientShift 6s ease-in-out infinite; margin-bottom: 20px; letter-spacing: -1px;
-        }
-        @keyframes gradientShift {
-            0%,100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 600px; margin-bottom: 30px; }
-
-        .section-title {
-            font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;
-            background: linear-gradient(to right, var(--accent), var(--primary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;
-        }
-        .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; }
-
-        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-        th, td { border: 1px solid #999; padding: 10px 15px; text-align: left; }
-        th { background: rgba(0, 188, 212, 0.15); }
-        .card {
-            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px;
-            padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            margin-bottom: 30px;
+        .drug-card.active .arrow {
+            color: var(--primary);
+            transform: translateX(-6px);
         }
 
-        /* Footer */
-        .site-footer {
-            text-align: center; padding: 50px 20px; border-top: 1px solid var(--footer-border);
-            background: var(--bg-card); backdrop-filter: blur(10px);
+        /* Info Panel inside sidebar */
+        .info-panel {
+            margin: 8px 16px 20px;
+            padding: 20px 18px;
+            background: #1a2940;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            position: sticky;
+            bottom: 12px;
+            box-shadow: var(--shadow-card);
         }
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
-        .social-link {
-            width: 50px; height: 50px; border-radius: 50%;
-            background: rgba(128,128,128,0.06); display: flex; align-items: center; justify-content: center;
-            color: var(--text-heading); text-decoration: none; font-size: 1.3rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid var(--border-glass);
+        .info-panel h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #fff;
         }
-        .social-link:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+        .info-panel .info-row {
+            display: flex;
+            gap: 8px;
+            margin: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+        .info-panel .info-row span.label {
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+        .info-panel .warning {
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: #7f1d1d33;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #fca5a5;
+            border: 1px solid #7f1d1d55;
+            line-height: 1.5;
+        }
+        .info-panel .warning strong {
+            color: #f87171;
+        }
 
-        @media (max-width: 992px) { .side-dots { display: none; } }
-        @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none !important; }
-            .hero-title { font-size: 1.8rem; }
-            .section-title { font-size: 1.6rem; }
-            .container { padding: 0 15px; }
+        /* ========== 3D VIEWER ========== */
+        .viewer-container {
+            flex: 1;
+            position: relative;
+            background: radial-gradient(ellipse at center, #1a2740 0%, #0b1220 70%);
+            cursor: grab;
+            overflow: hidden;
+        }
+        .viewer-container:active {
+            cursor: grabbing;
+        }
+        .viewer-container canvas {
+            display: block;
+        }
+        .viewer-overlay {
+            position: absolute;
+            top: 28px;
+            left: 28px;
+            right: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .viewer-label {
+            background: #00000088;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid #ffffff22;
+            border-radius: 30px;
+            padding: 10px 22px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: -0.3px;
+            pointer-events: auto;
+            transition: var(--transition);
+        }
+        .viewer-hint {
+            background: #00000066;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: #ffffff99;
+            font-size: 0.75rem;
+            pointer-events: auto;
+            letter-spacing: 0.2px;
+        }
+        .viewer-hint span {
+            animation: pulse-dot 1.6s infinite;
+            display: inline-block;
+            margin: 0 2px;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                min-width: 100%;
+                height: auto;
+                max-height: 45vh;
+                border-left: none;
+                border-bottom: 1px solid var(--border);
+                flex-shrink: 0;
+            }
+            .viewer-container {
+                flex: 1;
+                min-height: 55vh;
+            }
+            .sidebar-header {
+                padding: 16px 18px 12px;
+            }
+            .sidebar-header h1 {
+                font-size: 1.4rem;
+            }
+            .drug-list {
+                padding: 8px 10px;
+                gap: 5px;
+            }
+            .drug-card {
+                padding: 12px 14px;
+                gap: 10px;
+            }
+            .drug-card .drug-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
+            .drug-card .drug-name {
+                font-size: 0.9rem;
+            }
+            .info-panel {
+                margin: 6px 10px 12px;
+                padding: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .sidebar {
+                max-height: 38vh;
+            }
+            .viewer-container {
+                min-height: 62vh;
+            }
+            .viewer-overlay {
+                top: 12px;
+                left: 10px;
+                right: 10px;
+            }
+            .viewer-label {
+                font-size: 0.8rem;
+                padding: 8px 14px;
+            }
         }
     </style>
 </head>
-<body data-theme="dark">
+<body>
 
-    <!-- Star background -->
-    <div class="universe-bg">
-        <div class="stars" id="starsContainer"></div>
-    </div>
-
-    <!-- Header -->
-    <nav class="top-nav" id="topNav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">💊</span>
-                GhaniPharma
-            </a>
-            <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinksDesktop">
-                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
-                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-icon">💊</div>
+            <h1>دليل مسكنات الألم</h1>
+            <p class="subtitle">اضغط على أي دواء لعرض نموذج ثلاثي الأبعاد</p>
+        </div>
+        <div class="drug-list" id="drugList">
+            <!-- Dynamically filled -->
+        </div>
+        <div class="info-panel" id="infoPanel">
+            <h3 id="infoTitle">باراسيتامول</h3>
+            <div class="info-row"><span class="label">التصنيف:</span> <span id="infoClass">مسكن ألم وخافض حرارة</span></div>
+            <div class="info-row"><span class="label">الاستخدامات:</span> <span id="infoUses">الصداع، آلام العضلات، الحمى</span></div>
+            <div class="info-row"><span class="label">الاسم العلمي:</span> <span id="infoScientific">Paracetamol / Acetaminophen</span></div>
+            <div class="warning" id="infoWarning">
+                <strong>⚠ تحذير:</strong> <span id="infoWarningText">لا تتجاوز الجرعة اليومية الموصى بها (4 غرام للبالغين). استشر الطبيب قبل الاستخدام المطول.</span>
             </div>
         </div>
-    </nav>
+    </aside>
 
-    <!-- Mobile menu overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
-        <div class="mobile-menu-popup">
-            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
-            <div style="margin-bottom: 20px;">
-                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
-                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
-            </div>
-            <div>
-                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
-                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
-                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
+    <!-- ==================== 3D VIEWER ==================== -->
+    <div class="viewer-container" id="viewerContainer">
+        <div class="viewer-overlay">
+            <div class="viewer-label" id="viewerLabel">💊 باراسيتامول</div>
+            <div class="viewer-hint">🖱 اسحب للتدوير <span>●</span> التكبير بالعجلة</div>
         </div>
     </div>
 
-    <!-- Side dots for lesson navigation -->
-    <div class="side-dots">
-        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
-        <div class="dot" data-dot="generalites"><span class="dot-tooltip">Généralités</span></div>
-        <div class="dot" data-dot="morphologie"><span class="dot-tooltip">Morphologie</span></div>
-        <div class="dot" data-dot="physiologie"><span class="dot-tooltip">Physiologie</span></div>
-        <div class="dot" data-dot="reproduction"><span class="dot-tooltip">Reproduction</span></div>
-        <div class="dot" data-dot="pathogenie"><span class="dot-tooltip">Rôle pathogène</span></div>
-        <div class="dot" data-dot="contamination"><span class="dot-tooltip">Contamination</span></div>
-        <div class="dot" data-dot="conclusion"><span class="dot-tooltip">Conclusion</span></div>
-    </div>
-
-    <!-- Main content -->
-    <div class="main-wrapper">
-        <div class="container">
-
-            <!-- Hero -->
-            <section class="hero-section" id="section-intro">
-                <div class="hero-badge reveal">
-                    <i class="fas fa-flask"></i> Microbiologie
-                </div>
-                <h1 class="hero-title reveal reveal-delay-1">Introduction à la Mycologie Médicale</h1>
-                <p class="hero-subtitle reveal reveal-delay-2">
-                    Cours complet sur les champignons microscopiques responsables de maladies chez l'homme et les animaux : les mycoses.
-                </p>
-            </section>
-
-            <!-- I – Introduction -->
-            <section class="section-block" id="section-generalites">
-                <h2 class="section-title reveal">I – Introduction</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>La <strong>mycologie</strong> est la science qui étudie les champignons (appelés aussi <em>mycètes</em>).</p>
-                    <p style="margin-top: 15px;">En <strong>mycologie médicale</strong>, on s'intéresse plus particulièrement aux <strong>champignons microscopiques</strong> responsables de maladies chez l'homme et les animaux : ces maladies sont appelées <strong>mycoses</strong>.</p>
-                </div>
-            </section>
-
-            <!-- II – Généralités sur les champignons -->
-            <section class="section-block" id="section-morphologie">
-                <h2 class="section-title reveal">II – Généralités sur les champignons</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>Les champignons sont des <strong>eucaryotes</strong> : leurs cellules possèdent un noyau véritable contenant l'ADN (contrairement aux bactéries, qui sont des procaryotes sans noyau).</p>
-                    <p style="margin-top: 15px;">Ils ne contiennent pas de <strong>chlorophylle</strong> (pigment permettant la photosynthèse).</p>
-                    <p>→ Ils sont donc <strong>incapables de fabriquer leur propre nourriture</strong> à partir de la lumière.</p>
-                    <p style="margin-top: 15px;">Ils se nourrissent de <strong>matière organique déjà fabriquée</strong> (glucides, lipides, protides).</p>
-                    <p style="margin-top: 15px;"><strong>Selon leur mode de vie, on distingue :</strong></p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>Saprophytes :</strong> ils vivent sur des matières en décomposition (sans nuire à l'environnement).</li>
-                        <li><strong>Symbiotiques :</strong> ils vivent en association bénéfique avec un autre organisme.</li>
-                        <li><strong>Parasites :</strong> ils vivent aux dépens d'un hôte (homme ou animal) et provoquent une mycose.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- III – Morphologie des champignons -->
-            <section class="section-block" id="section-physiologie">
-                <h2 class="section-title reveal">III – Morphologie des champignons</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>L'ensemble de la structure d'un champignon s'appelle le <strong>thalle</strong>.</p>
-                    <p style="margin-top: 15px;">On distingue <strong>trois grands types de thalles</strong>.</p>
-                    
-                    <h3 style="color:var(--primary); margin-top: 25px;">a) Le thalle filamenteux</h3>
-                    <p>Il est composé de filaments allongés appelés <strong>filaments mycéliens</strong> (ou <em>hyphes</em>).</p>
-                    <p>L'ensemble de ces filaments forme le <strong>mycélium</strong>.</p>
-                    <p style="margin-top: 15px;">Ces filaments peuvent être :</p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>Septés (cloisonnés) :</strong> des cloisons appelées <em>septa</em> divisent le filament en compartiments.
-                            <br>→ Les septa sont incomplets (ils ont des pores), ce qui permet la circulation du cytoplasme et des nutriments.
-                            <br>→ <strong>Exemple :</strong> les dermatophytes (champignons responsables des mycoses de la peau, des ongles, des cheveux).
-                            <br>→ Ces champignons sont aussi appelés <strong>champignons supérieurs</strong>.
-                        </li>
-                        <li style="margin-top: 10px;"><strong>Non septés (non cloisonnés) :</strong> filaments sans cloisons, formant un long tube continu.
-                            <br>→ On les appelle aussi filaments <em>siphonnés</em> ou <em>cénocytiques</em>.
-                            <br>→ <strong>Exemple :</strong> les Mucorales (champignons inférieurs).
-                        </li>
-                    </ul>
-
-                    <h3 style="color:var(--primary); margin-top: 25px;">b) Le thalle levuriforme (ou levure)</h3>
-                    <p>Le champignon est réduit à une <strong>cellule unique</strong>, qui se reproduit par <strong>bourgeonnement</strong>.</p>
-                    <p>Il n'y a pas de véritable mycélium filamenteux.</p>
-                    <p>→ <strong>Exemple typique :</strong> <em>Candida</em> (responsable de candidoses).</p>
-
-                    <h3 style="color:var(--primary); margin-top: 25px;">c) Les champignons dimorphiques</h3>
-                    <p>Ces champignons peuvent exister sous <strong>deux formes différentes</strong> selon la température :</p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>À 25°C</strong> (dans la nature ou en laboratoire) : ils se présentent sous <strong>forme filamenteuse</strong> (mycélium).</li>
-                        <li><strong>À 37°C</strong> (dans le corps humain, état parasitaire) : ils prennent une <strong>forme levuriforme</strong> (unicellulaire).</li>
-                    </ul>
-                    <p style="margin-top: 10px;">→ Cette capacité leur permet de s'adapter à l'environnement de l'hôte.</p>
-                </div>
-            </section>
-
-            <!-- IV – Physiologie des champignons -->
-            <section class="section-block" id="section-reproduction">
-                <h2 class="section-title reveal">IV – Physiologie des champignons (conditions de vie)</h2>
-                <div class="card reveal reveal-delay-1">
-                    <ul style="padding-left: 20px;">
-                        <li><strong>Nutrition :</strong> ils sont <strong>hétérotrophes</strong> (non chlorophylliens, ne font pas la photosynthèse).</li>
-                        <li style="margin-top: 8px;"><strong>Glucose :</strong> tous les champignons utilisent le glucose comme source d'énergie.</li>
-                        <li style="margin-top: 8px;"><strong>Vitamines :</strong> certains ont besoin de vitamines, notamment la <strong>vitamine B1</strong>.</li>
-                        <li style="margin-top: 8px;"><strong>Oxygène :</strong> ils sont <strong>aérobies</strong> (ils ont besoin d'oxygène pour vivre).</li>
-                        <li style="margin-top: 8px;"><strong>Eau :</strong> indispensable ; les champignons poussent mal sur les milieux trop secs.</li>
-                        <li style="margin-top: 8px;"><strong>Température :</strong>
-                            <ul style="padding-left: 20px; margin-top: 5px;">
-                                <li>Mycoses superficielles → optimum vers <strong>25-27°C</strong>.</li>
-                                <li>Mycoses profondes (dans le corps) → optimum vers <strong>37°C</strong>.</li>
-                            </ul>
-                        </li>
-                        <li style="margin-top: 8px;"><strong>pH :</strong> ils préfèrent un milieu acide (<strong>pH 5,5 à 6</strong>).</li>
-                        <li style="margin-top: 8px;"><strong>Lumière :</strong> elle influence la pigmentation des colonies (couleur visible sur les cultures).</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- V – Reproduction des champignons -->
-            <section class="section-block" id="section-pathogenie">
-                <h2 class="section-title reveal">V – Reproduction des champignons</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>Les champignons peuvent se reproduire de deux manières : <strong>sexuée</strong> et <strong>asexuée</strong>.</p>
-                    
-                    <h3 style="color:var(--primary); margin-top: 25px;">a) Reproduction sexuée</h3>
-                    <p>Elle résulte de la <strong>fusion de deux filaments</strong> (conjugaison nucléaire) et aboutit à la formation de <strong>spores sexuées</strong>.</p>
-                    <p style="margin-top: 10px;">Ces spores sont de trois grands types, qui servent à classer les champignons :</p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>Zygospores :</strong> spores nues (non enfermées dans une enveloppe).
-                            <br>→ <strong>Exemple :</strong> <em>Rhizopus</em> (champignon des moisissures du pain).</li>
-                        <li style="margin-top: 10px;"><strong>Ascospores :</strong> spores contenues dans une poche appelée <em>asque</em>.
-                            <br>→ Ces champignons sont appelés <strong>Ascomycètes</strong>.</li>
-                        <li style="margin-top: 10px;"><strong>Basidiospores :</strong> spores qui naissent par bourgeonnement à l'extrémité de quatre cornes portées par une cellule en forme de massue appelée <em>baside</em>.
-                            <br>→ Ces champignons sont appelés <strong>Basidiomycètes</strong> (exemple : les champignons à chapeau, mais aussi certains champignons microscopiques).</li>
-                    </ul>
-
-                    <h3 style="color:var(--primary); margin-top: 25px;">b) Reproduction asexuée</h3>
-                    <p>Elle est <strong>beaucoup plus fréquente et rapide</strong>. Elle se fait par formation de spores asexuées appelées <strong>conidies</strong> (ou parfois simplement spores).</p>
-                    <p style="margin-top: 15px;">On distingue plusieurs modes :</p>
-                    
-                    <p style="margin-top: 15px;"><strong>1. Spores formées à l'intérieur de vésicules</strong></p>
-                    <p>→ Typique des <strong>champignons inférieurs</strong>.</p>
-                    <p>Les spores ne sont libérées que lorsque la paroi de la vésicule se rompt.</p>
-                    <p>Ce sont souvent des <strong>spores de résistance</strong> (elles survivent longtemps dans le milieu).</p>
-
-                    <p style="margin-top: 15px;"><strong>2. Spores formées sur des filaments (champignons supérieurs)</strong></p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>Blastospores :</strong> obtenues par bourgeonnement à partir d'une cellule mère (une levure ou un article de filament).
-                            <br>→ C'est le mode de reproduction des <strong>levures</strong>.</li>
-                        <li style="margin-top: 10px;"><strong>Thallospores :</strong> issues de la transformation directe d'un segment du filament.
-                            <br>On distingue :
-                            <ul style="padding-left: 20px; margin-top: 5px;">
-                                <li><strong>Arthospores :</strong> le filament se fragmente en plusieurs petits éléments (désarticulation).</li>
-                                <li style="margin-top: 5px;"><strong>Alleuriospores :</strong> spores portées sur un filament spécialisé.
-                                    <br>Elles peuvent être :
-                                    <ul style="padding-left: 20px; margin-top: 5px;">
-                                        <li><strong>Unicellulaires :</strong> microconidies.</li>
-                                        <li><strong>Pluricellulaires :</strong> macroconidies (plusieurs cellules).</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <p style="margin-top: 15px;"><strong>3. Les chlamydospores</strong></p>
-                    <p>→ Spores à <strong>paroi très épaisse</strong> (forme de résistance).</p>
-                    <p>Elles peuvent se former :</p>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li>entre deux cellules (<strong>intercalaires</strong>)</li>
-                        <li>ou à l'extrémité d'un filament (<strong>terminales</strong>)</li>
-                    </ul>
-                    <p style="margin-top: 10px;">Elles apparaissent lorsque les conditions deviennent défavorables (manque de nourriture, froid, sécheresse…).</p>
-                </div>
-            </section>
-
-            <!-- VI – Rôle pathogène : les mycoses -->
-            <section class="section-block" id="section-contamination">
-                <h2 class="section-title reveal">VI – Rôle pathogène : les mycoses</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>Les champignons parasites provoquent des <strong>mycoses</strong>, classées selon la profondeur de l'infection.</p>
-                    <table style="margin-top: 20px;">
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th>Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Mycoses superficielles</td>
-                                <td>Dermatophyties (atteinte de la peau, des ongles, des cheveux)</td>
-                            </tr>
-                            <tr>
-                                <td>Mycoses sous-cutanées</td>
-                                <td>Sporotrichose (infection du derme et de l'hypoderme)</td>
-                            </tr>
-                            <tr>
-                                <td>Mycoses profondes (systémiques)</td>
-                                <td>Aspergillose (poumons, parfois disséminée)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h3 style="color:var(--primary); margin-top: 25px;">Caractéristiques générales des mycoses :</h3>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li>Évolution <strong>chronique ou subaiguë</strong> (lente, durable).</li>
-                        <li>Peu ou pas de <strong>fièvre</strong> (sauf dans les formes invasives graves avec septicémie).</li>
-                        <li>Pas de modification importante de la <strong>formule sanguine</strong> (FNS normale).</li>
-                        <li>Généralement <strong>non contagieuses</strong>, sauf exceptions :
-                            <ul style="padding-left: 20px; margin-top: 5px;">
-                                <li><strong>Teignes</strong> (contagion directe homme → homme ou animal → homme).</li>
-                                <li><strong>Candidoses vaginales</strong> (transmission lors des rapports sexuels).</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- VII – Modes de contamination -->
-            <section class="section-block" id="section-conclusion">
-                <h2 class="section-title reveal">VII – Modes de contamination (voies de pénétration)</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>Les champignons pénètrent dans l'organisme par différentes voies :</p>
-                    
-                    <h3 style="color:var(--primary); margin-top: 20px;">Voie transcutanée :</h3>
-                    <p>Par une blessure (piqûre d'épine, acte chirurgical, petit traumatisme).</p>
-                    <p>→ <strong>Exemple :</strong> <em>Sporothrix</em>.</p>
-
-                    <h3 style="color:var(--primary); margin-top: 20px;">Voie respiratoire :</h3>
-                    <p>Inhalation de spores présentes dans l'air.</p>
-                    <p>→ <strong>Exemple :</strong> <em>Aspergillus</em>.</p>
-
-                    <h3 style="color:var(--primary); margin-top: 20px;">Contact direct :</h3>
-                    <p>Avec une personne ou un animal infecté.</p>
-                    <p>→ <strong>Exemple :</strong> teignes, candidoses cutanées.</p>
-
-                    <h3 style="color:var(--primary); margin-top: 20px;">Voie digestive :</h3>
-                    <p>Ingestion de champignons ou de spores.</p>
-                    <p>→ <strong>Exemple :</strong> <em>Cryptococcus neoformans</em> (peut aussi passer par le poumon).</p>
-
-                    <h3 style="color:var(--primary); margin-top: 20px;">Dissémination par voie sanguine :</h3>
-                    <p>Les champignons peuvent se propager par le sang vers différents organes (mycoses profondes disséminées).</p>
-                </div>
-            </section>
-
-            <!-- Conclusion -->
-            <section class="section-block" style="border-bottom: none;">
-                <h2 class="section-title reveal">Conclusion</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>La mycologie médicale constitue une discipline essentielle en microbiologie. La compréhension de la morphologie, de la physiologie et des modes de reproduction des champignons permet de mieux appréhender leur rôle pathogène et d'instaurer des stratégies de diagnostic et de traitement adaptées face aux mycoses.</p>
-                </div>
-            </section>
-
-            <!-- Références -->
-            <section class="section-block" id="section-references" style="border-bottom: none;">
-                <h2 class="section-title reveal">Références</h2>
-                <div class="card reveal reveal-delay-1" style="font-size:0.9rem; color:var(--text-secondary);">
-                    <p>Dr Latreche.F – Cours de Mycologie Médicale, Réécriture pédagogique.</p>
-                </div>
-            </section>
-
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="social-links">
-            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        // ==================== Create stars ====================
-        function createStars() {
-            const container = document.getElementById('starsContainer');
-            const fragment = document.createDocumentFragment();
-            for (let i = 0; i < 150; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                const size = Math.random() * 3 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
-                star.style.setProperty('--delay', Math.random() * 5 + 's');
-                fragment.appendChild(star);
+    <!-- ==================== THREE.JS IMPORT MAP ==================== -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
             }
-            container.appendChild(fragment);
         }
-        createStars();
+    </script>
 
-        // ==================== Reveal animation ====================
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-        // ==================== Side dots navigation ====================
-        const sectionIDs = ['intro', 'generalites', 'morphologie', 'physiologie', 'reproduction', 'pathogenie', 'contamination', 'conclusion'];
-        const dots = document.querySelectorAll('.dot');
+        // ==================== DRUG DATA ====================
+        const drugData = [
+            {
+                id: 'paracetamol',
+                name: 'باراسيتامول',
+                nameEn: 'Paracetamol',
+                class: 'مسكن ألم وخافض حرارة',
+                uses: 'الصداع، آلام العضلات، الحمى، آلام الأسنان',
+                scientific: 'Paracetamol / Acetaminophen',
+                warning: 'لا تتجاوز الجرعة اليومية الموصى بها (4 غرام للبالغين). تجنب استخدامه مع الكحول. استشر الطبيب قبل الاستخدام المطول.',
+                icon: '🔵',
+                iconBg: '#3b82f6',
+                type: 'tablet',
+                color: '#f5f5f0',
+                colorHex: 0xf5f5f0,
+                radius: 1.45,
+                height: 0.28,
+                hasScore: false,
+                roughness: 0.55,
+                metalness: 0.02,
+            },
+            {
+                id: 'ibuprofen',
+                name: 'ايبوبروفين',
+                nameEn: 'Ibuprofen',
+                class: 'مضاد التهاب غير ستيرويدي (NSAID)',
+                uses: 'الالتهابات، آلام المفاصل، الصداع، آلام الظهر، الحمى',
+                scientific: 'Ibuprofen',
+                warning: 'يجب تناوله مع الطعام لتقليل تهيج المعدة. لا يستخدم مع قرحة المعدة أو مشاكل الكلى. استشر الطبيب في حالات الحمل.',
+                icon: '🟠',
+                iconBg: '#f97316',
+                type: 'tablet',
+                color: '#f4a460',
+                colorHex: 0xf4a460,
+                radius: 1.35,
+                height: 0.32,
+                hasScore: false,
+                roughness: 0.5,
+                metalness: 0.03,
+            },
+            {
+                id: 'aspirin',
+                name: 'أسبرين',
+                nameEn: 'Aspirin',
+                class: 'مسكن ومضاد التهاب ومضاد تخثر',
+                uses: 'الصداع، آلام خفيفة إلى متوسطة، الوقاية من الجلطات القلبية',
+                scientific: 'Acetylsalicylic Acid',
+                warning: 'لا يستخدم للأطفال تحت 12 سنة (خطر متلازمة راي). يزيد خطر النزيف. تجنب استخدامه مع مميعات الدم الأخرى.',
+                icon: '⚪',
+                iconBg: '#94a3b8',
+                type: 'tablet-scored',
+                color: '#fafaf7',
+                colorHex: 0xfafaf7,
+                radius: 1.5,
+                height: 0.26,
+                hasScore: true,
+                roughness: 0.5,
+                metalness: 0.02,
+            },
+            {
+                id: 'diclofenac',
+                name: 'ديكلوفيناك',
+                nameEn: 'Diclofenac',
+                class: 'مضاد التهاب غير ستيرويدي قوي (NSAID)',
+                uses: 'آلام المفاصل، الروماتيزم، النقرس، آلام ما بعد الجراحة',
+                scientific: 'Diclofenac Sodium/Potassium',
+                warning: 'يستخدم تحت إشراف طبي. قد يسبب تهيج المعدة وارتفاع ضغط الدم. لا يستخدم لمرضى القلب بدون استشارة.',
+                icon: '🟤',
+                iconBg: '#a16252',
+                type: 'tablet',
+                color: '#c4956a',
+                colorHex: 0xc4956a,
+                radius: 1.3,
+                height: 0.36,
+                hasScore: false,
+                roughness: 0.45,
+                metalness: 0.04,
+            },
+            {
+                id: 'naproxen',
+                name: 'نابروكسين',
+                nameEn: 'Naproxen',
+                class: 'مضاد التهاب طويل المفعول (NSAID)',
+                uses: 'التهاب المفاصل، آلام العضلات المزمنة، الصداع النصفي، آلام الدورة الشهرية',
+                scientific: 'Naproxen Sodium',
+                warning: 'طويل المفعول (يؤخذ كل 8-12 ساعة). يجب تناوله مع الطعام. لا يستخدم مع قرحة المعدة أو مشاكل الكلى.',
+                icon: '🔷',
+                iconBg: '#2563eb',
+                type: 'capsule',
+                color: '#3b7ddd',
+                colorHex: 0x3b7ddd,
+                capsuleRadius: 0.65,
+                capsuleLength: 1.6,
+                roughness: 0.35,
+                metalness: 0.06,
+            },
+            {
+                id: 'tramadol',
+                name: 'ترامادول',
+                nameEn: 'Tramadol',
+                class: 'مسكن ألم أفيوني متوسط القوة',
+                uses: 'آلام متوسطة إلى شديدة، آلام ما بعد الجراحة، الآلام المزمنة',
+                scientific: 'Tramadol Hydrochloride',
+                warning: 'يسبب الإدمان ولا يصرف إلا بوصفة طبية. لا يوقف فجأة. تجنب قيادة المركبات أثناء استخدامه. خطر التفاعل مع أدوية أخرى.',
+                icon: '🟢',
+                iconBg: '#22c55e',
+                type: 'capsule-twotone',
+                colorTop: '#4ade80',
+                colorTopHex: 0x4ade80,
+                colorBottom: '#f5f5f0',
+                colorBottomHex: 0xf5f5f0,
+                capsuleRadius: 0.6,
+                capsuleLength: 1.7,
+                roughness: 0.3,
+                metalness: 0.05,
+                splitRatio: 0.42,
+            },
+            {
+                id: 'morphine',
+                name: 'مورفين',
+                nameEn: 'Morphine',
+                class: 'مسكن ألم أفيوني قوي',
+                uses: 'آلام شديدة جداً، آلام السرطان، آلام ما بعد العمليات الكبرى',
+                scientific: 'Morphine Sulfate',
+                warning: 'مادة مخدرة خاضعة لرقابة مشددة. تستخدم فقط في المستشفيات أو تحت إشراف طبي مباشر. خطر كبير للإدمان وتثبيط التنفس.',
+                icon: '🔴',
+                iconBg: '#ef4444',
+                type: 'tablet-small',
+                color: '#fefefe',
+                colorHex: 0xfefefe,
+                radius: 1.05,
+                height: 0.3,
+                hasScore: false,
+                roughness: 0.5,
+                metalness: 0.02,
+            },
+        ];
 
-        function updateActiveDot() {
-            const scrollPos = window.scrollY + window.innerHeight / 3;
-            const navH = document.getElementById('topNav').offsetHeight;
-            let active = 'intro';
-            sectionIDs.forEach(id => {
-                const el = document.getElementById('section-' + id);
-                if (el) {
-                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
-                    const bottom = top + el.offsetHeight;
-                    if (scrollPos >= top && scrollPos < bottom) active = id;
+        // ==================== DOM ELEMENTS ====================
+        const drugListEl = document.getElementById('drugList');
+        const infoTitle = document.getElementById('infoTitle');
+        const infoClass = document.getElementById('infoClass');
+        const infoUses = document.getElementById('infoUses');
+        const infoScientific = document.getElementById('infoScientific');
+        const infoWarningText = document.getElementById('infoWarningText');
+        const viewerLabel = document.getElementById('viewerLabel');
+        const viewerContainer = document.getElementById('viewerContainer');
+
+        let activeDrugId = 'paracetamol';
+        let currentModel = null;
+        let modelGroup = new THREE.Group();
+
+        // ==================== BUILD DRUG LIST ====================
+        drugData.forEach((drug) => {
+            const card = document.createElement('div');
+            card.className = 'drug-card';
+            card.dataset.drugId = drug.id;
+            if (drug.id === activeDrugId) card.classList.add('active');
+            card.innerHTML = `
+                <div class="drug-icon" style="background:${drug.iconBg};">${drug.icon}</div>
+                <div class="drug-info">
+                    <div class="drug-name">${drug.name}</div>
+                    <div class="drug-class">${drug.class}</div>
+                </div>
+                <div class="arrow">◀</div>
+            `;
+            card.addEventListener('click', () => selectDrug(drug.id));
+            drugListEl.appendChild(card);
+        });
+
+        // ==================== THREE.JS SETUP ====================
+        const scene = new THREE.Scene();
+
+        // Subtle fog for depth
+        scene.fog = new THREE.FogExp2(0x0b1220, 0.00015);
+
+        const camera = new THREE.PerspectiveCamera(45, viewerContainer.clientWidth / viewerContainer.clientHeight, 0.5, 50);
+        camera.position.set(4.5, 2.8, 7.5);
+        camera.lookAt(0, 0, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(viewerContainer.clientWidth, viewerContainer.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.1;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        viewerContainer.appendChild(renderer.domElement);
+
+        // OrbitControls
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.08;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 1.6;
+        controls.minDistance = 3.5;
+        controls.maxDistance = 14;
+        controls.maxPolarAngle = Math.PI * 0.7;
+        controls.target.set(0, 0.15, 0);
+        controls.update();
+
+        // ==================== LIGHTING ====================
+        // Ambient light
+        const ambientLight = new THREE.AmbientLight(0x8899bb, 1.6);
+        scene.add(ambientLight);
+
+        // Key light (sun-like)
+        const keyLight = new THREE.DirectionalLight(0xffeedd, 5.5);
+        keyLight.position.set(8, 10, 4);
+        keyLight.castShadow = true;
+        keyLight.shadow.mapSize.width = 1024;
+        keyLight.shadow.mapSize.height = 1024;
+        keyLight.shadow.camera.near = 0.5;
+        keyLight.shadow.camera.far = 40;
+        keyLight.shadow.camera.left = -8;
+        keyLight.shadow.camera.right = 8;
+        keyLight.shadow.camera.top = 8;
+        keyLight.shadow.camera.bottom = -8;
+        keyLight.shadow.bias = -0.0003;
+        keyLight.shadow.normalBias = 0.02;
+        scene.add(keyLight);
+
+        // Fill light
+        const fillLight = new THREE.DirectionalLight(0xaaccff, 1.8);
+        fillLight.position.set(-3, 2, -2);
+        scene.add(fillLight);
+
+        // Rim light
+        const rimLight = new THREE.DirectionalLight(0xffffff, 2.5);
+        rimLight.position.set(0, 1, -5);
+        scene.add(rimLight);
+
+        // Bottom bounce
+        const bounceLight = new THREE.DirectionalLight(0x8899cc, 1.2);
+        bounceLight.position.set(0, -1, 2);
+        scene.add(bounceLight);
+
+        // ==================== PLATFORM ====================
+        const platformGeom = new THREE.CylinderGeometry(2.0, 2.1, 0.15, 64);
+        const platformMat = new THREE.MeshStandardMaterial({
+            color: 0x2a3040,
+            roughness: 0.35,
+            metalness: 0.5,
+        });
+        const platform = new THREE.Mesh(platformGeom, platformMat);
+        platform.position.y = -1.2;
+        platform.castShadow = true;
+        platform.receiveShadow = true;
+        scene.add(platform);
+
+        // Subtle ring on platform
+        const ringGeom = new THREE.TorusGeometry(1.9, 0.04, 32, 80);
+        const ringMat = new THREE.MeshStandardMaterial({
+            color: 0x4f8ef7,
+            roughness: 0.2,
+            metalness: 0.7,
+            emissive: 0x1a3a60,
+            emissiveIntensity: 0.5,
+        });
+        const ring = new THREE.Mesh(ringGeom, ringMat);
+        ring.rotation.x = -Math.PI / 2;
+        ring.position.y = -1.12;
+        ring.receiveShadow = true;
+        scene.add(ring);
+
+        // ==================== PARTICLE BACKGROUND ====================
+        const particlesGeom = new THREE.BufferGeometry();
+        const particlesCount = 180;
+        const positions = new Float32Array(particlesCount * 3);
+        for (let i = 0; i < particlesCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 14;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+        }
+        particlesGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particlesMat = new THREE.PointsMaterial({
+            color: 0x4f8ef7,
+            size: 0.025,
+            transparent: true,
+            opacity: 0.5,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+        });
+        const particles = new THREE.Points(particlesGeom, particlesMat);
+        scene.add(particles);
+
+        // ==================== MODEL GROUP ====================
+        modelGroup = new THREE.Group();
+        scene.add(modelGroup);
+
+        // ==================== MODEL CREATION FUNCTIONS ====================
+        function createTabletModel(radius, height, colorHex, roughness, metalness, hasScore = false) {
+            const group = new THREE.Group();
+
+            // Main tablet body
+            const geom = new THREE.CylinderGeometry(radius, radius, height, 64, 1);
+            const mat = new THREE.MeshStandardMaterial({
+                color: colorHex,
+                roughness: roughness,
+                metalness: metalness,
+            });
+            const tablet = new THREE.Mesh(geom, mat);
+            tablet.castShadow = true;
+            tablet.receiveShadow = true;
+            group.add(tablet);
+
+            // Beveled edge rings for realism
+            const edgeGeomTop = new THREE.TorusGeometry(radius - 0.04, 0.06, 16, 64);
+            const edgeMat = new THREE.MeshStandardMaterial({
+                color: colorHex,
+                roughness: roughness * 0.7,
+                metalness: metalness,
+            });
+            const edgeTop = new THREE.Mesh(edgeGeomTop, edgeMat);
+            edgeTop.rotation.x = Math.PI / 2;
+            edgeTop.position.y = height / 2;
+            edgeTop.castShadow = true;
+            group.add(edgeTop);
+
+            const edgeBottom = new THREE.Mesh(edgeGeomTop.clone(), edgeMat);
+            edgeBottom.rotation.x = Math.PI / 2;
+            edgeBottom.position.y = -height / 2;
+            edgeBottom.castShadow = true;
+            group.add(edgeBottom);
+
+            // Score line (cross) for aspirin
+            if (hasScore) {
+                const scoreColor = 0xd5d5d0;
+                const scoreMat = new THREE.MeshStandardMaterial({
+                    color: scoreColor,
+                    roughness: 0.7,
+                    metalness: 0.01,
+                });
+                const scoreLength = radius * 1.5;
+                const scoreWidth = 0.06;
+                const scoreDepth = 0.04;
+
+                const score1Geom = new THREE.BoxGeometry(scoreLength, scoreDepth, scoreWidth);
+                const score1 = new THREE.Mesh(score1Geom, scoreMat);
+                score1.position.y = height / 2 + 0.005;
+                score1.castShadow = true;
+                group.add(score1);
+
+                const score2Geom = new THREE.BoxGeometry(scoreWidth, scoreDepth, scoreLength);
+                const score2 = new THREE.Mesh(score2Geom, scoreMat);
+                score2.position.y = height / 2 + 0.005;
+                score2.castShadow = true;
+                group.add(score2);
+            }
+
+            return group;
+        }
+
+        function createCapsuleModel(radius, cylinderLength, colorHex, roughness, metalness) {
+            const group = new THREE.Group();
+            const capsuleGeom = new THREE.CapsuleGeometry(radius, cylinderLength, 32, 48);
+            const capsuleMat = new THREE.MeshStandardMaterial({
+                color: colorHex,
+                roughness: roughness,
+                metalness: metalness,
+            });
+            const capsule = new THREE.Mesh(capsuleGeom, capsuleMat);
+            capsule.castShadow = true;
+            capsule.receiveShadow = true;
+            group.add(capsule);
+            return group;
+        }
+
+        function createTwoToneCapsuleModel(radius, cylinderLength, topColorHex, bottomColorHex, roughness, metalness,
+        splitRatio = 0.4) {
+            const group = new THREE.Group();
+            const totalHeight = cylinderLength + radius * 2;
+            const splitY = totalHeight * (splitRatio - 0.5);
+            const topCylinderHeight = cylinderLength * splitRatio + radius - splitY;
+            const bottomCylinderHeight = cylinderLength * (1 - splitRatio) + radius + splitY;
+
+            // Top sphere cap
+            const topSphereGeom = new THREE.SphereGeometry(radius, 48, 32, 0, Math.PI * 2, 0, Math.PI / 2);
+            const topMat = new THREE.MeshStandardMaterial({
+                color: topColorHex,
+                roughness: roughness,
+                metalness: metalness,
+            });
+            const topSphere = new THREE.Mesh(topSphereGeom, topMat);
+            topSphere.position.y = cylinderLength / 2;
+            topSphere.castShadow = true;
+            topSphere.receiveShadow = true;
+            group.add(topSphere);
+
+            // Bottom sphere cap
+            const bottomSphereGeom = new THREE.SphereGeometry(radius, 48, 32, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2);
+            const bottomMat = new THREE.MeshStandardMaterial({
+                color: bottomColorHex,
+                roughness: roughness,
+                metalness: metalness,
+            });
+            const bottomSphere = new THREE.Mesh(bottomSphereGeom, bottomMat);
+            bottomSphere.position.y = -cylinderLength / 2;
+            bottomSphere.castShadow = true;
+            bottomSphere.receiveShadow = true;
+            group.add(bottomSphere);
+
+            // Top cylinder portion
+            if (topCylinderHeight > 0.01) {
+                const topCylGeom = new THREE.CylinderGeometry(radius, radius, topCylinderHeight, 48, 1);
+                const topCyl = new THREE.Mesh(topCylGeom, topMat);
+                topCyl.position.y = cylinderLength / 2 - topCylinderHeight / 2;
+                topCyl.castShadow = true;
+                topCyl.receiveShadow = true;
+                group.add(topCyl);
+            }
+
+            // Bottom cylinder portion
+            if (bottomCylinderHeight > 0.01) {
+                const bottomCylGeom = new THREE.CylinderGeometry(radius, radius, bottomCylinderHeight, 48, 1);
+                const bottomCyl = new THREE.Mesh(bottomCylGeom, bottomMat);
+                bottomCyl.position.y = -cylinderLength / 2 + bottomCylinderHeight / 2;
+                bottomCyl.castShadow = true;
+                bottomCyl.receiveShadow = true;
+                group.add(bottomCyl);
+            }
+
+            // Thin ring at the split to hide seam
+            const ringGeom = new THREE.TorusGeometry(radius + 0.015, 0.03, 16, 48);
+            const ringMat = new THREE.MeshStandardMaterial({
+                color: 0xdddddd,
+                roughness: 0.3,
+                metalness: 0.1,
+            });
+            const splitRing = new THREE.Mesh(ringGeom, ringMat);
+            splitRing.rotation.x = Math.PI / 2;
+            splitRing.position.y = splitY;
+            splitRing.castShadow = true;
+            group.add(splitRing);
+
+            return group;
+        }
+
+        // ==================== BUILD MODEL FOR DRUG ====================
+        function buildModelForDrug(drug) {
+            const group = new THREE.Group();
+
+            switch (drug.type) {
+                case 'tablet':
+                case 'tablet-scored':
+                case 'tablet-small': {
+                    const tabletGroup = createTabletModel(
+                        drug.radius,
+                        drug.height,
+                        drug.colorHex,
+                        drug.roughness,
+                        drug.metalness,
+                        drug.hasScore || false
+                    );
+                    group.add(tabletGroup);
+                    break;
+                }
+                case 'capsule': {
+                    const capsuleGroup = createCapsuleModel(
+                        drug.capsuleRadius,
+                        drug.capsuleLength,
+                        drug.colorHex,
+                        drug.roughness,
+                        drug.metalness
+                    );
+                    // Rotate capsule to be horizontal for visual interest
+                    capsuleGroup.rotation.z = Math.PI / 7;
+                    capsuleGroup.rotation.x = Math.PI / 12;
+                    group.add(capsuleGroup);
+                    break;
+                }
+                case 'capsule-twotone': {
+                    const twotoneGroup = createTwoToneCapsuleModel(
+                        drug.capsuleRadius,
+                        drug.capsuleLength,
+                        drug.colorTopHex,
+                        drug.colorBottomHex,
+                        drug.roughness,
+                        drug.metalness,
+                        drug.splitRatio
+                    );
+                    twotoneGroup.rotation.z = Math.PI / 6;
+                    twotoneGroup.rotation.x = Math.PI / 10;
+                    group.add(twotoneGroup);
+                    break;
+                }
+                default: {
+                    const fallback = createTabletModel(1.4, 0.3, 0xeeeeee, 0.5, 0.02, false);
+                    group.add(fallback);
+                }
+            }
+
+            // Add subtle glow beneath the pill
+            const glowGeom = new THREE.PlaneGeometry(drug.radius * 2.8 || 3.2, drug.radius * 2.8 || 3.2);
+            const glowMat = new THREE.ShaderMaterial({
+                uniforms: {
+                    uColor: { value: new THREE.Color(drug.colorHex || 0xffffff) },
+                    uTime: { value: 0 },
+                },
+                vertexShader: /* glsl */ `
+                    varying vec2 vUv;
+                    void main() {
+                        vUv = uv;
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    }
+                `,
+                fragmentShader: /* glsl */ `
+                    varying vec2 vUv;
+                    uniform vec3 uColor;
+                    uniform float uTime;
+                    void main() {
+                        float dist = length(vUv - 0.5) * 2.0;
+                        float alpha = smoothstep(1.0, 0.0, dist) * 0.25;
+                        alpha *= 0.6 + 0.4 * sin(uTime * 2.0 + dist * 4.0) * 0.5 + 0.5;
+                        gl_FragColor = vec4(uColor, alpha);
+                    }
+                `,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending,
+            });
+            const glowPlane = new THREE.Mesh(glowGeom, glowMat);
+            glowPlane.rotation.x = -Math.PI / 2;
+            glowPlane.position.y = -1.05;
+            glowPlane.name = 'glowPlane';
+            group.add(glowPlane);
+
+            return group;
+        }
+
+        // ==================== SELECT DRUG ====================
+        function selectDrug(drugId) {
+            if (activeDrugId === drugId && currentModel) return;
+            activeDrugId = drugId;
+
+            // Update cards
+            document.querySelectorAll('.drug-card').forEach((card) => {
+                card.classList.toggle('active', card.dataset.drugId === drugId);
+            });
+
+            // Find drug data
+            const drug = drugData.find((d) => d.id === drugId);
+            if (!drug) return;
+
+            // Update info panel
+            infoTitle.textContent = drug.name;
+            infoClass.textContent = drug.class;
+            infoUses.textContent = drug.uses;
+            infoScientific.textContent = drug.scientific;
+            infoWarningText.textContent = drug.warning;
+            viewerLabel.textContent = `💊 ${drug.name}`;
+
+            // Remove old model
+            while (modelGroup.children.length > 0) {
+                const child = modelGroup.children[0];
+                disposeObjectRecursive(child);
+                modelGroup.remove(child);
+            }
+
+            // Build new model
+            const newModel = buildModelForDrug(drug);
+            modelGroup.add(newModel);
+            currentModel = newModel;
+
+            // Brief scale animation
+            modelGroup.scale.set(0.01, 0.01, 0.01);
+            const startTime = performance.now();
+            const animDuration = 500;
+
+            function animateScale(now) {
+                const elapsed = now - startTime;
+                const t = Math.min(elapsed / animDuration, 1.0);
+                // Ease-out elastic
+                const val = 1 - Math.pow(1 - t, 3);
+                const eased = val * (1 + 0.3 * Math.sin(t * Math.PI * 3) * (1 - t));
+                const s = 0.01 + (1 - 0.01) * eased;
+                modelGroup.scale.setScalar(Math.max(0.01, s));
+                if (t < 1) {
+                    requestAnimationFrame(animateScale);
+                } else {
+                    modelGroup.scale.setScalar(1);
+                }
+            }
+            requestAnimationFrame(animateScale);
+
+            // Scroll to card in sidebar
+            const cardEl = document.querySelector(`.drug-card[data-drug-id="${drugId}"]`);
+            if (cardEl) {
+                cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function disposeObjectRecursive(obj) {
+            if (!obj) return;
+            if (obj.geometry) obj.geometry.dispose();
+            if (obj.material) {
+                if (Array.isArray(obj.material)) {
+                    obj.material.forEach((m) => disposeMaterial(m));
+                } else {
+                    disposeMaterial(obj.material);
+                }
+            }
+            if (obj.children && obj.children.length > 0) {
+                for (let i = obj.children.length - 1; i >= 0; i--) {
+                    disposeObjectRecursive(obj.children[i]);
+                }
+            }
+        }
+
+        function disposeMaterial(mat) {
+            if (!mat) return;
+            Object.keys(mat).forEach((key) => {
+                const val = mat[key];
+                if (val && val.isTexture) {
+                    val.dispose();
                 }
             });
-            dots.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
+            mat.dispose();
         }
-        window.addEventListener('scroll', updateActiveDot, { passive: true });
 
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const targetId = dot.dataset.dot;
-                document.getElementById('section-' + targetId).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+        // ==================== ANIMATION LOOP ====================
+        const clock = new THREE.Clock();
 
-        // ==================== Mobile menu ====================
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileOverlay = document.getElementById('mobileMenuOverlay');
-        const closeBtn = document.getElementById('closeMobileMenu');
-        menuToggle.addEventListener('click', () => {
-            mobileOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-        closeBtn.addEventListener('click', () => {
-            mobileOverlay.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-        mobileOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileOverlay) {
-                mobileOverlay.classList.remove('open');
-                document.body.style.overflow = '';
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const dt = Math.min(clock.getDelta(), 0.1);
+            controls.update();
+
+            // Rotate particles slowly
+            particles.rotation.y += dt * 0.08;
+            particles.rotation.x += dt * 0.03;
+
+            // Update glow plane time uniform
+            if (currentModel) {
+                currentModel.traverse((child) => {
+                    if (child.name === 'glowPlane' && child.material.uniforms) {
+                        child.material.uniforms.uTime.value += dt;
+                    }
+                });
+            }
+
+            // Pulse the platform ring
+            const pulse = 1 + Math.sin(performance.now() * 0.002) * 0.15;
+            ring.scale.setScalar(pulse);
+            ring.material.emissiveIntensity = 0.3 + Math.sin(performance.now() * 0.003) * 0.35;
+
+            renderer.render(scene, camera);
+        }
+
+        // ==================== RESIZE HANDLER ====================
+        function onResize() {
+            const w = viewerContainer.clientWidth;
+            const h = viewerContainer.clientHeight;
+            camera.aspect = w / Math.max(h, 1);
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+        }
+        window.addEventListener('resize', onResize);
+        window.addEventListener('orientationchange', () => setTimeout(onResize, 150));
+
+        // ==================== KEYBOARD NAVIGATION ====================
+        window.addEventListener('keydown', (e) => {
+            const currentIndex = drugData.findIndex((d) => d.id === activeDrugId);
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % drugData.length;
+                selectDrug(drugData[nextIndex].id);
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                const prevIndex = (currentIndex - 1 + drugData.length) % drugData.length;
+                selectDrug(drugData[prevIndex].id);
+            } else if (e.key === 'r' || e.key === 'R') {
+                controls.autoRotate = !controls.autoRotate;
             }
         });
 
-        // ==================== Hide nav on scroll ====================
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const st = window.pageYOffset || document.documentElement.scrollTop;
-            const nav = document.getElementById('topNav');
-            if (st > lastScroll && st > 150) nav.classList.add('hidden');
-            else if (st < lastScroll) nav.classList.remove('hidden');
-            lastScroll = st;
-        }, { passive: true });
+        // ==================== INIT ====================
+        selectDrug('paracetamol');
+        animate();
+        onResize();
 
-        // ==================== Theme toggle ====================
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlEl = document.documentElement;
-        const saved = localStorage.getItem('theme') || 'dark';
-        htmlEl.setAttribute('data-theme', saved);
-        themeToggle.addEventListener('click', () => {
-            const cur = htmlEl.getAttribute('data-theme');
-            const next = cur === 'dark' ? 'light' : 'dark';
-            htmlEl.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
+        console.log('💊 دليل مسكنات الألم ثلاثي الأبعاد - جاهز للاستخدام');
+        console.log('🖱 اسحب الماوس للتدوير | 🔍 عجلة الماوس للتكبير | ⌨ مفاتيح الأسهم للتنقل | R لإيقاف/تشغيل التدوير التلقائي');
     </script>
 </body>
-</html>'''
-
-with open('/mnt/agents/output/mycologie_medicale.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("File saved successfully!")
-print(f"Size: {len(html_content)} characters")
+</html>
