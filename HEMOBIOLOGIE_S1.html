@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur la Maladie de Von Willebrand - GhaniPharma">
-    <meta name="keywords" content="pharmacie, maladie de Willebrand, VWF, hémostase, cours pharmacie, GhaniPharma">
+    <meta name="description" content="Classification OMS des antalgiques – GhaniPharma">
+    <meta name="keywords" content="pharmacie, antalgiques, paliers OMS, paracétamol, AINS, opioïdes, cours pharmacie, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Maladie de Von Willebrand - GhaniPharma">
+    <meta property="og:title" content="Classification OMS des Antalgiques – GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
-    <title>Maladie de Von Willebrand | GhaniPharma</title>
+    <title>Classification OMS des Antalgiques | GhaniPharma</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -177,7 +177,7 @@
         }
         .menu-toggle:hover { transform: rotate(90deg); }
 
-        /* ==================== Side dots (adapted for lesson sections) ==================== */
+        /* ==================== Side dots ==================== */
         .side-dots {
             position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
             display: flex; flex-direction: column; gap: 22px;
@@ -249,6 +249,26 @@
             background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px;
             padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             margin-bottom: 30px;
+        }
+        .drug-name {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .drug-name:first-of-type { margin-top: 0; }
+        .drug-name i { font-size: 1rem; opacity: 0.8; }
+        .warning-box {
+            background: rgba(255, 193, 7, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-weight: 500;
         }
 
         /* Footer */
@@ -328,14 +348,10 @@
     <!-- Side dots for lesson navigation -->
     <div class="side-dots">
         <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
-        <div class="dot" data-dot="definition"><span class="dot-tooltip">Définition</span></div>
-        <div class="dot" data-dot="fonctions"><span class="dot-tooltip">Fonctions</span></div>
-        <div class="dot" data-dot="transmission"><span class="dot-tooltip">Transmission</span></div>
-        <div class="dot" data-dot="classification"><span class="dot-tooltip">Classification</span></div>
-        <div class="dot" data-dot="clinique"><span class="dot-tooltip">Clinique</span></div>
-        <div class="dot" data-dot="diagnostic"><span class="dot-tooltip">Diagnostic</span></div>
-        <div class="dot" data-dot="traitement"><span class="dot-tooltip">Traitement</span></div>
-        <div class="dot" data-dot="conclusion"><span class="dot-tooltip">Conclusion</span></div>
+        <div class="dot" data-dot="palier1"><span class="dot-tooltip">Palier 1</span></div>
+        <div class="dot" data-dot="palier2"><span class="dot-tooltip">Palier 2</span></div>
+        <div class="dot" data-dot="palier3"><span class="dot-tooltip">Palier 3</span></div>
+        <div class="dot" data-dot="precautions"><span class="dot-tooltip">Précautions</span></div>
     </div>
 
     <!-- Main content -->
@@ -345,132 +361,85 @@
             <!-- Hero -->
             <section class="hero-section" id="section-intro">
                 <div class="hero-badge reveal">
-                    <i class="fas fa-flask"></i> Hémobiologie
+                    <i class="fas fa-capsules"></i> Pharmacologie
                 </div>
-                <h1 class="hero-title reveal reveal-delay-1">La Maladie de Von Willebrand</h1>
+                <h1 class="hero-title reveal reveal-delay-1">Classification OMS des Antalgiques</h1>
                 <p class="hero-subtitle reveal reveal-delay-2">
-                    Maladie hémorragique héréditaire la plus fréquente, due à un déficit ou dysfonctionnement du facteur Willebrand (VWF).
+                    Guide pratique des paliers antalgiques selon l'Organisation Mondiale de la Santé : du paracétamol aux opioïdes forts.
                 </p>
             </section>
 
-            <!-- Définition -->
-            <section class="section-block" id="section-definition">
-                <h2 class="section-title reveal">Définition</h2>
+            <!-- Palier 1 -->
+            <section class="section-block" id="section-palier1">
+                <h2 class="section-title reveal">Palier 1 : Douleurs légères</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p>La maladie de Von Willebrand est la plus fréquente des maladies hémorragiques héréditaires. Elle est causée par un déficit ou un dysfonctionnement du <strong>facteur Von Willebrand (VWF)</strong>, une protéine plasmatique indispensable à la coagulation.</p>
-                    <p>Le VWF a deux rôles majeurs :</p>
-                    <ol>
-                        <li>Transport du facteur VIII dans le sang, le protégeant de la dégradation.</li>
-                        <li>Adhésion des plaquettes au site de la lésion vasculaire, permettant la formation du « clou plaquettaire ».</li>
-                    </ol>
+                    <div class="drug-name"><i class="fas fa-pills"></i> Paracétamol</div>
+                    <p><strong>Spécialités :</strong> Doliprane, Dafalgan, Efferalgan, Panadol</p>
+                    <p><strong>Action :</strong> Antalgique et antipyrétique simple (pas d'effet anti-inflammatoire).</p>
+                    <p><strong>Formes :</strong> Comprimés 500 mg / 1 g.</p>
+                    <p><strong>Indications :</strong> Fièvre, maux de tête, courbatures.</p>
+                    <p><strong>Dose maximale :</strong> 3 g/jour.</p>
+                    <p><strong>À éviter :</strong> Insuffisance hépatique sévère et alcoolisme chronique.</p>
+
+                    <div class="drug-name"><i class="fas fa-pills"></i> AINS / Aspirine</div>
+                    <p><strong>Spécialités :</strong> Aspegic, Aspirine</p>
+                    <p><strong>Action :</strong> Anti-inflammatoire et antalgique.</p>
+                    <p><strong>Usages :</strong> Douleurs articulaires, rhumatismes.</p>
+                    <p><strong>Formes :</strong> Comprimés effervescents.</p>
+                    <p><strong>Contre-indications strictes :</strong> Ulcère gastrique, grossesse (3ᵉ trimestre) et enfant (risque de syndrome de Reye pour l'aspirine).</p>
                 </div>
             </section>
 
-            <!-- Fonctions -->
-            <section class="section-block" id="section-fonctions">
-                <h2 class="section-title reveal">Fonctions du Facteur Willebrand</h2>
-                <ul class="card reveal reveal-delay-1" style="list-style: disc; padding-left: 20px;">
-                    <li>Adhésion des plaquettes au sous-endothélium vasculaire.</li>
-                    <li>Transport et stabilisation du facteur VIII dans la circulation.</li>
-                </ul>
-            </section>
-
-            <!-- Transmission -->
-            <section class="section-block" id="section-transmission">
-                <h2 class="section-title reveal">Transmission</h2>
+            <!-- Palier 2 -->
+            <section class="section-block" id="section-palier2">
+                <h2 class="section-title reveal">Palier 2 : Douleurs modérées</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p>Maladie génétique héréditaire liée à une mutation du gène du VWF situé sur le chromosome 12. La transmission peut être autosomique dominante (type 1 et 2) ou récessive (type 3).</p>
+                    <div class="drug-name"><i class="fas fa-pills"></i> Codéine + Paracétamol</div>
+                    <p><strong>Spécialités :</strong> Codoliprane, Co-Dolyc, Co-paramol</p>
+                    <p><strong>Action :</strong> Opioïde faible renforçant l'effet du paracétamol.</p>
+                    <p><strong>Formes :</strong> Comprimés (400/20 mg ou 500/30 mg).</p>
+                    <p><strong>Indications :</strong> Douleurs résistantes au Palier 1 (ex : douleurs dentaires).</p>
+                    <p><strong>À éviter :</strong> Enfants de moins de 12 ans, asthme sévère.</p>
+
+                    <div class="drug-name"><i class="fas fa-pills"></i> Tramadol</div>
+                    <p><strong>Spécialités :</strong> Dolex, Supramadol, Xamadol</p>
+                    <p><strong>Action :</strong> Mixte (opioïde faible + effet sur la sérotonine).</p>
+                    <p><strong>Formes :</strong> Comprimés (50 à 150 mg) et injectables.</p>
+                    <p><strong>Indications :</strong> Douleurs modérées à sévères (neuropathies).</p>
+                    <p><strong>Interactions majeures :</strong> Risque de convulsions et de syndrome sérotoninergique (hyperthermie, confusion) s'il est associé à des antidépresseurs ou à de l'alcool.</p>
                 </div>
             </section>
 
-            <!-- Classification -->
-            <section class="section-block" id="section-classification">
-                <h2 class="section-title reveal">Classification</h2>
+            <!-- Palier 3 -->
+            <section class="section-block" id="section-palier3">
+                <h2 class="section-title reveal">Palier 3 : Douleurs sévères</h2>
                 <div class="card reveal reveal-delay-1">
-                    <table>
-                        <thead><tr><th>Type</th><th>Description</th></tr></thead>
-                        <tbody>
-                            <tr><td>1</td><td>Déficit quantitatif partiel en VWF.</td></tr>
-                            <tr><td>2</td><td>Déficit qualitatif (variants moléculaires).</td></tr>
-                            <tr><td>2A</td><td>Diminution de l'affinité plaquettaire + absence des multimères de haut poids moléculaire (HPM).</td></tr>
-                            <tr><td>2B</td><td>Augmentation de l'affinité pour les plaquettes.</td></tr>
-                            <tr><td>2M</td><td>Diminution de l'affinité plaquettaire non liée aux multimères HPM.</td></tr>
-                            <tr><td>2N</td><td>Diminution de l'affinité pour le FVIII.</td></tr>
-                            <tr><td>3</td><td>Déficit quantitatif total en VWF.</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="drug-name"><i class="fas fa-pills"></i> Morphine</div>
+                    <p><strong>Spécialités :</strong> Skenan LP, Actiskenan</p>
+                    <p><strong>Action :</strong> Agoniste opioïde puissant.</p>
+                    <p><strong>Formes :</strong> Comprimés à libération prolongée (LP) ou immédiate, injectables.</p>
+                    <p><strong>Indications :</strong> Douleurs cancéreuses, post-chirurgicales majeures.</p>
+
+                    <div class="drug-name"><i class="fas fa-pills"></i> Oxycodone & Fentanyl</div>
+                    <p><strong>Spécialités :</strong> Oxynorm, Durogesic (patch)</p>
+                    <p><strong>Action :</strong> Très puissante.</p>
+                    <p><strong>Indications :</strong> Douleurs chroniques intenses nécessitant un suivi médical strict.</p>
+
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle" style="color: var(--accent); margin-right: 8px;"></i>
+                        <strong>Précautions vitales (Palier 3) :</strong> Strictement contre-indiqués en cas d'insuffisance respiratoire sévère, d'apnée du sommeil ou de traumatisme crânien. Risque de dépression respiratoire et de sédation profonde. Ne jamais associer à l'alcool ou aux somnifères.
+                    </div>
                 </div>
             </section>
 
-            <!-- Clinique -->
-            <section class="section-block" id="section-clinique">
-                <h2 class="section-title reveal">Diagnostic Clinique</h2>
+            <!-- Précautions et rappel légal -->
+            <section class="section-block" id="section-precautions">
+                <h2 class="section-title reveal">Précautions et cadre légal</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p>La sévérité dépend du type. Les manifestations hémorragiques touchent principalement :</p>
-                    <ul style="padding-left: 20px;">
-                        <li><strong>Types 1 et 2 :</strong> ecchymoses, épistaxis, gingivorragies, ménorragies, saignements post‑chirurgicaux.</li>
-                        <li><strong>Type 3 :</strong> s'ajoutent des hémorragies internes graves (hématomes musculaires, hémarthroses).</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Diagnostic biologique -->
-            <section class="section-block" id="section-diagnostic">
-                <h2 class="section-title reveal">Diagnostic Biologique</h2>
-                <div class="card reveal reveal-delay-1">
-                    <h3 style="color:var(--primary);">Évaluation clinique préalable</h3>
-                    <p>Âge d'apparition, fréquence, localisation des hémorragies, antécédents de transfusion.</p>
-                    
-                    <h3 style="color:var(--primary); margin-top: 20px;">Tests de dépistage</h3>
-                    <ul style="padding-left: 20px;">
-                        <li>Hémostase primaire : TS, plaquettes, PFA-100, fonctions plaquettaires.</li>
-                        <li>Coagulation : TQ, TCA.</li>
-                    </ul>
-                    
-                    <h3 style="color:var(--primary); margin-top: 20px;">Tests de 1<sup>er</sup> niveau (diagnostic du type)</h3>
-                    <ul style="padding-left: 20px;">
-                        <li>Déficit quantitatif : dosage VWF:Ag (ELISA, LIA-test).</li>
-                        <li>Déficit qualitatif : VWF:RCo (liaison plaquettaire), dosage FVIII:C.</li>
-                    </ul>
-                    
-                    <h3 style="color:var(--primary); margin-top: 20px;">Tests de 2<sup>e</sup> niveau (sous‑type)</h3>
-                    <ul style="padding-left: 20px;">
-                        <li>RIPA à faible dose, liaison VWF-FVIII, liaison VWF-collagène.</li>
-                        <li>Analyse des multimères de haut poids moléculaire.</li>
-                        <li>Dosage du propeptide VWF (VWFpp).</li>
-                    </ul>
-                    <p style="margin-top:15px; font-size:0.9rem; color:var(--text-secondary);"><em>Certains variants génétiques (p.Asp1472His) peuvent faussement abaisser le VWF:RCo.</em></p>
-                </div>
-            </section>
-
-            <!-- Traitement -->
-            <section class="section-block" id="section-traitement">
-                <h2 class="section-title reveal">Traitement</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>Pas de traitement curatif. Prise en charge préventive et curative.</p>
-                    <ol style="padding-left: 20px;">
-                        <li><strong>Desmopressine (DDAVP) :</strong> efficace surtout dans le type 1, voie IV ou nasale.</li>
-                        <li><strong>Concentrés plasmatiques de VWF :</strong> avec ou sans FVIII, efficaces dans tous les types.</li>
-                    </ol>
-                    <p>Mesures préventives : compression locale, éviter aspirine/AINS, injections IM.</p>
-                </div>
-            </section>
-
-            <!-- Conclusion -->
-            <section class="section-block" id="section-conclusion">
-                <h2 class="section-title reveal">Conclusion</h2>
-                <div class="card reveal reveal-delay-1">
-                    <p>Le diagnostic de la maladie de Von Willebrand reste un défi. La multiplicité des tests et leur répétition sont souvent nécessaires. Un diagnostic précis est indispensable pour un traitement adapté.</p>
-                </div>
-            </section>
-
-            <!-- Références -->
-            <section class="section-block" id="section-references" style="border-bottom: none;">
-                <h2 class="section-title reveal">Références</h2>
-                <div class="card reveal reveal-delay-1" style="font-size:0.9rem; color:var(--text-secondary);">
-                    <p>Levy JP, Varet B et coll. Physiologie de l’hémostase primaire. Hématologie et transfusion. Paris : Collection Abrégés Masson, 2001.</p>
-                    <p>Bellucci, Sylvia. Physiologie de l'hémostase primaire. EMC - Hématologie, 2005.</p>
-                    <p>Annie Bezeaud, Marie-Claude Guillin. Physiologie de la coagulation. EMC - Hématologie. 2001.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        <i class="fas fa-gavel" style="color: var(--primary); margin-right: 8px;"></i>
+                        <strong>Rappel légal en Algérie :</strong> Les médicaments du <strong>Palier 2</strong> (Codéine, Tramadol) et du <strong>Palier 3</strong> sont soumis à une ordonnance sécurisée (stupéfiants ou psychotropes) et leur dispensation est strictement contrôlée. Une surveillance rapprochée est obligatoire pour éviter la dépendance et les effets secondaires graves.
+                    </p>
                 </div>
             </section>
 
@@ -518,7 +487,7 @@
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // ==================== Side dots navigation ====================
-        const sectionIDs = ['intro', 'definition', 'fonctions', 'transmission', 'classification', 'clinique', 'diagnostic', 'traitement', 'conclusion'];
+        const sectionIDs = ['intro', 'palier1', 'palier2', 'palier3', 'precautions'];
         const dots = document.querySelectorAll('.dot');
 
         function updateActiveDot() {
