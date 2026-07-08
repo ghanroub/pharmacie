@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ==================== CSS Variables (identical to main site) ==================== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -60,7 +59,6 @@
             --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
         }
 
-        /* ==================== Base ==================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -93,7 +91,6 @@
             animation: none !important; opacity: 0.15 !important;
         }
 
-        /* ==================== Header (identical) ==================== */
         .top-nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
@@ -113,7 +110,6 @@
             50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); }
         }
         .nav-right { display: flex; align-items: center; gap: 15px; }
-        /* desktop menu */
         .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
         .nav-link {
             position: relative; padding: 10px 22px; color: var(--text-secondary); text-decoration: none;
@@ -127,7 +123,6 @@
             width: 22px; height: 3px; background: var(--primary); border-radius: 3px;
         }
 
-        /* Mobile menu overlay */
         .mobile-menu-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1100;
@@ -157,7 +152,6 @@
         .mobile-nav-link:hover { border-color: var(--primary); background: rgba(0,188,212,0.1); transform: translateX(6px); }
         .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
 
-        /* Theme toggle */
         .theme-toggle {
             width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-glass);
             background: var(--bg-glass); cursor: pointer; display: flex; align-items: center; justify-content: center;
@@ -177,7 +171,6 @@
         }
         .menu-toggle:hover { transform: rotate(90deg); }
 
-        /* ==================== Side dots ==================== */
         .side-dots {
             position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
             display: flex; flex-direction: column; gap: 22px;
@@ -197,7 +190,6 @@
         }
         .dot:hover .dot-tooltip { opacity: 1; }
 
-        /* ==================== Main content ==================== */
         .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
 
@@ -265,6 +257,16 @@
         .drug-name:first-of-type { margin-top: 0; }
         .drug-name i { font-size: 1rem; opacity: 0.8; }
 
+        /* رابط أسماء الأدوية */
+        .drug-link {
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+        .drug-link:hover { color: var(--accent); }
+
         .warning-box {
             background: rgba(255, 193, 7, 0.05);
             border-left: 4px solid var(--accent);
@@ -274,46 +276,38 @@
             font-weight: 500;
         }
 
-        /* Liens vers les images des médicaments */
-        .drug-image-link {
-            color: var(--primary);
-            text-decoration: underline dotted;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        .drug-image-link:hover {
-            color: var(--accent);
-            text-decoration: underline solid;
-        }
-
-        /* Pop-up (modale) */
+        /* Modal */
         .modal-overlay {
+            display: none; /* hidden by default */
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
-            z-index: 9999; display: flex; align-items: center; justify-content: center;
-            visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            z-index: 2000; align-items: center; justify-content: center;
+            flex-direction: column;
         }
-        .modal-overlay.active { visibility: visible; opacity: 1; }
+        .modal-overlay.show {
+            display: flex;
+        }
         .modal-content {
-            background: var(--bg-card); border: 1px solid var(--border-glass);
-            border-radius: 24px; padding: 30px; max-width: 500px; width: 90%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5); text-align: center;
-            transform: scale(0.95); transition: transform 0.3s ease;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 90%;
+            max-height: 90vh;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            backdrop-filter: blur(25px);
+            position: relative;
         }
-        .modal-overlay.active .modal-content { transform: scale(1); }
         .modal-close {
-            position: absolute; top: 15px; right: 15px; background: var(--bg-glass);
-            border: 1px solid var(--border-glass); border-radius: 50%; width: 40px; height: 40px;
-            font-size: 1.2rem; color: var(--text-heading); cursor: pointer;
-            transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+            position: absolute; top: 12px; right: 16px;
+            font-size: 2rem; color: var(--text-heading); cursor: pointer;
+            transition: transform 0.2s;
         }
-        .modal-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
-        .modal-drug-image {
-            max-width: 100%; max-height: 300px; border-radius: 12px;
-            margin: 15px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        .modal-drug-title {
-            color: var(--accent); font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;
+        .modal-close:hover { transform: rotate(90deg); }
+        #modalImage {
+            max-width: 300px; max-height: 300px; border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4); margin-bottom: 15px;
         }
 
         /* Footer */
@@ -343,12 +337,10 @@
 </head>
 <body data-theme="dark">
 
-    <!-- Star background -->
     <div class="universe-bg">
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -373,7 +365,6 @@
         </div>
     </nav>
 
-    <!-- Mobile menu overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -390,160 +381,210 @@
         </div>
     </div>
 
-    <!-- Side dots for lesson navigation -->
     <div class="side-dots">
         <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
-        <div class="dot" data-dot="palier1"><span class="dot-tooltip">Palier I</span></div>
-        <div class="dot" data-dot="palier2"><span class="dot-tooltip">Palier II</span></div>
-        <div class="dot" data-dot="palier3"><span class="dot-tooltip">Palier III</span></div>
-        <div class="dot" data-dot="rappel"><span class="dot-tooltip">Règles d'or</span></div>
+        <div class="dot" data-dot="niveau1"><span class="dot-tooltip">Niveau 1</span></div>
+        <div class="dot" data-dot="niveau2"><span class="dot-tooltip">Niveau 2</span></div>
+        <div class="dot" data-dot="niveau3"><span class="dot-tooltip">Niveau 3</span></div>
+        <div class="dot" data-dot="resume"><span class="dot-tooltip">Résumé</span></div>
     </div>
 
-    <!-- Main content -->
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- Hero / Introduction -->
+            <!-- Introduction / Hero -->
             <section class="hero-section" id="section-intro">
                 <div class="hero-badge reveal">
-                    <i class="fas fa-capsules"></i> Pharmacologie
+                    <i class="fas fa-capsules"></i> Pharmacologie – Antalgiques
                 </div>
-                <h1 class="hero-title reveal reveal-delay-1">Classification OMS des Antalgiques</h1>
+                <h1 class="hero-title reveal reveal-delay-1">LES ANTALGIQUES<br><span style="font-size:0.8em;">(SELON L'OMS)</span></h1>
                 <p class="hero-subtitle reveal reveal-delay-2">
-                    L'Organisation Mondiale de la Santé (OMS) classe les antalgiques en trois paliers, utilisés en fonction de l'intensité de la douleur.
+                    L'Organisation Mondiale de la Santé (OMS) classe les antalgiques en trois niveaux selon l'intensité de la douleur. Le traitement doit être débuté par le niveau le plus faible et être augmenté progressivement si la douleur persiste.
                 </p>
-                <div class="card reveal reveal-delay-3" style="text-align: left; max-width: 700px;">
-                    <p style="font-size: 1.1rem;"><strong>Palier I :</strong> Douleurs légères à modérées.</p>
-                    <p style="font-size: 1.1rem;"><strong>Palier II :</strong> Douleurs modérées à intenses.</p>
-                    <p style="font-size: 1.1rem;"><strong>Palier III :</strong> Douleurs intenses à très intenses.</p>
-                    <p style="margin-top: 10px; font-style: italic;">Il est essentiel de respecter cette progression : on commence par le Palier I, et si la douleur persiste, on passe au Palier II, puis au III.</p>
+            </section>
+
+            <!-- Niveau 1 -->
+            <section class="section-block" id="section-niveau1">
+                <h2 class="section-title reveal">NIVEAU 1 : Antalgiques non opioïdes</h2>
+                <p class="section-subtitle reveal">Indiqués dans les douleurs légères à modérées.</p>
+
+                <!-- Paracétamol -->
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 1. Paracétamol (Acétaminophène)</div>
+                    <p><strong>Noms commerciaux :</strong>
+                        <span class="drug-link" data-drug="Doliprane">Doliprane</span>,
+                        <span class="drug-link" data-drug="Dafalgan">Dafalgan</span>,
+                        <span class="drug-link" data-drug="Dolyc">Dolyc</span>,
+                        <span class="drug-link" data-drug="Panadol">Panadol</span>,
+                        <span class="drug-link" data-drug="Dolipriv">Dolipriv</span>,
+                        <span class="drug-link" data-drug="Paramol">Paramol</span>,
+                        <span class="drug-link" data-drug="Paralgan">Paralgan</span>,
+                        <span class="drug-link" data-drug="Saprol">Saprol</span>,
+                        <span class="drug-link" data-drug="Expandol">Expandol</span>,
+                        <span class="drug-link" data-drug="Efferalgan">Efferalgan</span>
+                    </p>
+                    <p><strong>Formes pharmaceutiques :</strong> Comprimés 500 mg, 1 g, effervescents, gélules, sachets, sirop, suspension buvable, suppositoires, solution injectable (usage hospitalier).</p>
+                    <p><strong>Posologie :</strong> Adulte : 500 mg à 1 g par prise, toutes les 4 à 6 heures, max 3 g/jour (4 g sous avis médical). Enfant : 10–15 mg/kg par prise, toutes les 6 h, max 60 mg/kg/j.</p>
+                    <p><strong>Mode d'administration :</strong> Voie orale de préférence, pendant ou en dehors des repas.</p>
+                    <p><strong>Mécanisme d'action :</strong> Inhibition centrale de la cyclo-oxygénase (COX), diminuant la synthèse des prostaglandines. Très faible activité anti-inflammatoire.</p>
+                    <p><strong>Indications :</strong> Céphalées, fièvre, douleurs dentaires, musculaires, articulaires légères, douleurs post-opératoires légères.</p>
+                    <p><strong>Contre-indications :</strong> Insuffisance hépatique sévère, alcoolisme chronique, allergie au paracétamol.</p>
+                    <p><strong>Interactions :</strong> Alcool (hépatotoxicité), rifampicine, phénytoïne, carbamazépine (toxicité hépatique), warfarine (↑ INR en usage prolongé).</p>
+                </div>
+
+                <!-- Aspirine -->
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 2. Acide acétylsalicylique (Aspirine)</div>
+                    <p><strong>Noms commerciaux :</strong>
+                        <span class="drug-link" data-drug="Aspirine">Aspirine</span>,
+                        <span class="drug-link" data-drug="Aspegic">Aspegic</span>,
+                        <span class="drug-link" data-drug="Catalgine">Catalgine</span>
+                    </p>
+                    <p><strong>Formes :</strong> Comprimés, effervescents, sachets, formes injectables.</p>
+                    <p><strong>Posologie :</strong> Douleur : 500 mg – 1 g toutes les 4–6 h, max 3 g/j. Faible dose (75–100 mg/j) : antiagrégant plaquettaire.</p>
+                    <p><strong>Mode d'administration :</strong> Après les repas avec un grand verre d'eau.</p>
+                    <p><strong>Mécanisme :</strong> Inhibition irréversible des COX-1 et COX-2 → ↓ prostaglandines et thromboxane A₂.</p>
+                    <p><strong>Indications :</strong> Douleurs, fièvre, maladies inflammatoires, prévention cardiovasculaire (faibles doses).</p>
+                    <p><strong>Contre-indications :</strong> Ulcère gastrique, hémorragie digestive, allergie aux AINS, asthme induit par AINS, enfant avec infection virale (syndrome de Reye), grossesse (3ᵉ trimestre).</p>
+                    <p><strong>Interactions :</strong> Anticoagulants, antiagrégants, corticoïdes, autres AINS, méthotrexate → ↑ risque hémorragique.</p>
+                </div>
+
+                <!-- AINS -->
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 3. Les AINS</div>
+                    <p><strong>Principales molécules :</strong> Ibuprofène, Diclofénac, Kétoprofène, Naproxène, Indométacine.</p>
+                    <p><strong>Noms commerciaux fréquents :</strong>
+                        <span class="drug-link" data-drug="Brufen">Brufen (Ibuprofène)</span>,
+                        <span class="drug-link" data-drug="Voltarène">Voltarène (Diclofénac)</span>,
+                        <span class="drug-link" data-drug="Profénid">Profénid (Kétoprofène)</span>,
+                        <span class="drug-link" data-drug="Naprosyne">Naprosyne (Naproxène)</span>
+                    </p>
+                    <p><strong>Formes :</strong> Comprimés, gélules, sachets, sirop, suppositoires, gel, injectable.</p>
+                    <p><strong>Mécanisme :</strong> Blocage réversible des COX-1 et COX-2 → ↓ prostaglandines → effets antalgique, anti-inflammatoire, antipyrétique.</p>
+                    <p><strong>Indications :</strong> Arthrose, polyarthrite, entorses, lombalgies, douleurs musculaires, dysménorrhée.</p>
+                    <p><strong>Contre-indications :</strong> Ulcère gastro-duodénal, insuffisance rénale, grossesse (3ᵉ trimestre), allergie aux AINS.</p>
+                    <p><strong>Interactions :</strong> IEC, diurétiques, anticoagulants, corticoïdes, lithium, méthotrexate.</p>
                 </div>
             </section>
 
-            <!-- Palier I -->
-            <section class="section-block" id="section-palier1">
-                <h2 class="section-title reveal">Palier I : Antalgiques Non-Opioïdes</h2>
+            <!-- Niveau 2 -->
+            <section class="section-block" id="section-niveau2">
+                <h2 class="section-title reveal">NIVEAU 2 : Opioïdes faibles</h2>
+                <p class="section-subtitle reveal">Indiqués lorsque les antalgiques du niveau 1 deviennent insuffisants.</p>
+
                 <div class="card reveal reveal-delay-1">
-                    <p><strong>Objectif :</strong> Traiter les douleurs légères à modérées (céphalées, courbatures, fièvre).</p>
-                    <p><strong>Mécanisme d'action :</strong> Ils agissent principalement en périphérie en inhibant la synthèse des prostaglandines.</p>
-
-                    <!-- Paracétamol -->
-                    <div class="drug-name"><i class="fas fa-pills"></i> Paracétamol</div>
-                    <p><strong>Noms commerciaux :</strong> 
-                        <span class="drug-image-link" data-drug="Doliprane">Doliprane®</span>, 
-                        <span class="drug-image-link" data-drug="Efferalgan">Efferalgan®</span>, 
-                        <span class="drug-image-link" data-drug="Dafalgan">Dafalgan®</span>.
+                    <div class="drug-name"><i class="fas fa-pills"></i> 1. Tramadol</div>
+                    <p><strong>Noms commerciaux :</strong>
+                        <span class="drug-link" data-drug="Tramadol">Tramadol</span>,
+                        <span class="drug-link" data-drug="Dolex">Dolex</span>,
+                        <span class="drug-link" data-drug="Supramadol">Supramadol</span>,
+                        <span class="drug-link" data-drug="Zodid">Zodid</span>
                     </p>
-                    <p><strong>Formes :</strong> Comprimés (500 mg, 1g), sachets, suppositoires.</p>
-                    <p><strong>Posologie :</strong> 500 mg à 1g par prise, toutes les 4 à 6h, max 3g/jour.</p>
-                    <p><strong>Indications :</strong> Douleur et fièvre. Pas d'effet anti-inflammatoire.</p>
-                    <p><strong>Contre-indications :</strong> Insuffisance hépatique sévère.</p>
-                    <p><strong>Interactions :</strong> Risque de toxicité hépatique avec l'alcool.</p>
+                    <p><strong>Formes :</strong> Gélules, comprimés LP, gouttes, injectable.</p>
+                    <p><strong>Posologie :</strong> 50–100 mg toutes les 6 h, max 400 mg/j.</p>
+                    <p><strong>Mécanisme :</strong> Agoniste faible des récepteurs μ-opioïdes + inhibition de la recapture de la sérotonine et de la noradrénaline.</p>
+                    <p><strong>Indications :</strong> Douleurs modérées à sévères, post-opératoires, cancéreuses modérées.</p>
+                    <p><strong>Effets indésirables :</strong> Nausées, vomissements, constipation, somnolence, vertiges.</p>
+                    <p><strong>Contre-indications :</strong> Épilepsie non contrôlée, association IMAO, intoxication alcoolique aiguë.</p>
+                    <p><strong>Interactions :</strong> ISRS, IMAO, alcool, benzodiazépines → risque de syndrome sérotoninergique ou dépression respiratoire.</p>
+                </div>
 
-                    <!-- Ibuprofène -->
-                    <div class="drug-name"><i class="fas fa-pills"></i> Ibuprofène</div>
-                    <p><strong>Noms commerciaux :</strong> 
-                        <span class="drug-image-link" data-drug="Advil">Advil®</span>, 
-                        <span class="drug-image-link" data-drug="Algifene">Algifène®</span>, 
-                        <span class="drug-image-link" data-drug="Brufen">Brufen®</span>, 
-                        <span class="drug-image-link" data-drug="Nurofen">Nurofen®</span>.
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 2. Paracétamol + Tramadol</div>
+                    <p><strong>Associations disponibles :</strong>
+                        <span class="drug-link" data-drug="Di-Dolex">Di-Dolex</span>,
+                        <span class="drug-link" data-drug="Xamadol">Xamadol</span>,
+                        <span class="drug-link" data-drug="Planadix Advance">Planadix Advance</span>
                     </p>
-                    <p><strong>Formes :</strong> Comprimés (400 mg, 600 mg), gélules, suspensions.</p>
-                    <p><strong>Posologie :</strong> 400 mg 3 à 4 fois par jour.</p>
+                    <p>Composition habituelle : 325 mg paracétamol + 37,5 mg tramadol.</p>
+                    <p>Posologie : 1–2 comprimés toutes les 6 h, max 8 comprimés/j.</p>
+                    <p>Indications : Douleurs modérées à sévères lorsque le paracétamol seul est insuffisant.</p>
+                </div>
 
-                    <!-- Diclofénac -->
-                    <div class="drug-name"><i class="fas fa-pills"></i> Diclofénac</div>
-                    <p><strong>Noms commerciaux :</strong> 
-                        <span class="drug-image-link" data-drug="Voltarene">Voltarène®</span>, 
-                        <span class="drug-image-link" data-drug="Voltum">Voltum®</span>.
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 3. Paracétamol + Codéine</div>
+                    <p><strong>Noms commerciaux :</strong>
+                        <span class="drug-link" data-drug="Codoliprane">Codoliprane</span>,
+                        <span class="drug-link" data-drug="Co-Dolyc">Co-Dolyc</span>,
+                        <span class="drug-link" data-drug="Co-Paramol">Co-Paramol</span>,
+                        <span class="drug-link" data-drug="Coparalgan">Coparalgan</span>,
+                        <span class="drug-link" data-drug="Planadix Confort">Planadix Confort</span>
                     </p>
-                    <p><strong>Formes :</strong> Comprimés gastro-résistants (25 mg, 50 mg), gélules LP (100 mg), gel.</p>
-                    <p><strong>Posologie :</strong> 50 mg 2 à 3 fois par jour.</p>
-
-                    <!-- Aspirine -->
-                    <div class="drug-name"><i class="fas fa-pills"></i> Aspirine (Acide Acétylsalicylique)</div>
-                    <p><strong>Nom commercial :</strong> 
-                        <span class="drug-image-link" data-drug="Aspegic">Aspegic®</span>.
-                    </p>
-                    <p><strong>Formes :</strong> Sachets de poudre (500 mg, 1g), comprimés.</p>
-                    <p><strong>Posologie :</strong> 500 mg à 1g par prise, jusqu'à 3g par jour.</p>
-
-                    <div class="warning-box">
-                        <i class="fas fa-exclamation-triangle" style="color: var(--accent); margin-right: 8px;"></i>
-                        <strong>Précautions AINS :</strong> Contre-indications : ulcère gastrique, insuffisance rénale sévère, allergie à l'aspirine. Ne jamais associer deux AINS. Risque accru d'hémorragie avec les anticoagulants.
-                    </div>
+                    <p>Dosages : 400 mg + 20 mg / 500 mg + 30 mg. Formes : comprimés, gélules.</p>
+                    <p>Posologie : 1 comprimé toutes les 6 h, max 8 comprimés/j.</p>
+                    <p>Mécanisme : La codéine (métabolisée en morphine par CYP2D6) agit sur les récepteurs μ, associée à l'action centrale du paracétamol.</p>
+                    <p>Indications : Douleurs modérées, dentaires, post-opératoires.</p>
+                    <p>Contre-indications : Insuffisance respiratoire, allaitement, enfant < 12 ans, métaboliseurs ultrarapides CYP2D6.</p>
+                    <p>Interactions : Alcool, benzodiazépines, autres opioïdes.</p>
                 </div>
             </section>
 
-            <!-- Palier II -->
-            <section class="section-block" id="section-palier2">
-                <h2 class="section-title reveal">Palier II : Opioïdes Faibles</h2>
+            <!-- Niveau 3 -->
+            <section class="section-block" id="section-niveau3">
+                <h2 class="section-title reveal">NIVEAU 3 : Opioïdes forts</h2>
+                <p class="section-subtitle reveal">Réservés aux douleurs intenses ou rebelles.</p>
+
                 <div class="card reveal reveal-delay-1">
-                    <p><strong>Objectif :</strong> Douleurs modérées à intenses, lorsque le Palier I est insuffisant.</p>
-                    <p><strong>Mécanisme :</strong> Fixation sur les récepteurs opioïdes du système nerveux central.</p>
-
-                    <div class="drug-name"><i class="fas fa-pills"></i> Codéine (associée au paracétamol)</div>
-                    <p><strong>Nom commercial :</strong> 
-                        <span class="drug-image-link" data-drug="DafalganCodeine">Dafalgan Codéine®</span>.
+                    <div class="drug-name"><i class="fas fa-pills"></i> 1. Morphine</div>
+                    <p><strong>Noms commerciaux :</strong>
+                        <span class="drug-link" data-drug="Skénan">Skénan</span>,
+                        <span class="drug-link" data-drug="Actiskénan">Actiskénan</span>
                     </p>
-                    <p><strong>Formes :</strong> Comprimés pelliculés (500 mg paracétamol / 30 mg codéine).</p>
-                    <p><strong>Posologie :</strong> 1 à 2 comprimés par prise, toutes les 6h.</p>
+                    <p>Formes : Gélules LP, LI, solution buvable, injectable.</p>
+                    <p>Posologie : Adaptée progressivement, sans dose plafond sous surveillance.</p>
+                    <p>Mécanisme : Agoniste puissant des récepteurs μ.</p>
+                    <p>Indications : Douleurs cancéreuses, post-opératoires sévères, soins palliatifs.</p>
+                    <p>Contre-indications : Dépression respiratoire, crise d'asthme aiguë, iléus paralytique.</p>
+                    <p>Interactions : Alcool, benzodiazépines, hypnotiques, autres dépresseurs du SNC.</p>
+                </div>
 
-                    <div class="drug-name"><i class="fas fa-pills"></i> Tramadol</div>
-                    <p><strong>Nom commercial :</strong> 
-                        <span class="drug-image-link" data-drug="Contramal">Contramal®</span>.
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 2. Buprénorphine</div>
+                    <p><strong>Noms commerciaux :</strong>
+                        <span class="drug-link" data-drug="Temgesic">Temgesic</span>,
+                        <span class="drug-link" data-drug="Buprénal">Buprénal</span>
                     </p>
-                    <p><strong>Formes :</strong> Gélules (50 mg), comprimés LP (100, 150, 200 mg), suppositoires (100 mg).</p>
-                    <p><strong>Posologie :</strong> 50 mg (LI) ou 100 mg 1-2 fois/jour (LP).</p>
+                    <p>Formes : Comprimés sublinguaux, injectable, patch transdermique.</p>
+                    <p>Particularité : Agoniste partiel μ, effet plafond sur la dépression respiratoire.</p>
+                </div>
 
-                    <div class="warning-box">
-                        <i class="fas fa-exclamation-triangle" style="color: var(--accent); margin-right: 8px;"></i>
-                        <strong>Précautions :</strong> Constipation, nausées, somnolence, dépendance. Contre-indiqués en cas d'insuffisance respiratoire sévère. Majoration de la sédation avec alcool, benzodiazépines et certains antidépresseurs.
-                    </div>
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 3. Oxycodone</div>
+                    <p><strong>Nom commercial :</strong>
+                        <span class="drug-link" data-drug="OxyNorm">OxyNorm</span>
+                    </p>
+                    <p>Formes : Gélules, comprimés LP, solution buvable.</p>
+                    <p>Indications : Douleurs cancéreuses et douleurs sévères chroniques.</p>
+                </div>
+
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 4. Alfentanil</div>
+                    <p><strong>Nom commercial :</strong>
+                        <span class="drug-link" data-drug="Rapifen">Rapifen</span>
+                    </p>
+                    <p>Forme : Injectable. Utilisation : anesthésie générale et chirurgie.</p>
+                </div>
+
+                <div class="card reveal reveal-delay-1">
+                    <div class="drug-name"><i class="fas fa-pills"></i> 5. Fentanyl</div>
+                    <p><strong>Nom commercial :</strong>
+                        <span class="drug-link" data-drug="Durogesic">Durogesic</span>
+                    </p>
+                    <p>Formes : Patch transdermique, injectable, sprays transmuqueux.</p>
+                    <p>Mécanisme : Agoniste μ très puissant (50–100 fois la morphine).</p>
+                    <p>Indications : Douleurs cancéreuses chroniques, douleurs très sévères, anesthésie.</p>
+                    <p>Contre-indications : Insuffisance respiratoire sévère, douleur aiguë chez patient naïf aux opioïdes (patchs).</p>
+                    <p>Interactions : Alcool, benzodiazépines, macrolides, azolés antifongiques, inhibiteurs CYP3A4 → ↑ risque dépression respiratoire.</p>
                 </div>
             </section>
 
-            <!-- Palier III -->
-            <section class="section-block" id="section-palier3">
-                <h2 class="section-title reveal">Palier III : Opioïdes Forts</h2>
+            <!-- Résumé -->
+            <section class="section-block" id="section-resume">
+                <h2 class="section-title reveal">Résumé de l'échelle analgésique de l'OMS</h2>
                 <div class="card reveal reveal-delay-1">
-                    <p><strong>Objectif :</strong> Douleurs intenses à très intenses (dernier recours).</p>
-                    <p><strong>Mécanisme :</strong> Agonistes morphiniques purs, action puissante sur le SNC.</p>
-
-                    <div class="drug-name"><i class="fas fa-pills"></i> Morphine</div>
-                    <p><strong>Noms commerciaux :</strong> 
-                        <span class="drug-image-link" data-drug="Actiskenan">Actiskenan®</span>, 
-                        <span class="drug-image-link" data-drug="Skenan">Skenan®</span>, 
-                        <span class="drug-image-link" data-drug="Moscontin">Moscontin®</span>.
-                    </p>
-                    <p><strong>Formes :</strong> Comprimés LI/LP, sirop, solution injectable.</p>
-
-                    <div class="drug-name"><i class="fas fa-pills"></i> Fentanyl</div>
-                    <p><strong>Nom commercial :</strong> 
-                        <span class="drug-image-link" data-drug="Durogesic">Durogesic®</span>.
-                    </p>
-                    <p><strong>Formes :</strong> Patchs transdermiques.</p>
-
-                    <div class="drug-name"><i class="fas fa-pills"></i> Autres</div>
-                    <p>Oxycodone, Hydromorphone, Buprénorphine : également disponibles.</p>
-
-                    <div class="warning-box">
-                        <i class="fas fa-exclamation-triangle" style="color: var(--accent); margin-right: 8px;"></i>
-                        <strong>Risques majeurs :</strong> Dépression respiratoire, somnolence sévère, constipation, dépendance. Contre-indiqués en cas d'insuffisance respiratoire non ventilée. Risque vital avec alcool, benzodiazépines et dépresseurs du SNC.
-                    </div>
-                </div>
-            </section>
-
-            <!-- Rappel des règles d'or -->
-            <section class="section-block" id="section-rappel">
-                <h2 class="section-title reveal">Rappel des Règles d'Or</h2>
-                <div class="card reveal reveal-delay-1">
-                    <ul style="font-size: 1.1rem; line-height: 2;">
-                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Respecter l'escalade thérapeutique : commencer par le palier I.</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Ne pas associer deux AINS entre eux.</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Surveiller les effets secondaires, surtout la dépendance et la constipation avec les opioïdes.</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Les opioïdes (palier II et III) sont des substances contrôlées et nécessitent une prescription sur ordonnance sécurisée.</li>
-                    </ul>
+                    <p><strong>Niveau 1 :</strong> Paracétamol, Aspirine et autres AINS → douleurs légères à modérées.</p>
+                    <p><strong>Niveau 2 :</strong> Tramadol, Codéine (souvent associés au paracétamol) → douleurs modérées à sévères lorsque le niveau 1 est insuffisant.</p>
+                    <p><strong>Niveau 3 :</strong> Morphine, Buprénorphine, Oxycodone, Alfentanil, Fentanyl → douleurs sévères, notamment cancéreuses ou post-opératoires, sous surveillance médicale.</p>
                 </div>
             </section>
 
@@ -551,11 +592,11 @@
     </div>
 
     <!-- Modal pour les images des médicaments -->
-    <div class="modal-overlay" id="drugModal">
+    <div id="drugModal" class="modal-overlay">
         <div class="modal-content">
-            <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
-            <div class="modal-drug-title" id="modalTitle"></div>
-            <img src="" alt="Image du médicament" class="modal-drug-image" id="modalImage">
+            <span class="modal-close" id="closeModalBtn">&times;</span>
+            <img id="modalImage" src="" alt="Image du médicament">
+            <p id="modalDrugName" style="font-weight:600; margin-top:10px;"></p>
         </div>
     </div>
 
@@ -573,7 +614,7 @@
     </footer>
 
     <script>
-        // ==================== Create stars ====================
+        // Étoiles
         function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -593,14 +634,14 @@
         }
         createStars();
 
-        // ==================== Reveal animation ====================
+        // Animation reveal
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== Side dots navigation ====================
-        const sectionIDs = ['intro', 'palier1', 'palier2', 'palier3', 'rappel'];
+        // Side dots navigation
+        const sectionIDs = ['intro', 'niveau1', 'niveau2', 'niveau3', 'resume'];
         const dots = document.querySelectorAll('.dot');
 
         function updateActiveDot() {
@@ -626,7 +667,7 @@
             });
         });
 
-        // ==================== Mobile menu ====================
+        // Menu mobile
         const menuToggle = document.getElementById('menuToggle');
         const mobileOverlay = document.getElementById('mobileMenuOverlay');
         const closeBtn = document.getElementById('closeMobileMenu');
@@ -645,7 +686,7 @@
             }
         });
 
-        // ==================== Hide nav on scroll ====================
+        // Hide nav on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -655,7 +696,7 @@
             lastScroll = st;
         }, { passive: true });
 
-        // ==================== Theme toggle ====================
+        // Thème
         const themeToggle = document.getElementById('themeToggle');
         const htmlEl = document.documentElement;
         const saved = localStorage.getItem('theme') || 'dark';
@@ -667,60 +708,44 @@
             localStorage.setItem('theme', next);
         });
 
-        // ==================== Modal pour images des médicaments ====================
-        const drugImageMap = {
-            'Doliprane': 'https://via.placeholder.com/300x200/00bcd4/ffffff?text=Doliprane',
-            'Efferalgan': 'https://via.placeholder.com/300x200/00bcd4/ffffff?text=Efferalgan',
-            'Dafalgan': 'https://via.placeholder.com/300x200/00bcd4/ffffff?text=Dafalgan',
-            'Advil': 'https://via.placeholder.com/300x200/e74c3c/ffffff?text=Advil',
-            'Algifene': 'https://via.placeholder.com/300x200/e74c3c/ffffff?text=Algifene',
-            'Brufen': 'https://via.placeholder.com/300x200/e74c3c/ffffff?text=Brufen',
-            'Nurofen': 'https://via.placeholder.com/300x200/e74c3c/ffffff?text=Nurofen',
-            'Voltarene': 'https://via.placeholder.com/300x200/f39c12/ffffff?text=Voltarene',
-            'Voltum': 'https://via.placeholder.com/300x200/f39c12/ffffff?text=Voltum',
-            'Aspegic': 'https://via.placeholder.com/300x200/27ae60/ffffff?text=Aspegic',
-            'DafalganCodeine': 'https://via.placeholder.com/300x200/8e44ad/ffffff?text=Dafalgan+Codéine',
-            'Contramal': 'https://via.placeholder.com/300x200/8e44ad/ffffff?text=Contramal',
-            'Actiskenan': 'https://via.placeholder.com/300x200/c0392b/ffffff?text=Actiskenan',
-            'Skenan': 'https://via.placeholder.com/300x200/c0392b/ffffff?text=Skenan',
-            'Moscontin': 'https://via.placeholder.com/300x200/c0392b/ffffff?text=Moscontin',
-            'Durogesic': 'https://via.placeholder.com/300x200/2980b9/ffffff?text=Durogesic'
-        };
+        // ----- Modal pour les images des médicaments -----
+        const modal = document.getElementById('drugModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalDrugName = document.getElementById('modalDrugName');
+        const closeModalBtn = document.getElementById('closeModalBtn');
 
-        const modalOverlay = document.getElementById('drugModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const closeModalBtn = document.getElementById('closeModal');
-
-        function openDrugModal(drugKey) {
-            const imgUrl = drugImageMap[drugKey] || `https://via.placeholder.com/300x200/aaaaaa/ffffff?text=${encodeURIComponent(drugKey)}`;
-            modalImage.src = imgUrl;
-            modalImage.alt = drugKey;
-            modalTitle.textContent = drugKey.replace('Codeine', ' Codéine').replace(/([A-Z])/g, ' $1').trim();
-            modalOverlay.classList.add('active');
+        function openModal(drugName) {
+            // Génération d'une image placeholder avec le nom du médicament
+            const imageUrl = `https://placehold.co/400x400?text=${encodeURIComponent(drugName)}&font=roboto`;
+            modalImg.src = imageUrl;
+            modalDrugName.textContent = drugName;
+            modal.classList.add('show');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeDrugModal() {
-            modalOverlay.classList.remove('active');
+        function closeModalFunc() {
+            modal.classList.remove('show');
             document.body.style.overflow = '';
         }
 
-        document.querySelectorAll('.drug-image-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const drugKey = link.getAttribute('data-drug');
-                openDrugModal(drugKey);
-            });
+        closeModalBtn.addEventListener('click', closeModalFunc);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModalFunc();
         });
 
-        closeModalBtn.addEventListener('click', closeDrugModal);
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeDrugModal();
+        // Écouteur global sur les liens de médicaments
+        document.body.addEventListener('click', (e) => {
+            const link = e.target.closest('.drug-link');
+            if (link) {
+                const drug = link.getAttribute('data-drug');
+                if (drug) openModal(drug);
+            }
         });
+
+        // Fermeture avec la touche Échap
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-                closeDrugModal();
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModalFunc();
             }
         });
     </script>
