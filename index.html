@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="dark">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
@@ -19,18 +19,18 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="This site was created to help pharmacy students easily understand their modules.">
-    <meta name="keywords" content="pharmacy, pharmaceutical studies, pharmacy courses, GhaniPharma">
+    <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules.">
+    <meta name="keywords" content="pharmacie, études pharmaceutiques, cours de pharmacie, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="GhaniPharma - Pharmaceutical Educational Platform">
+    <meta property="og:title" content="GhaniPharma - Plateforme Éducative Pharmaceutique">
     <meta name="theme-color" content="#0a0a1a">
-    <title>GhaniPharma | Educational Platform</title>
+    <title>GhaniPharma | Plateforme Éducative</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ==================== CSS Variables for both themes ==================== */
+        /* ==================== Variables CSS pour les deux thèmes ==================== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -77,7 +77,7 @@
             --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
         }
 
-        /* ==================== Basics ==================== */
+        /* ==================== Fondamentaux ==================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         html {
@@ -94,7 +94,7 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
-        /* ==================== Background ==================== */
+        /* ==================== Arrière-plan ==================== */
         .universe-bg {
             position: fixed;
             top: 0;
@@ -156,7 +156,7 @@
             opacity: 0.15 !important;
         }
 
-        /* ==================== Top Navigation Bar ==================== */
+        /* ==================== Barre de navigation supérieure ==================== */
         .top-nav {
             position: fixed;
             top: 0;
@@ -212,7 +212,6 @@
             font-size: 1.4rem;
             color: white;
             animation: pulse 2.5s ease-in-out infinite;
-            /* إزالة الخلفية إذا كانت الصورة شفافة أو تريد إظهارها بالكامل */
             background: none;
         }
 
@@ -233,7 +232,7 @@
             gap: 15px;
         }
 
-        /* --- Normal horizontal menu (large screen) --- */
+        /* --- Menu horizontal normal (grand écran) --- */
         .nav-links {
             display: flex;
             align-items: center;
@@ -279,7 +278,7 @@
             border-radius: 3px;
         }
 
-        /* ==================== POPUP MOBILE MENU ==================== */
+        /* ==================== MENU MOBILE (POPUP) ==================== */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -369,7 +368,7 @@
             font-size: 1.3rem;
         }
 
-        /* ==================== Theme Toggle Button ==================== */
+        /* ==================== Bouton de changement de thème ==================== */
         .theme-toggle {
             width: 44px;
             height: 44px;
@@ -403,7 +402,7 @@
         [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
         [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
 
-        /* ==================== Mobile Menu Button ==================== */
+        /* ==================== Bouton menu mobile ==================== */
         .menu-toggle {
             display: none;
             background: none;
@@ -417,7 +416,7 @@
 
         .menu-toggle:hover { transform: rotate(90deg); }
 
-        /* ==================== Side Navigation (Dots) ==================== */
+        /* ==================== Navigation latérale (points) ==================== */
         .side-dots {
             position: fixed;
             top: 50%;
@@ -472,7 +471,7 @@
 
         .dot:hover .dot-tooltip { opacity: 1; }
 
-        /* ==================== Main Content ==================== */
+        /* ==================== Contenu principal ==================== */
         .main-wrapper {
             position: relative;
             z-index: 1;
@@ -518,7 +517,7 @@
         .reveal-delay-4 { transition-delay: 0.4s; }
         .reveal-delay-5 { transition-delay: 0.5s; }
 
-        /* ==================== Hero Section ==================== */
+        /* ==================== Section Accueil ==================== */
         .hero-section {
             display: flex;
             flex-direction: column;
@@ -613,7 +612,7 @@
             transform: translateY(-5px);
         }
 
-        /* ==================== Image Gallery ==================== */
+        /* ==================== Galerie d'images ==================== */
         .gallery-wrapper {
             width: 100%;
             max-width: 1000px;
@@ -659,7 +658,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* ==================== Section Titles ==================== */
+        /* ==================== Titres de section ==================== */
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
@@ -692,7 +691,7 @@
             border-bottom-color: var(--primary);
         }
 
-        /* ==================== About Page ==================== */
+        /* ==================== Page À propos ==================== */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -725,7 +724,7 @@
             pointer-events: none;
         }
 
-        /* ==================== Statistics ==================== */
+        /* ==================== Statistiques ==================== */
         .stats-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -905,7 +904,7 @@
             color: #9e9e9e;
         }
 
-        /* ==================== Contact Page ==================== */
+        /* ==================== Page Contact ==================== */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -997,7 +996,7 @@
             resize: vertical;
         }
 
-        /* ==================== Toast Notification ==================== */
+        /* ==================== Notification toast ==================== */
         .toast {
             position: fixed;
             top: 100px;
@@ -1021,7 +1020,7 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* ==================== Footer ==================== */
+        /* ==================== Pied de page ==================== */
         .site-footer {
             text-align: center;
             padding: 50px 20px;
@@ -1081,7 +1080,6 @@
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-            /* Hide normal horizontal menu */
             .nav-links {
                 display: none !important;
             }
@@ -1110,36 +1108,35 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Star Background -->
+    <!-- Fond étoilé -->
     <div class="universe-bg">
         <div class="stars" id="starsContainer"></div>
     </div>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">Sorry, only 4th year S1 and S2 courses are available at the moment.</div>
+    <!-- Notification toast -->
+    <div class="toast" id="toast">Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.</div>
 
-    <!-- Top Navigation Bar -->
+    <!-- Barre de navigation supérieure -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="#" class="nav-logo" onclick="scrollToSection('home'); return false;">
-                <!-- تم استبدال الإيموجي بالصورة -->
                 <span class="logo-icon">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
                 </span>
                 GhaniPharma
             </a>
             <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème" title="Changer le thème">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <!-- Horizontal menu (displayed only on desktop) -->
+                <!-- Menu horizontal (affiché uniquement sur desktop) -->
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><button class="nav-link active" data-nav="home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Home</button></li>
-                    <li><button class="nav-link" data-nav="about" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> About</button></li>
+                    <li><button class="nav-link active" data-nav="home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Accueil</button></li>
+                    <li><button class="nav-link" data-nav="about" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> À propos</button></li>
                     <li><button class="nav-link" data-nav="modules" onclick="scrollToSection('modules')"><i class="fas fa-book"></i> Modules</button></li>
                     <li><button class="nav-link" data-nav="contact" onclick="scrollToSection('contact')"><i class="fas fa-envelope"></i> Contact</button></li>
                 </ul>
@@ -1147,133 +1144,130 @@
         </div>
     </nav>
 
-    <!-- POPUP MOBILE MENU (overlay) -->
+    <!-- MENU MOBILE (POPUP) -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
             <div style="margin-bottom: 20px;">
-                <!-- تم استبدال الإيموجي بالصورة في القائمة المنبثقة أيضاً -->
                 <span class="logo-icon" style="display: inline-block; background: none;">
                     <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
                 </span>
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
             <div>
-                <a href="#" class="mobile-nav-link" data-nav-mobile="home"><i class="fas fa-home"></i> Home</a>
-                <a href="#" class="mobile-nav-link" data-nav-mobile="about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="home"><i class="fas fa-home"></i> Accueil</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="about"><i class="fas fa-info-circle"></i> À propos</a>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="modules"><i class="fas fa-book"></i> Modules</a>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="contact"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
     </div>
 
-    <!-- Side Navigation (Dots) -->
+    <!-- Navigation latérale (points) -->
     <div class="side-dots">
-        <div class="dot active" data-dot="home"><span class="dot-tooltip">Home</span></div>
-        <div class="dot" data-dot="about"><span class="dot-tooltip">About</span></div>
+        <div class="dot active" data-dot="home"><span class="dot-tooltip">Accueil</span></div>
+        <div class="dot" data-dot="about"><span class="dot-tooltip">À propos</span></div>
         <div class="dot" data-dot="modules"><span class="dot-tooltip">Modules</span></div>
         <div class="dot" data-dot="contact"><span class="dot-tooltip">Contact</span></div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Contenu principal -->
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- ==================== Section 1: Home ==================== -->
+            <!-- ==================== Section 1 : Accueil ==================== -->
             <section class="section-block" id="section-home">
                 <div class="hero-section">
                     <div class="hero-badge reveal">
-                        <i class="fas fa-graduation-cap"></i> Educational Platform
+                        <i class="fas fa-graduation-cap"></i> Plateforme Éducative
                     </div>
-                    <h1 class="hero-title reveal reveal-delay-1">Welcome to GhaniPharma</h1>
+                    <h1 class="hero-title reveal reveal-delay-1">Bienvenue sur GhaniPharma</h1>
                     <p class="hero-subtitle reveal reveal-delay-2">
-                        Your gateway to pharmaceutical knowledge. Courses and exams for all years of pharmacy studies.
+                        Votre passerelle vers le savoir pharmaceutique. Cours et examens pour toutes les années d'études en pharmacie.
                     </p>
                     <div class="hero-buttons reveal reveal-delay-3">
-                        
                         <button class="btn btn-outline" onclick="scrollToSection('about')">
-                            <i class="fas fa-info-circle"></i> Learn More
+                            <i class="fas fa-info-circle"></i> En savoir plus
                         </button>
                         <button class="btn btn-primary" onclick="scrollToSection('modules')">
-                            <i class="fas fa-book-open"></i> Explore Modules
+                            <i class="fas fa-book-open"></i> Explorer les modules
                         </button>
-                    
                     </div>
                 </div>
 
-                <!-- Image Gallery -->
+                <!-- Galerie d'images -->
                 <div class="gallery-wrapper reveal reveal-delay-4">
                     <div class="gallery-track" id="galleryTrack"></div>
                 </div>
             </section>
 
-            <!-- ==================== Section 2: About ==================== -->
+            <!-- ==================== Section 2 : À propos ==================== -->
             <section class="section-block" id="section-about">
                 <div class="about-grid">
                     <div class="about-image-container reveal">
                         <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_wis0hwis0hwis0hw.png" alt="GhaniPharma">
                     </div>
                     <div>
-                        <h2 class="section-title reveal reveal-delay-1">About Us</h2>
+                        <h2 class="section-title reveal reveal-delay-1">À propos de nous</h2>
                         <p class="section-subtitle reveal reveal-delay-2">
-                            This site was created to help pharmacy students easily understand their 
+                            Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs 
                             <span class="highlight-link" onclick="scrollToSection('modules')">modules</span>, 
-                            with exams for each subject and for each semester.
+                            avec des examens pour chaque matière et chaque semestre.
                         </p>
                         <p class="section-subtitle reveal reveal-delay-2">
-                            Our goal is to make pharmaceutical sciences accessible to everyone, 
-                            with reliable, simple content adapted to the university curriculum.
+                            Notre objectif est de rendre les sciences pharmaceutiques accessibles à tous, 
+                            avec un contenu fiable et simple adapté au programme universitaire.
                         </p>
                         <p class="section-subtitle reveal reveal-delay-3">
-                            Whether you are in your first year or at the end of your cycle, this site is made for you!
+                            Que vous soyez en première année ou en fin de cycle, ce site est fait pour vous !
                         </p>
                     </div>
                 </div>
 
-                <!-- Statistics -->
+                <!-- Statistiques -->
                 <div class="stats-row reveal reveal-delay-4">
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-users"></i></div>
                         <span class="stat-number" data-target="2419">0</span>
-                        <span class="stat-label">Visitors</span>
+                        <span class="stat-label">Visiteurs</span>
                     </div>
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
                         <span class="stat-number" data-target="5">0</span>
-                        <span class="stat-label">Contributors</span>
+                        <span class="stat-label">Contributeurs</span>
                     </div>
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-book-open"></i></div>
                         <span class="stat-number" data-target="19">0</span>
-                        <span class="stat-label">Lessons</span>
+                        <span class="stat-label">Cours</span>
                     </div>
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-star"></i></div>
                         <span class="stat-number" data-target="1">0</span>
-                        <span class="stat-label">Years Covered</span>
+                        <span class="stat-label">Années couvertes</span>
                     </div>
                 </div>
             </section>
             
-            <!-- ==================== Section 3: Modules ==================== -->
+            <!-- ==================== Section 3 : Modules ==================== -->
             <section class="section-block" id="section-modules">
-                <h2 class="section-title reveal"><i class="fas fa-book"></i> Available Modules</h2>
+                <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
-                    Select your year to discover the available modules. 
-                    Click on a subject or its image to access it directly.
+                    Sélectionnez votre année pour découvrir les modules disponibles. 
+                    Cliquez sur une matière ou son image pour y accéder directement.
                 </p>
                 <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
                 <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
             </section>
 
-            <!-- ==================== Section 4: Contact ==================== -->
+            <!-- ==================== Section 4 : Contact ==================== -->
             <section class="section-block" id="section-contact">
-                <h2 class="section-title reveal"><i class="fas fa-envelope"></i> Contact Us</h2>
+                <h2 class="section-title reveal"><i class="fas fa-envelope"></i> Contactez-nous</h2>
                 <div class="contact-grid">
                     <div class="contact-info-cards reveal reveal-delay-1">
                         <p class="section-subtitle">
-                            Do you have a question, a suggestion, or would you like to collaborate with us? 
-                            Feel free to contact us through one of the following means:
+                            Vous avez une question, une suggestion ou souhaitez collaborer avec nous ? 
+                            N'hésitez pas à nous contacter par l'un des moyens suivants :
                         </p>
                         <div class="contact-card">
                             <i class="fas fa-phone"></i>
@@ -1296,22 +1290,22 @@
                     <div class="contact-form-wrapper reveal reveal-delay-2">
                         <div id="formStatus" style="display:none; padding:15px; border-radius:14px; margin-bottom:20px; font-weight:600;"></div>
                         <form id="contactForm" action="https://formspree.io/f/mqaneerv" method="POST">
-                            <input type="hidden" name="_subject" value="New message from GhaniPharma">
-                            <input type="hidden" name="_language" value="en">
+                            <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
+                            <input type="hidden" name="_language" value="fr">
                             <div class="form-group">
-                                <label><i class="fas fa-user"></i> Your name</label>
-                                <input type="text" name="name" required placeholder="Enter your full name">
+                                <label><i class="fas fa-user"></i> Votre nom</label>
+                                <input type="text" name="name" required placeholder="Entrez votre nom complet">
                             </div>
                             <div class="form-group">
-                                <label><i class="fas fa-envelope"></i> Your email</label>
-                                <input type="email" name="email" required placeholder="Enter your email address">
+                                <label><i class="fas fa-envelope"></i> Votre email</label>
+                                <input type="email" name="email" required placeholder="Entrez votre adresse email">
                             </div>
                             <div class="form-group">
-                                <label><i class="fas fa-comment"></i> Your message</label>
-                                <textarea name="message" required placeholder="Type your message here..."></textarea>
+                                <label><i class="fas fa-comment"></i> Votre message</label>
+                                <textarea name="message" required placeholder="Tapez votre message ici..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-                                <i class="fas fa-paper-plane"></i> Send Message
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
                             </button>
                         </form>
                     </div>
@@ -1321,7 +1315,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Pied de page -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1331,11 +1325,11 @@
             <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <p class="copyright">&copy; 2025 GhaniPharma. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
     </footer>
 
     <script>
-        // ==================== Generate Stars ====================
+        // ==================== Génération des étoiles ====================
         function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -1366,7 +1360,7 @@
         }
         createStars();
 
-        // ==================== Image Gallery ====================
+        // ==================== Galerie d'images ====================
         const galleryImages = [
             "Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
             "The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg",
@@ -1418,7 +1412,7 @@
             allImages.forEach(img => {
                 const imgEl = document.createElement('img');
                 imgEl.src = BASE_IMG + img;
-                imgEl.alt = 'Pharmacy image';
+                imgEl.alt = 'Image de pharmacie';
                 imgEl.className = 'gallery-item';
                 imgEl.loading = 'lazy';
                 fragment.appendChild(imgEl);
@@ -1428,74 +1422,74 @@
         }
         buildGallery();
 
-        // ==================== Modules Data ====================
+        // ==================== Données des modules (traduits) ====================
         const modulesData = {
             annee1: {
-                title: "1st Year",
+                title: "1ère Année",
                 gradient: "linear-gradient(135deg, #6a1b9a, #4a148c)",
                 subjects: [
-                    { name: "ANATOMY", img: "The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg", sems: [1], available: false },
-                    { name: "CELL BIOLOGY", img: "t%C3%A9l%C3%A9chargement%20(3).jpeg", sems: [1,2,3], available: false },
-                    { name: "PLANT BIOLOGY", img: "How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg", sems: [1,2], available: false },
-                    { name: "BIOSTATISTICS", img: "%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg", sems: [1], available: false },
-                    { name: "GENERAL CHEMISTRY", img: "Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg", sems: [1,2], available: false },
-                    { name: "ORGANIC CHEMISTRY", img: "Chirality%2C%20a%20Primer%20(Updated).jfif", sems: [1,2], available: false },
-                    { name: "HISTORY OF PHARMACY", img: "G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg", sems: [1], available: false },
-                    { name: "COMPUTER SCIENCE", img: "Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg", sems: [1], available: false },
-                    { name: "PHYSIOLOGY", img: "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg", sems: [1], available: false },
-                    { name: "PHYSICS", img: "Client%20Challenge.jpeg", sems: [1], available: false },
-                    { name: "MEDICAL FRENCH", img: "Produits%20pharmaceutiques%20sur%20fond%20neutre.png", sems: [1], available: false }
+                    { name: "ANATOMIE", img: "The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg", sems: [1], available: false },
+                    { name: "BIOLOGIE CELLULAIRE", img: "t%C3%A9l%C3%A9chargement%20(3).jpeg", sems: [1,2,3], available: false },
+                    { name: "BIOLOGIE VÉGÉTALE", img: "How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg", sems: [1,2], available: false },
+                    { name: "BIOSTATISTIQUES", img: "%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg", sems: [1], available: false },
+                    { name: "CHIMIE GÉNÉRALE", img: "Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg", sems: [1,2], available: false },
+                    { name: "CHIMIE ORGANIQUE", img: "Chirality%2C%20a%20Primer%20(Updated).jfif", sems: [1,2], available: false },
+                    { name: "HISTOIRE DE LA PHARMACIE", img: "G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg", sems: [1], available: false },
+                    { name: "INFORMATIQUE", img: "Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg", sems: [1], available: false },
+                    { name: "PHYSIOLOGIE", img: "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg", sems: [1], available: false },
+                    { name: "PHYSIQUE", img: "Client%20Challenge.jpeg", sems: [1], available: false },
+                    { name: "FRANÇAIS MÉDICAL", img: "Produits%20pharmaceutiques%20sur%20fond%20neutre.png", sems: [1], available: false }
                 ]
             },
             annee2: {
-                title: "2nd Year",
+                title: "2ème Année",
                 gradient: "linear-gradient(135deg, #4a148c, #3f51b5)",
                 subjects: [
-                    { name: "BIOCHEMISTRY", img: "__files_hamster3d.com_stockbox_icon-hd720.jpg", sems: [1,2,3], available: false },
-                    { name: "BIOPHYSICS", img: "Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg", sems: [1,2,3], available: false },
-                    { name: "BOTANY", img: "t%C3%A9l%C3%A9chargement%20(2).jpeg", sems: [1,2], available: false },
-                    { name: "ANALYTICAL CHEMISTRY", img: "Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg", sems: [1,2], available: false },
-                    { name: "MINERAL CHEMISTRY", img: "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif", sems: [1,2], available: false },
-                    { name: "MEDICAL ENGLISH", img: "ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png", sems: [1], available: false },
-                    { name: "GENETICS", img: "Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg", sems: [1,2], available: false },
-                    { name: "PHYSIOPATHOLOGY", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download.jpg", sems: [1,2], available: false, externalImg: true }
+                    { name: "BIOCHIMIE", img: "__files_hamster3d.com_stockbox_icon-hd720.jpg", sems: [1,2,3], available: false },
+                    { name: "BIOPHYSIQUE", img: "Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg", sems: [1,2,3], available: false },
+                    { name: "BOTANIQUE", img: "t%C3%A9l%C3%A9chargement%20(2).jpeg", sems: [1,2], available: false },
+                    { name: "CHIMIE ANALYTIQUE", img: "Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg", sems: [1,2], available: false },
+                    { name: "CHIMIE MINÉRALE", img: "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif", sems: [1,2], available: false },
+                    { name: "ANGLAIS MÉDICAL", img: "ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png", sems: [1], available: false },
+                    { name: "GÉNÉTIQUE", img: "Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg", sems: [1,2], available: false },
+                    { name: "PHYSIOPATHOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download.jpg", sems: [1,2], available: false, externalImg: true }
                 ]
             },
             annee3: {
-                title: "3rd Year",
+                title: "3ème Année",
                 gradient: "linear-gradient(135deg, #3f51b5, #2196f3)",
                 subjects: [
-                    { name: "ANALYTICAL CHEMISTRY", img: "15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg", sems: [1,2], available: false },
-                    { name: "THERAPEUTIC CHEMISTRY", img: "Pourquoi%20l'heure%20de%20vos%20repas%20est%20importante.jpeg", sems: [1,2,3], available: false },
-                    { name: "GALENIC PHARMACY", img: "4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg", sems: [1,2,3], available: false },
-                    { name: "PHARMACOGNOSY", img: "t%C3%A9l%C3%A9chargement.jpeg", sems: [1,2], available: false },
-                    { name: "PHARMACOLOGY", img: "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg", sems: [1,2,3], available: false },
-                    { name: "SEMIOLOGY", img: "Symptoms%20of%20Heart%20Attack.jpeg", sems: [1], available: false }
+                    { name: "CHIMIE ANALYTIQUE", img: "15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg", sems: [1,2], available: false },
+                    { name: "CHIMIE THÉRAPEUTIQUE", img: "Pourquoi%20l'heure%20de%20vos%20repas%20est%20importante.jpeg", sems: [1,2,3], available: false },
+                    { name: "PHARMACIE GALÉNIQUE", img: "4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg", sems: [1,2,3], available: false },
+                    { name: "PHARMACOGNOSIE", img: "t%C3%A9l%C3%A9chargement.jpeg", sems: [1,2], available: false },
+                    { name: "PHARMACOLOGIE", img: "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg", sems: [1,2,3], available: false },
+                    { name: "SÉMIOLOGIE", img: "Symptoms%20of%20Heart%20Attack.jpeg", sems: [1], available: false }
                 ]
             },
             annee4: {
-                title: "4th Year",
+                title: "4ème Année",
                 gradient: "linear-gradient(135deg, #2196f3, #00bcd4)",
                 subjects: [
-                    { name: "CLINICAL BIOCHEMISTRY", img: "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif", sems: [1,2,3], available: true, links: { 1: "BIOCHIMIE_CLINIQUE_S1.html", 2: "BIOCHIMIE_CLINIQUE_S2.html", 3: null } },
-                    { name: "HEMOBIOLOGY", img: "FFFFFFFFLHI.jpeg", sems: [1,2,3], available: true, links: { 1: "HEMOBIOLOGIE_S1.html", 2: "HEMOBIOLOGIE_S2.html", 3: null } },
-                    { name: "IMMUNOLOGY", img: "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg", sems: [1,2,3], available: true, links: { 1: "IMMUNOLOGIE_S1.html", 2: "IMMUNOLOGIE_S2.html", 3: null } },
-                    { name: "MICROBIOLOGY", img: "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg", sems: [1,2,3], available: true, links: { 1: "MICROBIOLOGIE_S1.html", 2: "MICROBIOLOGIE_S2.html", 3: null } },
-                    { name: "PARASITOLOGY", img: "t%C3%A9l%C3%A9chargement%20(8).jpeg", sems: [1,2,3], available: true, links: { 1: "PARASITOLOGIE_S1.html", 2: "PARASITOLOGIE_S2.html", 3: null } }
+                    { name: "BIOCHIMIE CLINIQUE", img: "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif", sems: [1,2,3], available: true, links: { 1: "BIOCHIMIE_CLINIQUE_S1.html", 2: "BIOCHIMIE_CLINIQUE_S2.html", 3: null } },
+                    { name: "HÉMOBIOLOGIE", img: "FFFFFFFFLHI.jpeg", sems: [1,2,3], available: true, links: { 1: "HEMOBIOLOGIE_S1.html", 2: "HEMOBIOLOGIE_S2.html", 3: null } },
+                    { name: "IMMUNOLOGIE", img: "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg", sems: [1,2,3], available: true, links: { 1: "IMMUNOLOGIE_S1.html", 2: "IMMUNOLOGIE_S2.html", 3: null } },
+                    { name: "MICROBIOLOGIE", img: "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg", sems: [1,2,3], available: true, links: { 1: "MICROBIOLOGIE_S1.html", 2: "MICROBIOLOGIE_S2.html", 3: null } },
+                    { name: "PARASITOLOGIE", img: "t%C3%A9l%C3%A9chargement%20(8).jpeg", sems: [1,2,3], available: true, links: { 1: "PARASITOLOGIE_S1.html", 2: "PARASITOLOGIE_S2.html", 3: null } }
                 ]
             },
             annee5: {
-                title: "5th Year",
+                title: "5ème Année",
                 gradient: "linear-gradient(135deg, #00bcd4, #009688)",
                 subjects: [
-                    { name: "PHARMACEUTICAL LAW", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png", sems: [1], available: false, externalImg: true },
-                    { name: "EPIDEMIOLOGY", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg", sems: [1], available: false, externalImg: true },
-                    { name: "PHARMACEUTICAL MANAGEMENT", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg", sems: [1], available: false, externalImg: true },
-                    { name: "HYDRO-BROMATOLOGY", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg", sems: [1,2], available: false, externalImg: true },
-                    { name: "CLINICAL PHARMACY", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif", sems: [1,2], available: false, externalImg: true },
-                    { name: "HOSPITAL PHARMACY", img: "", sems: [1], available: false },
-                    { name: "INDUSTRIAL PHARMACY", img: "16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png", sems: [1,2], available: false },
-                    { name: "TOXICOLOGY", img: "%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif", sems: [1,2,3], available: false }
+                    { name: "DROIT PHARMACEUTIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png", sems: [1], available: false, externalImg: true },
+                    { name: "ÉPIDÉMIOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg", sems: [1], available: false, externalImg: true },
+                    { name: "GESTION PHARMACEUTIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg", sems: [1], available: false, externalImg: true },
+                    { name: "HYDRO-BROMATOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg", sems: [1,2], available: false, externalImg: true },
+                    { name: "PHARMACIE CLINIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif", sems: [1,2], available: false, externalImg: true },
+                    { name: "PHARMACIE HOSPITALIÈRE", img: "", sems: [1], available: false },
+                    { name: "PHARMACIE INDUSTRIELLE", img: "16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png", sems: [1,2], available: false },
+                    { name: "TOXICOLOGIE", img: "%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif", sems: [1,2,3], available: false }
                 ]
             }
         };
@@ -1503,7 +1497,7 @@
         const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
         let currentYear = 'annee4';
 
-        // ==================== Scroll to Section ====================
+        // ==================== Défilement vers une section ====================
         function scrollToSection(sectionName) {
             const section = document.getElementById(`section-${sectionName}`);
             if (section) {
@@ -1514,11 +1508,9 @@
                     behavior: 'smooth'
                 });
             }
-            // Close mobile popup
             closeMobileMenu();
         }
 
-        // Functions for mobile popup
         function openMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.add('open');
             document.body.style.overflow = 'hidden';
@@ -1528,15 +1520,15 @@
             document.body.style.overflow = '';
         }
 
-        // ==================== Build Year Tabs ====================
+        // ==================== Construction des onglets d'année ====================
         function buildYearTabs() {
             const container = document.getElementById('yearTabs');
             const years = [
-                { id: 'annee1', label: '1st Year' },
-                { id: 'annee2', label: '2nd Year' },
-                { id: 'annee3', label: '3rd Year' },
-                { id: 'annee4', label: '4th Year' },
-                { id: 'annee5', label: '5th Year' }
+                { id: 'annee1', label: '1ère Année' },
+                { id: 'annee2', label: '2ème Année' },
+                { id: 'annee3', label: '3ème Année' },
+                { id: 'annee4', label: '4ème Année' },
+                { id: 'annee5', label: '5ème Année' }
             ];
 
             container.innerHTML = years.map(y =>
@@ -1554,7 +1546,7 @@
             });
         }
 
-        // ==================== Build Subject Cards (Modified - without semesters) ====================
+        // ==================== Construction des cartes matières ====================
         function buildSubjects(yearId) {
             const container = document.getElementById('subjectsGrid');
             const data = modulesData[yearId];
@@ -1562,8 +1554,8 @@
             if (!data) {
                 container.innerHTML = `
                     <div style="grid-column:1/-1; text-align:center; padding:50px; background:var(--bg-card); border-radius:20px; border:1px solid var(--border-glass);">
-                        <h3 style="color:var(--accent); font-size:1.5rem;">Coming Soon!</h3>
-                        <p style="color:var(--text-secondary);">These modules are being prepared.</p>
+                        <h3 style="color:var(--accent); font-size:1.5rem;">Bientôt disponible !</h3>
+                        <p style="color:var(--text-secondary);">Ces modules sont en cours de préparation.</p>
                     </div>`;
                 return;
             }
@@ -1575,22 +1567,20 @@
                 } else if (sub.img && sub.img.startsWith('http')) {
                     imgSrc = sub.img;
                 } else if (sub.img === '') {
-                    imgSrc = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image coming soon</text></svg>';
+                    imgSrc = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image à venir</text></svg>';
                 } else {
                     imgSrc = BASE_SUBJECT_IMG + sub.img;
                 }
 
                 const availabilityClass = sub.available ? '' : 'unavailable';
                 const badgeHTML = sub.available
-                    ? '<span class="availability-badge badge-available">Available</span>'
-                    : '<span class="availability-badge badge-unavailable">Coming Soon</span>';
+                    ? '<span class="availability-badge badge-available">Disponible</span>'
+                    : '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
 
-                // Determine the link for the subject
                 let linkHref = '#';
                 let linkOnClick = '';
                 
                 if (sub.available && sub.links) {
-                    // Find the first semester with an available link
                     const availableSem = sub.sems.find(s => sub.links[s]);
                     if (availableSem) {
                         linkHref = sub.links[availableSem];
@@ -1601,12 +1591,10 @@
                     linkOnClick = 'onclick="showToast(); return false;"';
                 }
 
-                // Clickable image
                 const imageHTML = `<a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
                     <div class="subject-card-img" style="background-image:url('${imgSrc}')"></div>
                 </a>`;
 
-                // Clickable title
                 const titleHTML = `<a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
                     <span>${sub.name}</span>
                 </a>`;
@@ -1625,14 +1613,14 @@
             }).join('');
         }
 
-        // ==================== Toast Notification ====================
+        // ==================== Notification toast ====================
         function showToast() {
             const toast = document.getElementById('toast');
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // ==================== Reveal on Scroll Effect ====================
+        // ==================== Effet de révélation au défilement ====================
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1643,7 +1631,7 @@
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== Animated Statistics Counter ====================
+        // ==================== Animation des compteurs de statistiques ====================
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1669,10 +1657,10 @@
         const statsRow = document.querySelector('.stats-row');
         if (statsRow) statsObserver.observe(statsRow);
 
-        // ==================== Update Side Dots on Scroll ====================
+        // ==================== Mise à jour des points latéraux au défilement ====================
         const sections = ['home', 'about', 'modules', 'contact'];
         const dots = document.querySelectorAll('.dot');
-        const navLinks = document.querySelectorAll('.nav-link'); // desktop
+        const navLinks = document.querySelectorAll('.nav-link');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         function updateActiveSection() {
@@ -1702,7 +1690,7 @@
 
         window.addEventListener('scroll', updateActiveSection, { passive: true });
 
-        // ==================== Navigation Bar - Hide on Scroll ====================
+        // ==================== Barre de navigation - masquage au défilement ====================
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1715,7 +1703,7 @@
             lastScrollTop = scrollTop;
         }, { passive: true });
 
-        // ==================== Dark/Light Theme Toggle ====================
+        // ==================== Bascule du thème sombre/clair ====================
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
@@ -1729,10 +1717,9 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // ==================== Mobile Menu (popup) ====================
+        // ==================== Menu mobile (popup) ====================
         document.getElementById('menuToggle').addEventListener('click', openMobileMenu);
         document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
-        // Close when clicking on the overlay background
         document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
             if (e.target === this) closeMobileMenu();
         });
@@ -1744,7 +1731,7 @@
             });
         });
 
-        // ==================== Contact Form ====================
+        // ==================== Formulaire de contact ====================
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = this;
@@ -1752,7 +1739,7 @@
             const statusDiv = document.getElementById('formStatus');
             const originalText = submitBtn.innerHTML;
             
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
             submitBtn.disabled = true;
             statusDiv.style.display = 'none';
 
@@ -1769,17 +1756,17 @@
                     statusDiv.style.background = 'rgba(76, 175, 80, 0.1)';
                     statusDiv.style.color = '#4caf50';
                     statusDiv.style.border = '1px solid #4caf50';
-                    statusDiv.innerHTML = '✅ Your message has been sent successfully!';
+                    statusDiv.innerHTML = '✅ Votre message a été envoyé avec succès !';
                     form.reset();
                 } else {
-                    throw new Error('Server error');
+                    throw new Error('Erreur serveur');
                 }
             } catch (error) {
                 statusDiv.style.display = 'block';
                 statusDiv.style.background = 'rgba(244, 67, 54, 0.1)';
                 statusDiv.style.color = '#f44336';
                 statusDiv.style.border = '1px solid #f44336';
-                statusDiv.innerHTML = '❌ An error occurred. Please try again.';
+                statusDiv.innerHTML = '❌ Une erreur s\'est produite. Veuillez réessayer.';
             } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
@@ -1787,7 +1774,7 @@
             }
         });
 
-        // ==================== Initialization ====================
+        // ==================== Initialisation ====================
         document.addEventListener('DOMContentLoaded', () => {
             buildYearTabs();
             buildSubjects(currentYear);
