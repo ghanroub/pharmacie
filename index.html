@@ -212,6 +212,14 @@
             font-size: 1.4rem;
             color: white;
             animation: pulse 2.5s ease-in-out infinite;
+            /* إزالة الخلفية إذا كانت الصورة شفافة أو تريد إظهارها بالكامل */
+            background: none;
+        }
+
+        .nav-logo .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         @keyframes pulse {
@@ -1114,7 +1122,10 @@
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="#" class="nav-logo" onclick="scrollToSection('home'); return false;">
-                <span class="logo-icon">💊</span>
+                <!-- تم استبدال الإيموجي بالصورة -->
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
                 GhaniPharma
             </a>
             <div class="nav-right">
@@ -1141,7 +1152,10 @@
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
             <div style="margin-bottom: 20px;">
-                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
+                <!-- تم استبدال الإيموجي بالصورة في القائمة المنبثقة أيضاً -->
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
             <div>
