@@ -31,14 +31,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>QCM : LES ANTALGIQUES - GhaniPharma</title>
-    <meta name="description" content="QCM sur les antalgiques. 15 questions, 45 minutes.">
+    <title>LES ANTALGIQUES | GhaniPharma</title>
+    <meta name="description" content="Cours complet sur les antalgiques et échelle OMS avec QCM interactif.">
     <link rel="icon" type="image/x-icon"
     href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ==================== CSS Variables for both themes (matching index/modules) ==================== */
+        /* ==================== CSS Variables for both themes ==================== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -59,8 +59,7 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
             --input-bg: rgba(255, 255, 255, 0.05);
             --input-border: rgba(255, 255, 255, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-            /* Exam-specific colors */
+            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
             --q-bg: rgba(20, 20, 40, 0.8);
             --q-border: rgba(255, 255, 255, 0.08);
             --q-text: #e0e0e0;
@@ -73,7 +72,6 @@
             --partial-bg: rgba(255, 193, 7, 0.1);
             --wrong-bg: rgba(244, 67, 54, 0.1);
             --timer-color: #ffeb3b;
-            /* Result option item colors */
             --result-correct-bg: rgba(76, 175, 80, 0.12);
             --result-correct-border: rgba(76, 175, 80, 0.35);
             --result-correct-text: #4caf50;
@@ -104,7 +102,7 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
             --input-bg: rgba(0, 0, 0, 0.03);
             --input-border: rgba(0, 0, 0, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
             --q-bg: rgba(255, 255, 255, 0.85);
             --q-border: rgba(0, 0, 0, 0.08);
             --q-text: #2d3748;
@@ -128,16 +126,8 @@
         }
 
         /* ==================== Basics ==================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--bg-primary);
@@ -148,1168 +138,445 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
-        /* ==================== Background ==================== */
         .universe-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
             background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            overflow: hidden;
-            transition: background 0.5s ease;
+            overflow: hidden; transition: background 0.5s ease;
         }
 
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
         .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle var(--duration) ease-in-out infinite;
-            animation-delay: var(--delay);
-            opacity: 0;
+            position: absolute; background: white; border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite; animation-delay: var(--delay); opacity: 0;
         }
-
         @keyframes twinkle {
-            0%,
-            100% {
-                opacity: 0.15;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.8);
-            }
+            0%,100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
         }
-
         .shooting-star {
-            position: absolute;
-            width: 120px;
-            height: 1.5px;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), transparent);
-            animation: shoot 4s ease-in-out infinite;
-            animation-delay: var(--shoot-delay);
-            opacity: 0;
+            position: absolute; width: 120px; height: 1.5px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+            animation: shoot 4s ease-in-out infinite; animation-delay: var(--shoot-delay); opacity: 0;
         }
-
         @keyframes shoot {
-            0% {
-                opacity: 0;
-                transform: translateX(0) translateY(0);
-            }
-            4% {
-                opacity: 1;
-            }
-            12% {
-                opacity: 0;
-                transform: translateX(350px) translateY(350px);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(350px) translateY(350px);
-            }
+            0% { opacity: 0; transform: translateX(0) translateY(0); }
+            4% { opacity: 1; }
+            12% { opacity: 0; transform: translateX(350px) translateY(350px); }
+            100% { opacity: 0; transform: translateX(350px) translateY(350px); }
         }
-
-        [data-theme="light"] .star,
-        [data-theme="light"] .shooting-star {
-            opacity: 0.3 !important;
-        }
-
-        [data-theme="light"] .star {
-            animation: none !important;
-            opacity: 0.15 !important;
-        }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
+        [data-theme="light"] .shooting-star { opacity: 0.3 !important; }
 
         /* ==================== Top Navigation Bar ==================== */
         .top-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-bottom: 1px solid var(--border-glass);
-            transition: all 0.4s ease;
-            padding: 0 20px;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass); transition: all 0.4s ease; padding: 0 20px;
         }
-
-        .top-nav.hidden {
-            transform: translateY(-100%);
+        .top-nav.hidden { transform: translateY(-100%); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--accent); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; transition: all 0.3s ease; }
+        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .logo-icon {
+            width: 42px; height: 42px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+            color: white; animation: pulse 2.5s ease-in-out infinite;
         }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--accent);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-logo:hover {
-            color: var(--text-heading);
-            transform: scale(1.05);
-        }
-
-        .nav-logo .logo-icon {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            color: white;
-            animation: pulse 2.5s ease-in-out infinite;
-        }
-
         @keyframes pulse {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
-            }
+            0%,100% { box-shadow: 0 0 0 0 rgba(0,188,212,0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); }
         }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            list-style: none;
-        }
-
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
         .nav-link {
-            position: relative;
-            padding: 10px 22px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            background: none;
-            font-size: 0.95rem;
-            white-space: nowrap;
-            font-family: inherit;
+            position: relative; padding: 10px 22px; color: var(--text-secondary); text-decoration: none;
+            font-weight: 500; border-radius: 30px; transition: all 0.3s ease; cursor: pointer; border: none;
+            background: none; font-size: 0.95rem; white-space: nowrap; font-family: inherit;
         }
-
-        .nav-link:hover {
-            color: var(--text-heading);
-            background: rgba(128, 128, 128, 0.1);
-        }
-
-        .nav-link.active {
-            color: #fff;
-            background: rgba(0, 188, 212, 0.2);
-        }
-
+        .nav-link:hover { color: var(--text-heading); background: rgba(128,128,128,0.1); }
+        .nav-link.active { color: #fff; background: rgba(0,188,212,0.2); }
         .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 22px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 3px;
+            content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+            width: 22px; height: 3px; background: var(--primary); border-radius: 3px;
         }
 
-        /* ==================== POPUP MOBILE MENU ==================== */
+        /* Mobile menu overlay */
         .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.3s, opacity 0.3s ease;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1100;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease;
         }
-
-        .mobile-menu-overlay.open {
-            visibility: visible;
-            opacity: 1;
-        }
-
+        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
         .mobile-menu-popup {
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-glass);
-            border-radius: 32px;
-            width: 85%;
-            max-width: 320px;
-            padding: 30px 20px 40px;
-            text-align: center;
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-glass);
+            border-radius: 32px; width: 85%; max-width: 320px; padding: 30px 20px 40px; text-align: center;
+            transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
         }
-
-        .mobile-menu-overlay.open .mobile-menu-popup {
-            transform: scale(1);
-        }
-
+        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
         .mobile-menu-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.2rem;
-            color: var(--text-heading);
-            cursor: pointer;
-            transition: all 0.2s;
+            position: absolute; top: 20px; right: 20px; background: var(--bg-glass); border: 1px solid var(--border-glass);
+            border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.2s;
         }
-
-        .mobile-menu-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
-        }
-
+        .mobile-menu-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
         .mobile-nav-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px 20px;
-            margin: 12px 0;
-            background: var(--bg-glass);
-            border-radius: 60px;
-            color: var(--text-heading);
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            padding: 16px 20px; margin: 12px 0; background: var(--bg-glass); border-radius: 60px;
+            color: var(--text-heading); font-size: 1.2rem; font-weight: 600; text-decoration: none;
+            transition: all 0.2s ease; border: 1px solid transparent;
         }
+        .mobile-nav-link:hover { border-color: var(--primary); background: rgba(0,188,212,0.1); transform: translateX(6px); }
+        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
 
-        .mobile-nav-link:hover {
-            border-color: var(--primary);
-            background: rgba(0, 188, 212, 0.1);
-            transform: translateX(6px);
-        }
-
-        .mobile-nav-link i {
-            color: var(--primary);
-            width: 28px;
-            font-size: 1.3rem;
-        }
-
-        /* ==================== Theme Toggle Button ==================== */
+        /* Theme toggle */
         .theme-toggle {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 2px solid var(--border-glass);
-            background: var(--bg-glass);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--accent);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-glass);
+            background: var(--bg-glass); cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: var(--accent); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden;
         }
+        .theme-toggle:hover { transform: rotate(30deg) scale(1.1); border-color: var(--accent); box-shadow: 0 0 25px rgba(255,235,59,0.3); }
+        .theme-toggle i { transition: all 0.5s ease; }
+        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
+        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
+        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
+        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
 
-        .theme-toggle:hover {
-            transform: rotate(30deg) scale(1.1);
-            border-color: var(--accent);
-            box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
-        }
-
-        .theme-toggle i {
-            transition: all 0.5s ease;
-        }
-
-        [data-theme="dark"] .theme-toggle .fa-moon {
-            display: inline-block;
-        }
-        [data-theme="dark"] .theme-toggle .fa-sun {
-            display: none;
-        }
-        [data-theme="light"] .theme-toggle .fa-moon {
-            display: none;
-        }
-        [data-theme="light"] .theme-toggle .fa-sun {
-            display: inline-block;
-            color: #f39c12;
-        }
-        [data-theme="light"] .theme-toggle {
-            border-color: rgba(0, 0, 0, 0.2);
-        }
-
-        /* ==================== Mobile Menu Button ==================== */
         .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-heading);
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 10px;
-            transition: transform 0.3s ease;
+            display: none; background: none; border: none; color: var(--text-heading);
+            font-size: 1.8rem; cursor: pointer; padding: 10px; transition: transform 0.3s ease;
         }
-
-        .menu-toggle:hover {
-            transform: rotate(90deg);
-        }
+        .menu-toggle:hover { transform: rotate(90deg); }
 
         /* ==================== Main Content ==================== */
-        .main-wrapper {
-            position: relative;
-            z-index: 1;
-            padding-top: 90px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
+        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
 
         /* ==================== Shared Module Header ==================== */
         .module-header {
-            text-align: center;
-            padding: 60px 20px 20px;
+            text-align: center; padding: 60px 20px 20px;
         }
-
         .module-header .exam-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 188, 212, 0.1);
-            border: 1px solid rgba(0, 188, 212, 0.3);
-            padding: 8px 22px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0, 188, 212, 0.1); border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px; border-radius: 50px; font-size: 0.9rem; color: var(--primary); margin-bottom: 20px;
         }
-
         .module-header .exam-title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 900;
-            background: var(--gradient-hero);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 6s ease-in-out infinite;
-            line-height: 1.2;
+            font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 900;
+            background: var(--gradient-hero); background-size: 300% 300%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite; line-height: 1.2;
         }
-
         @keyframes gradientShift {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
+            0%,100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
-        /* ==================== Tabs Switch (Lesson / Exam) ==================== */
+        /* ==================== Tabs Switch (PDF / Lesson / Exam) ==================== */
         .tabs-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0 30px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 20px; margin: 30px 0 30px; flex-wrap: wrap;
         }
-
         .tab-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            border: 2px solid var(--border-glass);
-            background: var(--bg-glass);
-            color: var(--text-heading);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
-            z-index: 1;
-            letter-spacing: 0.3px;
+            position: relative; display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 36px; border-radius: 50px; font-size: 1.1rem; font-weight: 700;
+            cursor: pointer; border: 2px solid var(--border-glass); background: var(--bg-glass);
+            color: var(--text-heading); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden; z-index: 1; letter-spacing: 0.3px;
         }
-
         .tab-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.2), transparent);
-            transition: left 0.6s ease;
-            z-index: -1;
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,188,212,0.2), transparent);
+            transition: left 0.6s ease; z-index: -1;
         }
-
-        .tab-btn:hover::before {
-            left: 100%;
-        }
-
-        .tab-btn:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 35px var(--btn-hover-shadow);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #00bcd4, #4facfe);
-            border-color: transparent;
-            color: #fff;
-            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
-            transform: scale(1.05);
-        }
-
-        .tab-btn i {
-            font-size: 1.3rem;
-            transition: transform 0.3s ease;
-        }
-
-        .tab-btn:hover i {
-            transform: rotate(10deg) scale(1.2);
-        }
-
-        .tab-btn.active i {
-            transform: scale(1.2);
-        }
+        .tab-btn:hover::before { left: 100%; }
+        .tab-btn:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 15px 35px var(--btn-hover-shadow); }
+        .tab-btn.active { background: linear-gradient(135deg, #00bcd4, #4facfe); border-color: transparent; color: #fff; box-shadow: 0 10px 30px rgba(0,188,212,0.5); transform: scale(1.05); }
+        .tab-btn i { font-size: 1.3rem; transition: transform 0.3s ease; }
+        .tab-btn:hover i { transform: rotate(10deg) scale(1.2); }
+        .tab-btn.active i { transform: scale(1.2); }
 
         /* ==================== Lesson Section (PDF) ==================== */
         .lesson-section {
-            display: block;
-            animation: fadeSlideIn 0.5s ease;
+            display: block; animation: fadeSlideIn 0.5s ease;
         }
-
-        .lesson-section.hidden {
-            display: none;
-        }
-
+        .lesson-section.hidden { display: none; }
         .pdf-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            padding: 20px;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: var(--shadow-card);
+            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 24px;
+            padding: 20px; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            box-shadow: var(--shadow-card); margin-bottom: 30px; height: 75vh; min-height: 500px; position: relative; overflow: hidden;
+        }
+        .pdf-container iframe { width: 100%; height: 100%; border: none; border-radius: 16px; background: rgba(255,255,255,0.02); }
+
+        /* ==================== Lesson Content Styles (from antalgiques page) ==================== */
+        .section-block {
+            padding: 80px 0; position: relative; min-height: auto;
+            display: flex; flex-direction: column; justify-content: center;
+            border-bottom: 1px solid var(--border-glass); transition: all 0.5s ease;
+        }
+        .section-block:last-of-type { border-bottom: none; }
+
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .hero-section {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; min-height: 60vh; padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0,188,212,0.1); border: 1px solid rgba(0,188,212,0.3);
+            padding: 8px 22px; border-radius: 50px; font-size: 0.9rem; color: var(--primary); margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900;
+            background: var(--gradient-hero); background-size: 300% 300%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite; margin-bottom: 20px; letter-spacing: -1px;
+        }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 600px; margin-bottom: 30px; }
+
+        .section-title {
+            font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;
+        }
+        .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; }
+
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #999; padding: 10px 15px; text-align: left; }
+        th { background: rgba(0,188,212,0.15); }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px;
+            padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             margin-bottom: 30px;
-            height: 75vh;
-            min-height: 500px;
-            position: relative;
-            overflow: hidden;
         }
-
-        .pdf-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.02);
+        .drug-link {
+            cursor: pointer; color: var(--primary); font-weight: 600; text-decoration: underline; transition: all 0.3s ease;
         }
+        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 
-        /* Empty content placeholder */
-        .empty-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 75vh;
-            min-height: 500px;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(15px);
-            box-shadow: var(--shadow-card);
-            color: var(--text-secondary);
-            font-style: italic;
+        /* Side dots for lesson navigation */
+        .side-dots {
+            position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
+            display: flex; flex-direction: column; gap: 22px;
+        }
+        .lesson-section.hidden .side-dots { display: none; }
+        .dot {
+            width: 12px; height: 12px; background: rgba(128,128,128,0.3); border-radius: 50%;
+            cursor: pointer; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; border: 2px solid transparent;
+        }
+        .dot:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 18px rgba(255,235,59,0.5); }
+        .dot.active { background: var(--primary); border-color: var(--primary); transform: scale(1.7); box-shadow: 0 0 28px rgba(0,188,212,0.6); }
+        .dot-tooltip {
+            position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,0.9); color: #fff; padding: 6px 18px; border-radius: 20px;
+            font-size: 0.8rem; white-space: nowrap; pointer-events: none; opacity: 0;
+            transition: opacity 0.3s ease; font-weight: 500;
+        }
+        .dot:hover .dot-tooltip { opacity: 1; }
+
+        /* Modal for drug images */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-content {
+            background: var(--bg-card); border: 1px solid var(--border-glass);
+            border-radius: 32px; width: 90%; max-width: 700px; max-height: 85vh;
+            padding: 40px 30px; position: relative; overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            transform: scale(0.95); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; background: var(--bg-glass);
+            border: 1px solid var(--border-glass); border-radius: 50%;
+            width: 44px; height: 44px; font-size: 1.8rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.3s ease; line-height: 1; display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
+        .modal-images { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .modal-images img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); border: 1px solid var(--border-glass); }
+        .modal-placeholder {
+            color: var(--text-secondary); font-style: italic; text-align: center; width: 100%;
+            padding: 30px; border: 2px dashed var(--border-glass); border-radius: 16px;
         }
 
         /* ==================== Exam Section ==================== */
         .exam-section {
-            display: block;
-            animation: fadeSlideIn 0.5s ease;
+            display: block; animation: fadeSlideIn 0.5s ease;
         }
-
-        .exam-section.hidden {
-            display: none;
-        }
-
+        .exam-section.hidden { display: none; }
         @keyframes fadeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         .exam-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            padding: 25px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 24px;
+            padding: 25px; margin-bottom: 30px; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             box-shadow: var(--shadow-card);
         }
-
         .exam-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg-glass);
-            padding: 15px 20px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            border: 1px solid var(--border-glass);
-            flex-wrap: wrap;
-            gap: 10px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: var(--bg-glass); padding: 15px 20px; border-radius: 16px; margin-bottom: 25px;
+            border: 1px solid var(--border-glass); flex-wrap: wrap; gap: 10px;
         }
-
-        .timer {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--timer-color);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .progress {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .question-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
+        .timer { font-size: 1.1rem; font-weight: 700; color: var(--timer-color); display: flex; align-items: center; gap: 8px; }
+        .progress { font-size: 1rem; color: var(--text-secondary); font-weight: 500; }
+        .question-wrapper { display: flex; flex-direction: column; gap: 25px; }
         .question {
-            background: var(--q-bg);
-            border: 1px solid var(--q-border);
-            border-radius: 20px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            animation: fadeSlideIn 0.4s ease;
+            background: var(--q-bg); border: 1px solid var(--q-border); border-radius: 20px;
+            padding: 25px; transition: all 0.3s ease; position: relative; overflow: hidden;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: fadeSlideIn 0.4s ease;
         }
-
         .question::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
         }
-
-        .question-number {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .question-number { font-size: 1rem; font-weight: 700; color: var(--text-heading); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .question-number span {
-            background: var(--q-number-bg);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            background: var(--q-number-bg); color: white; width: 30px; height: 30px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
-
-        .question-text {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--q-text);
-            margin-bottom: 18px;
-            line-height: 1.5;
-        }
-
-        .options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .options {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        .question-text { font-size: 1.05rem; font-weight: 600; color: var(--q-text); margin-bottom: 18px; line-height: 1.5; }
+        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        @media (max-width: 768px) { .options { grid-template-columns: 1fr; } }
         .option {
-            display: flex;
-            align-items: center;
-            padding: 0;
-            background: var(--option-bg);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid var(--border-glass);
-            overflow: hidden;
+            display: flex; align-items: center; padding: 0; background: var(--option-bg); border-radius: 12px;
+            cursor: pointer; transition: all 0.3s ease; border: 2px solid var(--border-glass); overflow: hidden;
         }
-
-        .option:hover {
-            background: var(--option-hover-bg);
-            transform: translateX(4px);
-            border-color: var(--primary);
-        }
-
-        .option.selected {
-            background: var(--option-selected-bg);
-            border-color: var(--option-selected-border);
-            box-shadow: 0 0 12px rgba(0, 188, 212, 0.15);
-        }
-
-        .option-label {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding: 14px 18px;
-            cursor: pointer;
-            gap: 12px;
-        }
-
-        .option input[type="checkbox"] {
-            transform: scale(1.3);
-            cursor: pointer;
-            accent-color: var(--primary);
-        }
-
-        .option-label span {
-            cursor: pointer;
-            flex-grow: 1;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
+        .option:hover { background: var(--option-hover-bg); transform: translateX(4px); border-color: var(--primary); }
+        .option.selected { background: var(--option-selected-bg); border-color: var(--option-selected-border); box-shadow: 0 0 12px rgba(0,188,212,0.15); }
+        .option-label { display: flex; align-items: center; width: 100%; height: 100%; padding: 14px 18px; cursor: pointer; gap: 12px; }
+        .option input[type="checkbox"] { transform: scale(1.3); cursor: pointer; accent-color: var(--primary); }
+        .option-label span { cursor: pointer; flex-grow: 1; font-size: 0.95rem; color: var(--text-primary); font-weight: 500; }
+        .actions { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 30px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-            border: none;
-            letter-spacing: 0.3px;
-            font-family: inherit;
+            display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border-radius: 50px;
+            font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none; border: none; letter-spacing: 0.3px; font-family: inherit;
         }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: #fff;
-            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-heading);
-            border: 2px solid var(--border-glass);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        .btn-next {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #fff;
-            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
-        }
-
-        .btn-next:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0, 188, 212, 0.6);
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #1a1a2e;
-            font-weight: 700;
-            box-shadow: 0 8px 25px rgba(247, 151, 30, 0.4);
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(247, 151, 30, 0.6);
-        }
-
-        .result-container {
-            display: none;
-            text-align: center;
-            padding: 30px;
-        }
-
+        .btn-primary { background: linear-gradient(135deg, #28a745, #20c997); color: #fff; box-shadow: 0 8px 25px rgba(40,167,69,0.3); }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(40,167,69,0.5); }
+        .btn-outline { background: transparent; color: var(--text-heading); border: 2px solid var(--border-glass); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-4px); }
+        .btn-next { background: linear-gradient(135deg, #4facfe, #00f2fe); color: #fff; box-shadow: 0 8px 25px rgba(0,188,212,0.4); }
+        .btn-next:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,188,212,0.6); }
+        .btn-submit { background: linear-gradient(135deg, #f7971e, #ffd200); color: #1a1a2e; font-weight: 700; box-shadow: 0 8px 25px rgba(247,151,30,0.4); }
+        .btn-submit:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(247,151,30,0.6); }
+        .result-container { display: none; text-align: center; padding: 30px; }
         .result-header {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 15px;
+            font-size: 2rem; font-weight: 800; margin-bottom: 15px;
             background: linear-gradient(to right, var(--accent), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-
-        .score {
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--accent);
-            margin: 15px 0;
-            text-shadow: 0 0 20px rgba(255, 235, 59, 0.3);
-        }
-
-        .score-text {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-            padding: 0 15px;
-        }
-
+        .score { font-size: 5rem; font-weight: 900; color: var(--accent); margin: 15px 0; text-shadow: 0 0 20px rgba(255,235,59,0.3); }
+        .score-text { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 25px; padding: 0 15px; }
         .feedback {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: left;
-            margin-top: 20px;
-            max-height: 600px;
-            overflow-y: auto;
+            background: var(--bg-glass); border: 1px solid var(--border-glass); border-radius: 16px;
+            padding: 20px; text-align: left; margin-top: 20px; max-height: 600px; overflow-y: auto;
         }
-
-        .feedback h3 {
-            color: var(--text-heading);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
+        .feedback h3 { color: var(--text-heading); margin-bottom: 15px; text-align: center; }
         .question-result {
-            padding: 18px;
-            margin-bottom: 14px;
-            border-radius: 14px;
-            border: 1px solid var(--border-glass);
-            transition: all 0.2s ease;
+            padding: 18px; margin-bottom: 14px; border-radius: 14px; border: 1px solid var(--border-glass); transition: all 0.2s ease;
         }
-
-        .question-result.correct {
-            background: var(--correct-bg);
-            border-color: rgba(76, 175, 80, 0.3);
-        }
-
-        .question-result.partial {
-            background: var(--partial-bg);
-            border-color: rgba(255, 193, 7, 0.3);
-        }
-
-        .question-result.wrong {
-            background: var(--wrong-bg);
-            border-color: rgba(244, 67, 54, 0.3);
-        }
-
-        .question-result-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-heading);
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .question-result-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .options-result-list {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-            margin: 10px 0 12px;
-        }
-
+        .question-result.correct { background: var(--correct-bg); border-color: rgba(76,175,80,0.3); }
+        .question-result.partial { background: var(--partial-bg); border-color: rgba(255,193,7,0.3); }
+        .question-result.wrong { background: var(--wrong-bg); border-color: rgba(244,67,54,0.3); }
+        .question-result-header { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; color: var(--text-heading); flex-wrap: wrap; gap: 5px; }
+        .question-result-text { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; line-height: 1.5; }
+        .options-result-list { display: flex; flex-direction: column; gap: 7px; margin: 10px 0 12px; }
         .option-result-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            border: 1.5px solid transparent;
-            transition: all 0.2s ease;
-            line-height: 1.4;
+            display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px;
+            font-size: 0.9rem; border: 1.5px solid transparent; transition: all 0.2s ease; line-height: 1.4;
         }
-
         .option-result-item.correct-option {
-            background: var(--result-correct-bg);
-            border-color: var(--result-correct-border);
-            color: var(--result-correct-text);
-            font-weight: 500;
+            background: var(--result-correct-bg); border-color: var(--result-correct-border); color: var(--result-correct-text); font-weight: 500;
         }
-
         .option-result-item.wrong-selected {
-            background: var(--result-wrong-bg);
-            border-color: var(--result-wrong-border);
-            color: var(--result-wrong-text);
-            font-weight: 500;
+            background: var(--result-wrong-bg); border-color: var(--result-wrong-border); color: var(--result-wrong-text); font-weight: 500;
         }
-
         .option-result-item.neutral-option {
-            background: var(--result-neutral-bg);
-            border-color: var(--border-glass);
-            color: var(--result-neutral-text);
+            background: var(--result-neutral-bg); border-color: var(--border-glass); color: var(--result-neutral-text);
         }
-
-        .option-result-item .option-mark {
-            font-size: 1.15rem;
-            min-width: 26px;
-            text-align: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .option-result-item .option-letter {
-            font-weight: 700;
-            min-width: 24px;
-            flex-shrink: 0;
-            color: inherit;
-        }
-
-        .option-result-item .option-text {
-            flex-grow: 1;
-            color: inherit;
-        }
-
+        .option-result-item .option-mark { font-size: 1.15rem; min-width: 26px; text-align: center; font-weight: bold; flex-shrink: 0; }
+        .option-result-item .option-letter { font-weight: 700; min-width: 24px; flex-shrink: 0; color: inherit; }
+        .option-result-item .option-text { flex-grow: 1; color: inherit; }
         .option-result-item .student-choice-badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 20px;
-            margin-left: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            flex-shrink: 0;
+            font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-left: 4px;
+            text-transform: uppercase; letter-spacing: 0.4px; flex-shrink: 0;
         }
-
-        .option-result-item.correct-option .student-choice-badge {
-            background: rgba(76, 175, 80, 0.25);
-            color: var(--result-correct-text);
-        }
-
-        .option-result-item.wrong-selected .student-choice-badge {
-            background: rgba(244, 67, 54, 0.25);
-            color: var(--result-wrong-text);
-        }
-
-        .note {
-            font-style: italic;
-            margin-top: 8px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            text-align: right;
-        }
-
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .legend-color {
-            width: 18px;
-            height: 18px;
-            border-radius: 5px;
-        }
-
-        .full-points {
-            background: rgba(76, 175, 80, 0.3);
-        }
-        .partial-points {
-            background: rgba(255, 193, 7, 0.3);
-        }
-        .zero-points {
-            background: rgba(244, 67, 54, 0.3);
-        }
-
+        .option-result-item.correct-option .student-choice-badge { background: rgba(76,175,80,0.25); color: var(--result-correct-text); }
+        .option-result-item.wrong-selected .student-choice-badge { background: rgba(244,67,54,0.25); color: var(--result-wrong-text); }
+        .note { font-style: italic; margin-top: 8px; color: var(--text-secondary); font-size: 0.85rem; text-align: right; }
+        .legend { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); }
+        .legend-color { width: 18px; height: 18px; border-radius: 5px; }
+        .full-points { background: rgba(76,175,80,0.3); }
+        .partial-points { background: rgba(255,193,7,0.3); }
+        .zero-points { background: rgba(244,67,54,0.3); }
         .restart-btn {
-            background: linear-gradient(135deg, #fdbb2d, #f7a900);
-            color: #1a1a2e;
-            font-size: 1.1rem;
-            font-weight: 700;
-            padding: 15px 35px;
-            margin-top: 25px;
-            box-shadow: 0 8px 25px rgba(253, 187, 45, 0.3);
-            border-radius: 50px;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
-            font-family: inherit;
+            background: linear-gradient(135deg, #fdbb2d, #f7a900); color: #1a1a2e; font-size: 1.1rem;
+            font-weight: 700; padding: 15px 35px; margin-top: 25px; box-shadow: 0 8px 25px rgba(253,187,45,0.3);
+            border-radius: 50px; cursor: pointer; border: none; transition: all 0.3s ease; font-family: inherit;
         }
-
-        .restart-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(253, 187, 45, 0.5);
-        }
+        .restart-btn:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(253,187,45,0.5); }
 
         /* ==================== Footer ==================== */
         .site-footer {
-            text-align: center;
-            padding: 50px 20px;
-            border-top: 1px solid var(--footer-border);
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 1;
+            text-align: center; padding: 50px 20px; border-top: 1px solid var(--footer-border);
+            background: var(--bg-card); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            position: relative; z-index: 1;
         }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
         .social-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(128, 128, 128, 0.06);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-heading);
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 50px; height: 50px; border-radius: 50%; background: rgba(128,128,128,0.06);
+            display: flex; align-items: center; justify-content: center; color: var(--text-heading);
+            text-decoration: none; font-size: 1.3rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid var(--border-glass);
         }
-
-        .social-link:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-link.whatsapp:hover {
-            background: #25d366;
-            border-color: #25d366;
-            color: #fff;
-        }
-        .social-link.telegram:hover {
-            background: #0088cc;
-            border-color: #0088cc;
-            color: #fff;
-        }
-        .social-link.facebook:hover {
-            background: #1877f2;
-            border-color: #1877f2;
-            color: #fff;
-        }
-        .social-link.instagram:hover {
-            background: #e4405f;
-            border-color: #e4405f;
-            color: #fff;
-        }
-        .social-link.tiktok:hover {
-            background: #000;
-            border-color: #69c9d0;
-            color: #fff;
-        }
-        .social-link.youtube:hover {
-            background: #ff0000;
-            border-color: #ff0000;
-            color: #fff;
-        }
-
-        .copyright {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* ==================== Reveal Animation ==================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
+        .social-link:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .social-link.whatsapp:hover { background: #25d366; border-color: #25d366; color: #fff; }
+        .social-link.telegram:hover { background: #0088cc; border-color: #0088cc; color: #fff; }
+        .social-link.facebook:hover { background: #1877f2; border-color: #1877f2; color: #fff; }
+        .social-link.instagram:hover { background: #e4405f; border-color: #e4405f; color: #fff; }
+        .social-link.tiktok:hover { background: #000; border-color: #69c9d0; color: #fff; }
+        .social-link.youtube:hover { background: #ff0000; border-color: #ff0000; color: #fff; }
+        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
 
         /* ==================== Media Queries ==================== */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links {
-                display: none !important;
-            }
-            .module-header .exam-title {
-                font-size: 1.5rem;
-            }
-            .container {
-                padding: 0 15px;
-            }
-            .exam-container {
-                padding: 15px;
-            }
-            .question {
-                padding: 18px;
-            }
-            .btn {
-                padding: 12px 22px;
-                font-size: 0.9rem;
-            }
-            .score {
-                font-size: 3.5rem;
-            }
-            .option-result-item {
-                flex-wrap: wrap;
-                gap: 6px;
-                padding: 10px 12px;
-            }
-            .option-result-item .option-mark {
-                min-width: 22px;
-                font-size: 1rem;
-            }
-            .tab-btn {
-                padding: 12px 24px;
-                font-size: 0.95rem;
-            }
+        @media (max-width: 992px) {
+            .side-dots { display: none; }
         }
-
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .module-header .exam-title { font-size: 1.5rem; }
+            .container { padding: 0 15px; }
+            .exam-container { padding: 15px; }
+            .question { padding: 18px; }
+            .btn { padding: 12px 22px; font-size: 0.9rem; }
+            .score { font-size: 3.5rem; }
+            .option-result-item { flex-wrap: wrap; gap: 6px; padding: 10px 12px; }
+            .option-result-item .option-mark { min-width: 22px; font-size: 1rem; }
+            .tab-btn { padding: 12px 24px; font-size: 0.95rem; }
+            .hero-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+        }
         @media (max-width: 480px) {
-            .actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .exam-info {
-                flex-direction: column;
-                text-align: center;
-            }
-            .tabs-container {
-                gap: 12px;
-            }
+            .actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; }
+            .exam-info { flex-direction: column; text-align: center; }
+            .tabs-container { gap: 12px; }
         }
     </style>
 </head>
@@ -1376,7 +643,7 @@
                 <h1 class="exam-title">LES ANTALGIQUES</h1>
             </div>
 
-            <!-- Tabs Switch Buttons (PDF, Lesson, Examens) -->
+            <!-- Tabs Switch Buttons (PDF, Lesson, Exam) -->
             <div class="tabs-container reveal reveal-delay-1">
                 <button class="tab-btn active" id="tabPdf">
                     <i class="fas fa-file-pdf"></i> PDF
@@ -1389,10 +656,9 @@
                 </button>
             </div>
 
-            <!-- PDF Section (original Lesson renamed) -->
+            <!-- PDF Section -->
             <div class="lesson-section reveal reveal-delay-2" id="pdfSection">
                 <div class="pdf-container">
-                    <!-- رابط التضمين الصحيح لملف PDF من Google Drive -->
                     <iframe src="https://drive.google.com/file/d/1S_ISkZKO6jTzFzOq3Jeti9C1kB7abzmh/preview" title="Leçon PDF" allowfullscreen>
                         <p>Votre navigateur ne supporte pas l'affichage des PDF. 
                            <a href="https://drive.google.com/file/d/1S_ISkZKO6jTzFzOq3Jeti9C1kB7abzmh/view?usp=sharing" target="_blank">Télécharger la leçon</a>.</p>
@@ -1400,74 +666,270 @@
                 </div>
             </div>
 
-            <!-- New Empty Lesson Section -->
+            <!-- NEW Lesson Section (integrated from antalgiques page) -->
             <div class="lesson-section hidden reveal reveal-delay-2" id="lessonNewSection">
-                <div class="empty-content">
-                    <!-- contenu vide -->
+                <!-- Side dots navigation (visible only when lesson tab active) -->
+                <div class="side-dots">
+                    <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
+                    <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
+                    <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
+                    <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
+                    <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
+                    <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
+                    <div class="dot" data-dot="niveau1"><span class="dot-tooltip">Niveau 1</span></div>
+                    <div class="dot" data-dot="niveau2"><span class="dot-tooltip">Niveau 2</span></div>
+                    <div class="dot" data-dot="niveau3"><span class="dot-tooltip">Niveau 3</span></div>
+                    <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
+                </div>
+
+                <!-- Lesson content -->
+                <div class="container" style="max-width:1300px; margin:0 auto; padding:0;">
+                    <!-- Hero / Introduction -->
+                    <section class="hero-section" id="section-intro">
+                        <div class="hero-badge reveal">
+                            <i class="fas fa-capsules"></i> Pharmacologie
+                        </div>
+                        <h1 class="hero-title reveal reveal-delay-1">LES ANTALGIQUES</h1>
+                        <p class="hero-subtitle reveal reveal-delay-2">
+                            Classification selon l'échelle OMS, mécanismes, indications et conseils à l'officine.
+                        </p>
+                    </section>
+
+                    <!-- Mécanisme d'action -->
+                    <section class="section-block" id="section-mecanisme">
+                        <h2 class="section-title reveal">Mécanisme d'action</h2>
+                        <div class="card reveal reveal-delay-1">
+                            <p><strong>Niveau 1 :</strong> Inhibe les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines (AINS), ou agit sur des voies centrales spécifiques (Paracétamol).</p>
+                            <p><strong>Niveaux 2 & 3 :</strong> Agonistes des récepteurs aux opioïdes (principalement les récepteurs µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur. <em>(Note : Le tramadol a aussi un effet sérotoninergique).</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Indications générales -->
+                    <section class="section-block" id="section-indications">
+                        <h2 class="section-title reveal">Indications générales</h2>
+                        <div class="card reveal reveal-delay-1">
+                            <ul style="padding-left:20px;">
+                                <li><strong>N1 :</strong> Douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).</li>
+                                <li><strong>N2 :</strong> Douleurs modérées à sévères ou résistantes au Niveau 1 (post-opératoires, lombalgies aiguës).</li>
+                                <li><strong>N3 :</strong> Douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Contre-indications -->
+                    <section class="section-block" id="section-contre-indications">
+                        <h2 class="section-title reveal">Contre‑indications et précautions majeures</h2>
+                        <div class="card reveal reveal-delay-1">
+                            <ul style="padding-left:20px;">
+                                <li><strong>AINS :</strong> Ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l’aspirine (asthme).</li>
+                                <li><strong>Paracétamol :</strong> Insuffisance hépatocellulaire grave.</li>
+                                <li><strong>Opioïdes :</strong> Insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d’hypertension intracrânienne). IMAO (pour le tramadol et la péthidine).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Interactions médicamenteuses -->
+                    <section class="section-block" id="section-interactions">
+                        <h2 class="section-title reveal">Interactions médicamenteuses majeures</h2>
+                        <div class="card reveal reveal-delay-1">
+                            <ul style="padding-left:20px;">
+                                <li><strong>AINS + Anticoagulants/AVK :</strong> Risque hémorragique majeur.</li>
+                                <li><strong>AINS + Antihypertenseurs :</strong> Diminution de l’efficacité anti-HTA.</li>
+                                <li><strong>Opioïdes + Benzodiazépines/Alcool :</strong> Dépression respiratoire sévère.</li>
+                                <li><strong>Tramadol + Antidépresseurs (ISRS/IRSN) :</strong> Syndrome sérotoninergique (confusion, hyperthermie, rigidité).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Grossesse et Allaitement -->
+                    <section class="section-block" id="section-grossesse">
+                        <h2 class="section-title reveal">Grossesse et Allaitement</h2>
+                        <div class="card reveal reveal-delay-1">
+                            <p><strong>N1 :</strong> Paracétamol = antalgique de référence en court terme. AINS formellement contre‑indiqués au 3<sup>e</sup> trimestre.</p>
+                            <p><strong>N2/N3 :</strong> À éviter sauf stricte nécessité. Codéine déconseillée pendant l’allaitement (métaboliseurs rapides). Morphine possible sous surveillance.</p>
+                        </div>
+                    </section>
+
+                    <!-- NIVEAU 1 -->
+                    <section class="section-block" id="section-niveau1">
+                        <h2 class="section-title reveal">NIVEAU 1 : Antalgiques non‑opioïdes</h2>
+                        
+                        <div class="card reveal reveal-delay-1">
+                            <h3 style="color:var(--primary);">1. Paracétamol</h3>
+                            <p><strong>Noms commerciaux (Algérie) :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Doliprane</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Dolyc</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Dofebril</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Dafalgan</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Panadol</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Efferalgan</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Paramol</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Expandol</span>, 
+                                <span class="drug-link" onclick="showDrugModal('paracetamol')">Sapramol</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</p>
+                            <p><strong>Posologie Adulte :</strong> 500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</p>
+                            <p><strong>Particularité :</strong> Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.</p>
+                            <p><strong>Conseil Pharmacien :</strong> Vérifiez toujours les « médicaments rhume » associés. Interdit avec l’alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</p>
+                        </div>
+
+                        <div class="card reveal reveal-delay-2">
+                            <h3 style="color:var(--primary);">2. Acide Acétylsalicylique (AINS)</h3>
+                            <p><strong>Noms commerciaux (Algérie) :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('aspirine')">Aspegic</span>, 
+                                <span class="drug-link" onclick="showDrugModal('aspirine')">Aspirine</span>, 
+                                <span class="drug-link" onclick="showDrugModal('aspirine')">Catalgine</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Comprimés (500 mg), sachets pour solution buvable.</p>
+                            <p><strong>Posologie Adulte :</strong> 500 mg toutes les 4 heures. Max 3 g/jour.</p>
+                            <p><strong>Particularité :</strong> Anti‑inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).</p>
+                            <p><strong>Conseil Pharmacien :</strong> « Prenez‑le au cours ou à la fin d’un repas. » Rappeler l’allergie à l’aspirine. Pas d’enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.</p>
+                        </div>
+                    </section>
+
+                    <!-- NIVEAU 2 -->
+                    <section class="section-block" id="section-niveau2">
+                        <h2 class="section-title reveal">NIVEAU 2 : Opioïdes faibles</h2>
+                        
+                        <div class="card reveal reveal-delay-1">
+                            <h3 style="color:var(--primary);">3. Paracétamol + Codéine</h3>
+                            <p><strong>DCI :</strong> Paracétamol + Codéine phosphate.</p>
+                            <p><strong>Noms commerciaux :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('codeine')">Codoliprane</span>, 
+                                <span class="drug-link" onclick="showDrugModal('codeine')">Co‑Dolyc</span>, 
+                                <span class="drug-link" onclick="showDrugModal('codeine')">Co‑paramol</span>, 
+                                <span class="drug-link" onclick="showDrugModal('codeine')">Coparalgan</span>, 
+                                <span class="drug-link" onclick="showDrugModal('codeine')">Planadix Confort +</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Comprimés (400 mg/30 mg ou 500 mg/30 mg).</p>
+                            <p><strong>Posologie :</strong> 1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).</p>
+                            <p><strong>Particularité :</strong> La codéine est une prodrogue convertie en morphine par le CYP2D6.</p>
+                            <p><strong>Conseil :</strong> « Peut provoquer une constipation, hydratez‑vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.</p>
+                        </div>
+
+                        <div class="card reveal reveal-delay-2">
+                            <h3 style="color:var(--primary);">4. Paracétamol + Tramadol</h3>
+                            <p><strong>DCI :</strong> Paracétamol + Chlorhydrate de tramadol.</p>
+                            <p><strong>Noms commerciaux :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Di‑Dolex</span>, 
+                                <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Supradolex</span>, 
+                                <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Xamadol</span>, 
+                                <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Planadix Advance</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Comprimés (325 mg / 37.5 mg).</p>
+                            <p><strong>Posologie :</strong> 1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.</p>
+                            <p><strong>Conseil :</strong> « Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).</p>
+                        </div>
+
+                        <div class="card reveal reveal-delay-3">
+                            <h3 style="color:var(--primary);">5. Tramadol seul</h3>
+                            <p><strong>DCI :</strong> Tramadol.</p>
+                            <p><strong>Noms commerciaux :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('tramadol')">Dolex</span>, 
+                                <span class="drug-link" onclick="showDrugModal('tramadol')">Supramadol</span>, 
+                                <span class="drug-link" onclick="showDrugModal('tramadol')">Zodid</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Gélules (50 mg), comprimés LP (100 mg, 150 mg).</p>
+                            <p><strong>Posologie :</strong> 50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.</p>
+                            <p><strong>Conseil :</strong> « C’est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l’alcool et les somnifères.</p>
+                        </div>
+                    </section>
+
+                    <!-- NIVEAU 3 -->
+                    <section class="section-block" id="section-niveau3">
+                        <h2 class="section-title reveal">NIVEAU 3 : Opioïdes forts</h2>
+                        
+                        <div class="card reveal reveal-delay-1">
+                            <h3 style="color:var(--primary);">6. Morphine</h3>
+                            <p><strong>DCI :</strong> Morphine.</p>
+                            <p><strong>Noms commerciaux :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('morphine')">Skénan</span> (LP), 
+                                <span class="drug-link" onclick="showDrugModal('morphine')">Actiskénan</span> (LI).
+                            </p>
+                            <p><strong>Formes :</strong> Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.</p>
+                            <p><strong>Posologie :</strong> Actiskénan toutes les 4‑6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.</p>
+                            <p><strong>Conseil :</strong> « La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.</p>
+                        </div>
+
+                        <div class="card reveal reveal-delay-2">
+                            <h3 style="color:var(--primary);">7. Buprénorphine</h3>
+                            <p><strong>DCI :</strong> Buprénorphine.</p>
+                            <p><strong>Noms commerciaux :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('buprenorphine')">Buprenal</span>, 
+                                <span class="drug-link" onclick="showDrugModal('buprenorphine')">Temgesic</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Comprimés sublinguaux (0.2 mg, 2 mg).</p>
+                            <p><strong>Posologie :</strong> 0.2‑0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.</p>
+                            <p><strong>Conseil :</strong> « Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.</p>
+                        </div>
+
+                        <div class="card reveal reveal-delay-3">
+                            <h3 style="color:var(--primary);">8. Oxycodone</h3>
+                            <p><strong>DCI :</strong> Oxycodone.</p>
+                            <p><strong>Nom commercial :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('oxycodone')">Oxynorm</span>.
+                            </p>
+                            <p><strong>Formes :</strong> Gélules LP (5, 10, 20, 30, 40, 80 mg).</p>
+                            <p><strong>Posologie :</strong> 10 mg toutes les 12h (LP) pour douleur chronique.</p>
+                            <p><strong>Conseil :</strong> Mêmes précautions que la morphine. Délivrance sous carnet à souches.</p>
+                        </div>
+
+                        <div class="card reveal reveal-delay-1">
+                            <h3 style="color:var(--primary);">9 & 10. Fentanyl / Alfentanil</h3>
+                            <p><strong>DCI :</strong> Alfentanil (Rapifen) / Fentanyl (Durogesic).</p>
+                            <p><strong>Noms commerciaux :</strong> 
+                                <span class="drug-link" onclick="showDrugModal('fentanyl')">Durogesic</span> (patch), 
+                                <span class="drug-link" onclick="showDrugModal('alfentanil')">Rapifen</span> (injectable).
+                            </p>
+                            <p><strong>Formes :</strong> Patchs transdermiques (12, 25, 50, 75, 100 µg/h) ; Rapifen solution injectable (hôpital).</p>
+                            <p><strong>Posologie :</strong> Durogesic toutes les 72h. Rapifen usage anesthésique uniquement.</p>
+                            <p><strong>Conseil :</strong> « Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l’exposer à une source de chaleur (overdose mortelle). » Carnet à souches.</p>
+                        </div>
+                    </section>
+
+                    <!-- Conseil ultime -->
+                    <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                        <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
+                        <div class="card reveal reveal-delay-1">
+                            <p>En Algérie, l’ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez‑vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer.</p>
+                        </div>
+                    </section>
                 </div>
             </div>
 
             <!-- Exam Section -->
             <div class="exam-section hidden reveal reveal-delay-2" id="examSection">
-                <!-- Exam Container (no header) -->
                 <div class="exam-container" id="examContainer">
                     <div class="exam-info">
                         <div class="timer">
                             <i class="fas fa-clock"></i> Temps restant : <span id="time">45:00</span>
                         </div>
                         <div class="progress">
-                            <i class="fas fa-check-circle"></i> Questions répondues : <span id="answered">0</span>/<span
-                            id="total-qs">15</span>
+                            <i class="fas fa-check-circle"></i> Questions répondues : <span id="answered">0</span>/<span id="total-qs">15</span>
                         </div>
                     </div>
 
                     <div class="exam-content" id="examContent">
-                        <div class="question-wrapper" id="questionWrapper">
-                            <!-- سيتم ملؤها ديناميكياً -->
-                        </div>
-
+                        <div class="question-wrapper" id="questionWrapper"></div>
                         <div class="actions" id="actionsBar">
-                            <button class="btn btn-outline" id="prev-btn" style="display:none;">
-                                <i class="fas fa-arrow-left"></i> Précédent
-                            </button>
-                            <button class="btn btn-next" id="next-btn">
-                                Suivant <i class="fas fa-arrow-right"></i>
-                            </button>
-                            <button class="btn btn-submit" id="submit-btn" style="display:none;">
-                                <i class="fas fa-paper-plane"></i> Soumettre l'examen
-                            </button>
-                            <button class="btn btn-outline" id="reset-btn">
-                                <i class="fas fa-undo"></i> Recommencer
-                            </button>
+                            <button class="btn btn-outline" id="prev-btn" style="display:none;"><i class="fas fa-arrow-left"></i> Précédent</button>
+                            <button class="btn btn-next" id="next-btn">Suivant <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn btn-submit" id="submit-btn" style="display:none;"><i class="fas fa-paper-plane"></i> Soumettre l'examen</button>
+                            <button class="btn btn-outline" id="reset-btn"><i class="fas fa-undo"></i> Recommencer</button>
                         </div>
                     </div>
 
-                    <!-- Exam Results -->
                     <div class="result-container" id="result-container">
                         <h2 class="result-header">Résultats de l'examen</h2>
                         <div class="score" id="final-score">0/20</div>
                         <div class="score-text" id="score-text"></div>
-
                         <div class="feedback" id="feedback"></div>
-
                         <div class="legend">
-                            <div class="legend-item">
-                                <div class="legend-color full-points"></div>
-                                <span>Point complet (1.33)</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color partial-points"></div>
-                                <span>Points partiels</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color zero-points"></div>
-                                <span>Zéro point</span>
-                            </div>
+                            <div class="legend-item"><div class="legend-color full-points"></div><span>Point complet (1.33)</span></div>
+                            <div class="legend-item"><div class="legend-color partial-points"></div><span>Points partiels</span></div>
+                            <div class="legend-item"><div class="legend-color zero-points"></div><span>Zéro point</span></div>
                         </div>
-
-                        <button class="restart-btn" id="restart-btn">
-                            <i class="fas fa-redo"></i> Refaire l'examen
-                        </button>
+                        <button class="restart-btn" id="restart-btn"><i class="fas fa-redo"></i> Refaire l'examen</button>
                     </div>
                 </div>
             </div>
@@ -1475,651 +937,434 @@
         </div>
     </div>
 
+    <!-- Drug Images Modal (outside tabs to be always accessible) -->
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="social-links">
-            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank"
-            title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i
-            class="fab fa-telegram-plane"></i></a>
-            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank"
-            title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank"
-            title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i
-            class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank"
-        title="YouTube"><i class="fab fa-youtube"></i></a>
-    </div>
-    <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
-</footer>
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
 
-<script>
-    // ==================== Generate Stars ====================
-    function createStars() {
-        const container = document.getElementById('starsContainer');
-        const fragment = document.createDocumentFragment();
+    <script>
+        // ==================== Generate Stars ====================
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 180; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            for (let i = 0; i < 4; i++) {
+                const shootingStar = document.createElement('div');
+                shootingStar.className = 'shooting-star';
+                shootingStar.style.left = Math.random() * 50 + '%';
+                shootingStar.style.top = Math.random() * 30 + '%';
+                shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
+                fragment.appendChild(shootingStar);
+            }
+            container.appendChild(fragment);
+        }
+        createStars();
 
-        for (let i = 0; i < 180; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            const size = Math.random() * 3 + 1;
-            star.style.width = size + 'px';
-            star.style.height = size + 'px';
-            star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
-            star.style.setProperty('--delay', Math.random() * 5 + 's');
-            fragment.appendChild(star);
+        // ==================== Tab Switching Logic ====================
+        const tabs = {
+            pdf: { button: document.getElementById('tabPdf'), section: document.getElementById('pdfSection') },
+            lessonNew: { button: document.getElementById('tabLessonNew'), section: document.getElementById('lessonNewSection') },
+            exam: { button: document.getElementById('tabExam'), section: document.getElementById('examSection') }
+        };
+        let activeTab = 'pdf';
+        let isLessonTabActive = false;
+
+        function pauseTimer() {
+            if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+        }
+        function resumeTimer() {
+            const resultContainer = document.getElementById('result-container');
+            if (!timerInterval && resultContainer.style.display !== 'block' && document.getElementById('examContent').style.display !== 'none') {
+                startTimer();
+            }
         }
 
-        for (let i = 0; i < 4; i++) {
-            const shootingStar = document.createElement('div');
-            shootingStar.className = 'shooting-star';
-            shootingStar.style.left = Math.random() * 50 + '%';
-            shootingStar.style.top = Math.random() * 30 + '%';
-            shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
-            fragment.appendChild(shootingStar);
+        function switchTab(tabKey) {
+            if (activeTab === tabKey) return;
+            tabs[activeTab].button.classList.remove('active');
+            tabs[activeTab].section.classList.add('hidden');
+            tabs[tabKey].button.classList.add('active');
+            tabs[tabKey].section.classList.remove('hidden');
+
+            if (activeTab === 'exam') pauseTimer();
+            if (tabKey === 'exam') resumeTimer();
+
+            // Update lesson tab flag for side dots
+            isLessonTabActive = (tabKey === 'lessonNew');
+            if (isLessonTabActive) {
+                updateActiveDot(); // immediately update active dot
+            }
+
+            activeTab = tabKey;
+
+            // Re-trigger reveal animations in the new section
+            tabs[tabKey].section.querySelectorAll('.reveal').forEach(el => {
+                el.classList.remove('visible');
+                void el.offsetWidth;
+                el.classList.add('visible');
+            });
         }
 
-        container.appendChild(fragment);
-    }
-    createStars();
+        tabs.pdf.button.addEventListener('click', () => switchTab('pdf'));
+        tabs.lessonNew.button.addEventListener('click', () => switchTab('lessonNew'));
+        tabs.exam.button.addEventListener('click', () => switchTab('exam'));
 
-    // ==================== Tab Switching Logic (three tabs) ====================
-    const tabs = {
-        pdf: {
-            button: document.getElementById('tabPdf'),
-            section: document.getElementById('pdfSection')
-        },
-        lessonNew: {
-            button: document.getElementById('tabLessonNew'),
-            section: document.getElementById('lessonNewSection')
-        },
-        exam: {
-            button: document.getElementById('tabExam'),
-            section: document.getElementById('examSection')
+        // ==================== Side Dots Navigation (Lesson) ====================
+        const sectionIDs = ['intro','mecanisme','indications','contre-indications','interactions','grossesse','niveau1','niveau2','niveau3','conseil'];
+        const dots = document.querySelectorAll('.dot');
+
+        function updateActiveDot() {
+            if (!isLessonTabActive) return;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = 'intro';
+            sectionIDs.forEach(id => {
+                const el = document.getElementById('section-' + id);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+            dots.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
         }
-    };
 
-    let activeTab = 'pdf';
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
 
-    function pauseTimer() {
-        if (timerInterval) {
-            clearInterval(timerInterval);
-            timerInterval = null;
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetId = dot.dataset.dot;
+                const targetEl = document.getElementById('section-' + targetId);
+                if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // ==================== Drug Images Modal ====================
+        const drugImages = {
+            paracetamol: [],
+            aspirine: [],
+            codeine: [],
+            tramadol_paracetamol: [],
+            tramadol: [],
+            morphine: [],
+            buprenorphine: [],
+            oxycodone: [],
+            fentanyl: [],
+            alfentanil: []
+        };
+        const drugTitles = {
+            paracetamol: 'Paracétamol (Doliprane, Dolyc, etc.)',
+            aspirine: 'Acide Acétylsalicylique (Aspegic, Aspirine, Catalgine)',
+            codeine: 'Paracétamol + Codéine (Codoliprane, Co‑Dolyc…)',
+            tramadol_paracetamol: 'Paracétamol + Tramadol (Di‑Dolex, Supradolex…)',
+            tramadol: 'Tramadol seul (Dolex, Supramadol, Zodid)',
+            morphine: 'Morphine (Skénan, Actiskénan)',
+            buprenorphine: 'Buprénorphine (Buprenal, Temgesic)',
+            oxycodone: 'Oxycodone (Oxynorm)',
+            fentanyl: 'Fentanyl (Durogesic)',
+            alfentanil: 'Alfentanil (Rapifen)'
+        };
+
+        window.showDrugModal = function(drugKey) {
+            const modal = document.getElementById('drugModal');
+            const title = document.getElementById('modalTitle');
+            const container = document.getElementById('modalImagesContainer');
+            title.textContent = drugTitles[drugKey] || drugKey;
+            container.innerHTML = '';
+            const images = drugImages[drugKey] || [];
+            if (images.length === 0) {
+                container.innerHTML = '<div class="modal-placeholder">Images à ajouter ultérieurement.<br>Ajoutez les chemins dans le tableau <code>drugImages</code> du script.</div>';
+            } else {
+                images.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = drugKey;
+                    img.loading = 'lazy';
+                    container.appendChild(img);
+                });
+            }
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeDrugModal = function() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        };
+
+        document.getElementById('drugModal').addEventListener('click', function(e) {
+            if (e.target === this) closeDrugModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeDrugModal();
+        });
+
+        // ==================== Exam Logic ====================
+        const questions = [
+            { id:1, text:"Parmi les mécanismes physiopathologiques pouvant modifier le nombre de leucocytes circulants, lesquels sont mentionnés ?", correctAnswers:["a","c","d"], options:[{id:"a",text:"Anomalies de la production médullaire."},{id:"b",text:"Anomalies de la fonction phagocytaire."},{id:"c",text:"Anomalies de répartition entre pool circulant et pool marginal."},{id:"d",text:"Anomalies périphériques (destruction, séquestration)."}] },
+            { id:2, text:"Pour interpréter une formule leucocytaire, quelle démarche est essentielle ?", correctAnswers:["b","c","d"], options:[{id:"a",text:"Se baser uniquement sur les pourcentages (valeurs relatives)."},{id:"b",text:"Convertir les pourcentages en valeurs absolues (par mm³)."},{id:"c",text:"Multiplier le pourcentage de chaque lignée par le nombre total de leucocytes."},{id:"d",text:"Comparer les valeurs obtenues aux normes de l’adulte sain."}] },
+            { id:3, text:"Quelles sont les valeurs seuils définissant une hyperleucocytose chez l’adulte ?", correctAnswers:["b","c"], options:[{id:"a",text:"GB > 4000/mm³"},{id:"b",text:"GB > 10000/mm³"},{id:"c",text:"GB > 10 G/L"},{id:"d",text:"GB < 4000/mm³"}] },
+            { id:4, text:"Parmi les étiologies suivantes, lesquelles peuvent provoquer une polynucléose neutrophile (PNN > 7500/mm³) ?", correctAnswers:["a","c","d"], options:[{id:"a",text:"Infection bactérienne aiguë (ex : abcès, angine)."},{id:"b",text:"Carence en vitamine B12."},{id:"c",text:"Exercice physique intense ou stress aigu."},{id:"d",text:"Prise de corticoïdes."}] },
+            { id:5, text:"Concernant l’hyperéosinophilie (PNE > 500/mm³), quelles causes sont mentionnées ?", correctAnswers:["a","b"], options:[{id:"a",text:"Parasitoses (ex : helminthiases)."},{id:"b",text:"Réactions allergiques (ex : asthme, eczéma)."},{id:"c",text:"Infections virales aiguës (ex : grippe)."},{id:"d",text:"Hypothyroïdie."}] },
+            { id:6, text:"L’hyperlymphocytose chez l’adulte est définie par un taux supérieur à :", correctAnswers:["b"], options:[{id:"a",text:"1500/mm³"},{id:"b",text:"4000/mm³"},{id:"c",text:"7000/mm³"},{id:"d",text:"11000/mm³"}] },
+            { id:7, text:"Quelles pathologies peuvent présenter une lymphocytose aiguë avec lymphocytes atypiques ?", correctAnswers:["a","b"], options:[{id:"a",text:"Mononucléose infectieuse (EBV)."},{id:"b",text:"Toxoplasmose."},{id:"c",text:"Rubéole."},{id:"d",text:"Tuberculose active."}] },
+            { id:8, text:"Concernant la monocytose (monocytes > 1000/mm³), quelles étiologies sont mentionnées ?", correctAnswers:["a","b","c"], options:[{id:"a",text:"Infections bactériennes (brucellose, salmonellose)."},{id:"b",text:"Infections parasitaires (toxoplasmose, paludisme)."},{id:"c",text:"Maladies auto-immunes (lupus, polyarthrite rhumatoïde)."},{id:"d",text:"Carence en fer."}] },
+            { id:9, text:"La neutropénie est définie par un taux de PNN inférieur à :", correctAnswers:["a"], options:[{id:"a",text:"1500/mm³"},{id:"b",text:"7500/mm³"},{id:"c",text:"200/mm³ (agranulocytose)."},{id:"d",text:"4000/mm³"}] },
+            { id:10, text:"Parmi les causes de neutropénie acquise, lesquelles sont mentionnées ?", correctAnswers:["a","b","c"], options:[{id:"a",text:"Carence en vitamine B12 ou folates."},{id:"b",text:"Infection virale (grippe, VIH)."},{id:"c",text:"Médicaments (antimitotiques, certains antibiotiques)."},{id:"d",text:"Exercice physique extrême."}] },
+            { id:11, text:"Concernant la lymphopénie (lymphocytes < 1000/mm³), quelles situations sont mentionnées ?", correctAnswers:["a","b","c"], options:[{id:"a",text:"Déficit immunitaire acquis (SIDA)."},{id:"b",text:"Radiothérapie ou chimiothérapie."},{id:"c",text:"Traitement par corticoïdes."},{id:"d",text:"Hyperthyroïdie."}] },
+            { id:12, text:"Quelles anomalies morphologiques peuvent être observées dans les PNN ?", correctAnswers:["a","b","c"], options:[{id:"a",text:"Hypersegmentation nucléaire (carence B12/folates)."},{id:"b",text:"Hyposegmentation nucléaire (sepsis, anomalie de Pelger-Huët)."},{id:"c",text:"Hypergranulation cytoplasmique."},{id:"d",text:"Présence de granulations azurophiles géantes."}] },
+            { id:13, text:"Concernant les lymphocytes atypiques, quelle affirmation est correcte ?", correctAnswers:["a","c"], options:[{id:"a",text:"Ils sont caractéristiques des syndromes mononucléosiques (ex : MNI)."},{id:"b",text:"Ils indiquent toujours une hémopathie maligne."},{id:"c",text:"Ils correspondent à des lymphocytes activés ou stimulés."},{id:"d",text:"Leur présence est pathognomonique d’une leucémie aiguë lymphoblastique."}] },
+            { id:14, text:"Dans la démarche diagnostique d’une anomalie leucocytaire bénigne, quels éléments sont indispensables ?", correctAnswers:["a","b","d"], options:[{id:"a",text:"Un interrogatoire détaillé (âge, médicaments…)."},{id:"b",text:"Un examen clinique complet."},{id:"c",text:"La réalisation systématique d’un myélogramme en première intention."},{id:"d",text:"Des examens complémentaires ciblés (VS, hémocultures, etc.)."}] },
+            { id:15, text:"Quelle affirmation concernant le bilan leucocytaire est correcte ?", correctAnswers:["b"], options:[{id:"a",text:"Sa perturbation nécessite toujours un traitement immunomodulateur."},{id:"b",text:"Il se rétablit généralement avec le traitement de la cause sous-jacente."},{id:"c",text:"Les anomalies bénignes sont toujours symptomatiques."},{id:"d",text:"La surveillance par hémogramme est inutile une fois le diagnostic posé."}] }
+        ];
+
+        const pointsPerQuestion = 20 / 15;
+        let timeLeft = 45 * 60;
+        let timerInterval;
+        let currentQuestionIndex = 0;
+        let userAnswers = {};
+        questions.forEach(q => { userAnswers[`q${q.id}`] = []; });
+
+        function initExam() {
+            displayQuestion(currentQuestionIndex);
+            updateProgress();
+            document.getElementById('next-btn').addEventListener('click', goToNext);
+            document.getElementById('prev-btn').addEventListener('click', goToPrev);
+            document.getElementById('submit-btn').addEventListener('click', submitExam);
+            document.getElementById('reset-btn').addEventListener('click', resetExam);
+            document.getElementById('restart-btn').addEventListener('click', restartExam);
         }
-    }
 
-    function resumeTimer() {
-        const resultContainer = document.getElementById('result-container');
-        if (!timerInterval && resultContainer.style.display !== 'block' && document.getElementById('examContent').style.display !== 'none') {
+        function displayQuestion(index) {
+            const wrapper = document.getElementById('questionWrapper');
+            const question = questions[index];
+            const questionId = `q${question.id}`;
+            let optionsHTML = '';
+            question.options.forEach(option => {
+                const isChecked = userAnswers[questionId].includes(option.id) ? 'checked' : '';
+                optionsHTML += `<div class="option ${isChecked ? 'selected' : ''}" data-question="${questionId}" data-option="${option.id}">
+                    <label class="option-label" for="${questionId}_${option.id}">
+                        <input type="checkbox" id="${questionId}_${option.id}" value="${option.id}" ${isChecked}>
+                        <span>${option.id}) ${option.text}</span>
+                    </label>
+                </div>`;
+            });
+            wrapper.innerHTML = `<div class="question">
+                <div class="question-number">Question <span>${question.id}</span> / 15</div>
+                <div class="question-text">${question.text}</div>
+                <div class="options">${optionsHTML}</div>
+            </div>`;
+            wrapper.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const optionElement = this.closest('.option');
+                    const qId = optionElement.dataset.question;
+                    const optId = optionElement.dataset.option;
+                    if (this.checked) {
+                        optionElement.classList.add('selected');
+                        if (!userAnswers[qId].includes(optId)) userAnswers[qId].push(optId);
+                    } else {
+                        optionElement.classList.remove('selected');
+                        userAnswers[qId] = userAnswers[qId].filter(id => id !== optId);
+                    }
+                    updateProgress();
+                });
+            });
+            updateNavigationButtons(index);
+        }
+
+        function updateNavigationButtons(index) {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            prevBtn.style.display = index === 0 ? 'none' : 'inline-flex';
+            if (index === questions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-flex';
+            } else {
+                nextBtn.style.display = 'inline-flex';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        function goToNext() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+                document.getElementById('questionWrapper').scrollIntoView({ behavior:'smooth', block:'start' });
+            }
+        }
+        function goToPrev() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+        function updateProgress() {
+            const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
+            document.getElementById('answered').textContent = answeredCount;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const m = Math.floor(timeLeft/60), s = timeLeft%60;
+                document.getElementById('time').textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+                if (timeLeft <= 0) { clearInterval(timerInterval); timerInterval=null; submitExam(); }
+            }, 1000);
+        }
+
+        function submitExam() {
+            if (timerInterval) { clearInterval(timerInterval); timerInterval=null; }
+            let totalScore = 0; const maxScore = 20; const results = {};
+            questions.forEach(question => {
+                const qId = `q${question.id}`;
+                const correctList = question.correctAnswers;
+                const studentList = userAnswers[qId] || [];
+                if (studentList.length === 0) { results[qId] = {score:0, correctChoices:correctList, studentChoices:studentList, note:'Aucune réponse sélectionnée'}; return; }
+                let hasWrong = studentList.some(c => !correctList.includes(c));
+                if (hasWrong) { results[qId] = {score:0, correctChoices:correctList, studentChoices:studentList, note:'Contient une réponse incorrecte'}; return; }
+                const correctSelected = studentList.filter(c => correctList.includes(c)).length;
+                if (correctSelected === correctList.length) { results[qId] = {score:pointsPerQuestion, correctChoices:correctList, studentChoices:studentList, note:'Réponse complète'}; totalScore += pointsPerQuestion; }
+                else if (correctSelected === 0) { results[qId] = {score:0, correctChoices:correctList, studentChoices:studentList, note:'Aucune bonne réponse sélectionnée'}; }
+                else { const score = (correctSelected / correctList.length) * pointsPerQuestion; results[qId] = {score:parseFloat(score.toFixed(4)), correctChoices:correctList, studentChoices:studentList, note:`Partiel (${correctSelected}/${correctList.length})`}; totalScore += score; }
+            });
+            displayResults(totalScore, maxScore, results);
+        }
+
+        function displayResults(totalScore, maxScore, results) {
+            const percentage = ((totalScore/maxScore)*100).toFixed(2);
+            document.getElementById('final-score').textContent = `${totalScore.toFixed(2)}/${maxScore}`;
+            document.getElementById('score-text').textContent = getScoreMessage(percentage);
+            let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Détails de la correction :</h3>';
+            questions.forEach(question => {
+                const qId = `q${question.id}`;
+                const result = results[qId];
+                let resultClass = (Math.abs(result.score - pointsPerQuestion) < 0.001) ? 'correct' : (result.score > 0 ? 'partial' : 'wrong');
+                let optionsListHTML = '<div class="options-result-list">';
+                question.options.forEach(option => {
+                    const isCorrect = result.correctChoices.includes(option.id);
+                    const isSelected = result.studentChoices.includes(option.id);
+                    let itemClass = isCorrect ? 'correct-option' : (isSelected && !isCorrect ? 'wrong-selected' : 'neutral-option');
+                    let markHTML = isCorrect ? '✅' : (isSelected && !isCorrect ? '❌' : '');
+                    let studentBadge = isSelected ? '<span class="student-choice-badge">Votre choix</span>' : '';
+                    optionsListHTML += `<div class="option-result-item ${itemClass}">
+                        <span class="option-mark">${markHTML}</span>
+                        <span class="option-letter">${option.id})</span>
+                        <span class="option-text">${option.text}</span> ${studentBadge}
+                    </div>`;
+                });
+                optionsListHTML += '</div>';
+                detailsHTML += `<div class="question-result ${resultClass}">
+                    <div class="question-result-header"><span>Question ${question.id}</span><span>${result.score.toFixed(4)} point</span></div>
+                    <div class="question-result-text">${question.text}</div>
+                    ${optionsListHTML}
+                    <div class="note">${result.note}</div>
+                </div>`;
+            });
+            document.getElementById('feedback').innerHTML = detailsHTML;
+            document.getElementById('examContent').style.display = 'none';
+            document.querySelector('.exam-info').style.display = 'none';
+            document.getElementById('result-container').style.display = 'block';
+        }
+
+        function getScoreMessage(p) {
+            if (p >= 90) return "Excellent ! Maîtrise parfaite des antalgiques !";
+            if (p >= 80) return "Très bien ! Excellentes connaissances en antalgiques !";
+            if (p >= 70) return "Bien ! Solides connaissances des antalgiques !";
+            if (p >= 60) return "Assez bien ! Une révision des antalgiques est recommandée !";
+            if (p >= 40) return "Faible ! Étudiez plus en profondeur les antalgiques !";
+            return "Très faible ! Vous devez travailler davantage la pharmacologie des antalgiques !";
+        }
+
+        function resetExam() {
+            questions.forEach(q => { userAnswers[`q${q.id}`] = []; });
+            currentQuestionIndex = 0;
+            displayQuestion(currentQuestionIndex);
+            updateProgress();
+        }
+
+        function restartExam() {
+            timeLeft = 45 * 60;
+            document.getElementById('examContent').style.display = 'block';
+            document.querySelector('.exam-info').style.display = 'flex';
+            document.getElementById('result-container').style.display = 'none';
+            resetExam();
+            if (timerInterval) { clearInterval(timerInterval); timerInterval=null; }
             startTimer();
         }
-    }
 
-    function switchTab(tabKey) {
-        if (activeTab === tabKey) return;
+        // ==================== General UI ====================
+        // Hide header on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const topNav = document.getElementById('topNav');
+            if (st > lastScrollTop && st > 150) topNav.classList.add('hidden');
+            else if (st < lastScrollTop) topNav.classList.remove('hidden');
+            lastScrollTop = st;
+        }, { passive: true });
 
-        // Désactiver l'onglet actuel
-        tabs[activeTab].button.classList.remove('active');
-        tabs[activeTab].section.classList.add('hidden');
-
-        // Activer le nouvel onglet
-        tabs[tabKey].button.classList.add('active');
-        tabs[tabKey].section.classList.remove('hidden');
-
-        // Gestion du minuteur
-        if (activeTab === 'exam') {
-            pauseTimer();
-        }
-        if (tabKey === 'exam') {
-            resumeTimer();
-        }
-
-        activeTab = tabKey;
-
-        // Réanimation des éléments reveal dans la section affichée
-        tabs[tabKey].section.querySelectorAll('.reveal').forEach(el => {
-            el.classList.remove('visible');
-            void el.offsetWidth;
-            el.classList.add('visible');
+        // Mobile menu
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('mobileMenuOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
-    }
-
-    tabs.pdf.button.addEventListener('click', () => switchTab('pdf'));
-    tabs.lessonNew.button.addEventListener('click', () => switchTab('lessonNew'));
-    tabs.exam.button.addEventListener('click', () => switchTab('exam'));
-
-    // ==================== Question Database (French translation) ====================
-    const questions = [{
-        id: 1,
-        text: "Parmi les mécanismes physiopathologiques pouvant modifier le nombre de leucocytes circulants, lesquels sont mentionnés ?",
-        correctAnswers: ["a", "c", "d"],
-        options: [
-            { id: "a", text: "Anomalies de la production médullaire." },
-            { id: "b", text: "Anomalies de la fonction phagocytaire." },
-            { id: "c", text: "Anomalies de répartition entre pool circulant et pool marginal." },
-            { id: "d", text: "Anomalies périphériques (destruction, séquestration)." }
-        ]
-    }, {
-        id: 2,
-        text: "Pour interpréter une formule leucocytaire, quelle démarche est essentielle ?",
-        correctAnswers: ["b", "c", "d"],
-        options: [
-            { id: "a", text: "Se baser uniquement sur les pourcentages (valeurs relatives)." },
-            { id: "b", text: "Convertir les pourcentages en valeurs absolues (par mm³)." },
-            { id: "c", text: "Multiplier le pourcentage de chaque lignée par le nombre total de leucocytes." },
-            { id: "d", text: "Comparer les valeurs obtenues aux normes de l’adulte sain." }
-        ]
-    }, {
-        id: 3,
-        text: "Quelles sont les valeurs seuils définissant une hyperleucocytose chez l’adulte ?",
-        correctAnswers: ["b", "c"],
-        options: [
-            { id: "a", text: "GB > 4000/mm³" },
-            { id: "b", text: "GB > 10000/mm³" },
-            { id: "c", text: "GB > 10 G/L" },
-            { id: "d", text: "GB < 4000/mm³" }
-        ]
-    }, {
-        id: 4,
-        text: "Parmi les étiologies suivantes, lesquelles peuvent provoquer une polynucléose neutrophile (PNN > 7500/mm³) ?",
-        correctAnswers: ["a", "c", "d"],
-        options: [
-            { id: "a", text: "Infection bactérienne aiguë (ex : abcès, angine)." },
-            { id: "b", text: "Carence en vitamine B12." },
-            { id: "c", text: "Exercice physique intense ou stress aigu." },
-            { id: "d", text: "Prise de corticoïdes." }
-        ]
-    }, {
-        id: 5,
-        text: "Concernant l’hyperéosinophilie (PNE > 500/mm³), quelles causes sont mentionnées ?",
-        correctAnswers: ["a", "b"],
-        options: [
-            { id: "a", text: "Parasitoses (ex : helminthiases)." },
-            { id: "b", text: "Réactions allergiques (ex : asthme, eczéma)." },
-            { id: "c", text: "Infections virales aiguës (ex : grippe)." },
-            { id: "d", text: "Hypothyroïdie." }
-        ]
-    }, {
-        id: 6,
-        text: "L’hyperlymphocytose chez l’adulte est définie par un taux supérieur à :",
-        correctAnswers: ["b"],
-        options: [
-            { id: "a", text: "1500/mm³" },
-            { id: "b", text: "4000/mm³" },
-            { id: "c", text: "7000/mm³" },
-            { id: "d", text: "11000/mm³" }
-        ]
-    }, {
-        id: 7,
-        text: "Quelles pathologies peuvent présenter une lymphocytose aiguë avec lymphocytes atypiques ?",
-        correctAnswers: ["a", "b"],
-        options: [
-            { id: "a", text: "Mononucléose infectieuse (EBV)." },
-            { id: "b", text: "Toxoplasmose." },
-            { id: "c", text: "Rubéole." },
-            { id: "d", text: "Tuberculose active." }
-        ]
-    }, {
-        id: 8,
-        text: "Concernant la monocytose (monocytes > 1000/mm³), quelles étiologies sont mentionnées ?",
-        correctAnswers: ["a", "b", "c"],
-        options: [
-            { id: "a", text: "Infections bactériennes (brucellose, salmonellose)." },
-            { id: "b", text: "Infections parasitaires (toxoplasmose, paludisme)." },
-            { id: "c", text: "Maladies auto-immunes (lupus, polyarthrite rhumatoïde)." },
-            { id: "d", text: "Carence en fer." }
-        ]
-    }, {
-        id: 9,
-        text: "La neutropénie est définie par un taux de PNN inférieur à :",
-        correctAnswers: ["a"],
-        options: [
-            { id: "a", text: "1500/mm³" },
-            { id: "b", text: "7500/mm³" },
-            { id: "c", text: "200/mm³ (agranulocytose)." },
-            { id: "d", text: "4000/mm³" }
-        ]
-    }, {
-        id: 10,
-        text: "Parmi les causes de neutropénie acquise, lesquelles sont mentionnées ?",
-        correctAnswers: ["a", "b", "c"],
-        options: [
-            { id: "a", text: "Carence en vitamine B12 ou folates." },
-            { id: "b", text: "Infection virale (grippe, VIH)." },
-            { id: "c", text: "Médicaments (antimitotiques, certains antibiotiques)." },
-            { id: "d", text: "Exercice physique extrême." }
-        ]
-    }, {
-        id: 11,
-        text: "Concernant la lymphopénie (lymphocytes < 1000/mm³), quelles situations sont mentionnées ?",
-        correctAnswers: ["a", "b", "c"],
-        options: [
-            { id: "a", text: "Déficit immunitaire acquis (SIDA)." },
-            { id: "b", text: "Radiothérapie ou chimiothérapie." },
-            { id: "c", text: "Traitement par corticoïdes." },
-            { id: "d", text: "Hyperthyroïdie." }
-        ]
-    }, {
-        id: 12,
-        text: "Quelles anomalies morphologiques peuvent être observées dans les PNN ?",
-        correctAnswers: ["a", "b", "c"],
-        options: [
-            { id: "a", text: "Hypersegmentation nucléaire (carence B12/folates)." },
-            { id: "b", text: "Hyposegmentation nucléaire (sepsis, anomalie de Pelger-Huët)." },
-            { id: "c", text: "Hypergranulation cytoplasmique." },
-            { id: "d", text: "Présence de granulations azurophiles géantes." }
-        ]
-    }, {
-        id: 13,
-        text: "Concernant les lymphocytes atypiques, quelle affirmation est correcte ?",
-        correctAnswers: ["a", "c"],
-        options: [
-            { id: "a", text: "Ils sont caractéristiques des syndromes mononucléosiques (ex : MNI)." },
-            { id: "b", text: "Ils indiquent toujours une hémopathie maligne." },
-            { id: "c", text: "Ils correspondent à des lymphocytes activés ou stimulés." },
-            { id: "d", text: "Leur présence est pathognomonique d’une leucémie aiguë lymphoblastique." }
-        ]
-    }, {
-        id: 14,
-        text: "Dans la démarche diagnostique d’une anomalie leucocytaire bénigne, quels éléments sont indispensables ?",
-        correctAnswers: ["a", "b", "d"],
-        options: [
-            { id: "a", text: "Un interrogatoire détaillé (âge, médicaments…)." },
-            { id: "b", text: "Un examen clinique complet." },
-            { id: "c", text: "La réalisation systématique d’un myélogramme en première intention." },
-            { id: "d", text: "Des examens complémentaires ciblés (VS, hémocultures, etc.)." }
-        ]
-    }, {
-        id: 15,
-        text: "Quelle affirmation concernant le bilan leucocytaire est correcte ?",
-        correctAnswers: ["b"],
-        options: [
-            { id: "a", text: "Sa perturbation nécessite toujours un traitement immunomodulateur." },
-            { id: "b", text: "Il se rétablit généralement avec le traitement de la cause sous-jacente." },
-            { id: "c", text: "Les anomalies bénignes sont toujours symptomatiques." },
-            { id: "d", text: "La surveillance par hémogramme est inutile une fois le diagnostic posé." }
-        ]
-    }];
-
-    // Global exam variables
-    const pointsPerQuestion = 20 / 15;
-    let timeLeft = 45 * 60;
-    let timerInterval;
-    let currentQuestionIndex = 0;
-
-    // تخزين إجابات المستخدم لكل سؤال
-    let userAnswers = {};
-    questions.forEach(q => {
-        userAnswers[`q${q.id}`] = [];
-    });
-
-    // ==================== Reveal on Scroll ====================
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-    // Initialize exam (without starting timer automatically)
-    function initExam() {
-        displayQuestion(currentQuestionIndex);
-        updateProgress();
-
-        document.getElementById('next-btn').addEventListener('click', goToNext);
-        document.getElementById('prev-btn').addEventListener('click', goToPrev);
-        document.getElementById('submit-btn').addEventListener('click', submitExam);
-        document.getElementById('reset-btn').addEventListener('click', resetExam);
-        document.getElementById('restart-btn').addEventListener('click', restartExam);
-
-        // Observe all elements with .reveal class
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    }
-
-    // عرض سؤال واحد فقط
-    function displayQuestion(index) {
-        const wrapper = document.getElementById('questionWrapper');
-        const question = questions[index];
-        const questionId = `q${question.id}`;
-
-        let optionsHTML = '';
-        question.options.forEach(option => {
-            const isChecked = userAnswers[questionId].includes(option.id) ? 'checked' : '';
-            optionsHTML += `
-                    <div class="option ${isChecked ? 'selected' : ''}" data-question="${questionId}" data-option="${option.id}">
-                        <label class="option-label" for="${questionId}_${option.id}">
-                            <input type="checkbox" id="${questionId}_${option.id}" value="${option.id}" ${isChecked}>
-                            <span>${option.id}) ${option.text}</span>
-                        </label>
-                    </div>
-                `;
-        });
-
-        wrapper.innerHTML = `
-                <div class="question">
-                    <div class="question-number">Question <span>${question.id}</span> / 15</div>
-                    <div class="question-text">${question.text}</div>
-                    <div class="options">${optionsHTML}</div>
-                </div>
-            `;
-
-        // إضافة مستمعي الأحداث للخيارات
-        wrapper.querySelectorAll('.option input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                const optionElement = this.closest('.option');
-                const qId = optionElement.dataset.question;
-                const optId = optionElement.dataset.option;
-
-                if (this.checked) {
-                    optionElement.classList.add('selected');
-                    if (!userAnswers[qId].includes(optId)) {
-                        userAnswers[qId].push(optId);
-                    }
-                } else {
-                    optionElement.classList.remove('selected');
-                    userAnswers[qId] = userAnswers[qId].filter(id => id !== optId);
-                }
-                updateProgress();
-            });
-        });
-
-        updateNavigationButtons(index);
-    }
-
-    // تحديث أزرار التنقل
-    function updateNavigationButtons(index) {
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const submitBtn = document.getElementById('submit-btn');
-
-        if (index === 0) {
-            prevBtn.style.display = 'none';
-        } else {
-            prevBtn.style.display = 'inline-flex';
-        }
-
-        if (index === questions.length - 1) {
-            nextBtn.style.display = 'none';
-            submitBtn.style.display = 'inline-flex';
-        } else {
-            nextBtn.style.display = 'inline-flex';
-            submitBtn.style.display = 'none';
-        }
-    }
-
-    function goToNext() {
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            displayQuestion(currentQuestionIndex);
-            document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    function goToPrev() {
-        if (currentQuestionIndex > 0) {
-            currentQuestionIndex--;
-            displayQuestion(currentQuestionIndex);
-            document.getElementById('questionWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    function updateProgress() {
-        const answeredCount = Object.keys(userAnswers).filter(qId => userAnswers[qId].length > 0).length;
-        document.getElementById('answered').textContent = answeredCount;
-        document.getElementById('total-qs').textContent = questions.length;
-    }
-
-    function startTimer() {
-        timerInterval = setInterval(function() {
-            timeLeft--;
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            document.getElementById('time').textContent =
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-            if (timeLeft <= 0) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                submitExam();
-            }
-        }, 1000);
-    }
-
-    function submitExam() {
-        if (timerInterval) {
-            clearInterval(timerInterval);
-            timerInterval = null;
-        }
-        let totalScore = 0;
-        const maxScore = 20;
-        const results = {};
-
-        questions.forEach(question => {
-            const questionId = `q${question.id}`;
-            const correctList = question.correctAnswers;
-            const studentList = userAnswers[questionId] || [];
-
-            if (studentList.length === 0) {
-                results[questionId] = {
-                    score: 0,
-                    correctChoices: correctList,
-                    studentChoices: studentList,
-                    note: 'Aucune réponse sélectionnée'
-                };
-                return;
-            }
-
-            let hasWrongAnswer = false;
-            for (const choice of studentList) {
-                if (!correctList.includes(choice)) {
-                    hasWrongAnswer = true;
-                    break;
-                }
-            }
-
-            if (hasWrongAnswer) {
-                results[questionId] = {
-                    score: 0,
-                    correctChoices: correctList,
-                    studentChoices: studentList,
-                    note: 'Contient une réponse incorrecte'
-                };
-                return;
-            }
-
-            const correctSelected = studentList.length;
-            const totalCorrect = correctList.length;
-
-            if (correctSelected === totalCorrect) {
-                results[questionId] = {
-                    score: pointsPerQuestion,
-                    correctChoices: correctList,
-                    studentChoices: studentList,
-                    note: 'Réponse complète'
-                };
-                totalScore += pointsPerQuestion;
-            } else if (correctSelected === 0) {
-                results[questionId] = {
-                    score: 0,
-                    correctChoices: correctList,
-                    studentChoices: studentList,
-                    note: 'Aucune bonne réponse sélectionnée'
-                };
-            } else {
-                const score = (correctSelected / totalCorrect) * pointsPerQuestion;
-                results[questionId] = {
-                    score: parseFloat(score.toFixed(4)),
-                    correctChoices: correctList,
-                    studentChoices: studentList,
-                    note: `Partiel (${correctSelected}/${totalCorrect})`
-                };
-                totalScore += score;
-            }
-        });
-
-        displayResults(totalScore, maxScore, results);
-    }
-
-    function displayResults(totalScore, maxScore, results) {
-        const percentage = ((totalScore / maxScore) * 100).toFixed(2);
-
-        document.getElementById('final-score').textContent = `${totalScore.toFixed(2)}/${maxScore}`;
-        document.getElementById('score-text').textContent = getScoreMessage(percentage);
-
-        const feedback = document.getElementById('feedback');
-        let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Détails de la correction :</h3>';
-
-        questions.forEach(question => {
-            const questionId = `q${question.id}`;
-            const result = results[questionId];
-            let resultClass = '';
-
-            if (Math.abs(result.score - pointsPerQuestion) < 0.001) {
-                resultClass = 'correct';
-            } else if (result.score > 0) {
-                resultClass = 'partial';
-            } else {
-                resultClass = 'wrong';
-            }
-
-            let optionsListHTML = '<div class="options-result-list">';
-            question.options.forEach(option => {
-                const isCorrect = result.correctChoices.includes(option.id);
-                const isSelected = result.studentChoices.includes(option.id);
-
-                let itemClass = '';
-                let markHTML = '';
-
-                if (isCorrect) {
-                    itemClass = 'correct-option';
-                    markHTML = '<span class="option-mark">✅</span>';
-                } else if (isSelected && !isCorrect) {
-                    itemClass = 'wrong-selected';
-                    markHTML = '<span class="option-mark">❌</span>';
-                } else {
-                    itemClass = 'neutral-option';
-                    markHTML = '<span class="option-mark"></span>';
-                }
-
-                let studentBadge = '';
-                if (isSelected) {
-                    studentBadge = '<span class="student-choice-badge">Votre choix</span>';
-                }
-
-                optionsListHTML += `
-                        <div class="option-result-item ${itemClass}">
-                            ${markHTML}
-                            <span class="option-letter">${option.id})</span>
-                            <span class="option-text">${option.text}</span>
-                            ${studentBadge}
-                        </div>
-                    `;
-            });
-            optionsListHTML += '</div>';
-
-            detailsHTML += `
-                    <div class="question-result ${resultClass}">
-                        <div class="question-result-header">
-                            <span>Question ${question.id}</span>
-                            <span>${result.score.toFixed(4)} point</span>
-                        </div>
-                        <div class="question-result-text">${question.text}</div>
-                        ${optionsListHTML}
-                        <div class="note">${result.note}</div>
-                    </div>
-                `;
-        });
-
-        feedback.innerHTML = detailsHTML;
-
-        document.getElementById('examContent').style.display = 'none';
-        document.querySelector('.exam-info').style.display = 'none';
-        document.getElementById('result-container').style.display = 'block';
-    }
-
-    function getScoreMessage(percentage) {
-        if (percentage >= 90) return "Excellent ! Maîtrise parfaite des antalgiques !";
-        if (percentage >= 80) return "Très bien ! Excellentes connaissances en antalgiques !";
-        if (percentage >= 70) return "Bien ! Solides connaissances des antalgiques !";
-        if (percentage >= 60) return "Assez bien ! Une révision des antalgiques est recommandée !";
-        if (percentage >= 40) return "Faible ! Étudiez plus en profondeur les antalgiques !";
-        return "Très faible ! Vous devez travailler davantage la pharmacologie des antalgiques !";
-    }
-
-    function resetExam() {
-        questions.forEach(q => {
-            userAnswers[`q${q.id}`] = [];
-        });
-        currentQuestionIndex = 0;
-        displayQuestion(currentQuestionIndex);
-        updateProgress();
-    }
-
-    function restartExam() {
-        timeLeft = 45 * 60;
-        document.getElementById('examContent').style.display = 'block';
-        document.querySelector('.exam-info').style.display = 'flex';
-        document.getElementById('result-container').style.display = 'none';
-        resetExam();
-        if (timerInterval) {
-            clearInterval(timerInterval);
-            timerInterval = null;
-        }
-        startTimer();
-    }
-
-    // ==================== General Functions ====================
-
-    // Hide/show header on scroll
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const topNav = document.getElementById('topNav');
-        if (scrollTop > lastScrollTop && scrollTop > 150) {
-            topNav.classList.add('hidden');
-        } else if (scrollTop < lastScrollTop) {
-            topNav.classList.remove('hidden');
-        }
-        lastScrollTop = scrollTop;
-    }, { passive: true });
-
-    // Mobile popup menu
-    document.getElementById('menuToggle').addEventListener('click', function() {
-        document.getElementById('mobileMenuOverlay').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    });
-
-    document.getElementById('closeMobileMenu').addEventListener('click', function() {
-        document.getElementById('mobileMenuOverlay').classList.remove('open');
-        document.body.style.overflow = '';
-    });
-
-    document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.remove('open');
+        document.getElementById('closeMobileMenu').addEventListener('click', () => {
+            document.getElementById('mobileMenuOverlay').classList.remove('open');
             document.body.style.overflow = '';
-        }
-    });
+        });
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+            if (e.target === this) { this.classList.remove('open'); document.body.style.overflow = ''; }
+        });
 
-    // Dark/Light theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const htmlElement = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    htmlElement.setAttribute('data-theme', savedTheme);
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const cur = htmlElement.getAttribute('data-theme');
+            const next = cur === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
+        // Reveal observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Start exam setup (but timer not started until user clicks exam tab)
-    document.addEventListener('DOMContentLoaded', initExam);
-</script>
+        // Initialize exam on load
+        document.addEventListener('DOMContentLoaded', initExam);
+    </script>
 </body>
 </html>
