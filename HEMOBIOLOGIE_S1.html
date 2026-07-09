@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ==================== CSS Variables (identical to main site) ==================== */
+        /* ==================== CSS Variables ==================== */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -60,7 +60,6 @@
             --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
         }
 
-        /* ==================== Base ==================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -88,12 +87,9 @@
             0%,100% { opacity: 0.15; transform: scale(1); }
             50% { opacity: 0.8; transform: scale(1.8); }
         }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
 
-        [data-theme="light"] .star {
-            animation: none !important; opacity: 0.15 !important;
-        }
-
-        /* ==================== Header (identical) ==================== */
+        /* Header */
         .top-nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
@@ -108,10 +104,7 @@
             border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
             color: white; animation: pulse 2.5s ease-in-out infinite;
         }
-        @keyframes pulse {
-            0%,100% { box-shadow: 0 0 0 0 rgba(0,188,212,0.4); }
-            50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); }
-        }
+        @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(0,188,212,0.4); } 50% { box-shadow: 0 0 0 18px rgba(0,188,212,0); } }
         .nav-right { display: flex; align-items: center; gap: 15px; }
         .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
         .nav-link {
@@ -121,12 +114,9 @@
         }
         .nav-link:hover { color: var(--text-heading); background: rgba(128,128,128,0.1); }
         .nav-link.active { color: #fff; background: rgba(0,188,212,0.2); }
-        .nav-link.active::after {
-            content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
-            width: 22px; height: 3px; background: var(--primary); border-radius: 3px;
-        }
+        .nav-link.active::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 22px; height: 3px; background: var(--primary); border-radius: 3px; }
 
-        /* Mobile menu overlay */
+        /* Mobile menu */
         .mobile-menu-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1100;
@@ -156,7 +146,6 @@
         .mobile-nav-link:hover { border-color: var(--primary); background: rgba(0,188,212,0.1); transform: translateX(6px); }
         .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
 
-        /* Theme toggle */
         .theme-toggle {
             width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-glass);
             background: var(--bg-glass); cursor: pointer; display: flex; align-items: center; justify-content: center;
@@ -170,47 +159,21 @@
         [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
         [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
 
-        .menu-toggle {
-            display: none; background: none; border: none; color: var(--text-heading);
-            font-size: 1.8rem; cursor: pointer; padding: 10px; transition: transform 0.3s ease;
-        }
+        .menu-toggle { display: none; background: none; border: none; color: var(--text-heading); font-size: 1.8rem; cursor: pointer; padding: 10px; transition: transform 0.3s ease; }
         .menu-toggle:hover { transform: rotate(90deg); }
 
-        /* ==================== Toggle Lesson / Examen ==================== */
-        .toggle-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
+        /* Toggle buttons */
+        .toggle-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; margin-bottom: 40px; }
         .toggle-btn {
-            padding: 12px 30px;
-            border-radius: 30px;
-            border: 2px solid var(--border-glass);
-            background: var(--bg-glass);
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            outline: none;
-            font-family: inherit;
-            backdrop-filter: blur(10px);
+            padding: 12px 30px; border-radius: 30px; border: 2px solid var(--border-glass);
+            background: var(--bg-glass); color: var(--text-secondary); cursor: pointer;
+            font-size: 1rem; font-weight: 600; transition: all 0.3s ease; outline: none;
+            font-family: inherit; backdrop-filter: blur(10px);
         }
-        .toggle-btn:hover {
-            border-color: var(--primary);
-            color: var(--text-heading);
-            box-shadow: 0 0 15px rgba(0,188,212,0.3);
-        }
-        .toggle-btn.active {
-            background: rgba(0,188,212,0.2);
-            border-color: var(--primary);
-            color: var(--primary);
-            box-shadow: 0 0 20px rgba(0,188,212,0.4);
-        }
+        .toggle-btn:hover { border-color: var(--primary); color: var(--text-heading); box-shadow: 0 0 15px rgba(0,188,212,0.3); }
+        .toggle-btn.active { background: rgba(0,188,212,0.2); border-color: var(--primary); color: var(--primary); box-shadow: 0 0 20px rgba(0,188,212,0.4); }
 
-        /* ==================== Side dots ==================== */
+        /* Side dots */
         .side-dots {
             position: fixed; top: 50%; right: 25px; transform: translateY(-50%); z-index: 100;
             display: flex; flex-direction: column; gap: 22px;
@@ -230,7 +193,7 @@
         }
         .dot:hover .dot-tooltip { opacity: 1; }
 
-        /* ==================== Main content ==================== */
+        /* Main layout */
         .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
 
@@ -262,10 +225,7 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
             animation: gradientShift 6s ease-in-out infinite; margin-bottom: 20px; letter-spacing: -1px;
         }
-        @keyframes gradientShift {
-            0%,100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
+        @keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
         .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 600px; margin-bottom: 20px; }
 
         .section-title {
@@ -275,27 +235,17 @@
         }
         .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; }
 
-        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-        th, td { border: 1px solid #999; padding: 10px 15px; text-align: left; }
-        th { background: rgba(0, 188, 212, 0.15); }
         .card {
             background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px;
             padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             margin-bottom: 30px;
         }
         .drug-link {
-            cursor: pointer;
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: underline;
-            transition: all 0.3s ease;
+            cursor: pointer; color: var(--primary); font-weight: 600;
+            text-decoration: underline; transition: all 0.3s ease;
         }
-        .drug-link:hover {
-            color: var(--accent);
-            text-shadow: 0 0 10px var(--accent);
-        }
+        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 
-        /* Modal for drug images */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
@@ -318,57 +268,20 @@
             cursor: pointer; transition: all 0.3s ease; line-height: 1; display: flex; align-items: center; justify-content: center;
         }
         .modal-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
-        .modal-images {
-            display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
-            margin-top: 20px;
-        }
-        .modal-images img {
-            max-width: 100%; height: auto; border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3); border: 1px solid var(--border-glass);
-        }
-        .modal-placeholder {
-            color: var(--text-secondary); font-style: italic; text-align: center; width: 100%;
-            padding: 30px; border: 2px dashed var(--border-glass); border-radius: 16px;
-        }
+        .modal-images { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .modal-images img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); border: 1px solid var(--border-glass); }
+        .modal-placeholder { color: var(--text-secondary); font-style: italic; text-align: center; width: 100%; padding: 30px; border: 2px dashed var(--border-glass); border-radius: 16px; }
 
-        /* Examen styles */
-        .exam-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .question-card h3 {
-            color: var(--text-heading);
-            margin-bottom: 15px;
-        }
+        /* Examen */
         .question-card label {
-            display: block;
-            margin-bottom: 8px;
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: background 0.2s;
+            display: block; margin-bottom: 8px; cursor: pointer;
+            padding: 8px 12px; border-radius: 8px; transition: background 0.2s;
         }
-        .question-card label:hover {
-            background: rgba(0,188,212,0.05);
-        }
-        .question-card input[type="radio"] {
-            margin-right: 10px;
-            accent-color: var(--primary);
-        }
-        .correct-answer {
-            background: rgba(0, 200, 0, 0.2) !important;
-            border-left: 4px solid #00c853;
-        }
-        .wrong-answer {
-            background: rgba(255, 0, 0, 0.2) !important;
-            border-left: 4px solid #ff1744;
-        }
-        .result-message {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            font-weight: 700;
-        }
+        .question-card label:hover { background: rgba(0,188,212,0.05); }
+        .question-card input[type="radio"] { margin-right: 10px; accent-color: var(--primary); }
+        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853; }
+        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744; }
+        .result-message { text-align: center; font-size: 1.2rem; margin-top: 20px; font-weight: 700; }
 
         /* Footer */
         .site-footer {
@@ -399,669 +312,510 @@
 </head>
 <body data-theme="dark">
 
-    <!-- Star background -->
-    <div class="universe-bg">
-        <div class="stars" id="starsContainer"></div>
-    </div>
+<div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
 
-    <!-- Header -->
-    <nav class="top-nav" id="topNav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">💊</span>
-                GhaniPharma
-            </a>
-            <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinksDesktop">
-                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
-                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile menu overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
-        <div class="mobile-menu-popup">
-            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
-            <div style="margin-bottom: 20px;">
-                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
-                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
-            </div>
-            <div>
-                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
-                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
-                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
+<!-- Header -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo"><span class="logo-icon">💊</span> GhaniPharma</a>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinksDesktop">
+                <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
+                <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <!-- Side dots for lesson navigation (hidden when exam is active) -->
-    <div class="side-dots" id="sideDots">
-        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
-        <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
-        <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
-        <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
-        <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
-        <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
-        <div class="dot" data-dot="niveau1"><span class="dot-tooltip">Niveau 1</span></div>
-        <div class="dot" data-dot="niveau2"><span class="dot-tooltip">Niveau 2</span></div>
-        <div class="dot" data-dot="niveau3"><span class="dot-tooltip">Niveau 3</span></div>
-        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
+<!-- Mobile menu -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-popup">
+        <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+        <div style="margin-bottom: 20px;">
+            <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
+            <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+        </div>
+        <div>
+            <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+            <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
     </div>
+</div>
 
-    <!-- Main content -->
-    <div class="main-wrapper">
-        <div class="container">
+<!-- Side dots (visible only for lesson) -->
+<div class="side-dots" id="sideDots">
+    <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
+    <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
+    <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
+    <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
+    <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
+    <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
+    <div class="dot" data-dot="niveau1"><span class="dot-tooltip">Niveau 1</span></div>
+    <div class="dot" data-dot="niveau2"><span class="dot-tooltip">Niveau 2</span></div>
+    <div class="dot" data-dot="niveau3"><span class="dot-tooltip">Niveau 3</span></div>
+    <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
+</div>
 
-            <!-- Hero / Introduction -->
-            <section class="hero-section" id="section-intro">
-                <div class="hero-badge reveal">
-                    <i class="fas fa-capsules"></i> Pharmacologie
-                </div>
-                <h1 class="hero-title reveal reveal-delay-1">LES ANTALGIQUES</h1>
-                <p class="hero-subtitle reveal reveal-delay-2">
-                    Classification selon l'échelle OMS, mécanismes, indications et conseils à l'officine.
-                </p>
-                <!-- Toggle Lesson / Examen -->
-                <div class="toggle-buttons reveal reveal-delay-3">
-                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Lesson</button>
-                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
+<div class="main-wrapper">
+    <div class="container">
+
+        <!-- Hero / Toggle -->
+        <section class="hero-section" id="section-intro">
+            <div class="hero-badge reveal"><i class="fas fa-capsules"></i> Pharmacologie</div>
+            <h1 class="hero-title reveal reveal-delay-1">LES ANTALGIQUES</h1>
+            <p class="hero-subtitle reveal reveal-delay-2">Classification selon l'échelle OMS, mécanismes, indications et conseils à l'officine.</p>
+            <div class="toggle-buttons reveal reveal-delay-3">
+                <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Lesson</button>
+                <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
+            </div>
+        </section>
+
+        <!-- LESSON CONTENT (exactly as before) -->
+        <div id="lessonContent">
+            <section class="section-block" id="section-mecanisme">
+                <h2 class="section-title reveal">Mécanisme d'action</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p><strong>Niveau 1 :</strong> Inhibe les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines (AINS), ou agit sur des voies centrales spécifiques (Paracétamol).</p>
+                    <p><strong>Niveaux 2 & 3 :</strong> Agonistes des récepteurs aux opioïdes (principalement les récepteurs µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur. <em>(Note : Le tramadol a aussi un effet sérotoninergique).</em></p>
                 </div>
             </section>
 
-            <!-- ========== LESSON CONTENT ========== -->
-            <div id="lessonContent">
-                <!-- PARTIE 1 : Mécanisme d'action -->
-                <section class="section-block" id="section-mecanisme">
-                    <h2 class="section-title reveal">Mécanisme d'action</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <p><strong>Niveau 1 :</strong> Inhibe les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines (AINS), ou agit sur des voies centrales spécifiques (Paracétamol).</p>
-                        <p><strong>Niveaux 2 & 3 :</strong> Agonistes des récepteurs aux opioïdes (principalement les récepteurs µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur. <em>(Note : Le tramadol a aussi un effet sérotoninergique).</em></p>
-                    </div>
-                </section>
-
-                <!-- Indications générales -->
-                <section class="section-block" id="section-indications">
-                    <h2 class="section-title reveal">Indications générales</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <ul style="padding-left:20px;">
-                            <li><strong>N1 :</strong> Douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).</li>
-                            <li><strong>N2 :</strong> Douleurs modérées à sévères ou résistantes au Niveau 1 (post-opératoires, lombalgies aiguës).</li>
-                            <li><strong>N3 :</strong> Douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Contre-indications -->
-                <section class="section-block" id="section-contre-indications">
-                    <h2 class="section-title reveal">Contre‑indications et précautions majeures</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <ul style="padding-left:20px;">
-                            <li><strong>AINS :</strong> Ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l’aspirine (asthme).</li>
-                            <li><strong>Paracétamol :</strong> Insuffisance hépatocellulaire grave.</li>
-                            <li><strong>Opioïdes :</strong> Insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d’hypertension intracrânienne). IMAO (pour le tramadol et la péthidine).</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Interactions médicamenteuses -->
-                <section class="section-block" id="section-interactions">
-                    <h2 class="section-title reveal">Interactions médicamenteuses majeures</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <ul style="padding-left:20px;">
-                            <li><strong>AINS + Anticoagulants/AVK :</strong> Risque hémorragique majeur.</li>
-                            <li><strong>AINS + Antihypertenseurs :</strong> Diminution de l’efficacité anti-HTA.</li>
-                            <li><strong>Opioïdes + Benzodiazépines/Alcool :</strong> Dépression respiratoire sévère.</li>
-                            <li><strong>Tramadol + Antidépresseurs (ISRS/IRSN) :</strong> Syndrome sérotoninergique (confusion, hyperthermie, rigidité).</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Grossesse et Allaitement -->
-                <section class="section-block" id="section-grossesse">
-                    <h2 class="section-title reveal">Grossesse et Allaitement</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <p><strong>N1 :</strong> Paracétamol = antalgique de référence en court terme. AINS formellement contre‑indiqués au 3<sup>e</sup> trimestre.</p>
-                        <p><strong>N2/N3 :</strong> À éviter sauf stricte nécessité. Codéine déconseillée pendant l’allaitement (métaboliseurs rapides). Morphine possible sous surveillance.</p>
-                    </div>
-                </section>
-
-                <!-- PARTIE 2 : NIVEAU 1 -->
-                <section class="section-block" id="section-niveau1">
-                    <h2 class="section-title reveal">NIVEAU 1 : Antalgiques non‑opioïdes</h2>
-                    
-                    <!-- Paracétamol -->
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">1. Paracétamol</h3>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Doliprane</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Dolyc</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Dofebril</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Dafalgan</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Panadol</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Efferalgan</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Paramol</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Expandol</span>, 
-                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Sapramol</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</p>
-                        <p><strong>Posologie Adulte :</strong> 500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</p>
-                        <p><strong>Particularité :</strong> Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.</p>
-                        <p><strong>Conseil Pharmacien :</strong> Vérifiez toujours les « médicaments rhume » associés. Interdit avec l’alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</p>
-                    </div>
-
-                    <!-- Aspirine -->
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);">2. Acide Acétylsalicylique (AINS)</h3>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('aspirine')">Aspegic</span>, 
-                            <span class="drug-link" onclick="showDrugModal('aspirine')">Aspirine</span>, 
-                            <span class="drug-link" onclick="showDrugModal('aspirine')">Catalgine</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Comprimés (500 mg), sachets pour solution buvable.</p>
-                        <p><strong>Posologie Adulte :</strong> 500 mg toutes les 4 heures. Max 3 g/jour.</p>
-                        <p><strong>Particularité :</strong> Anti‑inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).</p>
-                        <p><strong>Conseil Pharmacien :</strong> « Prenez‑le au cours ou à la fin d’un repas. » Rappeler l’allergie à l’aspirine. Pas d’enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.</p>
-                    </div>
-                </section>
-
-                <!-- NIVEAU 2 -->
-                <section class="section-block" id="section-niveau2">
-                    <h2 class="section-title reveal">NIVEAU 2 : Opioïdes faibles</h2>
-                    
-                    <!-- Paracétamol + Codéine -->
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">3. Paracétamol + Codéine</h3>
-                        <p><strong>DCI :</strong> Paracétamol + Codéine phosphate.</p>
-                        <p><strong>Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('codeine')">Codoliprane</span>, 
-                            <span class="drug-link" onclick="showDrugModal('codeine')">Co‑Dolyc</span>, 
-                            <span class="drug-link" onclick="showDrugModal('codeine')">Co‑paramol</span>, 
-                            <span class="drug-link" onclick="showDrugModal('codeine')">Coparalgan</span>, 
-                            <span class="drug-link" onclick="showDrugModal('codeine')">Planadix Confort +</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Comprimés (400 mg/30 mg ou 500 mg/30 mg).</p>
-                        <p><strong>Posologie :</strong> 1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).</p>
-                        <p><strong>Particularité :</strong> La codéine est une prodrogue convertie en morphine par le CYP2D6.</p>
-                        <p><strong>Conseil :</strong> « Peut provoquer une constipation, hydratez‑vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.</p>
-                    </div>
-
-                    <!-- Paracétamol + Tramadol -->
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);">4. Paracétamol + Tramadol</h3>
-                        <p><strong>DCI :</strong> Paracétamol + Chlorhydrate de tramadol.</p>
-                        <p><strong>Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Di‑Dolex</span>, 
-                            <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Supradolex</span>, 
-                            <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Xamadol</span>, 
-                            <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Planadix Advance</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Comprimés (325 mg / 37.5 mg).</p>
-                        <p><strong>Posologie :</strong> 1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.</p>
-                        <p><strong>Conseil :</strong> « Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).</p>
-                    </div>
-
-                    <!-- Tramadol seul -->
-                    <div class="card reveal reveal-delay-3">
-                        <h3 style="color:var(--primary);">5. Tramadol seul</h3>
-                        <p><strong>DCI :</strong> Tramadol.</p>
-                        <p><strong>Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('tramadol')">Dolex</span>, 
-                            <span class="drug-link" onclick="showDrugModal('tramadol')">Supramadol</span>, 
-                            <span class="drug-link" onclick="showDrugModal('tramadol')">Zodid</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Gélules (50 mg), comprimés LP (100 mg, 150 mg).</p>
-                        <p><strong>Posologie :</strong> 50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.</p>
-                        <p><strong>Conseil :</strong> « C’est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l’alcool et les somnifères.</p>
-                    </div>
-                </section>
-
-                <!-- NIVEAU 3 -->
-                <section class="section-block" id="section-niveau3">
-                    <h2 class="section-title reveal">NIVEAU 3 : Opioïdes forts</h2>
-                    
-                    <!-- Morphine -->
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">6. Morphine</h3>
-                        <p><strong>DCI :</strong> Morphine.</p>
-                        <p><strong>Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('morphine')">Skénan</span> (LP), 
-                            <span class="drug-link" onclick="showDrugModal('morphine')">Actiskénan</span> (LI).
-                        </p>
-                        <p><strong>Formes :</strong> Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.</p>
-                        <p><strong>Posologie :</strong> Actiskénan toutes les 4‑6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.</p>
-                        <p><strong>Conseil :</strong> « La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.</p>
-                    </div>
-
-                    <!-- Buprénorphine -->
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);">7. Buprénorphine</h3>
-                        <p><strong>DCI :</strong> Buprénorphine.</p>
-                        <p><strong>Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('buprenorphine')">Buprenal</span>, 
-                            <span class="drug-link" onclick="showDrugModal('buprenorphine')">Temgesic</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Comprimés sublinguaux (0.2 mg, 2 mg).</p>
-                        <p><strong>Posologie :</strong> 0.2‑0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.</p>
-                        <p><strong>Conseil :</strong> « Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.</p>
-                    </div>
-
-                    <!-- Oxycodone -->
-                    <div class="card reveal reveal-delay-3">
-                        <h3 style="color:var(--primary);">8. Oxycodone</h3>
-                        <p><strong>DCI :</strong> Oxycodone.</p>
-                        <p><strong>Nom commercial :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('oxycodone')">Oxynorm</span>.
-                        </p>
-                        <p><strong>Formes :</strong> Gélules LP (5, 10, 20, 30, 40, 80 mg).</p>
-                        <p><strong>Posologie :</strong> 10 mg toutes les 12h (LP) pour douleur chronique.</p>
-                        <p><strong>Conseil :</strong> Mêmes précautions que la morphine. Délivrance sous carnet à souches.</p>
-                    </div>
-
-                    <!-- Fentanyl & Alfentanil -->
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">9 & 10. Fentanyl / Alfentanil</h3>
-                        <p><strong>DCI :</strong> Alfentanil (Rapifen) / Fentanyl (Durogesic).</p>
-                        <p><strong>Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('fentanyl')">Durogesic</span> (patch), 
-                            <span class="drug-link" onclick="showDrugModal('alfentanil')">Rapifen</span> (injectable).
-                        </p>
-                        <p><strong>Formes :</strong> Patchs transdermiques (12, 25, 50, 75, 100 µg/h) ; Rapifen solution injectable (hôpital).</p>
-                        <p><strong>Posologie :</strong> Durogesic toutes les 72h. Rapifen usage anesthésique uniquement.</p>
-                        <p><strong>Conseil :</strong> « Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l’exposer à une source de chaleur (overdose mortelle). » Carnet à souches.</p>
-                    </div>
-                </section>
-
-                <!-- Conseil ultime -->
-                <section class="section-block" id="section-conseil" style="border-bottom: none;">
-                    <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <p>En Algérie, l’ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez‑vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer.</p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- ========== EXAMEN CONTENT ========== -->
-            <div id="examContent" style="display: none;">
-                <div class="exam-header">
-                    <h2 class="section-title reveal">Examen : Les Antalgiques</h2>
-                    <p class="section-subtitle reveal reveal-delay-1">Testez vos connaissances sur les antalgiques et l'échelle OMS.</p>
+            <section class="section-block" id="section-indications">
+                <h2 class="section-title reveal">Indications générales</h2>
+                <div class="card reveal reveal-delay-1">
+                    <ul style="padding-left:20px;">
+                        <li><strong>N1 :</strong> Douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).</li>
+                        <li><strong>N2 :</strong> Douleurs modérées à sévères ou résistantes au Niveau 1 (post-opératoires, lombalgies aiguës).</li>
+                        <li><strong>N3 :</strong> Douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).</li>
+                    </ul>
                 </div>
+            </section>
 
-                <!-- Question 1 -->
+            <section class="section-block" id="section-contre-indications">
+                <h2 class="section-title reveal">Contre‑indications et précautions majeures</h2>
+                <div class="card reveal reveal-delay-1">
+                    <ul style="padding-left:20px;">
+                        <li><strong>AINS :</strong> Ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l’aspirine (asthme).</li>
+                        <li><strong>Paracétamol :</strong> Insuffisance hépatocellulaire grave.</li>
+                        <li><strong>Opioïdes :</strong> Insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d’hypertension intracrânienne). IMAO (pour le tramadol et la péthidine).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section-block" id="section-interactions">
+                <h2 class="section-title reveal">Interactions médicamenteuses majeures</h2>
+                <div class="card reveal reveal-delay-1">
+                    <ul style="padding-left:20px;">
+                        <li><strong>AINS + Anticoagulants/AVK :</strong> Risque hémorragique majeur.</li>
+                        <li><strong>AINS + Antihypertenseurs :</strong> Diminution de l’efficacité anti-HTA.</li>
+                        <li><strong>Opioïdes + Benzodiazépines/Alcool :</strong> Dépression respiratoire sévère.</li>
+                        <li><strong>Tramadol + Antidépresseurs (ISRS/IRSN) :</strong> Syndrome sérotoninergique (confusion, hyperthermie, rigidité).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section-block" id="section-grossesse">
+                <h2 class="section-title reveal">Grossesse et Allaitement</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p><strong>N1 :</strong> Paracétamol = antalgique de référence en court terme. AINS formellement contre‑indiqués au 3<sup>e</sup> trimestre.</p>
+                    <p><strong>N2/N3 :</strong> À éviter sauf stricte nécessité. Codéine déconseillée pendant l’allaitement (métaboliseurs rapides). Morphine possible sous surveillance.</p>
+                </div>
+            </section>
+
+            <section class="section-block" id="section-niveau1">
+                <h2 class="section-title reveal">NIVEAU 1 : Antalgiques non‑opioïdes</h2>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary);">1. Paracétamol</h3>
+                    <p><strong>Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('paracetamol')">Doliprane</span>, <span class="drug-link" onclick="showDrugModal('paracetamol')">Dolyc</span>, ...</p>
+                    <p><strong>Formes :</strong> Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</p>
+                    <p><strong>Posologie Adulte :</strong> 500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</p>
+                    <p><strong>Particularité :</strong> Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.</p>
+                    <p><strong>Conseil Pharmacien :</strong> Vérifiez toujours les « médicaments rhume » associés. Interdit avec l’alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</p>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <h3 style="color:var(--primary);">2. Acide Acétylsalicylique (AINS)</h3>
+                    <p><strong>Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('aspirine')">Aspegic</span>, <span class="drug-link" onclick="showDrugModal('aspirine')">Aspirine</span>, <span class="drug-link" onclick="showDrugModal('aspirine')">Catalgine</span>.</p>
+                    <p><strong>Formes :</strong> Comprimés (500 mg), sachets pour solution buvable.</p>
+                    <p><strong>Posologie Adulte :</strong> 500 mg toutes les 4 heures. Max 3 g/jour.</p>
+                    <p><strong>Particularité :</strong> Anti‑inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).</p>
+                    <p><strong>Conseil Pharmacien :</strong> « Prenez‑le au cours ou à la fin d’un repas. » Rappeler l’allergie à l’aspirine. Pas d’enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.</p>
+                </div>
+            </section>
+
+            <section class="section-block" id="section-niveau2">
+                <h2 class="section-title reveal">NIVEAU 2 : Opioïdes faibles</h2>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary);">3. Paracétamol + Codéine</h3>
+                    <p><strong>DCI :</strong> Paracétamol + Codéine phosphate.</p>
+                    <p><strong>Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('codeine')">Codoliprane</span>, <span class="drug-link" onclick="showDrugModal('codeine')">Co‑Dolyc</span>, ...</p>
+                    <p><strong>Formes :</strong> Comprimés (400 mg/30 mg ou 500 mg/30 mg).</p>
+                    <p><strong>Posologie :</strong> 1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).</p>
+                    <p><strong>Particularité :</strong> La codéine est une prodrogue convertie en morphine par le CYP2D6.</p>
+                    <p><strong>Conseil :</strong> « Peut provoquer une constipation, hydratez‑vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.</p>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <h3 style="color:var(--primary);">4. Paracétamol + Tramadol</h3>
+                    <p><strong>DCI :</strong> Paracétamol + Chlorhydrate de tramadol.</p>
+                    <p><strong>Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Di‑Dolex</span>, <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Supradolex</span>, ...</p>
+                    <p><strong>Formes :</strong> Comprimés (325 mg / 37.5 mg).</p>
+                    <p><strong>Posologie :</strong> 1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.</p>
+                    <p><strong>Conseil :</strong> « Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <h3 style="color:var(--primary);">5. Tramadol seul</h3>
+                    <p><strong>DCI :</strong> Tramadol.</p>
+                    <p><strong>Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('tramadol')">Dolex</span>, <span class="drug-link" onclick="showDrugModal('tramadol')">Supramadol</span>, <span class="drug-link" onclick="showDrugModal('tramadol')">Zodid</span>.</p>
+                    <p><strong>Formes :</strong> Gélules (50 mg), comprimés LP (100 mg, 150 mg).</p>
+                    <p><strong>Posologie :</strong> 50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.</p>
+                    <p><strong>Conseil :</strong> « C’est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l’alcool et les somnifères.</p>
+                </div>
+            </section>
+
+            <section class="section-block" id="section-niveau3">
+                <h2 class="section-title reveal">NIVEAU 3 : Opioïdes forts</h2>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary);">6. Morphine</h3>
+                    <p><strong>DCI :</strong> Morphine.</p>
+                    <p><strong>Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('morphine')">Skénan</span> (LP), <span class="drug-link" onclick="showDrugModal('morphine')">Actiskénan</span> (LI).</p>
+                    <p><strong>Formes :</strong> Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.</p>
+                    <p><strong>Posologie :</strong> Actiskénan toutes les 4‑6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.</p>
+                    <p><strong>Conseil :</strong> « La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.</p>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <h3 style="color:var(--primary);">7. Buprénorphine</h3>
+                    <p><strong>DCI :</strong> Buprénorphine.</p>
+                    <p><strong>Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('buprenorphine')">Buprenal</span>, <span class="drug-link" onclick="showDrugModal('buprenorphine')">Temgesic</span>.</p>
+                    <p><strong>Formes :</strong> Comprimés sublinguaux (0.2 mg, 2 mg).</p>
+                    <p><strong>Posologie :</strong> 0.2‑0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.</p>
+                    <p><strong>Conseil :</strong> « Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <h3 style="color:var(--primary);">8. Oxycodone</h3>
+                    <p><strong>DCI :</strong> Oxycodone.</p>
+                    <p><strong>Nom commercial :</strong> <span class="drug-link" onclick="showDrugModal('oxycodone')">Oxynorm</span>.</p>
+                    <p><strong>Formes :</strong> Gélules LP (5, 10, 20, 30, 40, 80 mg).</p>
+                    <p><strong>Posologie :</strong> 10 mg toutes les 12h (LP) pour douleur chronique.</p>
+                    <p><strong>Conseil :</strong> Mêmes précautions que la morphine. Délivrance sous carnet à souches.</p>
+                </div>
+                <div class="card reveal reveal-delay-1">
+                    <h3 style="color:var(--primary);">9 & 10. Fentanyl / Alfentanil</h3>
+                    <p><strong>DCI :</strong> Alfentanil (Rapifen) / Fentanyl (Durogesic).</p>
+                    <p><strong>Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('fentanyl')">Durogesic</span> (patch), <span class="drug-link" onclick="showDrugModal('alfentanil')">Rapifen</span> (injectable).</p>
+                    <p><strong>Formes :</strong> Patchs transdermiques (12, 25, 50, 75, 100 µg/h) ; Rapifen solution injectable (hôpital).</p>
+                    <p><strong>Posologie :</strong> Durogesic toutes les 72h. Rapifen usage anesthésique uniquement.</p>
+                    <p><strong>Conseil :</strong> « Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l’exposer à une source de chaleur (overdose mortelle). » Carnet à souches.</p>
+                </div>
+            </section>
+
+            <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
+                <div class="card reveal reveal-delay-1">
+                    <p>En Algérie, l’ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez‑vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- EXAMEN CONTENT (mimics lesson structure exactly) -->
+        <div id="examContent" style="display: none;">
+            <section class="section-block" id="exam-question1">
+                <h2 class="section-title reveal">Question 1</h2>
                 <div class="card question-card reveal reveal-delay-1">
-                    <h3>1. Quel niveau de l'échelle OMS correspond au Paracétamol ?</h3>
+                    <p><strong>Quel niveau de l'échelle OMS correspond au Paracétamol ?</strong></p>
                     <label><input type="radio" name="q1" value="a"> Niveau 1</label>
                     <label><input type="radio" name="q1" value="b"> Niveau 2</label>
                     <label><input type="radio" name="q1" value="c"> Niveau 3</label>
                 </div>
+            </section>
 
-                <!-- Question 2 -->
-                <div class="card question-card reveal reveal-delay-2">
-                    <h3>2. Les AINS agissent principalement en inhibant :</h3>
+            <section class="section-block" id="exam-question2">
+                <h2 class="section-title reveal">Question 2</h2>
+                <div class="card question-card reveal reveal-delay-1">
+                    <p><strong>Les AINS agissent principalement en inhibant :</strong></p>
                     <label><input type="radio" name="q2" value="a"> Les récepteurs opioïdes</label>
                     <label><input type="radio" name="q2" value="b"> Les cyclo‑oxygénases (COX)</label>
                     <label><input type="radio" name="q2" value="c"> La recapture de la sérotonine</label>
                 </div>
+            </section>
 
-                <!-- Question 3 -->
+            <section class="section-block" id="exam-question3">
+                <h2 class="section-title reveal">Question 3</h2>
                 <div class="card question-card reveal reveal-delay-1">
-                    <h3>3. Quel est le principal risque de l'association AINS + Anticoagulants ?</h3>
+                    <p><strong>Quel est le principal risque de l'association AINS + Anticoagulants ?</strong></p>
                     <label><input type="radio" name="q3" value="a"> Dépression respiratoire</label>
                     <label><input type="radio" name="q3" value="b"> Hémorragie</label>
                     <label><input type="radio" name="q3" value="c"> Hypertension</label>
                 </div>
+            </section>
 
-                <!-- Question 4 -->
-                <div class="card question-card reveal reveal-delay-2">
-                    <h3>4. La codéine est une prodrogue métabolisée par :</h3>
+            <section class="section-block" id="exam-question4">
+                <h2 class="section-title reveal">Question 4</h2>
+                <div class="card question-card reveal reveal-delay-1">
+                    <p><strong>La codéine est une prodrogue métabolisée par :</strong></p>
                     <label><input type="radio" name="q4" value="a"> CYP3A4</label>
                     <label><input type="radio" name="q4" value="b"> CYP2D6</label>
                     <label><input type="radio" name="q4" value="c"> CYP1A2</label>
                 </div>
+            </section>
 
-                <!-- Question 5 -->
+            <section class="section-block" id="exam-question5">
+                <h2 class="section-title reveal">Question 5</h2>
                 <div class="card question-card reveal reveal-delay-1">
-                    <h3>5. Le Tramadol possède un effet additionnel de type :</h3>
+                    <p><strong>Le Tramadol possède un effet additionnel de type :</strong></p>
                     <label><input type="radio" name="q5" value="a"> Antidépresseur</label>
                     <label><input type="radio" name="q5" value="b"> Sérotoninergique</label>
                     <label><input type="radio" name="q5" value="c"> Anti‑inflammatoire</label>
                 </div>
+            </section>
 
-                <!-- Question 6 -->
-                <div class="card question-card reveal reveal-delay-2">
-                    <h3>6. Quel antalgique est formellement contre‑indiqué au 3ème trimestre de grossesse ?</h3>
+            <section class="section-block" id="exam-question6">
+                <h2 class="section-title reveal">Question 6</h2>
+                <div class="card question-card reveal reveal-delay-1">
+                    <p><strong>Quel antalgique est formellement contre‑indiqué au 3ème trimestre de grossesse ?</strong></p>
                     <label><input type="radio" name="q6" value="a"> Paracétamol</label>
                     <label><input type="radio" name="q6" value="b"> AINS</label>
                     <label><input type="radio" name="q6" value="c"> Morphine</label>
                 </div>
+            </section>
 
-                <!-- Question 7 -->
+            <section class="section-block" id="exam-question7">
+                <h2 class="section-title reveal">Question 7</h2>
                 <div class="card question-card reveal reveal-delay-1">
-                    <h3>7. Le Durogesic est un patch de :</h3>
+                    <p><strong>Le Durogesic est un patch de :</strong></p>
                     <label><input type="radio" name="q7" value="a"> Morphine</label>
                     <label><input type="radio" name="q7" value="b"> Fentanyl</label>
                     <label><input type="radio" name="q7" value="c"> Oxycodone</label>
                 </div>
+            </section>
 
-                <!-- Question 8 -->
-                <div class="card question-card reveal reveal-delay-2">
-                    <h3>8. La dose maximale quotidienne de Paracétamol recommandée est de :</h3>
+            <section class="section-block" id="exam-question8">
+                <h2 class="section-title reveal">Question 8</h2>
+                <div class="card question-card reveal reveal-delay-1">
+                    <p><strong>La dose maximale quotidienne de Paracétamol recommandée est de :</strong></p>
                     <label><input type="radio" name="q8" value="a"> 2 g</label>
                     <label><input type="radio" name="q8" value="b"> 3 g</label>
                     <label><input type="radio" name="q8" value="c"> 4 g</label>
                 </div>
+            </section>
 
-                <!-- Question 9 -->
+            <section class="section-block" id="exam-question9">
+                <h2 class="section-title reveal">Question 9</h2>
                 <div class="card question-card reveal reveal-delay-1">
-                    <h3>9. Quel médicament expose au syndrome sérotoninergique en association avec les ISRS ?</h3>
+                    <p><strong>Quel médicament expose au syndrome sérotoninergique en association avec les ISRS ?</strong></p>
                     <label><input type="radio" name="q9" value="a"> Codéine</label>
                     <label><input type="radio" name="q9" value="b"> Tramadol</label>
                     <label><input type="radio" name="q9" value="c"> Morphine</label>
                 </div>
+            </section>
 
-                <!-- Question 10 -->
-                <div class="card question-card reveal reveal-delay-2">
-                    <h3>10. La Buprénorphine (Temgesic) s'administre par voie :</h3>
+            <section class="section-block" id="exam-question10">
+                <h2 class="section-title reveal">Question 10</h2>
+                <div class="card question-card reveal reveal-delay-1">
+                    <p><strong>La Buprénorphine (Temgesic) s'administre par voie :</strong></p>
                     <label><input type="radio" name="q10" value="a"> Orale</label>
                     <label><input type="radio" name="q10" value="b"> Sublinguale</label>
                     <label><input type="radio" name="q10" value="c"> Injectable</label>
                 </div>
+            </section>
 
+            <section class="section-block" style="border-bottom: none;">
                 <div class="card reveal reveal-delay-1" style="text-align: center;">
                     <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
                     <button class="toggle-btn" id="resetExam">Réinitialiser</button>
                     <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
                 </div>
-            </div>
+            </section>
         </div>
+
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="social-links">
-            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
-    </footer>
-
-    <!-- ==================== DRUG IMAGES MODAL ==================== -->
-    <div class="modal-overlay" id="drugModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
-            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
-            <div class="modal-images" id="modalImagesContainer"></div>
-        </div>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="social-links">
+        <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
+    <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+</footer>
 
-    <script>
-        // ==================== Create stars ====================
-        function createStars() {
-            const container = document.getElementById('starsContainer');
-            const fragment = document.createDocumentFragment();
-            for (let i = 0; i < 150; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                const size = Math.random() * 3 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
-                star.style.setProperty('--delay', Math.random() * 5 + 's');
-                fragment.appendChild(star);
-            }
-            container.appendChild(fragment);
+<!-- Drug Images Modal -->
+<div class="modal-overlay" id="drugModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+        <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+        <div class="modal-images" id="modalImagesContainer"></div>
+    </div>
+</div>
+
+<script>
+    // Stars
+    (function createStars() {
+        const container = document.getElementById('starsContainer');
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+            star.style.setProperty('--delay', Math.random() * 5 + 's');
+            fragment.appendChild(star);
         }
-        createStars();
+        container.appendChild(fragment);
+    })();
 
-        // ==================== Reveal animation ====================
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    // Reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== Side dots navigation (Lesson only) ====================
-        const sectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions', 'grossesse', 'niveau1', 'niveau2', 'niveau3', 'conseil'];
-        const dots = document.querySelectorAll('.dot');
-
-        function updateActiveDot() {
-            if (document.getElementById('examContent').style.display !== 'none') return; // exam active, skip
-            const scrollPos = window.scrollY + window.innerHeight / 3;
-            const navH = document.getElementById('topNav').offsetHeight;
-            let active = 'intro';
-            sectionIDs.forEach(id => {
-                const el = document.getElementById('section-' + id);
-                if (el) {
-                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
-                    const bottom = top + el.offsetHeight;
-                    if (scrollPos >= top && scrollPos < bottom) active = id;
-                }
-            });
-            dots.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
-        }
-        window.addEventListener('scroll', updateActiveDot, { passive: true });
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                if (document.getElementById('examContent').style.display !== 'none') return;
-                const targetId = dot.dataset.dot;
-                document.getElementById('section-' + targetId).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // ==================== Mobile menu ====================
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileOverlay = document.getElementById('mobileMenuOverlay');
-        const closeBtn = document.getElementById('closeMobileMenu');
-        menuToggle.addEventListener('click', () => {
-            mobileOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-        closeBtn.addEventListener('click', () => {
-            mobileOverlay.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-        mobileOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileOverlay) {
-                mobileOverlay.classList.remove('open');
-                document.body.style.overflow = '';
+    // Side dots (lesson only)
+    const sectionIDs = ['intro','mecanisme','indications','contre-indications','interactions','grossesse','niveau1','niveau2','niveau3','conseil'];
+    const dots = document.querySelectorAll('.dot');
+    function updateActiveDot() {
+        if (document.getElementById('examContent').style.display !== 'none') return;
+        const scrollPos = window.scrollY + window.innerHeight / 3;
+        const navH = document.getElementById('topNav').offsetHeight;
+        let active = 'intro';
+        sectionIDs.forEach(id => {
+            const el = document.getElementById('section-' + id);
+            if (el) {
+                const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                const bottom = top + el.offsetHeight;
+                if (scrollPos >= top && scrollPos < bottom) active = id;
             }
         });
-
-        // ==================== Hide nav on scroll ====================
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const st = window.pageYOffset || document.documentElement.scrollTop;
-            const nav = document.getElementById('topNav');
-            if (st > lastScroll && st > 150) nav.classList.add('hidden');
-            else if (st < lastScroll) nav.classList.remove('hidden');
-            lastScroll = st;
-        }, { passive: true });
-
-        // ==================== Theme toggle ====================
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlEl = document.documentElement;
-        const saved = localStorage.getItem('theme') || 'dark';
-        htmlEl.setAttribute('data-theme', saved);
-        themeToggle.addEventListener('click', () => {
-            const cur = htmlEl.getAttribute('data-theme');
-            const next = cur === 'dark' ? 'light' : 'dark';
-            htmlEl.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
+        dots.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
+    }
+    window.addEventListener('scroll', updateActiveDot, { passive: true });
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            if (document.getElementById('examContent').style.display !== 'none') return;
+            document.getElementById('section-' + dot.dataset.dot)?.scrollIntoView({ behavior: 'smooth' });
         });
+    });
 
-        // ==================== Drug Images Modal ====================
-        const drugImages = {
-            paracetamol: [],
-            aspirine: [],
-            codeine: [],
-            tramadol_paracetamol: [],
-            tramadol: [],
-            morphine: [],
-            buprenorphine: [],
-            oxycodone: [],
-            fentanyl: [],
-            alfentanil: []
-        };
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileOverlay = document.getElementById('mobileMenuOverlay');
+    const closeBtn = document.getElementById('closeMobileMenu');
+    menuToggle.addEventListener('click', () => { mobileOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; });
+    closeBtn.addEventListener('click', () => { mobileOverlay.classList.remove('open'); document.body.style.overflow = ''; });
+    mobileOverlay.addEventListener('click', (e) => { if (e.target === mobileOverlay) { mobileOverlay.classList.remove('open'); document.body.style.overflow = ''; } });
 
-        const drugTitles = {
-            paracetamol: 'Paracétamol (Doliprane, Dolyc, etc.)',
-            aspirine: 'Acide Acétylsalicylique (Aspegic, Aspirine, Catalgine)',
-            codeine: 'Paracétamol + Codéine (Codoliprane, Co‑Dolyc…)',
-            tramadol_paracetamol: 'Paracétamol + Tramadol (Di‑Dolex, Supradolex…)',
-            tramadol: 'Tramadol seul (Dolex, Supramadol, Zodid)',
-            morphine: 'Morphine (Skénan, Actiskénan)',
-            buprenorphine: 'Buprénorphine (Buprenal, Temgesic)',
-            oxycodone: 'Oxycodone (Oxynorm)',
-            fentanyl: 'Fentanyl (Durogesic)',
-            alfentanil: 'Alfentanil (Rapifen)'
-        };
+    // Nav hide on scroll
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        const nav = document.getElementById('topNav');
+        if (st > lastScroll && st > 150) nav.classList.add('hidden');
+        else if (st < lastScroll) nav.classList.remove('hidden');
+        lastScroll = st;
+    }, { passive: true });
 
-        function showDrugModal(drugKey) {
-            const modal = document.getElementById('drugModal');
-            const title = document.getElementById('modalTitle');
-            const container = document.getElementById('modalImagesContainer');
-            
-            title.textContent = drugTitles[drugKey] || drugKey;
-            container.innerHTML = '';
-            
-            const images = drugImages[drugKey] || [];
-            if (images.length === 0) {
-                container.innerHTML = '<div class="modal-placeholder">Images à ajouter ultérieurement.<br>Ajoutez les chemins dans le tableau <code>drugImages</code> du script.</div>';
-            } else {
-                images.forEach(src => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = drugKey;
-                    img.loading = 'lazy';
-                    container.appendChild(img);
-                });
-            }
-            
-            modal.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
+    // Theme
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    themeToggle.addEventListener('click', () => {
+        const cur = htmlEl.getAttribute('data-theme');
+        const next = cur === 'dark' ? 'light' : 'dark';
+        htmlEl.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
 
-        function closeDrugModal() {
-            document.getElementById('drugModal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
+    // Drug modal
+    const drugImages = { paracetamol:[], aspirine:[], codeine:[], tramadol_paracetamol:[], tramadol:[], morphine:[], buprenorphine:[], oxycodone:[], fentanyl:[], alfentanil:[] };
+    const drugTitles = { paracetamol:'Paracétamol', aspirine:'Aspirine', codeine:'Paracétamol + Codéine', tramadol_paracetamol:'Paracétamol + Tramadol', tramadol:'Tramadol', morphine:'Morphine', buprenorphine:'Buprénorphine', oxycodone:'Oxycodone', fentanyl:'Fentanyl', alfentanil:'Alfentanil' };
+    function showDrugModal(key) {
+        const modal = document.getElementById('drugModal');
+        document.getElementById('modalTitle').textContent = drugTitles[key] || key;
+        const container = document.getElementById('modalImagesContainer');
+        container.innerHTML = '';
+        const imgs = drugImages[key] || [];
+        if (!imgs.length) container.innerHTML = '<div class="modal-placeholder">Images à ajouter ultérieurement.</div>';
+        else imgs.forEach(src => { const img = document.createElement('img'); img.src=src; img.alt=key; img.loading='lazy'; container.appendChild(img); });
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeDrugModal() { document.getElementById('drugModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('drugModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeDrugModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrugModal(); });
 
-        document.getElementById('drugModal').addEventListener('click', function(e) {
-            if (e.target === this) closeDrugModal();
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeDrugModal();
-        });
+    // Toggle Lesson/Examen
+    const btnLesson = document.getElementById('btnLesson');
+    const btnExamen = document.getElementById('btnExamen');
+    const lessonContent = document.getElementById('lessonContent');
+    const examContent = document.getElementById('examContent');
+    const sideDots = document.getElementById('sideDots');
 
-        // ==================== Toggle Lesson / Examen ====================
-        const btnLesson = document.getElementById('btnLesson');
-        const btnExamen = document.getElementById('btnExamen');
-        const lessonContent = document.getElementById('lessonContent');
-        const examContent = document.getElementById('examContent');
-        const sideDots = document.getElementById('sideDots');
-
-        function showLesson() {
-            lessonContent.style.display = 'block';
-            examContent.style.display = 'none';
-            sideDots.style.display = 'flex';
-            btnLesson.classList.add('active');
-            btnExamen.classList.remove('active');
-            // re-observe possible reveal elements that might have been hidden
-            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
-            updateActiveDot();
-        }
-
-        function showExam() {
-            lessonContent.style.display = 'none';
-            examContent.style.display = 'block';
-            sideDots.style.display = 'none';
-            btnLesson.classList.remove('active');
-            btnExamen.classList.add('active');
-            // observe newly visible exam reveals
-            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
-            // reset any previous exam state (optional)
-            resetExam();
-        }
-
-        btnLesson.addEventListener('click', showLesson);
-        btnExamen.addEventListener('click', showExam);
-
-        // ==================== Examen logic ====================
-        const correctAnswers = {
-            q1: 'a', q2: 'b', q3: 'b', q4: 'b', q5: 'b',
-            q6: 'b', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
-        };
-
-        document.getElementById('checkExam').addEventListener('click', function() {
-            let score = 0;
-            const total = Object.keys(correctAnswers).length;
-            
-            // Clear previous styling
-            document.querySelectorAll('.question-card label').forEach(label => {
-                label.classList.remove('correct-answer', 'wrong-answer');
-            });
-
-            for (let q in correctAnswers) {
-                const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const correctValue = correctAnswers[q];
-                const labels = document.querySelectorAll(`input[name="${q}"] + label`); // labels are after inputs
-                // Find the label corresponding to the correct value
-                const correctLabel = document.querySelector(`input[name="${q}"][value="${correctValue}"]`)?.parentElement;
-                if (correctLabel) {
-                    correctLabel.classList.add('correct-answer');
-                }
-
-                if (selected) {
-                    const selectedLabel = selected.parentElement;
-                    if (selected.value === correctValue) {
-                        score++;
-                    } else {
-                        selectedLabel.classList.add('wrong-answer');
-                    }
-                }
-            }
-
-            const resultDiv = document.getElementById('examResult');
-            const percentage = Math.round((score / total) * 100);
-            let message = `Votre score : ${score} / ${total} (${percentage}%). `;
-            if (percentage >= 80) message += "Excellent travail !";
-            else if (percentage >= 50) message += "Continuez à réviser, vous progressez.";
-            else message += "Révisez le cours et réessayez.";
-            resultDiv.textContent = message;
-        });
-
-        document.getElementById('resetExam').addEventListener('click', resetExam);
-
-        function resetExam() {
-            document.querySelectorAll('.question-card input[type="radio"]').forEach(input => {
-                input.checked = false;
-            });
-            document.querySelectorAll('.question-card label').forEach(label => {
-                label.classList.remove('correct-answer', 'wrong-answer');
-            });
-            document.getElementById('examResult').textContent = '';
-        }
-
-        // Initial state : lesson visible, exam hidden. Already set in HTML.
+    function showLesson() {
+        lessonContent.style.display = 'block';
+        examContent.style.display = 'none';
+        sideDots.style.display = 'flex';
+        btnLesson.classList.add('active');
+        btnExamen.classList.remove('active');
+        document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
         updateActiveDot();
-    </script>
+    }
+    function showExam() {
+        lessonContent.style.display = 'none';
+        examContent.style.display = 'block';
+        sideDots.style.display = 'none';
+        btnLesson.classList.remove('active');
+        btnExamen.classList.add('active');
+        document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+        resetExam();
+    }
+    btnLesson.addEventListener('click', showLesson);
+    btnExamen.addEventListener('click', showExam);
+
+    // Exam logic
+    const correctAnswers = { q1:'a', q2:'b', q3:'b', q4:'b', q5:'b', q6:'b', q7:'b', q8:'b', q9:'b', q10:'b' };
+    document.getElementById('checkExam').addEventListener('click', () => {
+        let score = 0;
+        document.querySelectorAll('.question-card label').forEach(l => l.classList.remove('correct-answer','wrong-answer'));
+        for (let q in correctAnswers) {
+            const correctVal = correctAnswers[q];
+            const correctLabel = document.querySelector(`input[name="${q}"][value="${correctVal}"]`)?.parentElement;
+            if (correctLabel) correctLabel.classList.add('correct-answer');
+            const selected = document.querySelector(`input[name="${q}"]:checked`);
+            if (selected) {
+                if (selected.value === correctVal) score++;
+                else selected.parentElement.classList.add('wrong-answer');
+            }
+        }
+        const total = Object.keys(correctAnswers).length;
+        const pct = Math.round((score/total)*100);
+        let msg = `Votre score : ${score} / ${total} (${pct}%). `;
+        msg += pct >= 80 ? "Excellent !" : pct >= 50 ? "Continuez à réviser." : "Révisez le cours et réessayez.";
+        document.getElementById('examResult').textContent = msg;
+    });
+    function resetExam() {
+        document.querySelectorAll('.question-card input[type="radio"]').forEach(i => i.checked = false);
+        document.querySelectorAll('.question-card label').forEach(l => l.classList.remove('correct-answer','wrong-answer'));
+        document.getElementById('examResult').textContent = '';
+    }
+    document.getElementById('resetExam').addEventListener('click', resetExam);
+
+    updateActiveDot();
+</script>
 </body>
 </html>
