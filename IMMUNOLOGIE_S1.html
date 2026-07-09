@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="dark">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075">
@@ -31,8 +31,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>QCM: BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE - GhaniPharma</title>
-    <meta name="description" content="QCM on benign anomalies of the leukocyte lineage. 15 questions, 45 minutes.">
+    <title>QCM : ANOMALIES BÉNIGNES DE LA LIGNÉE LEUCOCYTAIRE - GhaniPharma</title>
+    <meta name="description" content="QCM sur les anomalies bénignes de la lignée leucocytaire. 15 questions, 45 minutes.">
     <link rel="icon" type="image/x-icon"
     href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -657,6 +657,22 @@
             border: none;
             border-radius: 16px;
             background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Empty content placeholder */
+        .empty-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 75vh;
+            min-height: 500px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow-card);
+            color: var(--text-secondary);
+            font-style: italic;
         }
 
         /* ==================== Exam Section ==================== */
@@ -1316,7 +1332,7 @@
                 GhaniPharma
             </a>
             <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème" title="Changer le thème">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
@@ -1324,8 +1340,8 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li><a href="modules.html" class="nav-link active"><i class="fas fa-book"></i> Modules</a></li>
                     <li><a href="index.html#section-contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -1341,8 +1357,8 @@
                 <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
-            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
-            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> About</a>
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
             <a href="modules.html" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
             <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
         </div>
@@ -1355,29 +1371,39 @@
             <!-- Shared Module Header -->
             <div class="module-header reveal">
                 <div class="exam-badge">
-                    <i class="fas fa-flask"></i> Hematology Module
+                    <i class="fas fa-flask"></i> Module Hématologie
                 </div>
-                <h1 class="exam-title">BENIGN ANOMALIES OF THE LEUKOCYTE LINEAGE</h1>
+                <h1 class="exam-title">ANOMALIES BÉNIGNES DE LA LIGNÉE LEUCOCYTAIRE</h1>
             </div>
 
-            <!-- Tabs Switch Buttons -->
+            <!-- Tabs Switch Buttons (PDF, Lesson, Examens) -->
             <div class="tabs-container reveal reveal-delay-1">
-                <button class="tab-btn active" id="tabLesson">
-                    <i class="fas fa-file-pdf"></i> Lesson
+                <button class="tab-btn active" id="tabPdf">
+                    <i class="fas fa-file-pdf"></i> PDF
+                </button>
+                <button class="tab-btn" id="tabLessonNew">
+                    <i class="fas fa-book-open"></i> Lesson
                 </button>
                 <button class="tab-btn" id="tabExam">
-                    <i class="fas fa-pencil-alt"></i> Exams
+                    <i class="fas fa-pencil-alt"></i> Examens
                 </button>
             </div>
 
-            <!-- Lesson Section (PDF) -->
-            <div class="lesson-section reveal reveal-delay-2" id="lessonSection">
+            <!-- PDF Section (original Lesson renamed) -->
+            <div class="lesson-section reveal reveal-delay-2" id="pdfSection">
                 <div class="pdf-container">
                     <!-- رابط التضمين الصحيح لملف PDF من Google Drive -->
-                    <iframe src="https://drive.google.com/file/d/1S_ISkZKO6jTzFzOq3Jeti9C1kB7abzmh/preview" title="Lesson PDF" allowfullscreen>
-                        <p>Your browser does not support PDF viewing. 
-                           <a href="https://drive.google.com/file/d/1S_ISkZKO6jTzFzOq3Jeti9C1kB7abzmh/view?usp=sharing" target="_blank">Download the lesson</a>.</p>
+                    <iframe src="https://drive.google.com/file/d/1S_ISkZKO6jTzFzOq3Jeti9C1kB7abzmh/preview" title="Leçon PDF" allowfullscreen>
+                        <p>Votre navigateur ne supporte pas l'affichage des PDF. 
+                           <a href="https://drive.google.com/file/d/1S_ISkZKO6jTzFzOq3Jeti9C1kB7abzmh/view?usp=sharing" target="_blank">Télécharger la leçon</a>.</p>
                     </iframe>
+                </div>
+            </div>
+
+            <!-- New Empty Lesson Section -->
+            <div class="lesson-section hidden reveal reveal-delay-2" id="lessonNewSection">
+                <div class="empty-content">
+                    <!-- contenu vide -->
                 </div>
             </div>
 
@@ -1387,10 +1413,10 @@
                 <div class="exam-container" id="examContainer">
                     <div class="exam-info">
                         <div class="timer">
-                            <i class="fas fa-clock"></i> Time remaining: <span id="time">30:00</span>
+                            <i class="fas fa-clock"></i> Temps restant : <span id="time">45:00</span>
                         </div>
                         <div class="progress">
-                            <i class="fas fa-check-circle"></i> Questions answered: <span id="answered">0</span>/<span
+                            <i class="fas fa-check-circle"></i> Questions répondues : <span id="answered">0</span>/<span
                             id="total-qs">15</span>
                         </div>
                     </div>
@@ -1402,23 +1428,23 @@
 
                         <div class="actions" id="actionsBar">
                             <button class="btn btn-outline" id="prev-btn" style="display:none;">
-                                <i class="fas fa-arrow-left"></i> Previous
+                                <i class="fas fa-arrow-left"></i> Précédent
                             </button>
                             <button class="btn btn-next" id="next-btn">
-                                Next <i class="fas fa-arrow-right"></i>
+                                Suivant <i class="fas fa-arrow-right"></i>
                             </button>
                             <button class="btn btn-submit" id="submit-btn" style="display:none;">
-                                <i class="fas fa-paper-plane"></i> Submit Exam
+                                <i class="fas fa-paper-plane"></i> Soumettre l'examen
                             </button>
                             <button class="btn btn-outline" id="reset-btn">
-                                <i class="fas fa-undo"></i> Start Over
+                                <i class="fas fa-undo"></i> Recommencer
                             </button>
                         </div>
                     </div>
 
                     <!-- Exam Results -->
                     <div class="result-container" id="result-container">
-                        <h2 class="result-header">Exam Results</h2>
+                        <h2 class="result-header">Résultats de l'examen</h2>
                         <div class="score" id="final-score">0/20</div>
                         <div class="score-text" id="score-text"></div>
 
@@ -1427,20 +1453,20 @@
                         <div class="legend">
                             <div class="legend-item">
                                 <div class="legend-color full-points"></div>
-                                <span>Full point (1.33)</span>
+                                <span>Point complet (1.33)</span>
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color partial-points"></div>
-                                <span>Partial points</span>
+                                <span>Points partiels</span>
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color zero-points"></div>
-                                <span>Zero points</span>
+                                <span>Zéro point</span>
                             </div>
                         </div>
 
                         <button class="restart-btn" id="restart-btn">
-                            <i class="fas fa-redo"></i> Retake Exam
+                            <i class="fas fa-redo"></i> Refaire l'examen
                         </button>
                     </div>
                 </div>
@@ -1465,7 +1491,7 @@
             <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank"
         title="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
-    <p class="copyright">&copy; 2025 GhaniPharma. All rights reserved.</p>
+    <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
 </footer>
 
 <script>
@@ -1500,11 +1526,23 @@
     }
     createStars();
 
-    // ==================== Tab Switching Logic ====================
-    const tabLesson = document.getElementById('tabLesson');
-    const tabExam = document.getElementById('tabExam');
-    const lessonSection = document.getElementById('lessonSection');
-    const examSection = document.getElementById('examSection');
+    // ==================== Tab Switching Logic (three tabs) ====================
+    const tabs = {
+        pdf: {
+            button: document.getElementById('tabPdf'),
+            section: document.getElementById('pdfSection')
+        },
+        lessonNew: {
+            button: document.getElementById('tabLessonNew'),
+            section: document.getElementById('lessonNewSection')
+        },
+        exam: {
+            button: document.getElementById('tabExam'),
+            section: document.getElementById('examSection')
+        }
+    };
+
+    let activeTab = 'pdf';
 
     function pauseTimer() {
         if (timerInterval) {
@@ -1514,103 +1552,99 @@
     }
 
     function resumeTimer() {
-        // استئناف المؤقت فقط إذا كان الامتحان قيد التقدم ولم يتم عرض النتيجة
         const resultContainer = document.getElementById('result-container');
         if (!timerInterval && resultContainer.style.display !== 'block' && document.getElementById('examContent').style.display !== 'none') {
             startTimer();
         }
     }
 
-    function switchTab(activeTab, inactiveTab, showSection, hideSection) {
-        activeTab.classList.add('active');
-        inactiveTab.classList.remove('active');
-        showSection.classList.remove('hidden');
-        hideSection.classList.add('hidden');
+    function switchTab(tabKey) {
+        if (activeTab === tabKey) return;
 
-        // إيقاف المؤقت عند مغادرة قسم الامتحان
-        if (hideSection === examSection) {
+        // Désactiver l'onglet actuel
+        tabs[activeTab].button.classList.remove('active');
+        tabs[activeTab].section.classList.add('hidden');
+
+        // Activer le nouvel onglet
+        tabs[tabKey].button.classList.add('active');
+        tabs[tabKey].section.classList.remove('hidden');
+
+        // Gestion du minuteur
+        if (activeTab === 'exam') {
             pauseTimer();
         }
-
-        // استئناف المؤقت عند العودة لقسم الامتحان
-        if (showSection === examSection) {
+        if (tabKey === 'exam') {
             resumeTimer();
         }
 
-        // إعادة تشغيل تأثير الظهور للقسم الظاهر
-        showSection.querySelectorAll('.reveal').forEach(el => {
+        activeTab = tabKey;
+
+        // Réanimation des éléments reveal dans la section affichée
+        tabs[tabKey].section.querySelectorAll('.reveal').forEach(el => {
             el.classList.remove('visible');
             void el.offsetWidth;
             el.classList.add('visible');
         });
     }
 
-    tabLesson.addEventListener('click', function() {
-        if (!tabLesson.classList.contains('active')) {
-            switchTab(tabLesson, tabExam, lessonSection, examSection);
-        }
-    });
+    tabs.pdf.button.addEventListener('click', () => switchTab('pdf'));
+    tabs.lessonNew.button.addEventListener('click', () => switchTab('lessonNew'));
+    tabs.exam.button.addEventListener('click', () => switchTab('exam'));
 
-    tabExam.addEventListener('click', function() {
-        if (!tabExam.classList.contains('active')) {
-            switchTab(tabExam, tabLesson, examSection, lessonSection);
-        }
-    });
-
-    // ==================== Question Database ====================
+    // ==================== Question Database (French translation) ====================
     const questions = [{
         id: 1,
-        text: "Regarding the pathophysiological mechanisms that can modify the circulating leukocyte count, which ones are mentioned?",
+        text: "Parmi les mécanismes physiopathologiques pouvant modifier le nombre de leucocytes circulants, lesquels sont mentionnés ?",
         correctAnswers: ["a", "c", "d"],
         options: [
-            { id: "a", text: "Abnormalities of medullary production." },
-            { id: "b", text: "Abnormalities of phagocytic function." },
-            { id: "c", text: "Abnormalities of distribution between circulating pool and marginal pool." },
-            { id: "d", text: "Abnormal peripheral anomalies (destruction, sequestration)." }
+            { id: "a", text: "Anomalies de la production médullaire." },
+            { id: "b", text: "Anomalies de la fonction phagocytaire." },
+            { id: "c", text: "Anomalies de répartition entre pool circulant et pool marginal." },
+            { id: "d", text: "Anomalies périphériques (destruction, séquestration)." }
         ]
     }, {
         id: 2,
-        text: "To interpret a leukocyte formula, which approach is essential?",
+        text: "Pour interpréter une formule leucocytaire, quelle démarche est essentielle ?",
         correctAnswers: ["b", "c", "d"],
         options: [
-            { id: "a", text: "Rely solely on percentages (relative values)." },
-            { id: "b", text: "Convert percentages to absolute values (per mm³)." },
-            { id: "c", text: "Multiply the percentage of each lineage by the total leukocyte count." },
-            { id: "d", text: "Compare the obtained values to the norms of a healthy adult." }
+            { id: "a", text: "Se baser uniquement sur les pourcentages (valeurs relatives)." },
+            { id: "b", text: "Convertir les pourcentages en valeurs absolues (par mm³)." },
+            { id: "c", text: "Multiplier le pourcentage de chaque lignée par le nombre total de leucocytes." },
+            { id: "d", text: "Comparer les valeurs obtenues aux normes de l’adulte sain." }
         ]
     }, {
         id: 3,
-        text: "What are the threshold values defining hyperleukocytosis in adults?",
+        text: "Quelles sont les valeurs seuils définissant une hyperleucocytose chez l’adulte ?",
         correctAnswers: ["b", "c"],
         options: [
-            { id: "a", text: "WBC > 4000/mm³" },
-            { id: "b", text: "WBC > 10000/mm³" },
-            { id: "c", text: "WBC > 10 G/L" },
-            { id: "d", text: "WBC < 4000/mm³" }
+            { id: "a", text: "GB > 4000/mm³" },
+            { id: "b", text: "GB > 10000/mm³" },
+            { id: "c", text: "GB > 10 G/L" },
+            { id: "d", text: "GB < 4000/mm³" }
         ]
     }, {
         id: 4,
-        text: "Among the following etiologies, which can cause neutrophilia (PMN > 7500/mm³)?",
+        text: "Parmi les étiologies suivantes, lesquelles peuvent provoquer une polynucléose neutrophile (PNN > 7500/mm³) ?",
         correctAnswers: ["a", "c", "d"],
         options: [
-            { id: "a", text: "Acute bacterial infection (e.g., abscess, tonsillitis)." },
-            { id: "b", text: "Vitamin B12 deficiency." },
-            { id: "c", text: "Intense physical exercise or acute stress." },
-            { id: "d", text: "Corticosteroid intake." }
+            { id: "a", text: "Infection bactérienne aiguë (ex : abcès, angine)." },
+            { id: "b", text: "Carence en vitamine B12." },
+            { id: "c", text: "Exercice physique intense ou stress aigu." },
+            { id: "d", text: "Prise de corticoïdes." }
         ]
     }, {
         id: 5,
-        text: "Regarding hypereosinophilia (PNE > 500/mm³), which causes are mentioned?",
+        text: "Concernant l’hyperéosinophilie (PNE > 500/mm³), quelles causes sont mentionnées ?",
         correctAnswers: ["a", "b"],
         options: [
-            { id: "a", text: "Parasitic infections (e.g., helminthiases)." },
-            { id: "b", text: "Allergic reactions (e.g., asthma, eczema)." },
-            { id: "c", text: "Acute viral infections (e.g., flu)." },
-            { id: "d", text: "Hypothyroidism." }
+            { id: "a", text: "Parasitoses (ex : helminthiases)." },
+            { id: "b", text: "Réactions allergiques (ex : asthme, eczéma)." },
+            { id: "c", text: "Infections virales aiguës (ex : grippe)." },
+            { id: "d", text: "Hypothyroïdie." }
         ]
     }, {
         id: 6,
-        text: "Hyperlymphocytosis in adults is defined by a count greater than:",
+        text: "L’hyperlymphocytose chez l’adulte est définie par un taux supérieur à :",
         correctAnswers: ["b"],
         options: [
             { id: "a", text: "1500/mm³" },
@@ -1620,93 +1654,93 @@
         ]
     }, {
         id: 7,
-        text: "Which pathologies can present with acute lymphocytosis with atypical lymphocytes?",
+        text: "Quelles pathologies peuvent présenter une lymphocytose aiguë avec lymphocytes atypiques ?",
         correctAnswers: ["a", "b"],
         options: [
-            { id: "a", text: "Infectious mononucleosis (EBV)." },
-            { id: "b", text: "Toxoplasmosis." },
-            { id: "c", text: "Rubella." },
-            { id: "d", text: "Active tuberculosis." }
+            { id: "a", text: "Mononucléose infectieuse (EBV)." },
+            { id: "b", text: "Toxoplasmose." },
+            { id: "c", text: "Rubéole." },
+            { id: "d", text: "Tuberculose active." }
         ]
     }, {
         id: 8,
-        text: "Regarding monocytosis (monocytes > 1000/mm³), which etiologies are mentioned?",
+        text: "Concernant la monocytose (monocytes > 1000/mm³), quelles étiologies sont mentionnées ?",
         correctAnswers: ["a", "b", "c"],
         options: [
-            { id: "a", text: "Bacterial infections (brucellosis, salmonellosis)." },
-            { id: "b", text: "Parasitic infections (toxoplasmosis, malaria)." },
-            { id: "c", text: "Autoimmune diseases (lupus, rheumatoid arthritis)." },
-            { id: "d", text: "Iron deficiency." }
+            { id: "a", text: "Infections bactériennes (brucellose, salmonellose)." },
+            { id: "b", text: "Infections parasitaires (toxoplasmose, paludisme)." },
+            { id: "c", text: "Maladies auto-immunes (lupus, polyarthrite rhumatoïde)." },
+            { id: "d", text: "Carence en fer." }
         ]
     }, {
         id: 9,
-        text: "Neutropenia is defined by a PMN count lower than:",
+        text: "La neutropénie est définie par un taux de PNN inférieur à :",
         correctAnswers: ["a"],
         options: [
             { id: "a", text: "1500/mm³" },
             { id: "b", text: "7500/mm³" },
-            { id: "c", text: "200/mm³ (agranulocytosis)." },
+            { id: "c", text: "200/mm³ (agranulocytose)." },
             { id: "d", text: "4000/mm³" }
         ]
     }, {
         id: 10,
-        text: "Among the causes of acquired neutropenia, which are mentioned?",
+        text: "Parmi les causes de neutropénie acquise, lesquelles sont mentionnées ?",
         correctAnswers: ["a", "b", "c"],
         options: [
-            { id: "a", text: "Vitamin B12 or folate deficiency." },
-            { id: "b", text: "Viral infection (flu, HIV)." },
-            { id: "c", text: "Medications (antimitotics, certain antibiotics)." },
-            { id: "d", text: "Extreme physical exercise." }
+            { id: "a", text: "Carence en vitamine B12 ou folates." },
+            { id: "b", text: "Infection virale (grippe, VIH)." },
+            { id: "c", text: "Médicaments (antimitotiques, certains antibiotiques)." },
+            { id: "d", text: "Exercice physique extrême." }
         ]
     }, {
         id: 11,
-        text: "Regarding lymphopenia (lymphocytes < 1000/mm³), which situations are mentioned?",
+        text: "Concernant la lymphopénie (lymphocytes < 1000/mm³), quelles situations sont mentionnées ?",
         correctAnswers: ["a", "b", "c"],
         options: [
-            { id: "a", text: "Acquired immune deficiency (AIDS)." },
-            { id: "b", text: "Radiotherapy or chemotherapy." },
-            { id: "c", text: "Corticosteroid treatment." },
-            { id: "d", text: "Hyperthyroidism." }
+            { id: "a", text: "Déficit immunitaire acquis (SIDA)." },
+            { id: "b", text: "Radiothérapie ou chimiothérapie." },
+            { id: "c", text: "Traitement par corticoïdes." },
+            { id: "d", text: "Hyperthyroïdie." }
         ]
     }, {
         id: 12,
-        text: "Which morphological abnormalities can be observed in PMNs?",
+        text: "Quelles anomalies morphologiques peuvent être observées dans les PNN ?",
         correctAnswers: ["a", "b", "c"],
         options: [
-            { id: "a", text: "Nuclear hypersegmentation (B12/folate deficiency)." },
-            { id: "b", text: "Nuclear hyposegmentation (sepsis, Pelger-Huët anomaly)." },
-            { id: "c", text: "Cytoplasmic hypergranulation." },
-            { id: "d", text: "Presence of giant azurophilic granules." }
+            { id: "a", text: "Hypersegmentation nucléaire (carence B12/folates)." },
+            { id: "b", text: "Hyposegmentation nucléaire (sepsis, anomalie de Pelger-Huët)." },
+            { id: "c", text: "Hypergranulation cytoplasmique." },
+            { id: "d", text: "Présence de granulations azurophiles géantes." }
         ]
     }, {
         id: 13,
-        text: "Regarding atypical lymphocytes, which statement is correct?",
+        text: "Concernant les lymphocytes atypiques, quelle affirmation est correcte ?",
         correctAnswers: ["a", "c"],
         options: [
-            { id: "a", text: "They are characteristic of mononucleosis syndromes (e.g., IM)." },
-            { id: "b", text: "They always indicate a malignant hemopathy." },
-            { id: "c", text: "They correspond to activated or stimulated lymphocytes." },
-            { id: "d", text: "Their presence is pathognomonic of acute lymphoblastic leukemia." }
+            { id: "a", text: "Ils sont caractéristiques des syndromes mononucléosiques (ex : MNI)." },
+            { id: "b", text: "Ils indiquent toujours une hémopathie maligne." },
+            { id: "c", text: "Ils correspondent à des lymphocytes activés ou stimulés." },
+            { id: "d", text: "Leur présence est pathognomonique d’une leucémie aiguë lymphoblastique." }
         ]
     }, {
         id: 14,
-        text: "In the diagnostic approach to a benign leukocyte anomaly, which elements are essential?",
+        text: "Dans la démarche diagnostique d’une anomalie leucocytaire bénigne, quels éléments sont indispensables ?",
         correctAnswers: ["a", "b", "d"],
         options: [
-            { id: "a", text: "A detailed interview (age, medications...)." },
-            { id: "b", text: "A complete clinical examination." },
-            { id: "c", text: "Systematic performance of a myelogram as first-line." },
-            { id: "d", text: "Targeted additional tests (ESR, blood cultures, etc.)." }
+            { id: "a", text: "Un interrogatoire détaillé (âge, médicaments…)." },
+            { id: "b", text: "Un examen clinique complet." },
+            { id: "c", text: "La réalisation systématique d’un myélogramme en première intention." },
+            { id: "d", text: "Des examens complémentaires ciblés (VS, hémocultures, etc.)." }
         ]
     }, {
         id: 15,
-        text: "Which statement regarding leukocyte balance is correct?",
+        text: "Quelle affirmation concernant le bilan leucocytaire est correcte ?",
         correctAnswers: ["b"],
         options: [
-            { id: "a", text: "Its disturbance always requires immunomodulatory treatment." },
-            { id: "b", text: "It generally restores with treatment of the underlying cause." },
-            { id: "c", text: "Benign anomalies are always symptomatic." },
-            { id: "d", text: "Monitoring by hemogram is useless once the diagnosis is made." }
+            { id: "a", text: "Sa perturbation nécessite toujours un traitement immunomodulateur." },
+            { id: "b", text: "Il se rétablit généralement avec le traitement de la cause sous-jacente." },
+            { id: "c", text: "Les anomalies bénignes sont toujours symptomatiques." },
+            { id: "d", text: "La surveillance par hémogramme est inutile une fois le diagnostic posé." }
         ]
     }];
 
@@ -1874,7 +1908,7 @@
                     score: 0,
                     correctChoices: correctList,
                     studentChoices: studentList,
-                    note: 'No answer selected'
+                    note: 'Aucune réponse sélectionnée'
                 };
                 return;
             }
@@ -1892,7 +1926,7 @@
                     score: 0,
                     correctChoices: correctList,
                     studentChoices: studentList,
-                    note: 'Contains an incorrect answer'
+                    note: 'Contient une réponse incorrecte'
                 };
                 return;
             }
@@ -1905,7 +1939,7 @@
                     score: pointsPerQuestion,
                     correctChoices: correctList,
                     studentChoices: studentList,
-                    note: 'Complete answer'
+                    note: 'Réponse complète'
                 };
                 totalScore += pointsPerQuestion;
             } else if (correctSelected === 0) {
@@ -1913,7 +1947,7 @@
                     score: 0,
                     correctChoices: correctList,
                     studentChoices: studentList,
-                    note: 'No correct answer selected'
+                    note: 'Aucune bonne réponse sélectionnée'
                 };
             } else {
                 const score = (correctSelected / totalCorrect) * pointsPerQuestion;
@@ -1921,7 +1955,7 @@
                     score: parseFloat(score.toFixed(4)),
                     correctChoices: correctList,
                     studentChoices: studentList,
-                    note: `Partial (${correctSelected}/${totalCorrect})`
+                    note: `Partiel (${correctSelected}/${totalCorrect})`
                 };
                 totalScore += score;
             }
@@ -1937,7 +1971,7 @@
         document.getElementById('score-text').textContent = getScoreMessage(percentage);
 
         const feedback = document.getElementById('feedback');
-        let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Correction Details:</h3>';
+        let detailsHTML = '<h3><i class="fas fa-clipboard-check"></i> Détails de la correction :</h3>';
 
         questions.forEach(question => {
             const questionId = `q${question.id}`;
@@ -1973,7 +2007,7 @@
 
                 let studentBadge = '';
                 if (isSelected) {
-                    studentBadge = '<span class="student-choice-badge">Your choice</span>';
+                    studentBadge = '<span class="student-choice-badge">Votre choix</span>';
                 }
 
                 optionsListHTML += `
@@ -2008,12 +2042,12 @@
     }
 
     function getScoreMessage(percentage) {
-        if (percentage >= 90) return "Excellent! Perfect mastery of benign anomalies of the leukocyte lineage!";
-        if (percentage >= 80) return "Very good! Excellent knowledge in cellular hematology!";
-        if (percentage >= 70) return "Good! Solid knowledge of leukocyte anomalies!";
-        if (percentage >= 60) return "Fair! Review of leukocyte anomalies recommended!";
-        if (percentage >= 40) return "Low! Study the anomalies of the white lineage more thoroughly!";
-        return "Very low! You need to work harder on cellular hematology!";
+        if (percentage >= 90) return "Excellent ! Maîtrise parfaite des anomalies bénignes de la lignée leucocytaire !";
+        if (percentage >= 80) return "Très bien ! Excellentes connaissances en hématologie cellulaire !";
+        if (percentage >= 70) return "Bien ! Solides connaissances des anomalies leucocytaires !";
+        if (percentage >= 60) return "Assez bien ! Une révision des anomalies leucocytaires est recommandée !";
+        if (percentage >= 40) return "Faible ! Étudiez plus en profondeur les anomalies de la lignée blanche !";
+        return "Très faible ! Vous devez travailler davantage l’hématologie cellulaire !";
     }
 
     function resetExam() {
