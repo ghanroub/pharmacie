@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* ----- Styles inchangés (identiques à votre code) ----- */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -901,12 +902,37 @@
                     <h2 class="section-title reveal">NIVEAU 1 : Antalgiques non‑opioïdes</h2>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);">1. Paracétamol</h3>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('paracetamol')">Doliprane</span>, <span class="drug-link" onclick="showDrugModal('paracetamol')">Dolyc</span>, ...</p>
+                        <!-- Noms commerciaux enrichis -->
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Doliprane</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Dolyc</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Dofebril</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Dafalgan</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Panadol</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Efferalgan</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Paramol</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Expandol</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol')">Sapramol</span>
+                        </p>
                         <p><strong>Formes :</strong> Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</p>
                         <p><strong>Posologie Adulte :</strong> 500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</p>
                         <p><strong>Particularité :</strong> Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.</p>
                         <p><strong>Conseil Pharmacien :</strong> Vérifiez toujours les « médicaments rhume » associés. Interdit avec l'alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</p>
+
+                        <!-- Associations ajoutées -->
+                        <p style="margin-top:20px;"><strong>Associations :</strong></p>
+                        <h4 style="color:var(--accent); margin-top:15px;">Paracétamol + Caféine</h4>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('paracetamol_cafeine')">Panadol Extra</span>,
+                            <span class="drug-link" onclick="showDrugModal('paracetamol_cafeine')">Planadix</span>
+                        </p>
+
+                        <h4 style="color:var(--accent); margin-top:15px;">Paracétamol + Vitamine C</h4>
+                        <p><strong>Nom commercial :</strong>
+                            <span class="drug-link" onclick="showDrugModal('paracetamol_vitc')">Efferalgan VC</span>
+                        </p>
                     </div>
+
                     <div class="card reveal reveal-delay-2">
                         <h3 style="color:var(--primary);">2. Acide Acétylsalicylique (AINS)</h3>
                         <p><strong>Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('aspirine')">Aspegic</span>, <span class="drug-link" onclick="showDrugModal('aspirine')">Aspirine</span>, <span class="drug-link" onclick="showDrugModal('aspirine')">Catalgine</span>.</p>
@@ -1169,10 +1195,8 @@
 
         // ==================== SIDE DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
         const sideDotsContainer = document.getElementById('sideDots');
-        // Sauvegarde du HTML original des dots de la leçon
         const originalLessonDotsHTML = sideDotsContainer.innerHTML;
 
-        // Tableaux des identifiants de sections pour chaque mode
         const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
             'grossesse', 'niveau1', 'niveau2', 'niveau3', 'conseil'
         ];
@@ -1181,7 +1205,6 @@
             'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
         ];
 
-        // Génère le HTML des dots pour le mode Examen
         function generateExamDotsHTML() {
             const tooltips = [
                 'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
@@ -1196,22 +1219,18 @@
             return html;
         }
 
-        // Délégation d'événement sur le conteneur des dots (fonctionne pour les dots leçon ET examen)
         sideDotsContainer.addEventListener('click', (e) => {
             const dot = e.target.closest('.dot');
             if (!dot) return;
             const dotId = dot.dataset.dot;
             const isExamMode = document.getElementById('examContent').style.display !== 'none';
             if (isExamMode) {
-                // En mode examen, l'id de la section correspond directement au data-dot
                 document.getElementById(dotId)?.scrollIntoView({ behavior: 'smooth' });
             } else {
-                // En mode leçon, on préfixe par "section-"
                 document.getElementById('section-' + dotId)?.scrollIntoView({ behavior: 'smooth' });
             }
         });
 
-        // Met à jour le dot actif selon la position de défilement
         function updateActiveDot() {
             const isExamMode = document.getElementById('examContent').style.display !== 'none';
             const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
@@ -1229,7 +1248,6 @@
                 }
             });
 
-            // On requête les dots à chaque fois (car ils sont dynamiquement recréés)
             document.querySelectorAll('#sideDots .dot').forEach(d => {
                 d.classList.toggle('active', d.dataset.dot === active);
             });
@@ -1278,7 +1296,7 @@
             localStorage.setItem('theme', next);
         });
 
-        // Drug modal
+        // Drug modal (ajout des nouvelles clés)
         const drugImages = {
             paracetamol: [],
             aspirine: [],
@@ -1289,7 +1307,9 @@
             buprenorphine: [],
             oxycodone: [],
             fentanyl: [],
-            alfentanil: []
+            alfentanil: [],
+            paracetamol_cafeine: [],   // nouveau
+            paracetamol_vitc: []       // nouveau
         };
         const drugTitles = {
             paracetamol: 'Paracétamol',
@@ -1301,7 +1321,9 @@
             buprenorphine: 'Buprénorphine',
             oxycodone: 'Oxycodone',
             fentanyl: 'Fentanyl',
-            alfentanil: 'Alfentanil'
+            alfentanil: 'Alfentanil',
+            paracetamol_cafeine: 'Paracétamol + Caféine',
+            paracetamol_vitc: 'Paracétamol + Vitamine C'
         };
 
         function showDrugModal(key) {
@@ -1343,7 +1365,6 @@
         function showLesson() {
             lessonContent.style.display = 'block';
             examContent.style.display = 'none';
-            // Restaurer les dots de la leçon
             sideDotsContainer.innerHTML = originalLessonDotsHTML;
             sideDotsContainer.style.display = 'flex';
             btnLesson.classList.add('active');
@@ -1355,7 +1376,6 @@
         function showExam() {
             lessonContent.style.display = 'none';
             examContent.style.display = 'block';
-            // Remplacer par les dots de l'examen
             sideDotsContainer.innerHTML = generateExamDotsHTML();
             sideDotsContainer.style.display = 'flex';
             btnLesson.classList.remove('active');
