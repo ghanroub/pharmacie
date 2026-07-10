@@ -747,7 +747,7 @@
 
         @media (max-width: 992px) {
             .side-dots {
-                display: none !important;
+                display: none;
             }
         }
         @media (max-width: 768px) {
@@ -817,8 +817,8 @@
         </div>
     </div>
 
-    <!-- Side dots – Leçon -->
-    <div class="side-dots" id="sideDotsLesson">
+    <!-- Side dots (dynamiquement mis à jour selon le mode Leçon/Examen) -->
+    <div class="side-dots" id="sideDots">
         <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
         <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
         <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
@@ -829,20 +829,6 @@
         <div class="dot" data-dot="niveau2"><span class="dot-tooltip">Niveau 2</span></div>
         <div class="dot" data-dot="niveau3"><span class="dot-tooltip">Niveau 3</span></div>
         <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
-    </div>
-
-    <!-- Side dots – Examen -->
-    <div class="side-dots" id="sideDotsExam" style="display: none;">
-        <div class="dot active" data-dot="q1"><span class="dot-tooltip">Question 1</span></div>
-        <div class="dot" data-dot="q2"><span class="dot-tooltip">Question 2</span></div>
-        <div class="dot" data-dot="q3"><span class="dot-tooltip">Question 3</span></div>
-        <div class="dot" data-dot="q4"><span class="dot-tooltip">Question 4</span></div>
-        <div class="dot" data-dot="q5"><span class="dot-tooltip">Question 5</span></div>
-        <div class="dot" data-dot="q6"><span class="dot-tooltip">Question 6</span></div>
-        <div class="dot" data-dot="q7"><span class="dot-tooltip">Question 7</span></div>
-        <div class="dot" data-dot="q8"><span class="dot-tooltip">Question 8</span></div>
-        <div class="dot" data-dot="q9"><span class="dot-tooltip">Question 9</span></div>
-        <div class="dot" data-dot="q10"><span class="dot-tooltip">Question 10</span></div>
     </div>
 
     <div class="main-wrapper">
@@ -1181,88 +1167,94 @@
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== Side dots management ====================
-        const sideDotsLesson = document.getElementById('sideDotsLesson');
-        const sideDotsExam = document.getElementById('sideDotsExam');
-        const dotsLesson = sideDotsLesson.querySelectorAll('.dot');
-        const dotsExam = sideDotsExam.querySelectorAll('.dot');
-        
-        // Lesson sections (IDs without 'section-' prefix)
-        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions', 'grossesse',
-            'niveau1', 'niveau2', 'niveau3', 'conseil'
+        // ==================== SIDE DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
+        const sideDotsContainer = document.getElementById('sideDots');
+        // Sauvegarde du HTML original des dots de la leçon
+        const originalLessonDotsHTML = sideDotsContainer.innerHTML;
+
+        // Tableaux des identifiants de sections pour chaque mode
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'niveau1', 'niveau2', 'niveau3', 'conseil'
         ];
-        // Exam questions IDs
-        const examQuestionIDs = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
 
-        function updateActiveDotLesson() {
-            const scrollPos = window.scrollY + window.innerHeight / 3;
-            const navH = document.getElementById('topNav').offsetHeight;
-            let active = 'intro';
-            lessonSectionIDs.forEach(id => {
-                const el = document.getElementById('section-' + id);
-                if (el) {
-                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
-                    const bottom = top + el.offsetHeight;
-                    if (scrollPos >= top && scrollPos < bottom) active = id;
-                }
+        // Génère le HTML des dots pour le mode Examen
+        function generateExamDotsHTML() {
+            const tooltips = [
+                'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
+                'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'
+            ];
+            let html = '';
+            examSectionIDs.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                html +=
+                    `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
             });
-            dotsLesson.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
+            return html;
         }
 
-        function updateActiveDotExam() {
-            const scrollPos = window.scrollY + window.innerHeight / 3;
-            const navH = document.getElementById('topNav').offsetHeight;
-            let active = 'q1';
-            examQuestionIDs.forEach(id => {
-                const el = document.getElementById('exam-' + id);
-                if (el) {
-                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
-                    const bottom = top + el.offsetHeight;
-                    if (scrollPos >= top && scrollPos < bottom) active = id;
-                }
-            });
-            dotsExam.forEach(d => d.classList.toggle('active', d.dataset.dot === active));
-        }
-
-        function handleScrollUpdate() {
-            if (document.getElementById('examContent').style.display !== 'none') {
-                updateActiveDotExam();
+        // Délégation d'événement sur le conteneur des dots (fonctionne pour les dots leçon ET examen)
+        sideDotsContainer.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            if (isExamMode) {
+                // En mode examen, l'id de la section correspond directement au data-dot
+                document.getElementById(dotId)?.scrollIntoView({ behavior: 'smooth' });
             } else {
-                updateActiveDotLesson();
+                // En mode leçon, on préfixe par "section-"
+                document.getElementById('section-' + dotId)?.scrollIntoView({ behavior: 'smooth' });
             }
+        });
+
+        // Met à jour le dot actif selon la position de défilement
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            // On requête les dots à chaque fois (car ils sont dynamiquement recréés)
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
         }
 
-        window.addEventListener('scroll', handleScrollUpdate, { passive: true });
-
-        // Click on lesson dots
-        dotsLesson.forEach(dot => {
-            dot.addEventListener('click', () => {
-                if (document.getElementById('examContent').style.display !== 'none') return;
-                const target = document.getElementById('section-' + dot.dataset.dot);
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Click on exam dots
-        dotsExam.forEach(dot => {
-            dot.addEventListener('click', () => {
-                if (document.getElementById('examContent').style.display === 'none') return;
-                const target = document.getElementById('exam-' + dot.dataset.dot);
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
 
         // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
         const mobileOverlay = document.getElementById('mobileMenuOverlay');
         const closeBtn = document.getElementById('closeMobileMenu');
-        menuToggle.addEventListener('click', () => { mobileOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden'; });
-        closeBtn.addEventListener('click', () => { mobileOverlay.classList.remove('open');
-            document.body.style.overflow = ''; });
-        mobileOverlay.addEventListener('click', (e) => { if (e.target === mobileOverlay) { mobileOverlay.classList
-                .remove('open');
-                document.body.style.overflow = ''; } });
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
 
         // Nav hide on scroll
         let lastScroll = 0;
@@ -1287,11 +1279,30 @@
         });
 
         // Drug modal
-        const drugImages = { paracetamol: [], aspirine: [], codeine: [], tramadol_paracetamol: [], tramadol: [],
-            morphine: [], buprenorphine: [], oxycodone: [], fentanyl: [], alfentanil: [] };
-        const drugTitles = { paracetamol: 'Paracétamol', aspirine: 'Aspirine', codeine: 'Paracétamol + Codéine',
-            tramadol_paracetamol: 'Paracétamol + Tramadol', tramadol: 'Tramadol', morphine: 'Morphine',
-            buprenorphine: 'Buprénorphine', oxycodone: 'Oxycodone', fentanyl: 'Fentanyl', alfentanil: 'Alfentanil' };
+        const drugImages = {
+            paracetamol: [],
+            aspirine: [],
+            codeine: [],
+            tramadol_paracetamol: [],
+            tramadol: [],
+            morphine: [],
+            buprenorphine: [],
+            oxycodone: [],
+            fentanyl: [],
+            alfentanil: []
+        };
+        const drugTitles = {
+            paracetamol: 'Paracétamol',
+            aspirine: 'Aspirine',
+            codeine: 'Paracétamol + Codéine',
+            tramadol_paracetamol: 'Paracétamol + Tramadol',
+            tramadol: 'Tramadol',
+            morphine: 'Morphine',
+            buprenorphine: 'Buprénorphine',
+            oxycodone: 'Oxycodone',
+            fentanyl: 'Fentanyl',
+            alfentanil: 'Alfentanil'
+        };
 
         function showDrugModal(key) {
             const modal = document.getElementById('drugModal');
@@ -1301,20 +1312,27 @@
             const imgs = drugImages[key] || [];
             if (!imgs.length) container.innerHTML =
                 '<div class="modal-placeholder">Images à ajouter ultérieurement.</div>';
-            else imgs.forEach(src => { const img = document.createElement('img');
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
                 img.src = src;
                 img.alt = key;
                 img.loading = 'lazy';
-                container.appendChild(img); });
+                container.appendChild(img);
+            });
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeDrugModal() { document.getElementById('drugModal').classList.remove('open');
-            document.body.style.overflow = ''; }
-        document.getElementById('drugModal').addEventListener('click', e => { if (e.target === e.currentTarget)
-            closeDrugModal(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrugModal(); });
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeDrugModal();
+        });
 
         // Toggle Lesson/Examen
         const btnLesson = document.getElementById('btnLesson');
@@ -1325,44 +1343,46 @@
         function showLesson() {
             lessonContent.style.display = 'block';
             examContent.style.display = 'none';
-            sideDotsLesson.style.display = 'flex';
-            sideDotsExam.style.display = 'none';
+            // Restaurer les dots de la leçon
+            sideDotsContainer.innerHTML = originalLessonDotsHTML;
+            sideDotsContainer.style.display = 'flex';
             btnLesson.classList.add('active');
             btnExamen.classList.remove('active');
             document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
-            handleScrollUpdate();
+            updateActiveDot();
         }
 
         function showExam() {
             lessonContent.style.display = 'none';
             examContent.style.display = 'block';
-            sideDotsLesson.style.display = 'none';
-            sideDotsExam.style.display = 'flex';
+            // Remplacer par les dots de l'examen
+            sideDotsContainer.innerHTML = generateExamDotsHTML();
+            sideDotsContainer.style.display = 'flex';
             btnLesson.classList.remove('active');
             btnExamen.classList.add('active');
             document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
             resetExam();
-            handleScrollUpdate();
+            updateActiveDot();
         }
+
         btnLesson.addEventListener('click', showLesson);
         btnExamen.addEventListener('click', showExam);
 
         // ==================== EXAM QCM LOGIC ====================
         const correctAnswers = {
-            q1: ['a', 'b'], // Paracétamol, Aspirine (AINS)
-            q2: ['a', 'b', 'c'], // Antalgique, Anti-inflammatoire, Antipyrétique
-            q3: ['a', 'd'], // Hémorragie, Ulcère gastroduodénal
-            q4: ['a', 'b', 'd'], // Prodrogue, CYP2D6, contre-indiquée avant 12 ans
-            q5: ['a', 'b', 'c', 'd'], // Tous les effets cités
-            q6: ['a', 'b'], // AINS, Aspirine
-            q7: ['a', 'b', 'c'], // Patch, 72h, Niveau 3
-            q8: ['a', 'b', 'c', 'd'], // Tous les conseils
-            q9: ['a', 'b'], // Tramadol + ISRS, Tramadol + IRSN
-            q10: ['a', 'b', 'c', 'd'] // Toutes les affirmations
+            q1: ['a', 'b'],
+            q2: ['a', 'b', 'c'],
+            q3: ['a', 'd'],
+            q4: ['a', 'b', 'd'],
+            q5: ['a', 'b', 'c', 'd'],
+            q6: ['a', 'b'],
+            q7: ['a', 'b', 'c'],
+            q8: ['a', 'b', 'c', 'd'],
+            q9: ['a', 'b'],
+            q10: ['a', 'b', 'c', 'd']
         };
 
         document.getElementById('checkExam').addEventListener('click', () => {
-            // Clear all highlights
             document.querySelectorAll('.question-card label').forEach(l => {
                 l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
             });
@@ -1394,7 +1414,7 @@
                 });
 
                 if (hasWrongSelected) {
-                    // Score = 0
+                    // 0 point
                 } else if (correctSelectedCount === correctVals.length) {
                     totalScore += 1;
                 } else if (correctSelectedCount > 0) {
@@ -1409,7 +1429,6 @@
             else if (pct >= 50) msg += "📚 Continuez à réviser.";
             else msg += "🔍 Révisez le cours et réessayez.";
             document.getElementById('examResult').innerHTML = msg;
-
             document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
@@ -1422,7 +1441,8 @@
         }
         document.getElementById('resetExam').addEventListener('click', resetExam);
 
-        handleScrollUpdate();
+        // Initialisation
+        updateActiveDot();
     </script>
 </body>
 </html>
