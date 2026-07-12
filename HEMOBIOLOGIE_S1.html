@@ -10,10 +10,12 @@
     <meta property="og:title" content="Les Antalgiques - GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
     <title>Les Antalgiques | GhaniPharma</title>
+    <!-- أيقونة الموقع مثل الكود الثاني -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ----- Styles inchangés (identiques à votre code) ----- */
+        /* ----- الأنماط العامة كما هي مع تعديل اللوغو ----- */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -161,10 +163,11 @@
             color: var(--text-heading);
             transform: scale(1.05);
         }
+        /* ---------- شعار جديد مثل الكود الثاني ---------- */
         .logo-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: none; /* إزالة الخلفية المتدرجة */
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -172,6 +175,11 @@
             font-size: 1.4rem;
             color: white;
             animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         @keyframes pulse {
             0%,
@@ -785,7 +793,12 @@
     <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo"><span class="logo-icon">💊</span> GhaniPharma</a>
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
             <div class="nav-right">
                 <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
                     <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
@@ -806,7 +819,9 @@
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
             <div style="margin-bottom: 20px;">
-                <span class="logo-icon" style="font-size: 3rem; display: inline-block;">💊</span>
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
             <div>
@@ -848,6 +863,7 @@
 
             <!-- LESSON CONTENT -->
             <div id="lessonContent">
+                <!-- محتوى الدرس كما هو بدون تغيير -->
                 <section class="section-block" id="section-mecanisme">
                     <h2 class="section-title reveal">Mécanisme d'action</h2>
                     <div class="card reveal reveal-delay-1">
@@ -899,10 +915,10 @@
                 </section>
 
                 <section class="section-block" id="section-niveau1">
+                    <!-- باقي أقسام NIVEAU 1,2,3 كما هي -->
                     <h2 class="section-title reveal">NIVEAU 1 : Antalgiques non‑opioïdes</h2>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);">1. Paracétamol</h3>
-                        <!-- Noms commerciaux enrichis -->
                         <p><strong>Noms commerciaux (Algérie) :</strong>
                             <span class="drug-link" onclick="showDrugModal('paracetamol')">Doliprane</span>,
                             <span class="drug-link" onclick="showDrugModal('paracetamol')">Dolyc</span>,
@@ -918,8 +934,6 @@
                         <p><strong>Posologie Adulte :</strong> 500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</p>
                         <p><strong>Particularité :</strong> Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.</p>
                         <p><strong>Conseil Pharmacien :</strong> Vérifiez toujours les « médicaments rhume » associés. Interdit avec l'alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</p>
-
-                        <!-- Associations ajoutées -->
                         <p style="margin-top:20px;"><strong>Associations :</strong></p>
                         <h4 style="color:var(--accent); margin-top:15px;">Paracétamol + Caféine</h4>
                         <p><strong>Noms commerciaux :</strong>
@@ -928,14 +942,12 @@
                             <span class="drug-link" onclick="showDrugModal('paracetamol_cafeine')">Planadix Confort +</span>,
                             <span class="drug-link" onclick="showDrugModal('paracetamol_cafeine')">Planadix Advance</span>
                         </p>
-
                         <h4 style="color:var(--accent); margin-top:15px;">Paracétamol + Vitamine C</h4>
                         <p><strong>Nom commercial :</strong>
                             <span class="drug-link" onclick="showDrugModal('paracetamol_vitc')">Efferalgan VC</span>
                             <span class="drug-link" onclick="showDrugModal('paracetamol_vitc')">Dofebril VC</span>
                         </p>
                     </div>
-
                     <div class="card reveal reveal-delay-2">
                         <h3 style="color:var(--primary);">2. Acide Acétylsalicylique (AINS)</h3>
                         <p><strong>Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('aspirine')">Aspegic</span>, <span class="drug-link" onclick="showDrugModal('aspirine')">Aspirine</span>, <span class="drug-link" onclick="showDrugModal('aspirine')">Catalgine</span>.</p>
@@ -951,7 +963,6 @@
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);">3. Paracétamol + Codéine</h3>
                         <p><strong>DCI :</strong> Paracétamol + Codéine phosphate.</p>
-                        <!-- Noms commerciaux mis à jour avec Co-paramol et Coparalgan -->
                         <p><strong>Noms commerciaux :</strong> 
                             <span class="drug-link" onclick="showDrugModal('codeine')">Codoliprane</span>, 
                             <span class="drug-link" onclick="showDrugModal('codeine')">Co‑Dolyc</span>,
@@ -966,7 +977,6 @@
                     <div class="card reveal reveal-delay-2">
                         <h3 style="color:var(--primary);">4. Paracétamol + Tramadol</h3>
                         <p><strong>DCI :</strong> Paracétamol + Chlorhydrate de tramadol.</p>
-                        <!-- Noms commerciaux mis à jour avec Xamadol -->
                         <p><strong>Noms commerciaux :</strong> 
                             <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Di‑Dolex</span>, 
                             <span class="drug-link" onclick="showDrugModal('tramadol_paracetamol')">Supradolex</span>,
@@ -1030,123 +1040,51 @@
                 </section>
             </div>
 
-            <!-- EXAMEN CONTENT (QCM à choix multiples) -->
+            <!-- EXAMEN CONTENT (QCM à choix multiples) بدون تغيير -->
             <div id="examContent" style="display: none;">
-                <!-- Instruction QCM -->
                 <div class="qcm-instruction card reveal reveal-delay-1">
                     <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
                 </div>
-
                 <section class="section-block" id="exam-question1">
                     <h2 class="section-title reveal">Question 1</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Parmi les médicaments suivants, lesquels sont classés au Niveau 1 de l'échelle OMS ?</strong></p>
-                        <label><input type="checkbox" name="q1" value="a"> Paracétamol</label>
-                        <label><input type="checkbox" name="q1" value="b"> Aspirine (AINS)</label>
-                        <label><input type="checkbox" name="q1" value="c"> Tramadol</label>
-                        <label><input type="checkbox" name="q1" value="d"> Codéine</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Parmi les médicaments suivants, lesquels sont classés au Niveau 1 de l'échelle OMS ?</strong></p><label><input type="checkbox" name="q1" value="a"> Paracétamol</label><label><input type="checkbox" name="q1" value="b"> Aspirine (AINS)</label><label><input type="checkbox" name="q1" value="c"> Tramadol</label><label><input type="checkbox" name="q1" value="d"> Codéine</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question2">
                     <h2 class="section-title reveal">Question 2</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels sont les effets pharmacologiques de l'Aspirine (à dose antalgique) ?</strong></p>
-                        <label><input type="checkbox" name="q2" value="a"> Antalgique</label>
-                        <label><input type="checkbox" name="q2" value="b"> Anti-inflammatoire</label>
-                        <label><input type="checkbox" name="q2" value="c"> Antipyrétique</label>
-                        <label><input type="checkbox" name="q2" value="d"> Sérotoninergique</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les effets pharmacologiques de l'Aspirine (à dose antalgique) ?</strong></p><label><input type="checkbox" name="q2" value="a"> Antalgique</label><label><input type="checkbox" name="q2" value="b"> Anti-inflammatoire</label><label><input type="checkbox" name="q2" value="c"> Antipyrétique</label><label><input type="checkbox" name="q2" value="d"> Sérotoninergique</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question3">
                     <h2 class="section-title reveal">Question 3</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels sont les risques majeurs de l'association AINS + Anticoagulants/AVK ?</strong></p>
-                        <label><input type="checkbox" name="q3" value="a"> Hémorragie</label>
-                        <label><input type="checkbox" name="q3" value="b"> Dépression respiratoire</label>
-                        <label><input type="checkbox" name="q3" value="c"> Syndrome sérotoninergique</label>
-                        <label><input type="checkbox" name="q3" value="d"> Ulcère gastroduodénal</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les risques majeurs de l'association AINS + Anticoagulants/AVK ?</strong></p><label><input type="checkbox" name="q3" value="a"> Hémorragie</label><label><input type="checkbox" name="q3" value="b"> Dépression respiratoire</label><label><input type="checkbox" name="q3" value="c"> Syndrome sérotoninergique</label><label><input type="checkbox" name="q3" value="d"> Ulcère gastroduodénal</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question4">
                     <h2 class="section-title reveal">Question 4</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Concernant la Codéine, quelles affirmations sont correctes ?</strong></p>
-                        <label><input type="checkbox" name="q4" value="a"> C'est une prodrogue</label>
-                        <label><input type="checkbox" name="q4" value="b"> Elle est métabolisée par le CYP2D6</label>
-                        <label><input type="checkbox" name="q4" value="c"> C'est un opioïde fort (Niveau 3)</label>
-                        <label><input type="checkbox" name="q4" value="d"> Elle est contre-indiquée avant 12 ans</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Codéine, quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q4" value="a"> C'est une prodrogue</label><label><input type="checkbox" name="q4" value="b"> Elle est métabolisée par le CYP2D6</label><label><input type="checkbox" name="q4" value="c"> C'est un opioïde fort (Niveau 3)</label><label><input type="checkbox" name="q4" value="d"> Elle est contre-indiquée avant 12 ans</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question5">
                     <h2 class="section-title reveal">Question 5</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels sont les effets indésirables possibles du Tramadol ?</strong></p>
-                        <label><input type="checkbox" name="q5" value="a"> Nausées</label>
-                        <label><input type="checkbox" name="q5" value="b"> Constipation</label>
-                        <label><input type="checkbox" name="q5" value="c"> Syndrome sérotoninergique (si associé aux ISRS/IRSN)</label>
-                        <label><input type="checkbox" name="q5" value="d"> Dépression respiratoire (si associé aux dépresseurs)</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les effets indésirables possibles du Tramadol ?</strong></p><label><input type="checkbox" name="q5" value="a"> Nausées</label><label><input type="checkbox" name="q5" value="b"> Constipation</label><label><input type="checkbox" name="q5" value="c"> Syndrome sérotoninergique (si associé aux ISRS/IRSN)</label><label><input type="checkbox" name="q5" value="d"> Dépression respiratoire (si associé aux dépresseurs)</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question6">
                     <h2 class="section-title reveal">Question 6</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels antalgiques sont formellement contre-indiqués au 3<sup>e</sup> trimestre de grossesse ?</strong></p>
-                        <label><input type="checkbox" name="q6" value="a"> AINS</label>
-                        <label><input type="checkbox" name="q6" value="b"> Aspirine</label>
-                        <label><input type="checkbox" name="q6" value="c"> Paracétamol</label>
-                        <label><input type="checkbox" name="q6" value="d"> Morphine</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels antalgiques sont formellement contre-indiqués au 3<sup>e</sup> trimestre de grossesse ?</strong></p><label><input type="checkbox" name="q6" value="a"> AINS</label><label><input type="checkbox" name="q6" value="b"> Aspirine</label><label><input type="checkbox" name="q6" value="c"> Paracétamol</label><label><input type="checkbox" name="q6" value="d"> Morphine</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question7">
                     <h2 class="section-title reveal">Question 7</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Concernant le Fentanyl (Durogesic), quelles affirmations sont correctes ?</strong></p>
-                        <label><input type="checkbox" name="q7" value="a"> C'est un patch transdermique</label>
-                        <label><input type="checkbox" name="q7" value="b"> Il s'administre toutes les 72 heures</label>
-                        <label><input type="checkbox" name="q7" value="c"> C'est un opioïde de Niveau 3</label>
-                        <label><input type="checkbox" name="q7" value="d"> Il peut être exposé à une source de chaleur sans risque</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Fentanyl (Durogesic), quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q7" value="a"> C'est un patch transdermique</label><label><input type="checkbox" name="q7" value="b"> Il s'administre toutes les 72 heures</label><label><input type="checkbox" name="q7" value="c"> C'est un opioïde de Niveau 3</label><label><input type="checkbox" name="q7" value="d"> Il peut être exposé à une source de chaleur sans risque</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question8">
                     <h2 class="section-title reveal">Question 8</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels conseils donner à un patient sous Paracétamol ?</strong></p>
-                        <label><input type="checkbox" name="q8" value="a"> Ne pas dépasser 3 g par jour</label>
-                        <label><input type="checkbox" name="q8" value="b"> Attendre au moins 8 h entre chaque dose de 1 g</label>
-                        <label><input type="checkbox" name="q8" value="c"> Éviter la consommation d'alcool</label>
-                        <label><input type="checkbox" name="q8" value="d"> Vérifier les autres médicaments contenant du paracétamol</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels conseils donner à un patient sous Paracétamol ?</strong></p><label><input type="checkbox" name="q8" value="a"> Ne pas dépasser 3 g par jour</label><label><input type="checkbox" name="q8" value="b"> Attendre au moins 8 h entre chaque dose de 1 g</label><label><input type="checkbox" name="q8" value="c"> Éviter la consommation d'alcool</label><label><input type="checkbox" name="q8" value="d"> Vérifier les autres médicaments contenant du paracétamol</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question9">
                     <h2 class="section-title reveal">Question 9</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quelles associations exposent à un risque de syndrome sérotoninergique ?</strong></p>
-                        <label><input type="checkbox" name="q9" value="a"> Tramadol + ISRS</label>
-                        <label><input type="checkbox" name="q9" value="b"> Tramadol + IRSN</label>
-                        <label><input type="checkbox" name="q9" value="c"> Codéine + ISRS</label>
-                        <label><input type="checkbox" name="q9" value="d"> Morphine + ISRS</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles associations exposent à un risque de syndrome sérotoninergique ?</strong></p><label><input type="checkbox" name="q9" value="a"> Tramadol + ISRS</label><label><input type="checkbox" name="q9" value="b"> Tramadol + IRSN</label><label><input type="checkbox" name="q9" value="c"> Codéine + ISRS</label><label><input type="checkbox" name="q9" value="d"> Morphine + ISRS</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question10">
                     <h2 class="section-title reveal">Question 10</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Concernant la Buprénorphine (Temgesic), quelles affirmations sont correctes ?</strong></p>
-                        <label><input type="checkbox" name="q10" value="a"> Elle s'administre par voie sublinguale</label>
-                        <label><input type="checkbox" name="q10" value="b"> Il ne faut pas l'avaler, mais laisser fondre sous la langue</label>
-                        <label><input type="checkbox" name="q10" value="c"> C'est un opioïde de Niveau 3</label>
-                        <label><input type="checkbox" name="q10" value="d"> Elle peut causer un syndrome de sevrage si associée à un autre opioïde fort</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Buprénorphine (Temgesic), quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q10" value="a"> Elle s'administre par voie sublinguale</label><label><input type="checkbox" name="q10" value="b"> Il ne faut pas l'avaler, mais laisser fondre sous la langue</label><label><input type="checkbox" name="q10" value="c"> C'est un opioïde de Niveau 3</label><label><input type="checkbox" name="q10" value="d"> Elle peut causer un syndrome de sevrage si associée à un autre opioïde fort</label></div>
                 </section>
-
                 <section class="section-block" style="border-bottom: none;">
                     <div class="card reveal reveal-delay-1" style="text-align: center;">
                         <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
@@ -1310,7 +1248,7 @@
             localStorage.setItem('theme', next);
         });
 
-        // Drug modal (ajout des nouvelles clés)
+        // Drug modal
         const drugImages = {
             paracetamol: [],
             aspirine: [],
@@ -1322,8 +1260,8 @@
             oxycodone: [],
             fentanyl: [],
             alfentanil: [],
-            paracetamol_cafeine: [],   // nouveau
-            paracetamol_vitc: []       // nouveau
+            paracetamol_cafeine: [],
+            paracetamol_vitc: []
         };
         const drugTitles = {
             paracetamol: 'Paracétamol',
