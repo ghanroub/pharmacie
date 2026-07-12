@@ -785,39 +785,6 @@
         }
 
         /* ==================== Modules ==================== */
-        .year-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 30px 0;
-        }
-
-        .year-tab {
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid var(--border-glass);
-            background: transparent;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-family: inherit;
-        }
-
-        .year-tab:hover {
-            border-color: rgba(128, 128, 128, 0.4);
-            color: var(--text-heading);
-        }
-
-        .year-tab.active-tab {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-color: transparent;
-            color: #fff;
-            box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
-        }
-
         .subjects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1114,7 +1081,7 @@
     </div>
 
     <!-- Notification toast -->
-    <div class="toast" id="toast">Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.</div>
+    <div class="toast" id="toast">Le contenu arrive bientôt !</div>
 
     <!-- Barre de navigation supérieure -->
     <nav class="top-nav" id="topNav">
@@ -1249,15 +1216,13 @@
                 </div>
             </section>
             
-            <!-- ==================== Section 3 : Modules ==================== -->
+            <!-- ==================== Section 3 : Modules (liste plate des 17 matières) ==================== -->
             <section class="section-block" id="section-modules">
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
-                    Sélectionnez votre année pour découvrir les modules disponibles. 
-                    Cliquez sur une matière ou son image pour y accéder directement.
+                    Explorez les modules disponibles. Cliquez sur une matière pour y accéder directement.
                 </p>
-                <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
-                <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
+                <div class="subjects-grid reveal reveal-delay-2" id="subjectsGrid"></div>
             </section>
 
             <!-- ==================== Section 4 : Contact ==================== -->
@@ -1422,80 +1387,66 @@
         }
         buildGallery();
 
-        // ==================== Données des modules (traduits) ====================
-        const modulesData = {
-            annee1: {
-                title: "1ère Année",
-                gradient: "linear-gradient(135deg, #6a1b9a, #4a148c)",
-                subjects: [
-                    { name: "ANATOMIE", img: "The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg", sems: [1], available: false },
-                    { name: "BIOLOGIE CELLULAIRE", img: "t%C3%A9l%C3%A9chargement%20(3).jpeg", sems: [1,2,3], available: false },
-                    { name: "BIOLOGIE VÉGÉTALE", img: "How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg", sems: [1,2], available: false },
-                    { name: "BIOSTATISTIQUES", img: "%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg", sems: [1], available: false },
-                    { name: "CHIMIE GÉNÉRALE", img: "Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg", sems: [1,2], available: false },
-                    { name: "CHIMIE ORGANIQUE", img: "Chirality%2C%20a%20Primer%20(Updated).jfif", sems: [1,2], available: false },
-                    { name: "HISTOIRE DE LA PHARMACIE", img: "G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg", sems: [1], available: false },
-                    { name: "INFORMATIQUE", img: "Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg", sems: [1], available: false },
-                    { name: "PHYSIOLOGIE", img: "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg", sems: [1], available: false },
-                    { name: "PHYSIQUE", img: "Client%20Challenge.jpeg", sems: [1], available: false },
-                    { name: "FRANÇAIS MÉDICAL", img: "Produits%20pharmaceutiques%20sur%20fond%20neutre.png", sems: [1], available: false }
-                ]
-            },
-            annee2: {
-                title: "2ème Année",
-                gradient: "linear-gradient(135deg, #4a148c, #3f51b5)",
-                subjects: [
-                    { name: "BIOCHIMIE", img: "__files_hamster3d.com_stockbox_icon-hd720.jpg", sems: [1,2,3], available: false },
-                    { name: "BIOPHYSIQUE", img: "Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg", sems: [1,2,3], available: false },
-                    { name: "BOTANIQUE", img: "t%C3%A9l%C3%A9chargement%20(2).jpeg", sems: [1,2], available: false },
-                    { name: "CHIMIE ANALYTIQUE", img: "Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg", sems: [1,2], available: false },
-                    { name: "CHIMIE MINÉRALE", img: "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif", sems: [1,2], available: false },
-                    { name: "ANGLAIS MÉDICAL", img: "ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png", sems: [1], available: false },
-                    { name: "GÉNÉTIQUE", img: "Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg", sems: [1,2], available: false },
-                    { name: "PHYSIOPATHOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download.jpg", sems: [1,2], available: false, externalImg: true }
-                ]
-            },
-            annee3: {
-                title: "3ème Année",
-                gradient: "linear-gradient(135deg, #3f51b5, #2196f3)",
-                subjects: [
-                    { name: "CHIMIE ANALYTIQUE", img: "15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg", sems: [1,2], available: false },
-                    { name: "CHIMIE THÉRAPEUTIQUE", img: "Pourquoi%20l'heure%20de%20vos%20repas%20est%20importante.jpeg", sems: [1,2,3], available: false },
-                    { name: "PHARMACIE GALÉNIQUE", img: "4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg", sems: [1,2,3], available: false },
-                    { name: "PHARMACOGNOSIE", img: "t%C3%A9l%C3%A9chargement.jpeg", sems: [1,2], available: false },
-                    { name: "PHARMACOLOGIE", img: "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg", sems: [1,2,3], available: false },
-                    { name: "SÉMIOLOGIE", img: "Symptoms%20of%20Heart%20Attack.jpeg", sems: [1], available: false }
-                ]
-            },
-            annee4: {
-                title: "4ème Année",
-                gradient: "linear-gradient(135deg, #2196f3, #00bcd4)",
-                subjects: [
-                    { name: "BIOCHIMIE CLINIQUE", img: "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif", sems: [1,2,3], available: true, links: { 1: "BIOCHIMIE_CLINIQUE_S1.html", 2: "BIOCHIMIE_CLINIQUE_S2.html", 3: null } },
-                    { name: "HÉMOBIOLOGIE", img: "FFFFFFFFLHI.jpeg", sems: [1,2,3], available: true, links: { 1: "HEMOBIOLOGIE_S1.html", 2: "HEMOBIOLOGIE_S2.html", 3: null } },
-                    { name: "IMMUNOLOGIE", img: "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg", sems: [1,2,3], available: true, links: { 1: "IMMUNOLOGIE_S1.html", 2: "IMMUNOLOGIE_S2.html", 3: null } },
-                    { name: "MICROBIOLOGIE", img: "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg", sems: [1,2,3], available: true, links: { 1: "MICROBIOLOGIE_S1.html", 2: "MICROBIOLOGIE_S2.html", 3: null } },
-                    { name: "PARASITOLOGIE", img: "t%C3%A9l%C3%A9chargement%20(8).jpeg", sems: [1,2,3], available: true, links: { 1: "PARASITOLOGIE_S1.html", 2: "PARASITOLOGIE_S2.html", 3: null } }
-                ]
-            },
-            annee5: {
-                title: "5ème Année",
-                gradient: "linear-gradient(135deg, #00bcd4, #009688)",
-                subjects: [
-                    { name: "DROIT PHARMACEUTIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/download(1)(1).png", sems: [1], available: false, externalImg: true },
-                    { name: "ÉPIDÉMIOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg", sems: [1], available: false, externalImg: true },
-                    { name: "GESTION PHARMACEUTIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg", sems: [1], available: false, externalImg: true },
-                    { name: "HYDRO-BROMATOLOGIE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg", sems: [1,2], available: false, externalImg: true },
-                    { name: "PHARMACIE CLINIQUE", img: "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/ghanipharma2/Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif", sems: [1,2], available: false, externalImg: true },
-                    { name: "PHARMACIE HOSPITALIÈRE", img: "", sems: [1], available: false },
-                    { name: "PHARMACIE INDUSTRIELLE", img: "16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png", sems: [1,2], available: false },
-                    { name: "TOXICOLOGIE", img: "%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif", sems: [1,2,3], available: false }
-                ]
-            }
-        };
+        // ==================== Liste des 17 matières fournies ====================
+        const subjectsList = [
+            "Introduction aux médicaments",
+            "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES",
+            "ALLERGOLOGIE ET PNEUMOLOGIE",
+            "INFECTIOLOGIE",
+            "GASTRO-ENTÉROLOGIE",
+            "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS",
+            "CARDIOLOGIE ET ANGIOLOGIE",
+            "HÉMATOLOGIE ET HÉMOSTASE",
+            "OTO-RHINO-LARYNGOLOGIE (ORL)",
+            "OPHTALMOLOGIE",
+            "LES MÉDICAMENTS DE LA GLANDE THYROIDE",
+            "GYNÉCOLOGIE",
+            "UROLOGIE",
+            "DERMATOLOGIE",
+            "RHUMATOLOGIE",
+            "NEUROLOGIE ET PSYCHOLOGIE",
+            "VITAMINES, MINÉRAUX ET ACIDES AMINÉS"
+        ];
 
-        const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
-        let currentYear = 'annee4';
+        // ==================== Construction des cartes matières (sans onglets) ====================
+        function buildSubjectsGrid() {
+            const container = document.getElementById('subjectsGrid');
+            // Image placeholder (générique)
+            const placeholderImg = 'data:image/svg+xml,' + encodeURIComponent(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e">
+                    <rect width="400" height="200" fill="%231a1a2e"/>
+                    <text x="200" y="110" text-anchor="middle" fill="%23666" font-size="18" font-family="sans-serif">
+                        Image à venir
+                    </text>
+                </svg>`);
+
+            container.innerHTML = subjectsList.map(name => {
+                // Pour l'instant, pas de lien vers une page spécifique
+                // On peut remplacer le '#' par l'URL réelle plus tard
+                const linkHref = '#';
+                return `
+                <div class="subject-card">
+                    <a href="${linkHref}" onclick="showToast(); return false;" style="display: block; text-decoration: none;">
+                        <div class="subject-card-img" style="background-image:url('${placeholderImg}')"></div>
+                    </a>
+                    <div class="subject-card-body">
+                        <div class="subject-card-title">
+                            <a href="${linkHref}" onclick="showToast(); return false;">
+                                ${name}
+                            </a>
+                        </div>
+                        <span class="availability-badge badge-available">Disponible</span>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // ==================== Notification toast ====================
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
 
         // ==================== Défilement vers une section ====================
         function scrollToSection(sectionName) {
@@ -1518,106 +1469,6 @@
         function closeMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.remove('open');
             document.body.style.overflow = '';
-        }
-
-        // ==================== Construction des onglets d'année ====================
-        function buildYearTabs() {
-            const container = document.getElementById('yearTabs');
-            const years = [
-                { id: 'annee1', label: '1ère Année' },
-                { id: 'annee2', label: '2ème Année' },
-                { id: 'annee3', label: '3ème Année' },
-                { id: 'annee4', label: '4ème Année' },
-                { id: 'annee5', label: '5ème Année' }
-            ];
-
-            container.innerHTML = years.map(y =>
-                `<button class="year-tab ${y.id === currentYear ? 'active-tab' : ''}" data-year="${y.id}">${y.label}</button>`
-            ).join('');
-
-            container.querySelectorAll('.year-tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const yearId = tab.dataset.year;
-                    currentYear = yearId;
-                    container.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active-tab'));
-                    tab.classList.add('active-tab');
-                    buildSubjects(yearId);
-                });
-            });
-        }
-
-        // ==================== Construction des cartes matières ====================
-        function buildSubjects(yearId) {
-            const container = document.getElementById('subjectsGrid');
-            const data = modulesData[yearId];
-
-            if (!data) {
-                container.innerHTML = `
-                    <div style="grid-column:1/-1; text-align:center; padding:50px; background:var(--bg-card); border-radius:20px; border:1px solid var(--border-glass);">
-                        <h3 style="color:var(--accent); font-size:1.5rem;">Bientôt disponible !</h3>
-                        <p style="color:var(--text-secondary);">Ces modules sont en cours de préparation.</p>
-                    </div>`;
-                return;
-            }
-
-            container.innerHTML = data.subjects.map(sub => {
-                let imgSrc;
-                if (sub.externalImg) {
-                    imgSrc = sub.img;
-                } else if (sub.img && sub.img.startsWith('http')) {
-                    imgSrc = sub.img;
-                } else if (sub.img === '') {
-                    imgSrc = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image à venir</text></svg>';
-                } else {
-                    imgSrc = BASE_SUBJECT_IMG + sub.img;
-                }
-
-                const availabilityClass = sub.available ? '' : 'unavailable';
-                const badgeHTML = sub.available
-                    ? '<span class="availability-badge badge-available">Disponible</span>'
-                    : '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
-
-                let linkHref = '#';
-                let linkOnClick = '';
-                
-                if (sub.available && sub.links) {
-                    const availableSem = sub.sems.find(s => sub.links[s]);
-                    if (availableSem) {
-                        linkHref = sub.links[availableSem];
-                    } else {
-                        linkOnClick = 'onclick="showToast(); return false;"';
-                    }
-                } else {
-                    linkOnClick = 'onclick="showToast(); return false;"';
-                }
-
-                const imageHTML = `<a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
-                    <div class="subject-card-img" style="background-image:url('${imgSrc}')"></div>
-                </a>`;
-
-                const titleHTML = `<a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
-                    <span>${sub.name}</span>
-                </a>`;
-
-                return `
-                    <div class="subject-card ${availabilityClass}">
-                        ${imageHTML}
-                        <div class="subject-card-body">
-                            <div class="subject-card-title">
-                                ${titleHTML}
-                            </div>
-                            ${badgeHTML}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // ==================== Notification toast ====================
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
         // ==================== Effet de révélation au défilement ====================
@@ -1776,8 +1627,8 @@
 
         // ==================== Initialisation ====================
         document.addEventListener('DOMContentLoaded', () => {
-            buildYearTabs();
-            buildSubjects(currentYear);
+            // Plus d'onglets d'année, on affiche directement la liste des matières
+            buildSubjectsGrid();
             updateActiveSection();
             window.showAlert = showToast;
         });
