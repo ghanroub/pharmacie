@@ -612,6 +612,52 @@
             transform: translateY(-5px);
         }
 
+        /* ==================== Galerie d'images ==================== */
+        .gallery-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+
+        .gallery-track {
+            display: flex;
+            animation: scroll 70s linear infinite;
+            width: max-content;
+            gap: 20px;
+        }
+
+        .gallery-wrapper:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
+        .gallery-item {
+            width: 190px;
+            height: 130px;
+            border-radius: 14px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.12);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* ==================== Titres de section ==================== */
         .section-title {
             font-size: 2.5rem;
@@ -630,6 +676,19 @@
             margin-bottom: 40px;
             line-height: 1.8;
             max-width: 700px;
+        }
+
+        .highlight-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .highlight-link:hover {
+            border-bottom-color: var(--primary);
         }
 
         /* ==================== Page À propos ==================== */
@@ -665,7 +724,100 @@
             pointer-events: none;
         }
 
+        /* ==================== Statistiques ==================== */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .stat-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--card-hover-border);
+        }
+
+        .stat-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
         /* ==================== Modules ==================== */
+        .year-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .year-tab {
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-glass);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .year-tab:hover {
+            border-color: rgba(128, 128, 128, 0.4);
+            color: var(--text-heading);
+        }
+
+        .year-tab.active-tab {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
+        }
+
         .subjects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -681,7 +833,6 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            cursor: pointer;
         }
 
         .subject-card:hover {
@@ -700,6 +851,7 @@
             background-size: cover;
             background-position: center;
             position: relative;
+            cursor: pointer;
         }
 
         .subject-card-img::after {
@@ -721,6 +873,16 @@
             font-weight: 700;
             color: var(--text-heading);
             margin-bottom: 15px;
+        }
+
+        .subject-card-title a {
+            color: var(--text-heading);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .subject-card-title a:hover {
+            color: var(--primary);
         }
 
         .availability-badge {
@@ -924,13 +1086,18 @@
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.8rem; }
             .subjects-grid { grid-template-columns: 1fr; }
+            .gallery-item { width: 140px; height: 100px; }
             .container { padding: 0 15px; }
+            .stat-number { font-size: 2.2rem; }
             .section-block { padding: 50px 0; }
         }
 
         @media (max-width: 480px) {
             .hero-buttons { flex-direction: column; align-items: center; }
             .btn { width: 100%; justify-content: center; padding: 14px 28px; }
+            .year-tabs { gap: 6px; }
+            .year-tab { padding: 10px 18px; font-size: 0.8rem; }
+            .gallery-item { width: 110px; height: 75px; }
             .nav-logo { font-size: 1.2rem; }
             .contact-form-wrapper { padding: 22px; }
         }
@@ -947,7 +1114,7 @@
     </div>
 
     <!-- Notification toast -->
-    <div class="toast" id="toast">عذراً، غير متاح حالياً</div>
+    <div class="toast" id="toast">عذرا غير متاح حاليا</div>
 
     <!-- Barre de navigation supérieure -->
     <nav class="top-nav" id="topNav">
@@ -969,6 +1136,7 @@
                 <!-- Menu horizontal (affiché uniquement sur desktop) -->
                 <ul class="nav-links" id="navLinksDesktop">
                     <li><button class="nav-link active" data-nav="home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Accueil</button></li>
+                    <li><button class="nav-link" data-nav="about" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> À propos</button></li>
                     <li><button class="nav-link" data-nav="modules" onclick="scrollToSection('modules')"><i class="fas fa-book"></i> Modules</button></li>
                     <li><button class="nav-link" data-nav="contact" onclick="scrollToSection('contact')"><i class="fas fa-envelope"></i> Contact</button></li>
                 </ul>
@@ -988,6 +1156,7 @@
             </div>
             <div>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="home"><i class="fas fa-home"></i> Accueil</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="about"><i class="fas fa-info-circle"></i> À propos</a>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="modules"><i class="fas fa-book"></i> Modules</a>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="contact"><i class="fas fa-envelope"></i> Contact</a>
             </div>
@@ -997,6 +1166,7 @@
     <!-- Navigation latérale (points) -->
     <div class="side-dots">
         <div class="dot active" data-dot="home"><span class="dot-tooltip">Accueil</span></div>
+        <div class="dot" data-dot="about"><span class="dot-tooltip">À propos</span></div>
         <div class="dot" data-dot="modules"><span class="dot-tooltip">Modules</span></div>
         <div class="dot" data-dot="contact"><span class="dot-tooltip">Contact</span></div>
     </div>
@@ -1016,23 +1186,81 @@
                         Votre référence en médicaments et pratique officinale. Des modules sur les différentes familles de médicaments.
                     </p>
                     <div class="hero-buttons reveal reveal-delay-3">
+                        <button class="btn btn-outline" onclick="scrollToSection('about')">
+                            <i class="fas fa-info-circle"></i> En savoir plus
+                        </button>
                         <button class="btn btn-primary" onclick="scrollToSection('modules')">
                             <i class="fas fa-book-open"></i> Explorer les modules
                         </button>
                     </div>
                 </div>
+
+                <!-- Galerie d'images -->
+                <div class="gallery-wrapper reveal reveal-delay-4">
+                    <div class="gallery-track" id="galleryTrack"></div>
+                </div>
             </section>
 
-            <!-- ==================== Section 2 : Modules ==================== -->
+            <!-- ==================== Section 2 : À propos ==================== -->
+            <section class="section-block" id="section-about">
+                <div class="about-grid">
+                    <div class="about-image-container reveal">
+                        <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_wis0hwis0hwis0hw.png" alt="GhaniPharma">
+                    </div>
+                    <div>
+                        <h2 class="section-title reveal reveal-delay-1">À propos de nous</h2>
+                        <p class="section-subtitle reveal reveal-delay-2">
+                            GhaniPharma est une plateforme dédiée à la connaissance des médicaments et à la pratique pharmaceutique. Elle propose des 
+                            <span class="highlight-link" onclick="scrollToSection('modules')">modules</span> 
+                            clairs et fiables sur les différentes familles de médicaments, accompagnés de photos, de fiches pratiques et de QCM interactifs pour faciliter l'apprentissage.
+                        </p>
+                        <p class="section-subtitle reveal reveal-delay-2">
+                            Notre objectif est de rendre les connaissances pharmaceutiques accessibles, 
+                            structurées et directement utiles dans la pratique quotidienne.
+                        </p>
+                        <p class="section-subtitle reveal reveal-delay-3">
+                            GhaniPharma a été conçu et développé par Mohammed Abdelghani Rouabah.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Statistiques -->
+                <div class="stats-row reveal reveal-delay-4">
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <span class="stat-number" data-target="2419">0</span>
+                        <span class="stat-label">Visiteurs</span>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+                        <span class="stat-number" data-target="0">0</span>
+                        <span class="stat-label">Contributeurs</span>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+                        <span class="stat-number" data-target="1">0</span>
+                        <span class="stat-label">Lessons</span>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <span class="stat-number" data-target="1">0</span>
+                        <span class="stat-label">Années couvertes</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ==================== Section 3 : Modules ==================== -->
             <section class="section-block" id="section-modules">
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
-                    Sélectionnez un module pour accéder à son contenu. Les modules marqués "Disponible" sont accessibles dès maintenant.
+                    Sélectionnez votre année pour découvrir les modules disponibles. 
+                    Cliquez sur une matière ou son image pour y accéder directement.
                 </p>
-                <div class="subjects-grid reveal reveal-delay-2" id="subjectsGrid"></div>
+                <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
+                <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
             </section>
 
-            <!-- ==================== Section 3 : Contact ==================== -->
+            <!-- ==================== Section 4 : Contact ==================== -->
             <section class="section-block" id="section-contact">
                 <h2 class="section-title reveal"><i class="fas fa-envelope"></i> Contactez-nous</h2>
                 <div class="contact-grid">
@@ -1132,26 +1360,136 @@
         }
         createStars();
 
-        // ==================== Données des modules (personnalisées) ====================
-        const subjectsData = [
-            { name: "INTRODUCTION AUX MÉDICAMENTS", available: true, link: "page_intro_medicaments.html" },
-            { name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", available: true, link: "page_antalgiques.html" },
-            { name: "ALLERGOLOGIE ET PNEUMOLOGIE", available: false },
-            { name: "INFECTIOLOGIE", available: false },
-            { name: "GASTRO-ENTÉROLOGIE", available: false },
-            { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", available: false },
-            { name: "CARDIOLOGIE ET ANGIOLOGIE", available: false },
-            { name: "HÉMATOLOGIE ET HÉMOSTASE", available: false },
-            { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", available: false },
-            { name: "OPHTALMOLOGIE", available: false },
-            { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", available: false },
-            { name: "GYNÉCOLOGIE", available: false },
-            { name: "UROLOGIE", available: false },
-            { name: "DERMATOLOGIE", available: false },
-            { name: "RHUMATOLOGIE", available: false },
-            { name: "NEUROLOGIE ET PSYCHOLOGIE", available: false },
-            { name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS", available: false }
+        // ==================== Galerie d'images ====================
+        const galleryImages = [
+            "Capture%20d'%C3%A9cran%202025-07-13%20075647.png",
+            "The%20Human%20Body_%20A%20Comprehensive%20Guide%20to%20Body%20Parts%20Names.jpeg",
+            "t%C3%A9l%C3%A9chargement%20(3).jpeg",
+            "How%20to%20Grow%20Horse%20Chestnut%20Herbs_%20A%20Complete%20Guide.jpeg",
+            "%F0%9F%9A%80%20Strat%C3%A9gies%20pour%20Augmenter%20le%20Taux%20de%20Conversion%20%F0%9F%93%88.jpeg",
+            "Le%20nuove%20frontiere%20della%20matematica%20-%20IL%20PENSIERO%20MEDITERRANEO.jpeg",
+            "Chirality%2C%20a%20Primer%20(Updated).jfif",
+            "G._Ebers_(ed.)%2C_Papyros_Ebers%2C_1875_Wellcome_L0016592.jpg",
+            "Computer%20science%20and%20technology%20background%20_%20Premium%20AI-generated%20image.jpeg",
+            "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg",
+            "Client%20Challenge.jpeg",
+            "Produits%20pharmaceutiques%20sur%20fond%20neutre.png",
+            "__files_hamster3d.com_stockbox_icon-hd720.jpg",
+            "Inspiring%20Quotes%20on%20Mistakes%20and%20Learning%20for%20Personal%20Growth.jpeg",
+            "t%C3%A9l%C3%A9chargement%20(2).jpeg",
+            "Purple%20glass%20flask%20in%20blue%20research%20chemistry%20science%20banner%20laboratory%20background%20_%20Premium%20AI-generated%20image.jpeg",
+            "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif",
+            "Cancer%20can%20be%20caused%20by%20reversible%20molecular%20changes%20%E2%80%93%20as%20new%20study%20shows%20%E2%80%94%20The%20Conversation%20Canada.jpeg",
+            "Capture%20d'%C3%A9cran%202026-05-05%20184719.png",
+            "ChatGPT%20Image%204%20oct.%202025%2C%2015_15_04.png",
+            "15%20Ejemplos%20de%20Cromatograf%C3%ADa.jpeg",
+            "Pourquoi%20l'heure%20de%20vos%20repas%20est%20importante.jpeg",
+            "4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg",
+            "123KFHGFDKCFJ.jpeg",
+            "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg",
+            "Symptoms%20of%20Heart%20Attack.jpeg",
+            "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif",
+            "FFFFFFFFLHI.jpeg",
+            "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg",
+            "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
+            "t%C3%A9l%C3%A9chargement%20(8).jpeg",
+            "download(1)(1).png",
+            "Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg",
+            "How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg",
+            "The%20Science%20Behind%20Metabolism%20and%20Weight%20Loss%20%F0%9F%91%A9_%F0%9F%94%AC.jpeg",
+            "Monitoraggio%20Continuo%20del%20Glucosio_%20Una%20Rivoluzione%20nella%20Gestione%20della%20Chetoacidosi%20Diabetica.jfif",
+            "16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png",
+            "%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif"
         ];
+
+        const BASE_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
+
+        function buildGallery() {
+            const track = document.getElementById('galleryTrack');
+            const allImages = [...galleryImages, ...galleryImages];
+            const fragment = document.createDocumentFragment();
+            
+            allImages.forEach(img => {
+                const imgEl = document.createElement('img');
+                imgEl.src = BASE_IMG + img;
+                imgEl.alt = 'Image de pharmacie';
+                imgEl.className = 'gallery-item';
+                imgEl.loading = 'lazy';
+                fragment.appendChild(imgEl);
+            });
+            
+            track.appendChild(fragment);
+        }
+        buildGallery();
+
+        // ==================== Données des modules (TOUTES LES ANNÉES AVEC LA LISTE UNIFIÉE) ====================
+        const modulesData = {
+            annee1: {
+                title: "1ère Année",
+                gradient: "linear-gradient(135deg, #6a1b9a, #4a148c)",
+                subjects: allSubjects()
+            },
+            annee2: {
+                title: "2ème Année",
+                gradient: "linear-gradient(135deg, #4a148c, #3f51b5)",
+                subjects: allSubjects()
+            },
+            annee3: {
+                title: "3ème Année",
+                gradient: "linear-gradient(135deg, #3f51b5, #2196f3)",
+                subjects: allSubjects()
+            },
+            annee4: {
+                title: "4ème Année",
+                gradient: "linear-gradient(135deg, #2196f3, #00bcd4)",
+                subjects: allSubjects()
+            },
+            annee5: {
+                title: "5ème Année",
+                gradient: "linear-gradient(135deg, #00bcd4, #009688)",
+                subjects: allSubjects()
+            }
+        };
+
+        function allSubjects() {
+            const subjectsList = [
+                "INTRODUCTION AUX MÉDICAMENTS",
+                "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES",
+                "ALLERGOLOGIE ET PNEUMOLOGIE",
+                "INFECTIOLOGIE",
+                "GASTRO-ENTÉROLOGIE",
+                "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS",
+                "CARDIOLOGIE ET ANGIOLOGIE",
+                "HÉMATOLOGIE ET HÉMOSTASE",
+                "OTO-RHINO-LARYNGOLOGIE (ORL)",
+                "OPHTALMOLOGIE",
+                "LES MÉDICAMENTS DE LA GLANDE THYROIDE",
+                "GYNÉCOLOGIE",
+                "UROLOGIE",
+                "DERMATOLOGIE",
+                "RHUMATOLOGIE",
+                "NEUROLOGIE ET PSYCHOLOGIE",
+                "VITAMINES, MINÉRAUX ET ACIDES AMINÉS"
+            ];
+
+            return subjectsList.map((name, index) => {
+                const isAvailable = index === 0 || index === 1; // seulement les deux premiers
+                const link = isAvailable ? 
+                    (index === 0 ? "introduction_aux_medicaments.html" : "antalgiques_anti_inflammatoires.html") 
+                    : null;
+
+                return {
+                    name: name,
+                    img: '', // pas d'image spécifique → icône par défaut
+                    sems: [1, 2, 3],
+                    available: isAvailable,
+                    links: link ? {1: link} : null
+                };
+            });
+        }
+
+        const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
+        let currentYear = 'annee4';
 
         // ==================== Défilement vers une section ====================
         function scrollToSection(sectionName) {
@@ -1176,27 +1514,91 @@
             document.body.style.overflow = '';
         }
 
+        // ==================== Construction des onglets d'année ====================
+        function buildYearTabs() {
+            const container = document.getElementById('yearTabs');
+            const years = [
+                { id: 'annee1', label: '1ère Année' },
+                { id: 'annee2', label: '2ème Année' },
+                { id: 'annee3', label: '3ème Année' },
+                { id: 'annee4', label: '4ème Année' },
+                { id: 'annee5', label: '5ème Année' }
+            ];
+
+            container.innerHTML = years.map(y =>
+                `<button class="year-tab ${y.id === currentYear ? 'active-tab' : ''}" data-year="${y.id}">${y.label}</button>`
+            ).join('');
+
+            container.querySelectorAll('.year-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const yearId = tab.dataset.year;
+                    currentYear = yearId;
+                    container.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active-tab'));
+                    tab.classList.add('active-tab');
+                    buildSubjects(yearId);
+                });
+            });
+        }
+
         // ==================== Construction des cartes matières ====================
-        function buildSubjects() {
+        function buildSubjects(yearId) {
             const container = document.getElementById('subjectsGrid');
-            
-            container.innerHTML = subjectsData.map(sub => {
+            const data = modulesData[yearId];
+
+            if (!data) {
+                container.innerHTML = `
+                    <div style="grid-column:1/-1; text-align:center; padding:50px; background:var(--bg-card); border-radius:20px; border:1px solid var(--border-glass);">
+                        <h3 style="color:var(--accent); font-size:1.5rem;">Bientôt disponible !</h3>
+                        <p style="color:var(--text-secondary);">Ces modules sont en cours de préparation.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = data.subjects.map(sub => {
+                let imgSrc;
+                if (sub.externalImg) {
+                    imgSrc = sub.img;
+                } else if (sub.img && sub.img.startsWith('http')) {
+                    imgSrc = sub.img;
+                } else if (sub.img === '') {
+                    imgSrc = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image à venir</text></svg>';
+                } else {
+                    imgSrc = BASE_SUBJECT_IMG + sub.img;
+                }
+
                 const availabilityClass = sub.available ? '' : 'unavailable';
                 const badgeHTML = sub.available
                     ? '<span class="availability-badge badge-available">Disponible</span>'
                     : '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
 
-                const clickHandler = sub.available 
-                    ? `onclick="window.location.href='${sub.link}'"` 
-                    : `onclick="showToast()"`;
+                let linkHref = '#';
+                let linkOnClick = '';
                 
-                const cardStyle = sub.available ? 'cursor: pointer;' : 'cursor: default;';
+                if (sub.available && sub.links) {
+                    const availableSem = sub.sems.find(s => sub.links[s]);
+                    if (availableSem) {
+                        linkHref = sub.links[availableSem];
+                    } else {
+                        linkOnClick = 'onclick="showToast(); return false;"';
+                    }
+                } else {
+                    linkOnClick = 'onclick="showToast(); return false;"';
+                }
+
+                const imageHTML = `<a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
+                    <div class="subject-card-img" style="background-image:url('${imgSrc}')"></div>
+                </a>`;
+
+                const titleHTML = `<a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
+                    <span>${sub.name}</span>
+                </a>`;
 
                 return `
-                    <div class="subject-card ${availabilityClass}" ${clickHandler} style="${cardStyle}">
+                    <div class="subject-card ${availabilityClass}">
+                        ${imageHTML}
                         <div class="subject-card-body">
                             <div class="subject-card-title">
-                                <span>${sub.name}</span>
+                                ${titleHTML}
                             </div>
                             ${badgeHTML}
                         </div>
@@ -1223,8 +1625,34 @@
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+        // ==================== Animation des compteurs de statistiques ====================
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stat-number').forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                stat.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = Math.floor(current);
+                            }
+                        }, 40);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        const statsRow = document.querySelector('.stats-row');
+        if (statsRow) statsObserver.observe(statsRow);
+
         // ==================== Mise à jour des points latéraux au défilement ====================
-        const sections = ['home', 'modules', 'contact'];
+        const sections = ['home', 'about', 'modules', 'contact'];
         const dots = document.querySelectorAll('.dot');
         const navLinks = document.querySelectorAll('.nav-link');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -1342,7 +1770,8 @@
 
         // ==================== Initialisation ====================
         document.addEventListener('DOMContentLoaded', () => {
-            buildSubjects();
+            buildYearTabs();
+            buildSubjects(currentYear);
             updateActiveSection();
             window.showAlert = showToast;
         });
