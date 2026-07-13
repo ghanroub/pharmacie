@@ -4,36 +4,31 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-WMZ6GN3075');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WMZ6GN3075');
     </script>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K8Z979C9');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8Z979C9');</script>
     <!-- End Google Tag Manager -->
-
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description"
-        content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules.">
+    <meta name="description" content="Ce site a été créé pour aider les étudiants en pharmacie à comprendre facilement leurs modules.">
     <meta name="keywords" content="pharmacie, études pharmaceutiques, cours de pharmacie, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="GhaniPharma - Plateforme Éducative Pharmaceutique">
     <meta name="theme-color" content="#0a0a1a">
     <title>GhaniPharma | Plateforme Éducative</title>
-    <link rel="icon" type="image/x-icon"
-        href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <style>
         /* ==================== Variables CSS pour les deux thèmes ==================== */
         :root {
@@ -56,7 +51,7 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
             --input-bg: rgba(255, 255, 255, 0.05);
             --input-border: rgba(255, 255, 255, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+            --overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
         }
 
         [data-theme="light"] {
@@ -79,15 +74,11 @@
             --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
             --input-bg: rgba(0, 0, 0, 0.03);
             --input-border: rgba(0, 0, 0, 0.15);
-            --overlay-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            --overlay-gradient: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
         }
 
         /* ==================== Fondamentaux ==================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         html {
             scroll-behavior: smooth;
@@ -135,43 +126,25 @@
         }
 
         @keyframes twinkle {
-            0%,
-            100% {
-                opacity: 0.15;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.8);
-            }
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
         }
 
         .shooting-star {
             position: absolute;
             width: 120px;
             height: 1.5px;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), transparent);
+            background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
             animation: shoot 4s ease-in-out infinite;
             animation-delay: var(--shoot-delay);
             opacity: 0;
         }
 
         @keyframes shoot {
-            0% {
-                opacity: 0;
-                transform: translateX(0) translateY(0);
-            }
-            4% {
-                opacity: 1;
-            }
-            12% {
-                opacity: 0;
-                transform: translateX(350px) translateY(350px);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(350px) translateY(350px);
-            }
+            0% { opacity: 0; transform: translateX(0) translateY(0); }
+            4% { opacity: 1; }
+            12% { opacity: 0; transform: translateX(350px) translateY(350px); }
+            100% { opacity: 0; transform: translateX(350px) translateY(350px); }
         }
 
         [data-theme="light"] .star,
@@ -249,13 +222,8 @@
         }
 
         @keyframes pulse {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
-            }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
         }
 
         .nav-right {
@@ -317,7 +285,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0,0,0,0.8);
             backdrop-filter: blur(10px);
             z-index: 1100;
             display: flex;
@@ -344,7 +312,7 @@
             text-align: center;
             transform: scale(0.9);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
         }
 
         .mobile-menu-overlay.open .mobile-menu-popup {
@@ -367,7 +335,7 @@
         }
 
         .mobile-menu-close:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             transform: rotate(90deg);
         }
 
@@ -390,7 +358,7 @@
 
         .mobile-nav-link:hover {
             border-color: var(--primary);
-            background: rgba(0, 188, 212, 0.1);
+            background: rgba(0,188,212,0.1);
             transform: translateX(6px);
         }
 
@@ -428,22 +396,11 @@
             transition: all 0.5s ease;
         }
 
-        [data-theme="dark"] .theme-toggle .fa-moon {
-            display: inline-block;
-        }
-        [data-theme="dark"] .theme-toggle .fa-sun {
-            display: none;
-        }
-        [data-theme="light"] .theme-toggle .fa-moon {
-            display: none;
-        }
-        [data-theme="light"] .theme-toggle .fa-sun {
-            display: inline-block;
-            color: #f39c12;
-        }
-        [data-theme="light"] .theme-toggle {
-            border-color: rgba(0, 0, 0, 0.2);
-        }
+        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
+        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
+        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
+        [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.2); }
 
         /* ==================== Bouton menu mobile ==================== */
         .menu-toggle {
@@ -457,9 +414,7 @@
             transition: transform 0.3s ease;
         }
 
-        .menu-toggle:hover {
-            transform: rotate(90deg);
-        }
+        .menu-toggle:hover { transform: rotate(90deg); }
 
         /* ==================== Navigation latérale (points) ==================== */
         .side-dots {
@@ -502,7 +457,7 @@
             right: 30px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0,0,0,0.9);
             color: #fff;
             padding: 6px 18px;
             border-radius: 20px;
@@ -514,9 +469,7 @@
             font-weight: 500;
         }
 
-        .dot:hover .dot-tooltip {
-            opacity: 1;
-        }
+        .dot:hover .dot-tooltip { opacity: 1; }
 
         /* ==================== Contenu principal ==================== */
         .main-wrapper {
@@ -558,21 +511,11 @@
             transform: translateY(0);
         }
 
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-        .reveal-delay-4 {
-            transition-delay: 0.4s;
-        }
-        .reveal-delay-5 {
-            transition-delay: 0.5s;
-        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
 
         /* ==================== Section Accueil ==================== */
         .hero-section {
@@ -612,13 +555,8 @@
         }
 
         @keyframes gradientShift {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .hero-subtitle {
@@ -682,7 +620,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 20px;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0,0,0,0.2);
             padding: 20px 0;
             mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
@@ -706,22 +644,18 @@
             object-fit: cover;
             flex-shrink: 0;
             transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .gallery-item:hover {
             transform: scale(1.12);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
             z-index: 10;
         }
 
         @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* ==================== Titres de section ==================== */
@@ -850,7 +784,7 @@
             font-weight: 500;
         }
 
-        /* ==================== Grille des matières ==================== */
+        /* ==================== Modules (anciens onglets supprimés, on garde le style des cartes) ==================== */
         .subjects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1088,39 +1022,15 @@
 
         .social-link:hover {
             transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .social-link.whatsapp:hover {
-            background: #25d366;
-            border-color: #25d366;
-            color: #fff;
-        }
-        .social-link.telegram:hover {
-            background: #0088cc;
-            border-color: #0088cc;
-            color: #fff;
-        }
-        .social-link.facebook:hover {
-            background: #1877f2;
-            border-color: #1877f2;
-            color: #fff;
-        }
-        .social-link.instagram:hover {
-            background: #e4405f;
-            border-color: #e4405f;
-            color: #fff;
-        }
-        .social-link.tiktok:hover {
-            background: #000;
-            border-color: #69c9d0;
-            color: #fff;
-        }
-        .social-link.youtube:hover {
-            background: #ff0000;
-            border-color: #ff0000;
-            color: #fff;
-        }
+        .social-link.whatsapp:hover { background: #25d366; border-color: #25d366; color: #fff; }
+        .social-link.telegram:hover { background: #0088cc; border-color: #0088cc; color: #fff; }
+        .social-link.facebook:hover { background: #1877f2; border-color: #1877f2; color: #fff; }
+        .social-link.instagram:hover { background: #e4405f; border-color: #e4405f; color: #fff; }
+        .social-link.tiktok:hover { background: #000; border-color: #69c9d0; color: #fff; }
+        .social-link.youtube:hover { background: #ff0000; border-color: #ff0000; color: #fff; }
 
         .copyright {
             color: var(--text-secondary);
@@ -1129,79 +1039,39 @@
 
         /* ==================== Media Queries ==================== */
         @media (max-width: 992px) {
-            .side-dots {
-                display: none;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .subjects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
+            .side-dots { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .subjects-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
+            .menu-toggle { display: block; }
             .nav-links {
                 display: none !important;
             }
-            .hero-title {
-                font-size: 2rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .subjects-grid {
-                grid-template-columns: 1fr;
-            }
-            .gallery-item {
-                width: 140px;
-                height: 100px;
-            }
-            .container {
-                padding: 0 15px;
-            }
-            .stat-number {
-                font-size: 2.2rem;
-            }
-            .section-block {
-                padding: 50px 0;
-            }
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .subjects-grid { grid-template-columns: 1fr; }
+            .gallery-item { width: 140px; height: 100px; }
+            .container { padding: 0 15px; }
+            .stat-number { font-size: 2.2rem; }
+            .section-block { padding: 50px 0; }
         }
 
         @media (max-width: 480px) {
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
-                padding: 14px 28px;
-            }
-            .gallery-item {
-                width: 110px;
-                height: 75px;
-            }
-            .nav-logo {
-                font-size: 1.2rem;
-            }
-            .contact-form-wrapper {
-                padding: 22px;
-            }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; padding: 14px 28px; }
+            .gallery-item { width: 110px; height: 75px; }
+            .nav-logo { font-size: 1.2rem; }
+            .contact-form-wrapper { padding: 22px; }
         }
     </style>
 </head>
 <body data-theme="dark">
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Fond étoilé -->
     <div class="universe-bg">
@@ -1209,15 +1079,14 @@
     </div>
 
     <!-- Notification toast -->
-    <div class="toast" id="toast">Désolé, ce module n'est pas encore disponible. Revenez bientôt !</div>
+    <div class="toast" id="toast">Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.</div>
 
     <!-- Barre de navigation supérieure -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="#" class="nav-logo" onclick="scrollToSection('home'); return false;">
                 <span class="logo-icon">
-                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png"
-                        alt="Logo">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
                 </span>
                 GhaniPharma
             </a>
@@ -1231,14 +1100,10 @@
                 </button>
                 <!-- Menu horizontal (affiché uniquement sur desktop) -->
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><button class="nav-link active" data-nav="home"
-                            onclick="scrollToSection('home')"><i class="fas fa-home"></i> Accueil</button></li>
-                    <li><button class="nav-link" data-nav="about"
-                            onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> À propos</button></li>
-                    <li><button class="nav-link" data-nav="modules"
-                            onclick="scrollToSection('modules')"><i class="fas fa-book"></i> Modules</button></li>
-                    <li><button class="nav-link" data-nav="contact"
-                            onclick="scrollToSection('contact')"><i class="fas fa-envelope"></i> Contact</button></li>
+                    <li><button class="nav-link active" data-nav="home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Accueil</button></li>
+                    <li><button class="nav-link" data-nav="about" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> À propos</button></li>
+                    <li><button class="nav-link" data-nav="modules" onclick="scrollToSection('modules')"><i class="fas fa-book"></i> Modules</button></li>
+                    <li><button class="nav-link" data-nav="contact" onclick="scrollToSection('contact')"><i class="fas fa-envelope"></i> Contact</button></li>
                 </ul>
             </div>
         </div>
@@ -1250,15 +1115,13 @@
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
             <div style="margin-bottom: 20px;">
                 <span class="logo-icon" style="display: inline-block; background: none;">
-                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png"
-                        alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
                 </span>
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
             <div>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="home"><i class="fas fa-home"></i> Accueil</a>
-                <a href="#" class="mobile-nav-link" data-nav-mobile="about"><i class="fas fa-info-circle"></i> À
-                    propos</a>
+                <a href="#" class="mobile-nav-link" data-nav-mobile="about"><i class="fas fa-info-circle"></i> À propos</a>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="modules"><i class="fas fa-book"></i> Modules</a>
                 <a href="#" class="mobile-nav-link" data-nav-mobile="contact"><i class="fas fa-envelope"></i> Contact</a>
             </div>
@@ -1285,8 +1148,7 @@
                     </div>
                     <h1 class="hero-title reveal reveal-delay-1">Bienvenue sur GhaniPharma</h1>
                     <p class="hero-subtitle reveal reveal-delay-2">
-                        Votre référence en médicaments et pratique officinale. Des modules sur les différentes familles
-                        de médicaments.
+                        Votre référence en médicaments et pratique officinale. Des modules sur les différentes familles de médicaments.
                     </p>
                     <div class="hero-buttons reveal reveal-delay-3">
                         <button class="btn btn-outline" onclick="scrollToSection('about')">
@@ -1308,20 +1170,17 @@
             <section class="section-block" id="section-about">
                 <div class="about-grid">
                     <div class="about-image-container reveal">
-                        <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_wis0hwis0hwis0hw.png"
-                            alt="GhaniPharma">
+                        <img src="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/Gemini_Generated_Image_wis0hwis0hwis0hw.png" alt="GhaniPharma">
                     </div>
                     <div>
                         <h2 class="section-title reveal reveal-delay-1">À propos de nous</h2>
                         <p class="section-subtitle reveal reveal-delay-2">
-                            GhaniPharma est une plateforme dédiée à la connaissance des médicaments et à la pratique
-                            pharmaceutique. Elle propose des
-                            <span class="highlight-link" onclick="scrollToSection('modules')">modules</span>
-                            clairs et fiables sur les différentes familles de médicaments, accompagnés de photos, de
-                            fiches pratiques et de QCM interactifs pour faciliter l'apprentissage.
+                            GhaniPharma est une plateforme dédiée à la connaissance des médicaments et à la pratique pharmaceutique. Elle propose des 
+                            <span class="highlight-link" onclick="scrollToSection('modules')">modules</span> 
+                            clairs et fiables sur les différentes familles de médicaments, accompagnés de photos, de fiches pratiques et de QCM interactifs pour faciliter l'apprentissage.
                         </p>
                         <p class="section-subtitle reveal reveal-delay-2">
-                            Notre objectif est de rendre les connaissances pharmaceutiques accessibles,
+                            Notre objectif est de rendre les connaissances pharmaceutiques accessibles, 
                             structurées et directement utiles dans la pratique quotidienne.
                         </p>
                         <p class="section-subtitle reveal reveal-delay-3">
@@ -1344,25 +1203,24 @@
                     </div>
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-book-open"></i></div>
-                        <span class="stat-number" data-target="17">0</span>
-                        <span class="stat-label">Modules</span>
+                        <span class="stat-number" data-target="1">0</span>
+                        <span class="stat-label">Lessons</span>
                     </div>
                     <div class="stat-box">
                         <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <span class="stat-number" data-target="2">0</span>
-                        <span class="stat-label">Disponibles</span>
+                        <span class="stat-number" data-target="1">0</span>
+                        <span class="stat-label">Années couvertes</span>
                     </div>
                 </div>
             </section>
-
-            <!-- ==================== Section 3 : Modules ==================== -->
+            
+            <!-- ==================== Section 3 : Modules (modifiée) ==================== -->
             <section class="section-block" id="section-modules">
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
-                    Découvrez nos modules sur les différentes familles de médicaments.
-                    Cliquez sur une matière pour y accéder directement.
+                    Découvrez nos modules de pharmacie classés par spécialité. Cliquez sur une matière pour y accéder directement.
                 </p>
-                <!-- Grille des matières directement (sans onglets d'années) -->
+                <!-- La grille sera remplie par JavaScript -->
                 <div class="subjects-grid reveal reveal-delay-2" id="subjectsGrid"></div>
             </section>
 
@@ -1372,7 +1230,7 @@
                 <div class="contact-grid">
                     <div class="contact-info-cards reveal reveal-delay-1">
                         <p class="section-subtitle">
-                            Vous avez une question, une suggestion ou souhaitez collaborer avec nous ?
+                            Vous avez une question, une suggestion ou souhaitez collaborer avec nous ? 
                             N'hésitez pas à nous contacter par l'un des moyens suivants :
                         </p>
                         <div class="contact-card">
@@ -1394,9 +1252,7 @@
                     </div>
 
                     <div class="contact-form-wrapper reveal reveal-delay-2">
-                        <div id="formStatus"
-                            style="display:none; padding:15px; border-radius:14px; margin-bottom:20px; font-weight:600;">
-                        </div>
+                        <div id="formStatus" style="display:none; padding:15px; border-radius:14px; margin-bottom:20px; font-weight:600;"></div>
                         <form id="contactForm" action="https://formspree.io/f/mqaneerv" method="POST">
                             <input type="hidden" name="_subject" value="Nouveau message de GhaniPharma">
                             <input type="hidden" name="_language" value="fr">
@@ -1426,18 +1282,12 @@
     <!-- Pied de page -->
     <footer class="site-footer">
         <div class="social-links">
-            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank"
-                title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i
-                    class="fab fa-telegram-plane"></i></a>
-            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank"
-                title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank"
-                title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank"
-                title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank"
-                title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <p class="copyright">&copy; 2026 GhaniPharma. Tous droits réservés.</p>
     </footer>
@@ -1447,7 +1297,7 @@
         function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
-
+            
             for (let i = 0; i < 180; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
@@ -1460,7 +1310,7 @@
                 star.style.setProperty('--delay', Math.random() * 5 + 's');
                 fragment.appendChild(star);
             }
-
+            
             for (let i = 0; i < 4; i++) {
                 const shootingStar = document.createElement('div');
                 shootingStar.className = 'shooting-star';
@@ -1469,7 +1319,7 @@
                 shootingStar.style.setProperty('--shoot-delay', Math.random() * 10 + 's');
                 fragment.appendChild(shootingStar);
             }
-
+            
             container.appendChild(fragment);
         }
         createStars();
@@ -1522,7 +1372,7 @@
             const track = document.getElementById('galleryTrack');
             const allImages = [...galleryImages, ...galleryImages];
             const fragment = document.createDocumentFragment();
-
+            
             allImages.forEach(img => {
                 const imgEl = document.createElement('img');
                 imgEl.src = BASE_IMG + img;
@@ -1531,103 +1381,98 @@
                 imgEl.loading = 'lazy';
                 fragment.appendChild(imgEl);
             });
-
+            
             track.appendChild(fragment);
         }
         buildGallery();
 
-        // ==================== Liste des matières (sans années) ====================
-        const subjectsList = [
-            {
-                name: "INTRODUCTION AUX MÉDICAMENTS",
-                img: "Produits%20pharmaceutiques%20sur%20fond%20neutre.png",
-                available: true,
-                link: "INTRODUCTION_AUX_MEDICAMENTS.html"
+        // ==================== NOUVELLE LISTE DE MODULES (sans années) ====================
+        const subjects = [
+            { 
+                name: "INTRODUCTION AUX MÉDICAMENTS", 
+                available: true, 
+                link: "introduction-aux-medicaments.html" 
             },
-            {
-                name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES",
-                img: "4K%20%26%20Vector%20Medication%20Clipart%20in%20Impressionistic%20Art%20Style.jpeg",
-                available: true,
-                link: "ANTALGIQUES_ANTI_INFLAMMATOIRES.html"
+            { 
+                name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", 
+                available: true, 
+                link: "antalgiques-anti-inflammatoires.html" 
             },
-            {
-                name: "ALLERGOLOGIE ET PNEUMOLOGIE",
-                img: "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg",
-                available: false
-            },
-            {
-                name: "INFECTIOLOGIE",
-                img: "Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg",
-                available: false
-            },
-            {
-                name: "GASTRO-ENTÉROLOGIE",
-                img: "%F0%9F%A9%BA%20Are%20Gallstones%20Common_%20Understanding%20the%20Silent%20Health%20Risk%20%E2%9A%A1%F0%9F%8C%BF.jfif",
-                available: false
-            },
-            {
-                name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS",
-                img: "The%20Normal%20A1C%20Level%20-%20A1C%20and%20blood%20sugars%20-%20Diabetes.jfif",
-                available: false
-            },
-            {
-                name: "CARDIOLOGIE ET ANGIOLOGIE",
-                img: "Symptoms%20of%20Heart%20Attack.jpeg",
-                available: false
-            },
-            {
-                name: "HÉMATOLOGIE ET HÉMOSTASE",
-                img: "FFFFFFFFLHI.jpeg",
-                available: false
-            },
-            {
-                name: "OTO-RHINO-LARYNGOLOGIE (ORL)",
-                img: "Representa%C3%A7%C3%A3o%203d%20de%20uma%20figura%20masculina%20com%20boca%20aberta%20com%20c%C3%A9lulas%20de%20v%C3%ADrus%20_%20Foto%20Gr%C3%A1tis.jpeg",
-                available: false
-            },
-            {
-                name: "OPHTALMOLOGIE",
-                img: "Capture%20d'%C3%A9cran%202026-05-05%20184719.png",
-                available: false
-            },
-            {
-                name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE",
-                img: "9%20%D0%9F%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D0%B4%D0%B5%D1%84%D0%B8%D1%86%D0%B8%D1%82%D0%B0%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%20%D0%BA%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D1%8F_.jfif",
-                available: false
-            },
-            {
-                name: "GYNÉCOLOGIE",
-                img: "Flux_Dev_A_microscopic_view_of_blood_cells_and_vessels_with_va_3.jpg",
-                available: false
-            },
-            {
-                name: "UROLOGIE",
-                img: "16-Agregation-Industrie-pharmaceutique_Juillet-2021(1)(1).png",
-                available: false
-            },
-            {
-                name: "DERMATOLOGIE",
-                img: "How%20to%20Cure%20Cuticle%20Infection%20at%20Home_.jpeg",
-                available: false
-            },
-            {
-                name: "RHUMATOLOGIE",
-                img: "Antibody%20cocktail%20neutralizes%20SARS-CoV-2%20and%20has%20projected%20protection%20up%20to%2012%20months.jpeg",
-                available: false
-            },
-            {
-                name: "NEUROLOGIE ET PSYCHOLOGIE",
-                img: "How%20to%20Increase%20Gamma%20Brain%20Waves%20with%20Meditation%20and%20Breathing%20-%20Breatheology.jpeg",
-                available: false
-            },
-            {
-                name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS",
-                img: "t%C3%A9l%C3%A9chargement%20(2).jpeg",
-                available: false
-            }
+            { name: "ALLERGOLOGIE ET PNEUMOLOGIE", available: false },
+            { name: "INFECTIOLOGIE", available: false },
+            { name: "GASTRO-ENTÉROLOGIE", available: false },
+            { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", available: false },
+            { name: "CARDIOLOGIE ET ANGIOLOGIE", available: false },
+            { name: "HÉMATOLOGIE ET HÉMOSTASE", available: false },
+            { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", available: false },
+            { name: "OPHTALMOLOGIE", available: false },
+            { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", available: false },
+            { name: "GYNÉCOLOGIE", available: false },
+            { name: "UROLOGIE", available: false },
+            { name: "DERMATOLOGIE", available: false },
+            { name: "RHUMATOLOGIE", available: false },
+            { name: "NEUROLOGIE ET PSYCHOLOGIE", available: false },
+            { name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS", available: false }
         ];
 
-        const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
+        // Tableau de dégradés pour les images de carte (autant que de matières)
+        const cardGradients = [
+            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+            "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+            "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+            "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+            "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
+            "linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)",
+            "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
+            "linear-gradient(135deg, #f5576c 0%, #ff9a9e 100%)",
+            "linear-gradient(135deg, #42e695 0%, #3bb2b8 100%)",
+            "linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)",
+            "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)",
+            "linear-gradient(135deg, #a6c0fe 0%, #f68084 100%)",
+            "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
+            "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+            "linear-gradient(135deg, #96fbc4 0%, #f9f586 100%)",
+            "linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)"
+        ];
+
+        function buildSubjectsGrid() {
+            const container = document.getElementById('subjectsGrid');
+            let html = '';
+            subjects.forEach((sub, index) => {
+                const gradient = cardGradients[index % cardGradients.length];
+                const availabilityClass = sub.available ? '' : 'unavailable';
+                const badgeHTML = sub.available
+                    ? '<span class="availability-badge badge-available">Disponible</span>'
+                    : '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
+
+                let linkHref = '#';
+                let linkOnClick = '';
+                if (sub.available && sub.link) {
+                    linkHref = sub.link;
+                    linkOnClick = ''; // laisse le lien normal fonctionner
+                } else {
+                    linkOnClick = 'onclick="showToast(); return false;"';
+                }
+
+                html += `
+                    <div class="subject-card ${availabilityClass}">
+                        <a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
+                            <div class="subject-card-img" style="background-image: ${gradient};"></div>
+                        </a>
+                        <div class="subject-card-body">
+                            <div class="subject-card-title">
+                                <a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
+                                    <span>${sub.name}</span>
+                                </a>
+                            </div>
+                            ${badgeHTML}
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
 
         // ==================== Défilement vers une section ====================
         function scrollToSection(sectionName) {
@@ -1650,57 +1495,6 @@
         function closeMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.remove('open');
             document.body.style.overflow = '';
-        }
-
-        // ==================== Construction des cartes matières ====================
-        function buildSubjects() {
-            const container = document.getElementById('subjectsGrid');
-
-            container.innerHTML = subjectsList.map(sub => {
-                let imgSrc;
-                if (sub.img && sub.img.startsWith('http')) {
-                    imgSrc = sub.img;
-                } else if (sub.img === '' || !sub.img) {
-                    imgSrc =
-                        'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image à venir</text></svg>';
-                } else {
-                    imgSrc = BASE_SUBJECT_IMG + sub.img;
-                }
-
-                const availabilityClass = sub.available ? '' : 'unavailable';
-                const badgeHTML = sub.available ?
-                    '<span class="availability-badge badge-available">Disponible</span>' :
-                    '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
-
-                let linkHref = '#';
-                let linkOnClick = '';
-
-                if (sub.available && sub.link) {
-                    linkHref = sub.link;
-                } else {
-                    linkOnClick = 'onclick="showToast(); return false;"';
-                }
-
-                const imageHTML = `<a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
-                    <div class="subject-card-img" style="background-image:url('${imgSrc}')"></div>
-                </a>`;
-
-                const titleHTML = `<a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
-                    <span>${sub.name}</span>
-                </a>`;
-
-                return `
-                    <div class="subject-card ${availabilityClass}">
-                        ${imageHTML}
-                        <div class="subject-card-body">
-                            <div class="subject-card-title">
-                                ${titleHTML}
-                            </div>
-                            ${badgeHTML}
-                        </div>
-                    </div>
-                `;
-            }).join('');
         }
 
         // ==================== Notification toast ====================
@@ -1810,7 +1604,7 @@
         // ==================== Menu mobile (popup) ====================
         document.getElementById('menuToggle').addEventListener('click', openMobileMenu);
         document.getElementById('closeMobileMenu').addEventListener('click', closeMobileMenu);
-        document.getElementById('mobileMenuOverlay').addEventListener('click', function (e) {
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
             if (e.target === this) closeMobileMenu();
         });
         mobileNavLinks.forEach(link => {
@@ -1822,13 +1616,13 @@
         });
 
         // ==================== Formulaire de contact ====================
-        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = this;
             const submitBtn = form.querySelector('button[type="submit"]');
             const statusDiv = document.getElementById('formStatus');
             const originalText = submitBtn.innerHTML;
-
+            
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
             submitBtn.disabled = true;
             statusDiv.style.display = 'none';
@@ -1866,7 +1660,7 @@
 
         // ==================== Initialisation ====================
         document.addEventListener('DOMContentLoaded', () => {
-            buildSubjects();
+            buildSubjectsGrid();   // Nouvelle grille unique
             updateActiveSection();
             window.showAlert = showToast;
         });
