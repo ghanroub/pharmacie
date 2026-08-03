@@ -1420,29 +1420,31 @@
         }
         buildGallery();
 
-        // ==================== Données des modules (NOUVEAUX MODULES) ====================
+        // ==================== Données des modules (IMAGE COMMUNE POUR TOUS) ====================
+        const COMMON_IMG = "https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/COMPTOIRS%20PHARMACIE%20-%20espace%20de%20vente.jpeg";
+        
         const modulesData = {
             annee1: {
                 title: "Modules",
                 gradient: "linear-gradient(135deg, #6a1b9a, #4a148c)",
                 subjects: [
-                    { name: "INTRODUCTION AUX MÉDICAMENTS", img: "", sems: [1], available: false },
-                    { name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", img: "", sems: [1], available: false },
-                    { name: "ALLERGOLOGIE ET PNEUMOLOGIE", img: "", sems: [1], available: false },
-                    { name: "INFECTIOLOGIE", img: "", sems: [1], available: false },
-                    { name: "GASTRO-ENTÉROLOGIE", img: "", sems: [1], available: false },
-                    { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", img: "", sems: [1], available: false },
-                    { name: "CARDIOLOGIE ET ANGIOLOGIE", img: "", sems: [1], available: false },
-                    { name: "HÉMATOLOGIE ET HÉMOSTASE", img: "", sems: [1], available: false },
-                    { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", img: "", sems: [1], available: false },
-                    { name: "OPHTALMOLOGIE", img: "", sems: [1], available: false },
-                    { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", img: "", sems: [1], available: false },
-                    { name: "GYNÉCOLOGIE", img: "", sems: [1], available: false },
-                    { name: "UROLOGIE", img: "", sems: [1], available: false },
-                    { name: "DERMATOLOGIE", img: "", sems: [1], available: false },
-                    { name: "RHUMATOLOGIE", img: "", sems: [1], available: false },
-                    { name: "NEUROLOGIE ET PSYCHOLOGIE", img: "", sems: [1], available: false },
-                    { name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS", img: "", sems: [1], available: false }
+                    { name: "INTRODUCTION AUX MÉDICAMENTS", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "ALLERGOLOGIE ET PNEUMOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "INFECTIOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "GASTRO-ENTÉROLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "CARDIOLOGIE ET ANGIOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "HÉMATOLOGIE ET HÉMOSTASE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "OPHTALMOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "GYNÉCOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "UROLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "DERMATOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "RHUMATOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "NEUROLOGIE ET PSYCHOLOGIE", img: COMMON_IMG, sems: [1], available: false },
+                    { name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS", img: COMMON_IMG, sems: [1], available: false }
                 ]
             }
         };
@@ -1703,7 +1705,7 @@
 
         // ==================== Initialisation (sans onglets) ====================
         document.addEventListener('DOMContentLoaded', () => {
-            buildSubjects();  // Affiche directement les nouveaux modules
+            buildSubjects();  // Affiche directement les modules avec l'image commune
             updateActiveSection();
             window.showAlert = showToast;
         });
