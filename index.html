@@ -1422,71 +1422,35 @@
         }
         buildGallery();
 
-        // ==================== Données des modules (TOUTES LES ANNÉES AVEC LA LISTE UNIFIÉE) ====================
+        // ==================== Données des modules (NOUVELLE LISTE UNIQUE) ====================
+        const newSubjectsList = [
+            { name: "INTRODUCTION AUX MÉDICAMENTS", available: true, link: "introduction_aux_medicaments.html" },
+            { name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", available: true, link: "antalgiques_anti_inflammatoires.html" },
+            { name: "ALLERGOLOGIE ET PNEUMOLOGIE", available: false },
+            { name: "INFECTIOLOGIE", available: false },
+            { name: "GASTRO-ENTÉROLOGIE", available: false },
+            { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", available: false },
+            { name: "CARDIOLOGIE ET ANGIOLOGIE", available: false },
+            { name: "HÉMATOLOGIE ET HÉMOSTASE", available: false },
+            { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", available: false },
+            { name: "OPHTALMOLOGIE", available: false },
+            { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", available: false },
+            { name: "GYNÉCOLOGIE", available: false },
+            { name: "UROLOGIE", available: false },
+            { name: "DERMATOLOGIE", available: false },
+            { name: "RHUMATOLOGIE", available: false },
+            { name: "NEUROLOGIE ET PSYCHOLOGIE", available: false },
+            { name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS", available: false }
+        ];
+
+        // On crée un objet modulesData avec les mêmes années mais même contenu
         const modulesData = {
-            annee1: {
-                title: "1ère Année",
-                gradient: "linear-gradient(135deg, #6a1b9a, #4a148c)",
-                subjects: allSubjects()
-            },
-            annee2: {
-                title: "2ème Année",
-                gradient: "linear-gradient(135deg, #4a148c, #3f51b5)",
-                subjects: allSubjects()
-            },
-            annee3: {
-                title: "3ème Année",
-                gradient: "linear-gradient(135deg, #3f51b5, #2196f3)",
-                subjects: allSubjects()
-            },
-            annee4: {
-                title: "4ème Année",
-                gradient: "linear-gradient(135deg, #2196f3, #00bcd4)",
-                subjects: allSubjects()
-            },
-            annee5: {
-                title: "5ème Année",
-                gradient: "linear-gradient(135deg, #00bcd4, #009688)",
-                subjects: allSubjects()
-            }
+            annee1: { title: "1ère Année", subjects: newSubjectsList },
+            annee2: { title: "2ème Année", subjects: newSubjectsList },
+            annee3: { title: "3ème Année", subjects: newSubjectsList },
+            annee4: { title: "4ème Année", subjects: newSubjectsList },
+            annee5: { title: "5ème Année", subjects: newSubjectsList }
         };
-
-        function allSubjects() {
-            const subjectsList = [
-                "INTRODUCTION AUX MÉDICAMENTS",
-                "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES",
-                "ALLERGOLOGIE ET PNEUMOLOGIE",
-                "INFECTIOLOGIE",
-                "GASTRO-ENTÉROLOGIE",
-                "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS",
-                "CARDIOLOGIE ET ANGIOLOGIE",
-                "HÉMATOLOGIE ET HÉMOSTASE",
-                "OTO-RHINO-LARYNGOLOGIE (ORL)",
-                "OPHTALMOLOGIE",
-                "LES MÉDICAMENTS DE LA GLANDE THYROIDE",
-                "GYNÉCOLOGIE",
-                "UROLOGIE",
-                "DERMATOLOGIE",
-                "RHUMATOLOGIE",
-                "NEUROLOGIE ET PSYCHOLOGIE",
-                "VITAMINES, MINÉRAUX ET ACIDES AMINÉS"
-            ];
-
-            return subjectsList.map((name, index) => {
-                const isAvailable = index === 0 || index === 1; // seulement les deux premiers
-                const link = isAvailable ? 
-                    (index === 0 ? "introduction_aux_medicaments.html" : "antalgiques_anti_inflammatoires.html") 
-                    : null;
-
-                return {
-                    name: name,
-                    img: '', // pas d'image spécifique → icône par défaut
-                    sems: [1, 2, 3],
-                    available: isAvailable,
-                    links: link ? {1: link} : null
-                };
-            });
-        }
 
         const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
         let currentYear = 'annee4';
@@ -1545,26 +1509,14 @@
             const container = document.getElementById('subjectsGrid');
             const data = modulesData[yearId];
 
-            if (!data) {
-                container.innerHTML = `
-                    <div style="grid-column:1/-1; text-align:center; padding:50px; background:var(--bg-card); border-radius:20px; border:1px solid var(--border-glass);">
-                        <h3 style="color:var(--accent); font-size:1.5rem;">Bientôt disponible !</h3>
-                        <p style="color:var(--text-secondary);">Ces modules sont en cours de préparation.</p>
-                    </div>`;
+            if (!data || !data.subjects) {
+                container.innerHTML = '<p style="color:var(--text-secondary);">Aucune matière trouvée.</p>';
                 return;
             }
 
             container.innerHTML = data.subjects.map(sub => {
-                let imgSrc;
-                if (sub.externalImg) {
-                    imgSrc = sub.img;
-                } else if (sub.img && sub.img.startsWith('http')) {
-                    imgSrc = sub.img;
-                } else if (sub.img === '') {
-                    imgSrc = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image à venir</text></svg>';
-                } else {
-                    imgSrc = BASE_SUBJECT_IMG + sub.img;
-                }
+                // Image par défaut : placeholder "Image à venir"
+                const imgSrc = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%231a1a2e"><rect width="400" height="200" fill="%231a1a2e"/><text x="200" y="110" text-anchor="middle" fill="%23666" font-size="16">Image à venir</text></svg>');
 
                 const availabilityClass = sub.available ? '' : 'unavailable';
                 const badgeHTML = sub.available
@@ -1574,15 +1526,12 @@
                 let linkHref = '#';
                 let linkOnClick = '';
                 
-                if (sub.available && sub.links) {
-                    const availableSem = sub.sems.find(s => sub.links[s]);
-                    if (availableSem) {
-                        linkHref = sub.links[availableSem];
-                    } else {
-                        linkOnClick = 'onclick="showToast(); return false;"';
-                    }
+                if (sub.available) {
+                    linkHref = sub.link || '#';
+                    // Si le lien est '#' quand même on met le onclick ? Non, on fait confiance.
                 } else {
                     linkOnClick = 'onclick="showToast(); return false;"';
+                    linkHref = '#'; // empêche navigation
                 }
 
                 const imageHTML = `<a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
@@ -1610,6 +1559,7 @@
         // ==================== Notification toast ====================
         function showToast() {
             const toast = document.getElementById('toast');
+            // Le toast contient déjà le texte "عذرا غير متاح حاليا"
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
