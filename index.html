@@ -1550,15 +1550,21 @@
         }
 
         // ==================== Effet de révélation au défilement ====================
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        // Ajout d'un fallback pour les navigateurs qui ne supportent pas IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            // Affiche immédiatement tous les éléments .reveal
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        } else {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        }
 
         // ==================== Animation des compteurs de statistiques ====================
         const statsObserver = new IntersectionObserver((entries) => {
@@ -1705,7 +1711,7 @@
 
         // ==================== Initialisation (sans onglets) ====================
         document.addEventListener('DOMContentLoaded', () => {
-            buildSubjects();  // Affiche directement les modules avec l'image commune
+            buildSubjects();
             updateActiveSection();
             window.showAlert = showToast;
         });
