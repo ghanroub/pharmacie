@@ -1249,15 +1249,14 @@
                 </div>
             </section>
             
-            <!-- ==================== Section 3 : Modules ==================== -->
+            <!-- ==================== Section 3 : Modules (sans bouton de sélection d'année) ==================== -->
             <section class="section-block" id="section-modules">
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
-                    Sélectionnez votre année pour découvrir les modules disponibles. 
-                    Cliquez sur une matière ou son image pour y accéder directement.
+                    Voici les modules de 1ère Année. Cliquez sur une matière ou son image pour y accéder.
                 </p>
-                <div class="year-tabs reveal reveal-delay-2" id="yearTabs"></div>
-                <div class="subjects-grid reveal reveal-delay-3" id="subjectsGrid"></div>
+                <!-- PAS de year-tabs -->
+                <div class="subjects-grid reveal reveal-delay-2" id="subjectsGrid"></div>
             </section>
 
             <!-- ==================== Section 4 : Contact ==================== -->
@@ -1441,11 +1440,10 @@
                     { name: "FRANÇAIS MÉDICAL", img: "Produits%20pharmaceutiques%20sur%20fond%20neutre.png", sems: [1], available: false }
                 ]
             }
-            // Les autres années (annee2, annee3, annee4, annee5) ont été supprimées.
         };
 
         const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
-        let currentYear = 'annee1';  // Par défaut, la 1ère année
+        const currentYear = 'annee1';  // Année unique
 
         // ==================== Défilement vers une section ====================
         function scrollToSection(sectionName) {
@@ -1470,33 +1468,10 @@
             document.body.style.overflow = '';
         }
 
-        // ==================== Construction des onglets d'année (seulement 1ère année) ====================
-        function buildYearTabs() {
-            const container = document.getElementById('yearTabs');
-            const years = [
-                { id: 'annee1', label: '1ère Année' }
-                // Plus aucun autre onglet
-            ];
-
-            container.innerHTML = years.map(y =>
-                `<button class="year-tab ${y.id === currentYear ? 'active-tab' : ''}" data-year="${y.id}">${y.label}</button>`
-            ).join('');
-
-            container.querySelectorAll('.year-tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const yearId = tab.dataset.year;
-                    currentYear = yearId;
-                    container.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active-tab'));
-                    tab.classList.add('active-tab');
-                    buildSubjects(yearId);
-                });
-            });
-        }
-
-        // ==================== Construction des cartes matières ====================
-        function buildSubjects(yearId) {
+        // ==================== Construction des cartes matières directement ====================
+        function buildSubjects() {
             const container = document.getElementById('subjectsGrid');
-            const data = modulesData[yearId];
+            const data = modulesData[currentYear];
 
             if (!data) {
                 container.innerHTML = `
@@ -1721,10 +1696,9 @@
             }
         });
 
-        // ==================== Initialisation ====================
+        // ==================== Initialisation (sans onglets) ====================
         document.addEventListener('DOMContentLoaded', () => {
-            buildYearTabs();
-            buildSubjects(currentYear);
+            buildSubjects();  // Affiche directement les modules de 1ère année
             updateActiveSection();
             window.showAlert = showToast;
         });
