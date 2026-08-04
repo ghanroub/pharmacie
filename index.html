@@ -833,6 +833,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
+            min-width: 0; /* Empêche la carte de s'étendre au-delà de la colonne */
         }
 
         .subject-card:hover {
@@ -866,6 +867,8 @@
 
         .subject-card-body {
             padding: 22px;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .subject-card-title {
@@ -873,12 +876,17 @@
             font-weight: 700;
             color: var(--text-heading);
             margin-bottom: 15px;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .subject-card-title a {
             color: var(--text-heading);
             text-decoration: none;
             transition: color 0.3s ease;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .subject-card-title a:hover {
@@ -1100,6 +1108,13 @@
             .gallery-item { width: 110px; height: 75px; }
             .nav-logo { font-size: 1.2rem; }
             .contact-form-wrapper { padding: 22px; }
+            /* Réduction des espacements dans les cartes pour les très petits écrans */
+            .subject-card-body {
+                padding: 15px;
+            }
+            .subject-card-title {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
