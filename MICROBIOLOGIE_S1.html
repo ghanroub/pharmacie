@@ -473,53 +473,10 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
-        /* ==================== Semester Navigation Tabs - No background frame ==================== */
-        .semester-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin: 30px 0 40px;
-        }
-
-        .semester-tab {
-            padding: 14px 32px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid var(--border-glass);
-            background: transparent;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            font-family: inherit;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .semester-tab:hover {
-            border-color: var(--primary);
-            color: var(--text-heading);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.2);
-        }
-
-        .semester-tab.active-tab {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-color: transparent;
-            color: #fff;
-            box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
-        }
-
         /* ==================== Semester Content ==================== */
         .semester-content {
-            display: none;
-            margin-bottom: 40px;
-        }
-
-        .semester-content.active {
             display: block;
+            margin-bottom: 40px;
             animation: fadeIn 0.5s ease;
         }
 
@@ -713,13 +670,10 @@
             .section-title { font-size: 1.5rem; }
             .lessons-grid { grid-template-columns: 1fr; }
             .container { padding: 0 15px; }
-            .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
             .section-icon { width: 45px; height: 45px; font-size: 1.2rem; }
         }
 
         @media (max-width: 480px) {
-            .semester-tabs { gap: 8px; }
-            .semester-tab { padding: 8px 16px; font-size: 0.8rem; }
             .lesson-card { padding: 18px; }
         }
     </style>
@@ -775,7 +729,7 @@
                 <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Contenu principal -->
     <div class="main-wrapper">
@@ -791,21 +745,13 @@
                     <i class="fas fa-info-circle" style="color: var(--primary); margin-right: 8px;"></i>
                     Les antalgiques sont des médicaments destinés à soulager la douleur, classés selon l'OMS en trois paliers. Les anti-inflammatoires, qu'ils soient stéroïdiens (corticoïdes) ou non stéroïdiens (AINS), réduisent l'inflammation et la douleur. Cette section présente les notions essentielles de pharmacologie pour ces classes thérapeutiques.
                 </p>
-                <!-- L'image d'en-tête a été retirée pour correspondre au nouveau sujet -->
             </div>
 
-            <!-- Onglets de navigation des semestres (un seul semestre conservé) -->
-            <div class="semester-tabs reveal" id="semesterTabs">
-                <button class="semester-tab active-tab" data-sem="s1" onclick="showSemester('s1')">
-                    <i class="fas fa-1"></i> Semester 1
-                </button>
-            </div>
-
-            <!-- ==================== SEMESTER 1 ==================== -->
-            <div class="semester-content active" id="content-s1">
+            <!-- ==================== CONTENU DES LEÇONS (affiché directement sans onglet) ==================== -->
+            <div class="semester-content">
                 <div class="section-header">
                     <div class="section-icon">
-                        <i class="fas fa-1"></i>
+                        <i class="fas fa-book"></i>
                     </div>
                     <div>
                         <h2 class="section-title">Semester 1</h2>
@@ -818,7 +764,7 @@
                     <a href="#" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-pills"></i>
+                                <i class="fas fa-book"></i>
                             </div>
                             <div>
                                 <h3 class="lesson-title">1. Les antalgiques (selon OMS)</h3>
@@ -834,7 +780,7 @@
                     <a href="#" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-syringe"></i>
+                                <i class="fas fa-book"></i>
                             </div>
                             <div>
                                 <h3 class="lesson-title">2. Les anti-inflammatoires stéroïdiens (Les corticoïdes)</h3>
@@ -850,7 +796,7 @@
                     <a href="#" class="lesson-card reveal reveal-delay-2">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-capsules"></i>
+                                <i class="fas fa-book"></i>
                             </div>
                             <div>
                                 <h3 class="lesson-title">3. Les anti-inflammatoires non stéroïdiens (AINS)</h3>
@@ -864,7 +810,6 @@
                 </div>
             </div>
 
-            <!-- Les contenus des semesters 2 et 3 ont été supprimés conformément à la demande -->
         </div>
     </div>
 
@@ -912,27 +857,6 @@
             container.appendChild(fragment);
         }
         createStars();
-
-        // ==================== Afficher le semestre sélectionné ====================
-        function showSemester(semId) {
-            document.querySelectorAll('.semester-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.semester-tab').forEach(tab => {
-                tab.classList.remove('active-tab');
-            });
-            
-            const targetContent = document.getElementById(`content-${semId}`);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
-            
-            const targetTab = document.querySelector(`[data-sem="${semId}"]`);
-            if (targetTab) {
-                targetTab.classList.add('active-tab');
-            }
-        }
 
         // ==================== Effet d'apparition au scroll ====================
         const revealObserver = new IntersectionObserver((entries) => {
