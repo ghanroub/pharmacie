@@ -1,5 +1,11 @@
+Voici le code modifié selon vos demandes :
+- Titre changé en « LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES »
+- Leçons du Semester 1 remplacées par les 3 cours demandés
+- Semester 2 et Semester 3 supprimés (onglets + contenu)
+- Méta-données, description, badge et texte d’introduction adaptés à la nouvelle thématique
+```html
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="dark">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMZ6GN3075"></script>
@@ -19,13 +25,13 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Medical Microbiology Courses - Semesters 1, 2 and 3 - GhaniPharma">
-    <meta name="keywords" content="medical microbiology, bacteriology, pharmacy, courses, GhaniPharma, semester 1, semester 2, semester 3">
+    <meta name="description" content="Cours sur les antalgiques et les anti-inflammatoires : antalgiques (selon OMS), anti-inflammatoires stéroïdiens (corticoïdes) et AINS - GhaniPharma">
+    <meta name="keywords" content="antalgiques, anti-inflammatoires, AINS, corticoïdes, pharmacie, GhaniPharma, paliers OMS, stéroïdiens, non stéroïdiens">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Medical Microbiology - GhaniPharma">
+    <meta property="og:title" content="LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES | GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
-    <title>Medical Microbiology | GhaniPharma</title>
+    <title>LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES | GhaniPharma</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/455682333_513234807886795_352495957914405839_n__1__-_Copie-removebg-preview.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -473,18 +479,6 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
-        .header-image {
-            width: 100%;
-            max-width: 700px;
-            height: 280px;
-            border-radius: 24px;
-            margin: 0 auto 20px;
-            background-size: cover;
-            background-position: center;
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border-glass);
-        }
-
         /* ==================== Semester Navigation Tabs - No background frame ==================== */
         .semester-tabs {
             display: flex;
@@ -720,13 +714,9 @@
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-            /* Hide normal horizontal menu */
-            .nav-links {
-                display: none !important;
-            }
+            .nav-links { display: none !important; }
             .page-title { font-size: 1.8rem; }
             .section-title { font-size: 1.5rem; }
-            .header-image { height: 200px; }
             .lessons-grid { grid-template-columns: 1fr; }
             .container { padding: 0 15px; }
             .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
@@ -758,17 +748,17 @@
                 GhaniPharma
             </a>
             <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème" title="Changer le thème">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <!-- Horizontal menu (displayed only on desktop) -->
+                <!-- Menu horizontal (affiché seulement sur desktop) -->
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="index.html#section-about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
                     <li><a href="index.html#section-modules" class="nav-link active"><i class="fas fa-book"></i> Modules</a></li>
                     <li><a href="index.html#section-contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -785,41 +775,35 @@
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
             <div>
-                <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
                 <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
                 <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Contenu principal -->
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- Page Header -->
+            <!-- En-tête de la page -->
             <div class="page-header">
                 <div class="subject-badge reveal">
-                    <i class="fas fa-microscope"></i> 4th Year Pharmacy
+                    <i class="fas fa-pills"></i> Pharmacie - 4ème Année
                 </div>
-                <h1 class="page-title reveal reveal-delay-1">Medical Microbiology</h1>
+                <h1 class="page-title reveal reveal-delay-1">LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES</h1>
                 <p class="page-definition reveal reveal-delay-2">
                     <i class="fas fa-info-circle" style="color: var(--primary); margin-right: 8px;"></i>
-                    Medical microbiology is the discipline that studies microorganisms responsible for infectious diseases in humans. It encompasses bacteriology, virology, parasitology, and mycology, and plays an essential role in the diagnosis, treatment, and prevention of infections.
+                    Les antalgiques sont des médicaments destinés à soulager la douleur, classés selon l'OMS en trois paliers. Les anti-inflammatoires, qu'ils soient stéroïdiens (corticoïdes) ou non stéroïdiens (AINS), réduisent l'inflammation et la douleur. Cette section présente les notions essentielles de pharmacologie pour ces classes thérapeutiques.
                 </p>
-                <div class="header-image reveal reveal-delay-3" style="background-image: url('https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/ghanipharma2/Researchers%20discover%20flavivirus%20spread%20mechanism.jpeg');"></div>
+                <!-- L'image d'en-tête a été retirée pour correspondre au nouveau sujet -->
             </div>
 
-            <!-- Semester Navigation Tabs -->
+            <!-- Onglets de navigation des semestres (un seul semestre conservé) -->
             <div class="semester-tabs reveal" id="semesterTabs">
                 <button class="semester-tab active-tab" data-sem="s1" onclick="showSemester('s1')">
                     <i class="fas fa-1"></i> Semester 1
-                </button>
-                <button class="semester-tab" data-sem="s2" onclick="showSemester('s2')">
-                    <i class="fas fa-2"></i> Semester 2
-                </button>
-                <button class="semester-tab" data-sem="s3" onclick="showSemester('s3')">
-                    <i class="fas fa-3"></i> Semester 3
                 </button>
             </div>
 
@@ -831,19 +815,20 @@
                     </div>
                     <div>
                         <h2 class="section-title">Semester 1</h2>
-                        <p class="section-subtitle">Courses and resources for the first semester</p>
+                        <p class="section-subtitle">Cours sur les antalgiques et les anti-inflammatoires</p>
                     </div>
                 </div>
 
                 <div class="lessons-grid">
+                    <!-- Leçon 1 : Les antalgiques (selon OMS) -->
                     <a href="#" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-bacteria"></i>
+                                <i class="fas fa-pills"></i>
                             </div>
                             <div>
-                                <h3 class="lesson-title">Structure and functional anatomy of bacteria</h3>
-                                <p class="lesson-desc">Morphology, cell wall, membrane, capsule, flagella, pili, endospore and their roles.</p>
+                                <h3 class="lesson-title">1. Les antalgiques (selon OMS)</h3>
+                                <p class="lesson-desc">Classification en trois paliers, mécanismes d'action, exemples de molécules et règles de prescription.</p>
                             </div>
                         </div>
                         <div class="lesson-arrow">
@@ -851,14 +836,15 @@
                         </div>
                     </a>
 
+                    <!-- Leçon 2 : Les anti-inflammatoires stéroïdiens (corticoïdes) -->
                     <a href="#" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-vial"></i>
+                                <i class="fas fa-syringe"></i>
                             </div>
                             <div>
-                                <h3 class="lesson-title">Bacterial physiology</h3>
-                                <p class="lesson-desc">Growth, nutrition, metabolism, environmental factors, reproduction, and classifications.</p>
+                                <h3 class="lesson-title">2. Les anti-inflammatoires stéroïdiens (Les corticoïdes)</h3>
+                                <p class="lesson-desc">Propriétés anti-inflammatoires et immunosuppressives, principaux glucocorticoïdes, effets indésirables et précautions d'emploi.</p>
                             </div>
                         </div>
                         <div class="lesson-arrow">
@@ -866,14 +852,15 @@
                         </div>
                     </a>
 
+                    <!-- Leçon 3 : Les anti-inflammatoires non stéroïdiens (AINS) -->
                     <a href="#" class="lesson-card reveal reveal-delay-2">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-hand-holding-heart"></i>
+                                <i class="fas fa-capsules"></i>
                             </div>
                             <div>
-                                <h3 class="lesson-title">Host - bacteria relationship</h3>
-                                <p class="lesson-desc">Symbiosis, microbiota, pathogenicity, virulence, toxins and host defense mechanisms.</p>
+                                <h3 class="lesson-title">3. Les anti-inflammatoires non stéroïdiens (AINS)</h3>
+                                <p class="lesson-desc">Inhibition des cyclo-oxygénases, effets analgésiques, antipyrétiques et anti-inflammatoires, principaux représentants et risques associés.</p>
                             </div>
                         </div>
                         <div class="lesson-arrow">
@@ -883,130 +870,11 @@
                 </div>
             </div>
 
-            <!-- ==================== SEMESTER 2 ==================== -->
-            <div class="semester-content" id="content-s2">
-                <div class="section-header">
-                    <div class="section-icon" style="background: linear-gradient(135deg, #2196f3, #00bcd4);">
-                        <i class="fas fa-2"></i>
-                    </div>
-                    <div>
-                        <h2 class="section-title">Semester 2</h2>
-                        <p class="section-subtitle">Courses and resources for the second semester</p>
-                    </div>
-                </div>
-
-                <div class="lessons-grid">
-                    <a href="#" class="lesson-card reveal reveal-delay-1">
-                        <div class="lesson-card-header">
-                            <div class="lesson-icon">
-                                <i class="fas fa-streptococcus"></i>
-                            </div>
-                            <div>
-                                <h3 class="lesson-title">Streptococci</h3>
-                                <p class="lesson-desc">Classification, virulence factors, associated pathologies (angina, scarlet fever, invasive infections) and diagnosis.</p>
-                            </div>
-                        </div>
-                        <div class="lesson-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-1">
-                        <div class="lesson-card-header">
-                            <div class="lesson-icon">
-                                <i class="fas fa-diplococcus"></i>
-                            </div>
-                            <div>
-                                <h3 class="lesson-title">Neisseriaceae</h3>
-                                <p class="lesson-desc">Neisseria meningitidis, Neisseria gonorrhoeae: structure, pathogenicity, diagnosis and treatments.</p>
-                            </div>
-                        </div>
-                        <div class="lesson-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-2">
-                        <div class="lesson-card-header">
-                            <div class="lesson-icon">
-                                <i class="fas fa-bacillus"></i>
-                            </div>
-                            <div>
-                                <h3 class="lesson-title">Listeria and Corynebacterium</h3>
-                                <p class="lesson-desc">Listeria monocytogenes (listeriosis), Corynebacterium diphtheriae (diphtheria): epidemiology, pathophysiology and management.</p>
-                            </div>
-                        </div>
-                        <div class="lesson-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-2">
-                        <div class="lesson-card-header">
-                            <div class="lesson-icon">
-                                <i class="fas fa-flask"></i>
-                            </div>
-                            <div>
-                                <h3 class="lesson-title">Cyto-bacteriological examination of urine (CBEU)</h3>
-                                <p class="lesson-desc">Sampling, analysis, interpretation of results, antibiogram and urinary tract infections.</p>
-                            </div>
-                        </div>
-                        <div class="lesson-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </a>
-
-                    <a href="#" class="lesson-card reveal reveal-delay-3">
-                        <div class="lesson-card-header">
-                            <div class="lesson-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div>
-                                <h3 class="lesson-title">Cytobacteriological examination of cerebrospinal fluid (CSF)</h3>
-                                <p class="lesson-desc">Indications, sampling, cytological and bacteriological analysis, meningitis and other CNS pathologies.</p>
-                            </div>
-                        </div>
-                        <div class="lesson-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- ==================== SEMESTER 3 ==================== -->
-            <div class="semester-content" id="content-s3">
-                <div class="section-header">
-                    <div class="section-icon" style="background: linear-gradient(135deg, #ff9800, #f44336);">
-                        <i class="fas fa-3"></i>
-                    </div>
-                    <div>
-                        <h2 class="section-title">Semester 3</h2>
-                        <p class="section-subtitle">No content for semester 3</p>
-                    </div>
-                </div>
-
-                <div class="lessons-grid">
-                    <a href="#" class="lesson-card reveal reveal-delay-1" style="border-color: rgba(255, 152, 0, 0.3);">
-                        <div class="lesson-card-header">
-                            <div class="lesson-icon" style="background: rgba(255, 152, 0, 0.15); border-color: rgba(255, 152, 0, 0.3);">
-                                <i class="fas fa-ban"></i>
-                            </div>
-                            <div>
-                                <h3 class="lesson-title">No content available</h3>
-                                <p class="lesson-desc">The Semester 3 content is not yet available. Please check back later.</p>
-                            </div>
-                        </div>
-                        <div class="lesson-arrow" style="color: #ff9800;">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
+            <!-- Les contenus des semesters 2 et 3 ont été supprimés conformément à la demande -->
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Pied de page -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1016,11 +884,11 @@
             <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <p class="copyright">&copy; 2025 GhaniPharma. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
     </footer>
 
     <script>
-        // ==================== Generate Stars ====================
+        // ==================== Générer les étoiles ====================
         function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -1051,7 +919,7 @@
         }
         createStars();
 
-        // ==================== Show Selected Semester ====================
+        // ==================== Afficher le semestre sélectionné ====================
         function showSemester(semId) {
             document.querySelectorAll('.semester-content').forEach(content => {
                 content.classList.remove('active');
@@ -1072,7 +940,7 @@
             }
         }
 
-        // ==================== Reveal on Scroll Effect ====================
+        // ==================== Effet d'apparition au scroll ====================
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1083,7 +951,7 @@
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== Navigation Bar - Hide on Scroll ====================
+        // ==================== Barre de navigation - Masquer au scroll ====================
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1096,7 +964,7 @@
             lastScrollTop = scrollTop;
         }, { passive: true });
 
-        // ==================== Dark/Light Theme Toggle ====================
+        // ==================== Bascule thème sombre/clair ====================
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
@@ -1110,7 +978,7 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // ==================== Mobile Menu (popup) ====================
+        // ==================== Menu mobile (popup) ====================
         function openMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.add('open');
             document.body.style.overflow = 'hidden';
@@ -1128,3 +996,4 @@
     </script>
 </body>
 </html>
+```
