@@ -1168,7 +1168,7 @@
     </div>
 
     <!-- Notification toast -->
-    <div class="toast" id="toast">Désolé, seuls les cours de 4ème année S1 et S2 sont disponibles pour le moment.</div>
+    <div class="toast" id="toast">Désolé, cette matière n'est pas encore disponible. Elle sera ajoutée prochainement.</div>
 
     <!-- Barre de navigation supérieure -->
     <nav class="top-nav" id="topNav">
@@ -1307,7 +1307,7 @@
             <section class="section-block" id="section-modules">
                 <h2 class="section-title reveal"><i class="fas fa-book"></i> Modules disponibles</h2>
                 <p class="section-subtitle reveal reveal-delay-1">
-                    Voici les modules de 1ère Année. Cliquez sur une matière ou son image pour y accéder.
+                    Voici les modules de Pharmacie. Cliquez sur une matière pour accéder à son contenu détaillé.
                 </p>
                 <div class="subjects-grid reveal reveal-delay-2" id="subjectsGrid"></div>
             </section>
@@ -1444,39 +1444,141 @@
         }
         buildGallery();
 
-        // ==================== Données des modules ====================
+        // ==================== données des modules avec liens directs ====================
         const modulesData = {
-            annee1: {
-                title: "1ère Année",
+            matieres: {
+                title: "Modules de Pharmacie",
                 gradient: "linear-gradient(135deg, #6a1b9a, #4a148c)",
                 subjects: [
-                    { name: "INTRODUCTION AUX MÉDICAMENTS", img: "#", sems: [1], available: false },
-                    { name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", img: "#", sems: [1,2,3], available: false },
-                    { name: "ALLERGOLOGIE ET PNEUMOLOGIE", img: "#", sems: [1,2], available: false },
-                    { name: "INFECTIOLOGIE", img: "#", sems: [1], available: false },
-                    { name: "GASTRO-ENTÉROLOGIE", img: "#", sems: [1,2], available: false },
-                    { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", img: "#", sems: [1,2], available: false },
-                    { name: "CARDIOLOGIE ET ANGIOLOGIE", img: "#", sems: [1], available: false },
-                    { name: "HÉMATOLOGIE ET HÉMOSTASE", img: "#", sems: [1], available: false },
-                    { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", img: "#", sems: [1], available: false },
-                    { name: "OPHTALMOLOGIE", img: "#", sems: [1], available: false },
-                    { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", img: "#", sems: [1], available: false },
-                    { name: "GYNÉCOLOGIE", img: "#", sems: [1], available: false },
-                    { name: "UROLOGIE", img: "#", sems: [1], available: false },
-                    { name: "DERMATOLOGIE", img: "#", sems: [1], available: false },
-                    { name: "NEUROLOGIE", img: "#", sems: [1], available: false },
-                    { name: "PSYCHIATRIE", img: "#", sems: [1], available: false },
-                    { name: "CANCÉROLOGIE", img: "#", sems: [1], available: false }
+                    { 
+                        name: "INTRODUCTION AUX MÉDICAMENTS", 
+                        img: "#", 
+                        sems: [1], 
+                        available: false,
+                        pageName: "INTRODUCTION_AUX_MEDICAMENTS"
+                    },
+                    { 
+                        name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", 
+                        img: "#", 
+                        sems: [1,2,3], 
+                        available: true,
+                        pageName: "LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES"
+                    },
+                    { 
+                        name: "ALLERGOLOGIE ET PNEUMOLOGIE", 
+                        img: "#", 
+                        sems: [1,2], 
+                        available: true,
+                        pageName: "ALLERGOLOGIE_ET_PNEUMOLOGIE"
+                    },
+                    { 
+                        name: "INFECTIOLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "INFECTIOLOGIE"
+                    },
+                    { 
+                        name: "GASTRO-ENTÉROLOGIE", 
+                        img: "#", 
+                        sems: [1,2], 
+                        available: true,
+                        pageName: "GASTRO-ENTEROLOGIE"
+                    },
+                    { 
+                        name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", 
+                        img: "#", 
+                        sems: [1,2], 
+                        available: true,
+                        pageName: "DIABETOLOGIE_ET_LES_HYPOLIPEMIANTS"
+                    },
+                    { 
+                        name: "CARDIOLOGIE ET ANGIOLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "CARDIOLOGIE_ET_ANGIOLOGIE"
+                    },
+                    { 
+                        name: "HÉMATOLOGIE ET HÉMOSTASE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "HEMATOLOGIE_ET_HEMOSTASE"
+                    },
+                    { 
+                        name: "OTO-RHINO-LARYNGOLOGIE (ORL)", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "OTO-RHINO-LARYNGOLOGIE_ORL"
+                    },
+                    { 
+                        name: "OPHTALMOLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "OPHTALMOLOGIE"
+                    },
+                    { 
+                        name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "LES_MEDICAMENTS_DE_LA_GLANDE_THYROIDE"
+                    },
+                    { 
+                        name: "GYNÉCOLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "GYNECOLOGIE"
+                    },
+                    { 
+                        name: "UROLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "UROLOGIE"
+                    },
+                    { 
+                        name: "DERMATOLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "DERMATOLOGIE"
+                    },
+                    { 
+                        name: "NEUROLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "NEUROLOGIE"
+                    },
+                    { 
+                        name: "PSYCHIATRIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "PSYCHIATRIE"
+                    },
+                    { 
+                        name: "CANCÉROLOGIE", 
+                        img: "#", 
+                        sems: [1], 
+                        available: true,
+                        pageName: "CANCEROLOGIE"
+                    }
                 ]
             }
         };
 
         const BASE_SUBJECT_IMG = "https://raw.githubusercontent.com/Ghani-Rouabah/GhaniPharma/refs/heads/main/GhaniPharma%20photo/";
-        const currentYear = 'annee1';
+        const currentTab = 'matieres';
         let currentPage = 1;
         const itemsPerPage = 6;
 
-        // ==================== Défilement vers une section ====================
+        // ==================== défilement vers une section ====================
         function scrollToSection(sectionName) {
             const section = document.getElementById(`section-${sectionName}`);
             if (section) {
@@ -1522,10 +1624,10 @@
             return BASE_SUBJECT_IMG + sub.img;
         }
 
-        // ==================== بناء بطاقات المواد مع التحميل الكسول والتقسيم ====================
+        // ==================== بناء بطاقات المواد مع روابط مباشرة ====================
         function buildSubjects() {
             const container = document.getElementById('subjectsGrid');
-            const data = modulesData[currentYear];
+            const data = modulesData[currentTab];
 
             if (!data) {
                 container.innerHTML = `
@@ -1548,13 +1650,17 @@
                     ? '<span class="availability-badge badge-available">Disponible</span>'
                     : '<span class="availability-badge badge-unavailable">Bientôt disponible</span>';
 
+                // تحديد الرابط المناسب
                 let linkHref = '#';
                 let linkOnClick = '';
+                let linkTarget = '';
                 
-                if (sub.available && sub.links) {
-                    const availableSem = sub.sems.find(s => sub.links[s]);
-                    if (availableSem) {
-                        linkHref = sub.links[availableSem];
+                if (sub.available) {
+                    // إذا كانت المادة متاحة، ننشئ رابطاً للصفحة المناسبة
+                    if (sub.pageName) {
+                        linkHref = sub.pageName + '.html';
+                        linkTarget = '_self'; // تفتح في نفس النافذة
+                        linkOnClick = '';
                     } else {
                         linkOnClick = 'onclick="showToast(); return false;"';
                     }
@@ -1566,7 +1672,7 @@
 
                 return `
                     <div class="subject-card ${availabilityClass}">
-                        <a href="${linkHref}" ${linkOnClick} style="display: block; text-decoration: none;">
+                        <a href="${linkHref}" ${linkOnClick} target="${linkTarget}" style="display: block; text-decoration: none;">
                             <div class="subject-card-img lazy-img" 
                                  data-src="${imgSrc}"
                                  style="background: #1a1a2e;">
@@ -1574,7 +1680,7 @@
                         </a>
                         <div class="subject-card-body">
                             <div class="subject-card-title">
-                                <a href="${linkHref}" ${linkOnClick} style="text-decoration: none;">
+                                <a href="${linkHref}" ${linkOnClick} target="${linkTarget}" style="text-decoration: none; color: var(--text-heading);">
                                     <span>${sub.name}</span>
                                 </a>
                             </div>
@@ -1612,7 +1718,7 @@
         }
 
         function changePage(page) {
-            const data = modulesData[currentYear];
+            const data = modulesData[currentTab];
             const totalPages = Math.ceil(data.subjects.length / itemsPerPage);
             
             if (page < 1 || page > totalPages) return;
@@ -1712,7 +1818,7 @@
         const statsRow = document.querySelector('.stats-row');
         if (statsRow) statsObserver.observe(statsRow);
 
-        // ==================== Mise à jour des points latéraux au défilement ====================
+        // ==================== mise à jour des points latéraux au défilement ====================
         const sections = ['home', 'about', 'modules', 'contact'];
         const dots = document.querySelectorAll('.dot');
         const navLinks = document.querySelectorAll('.nav-link');
@@ -1745,7 +1851,7 @@
 
         window.addEventListener('scroll', updateActiveSection, { passive: true });
 
-        // ==================== Barre de navigation - masquage au défilement ====================
+        // ==================== barre de navigation - masquage au défilement ====================
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
