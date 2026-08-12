@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur les anti-inflammatoires stéroïdiens (corticoïdes) - GhaniPharma">
-    <meta name="keywords" content="pharmacie, corticoïdes, anti-inflammatoires, prednisone, dexaméthasone, hydrocortisone, cours pharmacie, GhaniPharma">
+    <meta name="description" content="Cours complet sur les corticoïdes et leurs mécanismes - GhaniPharma">
+    <meta name="keywords" content="pharmacie, corticoïdes, glucocorticoïdes, prednisone, dexaméthasone, hydrocortisone, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Les Corticoïdes - GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
     <title>Les Corticoïdes | GhaniPharma</title>
-    <!-- أيقونة الموقع -->
+    <!-- أيقونة الموقع مثل الكود الثاني -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ----- الأنماط العامة كما هي مع تعديل بسيط ----- */
+        /* ----- الأنماط العامة كما هي مع تعديل اللوغو ----- */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -67,7 +67,9 @@
             margin: 0;
             padding: 0;
         }
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--bg-primary);
@@ -107,10 +109,20 @@
             opacity: 0;
         }
         @keyframes twinkle {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.8); }
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.8);
+            }
         }
-        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
+        [data-theme="light"] .star {
+            animation: none !important;
+            opacity: 0.15 !important;
+        }
 
         .top-nav {
             position: fixed;
@@ -125,7 +137,9 @@
             transition: all 0.4s ease;
             padding: 0 20px;
         }
-        .top-nav.hidden { transform: translateY(-100%); }
+        .top-nav.hidden {
+            transform: translateY(-100%);
+        }
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -145,7 +159,10 @@
             letter-spacing: -0.5px;
             transition: all 0.3s ease;
         }
-        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .nav-logo:hover {
+            color: var(--text-heading);
+            transform: scale(1.05);
+        }
         .logo-icon {
             width: 42px;
             height: 42px;
@@ -164,11 +181,25 @@
             object-fit: contain;
         }
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
-            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
+            }
         }
-        .nav-right { display: flex; align-items: center; gap: 15px; }
-        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
         .nav-link {
             position: relative;
             padding: 10px 22px;
@@ -184,8 +215,14 @@
             white-space: nowrap;
             font-family: inherit;
         }
-        .nav-link:hover { color: var(--text-heading); background: rgba(128, 128, 128, 0.1); }
-        .nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.2); }
+        .nav-link:hover {
+            color: var(--text-heading);
+            background: rgba(128, 128, 128, 0.1);
+        }
+        .nav-link.active {
+            color: #fff;
+            background: rgba(0, 188, 212, 0.2);
+        }
         .nav-link.active::after {
             content: '';
             position: absolute;
@@ -214,7 +251,10 @@
             opacity: 0;
             transition: visibility 0.3s, opacity 0.3s ease;
         }
-        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
+        .mobile-menu-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
         .mobile-menu-popup {
             background: var(--bg-card);
             backdrop-filter: blur(20px);
@@ -228,7 +268,9 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
+        .mobile-menu-overlay.open .mobile-menu-popup {
+            transform: scale(1);
+        }
         .mobile-menu-close {
             position: absolute;
             top: 20px;
@@ -243,7 +285,10 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        .mobile-menu-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
         .mobile-nav-link {
             display: flex;
             align-items: center;
@@ -265,209 +310,483 @@
             background: rgba(0, 188, 212, 0.1);
             transform: translateX(6px);
         }
-        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
+        .mobile-nav-link i {
+            color: var(--primary);
+            width: 28px;
+            font-size: 1.3rem;
+        }
 
         .theme-toggle {
-            width: 44px; height: 44px; border-radius: 50%;
-            border: 2px solid var(--border-glass); background: var(--bg-glass);
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; color: var(--accent);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
         }
         .theme-toggle:hover {
             transform: rotate(30deg) scale(1.1);
             border-color: var(--accent);
             box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
         }
-        .theme-toggle i { transition: all 0.5s ease; }
-        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
-        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
-        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
-        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
-        [data-theme="light"] .theme-toggle { border-color: rgba(0, 0, 0, 0.2); }
+        .theme-toggle i {
+            transition: all 0.5s ease;
+        }
+        [data-theme="dark"] .theme-toggle .fa-moon {
+            display: inline-block;
+        }
+        [data-theme="dark"] .theme-toggle .fa-sun {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-moon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-sun {
+            display: inline-block;
+            color: #f39c12;
+        }
+        [data-theme="light"] .theme-toggle {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
 
         .menu-toggle {
-            display: none; background: none; border: none;
-            color: var(--text-heading); font-size: 1.8rem;
-            cursor: pointer; padding: 10px; transition: transform 0.3s ease;
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
         }
-        .menu-toggle:hover { transform: rotate(90deg); }
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
 
         .toggle-buttons {
-            display: flex; gap: 15px; justify-content: center;
-            margin-top: 20px; margin-bottom: 40px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
         .toggle-btn {
-            padding: 12px 30px; border-radius: 30px;
-            border: 2px solid var(--border-glass); background: var(--bg-glass);
-            color: var(--text-secondary); cursor: pointer; font-size: 1rem;
-            font-weight: 600; transition: all 0.3s ease; outline: none;
-            font-family: inherit; backdrop-filter: blur(10px);
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
         }
-        .toggle-btn:hover { border-color: var(--primary); color: var(--text-heading); box-shadow: 0 0 15px rgba(0, 188, 212, 0.3); }
+        .toggle-btn:hover {
+            border-color: var(--primary);
+            color: var(--text-heading);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
         .toggle-btn.active {
-            background: rgba(0, 188, 212, 0.2); border-color: var(--primary);
-            color: var(--primary); box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
         }
 
         .side-dots {
-            position: fixed; top: 50%; right: 25px; transform: translateY(-50%);
-            z-index: 100; display: flex; flex-direction: column; gap: 22px;
+            position: fixed;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
         }
         .dot {
-            width: 12px; height: 12px; background: rgba(128, 128, 128, 0.3);
-            border-radius: 50%; cursor: pointer;
+            width: 12px;
+            height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative; border: 2px solid transparent;
+            position: relative;
+            border: 2px solid transparent;
         }
-        .dot:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 18px rgba(255, 235, 59, 0.5); }
+        .dot:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+        }
         .dot.active {
-            background: var(--primary); border-color: var(--primary);
-            transform: scale(1.7); box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
         }
         .dot-tooltip {
-            position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.9); color: #fff; padding: 6px 18px;
-            border-radius: 20px; font-size: 0.8rem; white-space: nowrap;
-            pointer-events: none; opacity: 0; transition: opacity 0.3s ease; font-weight: 500;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
         }
-        .dot:hover .dot-tooltip { opacity: 1; }
+        .dot:hover .dot-tooltip {
+            opacity: 1;
+        }
 
-        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-top: 90px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
 
         .section-block {
-            padding: 80px 0; position: relative; min-height: auto;
-            display: flex; flex-direction: column; justify-content: center;
-            border-bottom: 1px solid var(--border-glass); transition: all 0.5s ease;
+            padding: 80px 0;
+            position: relative;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
         }
-        .section-block:last-of-type { border-bottom: none; }
+        .section-block:last-of-type {
+            border-bottom: none;
+        }
 
         .reveal {
-            opacity: 0; transform: translateY(50px);
+            opacity: 0;
+            transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
 
         .hero-section {
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: center; text-align: center; min-height: 60vh; padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: 40px 20px;
         }
         .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(0, 188, 212, 0.1); border: 1px solid rgba(0, 188, 212, 0.3);
-            padding: 8px 22px; border-radius: 50px; font-size: 0.9rem; color: var(--primary); margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 30px;
         }
         .hero-title {
-            font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900;
-            background: var(--gradient-hero); background-size: 300% 300%;
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            animation: gradientShift 6s ease-in-out infinite; margin-bottom: 20px; letter-spacing: -1px;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
         .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary);
-            max-width: 700px; margin-bottom: 20px;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 2.2rem; font-weight: 800; margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--accent), var(--primary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             display: inline-block;
         }
         .section-subtitle {
-            color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 700px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
         }
 
         .card {
-            background: var(--bg-card); border: 1px solid var(--border-glass);
-            border-radius: 20px; padding: 30px; backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); margin-bottom: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
         }
         .drug-link {
-            cursor: pointer; color: var(--primary); font-weight: 600;
-            text-decoration: underline; transition: all 0.3s ease;
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
         }
-        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        .drug-link:hover {
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--accent);
+        }
 
         .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
-            z-index: 2000; display: flex; align-items: center; justify-content: center;
-            visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
         }
-        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
         .modal-content {
-            background: var(--bg-card); border: 1px solid var(--border-glass);
-            border-radius: 32px; width: 90%; max-width: 700px; max-height: 85vh;
-            padding: 40px 30px; position: relative; overflow-y: auto;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7); transform: scale(0.95);
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            padding: 40px 30px;
+            position: relative;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .modal-overlay.open .modal-content { transform: scale(1); }
-        .modal-close {
-            position: absolute; top: 20px; right: 20px;
-            background: var(--bg-glass); border: 1px solid var(--border-glass);
-            border-radius: 50%; width: 44px; height: 44px; font-size: 1.8rem;
-            color: var(--text-heading); cursor: pointer; transition: all 0.3s ease;
-            line-height: 1; display: flex; align-items: center; justify-content: center;
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
         }
-        .modal-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
-        .modal-images { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.8rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
         .modal-images img {
-            max-width: 100%; height: auto; border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); border: 1px solid var(--border-glass);
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
         }
         .modal-placeholder {
-            color: var(--text-secondary); font-style: italic; text-align: center;
-            width: 100%; padding: 30px; border: 2px dashed var(--border-glass); border-radius: 16px;
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+            border: 2px dashed var(--border-glass);
+            border-radius: 16px;
         }
 
         /* Exam / QCM styles */
         .question-card label {
-            display: block; margin-bottom: 8px; cursor: pointer;
-            padding: 8px 12px; border-radius: 8px; transition: background 0.2s;
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
             border-left: 4px solid transparent;
         }
-        .question-card label:hover { background: rgba(0, 188, 212, 0.05); }
-        .question-card input[type="checkbox"] { margin-right: 10px; accent-color: var(--primary); }
-        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853 !important; }
-        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744 !important; }
-        .missed-answer { background: rgba(255, 200, 0, 0.2) !important; border-left: 4px solid #ffc107 !important; }
-        .result-message { text-align: center; font-size: 1.2rem; margin-top: 20px; font-weight: 700; }
-        .qcm-instruction { text-align: center; margin-bottom: 20px; background: rgba(0, 188, 212, 0.05); border-radius: 16px; padding: 18px 20px; border: 1px solid var(--border-glass); }
-        .qcm-instruction p { color: var(--primary); margin: 0; }
+        .question-card label:hover {
+            background: rgba(0, 188, 212, 0.05);
+        }
+        .question-card input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: var(--primary);
+        }
+        .correct-answer {
+            background: rgba(0, 200, 0, 0.2) !important;
+            border-left: 4px solid #00c853 !important;
+        }
+        .wrong-answer {
+            background: rgba(255, 0, 0, 0.2) !important;
+            border-left: 4px solid #ff1744 !important;
+        }
+        .missed-answer {
+            background: rgba(255, 200, 0, 0.2) !important;
+            border-left: 4px solid #ffc107 !important;
+        }
+        .result-message {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        .qcm-instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px;
+            padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p {
+            color: var(--primary);
+            margin: 0;
+        }
 
-        .site-footer { text-align: center; padding: 50px 20px; border-top: 1px solid var(--footer-border); background: var(--bg-card); backdrop-filter: blur(10px); }
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
+        .site-footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
         .social-link {
-            width: 50px; height: 50px; border-radius: 50%;
-            background: rgba(128, 128, 128, 0.06); display: flex; align-items: center; justify-content: center;
-            color: var(--text-heading); text-decoration: none; font-size: 1.3rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid var(--border-glass);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-heading);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
         }
-        .social-link:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
-        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+        .social-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
 
-        @media (max-width: 992px) { .side-dots { display: none; } }
-        @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none !important; }
-            .nav-logo { font-size: 1.2rem; }
-            .hero-title { font-size: 1.8rem; }
-            .section-title { font-size: 1.6rem; }
-            .container { padding: 0 15px; }
-            .modal-content { width: 95%; padding: 25px 20px; }
-            .toggle-buttons { flex-direction: column; align-items: center; }
+        @media (max-width: 992px) {
+            .side-dots {
+                display: none;
+            }
         }
-        @media (max-width: 480px) { .nav-logo { font-size: 1.2rem; } }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none !important;
+            }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 25px 20px;
+            }
+            .toggle-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body data-theme="dark">
@@ -489,10 +808,10 @@
                 </button>
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
                 <ul class="nav-links" id="navLinksDesktop">
-                    <li><a class="nav-link" href="#section-home"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li><a class="nav-link" href="#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
-                    <li><a class="nav-link active" href="#section-modules"><i class="fas fa-book"></i> Modules</a></li>
-                    <li><a class="nav-link" href="#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -509,10 +828,10 @@
                 <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
             </div>
             <div>
-                <a href="#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
-                <a href="#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
-                <a href="#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
     </div>
@@ -520,15 +839,13 @@
     <!-- Side dots (dynamiquement mis à jour selon le mode Leçon/Examen) -->
     <div class="side-dots" id="sideDots">
         <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
+        <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
         <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
-        <div class="dot" data-dot="mode"><span class="dot-tooltip">Mode d'admin</span></div>
-        <div class="dot" data-dot="effets"><span class="dot-tooltip">Effets Secondaires</span></div>
-        <div class="dot" data-dot="contre"><span class="dot-tooltip">Contre-indications</span></div>
-        <div class="dot" data-dot="hydrocortisone"><span class="dot-tooltip">Hydrocortisone</span></div>
-        <div class="dot" data-dot="dexamethasone"><span class="dot-tooltip">Dexaméthasone</span></div>
-        <div class="dot" data-dot="betamethasone"><span class="dot-tooltip">Bétaméthasone</span></div>
-        <div class="dot" data-dot="triamcinolone"><span class="dot-tooltip">Triamcinolone</span></div>
-        <div class="dot" data-dot="prednisone"><span class="dot-tooltip">Prednisone</span></div>
+        <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
+        <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
+        <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
+        <div class="dot" data-dot="substances"><span class="dot-tooltip">Substances actives</span></div>
+        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
     </div>
 
     <div class="main-wrapper">
@@ -536,9 +853,9 @@
 
             <!-- Hero / Toggle -->
             <section class="hero-section" id="section-intro">
-                <div class="hero-badge reveal"><i class="fas fa-pills"></i> Pharmacologie</div>
+                <div class="hero-badge reveal"><i class="fas fa-capsules"></i> Pharmacologie</div>
                 <h1 class="hero-title reveal reveal-delay-1">LES CORTICOÏDES</h1>
-                <p class="hero-subtitle reveal reveal-delay-2">Anti-inflammatoires stéroïdiens : Indications, effets secondaires, règles d'administration et bon usage.</p>
+                <p class="hero-subtitle reveal reveal-delay-2">Mécanismes, indications, contre-indications et conseils à l'officine.</p>
                 <div class="toggle-buttons reveal reveal-delay-3">
                     <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Lesson</button>
                     <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
@@ -547,79 +864,115 @@
 
             <!-- LESSON CONTENT -->
             <div id="lessonContent">
-                <!-- معلومات عامة -->
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal">Mécanisme d'action</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p>Ces molécules agissent en se liant à des récepteurs intracellulaires pour moduler l'expression des gènes. Résultat : une puissante inhibition de la phospholipase A2, ce qui bloque la libération de l'acide arachidonique et, par conséquent, la production des médiateurs de l'inflammation (prostaglandines, leucotriènes). En clair : elles <strong>« coupent le robinet »</strong> de l'inflammation.</p>
+                    </div>
+                </section>
+
                 <section class="section-block" id="section-indications">
                     <h2 class="section-title reveal">Indications générales</h2>
                     <div class="card reveal reveal-delay-1">
+                        <p>Elles sont utilisées pour les pathologies inflammatoires et immunitaires :</p>
                         <ul style="padding-left:20px;">
-                            <li><strong>Maladies rhumatismales :</strong> Polyarthrite rhumatoïde, arthrose inflammatoire.</li>
-                            <li><strong>Maladies allergiques :</strong> Asthme sévère, dermatites allergiques, choc anaphylactique.</li>
-                            <li><strong>Maladies auto-immunes :</strong> Lupus, sclérose en plaques.</li>
-                            <li><strong>Transplantations :</strong> Prévention et traitement du rejet de greffe.</li>
+                            <li>Maladies rhumatismales (PR, spondylarthrite)</li>
+                            <li>Pathologies allergiques sévères (dermatites, urticaire géante)</li>
+                            <li>Asthme</li>
+                            <li>Greffes d'organes (anti-rejet)</li>
                         </ul>
                     </div>
                 </section>
 
-                <section class="section-block" id="section-mode">
-                    <h2 class="section-title reveal">Mode d'administration & Conseils</h2>
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal">Contre-indications & Précautions majeures</h2>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">Règles d'or :</h3>
-                        <ul style="padding-left:20px;">
-                            <li><strong>Prise unique le matin :</strong> S'administre au cours du petit-déjeuner (respecter le cycle circadien du cortisol).</li>
-                            <li><strong>Traitement court :</strong> Moins de 5 jours. Pas de régime spécial requis.</li>
-                            <li><strong>Traitement long (chronique) :</strong>
-                                <ul style="padding-left:20px; margin-top:5px;">
-                                    <li>Régime alimentaire <strong>sans sel et sans sucre</strong>.</li>
-                                    <li>Compléments alimentaires riches en <strong>Calcium, Vitamine D, Potassium</strong>.</li>
-                                    <li><strong>Arrêt progressif :</strong> Ne jamais arrêter brutalement un traitement long (risque d'insuffisance surrénalienne).</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <p><strong>Formelles :</strong> Infections évolutives non traitées (surtout mycoses et viroses).</p>
+                        <p><strong>Relatives (Précautions) :</strong> Hypertension artérielle sévère, diabète mal équilibré, ulcère gastro-duodénal évolutif, et Grossesse/Allaitement (uniquement sur avis médical strict, car passage placentaire et dans le lait).</p>
                     </div>
                 </section>
 
-                <section class="section-block" id="section-effets">
-                    <h2 class="section-title reveal">Effets Secondaires (Surveillance)</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <p>Les corticoïdes ont de nombreux effets métaboliques et endocriniens. Une surveillance stricte est nécessaire :</p>
-                        <ul style="padding-left:20px; margin-top:10px;">
-                            <li>Prise de poids et rétention d'eau.</li>
-                            <li>Ostéoporose (risque de fractures).</li>
-                            <li>Hypertension artérielle.</li>
-                            <li>Hyperglycémie / Diabète cortico-induit.</li>
-                            <li>Hypokaliémie (baisse du potassium).</li>
-                            <li>Sécrétion d'acidité gastrique (risque d'ulcère).</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="section-block" id="section-contre">
-                    <h2 class="section-title reveal">Contre-indications & Précautions</h2>
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal">Interactions médicamenteuses majeures</h2>
                     <div class="card reveal reveal-delay-1">
                         <ul style="padding-left:20px;">
-                            <li><strong>Personnes hypertendues</strong> (risque d'aggravation).</li>
-                            <li><strong>Diabétiques</strong> (perturbation de la glycémie).</li>
-                            <li><strong>Grossesse et Allaitement :</strong> Utilisation uniquement sur avis médical strict (risque fœtal).</li>
+                            <li><strong>AINS / Aspirine :</strong> Risque majoré d'ulcère et d'hémorragie digestive.</li>
+                            <li><strong>Antidiabétiques oraux / Insuline :</strong> Effet hyperglycémiant des corticoïdes (nécessité d'augmenter les doses d'antidiabétiques).</li>
+                            <li><strong>Diurétiques hypokaliémiants :</strong> Risque accru d'hypokaliémie (faire attention au potassium).</li>
+                            <li><strong>Anticoagulants / Antiagrégants :</strong> Interaction pharmacodynamique, risque hémorragique majoré.</li>
                         </ul>
                     </div>
                 </section>
 
-                <!-- الأدوية المختلفة -->
-                <section class="section-block" id="section-hydrocortisone">
-                    <h2 class="section-title reveal">1. Hydrocortisone</h2>
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal">Grossesse et Allaitement</h2>
                     <div class="card reveal reveal-delay-1">
+                        <p><strong>Règle générale :</strong> CI relative. À n'utiliser qu'après évaluation bénéfice/risque par le médecin traitant, car il existe un risque de retard de croissance fœtale et de passage dans le lait maternel. Si traitement indispensable, préférer la prednisone/prednisolone (moins de passage placentaire) et espacer les tétées.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-substances">
+                    <h2 class="section-title reveal">Les substances actives</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">1. Hydrocortisone</h3>
                         <p><strong>Noms commerciaux (Algérie) :</strong>
                             <span class="drug-link" onclick="showDrugModal('Hycosone')">Hycosone</span>,
                             <span class="drug-link" onclick="showDrugModal('Cortinova')">Cortinova</span>
                         </p>
-                        <p><strong>Indication spéciale :</strong> Utilisé en cas d'<strong>insuffisance surrénalienne</strong> (substitution).</p>
-                        <p><strong>Formes :</strong> Comprimés, injectable.</p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés, suspensions injectables.</p>
+                        <p><strong>Posologie adulte :</strong> Dose variable. Utilisée souvent comme substitutif (insuffisance surrénale) à raison de 20 à 30 mg/jour en 2 prises. Dose max : jusqu'à 200-300 mg/jour IV en aigu.</p>
+                        <p><strong>Particularité :</strong> C'est le corticoïde de référence pour l'insuffisance surrénalienne. Action courte.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> Rappeler au patient que c'est un traitement substitutif à vie en cas d'insuffisance surrénale. Ne jamais arrêter brutalement. En cas de stress (infection, chirurgie), la posologie doit être augmentée (double ou triple dose).</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-dexamethasone">
-                    <h2 class="section-title reveal">2. Dexaméthasone</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">2. Prednisone</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Precortyl')">Precortyl</span>,
+                            <span class="drug-link" onclick="showDrugModal('Cortancyl')">Cortancyl</span>
+                        </p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés, sirop.</p>
+                        <p><strong>Posologie adulte :</strong> Dose standard : 0,5 à 1 mg/kg/jour (soit 40 à 60 mg/jour pour un adulte). Dose maximale en aigu : jusqu'à 100 mg/jour. En entretien : 5 à 10 mg/jour.</p>
+                        <p><strong>Particularité :</strong> Prodrogue (transformée en prednisolone par le foie). Durée d'action intermédiaire.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> La dose matinale (entre 7h et 9h) est primordiale pour respecter le cycle de sécrétion du cortisol et limiter les effets secondaires. À prendre au cours du repas pour protéger l'estomac.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">3. Prednisolone</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Solupred')">Solupred</span>,
+                            <span class="drug-link" onclick="showDrugModal('Deprisole')">Deprisole</span>,
+                            <span class="drug-link" onclick="showDrugModal('Prednicort')">Prednicort</span>,
+                            <span class="drug-link" onclick="showDrugModal('Cortidal')">Cortidal</span>,
+                            <span class="drug-link" onclick="showDrugModal('Oropred')">Oropred</span>,
+                            <span class="drug-link" onclick="showDrugModal('Physiolone')">Physiolone</span>,
+                            <span class="drug-link" onclick="showDrugModal('Novason')">Novason</span>
+                        </p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés, sirop, gouttes.</p>
+                        <p><strong>Posologie adulte :</strong> Identique à la prednisone (0,5 à 1 mg/kg/jour). Max 80 mg/jour en aigu.</p>
+                        <p><strong>Particularité :</strong> Métabolite actif de la prednisone (utilisable directement par l'organisme). Effet intermédiaire.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> Le Solupred est très prescrit en Algérie. Pour les enfants, le sirop est pratique mais doit être bien dosé. Expliquer que le traitement peut « piquer » l'appétit (prévoir des collations saines comme des fruits pour éviter le grignotage sucré).</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">4. Méthylprednisolone</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Medrol')">Medrol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Meprinal')">Meprinal</span>,
+                            <span class="drug-link" onclick="showDrugModal('Prednol')">Prednol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Solumedrol')">Solumedrol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Huppomedrol')">Huppomedrol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Cortilam')">Cortilam</span>
+                        </p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés, seringues (IV/IM).</p>
+                        <p><strong>Posologie adulte :</strong> Comprimés : 4 à 48 mg/jour. Bolus IV : 250 mg à 1 g par jour (en hospitalisation pour les poussées aiguës).</p>
+                        <p><strong>Particularité :</strong> Activité anti-inflammatoire plus puissante que la prednisone (peu d'effet minéralocorticoïde). Très utilisé en bolus dans les pathologies neurologiques (ex : sclérose en plaques) et les greffes.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> Si le patient est sous forme comprimé, les règles sont les mêmes. La forme injectable (Solu-Medrol) nécessite une dilution selon le protocole. Demandez toujours au patient s'il a des antécédents d'ulcère avant toute prise.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">5. Dexaméthasone</h3>
                         <p><strong>Noms commerciaux (Algérie) :</strong>
                             <span class="drug-link" onclick="showDrugModal('Dexasone')">Dexasone</span>,
                             <span class="drug-link" onclick="showDrugModal('Dexametyd')">Dexametyd</span>,
@@ -627,78 +980,50 @@
                             <span class="drug-link" onclick="showDrugModal('Dexal')">Dexal</span>,
                             <span class="drug-link" onclick="showDrugModal('Dexalek')">Dexalek</span>
                         </p>
-                        <p><strong>Formes :</strong> Comprimés (0.5 mg, 1 mg, 4 mg), solution injectable.</p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés, seringues IV/IM (ampoules).</p>
+                        <p><strong>Posologie adulte :</strong> 4 à 20 mg/jour en aigu. Dose max : 40 à 100 mg/jour.</p>
+                        <p><strong>Particularité :</strong> Corticoïde à action longue. Effet minéralocorticoïde quasi nul (idéale chez les patients hypertendus/insuffisants cardiaques pour éviter la rétention d'eau). Très utilisé dans les œdèmes cérébraux et en cancérologie.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> En raison de sa longue durée d'action, ne pas le prendre le soir (risque d'insomnie majeure). Préférer une prise unique le matin.</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-betamethasone">
-                    <h2 class="section-title reveal">3. Bétaméthasone</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">6. Bétaméthasone</h3>
                         <p><strong>Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Betasone')">Betasone</span>,
-                            <span class="drug-link" onclick="showDrugModal('Betaprosone')">Betaprosone</span>,
-                            <span class="drug-link" onclick="showDrugModal('Celestane')">Celestane</span>,
-                            <span class="drug-link" onclick="showDrugModal('Betacrovix')">Betacrovix</span>,
-                            <span class="drug-link" onclick="showDrugModal('Betastene')">Betastene</span>,
                             <span class="drug-link" onclick="showDrugModal('Celestene')">Celestene</span>,
-                            <span class="drug-link" onclick="showDrugModal('Diprostone')">Diprostone</span>,
-                            <span class="drug-link" onclick="showDrugModal('Hupprostene')">Hupprostene</span>,
-                            <span class="drug-link" onclick="showDrugModal('Helestene')">Helestene</span>,
-                            <span class="drug-link" onclick="showDrugModal('Tabeta')">Tabeta</span>
+                            <span class="drug-link" onclick="showDrugModal('Celestasone')">Celestasone</span>,
+                            <span class="drug-link" onclick="showDrugModal('Betasone')">Betasone</span>,
+                            <span class="drug-link" onclick="showDrugModal('Dipprostene')">Dipprostene</span> (forme retard),
+                            <span class="drug-link" onclick="showDrugModal('Betacrovix')">Betacrovix</span>,
+                            <span class="drug-link" onclick="showDrugModal('Hupprostene')">Hupprostene</span>
                         </p>
-                        <p><strong>Formes :</strong> Comprimés, crèmes, pommades.</p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés (Celestene), crème/pommade (cutanée), suspensions injectables (Dipprostene).</p>
+                        <p><strong>Posologie adulte :</strong> Comprimés : 1,5 à 9 mg/jour. Formes retard (Dipprostene) : 1 ampoule en IM tous les 15 jours à 1 mois.</p>
+                        <p><strong>Particularité :</strong> Action longue. Le Celestene est un corticoïde de référence pour les allergies saisonnières et dermatoses. Les formes parentérales retard (Dipprostene) sont utilisées en rhumatologie pour les infiltrations ou les poussées articulaires.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> Pour la voie cutanée (pommade), éviter une utilisation prolongée > 7 jours sur le visage ou les plis (risque d'effet atrophiant). Pour la forme injectable retard (Dipprostene), patient peut avoir une réaction locale, à surveiller.</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-triamcinolone">
-                    <h2 class="section-title reveal">4. Triamcinolone</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">7. Triamcinolone</h3>
                         <p><strong>Noms commerciaux (Algérie) :</strong>
                             <span class="drug-link" onclick="showDrugModal('Kenacort')">Kenacort</span>,
                             <span class="drug-link" onclick="showDrugModal('Huppacort')">Huppacort</span>,
-                            <span class="drug-link" onclick="showDrugModal('Obacort')">Obacort</span>,
+                            <span class="drug-link" onclick="showDrugModal('Obarcort')">Obarcort</span>,
                             <span class="drug-link" onclick="showDrugModal('Lisatriam')">Lisatriam</span>
                         </p>
-                        <p><strong>Formes :</strong> Comprimés, injectable (suspension retard), crèmes.</p>
-                    </div>
-                </section>
-
-                <section class="section-block" id="section-prednisone">
-                    <h2 class="section-title reveal">5. Prednisone & Prednisolone</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">Prednisone</h3>
-                        <p><strong>Nom commercial :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Precortyl')">Precortyl</span>
-                        </p>
-                        <h3 style="color:var(--primary); margin-top:15px;">Prednisolone</h3>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Deprisole')">Deprisole</span>,
-                            <span class="drug-link" onclick="showDrugModal('Prednicort')">Prednicort</span>,
-                            <span class="drug-link" onclick="showDrugModal('Cortidal')">Cortidal</span>,
-                            <span class="drug-link" onclick="showDrugModal('Cortipred')">Cortipred</span>,
-                            <span class="drug-link" onclick="showDrugModal('Oropred')">Oropred</span>,
-                            <span class="drug-link" onclick="showDrugModal('Solupred')">Solupred</span>,
-                            <span class="drug-link" onclick="showDrugModal('Physiolone')">Physiolone</span>,
-                            <span class="drug-link" onclick="showDrugModal('Novason')">Novason</span>
-                        </p>
-                    </div>
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);">Méthylprednisolone</h3>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Cortilam')">Cortilam</span>,
-                            <span class="drug-link" onclick="showDrugModal('Meprinal')">Meprinal</span>,
-                            <span class="drug-link" onclick="showDrugModal('Medrol')">Medrol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Prednol')">Prednol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Solumedrol')">Solumedrol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Huppomedrol')">Huppomedrol</span>
-                        </p>
+                        <p><strong>Formes pharmaceutiques :</strong> Comprimés, pommade/crème, suspensions injectables (pour infiltrations).</p>
+                        <p><strong>Posologie adulte :</strong> Comprimés : 4 à 16 mg/jour. Injections locales : selon la zone.</p>
+                        <p><strong>Particularité :</strong> Action intermédiaire. La forme comprimé est de moins en moins utilisée par rapport aux autres ; on la retrouve surtout en usage topique (dermatologie) et en infiltration intra-articulaire (rhumatologie) pour des effets locaux puissants.</p>
+                        <p><strong>Conseil pratique du pharmacien :</strong> Si le patient est sous forme comprimé, surveiller sa glycémie et sa tension. Rappeler que c'est un traitement puissant ; les règles de l'arrêt progressif et du régime alimentaire (sans sel ni sucre) s'appliquent également.</p>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-conseil" style="border-bottom: none;">
-                    <h2 class="section-title reveal">Conseil ultime pour le stage</h2>
+                    <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p>Les corticoïdes sont des médicaments puissants. <strong>Ne jamais arrêter un traitement long brutalement</strong> (risque de choc surrénalien). En pharmacie, rappelez toujours au patient de prendre son comprimé <strong>le matin au cours du repas</strong> et d'éviter le sel et le sucre en cas de traitement prolongé.</p>
+                        <p><strong>Règle d'or du sevrage :</strong> Ne JAMAIS arrêter un traitement de plus de 3 semaines brutalement (risque de choc cortisonique). La posologie doit être diminuée progressivement de 1 à 2 semaines.</p>
+                        <p><strong>Prise matinale :</strong> L'administration en une seule prise le matin au cours du repas permet de respecter le cycle hormonal naturel et de limiter l'effet sur les glandes surrénales.</p>
+                        <p><strong>Régime alimentaire :</strong> Pour les traitements au long cours, imposez un régime sans sel et sans sucre pour éviter l'hypertension et le diabète, et insistez sur la supplémentation en calcium, vitamine D et potassium (apport par les fruits et légumes) pour prévenir l'ostéoporose et l'hypokaliémie.</p>
+                        <p><strong>Courte durée (&lt; 5 jours) :</strong> Si c'est pour une allergie ou une crise d'asthme, il n'y a généralement pas besoin de sevrage progressif si la durée est inférieure à 5 jours. Rassurez le patient sur cet aspect.</p>
                     </div>
                 </section>
             </div>
@@ -708,57 +1033,46 @@
                 <div class="qcm-instruction card reveal reveal-delay-1">
                     <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
                 </div>
-                
                 <section class="section-block" id="exam-question1">
                     <h2 class="section-title reveal">Question 1</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les indications principales des corticoïdes ?</strong></p><label><input type="checkbox" name="q1" value="a"> Maladies rhumatismales</label><label><input type="checkbox" name="q1" value="b"> Asthme</label><label><input type="checkbox" name="q1" value="c"> Hypertension artérielle</label><label><input type="checkbox" name="q1" value="d"> Allergies sévères</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les effets des corticoïdes sur l'inflammation ?</strong></p><label><input type="checkbox" name="q1" value="a"> Inhibition de la phospholipase A2</label><label><input type="checkbox" name="q1" value="b"> Libération d'acide arachidonique</label><label><input type="checkbox" name="q1" value="c"> Blocage de la production de prostaglandines et leucotriènes</label><label><input type="checkbox" name="q1" value="d"> Stimulation de la COX</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question2">
                     <h2 class="section-title reveal">Question 2</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>À quel moment de la journée doit-on prendre la corticothérapie par voie orale ?</strong></p><label><input type="checkbox" name="q2" value="a"> Le soir au coucher</label><label><input type="checkbox" name="q2" value="b"> Le matin au cours du petit-déjeuner</label><label><input type="checkbox" name="q2" value="c"> À midi</label><label><input type="checkbox" name="q2" value="d"> N'importe quand, c'est sans importance</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les indications des corticoïdes ?</strong></p><label><input type="checkbox" name="q2" value="a"> Maladies rhumatismales (PR, spondylarthrite)</label><label><input type="checkbox" name="q2" value="b"> Infections bactériennes non traitées</label><label><input type="checkbox" name="q2" value="c"> Asthme</label><label><input type="checkbox" name="q2" value="d"> Greffes d'organes (anti-rejet)</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question3">
                     <h2 class="section-title reveal">Question 3</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Parmi ces effets secondaires, lesquels sont typiques des corticoïdes ?</strong></p><label><input type="checkbox" name="q3" value="a"> Hyperglycémie</label><label><input type="checkbox" name="q3" value="b"> Prise de poids</label><label><input type="checkbox" name="q3" value="c"> Diminution du potassium</label><label><input type="checkbox" name="q3" value="d"> Ostéoporose</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les contre-indications formelles des corticoïdes ?</strong></p><label><input type="checkbox" name="q3" value="a"> Infections évolutives non traitées</label><label><input type="checkbox" name="q3" value="b"> Hypertension artérielle sévère</label><label><input type="checkbox" name="q3" value="c"> Mycoses</label><label><input type="checkbox" name="q3" value="d"> Viroses</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question4">
                     <h2 class="section-title reveal">Question 4</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels conseils donner à un patient sous traitement corticoïde longue durée ?</strong></p><label><input type="checkbox" name="q4" value="a"> Suivre un régime sans sel et sans sucre</label><label><input type="checkbox" name="q4" value="b"> Arrêter le traitement dès qu'il se sent mieux</label><label><input type="checkbox" name="q4" value="c"> Prendre des compléments en Calcium et Vitamine D</label><label><input type="checkbox" name="q4" value="d"> Faire un arrêt progressif et non brutal</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les interactions médicamenteuses majeures des corticoïdes ?</strong></p><label><input type="checkbox" name="q4" value="a"> AINS / Aspirine → risque ulcère/hémorragie</label><label><input type="checkbox" name="q4" value="b"> Antidiabétiques → effet hyperglycémiant</label><label><input type="checkbox" name="q4" value="c"> Diurétiques hypokaliémiants → hypokaliémie</label><label><input type="checkbox" name="q4" value="d"> Anticoagulants → risque hémorragique</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question5">
                     <h2 class="section-title reveal">Question 5</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les risques d'un arrêt brutal d'un traitement corticoïde prolongé ?</strong></p><label><input type="checkbox" name="q5" value="a"> Insuffisance surrénalienne aiguë</label><label><input type="checkbox" name="q5" value="b"> Choc anaphylactique</label><label><input type="checkbox" name="q5" value="c"> Rechute de la maladie</label><label><input type="checkbox" name="q5" value="d"> Syndrome de sevrage</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la grossesse et l'allaitement avec les corticoïdes :</strong></p><label><input type="checkbox" name="q5" value="a"> CI relative</label><label><input type="checkbox" name="q5" value="b"> À utiliser seulement après évaluation bénéfice/risque</label><label><input type="checkbox" name="q5" value="c"> Prednisone/prednisolone préférées</label><label><input type="checkbox" name="q5" value="d"> Risque de retard de croissance fœtale</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question6">
                     <h2 class="section-title reveal">Question 6</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quel corticoïde est spécifiquement indiqué dans l'insuffisance surrénalienne ?</strong></p><label><input type="checkbox" name="q6" value="a"> Hydrocortisone</label><label><input type="checkbox" name="q6" value="b"> Dexaméthasone</label><label><input type="checkbox" name="q6" value="c"> Prednisone</label><label><input type="checkbox" name="q6" value="d"> Triamcinolone</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant l'Hydrocortisone :</strong></p><label><input type="checkbox" name="q6" value="a"> Utilisée comme substitutif en insuffisance surrénale</label><label><input type="checkbox" name="q6" value="b"> Action courte</label><label><input type="checkbox" name="q6" value="c"> Posologie 20-30 mg/jour en 2 prises pour insuffisance surrénale</label><label><input type="checkbox" name="q6" value="d"> Ne jamais arrêter brutalement</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question7">
                     <h2 class="section-title reveal">Question 7</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Parmi les médicaments suivants, lesquels sont des corticoïdes ?</strong></p><label><input type="checkbox" name="q7" value="a"> Skénan</label><label><input type="checkbox" name="q7" value="b"> Solupred</label><label><input type="checkbox" name="q7" value="c"> Doliprane</label><label><input type="checkbox" name="q7" value="d"> Kenacort</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Prednisone :</strong></p><label><input type="checkbox" name="q7" value="a"> Prodrogue transformée en prednisolone</label><label><input type="checkbox" name="q7" value="b"> Prise matinale entre 7h et 9h</label><label><input type="checkbox" name="q7" value="c"> Dose standard 0,5-1 mg/kg/jour</label><label><input type="checkbox" name="q7" value="d"> Action longue</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question8">
                     <h2 class="section-title reveal">Question 8</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Les corticoïdes sont-ils contre-indiqués chez :</strong></p><label><input type="checkbox" name="q8" value="a"> Les personnes hypertendues</label><label><input type="checkbox" name="q8" value="b"> Les femmes enceintes (avis médical requis)</label><label><input type="checkbox" name="q8" value="c"> Les diabétiques</label><label><input type="checkbox" name="q8" value="d"> Les patients asthmatiques</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Dexaméthasone :</strong></p><label><input type="checkbox" name="q8" value="a"> Action longue</label><label><input type="checkbox" name="q8" value="b"> Effet minéralocorticoïde quasi nul</label><label><input type="checkbox" name="q8" value="c"> Utilisée dans les œdèmes cérébraux</label><label><input type="checkbox" name="q8" value="d"> Peut être prise le soir sans risque</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question9">
                     <h2 class="section-title reveal">Question 9</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les noms commerciaux de la Prednisolone ?</strong></p><label><input type="checkbox" name="q9" value="a"> Cortipred</label><label><input type="checkbox" name="q9" value="b"> Oropred</label><label><input type="checkbox" name="q9" value="c"> Precortyl</label><label><input type="checkbox" name="q9" value="d"> Cortilam</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant l'arrêt des corticoïdes :</strong></p><label><input type="checkbox" name="q9" value="a"> Ne jamais arrêter brutalement après 3 semaines</label><label><input type="checkbox" name="q9" value="b"> Diminution progressive sur 1-2 semaines</label><label><input type="checkbox" name="q9" value="c"> Un traitement de 4 jours peut être arrêté sans sevrage</label><label><input type="checkbox" name="q9" value="d"> Le sevrage est toujours obligatoire</label></div>
                 </section>
-                
                 <section class="section-block" id="exam-question10">
                     <h2 class="section-title reveal">Question 10</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelle est la durée d'un traitement "court" par corticoïdes ?</strong></p><label><input type="checkbox" name="q10" value="a"> Moins de 5 jours</label><label><input type="checkbox" name="q10" value="b"> Moins de 10 jours</label><label><input type="checkbox" name="q10" value="c"> 1 mois</label><label><input type="checkbox" name="q10" value="d"> Traitement à vie</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels conseils alimentaires donner pour un traitement au long cours ?</strong></p><label><input type="checkbox" name="q10" value="a"> Régime sans sel</label><label><input type="checkbox" name="q10" value="b"> Régime sans sucre</label><label><input type="checkbox" name="q10" value="c"> Supplémentation calcium/vitamine D</label><label><input type="checkbox" name="q10" value="d"> Supplémentation potassium</label></div>
                 </section>
-                
                 <section class="section-block" style="border-bottom: none;">
                     <div class="card reveal reveal-delay-1" style="text-align: center;">
                         <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
@@ -819,22 +1133,28 @@
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== SIDE DOTS ====================
+        // ==================== SIDE DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
         const sideDotsContainer = document.getElementById('sideDots');
         const originalLessonDotsHTML = sideDotsContainer.innerHTML;
 
-        const lessonSectionIDs = ['intro', 'indications', 'mode', 'effets', 'contre', 'hydrocortisone', 'dexamethasone', 'betamethasone', 'triamcinolone', 'prednisone'];
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'substances', 'conseil'
+        ];
         const examSectionIDs = [
             'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
             'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
         ];
 
         function generateExamDotsHTML() {
-            const tooltips = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10'];
+            const tooltips = [
+                'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
+                'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'
+            ];
             let html = '';
             examSectionIDs.forEach((id, index) => {
                 const activeClass = index === 0 ? ' active' : '';
-                html += `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
+                html +=
+                    `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
             });
             return html;
         }
@@ -917,45 +1237,7 @@
         });
 
         // ==================== IMAGES DES MÉDICAMENTS ====================
-        // (تم الاحتفاظ بروابط الصور القديمة، إن لم تكن موجودة ستظهر رسالة "لا توجد صورة")
-        const drugImages = {
-            'Hycosone': [],
-            'Cortinova': [],
-            'Dexasone': [],
-            'Dexametyd': [],
-            'Desacrovix': [],
-            'Dexal': [],
-            'Dexalek': [],
-            'Betasone': [],
-            'Betaprosone': [],
-            'Celestane': [],
-            'Betacrovix': [],
-            'Betastene': [],
-            'Celestene': [],
-            'Diprostone': [],
-            'Hupprostene': [],
-            'Helestene': [],
-            'Tabeta': [],
-            'Kenacort': [],
-            'Huppacort': [],
-            'Obacort': [],
-            'Lisatriam': [],
-            'Precortyl': [],
-            'Deprisole': [],
-            'Prednicort': [],
-            'Cortidal': [],
-            'Cortipred': [],
-            'Oropred': [],
-            'Solupred': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Efferalgan.png'], // بديل للصورة (مثال)
-            'Physiolone': [],
-            'Novason': [],
-            'Cortilam': [],
-            'Meprinal': [],
-            'Medrol': [],
-            'Prednol': [],
-            'Solumedrol': [],
-            'Huppomedrol': []
-        };
+        const drugImages = {}; // Aucune image fournie pour les corticoïdes, le modal affichera un placeholder.
 
         function showDrugModal(drugName) {
             const modal = document.getElementById('drugModal');
@@ -1021,16 +1303,16 @@
 
         // ==================== EXAM QCM LOGIC ====================
         const correctAnswers = {
-            q1: ['a', 'b', 'd'],
-            q2: ['b'],
-            q3: ['a', 'b', 'c', 'd'],
-            q4: ['a', 'c', 'd'],
-            q5: ['a', 'c'],
-            q6: ['a'],
-            q7: ['b', 'd'],
+            q1: ['a', 'c'],
+            q2: ['a', 'c', 'd'],
+            q3: ['a', 'c', 'd'],
+            q4: ['a', 'b', 'c', 'd'],
+            q5: ['a', 'b', 'c', 'd'],
+            q6: ['a', 'b', 'c', 'd'],
+            q7: ['a', 'b', 'c'],
             q8: ['a', 'b', 'c'],
-            q9: ['a', 'b'],
-            q10: ['a']
+            q9: ['a', 'b', 'c'],
+            q10: ['a', 'b', 'c', 'd']
         };
 
         document.getElementById('checkExam').addEventListener('click', () => {
@@ -1074,7 +1356,8 @@
             }
 
             const pct = Math.round((totalScore / totalQuestions) * 100);
-            let msg = `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            let msg =
+                `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
             if (pct >= 80) msg += "🌟 Excellent !";
             else if (pct >= 50) msg += "📚 Continuez à réviser.";
             else msg += "🔍 Révisez le cours et réessayez.";
