@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur les antihistaminiques H1 de première génération - GhaniPharma">
-    <meta name="keywords" content="pharmacie, antihistaminiques H1, première génération, hydroxyzine, dexchlorphéniramine, kétotifène, méquitazine, cyproheptadine, cours pharmacie, GhaniPharma">
+    <meta name="description" content="Cours complet sur les antihistaminiques H1 de 1ère génération - GhaniPharma">
+    <meta name="keywords" content="pharmacie, antihistaminiques, H1, hydroxyzine, dexchlorphéniramine, kétotifène, méquitazine, cyproheptadine, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Les Antihistaminiques H1 de 1ère génération - GhaniPharma">
+    <meta property="og:title" content="Les Antihistaminiques H1 - GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
-    <title>Les Antihistaminiques H1 de 1ère génération | GhaniPharma</title>
+    <title>Les Antihistaminiques H1 | GhaniPharma</title>
+    <!-- أيقونة الموقع مثل الكود الثاني -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* ----- الأنماط العامة كما هي مع تعديل اللوغو ----- */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -666,6 +668,7 @@
             border-radius: 16px;
         }
 
+        /* Exam / QCM styles */
         .question-card label {
             display: block;
             margin-bottom: 8px;
@@ -790,6 +793,7 @@
 
     <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
 
+    <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -813,6 +817,7 @@
         </div>
     </nav>
 
+    <!-- Mobile menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -831,6 +836,7 @@
         </div>
     </div>
 
+    <!-- Side dots (dynamiquement mis à jour selon le mode Leçon/Examen) -->
     <div class="side-dots" id="sideDots">
         <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
         <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
@@ -838,21 +844,18 @@
         <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
         <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
         <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
-        <div class="dot" data-dot="hydroxyzine"><span class="dot-tooltip">Hydroxyzine</span></div>
-        <div class="dot" data-dot="dexchlorpheniramine"><span class="dot-tooltip">Dexchlorphéniramine</span></div>
-        <div class="dot" data-dot="ketotifen"><span class="dot-tooltip">Kétotifène</span></div>
-        <div class="dot" data-dot="mequitazine"><span class="dot-tooltip">Méquitazine</span></div>
-        <div class="dot" data-dot="cyproheptadine"><span class="dot-tooltip">Cyproheptadine</span></div>
-        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil</span></div>
+        <div class="dot" data-dot="substances"><span class="dot-tooltip">Substances actives</span></div>
+        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
     </div>
 
     <div class="main-wrapper">
         <div class="container">
 
+            <!-- Hero / Toggle -->
             <section class="hero-section" id="section-intro">
                 <div class="hero-badge reveal"><i class="fas fa-capsules"></i> Pharmacologie</div>
-                <h1 class="hero-title reveal reveal-delay-1">LES ANTIHISTAMINIQUES H1 DE 1ère GÉNÉRATION</h1>
-                <p class="hero-subtitle reveal reveal-delay-2">Antagonistes des récepteurs H1 à l'histamine : mécanismes, indications et conseils à l'officine.</p>
+                <h1 class="hero-title reveal reveal-delay-1">LES ANTIHISTAMINIQUES H1</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">Antihistaminiques H1 de 1ère génération : Mécanismes, indications, contre-indications et conseils à l'officine.</p>
                 <div class="toggle-buttons reveal reveal-delay-3">
                     <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Lesson</button>
                     <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
@@ -864,7 +867,7 @@
                 <section class="section-block" id="section-mecanisme">
                     <h2 class="section-title reveal">Mécanisme d'action</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p>Ce sont des antagonistes compétitifs des récepteurs H1 à l'histamine. Leur particularité : ils traversent facilement la barrière hémato-encéphalique (BHE), ce qui explique leur effet sédatif marqué (ils bloquent aussi les récepteurs H1 centraux et agissent sur d'autres systèmes, comme les récepteurs muscariniques pour l'effet anticholinergique).</p>
+                        <p>Ce sont des <strong>antagonistes compétitifs des récepteurs H1</strong> à l'histamine. Leur particularité : ils traversent facilement la <strong>barrière hémato-encéphalique (BHE)</strong>, ce qui explique leur <strong>effet sédatif marqué</strong> (ils bloquent aussi les récepteurs H1 centraux et agissent sur d'autres systèmes, comme les récepteurs muscariniques pour l'effet anticholinergique).</p>
                     </div>
                 </section>
 
@@ -872,19 +875,20 @@
                     <h2 class="section-title reveal">Indications générales</h2>
                     <div class="card reveal reveal-delay-1">
                         <ul style="padding-left:20px;">
-                            <li>Traitement symptomatique des rhinites allergiques (saisonnières ou perannuelles).</li>
-                            <li>Traitement de l'urticaire, du prurit et des allergies cutanées.</li>
-                            <li>Pour certaines molécules (Hydroxyzine) : anxiolytique, sédatif, ou prémédication anesthésique.</li>
-                            <li>Pour le Kétotifène : prophylaxie de l'asthme allergique (hors AMM France mais utilisée dans certains pays, notamment Maghreb).</li>
-                            <li>Pour la Cyproheptadine : stimulation de l'appétit (orexigène).</li>
+                            <li>Traitement symptomatique des <strong>rhinites allergiques</strong> (saisonnières ou perannuelles).</li>
+                            <li>Traitement de l'<strong>urticaire</strong>, du <strong>prurit</strong> et des <strong>allergies cutanées</strong>.</li>
+                            <li>Pour certaines molécules (<strong>Hydroxyzine</strong>) : <strong>anxiolytique</strong>, <strong>sédatif</strong>, ou <strong>prémédication anesthésique</strong>.</li>
+                            <li>Pour le <strong>Kétotifène</strong> : prophylaxie de l'<strong>asthme allergique</strong> (hors AMM France mais utilisée dans certains pays, notamment Maghreb).</li>
+                            <li>Pour la <strong>Cyproheptadine</strong> : <strong>stimulation de l'appétit</strong> (orexigène).</li>
                         </ul>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-contre-indications">
-                    <h2 class="section-title reveal">Contre‑indications et précautions d'emploi</h2>
+                    <h2 class="section-title reveal">Contre-indications & Précautions majeures</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong>CI absolues :</strong> Glaucome à angle fermé, rétention d'urine (adénome de la prostate), allergie à l'un des composants. <em>Note : L'Hydroxyzine est également CI en cas de grossesse (au 1er trimestre) et d'allaitement.</em></p>
+                        <p><strong>CI absolues :</strong> Glaucome à angle fermé, rétention d'urine (adénome de la prostate), allergie à l'un des composants.</p>
+                        <p><strong>Note :</strong> L'Hydroxyzine est également CI en cas de <strong>grossesse (au 1er trimestre)</strong> et d'<strong>allaitement</strong>.</p>
                         <p><strong>Précautions :</strong> Sujets âgés (risque majoré de chutes, de confusion, d'effets anticholinergiques), insuffisants hépatiques ou rénaux. L'effet sédatif impose d'arrêter la conduite automobile.</p>
                     </div>
                 </section>
@@ -895,75 +899,103 @@
                         <ul style="padding-left:20px;">
                             <li><strong>Dépresseurs du SNC</strong> (Alcool, benzodiazépines, opioïdes, autres antihistaminiques, neuroleptiques) : risque de somnolence et de dépression respiratoire majoré.</li>
                             <li><strong>Médicaments anticholinergiques</strong> (atropine, antidépresseurs tricycliques, antispasmodiques) : majoration des effets anticholinergiques (sécheresse buccale, constipation, rétention d'urine).</li>
-                            <li><strong>Interaction avec les IMAO</strong> (risque de syndrome sérotoninergique / d'effets centraux).</li>
+                            <li>Interaction avec les <strong>IMAO</strong> (risque de syndrome sérotoninergique/d'effets centraux).</li>
                         </ul>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-grossesse">
-                    <h2 class="section-title reveal">Grossesse et allaitement</h2>
+                    <h2 class="section-title reveal">Grossesse et Allaitement</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong>Grossesse :</strong> À éviter (en particulier au 1er trimestre et près du terme). Préférer un anti-H1 de deuxième génération (non sédatif) si un antihistaminique est indispensable.</p>
+                        <p><strong>Grossesse :</strong> À éviter (en particulier au 1er trimestre et près du terme). Préférer un anti-H1 de deuxième génération (non sédatif) si une antihistaminique est indispensable.</p>
                         <p><strong>Allaitement :</strong> Contre-indiqués ou à éviter, car ils passent dans le lait maternel et peuvent provoquer une sédation, de l'irritabilité ou une apnée chez le nourrisson.</p>
                     </div>
                 </section>
 
-                <section class="section-block" id="section-hydroxyzine">
-                    <h2 class="section-title reveal">1. Hydroxyzine</h2>
+                <section class="section-block" id="section-substances">
+                    <h2 class="section-title reveal">Les substances actives</h2>
+                    
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">1. Hydroxyzine</h3>
                         <p><strong>Générique :</strong> Hydroxyzine.</p>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> Hydroxyl, Hydroxil, Croxizine, Atarax, Durrax.</p>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Hydroxyl')">Hydroxyl</span>,
+                            <span class="drug-link" onclick="showDrugModal('Hydroxil')">Hydroxil</span>,
+                            <span class="drug-link" onclick="showDrugModal('Croxizine')">Croxizine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Atarax')">Atarax</span>,
+                            <span class="drug-link" onclick="showDrugModal('Durrax')">Durrax</span>
+                        </p>
                         <p><strong>Formes pharmaceutiques :</strong> Comprimés (25 mg le plus souvent), Sirop.</p>
-                        <p><strong>Posologie usuelle (Adulte) & Max :</strong><br>
-                        Allergie : 25 à 100 mg par jour.<br>
-                        Anxiété : 50 à 100 mg/j.<br>
-                        Dose max : 100 mg/jour par voie orale (augmentation progressive recommandée).</p>
+                        <p><strong>Posologie usuelle (Adulte) & Max :</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li>Allergie : 25 à 100 mg par jour.</li>
+                            <li>Anxiété : 50 à 100 mg/j.</li>
+                            <li>Dose max : 100 mg/jour par voie orale (augmentation progressive recommandée).</li>
+                        </ul>
                         <p><strong>Particularité :</strong> Effet triple : Antihistaminique H1, Anxiolytique et Hypnotique. Passage BHE très élevé, donc sédation marquée. Effet anticholinergique modéré.</p>
                         <p><strong>Conseil pratique du pharmacien :</strong> Prendre uniquement le soir (comme indiqué sur le schéma "1 x/j le soir" ou fractionné matin/soir en majorant la dose le soir). Recommander de ne pas conduire le lendemain matin. Bien doser le sirop pour les enfants et éviter de donner en cas de risque de glaucome aigu.</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-dexchlorpheniramine">
-                    <h2 class="section-title reveal">2. Dexchlorphéniramine</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">2. Dexchlorphéniramine</h3>
                         <p><strong>Générique :</strong> Dexchlorphéniramine.</p>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> Feniramine, Doramine, Polaramine, Claramne, Histagan, Histone.</p>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Feniramine')">Feniramine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Doramine')">Doramine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Polaramine')">Polaramine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Claramne')">Claramne</span>,
+                            <span class="drug-link" onclick="showDrugModal('Histagan')">Histagan</span>,
+                            <span class="drug-link" onclick="showDrugModal('Histone')">Histone</span>
+                        </p>
                         <p><strong>Formes pharmaceutiques :</strong> Comprimés (souvent 2 mg), Sirop, Ampoules injectables (IM/IV).</p>
                         <p><strong>Posologie usuelle (Adulte) & Max :</strong> 1 comprimé (2 mg) 2 à 3 fois par jour. Dose max : 6 mg par jour.</p>
                         <p><strong>Particularité :</strong> Action prolongée (forme retard pour la Polaramine). Le plus souvent utilisée en 1ère intention pour les allergies saisonnières simples. Effet sédatif modéré à fort.</p>
                         <p><strong>Conseil pratique du pharmacien :</strong> Prendre le soir (ou au coucher) pour limiter l'impact de la somnolence sur la journée. Attention particulière aux conducteurs. Déconseiller la prise d'alcool (potentialisation).</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-ketotifen">
-                    <h2 class="section-title reveal">3. Kétotifène</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">3. Kétotifène</h3>
                         <p><strong>Générique :</strong> Kétotifène.</p>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> Ketof, Tifen, Alerfene, Zaditen, Totilam, Totinal.</p>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Ketof')">Ketof</span>,
+                            <span class="drug-link" onclick="showDrugModal('Tifen')">Tifen</span>,
+                            <span class="drug-link" onclick="showDrugModal('Alerfene')">Alerfene</span>,
+                            <span class="drug-link" onclick="showDrugModal('Zaditen')">Zaditen</span>,
+                            <span class="drug-link" onclick="showDrugModal('Totilam')">Totilam</span>,
+                            <span class="drug-link" onclick="showDrugModal('Totinal')">Totinal</span>
+                        </p>
                         <p><strong>Formes pharmaceutiques :</strong> Comprimés (1 mg), Sirop.</p>
                         <p><strong>Posologie usuelle (Adulte) & Max :</strong> 1 mg le matin et 1 mg le soir (soit 2 mg/jour). Dose max : 4 mg/jour.</p>
                         <p><strong>Particularité :</strong> A un double mécanisme : Anti-H1 + Stabilisateur de mastocytes. Utilisé dans la prophylaxie de l'asthme allergique. Effet sédatif fréquent (surtout en début de traitement, s'estompe avec le temps).</p>
                         <p><strong>Conseil pratique du pharmacien :</strong> Prévenir le patient que ce n'est pas un médicament "de crise" pour l'asthme, mais un traitement de fond. Lui dire que la somnolence peut s'atténuer après 5 à 7 jours de traitement ; s'il déprime trop, conseiller une prise uniquement le soir.</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-mequitazine">
-                    <h2 class="section-title reveal">4. Méquitazine</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">4. Méquitazine</h3>
                         <p><strong>Générique :</strong> Méquitazine.</p>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> Natazine, Primalan.</p>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Natazine')">Natazine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Primalan')">Primalan</span>
+                        </p>
                         <p><strong>Formes pharmaceutiques :</strong> Comprimés (5 mg ou 10 mg).</p>
                         <p><strong>Posologie usuelle (Adulte) & Max :</strong> 1 cp (5 mg) le matin et 2 cp (10 mg) le soir. Dose max : 30 mg/jour.</p>
                         <p><strong>Particularité :</strong> Sédatif moindre par rapport aux autres H1 de 1ère génération (comme l'hydroxyzine). Longue durée d'action (12 à 24h). Bonne efficacité antihistaminique.</p>
                         <p><strong>Conseil pratique du pharmacien :</strong> Bien qu'elle soit moins sédative, recommander de tester la réaction individuelle avant de conduire. À prendre au moment des repas pour limiter les éventuels troubles digestifs.</p>
                     </div>
-                </section>
 
-                <section class="section-block" id="section-cyproheptadine">
-                    <h2 class="section-title reveal">5. Cyproheptadine</h2>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">5. Cyproheptadine</h3>
                         <p><strong>Générique :</strong> Cyproheptadine.</p>
-                        <p><strong>Noms commerciaux (Algérie) :</strong> Lapeti, Super appetie, Ciptadine, Periactine, Modestamine, Heptal, Heptagyl, Heptafort.</p>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Lapeti')">Lapeti</span>,
+                            <span class="drug-link" onclick="showDrugModal('Super appetie')">Super appetie</span>,
+                            <span class="drug-link" onclick="showDrugModal('Ciptadine')">Ciptadine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Periactine')">Periactine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Modestamine')">Modestamine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Heptal')">Heptal</span>,
+                            <span class="drug-link" onclick="showDrugModal('Heptagyl')">Heptagyl</span>,
+                            <span class="drug-link" onclick="showDrugModal('Heptafort')">Heptafort</span>
+                        </p>
                         <p><strong>Formes pharmaceutiques :</strong> Comprimés (4 mg), Sirop.</p>
                         <p><strong>Posologie usuelle (Adulte) & Max :</strong> 4 mg (1 cp) 3 à 4 fois par jour. Dose max : 32 mg/jour.</p>
                         <p><strong>Particularité :</strong> Effet orexigène (ouvre l'appétit) très marqué (blocage des récepteurs H1 et sérotonine 5-HT2). Effet sédatif très fort et effet anticholinergique présent.</p>
@@ -972,129 +1004,61 @@
                 </section>
 
                 <section class="section-block" id="section-conseil" style="border-bottom: none;">
-                    <h2 class="section-title reveal">💡 Le conseil « Chef de rayon » à transmettre à tous vos patients</h2>
+                    <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p>"Cette classe de médicaments est excellente pour les allergies, mais elle endort. Pour votre sécurité, prenez la dose quotidienne en une seule prise le soir au coucher. Ne conduisez pas le lendemain si vous vous sentez encore fatigué, et surtout, évitez la consommation d'alcool pendant le traitement."</p>
+                        <p><strong>💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :</strong></p>
+                        <p style="font-size: 1.1rem; margin-top: 15px; padding: 20px; background: rgba(0, 188, 212, 0.1); border-radius: 12px; border-left: 4px solid var(--primary);">
+                            "Cette classe de médicaments est excellente pour les allergies, mais elle endort. Pour votre sécurité, prenez la dose quotidienne en une seule prise le soir au coucher. Ne conduisez pas le lendemain si vous vous sentez encore fatigué, et surtout, évitez la consommation d'alcool pendant le traitement."
+                        </p>
                     </div>
                 </section>
             </div>
 
-            <!-- EXAMEN CONTENT -->
+            <!-- EXAMEN CONTENT (QCM à choix multiples) -->
             <div id="examContent" style="display: none;">
                 <div class="qcm-instruction card reveal reveal-delay-1">
                     <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
                 </div>
-
                 <section class="section-block" id="exam-question1">
                     <h2 class="section-title reveal">Question 1</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels sont des antihistaminiques H1 de première génération ?</strong></p>
-                        <label><input type="checkbox" name="q1" value="a"> Hydroxyzine</label>
-                        <label><input type="checkbox" name="q1" value="b"> Dexchlorphéniramine</label>
-                        <label><input type="checkbox" name="q1" value="c"> Cétirizine</label>
-                        <label><input type="checkbox" name="q1" value="d"> Kétotifène</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quel est le mécanisme d'action des antihistaminiques H1 de 1ère génération ?</strong></p><label><input type="checkbox" name="q1" value="a"> Antagonistes compétitifs des récepteurs H1</label><label><input type="checkbox" name="q1" value="b"> Traversent facilement la BHE</label><label><input type="checkbox" name="q1" value="c"> Effet sédatif marqué</label><label><input type="checkbox" name="q1" value="d"> Bloquent les récepteurs bêta-adrénergiques</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question2">
                     <h2 class="section-title reveal">Question 2</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels effets sont caractéristiques des antihistaminiques H1 de 1ère génération ?</strong></p>
-                        <label><input type="checkbox" name="q2" value="a"> Sédation</label>
-                        <label><input type="checkbox" name="q2" value="b"> Effet anticholinergique</label>
-                        <label><input type="checkbox" name="q2" value="c"> Passage facile de la BHE</label>
-                        <label><input type="checkbox" name="q2" value="d"> Absence de passage BHE</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les indications des antihistaminiques H1 de 1ère génération ?</strong></p><label><input type="checkbox" name="q2" value="a"> Rhinites allergiques</label><label><input type="checkbox" name="q2" value="b"> Urticaire et prurit</label><label><input type="checkbox" name="q2" value="c"> Hypertension artérielle</label><label><input type="checkbox" name="q2" value="d"> Anxiété (Hydroxyzine)</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question3">
                     <h2 class="section-title reveal">Question 3</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quelles sont les indications de l'Hydroxyzine ?</strong></p>
-                        <label><input type="checkbox" name="q3" value="a"> Allergie</label>
-                        <label><input type="checkbox" name="q3" value="b"> Anxiété</label>
-                        <label><input type="checkbox" name="q3" value="c"> Insomnie</label>
-                        <label><input type="checkbox" name="q3" value="d"> Asthme aigu</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les contre-indications absolues des antihistaminiques H1 de 1ère génération ?</strong></p><label><input type="checkbox" name="q3" value="a"> Glaucome à angle fermé</label><label><input type="checkbox" name="q3" value="b"> Rétention d'urine (adénome de la prostate)</label><label><input type="checkbox" name="q3" value="c"> Allergie à l'un des composants</label><label><input type="checkbox" name="q3" value="d"> Rhinite allergique</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question4">
                     <h2 class="section-title reveal">Question 4</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quelles sont les contre-indications absolues des anti-H1 de 1ère génération ?</strong></p>
-                        <label><input type="checkbox" name="q4" value="a"> Glaucome à angle fermé</label>
-                        <label><input type="checkbox" name="q4" value="b"> Rétention d'urine (adénome de la prostate)</label>
-                        <label><input type="checkbox" name="q4" value="c"> Allergie à l'un des composants</label>
-                        <label><input type="checkbox" name="q4" value="d"> Insuffisance hépatique légère</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les interactions médicamenteuses majeures ?</strong></p><label><input type="checkbox" name="q4" value="a"> Dépresseurs du SNC (alcool, benzodiazépines)</label><label><input type="checkbox" name="q4" value="b"> Médicaments anticholinergiques</label><label><input type="checkbox" name="q4" value="c"> IMAO</label><label><input type="checkbox" name="q4" value="d"> Antibiotiques</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question5">
                     <h2 class="section-title reveal">Question 5</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels sont les risques de l'association d'un anti-H1 de 1ère génération avec l'alcool ?</strong></p>
-                        <label><input type="checkbox" name="q5" value="a"> Somnolence accrue</label>
-                        <label><input type="checkbox" name="q5" value="b"> Dépression respiratoire</label>
-                        <label><input type="checkbox" name="q5" value="c"> Hémorragie digestive</label>
-                        <label><input type="checkbox" name="q5" value="d"> Potentialisation des effets sédatifs</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la grossesse et l'allaitement avec les antihistaminiques H1 de 1ère génération :</strong></p><label><input type="checkbox" name="q5" value="a"> À éviter au 1er trimestre</label><label><input type="checkbox" name="q5" value="b"> Préférer un anti-H1 de 2ème génération si indispensable</label><label><input type="checkbox" name="q5" value="c"> Contre-indiqués pendant l'allaitement</label><label><input type="checkbox" name="q5" value="d"> Sans danger pendant toute la grossesse</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question6">
                     <h2 class="section-title reveal">Question 6</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Concernant la Cyproheptadine, quelles affirmations sont correctes ?</strong></p>
-                        <label><input type="checkbox" name="q6" value="a"> Elle a un effet orexigène</label>
-                        <label><input type="checkbox" name="q6" value="b"> Elle est très sédative</label>
-                        <label><input type="checkbox" name="q6" value="c"> Elle bloque les récepteurs 5-HT2</label>
-                        <label><input type="checkbox" name="q6" value="d"> Elle est indiquée dans le glaucome</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant l'Hydroxyzine :</strong></p><label><input type="checkbox" name="q6" value="a"> Effet triple : antihistaminique, anxiolytique, hypnotique</label><label><input type="checkbox" name="q6" value="b"> Dose max : 100 mg/jour</label><label><input type="checkbox" name="q6" value="c"> Sédation marquée</label><label><input type="checkbox" name="q6" value="d"> Effet anticholinergique absent</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question7">
                     <h2 class="section-title reveal">Question 7</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quels conseils donner à un patient sous anti-H1 de 1ère génération ?</strong></p>
-                        <label><input type="checkbox" name="q7" value="a"> Prendre le médicament le soir</label>
-                        <label><input type="checkbox" name="q7" value="b"> Ne pas conduire</label>
-                        <label><input type="checkbox" name="q7" value="c"> Éviter l'alcool</label>
-                        <label><input type="checkbox" name="q7" value="d"> Prendre le matin à jeun</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Dexchlorphéniramine :</strong></p><label><input type="checkbox" name="q7" value="a"> Action prolongée (forme retard)</label><label><input type="checkbox" name="q7" value="b"> Dose max : 6 mg/jour</label><label><input type="checkbox" name="q7" value="c"> Utilisée en 1ère intention pour allergies saisonnières</label><label><input type="checkbox" name="q7" value="d"> Effet sédatif nul</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question8">
                     <h2 class="section-title reveal">Question 8</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Concernant le Kétotifène, quelles affirmations sont correctes ?</strong></p>
-                        <label><input type="checkbox" name="q8" value="a"> Il stabilise les mastocytes</label>
-                        <label><input type="checkbox" name="q8" value="b"> Il est utilisé en prophylaxie de l'asthme allergique</label>
-                        <label><input type="checkbox" name="q8" value="c"> C'est un traitement de la crise d'asthme</label>
-                        <label><input type="checkbox" name="q8" value="d"> La somnolence peut s'estomper après 5 à 7 jours</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Kétotifène :</strong></p><label><input type="checkbox" name="q8" value="a"> Double mécanisme : Anti-H1 + Stabilisateur de mastocytes</label><label><input type="checkbox" name="q8" value="b"> Utilisé dans la prophylaxie de l'asthme allergique</label><label><input type="checkbox" name="q8" value="c"> Dose max : 4 mg/jour</label><label><input type="checkbox" name="q8" value="d"> Médicament de crise pour l'asthme</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question9">
                     <h2 class="section-title reveal">Question 9</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Quelles substances sont contre-indiquées ou à éviter pendant l'allaitement ?</strong></p>
-                        <label><input type="checkbox" name="q9" value="a"> Hydroxyzine</label>
-                        <label><input type="checkbox" name="q9" value="b"> Dexchlorphéniramine</label>
-                        <label><input type="checkbox" name="q9" value="c"> Méquitazine</label>
-                        <label><input type="checkbox" name="q9" value="d"> Loratadine (anti-H1 de 2e génération)</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Cyproheptadine :</strong></p><label><input type="checkbox" name="q9" value="a"> Effet orexigène marqué</label><label><input type="checkbox" name="q9" value="b"> Sédation très forte</label><label><input type="checkbox" name="q9" value="c"> Dose max : 32 mg/jour</label><label><input type="checkbox" name="q9" value="d"> Bloque les récepteurs H1 et 5-HT2</label></div>
                 </section>
-
                 <section class="section-block" id="exam-question10">
                     <h2 class="section-title reveal">Question 10</h2>
-                    <div class="card question-card reveal reveal-delay-1">
-                        <p><strong>Concernant la Dexchlorphéniramine, quelles affirmations sont correctes ?</strong></p>
-                        <label><input type="checkbox" name="q10" value="a"> Elle existe en comprimés, sirop et ampoules injectables</label>
-                        <label><input type="checkbox" name="q10" value="b"> La dose maximale est de 6 mg/jour</label>
-                        <label><input type="checkbox" name="q10" value="c"> Elle est souvent utilisée en première intention pour les allergies saisonnières</label>
-                        <label><input type="checkbox" name="q10" value="d"> Elle n'a aucun effet sédatif</label>
-                    </div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quel est le conseil principal à donner aux patients sous antihistaminiques H1 de 1ère génération ?</strong></p><label><input type="checkbox" name="q10" value="a"> Prendre le soir au coucher</label><label><input type="checkbox" name="q10" value="b"> Ne pas conduire si somnolence</label><label><input type="checkbox" name="q10" value="c"> Éviter l'alcool</label><label><input type="checkbox" name="q10" value="d"> Prendre le matin à jeun</label></div>
                 </section>
-
                 <section class="section-block" style="border-bottom: none;">
                     <div class="card reveal reveal-delay-1" style="text-align: center;">
                         <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
@@ -1107,6 +1071,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1119,6 +1084,7 @@
         <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
     </footer>
 
+    <!-- Drug Images Modal -->
     <div class="modal-overlay" id="drugModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeDrugModal()">&times;</button>
@@ -1128,6 +1094,7 @@
     </div>
 
     <script>
+        // Stars
         (function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -1146,16 +1113,18 @@
             container.appendChild(fragment);
         })();
 
+        // Reveal animations
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+        // ==================== SIDE DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
         const sideDotsContainer = document.getElementById('sideDots');
         const originalLessonDotsHTML = sideDotsContainer.innerHTML;
 
         const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
-            'grossesse', 'hydroxyzine', 'dexchlorpheniramine', 'ketotifen', 'mequitazine', 'cyproheptadine', 'conseil'
+            'grossesse', 'substances', 'conseil'
         ];
         const examSectionIDs = [
             'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
@@ -1170,7 +1139,8 @@
             let html = '';
             examSectionIDs.forEach((id, index) => {
                 const activeClass = index === 0 ? ' active' : '';
-                html += `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
+                html +=
+                    `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
             });
             return html;
         }
@@ -1211,6 +1181,7 @@
 
         window.addEventListener('scroll', updateActiveDot, { passive: true });
 
+        // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
         const mobileOverlay = document.getElementById('mobileMenuOverlay');
         const closeBtn = document.getElementById('closeMobileMenu');
@@ -1229,6 +1200,7 @@
             }
         });
 
+        // Nav hide on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -1238,6 +1210,7 @@
             lastScroll = st;
         }, { passive: true });
 
+        // Theme
         const themeToggle = document.getElementById('themeToggle');
         const htmlEl = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1249,42 +1222,8 @@
             localStorage.setItem('theme', next);
         });
 
-        const drugImages = {
-            'Doliprane': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533105/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Doliprane.png'],
-            'Rapifen': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533113/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Rapifen.png'],
-            'Supramadol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533111/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Supramadol.png'],
-            'Xamadol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533110/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Xamadol.png'],
-            'Zodid': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533110/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Zodid.png'],
-            'Temgesic': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533110/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Temgesic.png'],
-            'Skénan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533109/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Sk%C3%A9nan.png'],
-            'Supradolex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533109/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Supradolex.png'],
-            'Planadix': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533109/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Planadix.png'],
-            'Sapramol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533108/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Sapramol.png'],
-            'Paramol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533108/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Paramol.png'],
-            'Efferalgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Efferalgan.png'],
-            'Paralgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Paralgan.png'],
-            'Panadol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Panadol_Advance.avif'],
-            'Dafalgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dafalgan.png'],
-            'Panadol Extra': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Panadol_Extra.jpg'],
-            'Oxynorm': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Oxynorm.png'],
-            'Expandol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533106/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Expandol.png'],
-            'Dolyc': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533106/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dolyc.png'],
-            'Efferalgan VC': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533106/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Efferalgan_VC.png'],
-            'Durogesic': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533105/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Durogesic.webp'],
-            'Di‑Dolex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Di-Dolex.png'],
-            'Dolex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dolex.png'],
-            'Dofebril': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dofebril.png'],
-            'Catalgine': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Catalgine.png'],
-            'Dofebril VC': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533103/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dofebril_VC.png'],
-            'Co‑Dolyc': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533103/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Co-Dolyc.png'],
-            'Coparalgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Coparalgan.png'],
-            'Buprenal': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Buprenal.png'],
-            'Aspegic': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Aspegic.png'],
-            'Codoliprane': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Codoliprane.png'],
-            'Aspirine': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Aspirine.png'],
-            'Co‑paramol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Co-paramol.png'],
-            'Actiskénan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533101/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Actisk%C3%A9nan.png']
-        };
+        // ==================== IMAGES DES MÉDICAMENTS ====================
+        const drugImages = {}; // Aucune image fournie pour les antihistaminiques, le modal affichera un placeholder.
 
         function showDrugModal(drugName) {
             const modal = document.getElementById('drugModal');
@@ -1292,7 +1231,8 @@
             const container = document.getElementById('modalImagesContainer');
             container.innerHTML = '';
             const imgs = drugImages[drugName] || [];
-            if (!imgs.length) container.innerHTML = '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
             else imgs.forEach(src => {
                 const img = document.createElement('img');
                 img.src = src;
@@ -1315,6 +1255,7 @@
             if (e.key === 'Escape') closeDrugModal();
         });
 
+        // Toggle Lesson/Examen
         const btnLesson = document.getElementById('btnLesson');
         const btnExamen = document.getElementById('btnExamen');
         const lessonContent = document.getElementById('lessonContent');
@@ -1346,16 +1287,17 @@
         btnLesson.addEventListener('click', showLesson);
         btnExamen.addEventListener('click', showExam);
 
+        // ==================== EXAM QCM LOGIC ====================
         const correctAnswers = {
-            q1: ['a', 'b', 'd'],
-            q2: ['a', 'b', 'c'],
+            q1: ['a', 'b', 'c'],
+            q2: ['a', 'b', 'd'],
             q3: ['a', 'b', 'c'],
             q4: ['a', 'b', 'c'],
-            q5: ['a', 'b', 'd'],
+            q5: ['a', 'b', 'c'],
             q6: ['a', 'b', 'c'],
             q7: ['a', 'b', 'c'],
-            q8: ['a', 'b', 'd'],
-            q9: ['a', 'b', 'c'],
+            q8: ['a', 'b', 'c'],
+            q9: ['a', 'b', 'c', 'd'],
             q10: ['a', 'b', 'c']
         };
 
@@ -1400,7 +1342,8 @@
             }
 
             const pct = Math.round((totalScore / totalQuestions) * 100);
-            let msg = `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            let msg =
+                `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
             if (pct >= 80) msg += "🌟 Excellent !";
             else if (pct >= 50) msg += "📚 Continuez à réviser.";
             else msg += "🔍 Révisez le cours et réessayez.";
@@ -1417,6 +1360,7 @@
         }
         document.getElementById('resetExam').addEventListener('click', resetExam);
 
+        // Initialisation
         updateActiveDot();
     </script>
 </body>
