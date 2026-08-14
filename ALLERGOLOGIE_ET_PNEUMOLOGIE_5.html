@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur les antiasthmatiques et leurs mécanismes - GhaniPharma">
+    <meta name="keywords" content="pharmacie, antiasthmatiques, salbutamol, ventoline, corticoïdes inhalés, fluticasone, budesonide, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Les Antiasthmatiques - GhaniPharma">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Les Antiasthmatiques | GhaniPharma</title>
+    <!-- أيقونة الموقع -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ----- الأنماط العامة ----- */
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --btn-hover-shadow: rgba(0, 188, 212, 0.5);
+            --card-hover-border: rgba(0, 188, 212, 0.5);
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(255, 255, 255, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --btn-hover-shadow: rgba(0, 151, 167, 0.4);
+            --card-hover-border: rgba(0, 151, 167, 0.5);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-border: rgba(0, 0, 0, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.8);
+            }
+        }
+        [data-theme="light"] .star {
+            animation: none !important;
+            opacity: 0.15 !important;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+        .top-nav.hidden {
+            transform: translateY(-100%);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+        .nav-logo:hover {
+            color: var(--text-heading);
+            transform: scale(1.05);
+        }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: none;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
+            }
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+        .nav-link {
+            position: relative;
+            padding: 10px 22px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-link:hover {
+            color: var(--text-heading);
+            background: rgba(128, 128, 128, 0.1);
+        }
+        .nav-link.active {
+            color: #fff;
+            background: rgba(0, 188, 212, 0.2);
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%;
+            max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup {
+            transform: scale(1);
+        }
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            background: var(--bg-glass);
+            border-radius: 60px;
+            color: var(--text-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.1);
+            transform: translateX(6px);
+        }
+        .mobile-nav-link i {
+            color: var(--primary);
+            width: 28px;
+            font-size: 1.3rem;
+        }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
+        }
+        .theme-toggle i {
+            transition: all 0.5s ease;
+        }
+        [data-theme="dark"] .theme-toggle .fa-moon {
+            display: inline-block;
+        }
+        [data-theme="dark"] .theme-toggle .fa-sun {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-moon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-sun {
+            display: inline-block;
+            color: #f39c12;
+        }
+        [data-theme="light"] .theme-toggle {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .toggle-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        .toggle-btn:hover {
+            border-color: var(--primary);
+            color: var(--text-heading);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        .toggle-btn.active {
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .side-dots {
+            position: fixed;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        .dot:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+        }
+        .dot.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+        }
+        .dot-tooltip {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+        .dot:hover .dot-tooltip {
+            opacity: 1;
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-top: 90px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-block {
+            padding: 80px 0;
+            position: relative;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
+        }
+        .section-block:last-of-type {
+            border-bottom: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: var(--card-hover-border);
+        }
+        .drug-link {
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .drug-link:hover {
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            padding: 40px 30px;
+            position: relative;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.8rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .modal-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+        }
+        .modal-placeholder {
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+            border: 2px dashed var(--border-glass);
+            border-radius: 16px;
+        }
+
+        /* Exam / QCM styles */
+        .question-card label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .question-card label:hover {
+            background: rgba(0, 188, 212, 0.05);
+        }
+        .question-card input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: var(--primary);
+        }
+        .correct-answer {
+            background: rgba(0, 200, 0, 0.2) !important;
+            border-left: 4px solid #00c853 !important;
+        }
+        .wrong-answer {
+            background: rgba(255, 0, 0, 0.2) !important;
+            border-left: 4px solid #ff1744 !important;
+        }
+        .missed-answer {
+            background: rgba(255, 200, 0, 0.2) !important;
+            border-left: 4px solid #ffc107 !important;
+        }
+        .result-message {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        .qcm-instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px;
+            padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-heading);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
+        }
+        .social-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            .side-dots {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none !important;
+            }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 25px 20px;
+            }
+            .toggle-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <!-- Header -->
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side dots -->
+    <div class="side-dots" id="sideDots">
+        <div class="dot active" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
+        <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
+        <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre-indications</span></div>
+        <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
+        <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
+        <div class="dot" data-dot="csi"><span class="dot-tooltip">Corticoïdes inhalés</span></div>
+        <div class="dot" data-dot="associations"><span class="dot-tooltip">Associations</span></div>
+        <div class="dot" data-dot="bdca"><span class="dot-tooltip">BDCA</span></div>
+        <div class="dot" data-dot="bdla"><span class="dot-tooltip">BDLA</span></div>
+        <div class="dot" data-dot="antileucotrienes"><span class="dot-tooltip">Antileucotriènes</span></div>
+        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <!-- Hero / Toggle -->
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-lungs"></i> PNEUMOLOGIE ET ALLERGOLOGIE</div>
+                <h1 class="hero-title reveal reveal-delay-1">LES ANTIASTHMATIQUES</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">Mécanismes, indications, contre-indications et conseils à l'officine.</p>
+                <div class="toggle-buttons reveal reveal-delay-3">
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Leçon</button>
+                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
+                </div>
+            </section>
+
+            <!-- LESSON CONTENT -->
+            <div id="lessonContent">
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal">1. Mécanisme d'action (en langage simple)</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p>L'asthme est une maladie allergique et inflammatoire qui entraîne une obstruction des bronches. Les traitements agissent sur deux leviers :</p>
+                        <ul style="padding-left:20px; margin-top:10px;">
+                            <li><strong>Les Anti-inflammatoires (Corticoïdes inhalés) :</strong> Ils réduisent l'œdème et l'inflammation de la muqueuse bronchique. C'est le "fond" du traitement.</li>
+                            <li><strong>Les Bronchodilatateurs (β2-agonistes, Anticholinergiques) :</strong> Ils relâchent le muscle lisse bronchique pour élargir les voies respiratoires. C'est le "soulagement".</li>
+                            <li><strong>Les Antileucotriènes (Montelukast) :</strong> Ils bloquent les récepteurs des substances chimiques responsables de l'inflammation allergique.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-indications">
+                    <h2 class="section-title reveal">2. Indications générales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong>Asthme persistant :</strong> Traitement de fond (Corticoïdes inhalés) + traitement de crise (β2 courte action).</li>
+                            <li><strong>BPCO (Bronchopneumopathie Chronique Obstructive) :</strong> Utilisation des bronchodilatateurs (courte et longue action) et parfois des corticoïdes inhalés.</li>
+                        </ul>
+                        <p style="margin-top:15px; padding:15px; background: rgba(255, 152, 0, 0.1); border-radius:10px; border-left:4px solid #ff9800;">
+                            <strong>⚠️ Note importante :</strong> Les corticoïdes inhalés NE SOULAGENT PAS la crise aiguë.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal">3. Contre-indications & Précautions majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong>Contre-indications :</strong> Allergie connue à l'un des composants.</p>
+                        <p style="margin-top:15px;"><strong>Précautions d'emploi :</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li><strong>Cardiovasculaires :</strong> Les β2-agonistes peuvent entraîner tachycardie et palpitations (prudence chez les insuffisants coronariens).</li>
+                            <li><strong>Ophtalmologique :</strong> Les anticholinergiques (Ipratropium, Tiotropium) sont contre-indiqués en cas de glaucome à angle fermé ; attention aux projections dans les yeux.</li>
+                            <li><strong>Infections :</strong> Ne pas arrêter brutalement les corticoïdes inhalés, la muqueuse se déprime.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal">4. Interactions médicamenteuses majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong>β-bloquants (même en collyre) :</strong> Risque de bronchospasme sévère et annulation de l'effet des β2-agonistes. À contre-indiquer formellement chez un asthmatique.</li>
+                            <li><strong>Diurétiques hypokaliémiants + Corticoïdes + β2-agonistes :</strong> Risque majoré d'hypokaliémie.</li>
+                            <li><strong>Cimétidine, Quinolones, Macrolides :</strong> Augmentent les taux sériques de Théophylline (risque de toxicité).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal">5. Grossesse et Allaitement</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong>Règle générale :</strong> L'asthme non traité est plus dangereux pour la mère et le fœtus que les traitements inhalés. Le rapport bénéfice/risque est favorable.</p>
+                        <ul style="padding-left:20px; margin-top:10px;">
+                            <li><strong>Corticoïdes inhalés et β2-agonistes inhalés :</strong> Considérés comme sûrs pendant la grossesse et l'allaitement.</li>
+                            <li><strong>Montelukast :</strong> Possibilité d'utilisation si strictement nécessaire.</li>
+                        </ul>
+                        <p style="margin-top:15px; padding:15px; background: rgba(0, 188, 212, 0.1); border-radius:10px; border-left:4px solid var(--primary);">
+                            <strong>💡 Conseil pratique :</strong> Le traitement de fond doit être poursuivi, sous peine de complications.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-csi">
+                    <h2 class="section-title reveal">A. CORTICOÏDES INHALÉS (Traitement de fond)</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">1. Fluticasone</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Flixotide')">Flixotide</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol (pMDI), Disque (DPI - poudre).</p>
+                        <p><strong>Posologie adulte :</strong> 100 à 500 µg, 2 fois par jour. Max : 1000 µg/jour (formes dosées à 250 µg).</p>
+                        <p><strong>Particularité :</strong> Puissance anti-inflammatoire très élevée, affinité pour les récepteurs plus forte que la béclométasone.</p>
+                        <p><strong>Conseil pratique :</strong> Expliquer absolument qu'il ne s'agit pas d'un médicament de crise. Rincer la bouche avec de l'eau après chaque prise et cracher, pour éviter les mycoses (Candida) et la raucité de la voix.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">2. Béclométasone</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Clenil')">Clenil</span>,
+                            <span class="drug-link" onclick="showDrugModal('Beclate')">Beclate</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol (pMDI).</p>
+                        <p><strong>Posologie adulte :</strong> 100 à 200 µg, 2 fois par jour. Max : 500 µg/jour.</p>
+                        <p><strong>Particularité :</strong> Produit de référence, début d'action plus lent.</p>
+                        <p><strong>Conseil pratique :</strong> Idem Fluticasone → rincer la bouche.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">3. Budésonide</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Budecort')">Budecort</span>,
+                            <span class="drug-link" onclick="showDrugModal('Pulmicort')">Pulmicort</span>
+                        </p>
+                        <p><strong>Formes :</strong> Turbuhaler (poudre sèche), suspension pour nébulisation.</p>
+                        <p><strong>Posologie adulte :</strong> 200 à 400 µg, 2 fois par jour.</p>
+                        <p><strong>Particularité :</strong> Excellente métabolisation locale au niveau pulmonaire (bonne tolérance).</p>
+                        <p><strong>Conseil pratique :</strong> Éviter l'humidité dans le Turbuhaler (le garder bien fermé après utilisation). Rincer la bouche après chaque utilisation.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-associations">
+                    <h2 class="section-title reveal">B. ASSOCIATIONS FIXES (Anti-inflammatoire + Bronchodilatateur)</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">4. Fluticasone + Salmétérol</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Seretide')">Seretide</span>,
+                            <span class="drug-link" onclick="showDrugModal('Brequal')">Brequal</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol, Disque.</p>
+                        <p><strong>Posologie adulte :</strong> 1 à 2 bouffées, 2 fois par jour.</p>
+                        <p><strong>Particularité :</strong> Salmétérol a un début d'action lent, il ne sert pas en crise.</p>
+                        <p><strong>Conseil pratique :</strong> À utiliser matin et soir à heures fixes. Rincer la bouche après usage.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">5. Béclométasone + Formotérol</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Foster')">Foster</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol (avec chambre d'inhalation intégrée / Airstar).</p>
+                        <p><strong>Posologie adulte :</strong> 1 à 2 bouffées, 2 fois par jour.</p>
+                        <p><strong>Particularité :</strong> Le formotérol a un effet immédiat (peut servir en thérapie SMART - secours et fond).</p>
+                        <p><strong>Conseil pratique :</strong> Rincer la bouche. Utiliser l'inhalateur avec le capuchon ouvert pour l'efficacité.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">6. Budésonide + Formotérol</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Symbicort')">Symbicort</span>,
+                            <span class="drug-link" onclick="showDrugModal('Foracort')">Foracort</span>
+                        </p>
+                        <p><strong>Formes :</strong> Turbuhaler.</p>
+                        <p><strong>Posologie adulte :</strong> 2 bouffées, 1 à 2 fois par jour.</p>
+                        <p><strong>Particularité :</strong> Flexibilité d'utilisation (peut être utilisé également comme traitement de crise en fonction du schéma prescrit).</p>
+                        <p><strong>Conseil pratique :</strong> Rincer la bouche. Ne pas secouer le Turbuhaler.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-bdca">
+                    <h2 class="section-title reveal">C. BRONCHODILATATEURS COURTE ACTION (BDCA - Les "Crises")</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">7. Salbutamol</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Ventoline')">Ventoline</span>,
+                            <span class="drug-link" onclick="showDrugModal('Aerolin')">Aerolin</span>,
+                            <span class="drug-link" onclick="showDrugModal('Asthalin')">Asthalin</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rabwalyse')">Rabwalyse</span>,
+                            <span class="drug-link" onclick="showDrugModal('Koxma')">Koxma</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol, solution pour nébulisation.</p>
+                        <p><strong>Posologie adulte :</strong> 1 à 2 bouffées lors de la crise. Max 8 à 12 bouffées / 24 heures.</p>
+                        <p><strong>Particularité :</strong> Début d'action ultra rapide (3 à 5 minutes), durée 4 à 6 heures.</p>
+                        <p><strong>Conseil pratique :</strong> Le médicament du soulagement. S'il a besoin de l'utiliser plus de 3 fois par semaine, signalez au médecin que son asthme est mal contrôlé. Bien coordonner l'inspiration.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">8. Terbutaline</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Bricanyl')">Bricanyl</span>,
+                            <span class="drug-link" onclick="showDrugModal('Isobutaline')">Isobutaline</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol, comprimés.</p>
+                        <p><strong>Posologie adulte :</strong> 1 bouffée en crise. Comprimés : 1 cp 3 fois/jour pour les formes sévères (rarement utilisé).</p>
+                        <p><strong>Particularité :</strong> Efficacité similaire au Salbutamol.</p>
+                        <p><strong>Conseil pratique :</strong> Les formes comprimés ne sont quasiment plus utilisées en première intention à cause des effets systémiques (tremblements).</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">9. Ipratropium (Anticholinergique)</h3>
+                        <p><strong>Nom commercial :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Atrovent')">Atrovent</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol, solution nébulisation.</p>
+                        <p><strong>Posologie adulte :</strong> 2 bouffées, 4 fois par jour (ou plus selon prescription).</p>
+                        <p><strong>Particularité :</strong> Début d'action lent (15-30 min), durée 6-8h. Plus adapté à la BPCO.</p>
+                        <p><strong>Conseil pratique :</strong> Informez le patient de faire attention aux yeux ! Les projections dans l'œil peuvent entraîner une crise de glaucome aigu, des douleurs oculaires et une vision floue.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-bdla">
+                    <h2 class="section-title reveal">D. BRONCHODILATATEURS LONGUE ACTION (BDLA - Traitement de fond)</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">10. Salmétérol</h3>
+                        <p><strong>Nom commercial :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Serevent')">Serevent</span>
+                        </p>
+                        <p><strong>Formes :</strong> Disque (poudre).</p>
+                        <p><strong>Posologie adulte :</strong> 1 inhalation (50 µg) matin et soir.</p>
+                        <p><strong>Particularité :</strong> Début d'action lent (30 à 60 min). CONTRE-INDIQUÉ pour la crise aiguë. Son utilisation seule augmente le risque de mortalité asthmatique (toujours associé à un corticoïde).</p>
+                        <p><strong>Conseil pratique :</strong> Rappeler de ne jamais l'utiliser pour une crise, mais matin et soir.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">11. Formotérol</h3>
+                        <p><strong>Nom commercial :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Foradil')">Foradil</span>
+                        </p>
+                        <p><strong>Formes :</strong> Aérosol, poudre.</p>
+                        <p><strong>Posologie adulte :</strong> 1 à 2 inhalations 2 fois/jour.</p>
+                        <p><strong>Particularité :</strong> A la particularité d'avoir un effet rapide (comme le salbutamol) et prolongé (12h). Très utilisé dans les traitements "SMART".</p>
+                        <p><strong>Conseil pratique :</strong> Même indication que le Salmétérol, mais il peut aussi servir pour la crise.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">12. Tiotropium (Anticholinergique longue action)</h3>
+                        <p><strong>Nom commercial :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Spiriva')">Spiriva</span>
+                        </p>
+                        <p><strong>Formes :</strong> HandiHaler (gélules à inhaler), Respimat (brumisateur).</p>
+                        <p><strong>Posologie adulte :</strong> 1 gélule ou 1 bouffée par jour.</p>
+                        <p><strong>Particularité :</strong> Durée d'action de 24 heures. Indiqué principalement dans la BPCO, parfois en asthme sévère non contrôlé.</p>
+                        <p><strong>Conseil pratique :</strong> Apprendre au patient à avaler uniquement la dose (la gélule n'est pas pour le réservoir de l'inhalateur, il faut percer la gélule dans le HandiHaler, puis inhaler). Ne surtout pas toucher les yeux avec les doigts après.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">13. Théophylline</h3>
+                        <p><strong>Nom commercial :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Theostat')">Theostat</span> (et génériques LP)
+                        </p>
+                        <p><strong>Formes :</strong> Comprimés à libération prolongée (LP).</p>
+                        <p><strong>Posologie adulte :</strong> La dose est adaptée individuellement en fonction du dosage plasmatique (taux thérapeutique étroit de 5 à 15 mg/L).</p>
+                        <p><strong>Particularité :</strong> Ancienne molécule, bronchodilatatrice + anti-inflammatoire modérée. Beaucoup de risques de toxicité (nausées, céphalées, tachycardie, convulsions).</p>
+                        <p><strong>Conseil pratique :</strong> Surveillance stricte. Conseiller au patient de ne jamais modifier les doses, de signaler tout effet indésirable (palpitations, insomnie) et de respecter la prise au coucher.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-antileucotrienes">
+                    <h2 class="section-title reveal">E. ANTILEUCOTRIÈNES (Asthme léger / allergique)</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">14. Montélukast</h3>
+                        <p><strong>Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Montelair')">Montelair</span>,
+                            <span class="drug-link" onclick="showDrugModal('Singulair')">Singulair</span>,
+                            <span class="drug-link" onclick="showDrugModal('Monkast')">Monkast</span>
+                        </p>
+                        <p><strong>Formes :</strong> Comprimés (5 mg enfants, 10 mg adultes), granulés.</p>
+                        <p><strong>Posologie adulte :</strong> 10 mg en 1 prise unique le soir.</p>
+                        <p><strong>Particularité :</strong> Indiqué dans l'asthme léger persistant ou l'asthme avec rhinite allergique. Pas pour les crises aiguës.</p>
+                        <p><strong>Conseil pratique :</strong> Il doit être pris à jeun ou loin des repas pour une meilleure absorption. Très important : surveiller les troubles neuropsychiatriques (cauchemars, agitation, dépression) chez certains patients ; conseiller au patient de stopper le traitement et de consulter en cas de tels symptômes.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                    <h2 class="section-title reveal">💊 Conseil du Professeur</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p style="font-size:1.1rem; padding:20px; background: rgba(255, 235, 59, 0.05); border-radius:15px; border-left:4px solid var(--accent);">
+                            Pour vos conseils en officine, rappelez-vous du triplet :<br><br>
+                            <strong>1️⃣ "Rincer la bouche"</strong> pour les CSI<br>
+                            <strong>2️⃣ "Coordination et technique d'inhalation"</strong> pour les BDCA<br>
+                            <strong>3️⃣ "Horaire de prise"</strong> pour l'asthme chronique<br><br>
+                            <strong>⚠️ Ne laissez jamais un patient prendre la Ventoline plus de 3 fois par semaine sans signaler à son médecin qu'il faut réévaluer le traitement de fond !</strong>
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- EXAMEN CONTENT (QCM) -->
+            <div id="examContent" style="display: none;">
+                <div class="qcm-instruction card reveal reveal-delay-1">
+                    <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
+                </div>
+                <section class="section-block" id="exam-question1">
+                    <h2 class="section-title reveal">Question 1</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les deux leviers d'action des antiasthmatiques ?</strong></p><label><input type="checkbox" name="q1" value="a"> Anti-inflammatoires (corticoïdes inhalés)</label><label><input type="checkbox" name="q1" value="b"> Bronchodilatateurs (β2-agonistes)</label><label><input type="checkbox" name="q1" value="c"> Antibiotiques</label><label><input type="checkbox" name="q1" value="d"> Antihistaminiques</label></div>
+                </section>
+                <section class="section-block" id="exam-question2">
+                    <h2 class="section-title reveal">Question 2</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelle est la note importante concernant les corticoïdes inhalés ?</strong></p><label><input type="checkbox" name="q2" value="a"> Ils soulagent la crise aiguë</label><label><input type="checkbox" name="q2" value="b"> Ils NE soulagent PAS la crise aiguë</label><label><input type="checkbox" name="q2" value="c"> Ils sont utilisés en traitement de fond</label><label><input type="checkbox" name="q2" value="d"> Ils sont contre-indiqués chez l'adulte</label></div>
+                </section>
+                <section class="section-block" id="exam-question3">
+                    <h2 class="section-title reveal">Question 3</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les précautions d'emploi des antiasthmatiques ?</strong></p><label><input type="checkbox" name="q3" value="a"> β2-agonistes : tachycardie possible</label><label><input type="checkbox" name="q3" value="b"> Anticholinergiques : prudence en cas de glaucome</label><label><input type="checkbox" name="q3" value="c"> Ne pas arrêter brutalement les corticoïdes inhalés</label><label><input type="checkbox" name="q3" value="d"> β-bloquants sont sans danger</label></div>
+                </section>
+                <section class="section-block" id="exam-question4">
+                    <h2 class="section-title reveal">Question 4</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les interactions médicamenteuses majeures ?</strong></p><label><input type="checkbox" name="q4" value="a"> β-bloquants → bronchospasme sévère</label><label><input type="checkbox" name="q4" value="b"> Diurétiques hypokaliémiants → hypokaliémie</label><label><input type="checkbox" name="q4" value="c"> Macrolides → toxicité de la théophylline</label><label><input type="checkbox" name="q4" value="d"> Paracétamol → hépatotoxicité</label></div>
+                </section>
+                <section class="section-block" id="exam-question5">
+                    <h2 class="section-title reveal">Question 5</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la grossesse et les antiasthmatiques :</strong></p><label><input type="checkbox" name="q5" value="a"> L'asthme non traité est plus dangereux que le traitement</label><label><input type="checkbox" name="q5" value="b"> Corticoïdes inhalés sont sûrs</label><label><input type="checkbox" name="q5" value="c"> β2-agonistes inhalés sont sûrs</label><label><input type="checkbox" name="q5" value="d"> Le traitement de fond doit être arrêté</label></div>
+                </section>
+                <section class="section-block" id="exam-question6">
+                    <h2 class="section-title reveal">Question 6</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Fluticasone :</strong></p><label><input type="checkbox" name="q6" value="a"> C'est un médicament de crise</label><label><input type="checkbox" name="q6" value="b"> Puissance anti-inflammatoire élevée</label><label><input type="checkbox" name="q6" value="c"> Rincer la bouche après usage</label><label><input type="checkbox" name="q6" value="d"> Forme disque disponible</label></div>
+                </section>
+                <section class="section-block" id="exam-question7">
+                    <h2 class="section-title reveal">Question 7</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Salbutamol :</strong></p><label><input type="checkbox" name="q7" value="a"> Début d'action en 3-5 minutes</label><label><input type="checkbox" name="q7" value="b"> Durée d'action 4-6 heures</label><label><input type="checkbox" name="q7" value="c"> Utiliser plus de 3 fois/semaine signale un mauvais contrôle</label><label><input type="checkbox" name="q7" value="d"> C'est un traitement de fond</label></div>
+                </section>
+                <section class="section-block" id="exam-question8">
+                    <h2 class="section-title reveal">Question 8</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant l'Ipratropium :</strong></p><label><input type="checkbox" name="q8" value="a"> Début d'action lent (15-30 min)</label><label><input type="checkbox" name="q8" value="b"> Plus adapté à la BPCO</label><label><input type="checkbox" name="q8" value="c"> Attention aux projections dans les yeux</label><label><input type="checkbox" name="q8" value="d"> Durée d'action 24h</label></div>
+                </section>
+                <section class="section-block" id="exam-question9">
+                    <h2 class="section-title reveal">Question 9</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Salmétérol :</strong></p><label><input type="checkbox" name="q9" value="a"> Début d'action lent (30-60 min)</label><label><input type="checkbox" name="q9" value="b"> Contre-indiqué pour la crise aiguë</label><label><input type="checkbox" name="q9" value="c"> Utilisation seule augmente la mortalité</label><label><input type="checkbox" name="q9" value="d"> À utiliser matin et soir</label></div>
+                </section>
+                <section class="section-block" id="exam-question10">
+                    <h2 class="section-title reveal">Question 10</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Montélukast :</strong></p><label><input type="checkbox" name="q10" value="a"> Anti-leucotriène</label><label><input type="checkbox" name="q10" value="b"> Prise le soir à jeun</label><label><input type="checkbox" name="q10" value="c"> Surveiller les troubles neuropsychiatriques</label><label><input type="checkbox" name="q10" value="d"> Utilisé pour les crises aiguës</label></div>
+                </section>
+                <section class="section-block" style="border-bottom: none;">
+                    <div class="card reveal reveal-delay-1" style="text-align: center;">
+                        <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
+                        <button class="toggle-btn" id="resetExam">Réinitialiser</button>
+                        <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Drug Images Modal -->
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        // Stars
+        (function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // Reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== SIDE DOTS ====================
+        const sideDotsContainer = document.getElementById('sideDots');
+        const originalLessonDotsHTML = sideDotsContainer.innerHTML;
+
+        const lessonSectionIDs = ['mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'csi', 'associations', 'bdca', 'bdla', 'antileucotrienes', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
+
+        function generateExamDotsHTML() {
+            const tooltips = [
+                'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
+                'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'
+            ];
+            let html = '';
+            examSectionIDs.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                html +=
+                    `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
+            });
+            return html;
+        }
+
+        sideDotsContainer.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            if (isExamMode) {
+                document.getElementById(dotId)?.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('section-' + dotId)?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Nav hide on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // Theme
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const cur = htmlEl.getAttribute('data-theme');
+            const next = cur === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // ==================== IMAGES DES MÉDICAMENTS ====================
+        const drugImages = {};
+
+        function showDrugModal(drugName) {
+            const modal = document.getElementById('drugModal');
+            document.getElementById('modalTitle').textContent = drugName;
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = '';
+            const imgs = drugImages[drugName] || [];
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = drugName;
+                img.loading = 'lazy';
+                container.appendChild(img);
+            });
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeDrugModal();
+        });
+
+        // Toggle Leçon/Examen
+        const btnLesson = document.getElementById('btnLesson');
+        const btnExamen = document.getElementById('btnExamen');
+        const lessonContent = document.getElementById('lessonContent');
+        const examContent = document.getElementById('examContent');
+
+        function showLesson() {
+            lessonContent.style.display = 'block';
+            examContent.style.display = 'none';
+            sideDotsContainer.innerHTML = originalLessonDotsHTML;
+            sideDotsContainer.style.display = 'flex';
+            btnLesson.classList.add('active');
+            btnExamen.classList.remove('active');
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
+            updateActiveDot();
+        }
+
+        function showExam() {
+            lessonContent.style.display = 'none';
+            examContent.style.display = 'block';
+            sideDotsContainer.innerHTML = generateExamDotsHTML();
+            sideDotsContainer.style.display = 'flex';
+            btnLesson.classList.remove('active');
+            btnExamen.classList.add('active');
+            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            resetExam();
+            updateActiveDot();
+        }
+
+        btnLesson.addEventListener('click', showLesson);
+        btnExamen.addEventListener('click', showExam);
+
+        // ==================== EXAM QCM LOGIC ====================
+        const correctAnswers = {
+            q1: ['a', 'b'],
+            q2: ['b', 'c'],
+            q3: ['a', 'b', 'c'],
+            q4: ['a', 'b', 'c'],
+            q5: ['a', 'b', 'c'],
+            q6: ['b', 'c', 'd'],
+            q7: ['a', 'b', 'c'],
+            q8: ['a', 'b', 'c'],
+            q9: ['a', 'b', 'c', 'd'],
+            q10: ['a', 'b', 'c']
+        };
+
+        document.getElementById('checkExam').addEventListener('click', () => {
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+
+            let totalScore = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                const correctVals = correctAnswers[q];
+                const allCheckboxes = document.querySelectorAll(`input[name="${q}"]`);
+                let hasWrongSelected = false;
+                let correctSelectedCount = 0;
+
+                allCheckboxes.forEach(cb => {
+                    const label = cb.parentElement;
+                    if (cb.checked) {
+                        if (correctVals.includes(cb.value)) {
+                            correctSelectedCount++;
+                            label.classList.add('correct-answer');
+                        } else {
+                            hasWrongSelected = true;
+                            label.classList.add('wrong-answer');
+                        }
+                    } else {
+                        if (correctVals.includes(cb.value)) {
+                            label.classList.add('missed-answer');
+                        }
+                    }
+                });
+
+                if (hasWrongSelected) {
+                    // 0 point
+                } else if (correctSelectedCount === correctVals.length) {
+                    totalScore += 1;
+                } else if (correctSelectedCount > 0) {
+                    totalScore += correctSelectedCount / correctVals.length;
+                }
+            }
+
+            const pct = Math.round((totalScore / totalQuestions) * 100);
+            let msg =
+                `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            if (pct >= 80) msg += "🌟 Excellent !";
+            else if (pct >= 50) msg += "📚 Continuez à réviser.";
+            else msg += "🔍 Révisez le cours et réessayez.";
+            document.getElementById('examResult').innerHTML = msg;
+            document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        function resetExam() {
+            document.querySelectorAll('.question-card input[type="checkbox"]').forEach(i => i.checked = false);
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+            document.getElementById('examResult').textContent = '';
+        }
+        document.getElementById('resetExam').addEventListener('click', resetExam);
+
+        // Initialisation
+        updateActiveDot();
+    </script>
+</body>
+</html>
