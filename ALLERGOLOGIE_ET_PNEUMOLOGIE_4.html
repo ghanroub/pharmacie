@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur les fluidifiants bronchiques et expectorants - GhaniPharma">
+    <meta name="keywords" content="pharmacie, expectorants, mucolytiques, ambroxol, acétylcystéine, carbocistéine, bromhexine, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Les Fluidifiants Bronchiques - GhaniPharma">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Les Fluidifiants Bronchiques | GhaniPharma</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ----- Same styles as original ----- */
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --btn-hover-shadow: rgba(0, 188, 212, 0.5);
+            --card-hover-border: rgba(0, 188, 212, 0.5);
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(255, 255, 255, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --btn-hover-shadow: rgba(0, 151, 167, 0.4);
+            --card-hover-border: rgba(0, 151, 167, 0.5);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-border: rgba(0, 0, 0, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
+        }
+        [data-theme="light"] .star {
+            animation: none !important;
+            opacity: 0.15 !important;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+        .top-nav.hidden { transform: translateY(-100%); }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: none;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+        }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        .nav-link {
+            position: relative;
+            padding: 10px 22px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-link:hover { color: var(--text-heading); background: rgba(128, 128, 128, 0.1); }
+        .nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.2); }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%;
+            max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mobile-menu-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            background: var(--bg-glass);
+            border-radius: 60px;
+            color: var(--text-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.1);
+            transform: translateX(6px);
+        }
+        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+        .theme-toggle:hover { transform: rotate(30deg) scale(1.1); border-color: var(--accent); box-shadow: 0 0 25px rgba(255, 235, 59, 0.3); }
+        .theme-toggle i { transition: all 0.5s ease; }
+        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
+        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
+        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
+        [data-theme="light"] .theme-toggle { border-color: rgba(0, 0, 0, 0.2); }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover { transform: rotate(90deg); }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .toggle-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        .toggle-btn:hover { border-color: var(--primary); color: var(--text-heading); box-shadow: 0 0 15px rgba(0, 188, 212, 0.3); }
+        .toggle-btn.active {
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .side-dots {
+            position: fixed;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        .dot:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 18px rgba(255, 235, 59, 0.5); }
+        .dot.active { background: var(--primary); border-color: var(--primary); transform: scale(1.7); box-shadow: 0 0 28px rgba(0, 188, 212, 0.6); }
+        .dot-tooltip {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+        .dot:hover .dot-tooltip { opacity: 1; }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-top: 90px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-block {
+            padding: 80px 0;
+            position: relative;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
+        }
+        .section-block:last-of-type { border-bottom: none; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .drug-link {
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            padding: 40px 30px;
+            position: relative;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.8rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .modal-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+        }
+        .modal-placeholder {
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+            border: 2px dashed var(--border-glass);
+            border-radius: 16px;
+        }
+
+        .question-card label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .question-card label:hover { background: rgba(0, 188, 212, 0.05); }
+        .question-card input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: var(--primary);
+        }
+        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853 !important; }
+        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744 !important; }
+        .missed-answer { background: rgba(255, 200, 0, 0.2) !important; border-left: 4px solid #ffc107 !important; }
+        .result-message {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        .qcm-instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px;
+            padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p { color: var(--primary); margin: 0; }
+
+        .site-footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-heading);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
+        }
+        .social-link:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+
+        @media (max-width: 992px) {
+            .side-dots { display: none; }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 15px; }
+            .modal-content { width: 95%; padding: 25px 20px; }
+            .toggle-buttons { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <!-- Header -->
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side dots -->
+    <div class="side-dots" id="sideDots">
+        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
+        <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
+        <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
+        <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
+        <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
+        <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
+        <div class="dot" data-dot="substances"><span class="dot-tooltip">Substances actives</span></div>
+        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <!-- Hero / Toggle -->
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-lungs"></i> PNEUMOLOGIE ET TOUX</div>
+                <h1 class="hero-title reveal reveal-delay-1">LES FLUIDIFIANTS BRONCHIQUES</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">Mucolytiques, expectorants et conseils à l'officine pour la toux grasse.</p>
+                <div class="toggle-buttons reveal reveal-delay-3">
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Leçon</button>
+                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
+                </div>
+            </section>
+
+            <!-- LESSON CONTENT -->
+            <div id="lessonContent">
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal">🧬 Mécanisme d'action</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong>Indication primaire :</strong> Toux grasse ou productive (présence de sécrétions bronchiques). L'objectif est de transformer un mucus visqueux et adhérent en un mucus plus fluide pour faciliter son expulsion.</p>
+                        <p><strong>Deux modes d'action principaux :</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li><strong>Mucolytiques (Acétylcystéine, Carbocistéine) :</strong> Ils coupent les ponts disulfures du mucus pour le rendre plus liquide.</li>
+                            <li><strong>Expectorants / Sécrétomoteurs (Ambroxol, Bromhexine, Lierre) :</strong> Ils augmentent la production de mucus plus fluide et stimulent l'activité des cils vibratiles pour évacuer les sécrétions.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-indications">
+                    <h2 class="section-title reveal">✅ Indications générales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong>Bronchite aiguë</strong> (avec encombrement bronchique)</li>
+                            <li><strong>Exacerbations de BPCO</strong> (Bronchopneumopathie Chronique Obstructive)</li>
+                            <li><strong>Sinusite</strong> (pour fluidifier les sécrétions nasales, surtout Carbocistéine/Erdostéine)</li>
+                        </ul>
+                        <p style="margin-top:15px;"><strong>À savoir :</strong> Ils ne traitent pas l'infection, ils soulagent le symptôme.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal">🚫 Contre-indications & Précautions principales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong>Toux sèche (SANS expectoration) :</strong> Ne JAMAIS donner un expectorant pour une toux sèche, cela pourrait créer un encombrement. Privilégier un antitussif ou un béchique.</li>
+                            <li><strong>Ulcère gastro-duodénal en phase active :</strong> contre-indiqué surtout pour l'Acétylcystéine et la Carbocistéine.</li>
+                            <li><strong>Insuffisance hépatique ou rénale sévère.</strong></li>
+                            <li><strong>Précautions :</strong> Chez l'asthmatique, risque de bronchospasme initial (notamment avec l'Acétylcystéine).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal">💊 Interactions médicamenteuses majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong>CRUCIAL : Ne pas associer avec des antitussifs (Codéine, Dextrométhorphane, Pholcodine).</strong> L'effet sédatif sur la toux empêche l'évacuation du mucus fluidifié, ce qui peut entraîner une obstruction bronchique et une surinfection.</li>
+                            <li><strong>Avec les antibiotiques (Tétracyclines, Amoxicilline, etc.) :</strong> Espacez la prise d'au moins 2 heures (l'Acétylcystéine peut inactiver certains ATB).</li>
+                            <li><strong>Avec les AINS ou l'aspirine :</strong> Augmentation du risque d'irritation gastrique.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal">🤰 Grossesse et Allaitement</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong>Règle générale :</strong> Déconseillée au 1er trimestre de grossesse (période de tératogenèse). À partir du 2ème trimestre, l'Ambroxol et la Bromhexine sont parfois autorisés sous avis médical strict. L'Acétylcystéine est souvent réservée aux situations nécessitant un rapport bénéfice/risque favorable (elle est néanmoins très déconseillée en automédication).</p>
+                        <p><strong>Allaitement :</strong> Prudence (peu de données, passage dans le lait maternel). Les extraits de lierre (Prospan) sont souvent mieux tolérés, mais toujours sous contrôle. Ne JAMAIS recommander de l'Acétylcystéine à une femme allaitante sans avis médical.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-substances">
+                    <h2 class="section-title reveal">Les Substances Actives (Individuellement)</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">1. Bromhexine</h3>
+                        <p><strong>Nom générique :</strong> Bromhexine</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Isolvon')">Isolvon</span>,
+                            <span class="drug-link" onclick="showDrugModal('Bisolvon')">Bisolvon</span>,
+                            <span class="drug-link" onclick="showDrugModal('Bromhexine-Saïdal')">Bromhexine-Saïdal</span>
+                        </p>
+                        <p><strong>Formes :</strong> Sirop adulte/enfant, comprimés (souvent 8 mg), gouttes.</p>
+                        <p><strong>Posologie Adulte :</strong> 8 à 16 mg, 3 fois par jour (Max : 48 mg/jour). Espacer les prises de 8 heures.</p>
+                        <p><strong>Particularité :</strong> Métabolisé dans le foie en Ambroxol (son métabolite actif). Effet modéré.</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Prenez-le après les repas pour éviter les nausées. Buvez au moins 1,5 litre d'eau par jour pour potentialiser l'effet fluidifiant."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">2. Ambroxol</h3>
+                        <p><strong>Nom générique :</strong> Ambroxol</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Muxol')">Muxol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Ixol')">Ixol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Soluxol')">Soluxol</span>
+                        </p>
+                        <p><strong>Formes :</strong> Sirop, comprimés (souvent 30 mg), solution buvable.</p>
+                        <p><strong>Posologie Adulte :</strong> 30 mg, 3 fois par jour (Max : 120 mg/jour).</p>
+                        <p><strong>Particularité :</strong> C'est le métabolite actif de la Bromhexine. Il possède un effet "surfactant" pulmonaire (favorise l'élasticité du poumon). Bonne tolérance digestive.</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Comme pour la Bromhexine, prenez-le après les repas. Ne le prenez surtout pas au coucher pour éviter que le mucus ne tombe dans les bronches sans être expulsé."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">3. Carbocistéine</h3>
+                        <p><strong>Nom générique :</strong> Carbocistéine</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Mucolyse')">Mucolyse</span>,
+                            <span class="drug-link" onclick="showDrugModal('Mucolad')">Mucolad</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rhinathiol')">Rhinathiol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rhinolactol')">Rhinolactol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Humex')">Humex expectorant</span>
+                        </p>
+                        <p><strong>Formes :</strong> Sirop, gélules (375mg), sachets (750mg).</p>
+                        <p><strong>Posologie Adulte :</strong> 750 mg, 3 fois par jour (pour les sachets), ou 2 à 3 gélules par jour selon les dosages (Max : 2 250 mg/jour).</p>
+                        <p><strong>Particularité :</strong> Efficace pour les sécrétions des voies aériennes supérieures (sinusites, otites séreuses). Ne possède pas l'effet antioxydant de l'Acétylcystéine.</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Attention si vous avez des antécédents d'ulcère à l'estomac. À prendre après les repas, dans un grand verre d'eau. Si vous êtes sous antibiotique, laissez un intervalle de 2 heures."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">4. Acétylcystéine (NAC)</h3>
+                        <p><strong>Nom générique :</strong> Acétylcystéine</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Fluimex')">Fluimex</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fluimicil')">Fluimicil</span>
+                        </p>
+                        <p><strong>Formes :</strong> Sachets (200 mg, 600 mg) en poudre effervescente, sirop.</p>
+                        <p><strong>Posologie Adulte :</strong> 200 mg, 3 fois par jour (ou une forme à 600 mg, 1 à 2 fois par jour). (Max : 1200 mg/jour pour une toux grasse ; en IV/urgence pour intoxication au paracétamol, la posologie est massive).</p>
+                        <p><strong>Particularité :</strong> Puissant antioxydant. Elle a une odeur et un goût soufrés caractéristiques (Rassurez le patient, c'est normal). Très efficace et action rapide (en 30 min à 1h).</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Dissolvez le sachet dans un grand verre d'eau. Ne prenez pas ce médicament à jeun (risque d'irritation gastrique). Vous pouvez lui ajouter un peu de jus de fruit pour masquer le goût. Ne prenez pas d'aspirine ni d'anti-inflammatoire avec, à cause de l'estomac."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">5. Erdostéine</h3>
+                        <p><strong>Nom générique :</strong> Erdostéine</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Mucotec')">Mucotec</span>
+                        </p>
+                        <p><strong>Formes :</strong> Gélules, sachets (300 mg).</p>
+                        <p><strong>Posologie Adulte :</strong> 300 mg, 2 fois par jour (soit 600 mg/jour).</p>
+                        <p><strong>Particularité :</strong> Souvent prescrite en complément des traitements des bronchites chroniques et des sinusites chroniques. Moins connue mais efficace.</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Prenez une gélule matin et soir au moment des repas. L'hydratation est capitale pour éviter que le mucus ne s'épaississe."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">6. Extraits de feuille de Lierre (Hederae helicis folium)</h3>
+                        <p><strong>Nom générique :</strong> Hédérine (Extrait de lierre)</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Prospan')">Prospan</span>,
+                            <span class="drug-link" onclick="showDrugModal('Liblab')">Liblab</span>
+                        </p>
+                        <p><strong>Formes :</strong> Sirop, gouttes orales.</p>
+                        <p><strong>Posologie Adulte :</strong> Selon les formes, souvent 5 ml, 3 fois par jour (adulte).</p>
+                        <p><strong>Particularité :</strong> Produit d'origine naturelle (saponines), très bonne tolérance. Indiqué aussi pour les enfants à partir de 2 ans. Effet expectorant léger et fluidifiant (combiné à un léger effet bronchodilatateur).</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Agitez bien le flacon avant chaque utilisation car les principes actifs naturels ont tendance à décanter. Peut être pris à jeun ou après les repas selon votre tolérance."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">7. Mentex</h3>
+                        <p><strong>Nom générique :</strong> Essence de Menthe / Menthol</p>
+                        <p><strong>Noms en Algérie :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Mentex')">Mentex</span> (souvent en association)
+                        </p>
+                        <p><strong>Formes :</strong> Sirop, pastilles ou baume.</p>
+                        <p><strong>Posologie Adulte :</strong> Se référer à la notice (généralement 1 à 2 cuillères à café par prise pour le sirop).</p>
+                        <p><strong>Particularité :</strong> Ce n'est pas un mucolytique à proprement parler, mais un décongestionnant nasal et un rafraîchissant local qui facilite la respiration. Indiqué dans les rhumes.</p>
+                        <p><strong>💡 Conseil pratique au patient :</strong> "Ce produit traite le rhume (nez bouché et toux irritative légère), mais si la toux devient vraiment grasse, il faudra passer à un vrai expectorant."</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">8. Fluidesal (sans prométhazine)</h3>
+                        <p><strong>Nature du produit :</strong> Comme indiqué sur votre image, ce n'est pas une substance active unique, mais une spécialité pharmaceutique combinée. Le "sans prométhazine" est un argument de vente majeur : la prométhazine étant un antihistaminique sédatif (souvent ajouté dans les sirops pour la toux), sa version sans est destinée aux patients qui doivent rester vigilants (conducteurs, étudiants, actifs) et limite les effets secondaires (somnolence).</p>
+                        <p><strong>💡 Conseil pratique :</strong> Délivrez-le en précisant son statut "non sédatif" au patient.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                    <h2 class="section-title reveal">💬 Dernier conseil pour votre pratique officinale</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p>Lorsqu'un patient demande un sirop pour la toux, votre premier réflexe officinal est la <strong>triade d'or :</strong></p>
+                        <ol style="padding-left:20px;">
+                            <li><strong>Distinguer toux sèche (antitussif) vs toux grasse (expectorant)</strong> → NE PAS CONFONDRE.</li>
+                            <li><strong>Vérifier les comorbidités</strong> (ulcère, asthme).</li>
+                            <li><strong>Associer un conseil hygiéno-diététique solide :</strong> hydratation abondante (1,5 L à 2 L d'eau par jour), humidification de l'air de la chambre, et lever la tête du lit pour éviter l'écoulement post-nasal. <strong>Le médicament n'est qu'un adjuvant !</strong></li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+
+            <!-- EXAMEN CONTENT (QCM à choix multiples) -->
+            <div id="examContent" style="display: none;">
+                <div class="qcm-instruction card reveal reveal-delay-1">
+                    <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
+                </div>
+                
+                <section class="section-block" id="exam-question1">
+                    <h2 class="section-title reveal">Question 1</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Quelle est l'indication primaire des fluidifiants bronchiques ?</strong></p>
+                        <label><input type="checkbox" name="q1" value="a"> Toux sèche sans expectoration</label>
+                        <label><input type="checkbox" name="q1" value="b"> Toux grasse ou productive avec sécrétions bronchiques</label>
+                        <label><input type="checkbox" name="q1" value="c"> Toux d'origine cardiaque</label>
+                        <label><input type="checkbox" name="q1" value="d"> Toux allergique uniquement</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question2">
+                    <h2 class="section-title reveal">Question 2</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Quels sont les deux modes d'action principaux des fluidifiants ?</strong></p>
+                        <label><input type="checkbox" name="q2" value="a"> Mucolytiques : coupent les ponts disulfures du mucus</label>
+                        <label><input type="checkbox" name="q2" value="b"> Expectorants : augmentent la production de mucus fluide</label>
+                        <label><input type="checkbox" name="q2" value="c"> Antitussifs : suppriment le réflexe de toux</label>
+                        <label><input type="checkbox" name="q2" value="d"> Antibiotiques : tuent les bactéries</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question3">
+                    <h2 class="section-title reveal">Question 3</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Quelles sont les indications générales des fluidifiants bronchiques ?</strong></p>
+                        <label><input type="checkbox" name="q3" value="a"> Bronchite aiguë avec encombrement</label>
+                        <label><input type="checkbox" name="q3" value="b"> Exacerbations de BPCO</label>
+                        <label><input type="checkbox" name="q3" value="c"> Sinusite</label>
+                        <label><input type="checkbox" name="q3" value="d"> Toux sèche irritative</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question4">
+                    <h2 class="section-title reveal">Question 4</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Quelles sont les contre-indications principales des fluidifiants ?</strong></p>
+                        <label><input type="checkbox" name="q4" value="a"> Toux sèche sans expectoration</label>
+                        <label><input type="checkbox" name="q4" value="b"> Ulcère gastro-duodénal en phase active</label>
+                        <label><input type="checkbox" name="q4" value="c"> Insuffisance hépatique ou rénale sévère</label>
+                        <label><input type="checkbox" name="q4" value="d"> Asthme sans précaution particulière</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question5">
+                    <h2 class="section-title reveal">Question 5</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Quelle est l'interaction médicamenteuse CRUCIALE des fluidifiants ?</strong></p>
+                        <label><input type="checkbox" name="q5" value="a"> Association avec des antitussifs (Codéine, Dextrométhorphane)</label>
+                        <label><input type="checkbox" name="q5" value="b"> Association avec des vitamines</label>
+                        <label><input type="checkbox" name="q5" value="c"> Association avec des probiotiques</label>
+                        <label><input type="checkbox" name="q5" value="d"> Association avec des antihistaminiques non sédatifs</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question6">
+                    <h2 class="section-title reveal">Question 6</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Concernant l'Acétylcystéine :</strong></p>
+                        <label><input type="checkbox" name="q6" value="a"> Puissant antioxydant</label>
+                        <label><input type="checkbox" name="q6" value="b"> Odeur et goût soufrés caractéristiques</label>
+                        <label><input type="checkbox" name="q6" value="c"> Action rapide (30 min à 1h)</label>
+                        <label><input type="checkbox" name="q6" value="d"> Peut être prise à jeun sans problème</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question7">
+                    <h2 class="section-title reveal">Question 7</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Concernant l'Ambroxol :</strong></p>
+                        <label><input type="checkbox" name="q7" value="a"> Métabolite actif de la Bromhexine</label>
+                        <label><input type="checkbox" name="q7" value="b"> Effet surfactant pulmonaire</label>
+                        <label><input type="checkbox" name="q7" value="c"> Bonne tolérance digestive</label>
+                        <label><input type="checkbox" name="q7" value="d"> Doit être pris au coucher</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question8">
+                    <h2 class="section-title reveal">Question 8</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Concernant la grossesse et l'allaitement avec les fluidifiants :</strong></p>
+                        <label><input type="checkbox" name="q8" value="a"> Déconseillés au 1er trimestre</label>
+                        <label><input type="checkbox" name="q8" value="b"> Ambroxol et Bromhexine parfois autorisés au 2ème trimestre</label>
+                        <label><input type="checkbox" name="q8" value="c"> Extraits de lierre mieux tolérés pendant l'allaitement</label>
+                        <label><input type="checkbox" name="q8" value="d"> Acétylcystéine recommandée en automédication chez la femme enceinte</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question9">
+                    <h2 class="section-title reveal">Question 9</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Quels sont les conseils hygiéno-diététiques à associer aux fluidifiants ?</strong></p>
+                        <label><input type="checkbox" name="q9" value="a"> Hydratation abondante (1,5 à 2 L d'eau/jour)</label>
+                        <label><input type="checkbox" name="q9" value="b"> Humidification de l'air de la chambre</label>
+                        <label><input type="checkbox" name="q9" value="c"> Lever la tête du lit pour éviter l'écoulement post-nasal</label>
+                        <label><input type="checkbox" name="q9" value="d"> Éviter toute hydratation pour ne pas fluidifier davantage</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" id="exam-question10">
+                    <h2 class="section-title reveal">Question 10</h2>
+                    <div class="card question-card reveal reveal-delay-1">
+                        <p><strong>Concernant le Fluidesal sans prométhazine :</strong></p>
+                        <label><input type="checkbox" name="q10" value="a"> Spécialité pharmaceutique combinée</label>
+                        <label><input type="checkbox" name="q10" value="b"> Version non sédative</label>
+                        <label><input type="checkbox" name="q10" value="c"> Adapté aux conducteurs et étudiants</label>
+                        <label><input type="checkbox" name="q10" value="d"> Contient de la prométhazine</label>
+                    </div>
+                </section>
+                
+                <section class="section-block" style="border-bottom: none;">
+                    <div class="card reveal reveal-delay-1" style="text-align: center;">
+                        <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
+                        <button class="toggle-btn" id="resetExam">Réinitialiser</button>
+                        <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Drug Images Modal -->
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        // Stars
+        (function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // Reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Side dots - dynamic management
+        const sideDotsContainer = document.getElementById('sideDots');
+        const originalLessonDotsHTML = sideDotsContainer.innerHTML;
+
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'substances', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
+
+        function generateExamDotsHTML() {
+            const tooltips = [
+                'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
+                'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'
+            ];
+            let html = '';
+            examSectionIDs.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                html += `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
+            });
+            return html;
+        }
+
+        sideDotsContainer.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            if (isExamMode) {
+                document.getElementById(dotId)?.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('section-' + dotId)?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Nav hide on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // Theme
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const cur = htmlEl.getAttribute('data-theme');
+            const next = cur === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // Drug images
+        const drugImages = {};
+
+        function showDrugModal(drugName) {
+            const modal = document.getElementById('drugModal');
+            document.getElementById('modalTitle').textContent = drugName;
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = '';
+            const imgs = drugImages[drugName] || [];
+            if (!imgs.length) container.innerHTML = '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = drugName;
+                img.loading = 'lazy';
+                container.appendChild(img);
+            });
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeDrugModal();
+        });
+
+        // Toggle Lesson/Examen
+        const btnLesson = document.getElementById('btnLesson');
+        const btnExamen = document.getElementById('btnExamen');
+        const lessonContent = document.getElementById('lessonContent');
+        const examContent = document.getElementById('examContent');
+
+        function showLesson() {
+            lessonContent.style.display = 'block';
+            examContent.style.display = 'none';
+            sideDotsContainer.innerHTML = originalLessonDotsHTML;
+            sideDotsContainer.style.display = 'flex';
+            btnLesson.classList.add('active');
+            btnExamen.classList.remove('active');
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
+            updateActiveDot();
+        }
+
+        function showExam() {
+            lessonContent.style.display = 'none';
+            examContent.style.display = 'block';
+            sideDotsContainer.innerHTML = generateExamDotsHTML();
+            sideDotsContainer.style.display = 'flex';
+            btnLesson.classList.remove('active');
+            btnExamen.classList.add('active');
+            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            resetExam();
+            updateActiveDot();
+        }
+
+        btnLesson.addEventListener('click', showLesson);
+        btnExamen.addEventListener('click', showExam);
+
+        // Exam QCM logic - Updated answers for fluidifiants
+        const correctAnswers = {
+            q1: ['b'],
+            q2: ['a', 'b'],
+            q3: ['a', 'b', 'c'],
+            q4: ['a', 'b', 'c'],
+            q5: ['a'],
+            q6: ['a', 'b', 'c'],
+            q7: ['a', 'b', 'c'],
+            q8: ['a', 'b', 'c'],
+            q9: ['a', 'b', 'c'],
+            q10: ['a', 'b', 'c']
+        };
+
+        document.getElementById('checkExam').addEventListener('click', () => {
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+
+            let totalScore = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                const correctVals = correctAnswers[q];
+                const allCheckboxes = document.querySelectorAll(`input[name="${q}"]`);
+                let hasWrongSelected = false;
+                let correctSelectedCount = 0;
+
+                allCheckboxes.forEach(cb => {
+                    const label = cb.parentElement;
+                    if (cb.checked) {
+                        if (correctVals.includes(cb.value)) {
+                            correctSelectedCount++;
+                            label.classList.add('correct-answer');
+                        } else {
+                            hasWrongSelected = true;
+                            label.classList.add('wrong-answer');
+                        }
+                    } else {
+                        if (correctVals.includes(cb.value)) {
+                            label.classList.add('missed-answer');
+                        }
+                    }
+                });
+
+                if (hasWrongSelected) {
+                    // 0 point
+                } else if (correctSelectedCount === correctVals.length) {
+                    totalScore += 1;
+                } else if (correctSelectedCount > 0) {
+                    totalScore += correctSelectedCount / correctVals.length;
+                }
+            }
+
+            const pct = Math.round((totalScore / totalQuestions) * 100);
+            let msg = `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            if (pct >= 80) msg += "🌟 Excellent !";
+            else if (pct >= 50) msg += "📚 Continuez à réviser.";
+            else msg += "🔍 Révisez le cours et réessayez.";
+            document.getElementById('examResult').innerHTML = msg;
+            document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        function resetExam() {
+            document.querySelectorAll('.question-card input[type="checkbox"]').forEach(i => i.checked = false);
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+            document.getElementById('examResult').textContent = '';
+        }
+        document.getElementById('resetExam').addEventListener('click', resetExam);
+
+        // Initialisation
+        updateActiveDot();
+    </script>
+</body>
+</html>
