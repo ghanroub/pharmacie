@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur les antihistaminiques H1 de 2ème génération - GhaniPharma">
+    <meta name="keywords" content="pharmacie, antihistaminiques, cétirizine, loratadine, desloratadine, fexofénadine, bilastine, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Les Antihistaminiques H1 - GhaniPharma">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Les Antihistaminiques H1 | GhaniPharma</title>
+    <!-- أيقونة الموقع -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ----- الأنماط العامة كما هي مع تعديل اللوغو ----- */
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --btn-hover-shadow: rgba(0, 188, 212, 0.5);
+            --card-hover-border: rgba(0, 188, 212, 0.5);
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 188, 212, 0.3);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(255, 255, 255, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --btn-hover-shadow: rgba(0, 151, 167, 0.4);
+            --card-hover-border: rgba(0, 151, 167, 0.5);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-btn: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 151, 167, 0.2);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-border: rgba(0, 0, 0, 0.15);
+            --overlay-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.8);
+            }
+        }
+        [data-theme="light"] .star {
+            animation: none !important;
+            opacity: 0.15 !important;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+        .top-nav.hidden {
+            transform: translateY(-100%);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+        .nav-logo:hover {
+            color: var(--text-heading);
+            transform: scale(1.05);
+        }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: none;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
+            }
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+        .nav-link {
+            position: relative;
+            padding: 10px 22px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-link:hover {
+            color: var(--text-heading);
+            background: rgba(128, 128, 128, 0.1);
+        }
+        .nav-link.active {
+            color: #fff;
+            background: rgba(0, 188, 212, 0.2);
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%;
+            max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup {
+            transform: scale(1);
+        }
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            background: var(--bg-glass);
+            border-radius: 60px;
+            color: var(--text-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.1);
+            transform: translateX(6px);
+        }
+        .mobile-nav-link i {
+            color: var(--primary);
+            width: 28px;
+            font-size: 1.3rem;
+        }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(255, 235, 59, 0.3);
+        }
+        .theme-toggle i {
+            transition: all 0.5s ease;
+        }
+        [data-theme="dark"] .theme-toggle .fa-moon {
+            display: inline-block;
+        }
+        [data-theme="dark"] .theme-toggle .fa-sun {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-moon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-sun {
+            display: inline-block;
+            color: #f39c12;
+        }
+        [data-theme="light"] .theme-toggle {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .toggle-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        .toggle-btn:hover {
+            border-color: var(--primary);
+            color: var(--text-heading);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        .toggle-btn.active {
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .side-dots {
+            position: fixed;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        .dot:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+        }
+        .dot.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+        }
+        .dot-tooltip {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+        .dot:hover .dot-tooltip {
+            opacity: 1;
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-top: 90px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-block {
+            padding: 80px 0;
+            position: relative;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
+        }
+        .section-block:last-of-type {
+            border-bottom: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .drug-link {
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .drug-link:hover {
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            padding: 40px 30px;
+            position: relative;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.8rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .modal-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+        }
+        .modal-placeholder {
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+            border: 2px dashed var(--border-glass);
+            border-radius: 16px;
+        }
+
+        /* Exam / QCM styles */
+        .question-card label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .question-card label:hover {
+            background: rgba(0, 188, 212, 0.05);
+        }
+        .question-card input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: var(--primary);
+        }
+        .correct-answer {
+            background: rgba(0, 200, 0, 0.2) !important;
+            border-left: 4px solid #00c853 !important;
+        }
+        .wrong-answer {
+            background: rgba(255, 0, 0, 0.2) !important;
+            border-left: 4px solid #ff1744 !important;
+        }
+        .missed-answer {
+            background: rgba(255, 200, 0, 0.2) !important;
+            border-left: 4px solid #ffc107 !important;
+        }
+        .result-message {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        .qcm-instruction {
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px;
+            padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-heading);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
+        }
+        .social-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            .side-dots {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none !important;
+            }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 25px 20px;
+            }
+            .toggle-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <!-- Header -->
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> Modules</a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> À propos</a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> Modules</a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side dots -->
+    <div class="side-dots" id="sideDots">
+        <div class="dot active" data-dot="intro"><span class="dot-tooltip">Introduction</span></div>
+        <div class="dot" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
+        <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
+        <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre‑indications</span></div>
+        <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
+        <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
+        <div class="dot" data-dot="substances"><span class="dot-tooltip">Substances actives</span></div>
+        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <!-- Hero / Toggle -->
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-allergies"></i> ALLERGOLOGIE</div>
+                <h1 class="hero-title reveal reveal-delay-1">LES ANTIHISTAMINIQUES H1</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">2ème génération : Mécanismes, indications, contre-indications et conseils à l'officine.</p>
+                <div class="toggle-buttons reveal reveal-delay-3">
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Lesson</button>
+                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
+                </div>
+            </section>
+
+            <!-- LESSON CONTENT -->
+            <div id="lessonContent">
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal">Mécanisme d'action</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p>Ce sont des <strong>antagonistes compétitifs des récepteurs H1</strong> de l'histamine. La 2ème génération se caractérise par une <strong>faible lipophilie</strong> : elle ne traverse pas ou très peu la barrière hémato-encéphalique. Conséquence = <strong>Pas d'effet sédatif central marqué</strong> (contrairement aux 1ère génération).</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-indications">
+                    <h2 class="section-title reveal">Indications générales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li>Rhinite allergique (saisonnière ou perannuelle)</li>
+                            <li>Conjonctivite allergique</li>
+                            <li>Urticaire chronique (y compris dermographisme)</li>
+                            <li>Démangeaisons d'origine allergique</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal">Contre-indications & Précautions majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong>CI absolues :</strong> Hypersensibilité au principe actif.</p>
+                        <p><strong>Précautions majeures :</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li><strong>Insuffisance rénale :</strong> Adapter ou éviter la <strong>Cétirizine</strong> et la <strong>Lévocétirizine</strong> (élimination rénale). La <strong>Fexofénadine</strong> et la <strong>Bilastine</strong> sont plus sûres en cas d'IRC.</li>
+                            <li><strong>Insuffisance hépatique sévère :</strong> Prudence avec la <strong>Loratadine</strong> et la <strong>Desloratadine</strong> (métabolisme hépatique).</li>
+                            <li><strong>Cardiopathies / QT long :</strong> Prudence avec l'<strong>Ebastine</strong> et la <strong>Bilastine</strong>.</li>
+                            <li><strong>Rétention urinaire :</strong> À surveiller chez les personnes âgées (glaucome, hypertrophie prostatique) ; ces molécules ont un léger effet anticholinergique.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal">Interactions médicamenteuses majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong>Inhibiteurs du CYP450</strong> (Azolés - ex: Kétoconazole, Macrolides - ex: Erythromycine) : Augmentent le risque de troubles du rythme avec l'<strong>Ebastine</strong>.</li>
+                            <li><strong>Inhibiteurs de l'OATP</strong> (Jus de pamplemousse) : Réduisent fortement l'absorption de la <strong>Bilastine</strong> et de la <strong>Fexofénadine</strong>.</li>
+                            <li><strong>Dépresseurs du SNC</strong> (Alcool, benzodiazépines) : Bien que moins sédatifs, une somnolence résiduelle est possible ; déconseiller l'alcool.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal">Grossesse et Allaitement</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong>Grossesse :</strong> Aucun antihistaminique n'a une AMM officielle. En pratique, la <strong>Loratadine</strong> et la <strong>Cétirizine</strong> sont les plus étudiées et considérées comme les molécules de choix si un traitement est indispensable (surtout au 2ème/3ème trimestre).</p>
+                        <p><strong>Allaitement :</strong> Prudence, passage dans le lait maternel. La <strong>Loratadine</strong> est privilégiée (faible passage). La <strong>Lévocétirizine</strong> est à éviter (fort passage dans le lait).</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-substances">
+                    <h2 class="section-title reveal">Les substances actives</h2>
+                    
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">1. Cétirizine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Zyrtec')">Zyrtec®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rhitene')">Rhitene®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Artiz')">Artiz®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Histarizine')">Histarizine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Zetirec')">Zetirec®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 10mg, Gouttes (10mg/ml), Sirop (1mg/ml).</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (10mg) le soir. Dose max = 10mg/jour.</p>
+                        <p><strong>Particularité :</strong> C'est le chef de file. Métabolisme rénal quasi total. Effet très rapide (action en < 1h). Peut entraîner une somnolence légère chez les patients sensibles.</p>
+                        <p><strong>Conseil pratique :</strong> Prendre le soir (au coucher) pour masquer l'éventuelle somnolence. Avertir le patient qu'il doit boire beaucoup d'eau (élimination rénale). En cas d'insuffisance rénale, contre-indiqué (ou à adapter à 5mg).</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">2. Lévocétirizine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Xycare')">Xycare®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Levozen')">Levozen®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rizinal')">Rizinal®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 5mg, Sirop (2.5mg/5ml), Gouttes (5mg/ml).</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (5mg) le soir. Dose max = 5mg/jour.</p>
+                        <p><strong>Particularité :</strong> Isomère lévogyre actif de la cétirizine. Efficace à dose moitié moindre. Très puissante. Également 100% éliminé par voie rénale.</p>
+                        <p><strong>Conseil pratique :</strong> Idem cétirizine, prendre le soir. Contre-indiqué en insuffisance rénale sévère. Il passe fortement dans le lait maternel, donc déconseillé pendant l'allaitement.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">3. Fexofénadine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Telfast')">Telfast®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fexodine')">Fexodine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fexonidal')">Fexonidal®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fastofen')">Fastofen®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 120mg et CP 180mg.</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 1 x 120mg/jour pour la rhinite. Dose max = 180mg/jour (pour l'urticaire).</p>
+                        <p><strong>Particularité :</strong> Excellente sécurité d'emploi (ne traverse pas la BHE). Effet sédatif quasi inexistant. Bon profil cardiovasculaire. Élimination majoritairement biliaire.</p>
+                        <p><strong>Conseil pratique :</strong> Peut être pris le matin car il n'entraîne pas de somnolence. Attention : Ne jamais prendre avec du jus de pamplemousse ou de fruit (réduit son absorption). À prendre à distance des repas.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">4. Loratadine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Clarityne')">Clarityne®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Loradine')">Loradine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Allertine')">Allertine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Claradine')">Claradine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Restamine')">Restamine®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 10mg, Sirop (1mg/ml), Gouttes.</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (10mg) le soir. Dose max = 10mg/jour.</p>
+                        <p><strong>Particularité :</strong> Prodrogue hépatique (métabolisée par le CYP3A4 en Desloratadine). Bénéfice du retour d'expérience immense.</p>
+                        <p><strong>Conseil pratique :</strong> Les formes sirop sont très utilisées en pédiatrie. Prudence en cas d'insuffisance hépatique sévère. Ne pas prendre en même temps qu'Indinavir (interaction).</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">5. Desloratadine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Deslor')">Deslor®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Loradess')">Loradess®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Desloral')">Desloral®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Udine')">Udine®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 5mg, Sirop (0.5mg/ml).</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (5mg) le soir. Dose max = 5mg/jour.</p>
+                        <p><strong>Particularité :</strong> Métabolite actif de la loratadine. 2 à 3 fois plus puissante que la loratadine. Très sélective, effet sédatif central quasi nul.</p>
+                        <p><strong>Conseil pratique :</strong> Excellent choix pour le traitement au long cours des rhinites printanières. Moins d'interactions médicamenteuses que la Loratadine. Goût agréable du sirop facilitant l'observance chez l'enfant.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">6. Ebastine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Ebasta')">Ebasta®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 10mg et CP 20mg.</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 10mg à 20mg, 1 fois par jour. Dose max = 20mg/jour.</p>
+                        <p><strong>Particularité :</strong> Peu métabolisée, excrétion biliaire. Très faible effet anticholinergique (parfois légère sécheresse buccale chez le patient âgé).</p>
+                        <p><strong>Conseil pratique :</strong> Prendre de préférence au cours du repas (augmente son absorption). Ne pas associer avec du Kétoconazole ou de l'Érythromycine (risque de troubles du rythme). Prudence chez les cardiaques.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">7. Bilastine</h3>
+                        <p><strong>Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Bilaxen')">Bilaxen®</span>
+                        </p>
+                        <p><strong>Formes disponibles :</strong> CP 20mg.</p>
+                        <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (20mg) le soir. Dose max = 20mg/jour.</p>
+                        <p><strong>Particularité :</strong> Antihistaminique le plus récent. Très sélectif et à haute sécurité d'emploi. Ne passe pas la BHE (non sédatif). Non métabolisé par le CYP450.</p>
+                        <p><strong>Conseil pratique :</strong> À prendre impérativement à jeun (1 heure avant ou 2 heures après un repas). À éviter avec le jus de pamplemousse (réduit de 30% son efficacité).</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                    <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p>Quand un patient vous demande un <strong>"anti-allergique qui ne rend pas somnolent"</strong>, la règle d'or en officine est de vérifier la comorbidité du patient :</p>
+                        <ul style="padding-left:20px;">
+                            <li><strong>S'il est insuffisant rénal</strong> → orientez vers <strong>Fexofénadine (Telfast)</strong> ou <strong>Bilastine</strong>.</li>
+                            <li><strong>S'il est insuffisant hépatique</strong> → orientez vers <strong>Cétirizine</strong> ou <strong>Lévocétirizine</strong>.</li>
+                            <li><strong>S'il prend d'autres médicaments</strong> → <strong>Desloratadine</strong> (moins d'interactions).</li>
+                        </ul>
+                        <p>Expliquez systématiquement au patient : <em>"Malgré qu'on dise qu'ils ne sont pas sédatifs, une petite somnolence est possible chez 5 à 10% des patients. Pour être tranquille, prenez votre médicament le soir. Et, pour la Bilastine, rappelez-vous : pas de pamplemousse et à jeun."</em></p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- EXAMEN CONTENT (QCM à choix multiples) -->
+            <div id="examContent" style="display: none;">
+                <div class="qcm-instruction card reveal reveal-delay-1">
+                    <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
+                </div>
+                <section class="section-block" id="exam-question1">
+                    <h2 class="section-title reveal">Question 1</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les caractéristiques des antihistaminiques H1 de 2ème génération ?</strong></p><label><input type="checkbox" name="q1" value="a"> Antagonistes compétitifs des récepteurs H1</label><label><input type="checkbox" name="q1" value="b"> Faible lipophilie</label><label><input type="checkbox" name="q1" value="c"> Traversent facilement la barrière hémato-encéphalique</label><label><input type="checkbox" name="q1" value="d"> Pas d'effet sédatif central marqué</label></div>
+                </section>
+                <section class="section-block" id="exam-question2">
+                    <h2 class="section-title reveal">Question 2</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les indications des antihistaminiques H1 de 2ème génération ?</strong></p><label><input type="checkbox" name="q2" value="a"> Rhinite allergique</label><label><input type="checkbox" name="q2" value="b"> Conjonctivite allergique</label><label><input type="checkbox" name="q2" value="c"> Urticaire chronique</label><label><input type="checkbox" name="q2" value="d"> Infections bactériennes</label></div>
+                </section>
+                <section class="section-block" id="exam-question3">
+                    <h2 class="section-title reveal">Question 3</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles molécules nécessitent une adaptation ou un évitement en cas d'insuffisance rénale ?</strong></p><label><input type="checkbox" name="q3" value="a"> Cétirizine</label><label><input type="checkbox" name="q3" value="b"> Lévocétirizine</label><label><input type="checkbox" name="q3" value="c"> Fexofénadine</label><label><input type="checkbox" name="q3" value="d"> Bilastine</label></div>
+                </section>
+                <section class="section-block" id="exam-question4">
+                    <h2 class="section-title reveal">Question 4</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles molécules nécessitent une prudence en cas d'insuffisance hépatique sévère ?</strong></p><label><input type="checkbox" name="q4" value="a"> Loratadine</label><label><input type="checkbox" name="q4" value="b"> Desloratadine</label><label><input type="checkbox" name="q4" value="c"> Cétirizine</label><label><input type="checkbox" name="q4" value="d"> Lévocétirizine</label></div>
+                </section>
+                <section class="section-block" id="exam-question5">
+                    <h2 class="section-title reveal">Question 5</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les interactions médicamenteuses majeures des antihistaminiques H1 ?</strong></p><label><input type="checkbox" name="q5" value="a"> Inhibiteurs du CYP450 avec Ebastine</label><label><input type="checkbox" name="q5" value="b"> Jus de pamplemousse avec Bilastine</label><label><input type="checkbox" name="q5" value="c"> Jus de pamplemousse avec Fexofénadine</label><label><input type="checkbox" name="q5" value="d"> Alcool avec tous les antihistaminiques</label></div>
+                </section>
+                <section class="section-block" id="exam-question6">
+                    <h2 class="section-title reveal">Question 6</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la grossesse et l'allaitement avec les antihistaminiques :</strong></p><label><input type="checkbox" name="q6" value="a"> Aucun antihistaminique n'a une AMM officielle pendant la grossesse</label><label><input type="checkbox" name="q6" value="b"> Loratadine et Cétirizine sont les plus étudiées</label><label><input type="checkbox" name="q6" value="c"> Loratadine est privilégiée pendant l'allaitement</label><label><input type="checkbox" name="q6" value="d"> Lévocétirizine est recommandée pendant l'allaitement</label></div>
+                </section>
+                <section class="section-block" id="exam-question7">
+                    <h2 class="section-title reveal">Question 7</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Cétirizine :</strong></p><label><input type="checkbox" name="q7" value="a"> Métabolisme rénal quasi total</label><label><input type="checkbox" name="q7" value="b"> Effet très rapide (action en moins d'1 heure)</label><label><input type="checkbox" name="q7" value="c"> Peut entraîner une somnolence légère</label><label><input type="checkbox" name="q7" value="d"> Est contre-indiquée en insuffisance rénale</label></div>
+                </section>
+                <section class="section-block" id="exam-question8">
+                    <h2 class="section-title reveal">Question 8</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Fexofénadine :</strong></p><label><input type="checkbox" name="q8" value="a"> Ne traverse pas la barrière hémato-encéphalique</label><label><input type="checkbox" name="q8" value="b"> Effet sédatif quasi inexistant</label><label><input type="checkbox" name="q8" value="c"> Élimination majoritairement biliaire</label><label><input type="checkbox" name="q8" value="d"> Peut être prise avec du jus de pamplemousse</label></div>
+                </section>
+                <section class="section-block" id="exam-question9">
+                    <h2 class="section-title reveal">Question 9</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Bilastine :</strong></p><label><input type="checkbox" name="q9" value="a"> Antihistaminique le plus récent</label><label><input type="checkbox" name="q9" value="b"> Non métabolisé par le CYP450</label><label><input type="checkbox" name="q9" value="c"> Doit être prise à jeun</label><label><input type="checkbox" name="q9" value="d"> Peut être prise avec du jus de pamplemousse</label></div>
+                </section>
+                <section class="section-block" id="exam-question10">
+                    <h2 class="section-title reveal">Question 10</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels conseils donner pour un patient insuffisant rénal qui a besoin d'un antihistaminique ?</strong></p><label><input type="checkbox" name="q10" value="a"> Orienter vers Fexofénadine</label><label><input type="checkbox" name="q10" value="b"> Orienter vers Bilastine</label><label><input type="checkbox" name="q10" value="c"> Éviter Cétirizine</label><label><input type="checkbox" name="q10" value="d"> Éviter Lévocétirizine</label></div>
+                </section>
+                <section class="section-block" style="border-bottom: none;">
+                    <div class="card reveal reveal-delay-1" style="text-align: center;">
+                        <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;">Vérifier mes réponses</button>
+                        <button class="toggle-btn" id="resetExam">Réinitialiser</button>
+                        <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Drug Images Modal -->
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        // Stars
+        (function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // Reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== SIDE DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
+        const sideDotsContainer = document.getElementById('sideDots');
+        const originalLessonDotsHTML = sideDotsContainer.innerHTML;
+
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'substances', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
+
+        function generateExamDotsHTML() {
+            const tooltips = [
+                'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
+                'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'
+            ];
+            let html = '';
+            examSectionIDs.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                html +=
+                    `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
+            });
+            return html;
+        }
+
+        sideDotsContainer.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            if (isExamMode) {
+                document.getElementById(dotId)?.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('section-' + dotId)?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveDot, { passive: true });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Nav hide on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // Theme
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const cur = htmlEl.getAttribute('data-theme');
+            const next = cur === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // ==================== IMAGES DES MÉDICAMENTS ====================
+        const drugImages = {};
+
+        function showDrugModal(drugName) {
+            const modal = document.getElementById('drugModal');
+            document.getElementById('modalTitle').textContent = drugName;
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = '';
+            const imgs = drugImages[drugName] || [];
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = drugName;
+                img.loading = 'lazy';
+                container.appendChild(img);
+            });
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeDrugModal();
+        });
+
+        // Toggle Lesson/Examen
+        const btnLesson = document.getElementById('btnLesson');
+        const btnExamen = document.getElementById('btnExamen');
+        const lessonContent = document.getElementById('lessonContent');
+        const examContent = document.getElementById('examContent');
+
+        function showLesson() {
+            lessonContent.style.display = 'block';
+            examContent.style.display = 'none';
+            sideDotsContainer.innerHTML = originalLessonDotsHTML;
+            sideDotsContainer.style.display = 'flex';
+            btnLesson.classList.add('active');
+            btnExamen.classList.remove('active');
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
+            updateActiveDot();
+        }
+
+        function showExam() {
+            lessonContent.style.display = 'none';
+            examContent.style.display = 'block';
+            sideDotsContainer.innerHTML = generateExamDotsHTML();
+            sideDotsContainer.style.display = 'flex';
+            btnLesson.classList.remove('active');
+            btnExamen.classList.add('active');
+            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            resetExam();
+            updateActiveDot();
+        }
+
+        btnLesson.addEventListener('click', showLesson);
+        btnExamen.addEventListener('click', showExam);
+
+        // ==================== EXAM QCM LOGIC ====================
+        const correctAnswers = {
+            q1: ['a', 'b', 'd'],
+            q2: ['a', 'b', 'c'],
+            q3: ['a', 'b'],
+            q4: ['a', 'b'],
+            q5: ['a', 'b', 'c', 'd'],
+            q6: ['a', 'b', 'c'],
+            q7: ['a', 'b', 'c', 'd'],
+            q8: ['a', 'b', 'c'],
+            q9: ['a', 'b', 'c'],
+            q10: ['a', 'b', 'c', 'd']
+        };
+
+        document.getElementById('checkExam').addEventListener('click', () => {
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+
+            let totalScore = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                const correctVals = correctAnswers[q];
+                const allCheckboxes = document.querySelectorAll(`input[name="${q}"]`);
+                let hasWrongSelected = false;
+                let correctSelectedCount = 0;
+
+                allCheckboxes.forEach(cb => {
+                    const label = cb.parentElement;
+                    if (cb.checked) {
+                        if (correctVals.includes(cb.value)) {
+                            correctSelectedCount++;
+                            label.classList.add('correct-answer');
+                        } else {
+                            hasWrongSelected = true;
+                            label.classList.add('wrong-answer');
+                        }
+                    } else {
+                        if (correctVals.includes(cb.value)) {
+                            label.classList.add('missed-answer');
+                        }
+                    }
+                });
+
+                if (hasWrongSelected) {
+                    // 0 point
+                } else if (correctSelectedCount === correctVals.length) {
+                    totalScore += 1;
+                } else if (correctSelectedCount > 0) {
+                    totalScore += correctSelectedCount / correctVals.length;
+                }
+            }
+
+            const pct = Math.round((totalScore / totalQuestions) * 100);
+            let msg =
+                `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            if (pct >= 80) msg += "🌟 Excellent !";
+            else if (pct >= 50) msg += "📚 Continuez à réviser.";
+            else msg += "🔍 Révisez le cours et réessayez.";
+            document.getElementById('examResult').innerHTML = msg;
+            document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        function resetExam() {
+            document.querySelectorAll('.question-card input[type="checkbox"]').forEach(i => i.checked = false);
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+            document.getElementById('examResult').textContent = '';
+        }
+        document.getElementById('resetExam').addEventListener('click', resetExam);
+
+        // Initialisation
+        updateActiveDot();
+    </script>
+</body>
+</html>
