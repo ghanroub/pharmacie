@@ -10,12 +10,10 @@
     <meta property="og:title" content="Les Antihistaminiques H1 - GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
     <title>Les Antihistaminiques H1 | GhaniPharma</title>
-    <!-- أيقونة الموقع مثل الكود الثاني -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ----- الأنماط العامة كما هي مع تعديل اللوغو ----- */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -403,7 +401,6 @@
             box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
         }
 
-        /* ===== فهرس العناوين الجانبي (النقاط) ===== */
         .side-dots {
             position: fixed;
             top: 50%;
@@ -756,7 +753,6 @@
             border-radius: 16px;
         }
 
-        /* Exam / QCM styles */
         .question-card label {
             display: block;
             margin-bottom: 8px;
@@ -832,7 +828,6 @@
 
     <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
 
-    <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -856,7 +851,6 @@
         </div>
     </nav>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -875,16 +869,12 @@
         </div>
     </div>
 
-    <!-- Side dots (سيتم توليدها ديناميكيًا) -->
     <div class="side-dots" id="sideDots"></div>
-
-    <!-- Bottom dots nav (سيتم توليدها ديناميكيًا أيضًا) -->
     <div class="bottom-dots-nav" id="bottomDotsNav"></div>
 
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- Hero / Toggle -->
             <section class="hero-section" id="section-intro">
                 <div class="hero-badge reveal"><i class="fas fa-capsules"></i> Pharmacologie</div>
                 <h1 class="hero-title reveal reveal-delay-1">LES ANTIHISTAMINIQUES H1</h1>
@@ -895,7 +885,6 @@
                 </div>
             </section>
 
-            <!-- LESSON CONTENT -->
             <div id="lessonContent">
                 <section class="section-block" id="section-mecanisme">
                     <h2 class="section-title reveal">Mécanisme d'action</h2>
@@ -1047,7 +1036,6 @@
                 </section>
             </div>
 
-            <!-- EXAMEN CONTENT (QCM à choix multiples) -->
             <div id="examContent" style="display: none;">
                 <div class="qcm-instruction card reveal reveal-delay-1">
                     <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
@@ -1104,7 +1092,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1117,7 +1104,6 @@
         <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
     </footer>
 
-    <!-- Drug Images Modal -->
     <div class="modal-overlay" id="drugModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeDrugModal()">&times;</button>
@@ -1127,7 +1113,6 @@
     </div>
 
     <script>
-        // Stars
         (function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -1146,13 +1131,11 @@
             container.appendChild(fragment);
         })();
 
-        // Reveal animations
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== SIDE DOTS & BOTTOM DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
         const sideDotsContainer = document.getElementById('sideDots');
         const bottomDotsContainer = document.getElementById('bottomDotsNav');
 
@@ -1256,7 +1239,6 @@
         updateDots('lesson');
         updateActiveDot();
 
-        // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
         const mobileOverlay = document.getElementById('mobileMenuOverlay');
         const closeBtn = document.getElementById('closeMobileMenu');
@@ -1275,7 +1257,6 @@
             }
         });
 
-        // Nav hide on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -1285,7 +1266,6 @@
             lastScroll = st;
         }, { passive: true });
 
-        // Theme
         const themeToggle = document.getElementById('themeToggle');
         const htmlEl = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1297,8 +1277,37 @@
             localStorage.setItem('theme', next);
         });
 
-        // ==================== IMAGES DES MÉDICAMENTS ====================
-        const drugImages = {}; // Aucune image fournie pour les antihistaminiques, le modal affichera un placeholder.
+        const drugImages = {
+            "Hydroxyl": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888578/Hydroxyl.jpg"],
+            "Hydroxil": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888576/Hassalyse.jpg"],
+            "Croxizine": [],
+            "Atarax": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888576/Atarax.jpg"],
+            "Durrax": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786918118/Durrax.jpg"],
+            "Feniramine": [],
+            "Doramine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888576/Doramine.webp"],
+            "Polaramine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888579/Polaramine.jpg"],
+            "Claramne": [],
+            "Histagan": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888578/Histagan.jpg"],
+            "Histone": [],
+            "Ketof": [],
+            "Tifen": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888581/Tifen.jpg"],
+            "Alerfene": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888576/Alerfene.jpg"],
+            "Zaditen": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888581/Zaditen.jpg"],
+            "Totilam": [],
+            "Totinal": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888581/Totinal.jpg"],
+            "Natazine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888579/Natazine.jpg"],
+            "Primalan": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888580/Primalan.jpg"],
+            "Lapeti": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888579/Lapeti.jpg"],
+            "Super appetie": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888580/Super_appetie.jpg"],
+            "Ciptadine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888576/Ciptadine.jpg"],
+            "Periactine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888579/Periactine.jpg"],
+            "Modestamine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888579/Modestamine.jpg"],
+            "Heptal": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888577/Heptal.jpg"],
+            "Heptagyl": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888577/Heptagyl.jpg"],
+            "Heptafort": [],
+            "Primalex": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888580/Primalex.jpg"],
+            "Hassalyse": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1786888576/Hassalyse.jpg"]
+        };
 
         function showDrugModal(drugName) {
             const modal = document.getElementById('drugModal');
@@ -1330,7 +1339,6 @@
             if (e.key === 'Escape') closeDrugModal();
         });
 
-        // Toggle Lesson/Examen
         const btnLesson = document.getElementById('btnLesson');
         const btnExamen = document.getElementById('btnExamen');
         const lessonContent = document.getElementById('lessonContent');
@@ -1360,7 +1368,6 @@
         btnLesson.addEventListener('click', showLesson);
         btnExamen.addEventListener('click', showExam);
 
-        // ==================== EXAM QCM LOGIC ====================
         const correctAnswers = {
             q1: ['a', 'b', 'c'],
             q2: ['a', 'b', 'd'],
@@ -1433,7 +1440,6 @@
         }
         document.getElementById('resetExam').addEventListener('click', resetExam);
 
-        // Initialisation
         updateActiveDot();
     </script>
 </body>
