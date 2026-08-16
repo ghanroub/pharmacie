@@ -1330,21 +1330,42 @@
             lessonContent.style.display = 'block';
             examContent.style.display = 'none';
             sideDotsContainer.innerHTML = originalLessonDotsHTML;
+            sideDotsContainer.style.display = 'flex';
             btnLesson.classList.add('active');
             btnExamen.classList.remove('active');
-            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
-            updateActiveDot();
+
+            // إعادة مراقبة عناصر reveal في الدرس لأنها كانت مخفية
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => {
+                el.classList.remove('visible'); // إعادة تعيين الحالة المرئية
+                revealObserver.observe(el);
+            });
+
+            // إعادة حساب النقاط النشطة بعد ظهور الأقسام
+            setTimeout(() => {
+                updateActiveDot();
+            }, 100);
         }
 
         function showExam() {
             lessonContent.style.display = 'none';
             examContent.style.display = 'block';
             sideDotsContainer.innerHTML = generateExamDotsHTML();
+            sideDotsContainer.style.display = 'flex';
             btnLesson.classList.remove('active');
             btnExamen.classList.add('active');
-            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            
+            // إعادة مراقبة عناصر reveal في الامتحان
+            document.querySelectorAll('#examContent .reveal').forEach(el => {
+                el.classList.remove('visible');
+                revealObserver.observe(el);
+            });
+            
             resetExam();
-            updateActiveDot();
+            
+            // إعادة حساب النقاط النشطة بعد ظهور الأقسام
+            setTimeout(() => {
+                updateActiveDot();
+            }, 100);
         }
 
         btnLesson.addEventListener('click', showLesson);
