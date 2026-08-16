@@ -404,6 +404,7 @@
             box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
         }
 
+        /* ===== فهرس العناوين الجانبي (النقاط) ===== */
         .side-dots {
             position: fixed;
             top: 50%;
@@ -413,7 +414,25 @@
             display: flex;
             flex-direction: column;
             gap: 22px;
+            padding: 20px 0;
         }
+
+        .side-dots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                var(--border-glass) 10%, 
+                var(--border-glass) 90%, 
+                transparent);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
         .dot {
             width: 12px;
             height: 12px;
@@ -423,18 +442,26 @@
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
         }
+
         .dot:hover {
             background: var(--accent);
             border-color: var(--accent);
             box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+            transform: scale(1.3);
         }
+
         .dot.active {
             background: var(--primary);
             border-color: var(--primary);
             transform: scale(1.7);
             box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
         }
+
         .dot-tooltip {
             position: absolute;
             right: 30px;
@@ -448,11 +475,91 @@
             white-space: nowrap;
             pointer-events: none;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
             font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
         }
-        .dot:hover .dot-tooltip {
+
+        .dot-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            transform: translateY(-50%);
+            border-left: 8px solid rgba(0, 0, 0, 0.9);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+
+        .dot:hover .dot-tooltip,
+        .dot.active .dot-tooltip {
             opacity: 1;
+            transform: translateY(-50%) translateX(-4px);
+        }
+
+        [data-theme="light"] .dot-tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
+            border-color: rgba(0,0,0,0.1);
+        }
+        [data-theme="light"] .dot-tooltip::after {
+            border-left-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .bottom-dots-nav {
+            display: none;
+        }
+
+        @media (min-width: 993px) {
+            .side-dots { display: flex; }
+            .bottom-dots-nav { display: none; }
+        }
+
+        @media (max-width: 992px) {
+            .side-dots { display: none; }
+            .bottom-dots-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--nav-bg);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border-top: 1px solid var(--border-glass);
+                padding: 10px 15px;
+                gap: 8px;
+                justify-content: center;
+                z-index: 999;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .bottom-dots-nav::-webkit-scrollbar { display: none; }
+            .bottom-dot {
+                min-width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background: rgba(128, 128, 128, 0.2);
+                border: 2px solid transparent;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.75rem;
+                color: var(--text-secondary);
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .bottom-dot.active {
+                background: rgba(0, 188, 212, 0.2);
+                border-color: var(--primary);
+                color: var(--primary);
+                box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+            }
+            .main-wrapper { padding-bottom: 70px; }
         }
 
         .main-wrapper {
@@ -758,11 +865,6 @@
             font-size: 0.95rem;
         }
 
-        @media (max-width: 992px) {
-            .side-dots {
-                display: none;
-            }
-        }
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -841,20 +943,11 @@
         </div>
     </div>
 
-    <!-- Side dots -->
-    <div class="side-dots" id="sideDots">
-        <div class="dot active" data-dot="mecanisme"><span class="dot-tooltip">Mécanisme</span></div>
-        <div class="dot" data-dot="indications"><span class="dot-tooltip">Indications</span></div>
-        <div class="dot" data-dot="contre-indications"><span class="dot-tooltip">Contre-indications</span></div>
-        <div class="dot" data-dot="interactions"><span class="dot-tooltip">Interactions</span></div>
-        <div class="dot" data-dot="grossesse"><span class="dot-tooltip">Grossesse</span></div>
-        <div class="dot" data-dot="csi"><span class="dot-tooltip">Corticoïdes inhalés</span></div>
-        <div class="dot" data-dot="associations"><span class="dot-tooltip">Associations</span></div>
-        <div class="dot" data-dot="bdca"><span class="dot-tooltip">BDCA</span></div>
-        <div class="dot" data-dot="bdla"><span class="dot-tooltip">BDLA</span></div>
-        <div class="dot" data-dot="antileucotrienes"><span class="dot-tooltip">Antileucotriènes</span></div>
-        <div class="dot" data-dot="conseil"><span class="dot-tooltip">Conseil ultime</span></div>
-    </div>
+    <!-- Side dots (سيتم توليدها ديناميكيًا) -->
+    <div class="side-dots" id="sideDots"></div>
+
+    <!-- Bottom dots nav (سيتم توليدها ديناميكيًا أيضًا) -->
+    <div class="bottom-dots-nav" id="bottomDotsNav"></div>
 
     <div class="main-wrapper">
         <div class="container">
@@ -1239,9 +1332,9 @@
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== SIDE DOTS ====================
+        // ==================== SIDE DOTS & BOTTOM DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
         const sideDotsContainer = document.getElementById('sideDots');
-        const originalLessonDotsHTML = sideDotsContainer.innerHTML;
+        const bottomDotsContainer = document.getElementById('bottomDotsNav');
 
         const lessonSectionIDs = ['mecanisme', 'indications', 'contre-indications', 'interactions',
             'grossesse', 'csi', 'associations', 'bdca', 'bdla', 'antileucotrienes', 'conseil'
@@ -1251,29 +1344,50 @@
             'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
         ];
 
-        function generateExamDotsHTML() {
-            const tooltips = [
-                'Question 1', 'Question 2', 'Question 3', 'Question 4', 'Question 5',
-                'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'
-            ];
+        const lessonTooltips = [
+            'Mécanisme', 'Indications', 'Contre‑indications', 'Interactions', 'Grossesse',
+            'Corticoïdes inhalés', 'Associations', 'BDCA', 'BDLA', 'Antileucotriènes', 'Conseil ultime'
+        ];
+
+        const examTooltips = examSectionIDs.map((id, index) => `Question ${index + 1}`);
+
+        function generateDotsHTML(ids, tooltips, isBottom = false) {
+            const containerClass = isBottom ? 'bottom-dot' : 'dot';
             let html = '';
-            examSectionIDs.forEach((id, index) => {
+            ids.forEach((id, index) => {
                 const activeClass = index === 0 ? ' active' : '';
-                html +=
-                    `<div class="dot${activeClass}" data-dot="${id}"><span class="dot-tooltip">${tooltips[index]}</span></div>`;
+                const tooltip = tooltips[index];
+                if (!isBottom) {
+                    html += `<div class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}" title="${tooltip}">
+                                <span class="dot-tooltip">${tooltip}</span>
+                            </div>`;
+                } else {
+                    html += `<button class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}">
+                                ${index + 1}
+                            </button>`;
+                }
             });
             return html;
         }
 
-        sideDotsContainer.addEventListener('click', (e) => {
-            const dot = e.target.closest('.dot');
+        function updateDots(mode) {
+            const isExam = mode === 'exam';
+            const ids = isExam ? examSectionIDs : lessonSectionIDs;
+            const tooltips = isExam ? examTooltips : lessonTooltips;
+            
+            sideDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, false);
+            bottomDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, true);
+        }
+
+        document.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot, .bottom-dot');
             if (!dot) return;
             const dotId = dot.dataset.dot;
             const isExamMode = document.getElementById('examContent').style.display !== 'none';
-            if (isExamMode) {
-                document.getElementById(dotId)?.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                document.getElementById('section-' + dotId)?.scrollIntoView({ behavior: 'smooth' });
+            const selector = isExamMode ? dotId : 'section-' + dotId;
+            const targetEl = document.getElementById(selector);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
 
@@ -1297,9 +1411,24 @@
             document.querySelectorAll('#sideDots .dot').forEach(d => {
                 d.classList.toggle('active', d.dataset.dot === active);
             });
+            document.querySelectorAll('#bottomDotsNav .bottom-dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
         }
 
-        window.addEventListener('scroll', updateActiveDot, { passive: true });
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateActiveDot();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        updateDots('lesson');
+        updateActiveDot();
 
         // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
@@ -1384,8 +1513,7 @@
         function showLesson() {
             lessonContent.style.display = 'block';
             examContent.style.display = 'none';
-            sideDotsContainer.innerHTML = originalLessonDotsHTML;
-            sideDotsContainer.style.display = 'flex';
+            updateDots('lesson');
             btnLesson.classList.add('active');
             btnExamen.classList.remove('active');
             document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
@@ -1395,8 +1523,7 @@
         function showExam() {
             lessonContent.style.display = 'none';
             examContent.style.display = 'block';
-            sideDotsContainer.innerHTML = generateExamDotsHTML();
-            sideDotsContainer.style.display = 'flex';
+            updateDots('exam');
             btnLesson.classList.remove('active');
             btnExamen.classList.add('active');
             document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
