@@ -959,7 +959,9 @@
                             <span class="drug-link" onclick="showDrugModal('Rhitene')">Rhitene®</span>,
                             <span class="drug-link" onclick="showDrugModal('Artiz')">Artiz®</span>,
                             <span class="drug-link" onclick="showDrugModal('Histarizine')">Histarizine®</span>,
-                            <span class="drug-link" onclick="showDrugModal('Zetirec')">Zetirec®</span>
+                            <span class="drug-link" onclick="showDrugModal('Zetirec')">Zetirec®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Cétirizine')">Cétirizine (générique)®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Akaryd')">Akaryd®</span>
                         </p>
                         <p><strong>Formes disponibles :</strong> CP 10mg, Gouttes (10mg/ml), Sirop (1mg/ml).</p>
                         <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (10mg) le soir. Dose max = 10mg/jour.</p>
@@ -986,7 +988,9 @@
                             <span class="drug-link" onclick="showDrugModal('Telfast')">Telfast®</span>,
                             <span class="drug-link" onclick="showDrugModal('Fexodine')">Fexodine®</span>,
                             <span class="drug-link" onclick="showDrugModal('Fexonidal')">Fexonidal®</span>,
-                            <span class="drug-link" onclick="showDrugModal('Fastofen')">Fastofen®</span>
+                            <span class="drug-link" onclick="showDrugModal('Fastofen')">Fastofen®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rifex')">Rifex®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fexofénadine BEKER')">Fexofénadine BEKER®</span>
                         </p>
                         <p><strong>Formes disponibles :</strong> CP 120mg et CP 180mg.</p>
                         <p><strong>Posologie Adulte & Max :</strong> 1 x 120mg/jour pour la rhinite. Dose max = 180mg/jour (pour l'urticaire).</p>
@@ -1001,7 +1005,8 @@
                             <span class="drug-link" onclick="showDrugModal('Loradine')">Loradine®</span>,
                             <span class="drug-link" onclick="showDrugModal('Allertine')">Allertine®</span>,
                             <span class="drug-link" onclick="showDrugModal('Claradine')">Claradine®</span>,
-                            <span class="drug-link" onclick="showDrugModal('Restamine')">Restamine®</span>
+                            <span class="drug-link" onclick="showDrugModal('Restamine')">Restamine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Lostamine')">Lostamine®</span>
                         </p>
                         <p><strong>Formes disponibles :</strong> CP 10mg, Sirop (1mg/ml), Gouttes.</p>
                         <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (10mg) le soir. Dose max = 10mg/jour.</p>
@@ -1015,7 +1020,8 @@
                             <span class="drug-link" onclick="showDrugModal('Deslor')">Deslor®</span>,
                             <span class="drug-link" onclick="showDrugModal('Loradess')">Loradess®</span>,
                             <span class="drug-link" onclick="showDrugModal('Desloral')">Desloral®</span>,
-                            <span class="drug-link" onclick="showDrugModal('Udine')">Udine®</span>
+                            <span class="drug-link" onclick="showDrugModal('Udine')">Udine®</span>,
+                            <span class="drug-link" onclick="showDrugModal('Deslotine')">Deslotine®</span>
                         </p>
                         <p><strong>Formes disponibles :</strong> CP 5mg, Sirop (0.5mg/ml).</p>
                         <p><strong>Posologie Adulte & Max :</strong> 1 comprimé (5mg) le soir. Dose max = 5mg/jour.</p>
@@ -1311,7 +1317,29 @@
         });
 
         // ==================== IMAGES DES MÉDICAMENTS ====================
-        const drugImages = {};
+        const drugImages = {
+            "Xycare": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066116/Xycare.jpg"],
+            "Zyrtec": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066116/Zyrtec.jpg"],
+            "Deslor": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066116/Deslor.jpg"],
+            "Zetirec": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066116/Zetirec.jpg"],
+            "Telfast": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066115/Telfast.jpg"],
+            "Rifex": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066115/Rifex.jpg"],
+            "Loradine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066114/Loradine.jpg"],
+            "Bilaxen": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066114/Bilaxen.png"],
+            "Desloral": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066114/Desloral.jpg"],
+            "Lostamine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066113/Lostamine.jpg"],
+            "Rhitene": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066113/Rhitene.jpg"],
+            "Loradess": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066112/Loradess.jpg"],
+            "Levozen": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066111/Levozen.jpg"],
+            "Fexofénadine BEKER": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066111/Fexof%C3%A9nadine_BEKER.jpg"],
+            "Deslotine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066110/Deslotine.jpg"],
+            "Allertine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066110/Allertine.jpg"],
+            "Fexodine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066109/Fexodine.jpg"],
+            "Cétirizine": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066109/C%C3%A9tirizine.jpg"],
+            "Artiz": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066109/Artiz.jpg"],
+            "Ebasta": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066108/Ebasta.jpg"],
+            "Akaryd": ["https://res.cloudinary.com/s6y8zztk/image/upload/v1787066108/Akaryd.jpg"]
+        };
 
         function showDrugModal(drugName) {
             const modal = document.getElementById('drugModal');
