@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur les antitussifs et leurs mécanismes - GhaniPharma">
-    <meta name="keywords" content="pharmacie, antitussifs, toux sèche, codéine, dextrométhorphane, butamirate, oxomémazine, GhaniPharma">
+    <meta name="description" content="Cours complet sur les antitussifs - GhaniPharma">
+    <meta name="keywords" content="pharmacie, antitussifs, toux sèche, codéine, dextrométhorphane, oxomémazine, prométhazine, butamirate, cloperastine, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Les Antitussifs - GhaniPharma">
     <meta name="theme-color" content="#0a0a1a">
     <title>Les Antitussifs | GhaniPharma</title>
-    <!-- أيقونة الموقع -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ----- الأنماط العامة ----- */
         :root {
             --bg-primary: #0a0a1a;
             --bg-secondary: #1b2735;
@@ -109,8 +107,15 @@
             opacity: 0;
         }
         @keyframes twinkle {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.8); }
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.8);
+            }
         }
         [data-theme="light"] .star {
             animation: none !important;
@@ -174,8 +179,13 @@
             object-fit: contain;
         }
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
-            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(0, 188, 212, 0);
+            }
         }
         .nav-right {
             display: flex;
@@ -255,7 +265,6 @@
             transform: scale(0.9);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
         }
         .mobile-menu-overlay.open .mobile-menu-popup {
             transform: scale(1);
@@ -328,11 +337,22 @@
         .theme-toggle i {
             transition: all 0.5s ease;
         }
-        [data-theme="dark"] .theme-toggle .fa-moon { display: inline-block; }
-        [data-theme="dark"] .theme-toggle .fa-sun { display: none; }
-        [data-theme="light"] .theme-toggle .fa-moon { display: none; }
-        [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; color: #f39c12; }
-        [data-theme="light"] .theme-toggle { border-color: rgba(0, 0, 0, 0.2); }
+        [data-theme="dark"] .theme-toggle .fa-moon {
+            display: inline-block;
+        }
+        [data-theme="dark"] .theme-toggle .fa-sun {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-moon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle .fa-sun {
+            display: inline-block;
+            color: #f39c12;
+        }
+        [data-theme="light"] .theme-toggle {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
 
         .menu-toggle {
             display: none;
@@ -344,7 +364,9 @@
             padding: 10px;
             transition: transform 0.3s ease;
         }
-        .menu-toggle:hover { transform: rotate(90deg); }
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
 
         .toggle-buttons {
             display: flex;
@@ -379,7 +401,6 @@
             box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
         }
 
-        /* ===== فهرس العناوين الجانبي (النقاط) ===== */
         .side-dots {
             position: fixed;
             top: 50%;
@@ -558,14 +579,19 @@
             border-bottom: 1px solid var(--border-glass);
             transition: all 0.5s ease;
         }
-        .section-block:last-of-type { border-bottom: none; }
+        .section-block:last-of-type {
+            border-bottom: none;
+        }
 
         .reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
@@ -702,10 +728,7 @@
             align-items: center;
             justify-content: center;
         }
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
-        }
+        .modal-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
         .modal-images {
             display: flex;
             flex-wrap: wrap;
@@ -730,7 +753,6 @@
             border-radius: 16px;
         }
 
-        /* Exam / QCM styles */
         .question-card label {
             display: block;
             margin-bottom: 8px;
@@ -741,28 +763,11 @@
             border-left: 4px solid transparent;
         }
         .question-card label:hover { background: rgba(0, 188, 212, 0.05); }
-        .question-card input[type="checkbox"] {
-            margin-right: 10px;
-            accent-color: var(--primary);
-        }
-        .correct-answer {
-            background: rgba(0, 200, 0, 0.2) !important;
-            border-left: 4px solid #00c853 !important;
-        }
-        .wrong-answer {
-            background: rgba(255, 0, 0, 0.2) !important;
-            border-left: 4px solid #ff1744 !important;
-        }
-        .missed-answer {
-            background: rgba(255, 200, 0, 0.2) !important;
-            border-left: 4px solid #ffc107 !important;
-        }
-        .result-message {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            font-weight: 700;
-        }
+        .question-card input[type="checkbox"] { margin-right: 10px; accent-color: var(--primary); }
+        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853 !important; }
+        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744 !important; }
+        .missed-answer { background: rgba(255, 200, 0, 0.2) !important; border-left: 4px solid #ffc107 !important; }
+        .result-message { text-align: center; font-size: 1.2rem; margin-top: 20px; font-weight: 700; }
         .qcm-instruction {
             text-align: center;
             margin-bottom: 20px;
@@ -801,10 +806,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid var(--border-glass);
         }
-        .social-link:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+        .social-link:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
         .copyright { color: var(--text-secondary); font-size: 0.95rem; }
 
         @media (max-width: 768px) {
@@ -826,7 +828,6 @@
 
     <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
 
-    <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -850,7 +851,6 @@
         </div>
     </nav>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -869,35 +869,32 @@
         </div>
     </div>
 
-    <!-- Side dots (سيتم توليدها ديناميكيًا) -->
     <div class="side-dots" id="sideDots"></div>
-
-    <!-- Bottom dots nav (سيتم توليدها ديناميكيًا أيضًا) -->
     <div class="bottom-dots-nav" id="bottomDotsNav"></div>
 
     <div class="main-wrapper">
         <div class="container">
 
-            <!-- Hero / Toggle -->
             <section class="hero-section" id="section-intro">
-                <div class="hero-badge reveal"><i class="fas fa-capsules"></i> PNEUMOLOGIE ET ALLERGOLOGIE</div>
+                <div class="hero-badge reveal"><i class="fas fa-capsules"></i> Pharmacologie</div>
                 <h1 class="hero-title reveal reveal-delay-1">LES ANTITUSSIFS</h1>
-                <p class="hero-subtitle reveal reveal-delay-2">Toux sèche : mécanismes, indications, contre-indications et conseils à l'officine.</p>
+                <p class="hero-subtitle reveal reveal-delay-2">Antitussifs pour la toux sèche : mécanismes, indications, contre-indications et conseils à l'officine.</p>
                 <div class="toggle-buttons reveal reveal-delay-3">
-                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Leçon</button>
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> Lesson</button>
                     <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> Examen</button>
                 </div>
             </section>
 
-            <!-- LESSON CONTENT -->
             <div id="lessonContent">
                 <section class="section-block" id="section-mecanisme">
-                    <h2 class="section-title reveal">Mécanisme d'action</h2>
+                    <h2 class="section-title reveal">Mécanisme d'action (en bref)</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong>Antitussifs centraux (Opiacés) :</strong> Agissent sur le centre bulbaire de la toux (récepteurs µ-opioïdes) pour élever le seuil du réflexe tussigène.</p>
-                        <p><strong>Antitussifs périphériques (Non opiacés) :</strong> Agissent sur les récepteurs de l'arbre bronchique pour diminuer l'irritation locale.</p>
-                        <p><strong>Antihistaminiques (1ère génération) :</strong> Effet anticholinergique et sédatif central qui diminue l'irritation et la toux nocturne.</p>
-                        <p><strong>Fluidifiants / Mucolytiques :</strong> Hydrolysent les mucines et fluidifient les sécrétions bronchiques (ils sont à tort classés dans la catégorie anti-tussifs).</p>
+                        <p>Ils agissent tous, par des voies différentes, pour inhiber le <strong>centre bulbaire de la toux</strong> (au niveau du tronc cérébral).</p>
+                        <ul style="padding-left:20px; margin-top:15px;">
+                            <li><strong>Opiacés</strong> (Codéine, Pholcodine, Dextrométhorphane) : Agonistes des récepteurs µ-opioïdes dans le cerveau.</li>
+                            <li><strong>Non opiacés</strong> (Butamirate, Cloperastine, Terpènes) : Action centrale sans effet opioïde (pas de dépendance).</li>
+                            <li><strong>Antihistaminiques</strong> (Oxomémazine, Prométhazine) : Action anticholinergique et sédative. Ils assèchent les sécrétions bronchiques et réduisent l'irritation réflexe, en particulier la nuit.</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -905,18 +902,25 @@
                     <h2 class="section-title reveal">Indications générales</h2>
                     <div class="card reveal reveal-delay-1">
                         <ul style="padding-left:20px;">
-                            <li><strong>Toux sèche, irritative, quinteuse et gênante, sans expectoration.</strong></li>
-                            <li><strong>Antihistaminiques :</strong> Toux d'origine allergique ou toux nocturne.</li>
+                            <li>Traitement symptomatique de la <strong>toux sèche non productive</strong> (irritative, gênante, spasmodique, nocturne).</li>
+                            <li>Efficaces sur la toux au cours du <strong>rhume</strong> ou de la <strong>grippe</strong>.</li>
                         </ul>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-contre-indications">
-                    <h2 class="section-title reveal">Contre-indications & Précautions majeures</h2>
+                    <h2 class="section-title reveal">Contre-indications & Précautions absolues</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong>Toux grasse productive :</strong> CI absolue de l'ensemble des antitussifs (il faut évacuer le mucus).</p>
-                        <p><strong>Antitussifs Opiacés (Codéine, Pholcodine) :</strong> CI chez l'asthmatique, l'insuffisant respiratoire, les enfants de moins de 12 ans (Codéine interdite &lt;12 ans et déconseillée chez l'adolescent 12-18 ans). Doivent être strictement prescrits (liste I ou II).</p>
-                        <p><strong>Antihistaminiques :</strong> CI chez le sujet glaucomateux (angle fermé) et l'hyperplasie bénigne de la prostate (risque de rétention urinaire).</p>
+                        <p><strong>CI absolues :</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li><strong>Toux productive (grasse)</strong> : Leur inhibition bloque l'évacuation des sécrétions, aggravant l'encombrement. <strong>Règle d'or : Ne jamais donner un antitussif sur une toux avec crachats.</strong></li>
+                            <li><strong>Insuffisance respiratoire sévère, Asthme aigu.</strong></li>
+                        </ul>
+                        <p><strong>Précautions :</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li><strong>Voies dangereuses :</strong> Conduite automobile ou travaux nécessitant une vigilance (somnolence forte avec les antihistaminiques et les opiacés).</li>
+                            <li><strong>Durée :</strong> Ne pas dépasser 5 à 7 jours sans avis médical. Une persistance de la toux ou une fièvre associée doit faire rechercher une pneumonie.</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -924,170 +928,166 @@
                     <h2 class="section-title reveal">Interactions médicamenteuses majeures</h2>
                     <div class="card reveal reveal-delay-1">
                         <ul style="padding-left:20px;">
-                            <li><strong>Dépresseurs du SNC (Alcool, Benzodiazépines, autres morphiniques, hypnotiques) :</strong> Potentiation majeure de la sédation et de la dépression respiratoire.</li>
-                            <li><strong>IMAO + Dextrométhorphane :</strong> Risque de syndrome sérotoninergique (confusion, hyperthermie, myoclonies). CI absolue.</li>
-                            <li><strong>Effets anticholinergiques :</strong> Majoration des effets indésirables avec les autres anticholinergiques (antidépresseurs tricycliques, certains neuroleptiques).</li>
+                            <li><strong>Dépresseurs du SNC</strong> (Alcool, benzodiazépines, autres opioïdes) : Risque de sédation majeure et de dépression respiratoire.</li>
+                            <li><strong>IMAO</strong> (Antidépresseurs) : Formellement contre-indiqué avec le Dextrométhorphane (risque de syndrome sérotoninergique mortel).</li>
+                            <li><strong>Antihistaminiques H1 sédatifs</strong> (Oxomémazine, Prométhazine) + Autres sédatifs : Majoration de la somnolence.</li>
                         </ul>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-grossesse">
-                    <h2 class="section-title reveal">Grossesse et Allaitement</h2>
+                    <h2 class="section-title reveal">Grossesse & Allaitement</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong>Règle générale :</strong> Éviter au 1er trimestre (risque tératogène inconnu). CI absolue au 3ème trimestre pour les opiacés (risque de dépression respiratoire néonatale).</p>
-                        <p><strong>Allaitement :</strong> Opiacés (Codéine) passent dans le lait et peuvent provoquer une sédation chez le nourrisson. À éviter ou à utiliser sous surveillance stricte (privilégier le Butamirate).</p>
+                        <p><strong>Grossesse :</strong> Les opiacés sont déconseillés (surtout au 3ème trimestre). Les antihistaminiques (Oxomémazine, Prométhazine) sont contre-indiqués au 1er trimestre. Le Dextrométhorphane est le plus "toléré" à utiliser avec prudence.</p>
+                        <p><strong>Allaitement :</strong> Proscrire la Codéine et la Pholcodine. Prudence avec les autres. L'Oxomémazine passe dans le lait et peut provoquer une sédation du nourrisson.</p>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-substances">
-                    <h2 class="section-title reveal">Les substances actives</h2>
+                    <h2 class="section-title reveal">Les substances actives (DCI & Spécialités)</h2>
                     
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">1. Antitussifs Non Opiacés (Périphériques)</h3>
-                        <p><strong>Nom générique :</strong> Citrate de Butamirate</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Sinecod')">Sinecod</span>,
-                            <span class="drug-link" onclick="showDrugModal('Eupnex')">Eupnex</span>,
-                            <span class="drug-link" onclick="showDrugModal('Denoral')">Denoral</span>,
-                            <span class="drug-link" onclick="showDrugModal('Toux Kid')">Toux Kid</span>
-                        </p>
-                        <p><strong>Formes pharmaceutiques :</strong> Sirop (adulte & enfant), Gouttes (nourrisson).</p>
-                        <p><strong>Posologie adulte :</strong> 15 à 30 mL de sirop 3 à 4 fois par jour. Max : 360 mg/jour.</p>
-                        <p><strong>Particularité :</strong> Pas d'effet opiacé central. Très bon profil de tolérance, pas de sédation. Durée d'action 4-6h. Sûr chez la femme enceinte (avec prudence).</p>
-                        <p><strong>Conseil pratique :</strong> "Ce médicament calme votre toux sèche. Si après 3-5 jours, votre toux devient grasse avec des crachats, arrêtez immédiatement et consultez votre médecin ; vous aurez besoin d'un fluidifiant."</p>
+                        <h3 style="color:var(--primary);">🟨 1. ANTI-TUSSIFS NON OPIACÉS</h3>
+                        <p><strong>Butamirate (Sinecod®)</strong></p>
+                        <p><strong>Noms commerciaux :</strong> Sinecod.</p>
+                        <p><strong>Formes :</strong> Sirop adulte, Gouttes pédiatriques, Comprimés (varie selon pays).</p>
+                        <p><strong>Posologie adulte :</strong> 15 ml de sirop, 3 à 4 fois par jour. Max : 5 jours.</p>
+                        <p><strong>Particularité :</strong> Molécule de référence pour les toux sèches irritatives. Très faible effet sédatif. Bonne tolérance.</p>
+                        <p><strong>Conseil pratique :</strong> Ne pas donner avec des mucolytiques ou expectorants. Respecter la posologie stricte chez l'enfant (selon l'âge/poids).</p>
                     </div>
 
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">2. Antitussifs Opiacés (Centraux)</h3>
-                        <p><strong>Nom générique :</strong> Codéine (Phosphate)</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Néo-Codion')">Néo-Codion</span> (adulte, enfant, nourrisson),
-                            <span class="drug-link" onclick="showDrugModal('Encofluide')">Encofluide</span>
-                        </p>
-                        <p><strong>Formes :</strong> Sirop (15 mg/cuillère pour adulte), comprimés.</p>
-                        <p><strong>Posologie adulte :</strong> 1 cuillère à soupe (= 15mg), 3 à 4 fois/jour. Max : 120 mg/jour. Espacement 4-6h.</p>
-                        <p><strong>Particularité :</strong> Prodrogue convertie en morphine. Effet sédatif important. Début d'action 30-60 min. Durée 4-6h. Risque de dépendance.</p>
-                        <p><strong>Conseil pratique :</strong> "Attention, ce médicament est un stupéfiant classé sur liste. Strictement interdit chez l'enfant de moins de 12 ans. Ne dépassez pas la dose. Prenez-le de préférence le soir. Ne buvez pas d'alcool et ne conduisez pas."</p>
+                        <h3 style="color:var(--primary);">Cloperastine (Denoral®)</h3>
+                        <p><strong>Noms commerciaux :</strong> Denoral.</p>
+                        <p><strong>Formes :</strong> Comprimés, Sirop.</p>
+                        <p><strong>Posologie adulte :</strong> 1 comprimé (ou 1 càc) 3 fois par jour. Max : 5 jours.</p>
+                        <p><strong>Particularité :</strong> Action centrale non opioïde. Efficace sur la toux spasmodique.</p>
+                        <p><strong>Conseil pratique :</strong> Il peut parfois provoquer une légère somnolence. Conseiller au patient de surveiller sa vigilance s'il conduit.</p>
                     </div>
 
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">3. Antitussifs Opiacés (Centraux) - Suite</h3>
-                        <p><strong>Nom générique :</strong> Pholcodine</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Biocalyptol')">Biocalyptol</span>
-                        </p>
+                        <h3 style="color:var(--primary);">Clobutinol (Eupnex®)</h3>
+                        <p><strong>Noms commerciaux :</strong> Eupnex.</p>
+                        <p><strong>Formes :</strong> Sirop, Comprimés.</p>
+                        <p><strong>Posologie adulte :</strong> 1 comprimé 3 fois par jour.</p>
+                        <p><strong>Particularité :</strong> Antitussif central non opioïde. Note internationale : Cette molécule est retirée du marché dans certains pays pour risque cardiaque (troubles du rythme). Elle reste disponible en Algérie, mais exigez la plus grande prudence chez le cardiaque.</p>
+                        <p><strong>Conseil pratique :</strong> Déconseiller en cas d'antécédents cardiaques. Ne pas associer à d'autres substances toxiques pour le cœur.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">Terpènes & Huiles essentielles (Phytothérapie)</h3>
+                        <p><strong>Noms commerciaux :</strong> Zecuf®, Bronchonet®, Physiocalyptol®, Pulmo Calyptol®, Broncholytol®.</p>
+                        <p><strong>Formes :</strong> Sirops, Gélules, Suppositoires (souvent à base de pin, eucalyptus, thym).</p>
+                        <p><strong>Posologie adulte :</strong> Variable selon le produit (souvent 1 càs ou 1 gélule 3 fois par jour).</p>
+                        <p><strong>Particularité :</strong> Action balsamique et légèrement expectorante. Pas d'effet opioïde. Indiqués pour les irritations des voies respiratoires.</p>
+                        <p><strong>Conseil pratique :</strong> Contre-indication formelle chez l'épileptique (les huiles essentielles comme l'essence de menthe poivrée peuvent abaisser le seuil convulsif). Utiliser avec prudence chez les asthmatiques allergiques. Bien hydrater le patient.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">Toux Kid®</h3>
+                        <p><strong>Noms commerciaux :</strong> Toux Kid (spécialité pédiatrique).</p>
                         <p><strong>Formes :</strong> Sirop.</p>
-                        <p><strong>Posologie adulte :</strong> 15 à 30 mg 3-4x/jour. Max : 120 mg/jour.</p>
-                        <p><strong>Particularité :</strong> Antitussif opiacé moins addictif que la codéine.</p>
-                        <p><strong>Conseil pratique :</strong> (Note : La Pholcodine a été retirée du marché en France et au Canada à cause du risque d'allergie croisée avec les curares. Vérifiez sa disponibilité légale en Algérie, mais conseillez toujours les alternatives plus sûres comme le Butamirate en priorité).</p>
+                        <p><strong>Posologie :</strong> Selon l'âge (généralement de 1 à 6 ans, voire jusqu'à 12).</p>
+                        <p><strong>Particularité :</strong> Souvent à base de plantes ou d'un antitussif léger (comme le Butamirate).</p>
+                        <p><strong>Conseil pratique :</strong> Conseiller aux parents de bien secouer le flacon avant emploi. Ne pas dépasser 5 jours. Ne pas donner aux nourrissons &lt; 1 mois sans avis médical strict.</p>
                     </div>
 
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">4. Antitussifs Opiacés (Centraux) - Suite</h3>
-                        <p><strong>Nom générique :</strong> Dextrométhorphane (DXM)</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Bronchocalm')">Bronchocalm</span> (adulte, enfant),
-                            <span class="drug-link" onclick="showDrugModal('Humex Toux Sèche')">Humex Toux Sèche</span>
-                        </p>
+                        <h3 style="color:var(--primary);">🟨 2. ANTI-TUSSIFS OPIACÉS</h3>
+                        <p><strong>Dextrométhorphane (Bronchocalm®, Humex Toux Sèche®)</strong></p>
+                        <p><strong>Noms commerciaux :</strong> Bronchocalm, Humex Toux Sèche.</p>
+                        <p><strong>Formes :</strong> Sirop, comprimés, pastilles à sucer.</p>
+                        <p><strong>Posologie adulte :</strong> 10 à 20 mg, 3 fois par jour. Dose max : 120 mg par jour.</p>
+                        <p><strong>Particularité :</strong> Dérivé morphinique sans effet narcotique ! Pas d'addiction, pas de dépression respiratoire aux doses usuelles. Très utilisé.</p>
+                        <p><strong>Conseil pratique :</strong> Attention au syndrome sérotoninergique ! D'alerter impérativement les patients prenant des antidépresseurs (ISRS, IMAO). Ne pas associer avec les médicaments stimulants du système sérotoninergique. Très utile pour les patients ne supportant pas la somnolence de la codéine.</p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);">🟩 3. ANTI-HISTAMINIQUES (Pour toux nocturne)</h3>
+                        <p><strong>Oxomémazine (Toplexil®, Oxomeral®)</strong></p>
+                        <p><strong>Noms commerciaux :</strong> Toplexil (sirop), Oxomeral.</p>
                         <p><strong>Formes :</strong> Sirop, comprimés.</p>
-                        <p><strong>Posologie adulte :</strong> 15 à 30 mg 3-4x/jour. Max : 120 mg/jour.</p>
-                        <p><strong>Particularité :</strong> Proche des opiacés, pas d'effet analgésique. Effet sédatif modéré.</p>
-                        <p><strong>Conseil pratique :</strong> "Attention à ne pas associer ce médicament avec certains antidépresseurs (IMAO). À très forte dose, ce produit peut provoquer des effets hallucinogènes (détournement d'usage), ne jamais dépasser la dose prescrite."</p>
+                        <p><strong>Posologie adulte :</strong> 1 càs ou 1 comprimé 2 à 3 fois par jour (ou surtout au coucher).</p>
+                        <p><strong>Particularité :</strong> Antihistaminique H1 de première génération. Puissant effet sédatif (très utile pour la toux nocturne) et anticholinergique (assèchement des bronches).</p>
+                        <p><strong>Conseil pratique :</strong> Ne pas conduire. Conseiller une prise au coucher si la somnolence est trop gênante le jour. Hydrater le patient car l'effet asséchant peut augmenter la viscosité des sécrétions. À éviter chez les personnes âgées (risque de confusion).</p>
                     </div>
 
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">5. Antitussifs + Antihistaminiques</h3>
-                        <p><strong>Nom générique :</strong> Dextrométhorphane + Mépyramine</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Atussine')">Atussine</span> (adulte, enfant)
-                        </p>
-                        <p><strong>Formes :</strong> Sirop.</p>
-                        <p><strong>Posologie adulte :</strong> 1 cuillère à soupe (= 15mg DXM + 5mg Mépyr.), 3-4x/jour.</p>
-                        <p><strong>Particularité :</strong> L'association avec la mépyramine (anti-H1) augmente fortement la sédation.</p>
-                        <p><strong>Conseil pratique :</strong> "Ce médicament est très sédatif. Impératif de le prendre uniquement le soir avant le coucher. Ne conduisez pas et évitez tout travail nécessitant de la vigilance. Peut provoquer une sécheresse buccale."</p>
+                        <h3 style="color:var(--primary);">Prométhazine (Fluisédal®)</h3>
+                        <p><strong>Noms commerciaux :</strong> Fluisédal.</p>
+                        <p><strong>Formes :</strong> Sirop, comprimés.</p>
+                        <p><strong>Posologie adulte :</strong> 1 càs le soir uniquement, ou 2 à 3 fois par jour selon la gêne.</p>
+                        <p><strong>Particularité :</strong> Antihistaminique H1 sédatif puissant (phénothiazine). Idéal pour soulager les toux sèches nocturnes invalidantes.</p>
+                        <p><strong>Conseil pratique :</strong> La sédation est très marquée. Bien rappeler au patient qu'il ne doit pas conduire le lendemain matin. À réserver aux toux nocturnes perturbant le sommeil.</p>
                     </div>
 
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">6. Antihistaminiques (Indiqués pour la toux nocturne)</h3>
-                        <p><strong>Nom générique :</strong> Oxomémazine</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Toplexil')">Toplexil</span>,
-                            <span class="drug-link" onclick="showDrugModal('Toplex')">Toplex</span>,
-                            <span class="drug-link" onclick="showDrugModal('Oxomeral')">Oxomeral</span>
-                        </p>
-                        <p><strong>Formes :</strong> Sirop.</p>
-                        <p><strong>Posologie adulte :</strong> 1 cuillère à soupe 2 à 3 fois par jour. Max : 60 mg/jour (attention à la sédation).</p>
-                        <p><strong>Particularité :</strong> Antihistaminique H1 de première génération. Très fort pouvoir sédatif. Effet anticholinergique marqué.</p>
-                        <p><strong>Conseil pratique :</strong> Dosage impérativement vespéral. "Prenez-le une heure avant le coucher. Évitez de conduire. Si vous êtes un homme âgé avec des difficultés urinaires, consultez votre médecin (risque de rétention urinaire)."</p>
-                    </div>
-
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);">7. Antihistaminiques - Suite</h3>
-                        <p><strong>Nom générique :</strong> Prométhazine</p>
-                        <p><strong>Noms commerciaux :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Fluisedal')">Fluisedal</span>
-                        </p>
-                        <p><strong>Formes :</strong> Sirop.</p>
-                        <p><strong>Posologie adulte :</strong> 15 à 25 mg (1 à 2 cuillères) le soir. Max : 100 mg/jour.</p>
-                        <p><strong>Particularité :</strong> Très puissant sédatif et anti-allergique. Peut également avoir un effet antitussif central.</p>
-                        <p><strong>Conseil pratique :</strong> "Comme l'Oxomémazine, il est exclusivement nocturne. Traitement de courte durée. Déconseillé chez le patient âgé (risque de confusion) et chez l'enfant de moins de 2 ans (risque de dépression respiratoire)."</p>
+                        <h3 style="color:var(--primary);">🟩 4. ANTI-TUSSIFS OPIACÉS + ANTI-HISTAMINIQUES</h3>
+                        <p><strong>Mentex® (Rhume et grippe)</strong></p>
+                        <p><strong>Noms commerciaux :</strong> Mentex (souvent disponible en pastilles, sirop, ou stick pour inhalation).</p>
+                        <p><strong>Formes :</strong> Pastilles à sucer, stick nasal.</p>
+                        <p><strong>Posologie :</strong> Selon l'âge et la forme.</p>
+                        <p><strong>Particularité :</strong> À base de Menthol et d'huiles essentielles (revitalisant et anti-irritatif local).</p>
+                        <p><strong>Conseil pratique :</strong> À réserver pour les symptômes d'irritation du nez et de la gorge. Ne pas donner aux épileptiques. Le menthol peut provoquer une agitation chez l'enfant. Bien hydrater en cas de prise orale.</p>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-conseil" style="border-bottom: none;">
-                    <h2 class="section-title reveal">Conseil ultime pour votre stage</h2>
+                    <h2 class="section-title reveal">Conseil de fin de délivrance</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong>Focus "Mucolytiques" (Zecuf, Bronchonet, Pulmo Calyptol) :</strong> Le schéma les classe comme "Anti-tussifs". Mais ces médicaments (dérivés de l'Eucalyptus, Terpine, Guaifénésine) sont des <strong>expectorants / fluidifiants</strong>.</p>
-                        <p><strong>Conseil stratégique :</strong> "Si le patient a une toux sèche, il ne doit pas prendre ça. Je lui conseille le Butamirate. Si le patient a une toux GRASSE et des crachats, il ne doit pas prendre d'antitussif, il doit prendre du Zecuf / Bronchonet pour fluidifier et cracher."</p>
-                        <p><strong>C'est le piège le plus fréquent de l'officine :</strong> le pharmacien doit faire le tri dans les classes présentées par ton enseignant.</p>
+                        <p><strong>💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :</strong></p>
+                        <p style="font-size: 1.1rem; margin-top: 15px; padding: 20px; background: rgba(0, 188, 212, 0.1); border-radius: 12px; border-left: 4px solid var(--primary);">
+                            "L'hydratation est votre meilleure alliée. Toujours conseiller au patient de boire 1,5 à 2 litres d'eau par jour pour fluidifier les sécrétions si la toux s'installe.<br><br>
+                            Expliquez à vos patients que <em>« La toux est un réflexe naturel de défense des voies aériennes. Il ne faut pas la supprimer totalement tant qu'elle est grasse et expectorante. Ce n'est que lorsqu'elle est sèche et épuisante qu'on utilise les antitussifs »</em>.<br><br>
+                            Distinguer clairement <strong>antitussif (toux sèche)</strong> et <strong>expectorant/mucolytique (toux grasse)</strong> lors de vos conseils à l'officine !"
+                        </p>
                     </div>
                 </section>
             </div>
 
-            <!-- EXAMEN CONTENT (QCM à choix multiples) -->
             <div id="examContent" style="display: none;">
                 <div class="qcm-instruction card reveal reveal-delay-1">
                     <p><i class="fas fa-info-circle"></i> <strong>QCM :</strong> Cochez <u>toutes</u> les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</p>
                 </div>
                 <section class="section-block" id="exam-question1">
                     <h2 class="section-title reveal">Question 1</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quels sont les mécanismes d'action des antitussifs centraux (opiacés) ?</strong></p><label><input type="checkbox" name="q1" value="a"> Agissent sur le centre bulbaire de la toux</label><label><input type="checkbox" name="q1" value="b"> Agissent sur les récepteurs µ-opioïdes</label><label><input type="checkbox" name="q1" value="c"> Agissent sur les récepteurs de l'arbre bronchique</label><label><input type="checkbox" name="q1" value="d"> Élèvent le seuil du réflexe tussigène</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quel est le mécanisme d'action des antitussifs opiacés (Codéine, Pholcodine) ?</strong></p><label><input type="checkbox" name="q1" value="a"> Agonistes des récepteurs µ-opioïdes</label><label><input type="checkbox" name="q1" value="b"> Inhibition du centre bulbaire de la toux</label><label><input type="checkbox" name="q1" value="c"> Action anticholinergique</label><label><input type="checkbox" name="q1" value="d"> Effet bêta-bloquant</label></div>
                 </section>
                 <section class="section-block" id="exam-question2">
                     <h2 class="section-title reveal">Question 2</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les indications des antitussifs ?</strong></p><label><input type="checkbox" name="q2" value="a"> Toux sèche irritative</label><label><input type="checkbox" name="q2" value="b"> Toux grasse productive</label><label><input type="checkbox" name="q2" value="c"> Toux quinteuse sans expectoration</label><label><input type="checkbox" name="q2" value="d"> Toux nocturne d'origine allergique (antihistaminiques)</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les indications des antitussifs ?</strong></p><label><input type="checkbox" name="q2" value="a"> Toux sèche irritative</label><label><input type="checkbox" name="q2" value="b"> Toux productive avec crachats</label><label><input type="checkbox" name="q2" value="c"> Toux nocturne gênante</label><label><input type="checkbox" name="q2" value="d"> Asthme aigu</label></div>
                 </section>
                 <section class="section-block" id="exam-question3">
                     <h2 class="section-title reveal">Question 3</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les contre-indications des antitussifs opiacés ?</strong></p><label><input type="checkbox" name="q3" value="a"> Asthme</label><label><input type="checkbox" name="q3" value="b"> Insuffisance respiratoire</label><label><input type="checkbox" name="q3" value="c"> Enfants de moins de 12 ans (Codéine)</label><label><input type="checkbox" name="q3" value="d"> Toux grasse productive</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les contre-indications absolues des antitussifs ?</strong></p><label><input type="checkbox" name="q3" value="a"> Toux productive</label><label><input type="checkbox" name="q3" value="b"> Insuffisance respiratoire sévère</label><label><input type="checkbox" name="q3" value="c"> Asthme aigu</label><label><input type="checkbox" name="q3" value="d"> Rhume simple</label></div>
                 </section>
                 <section class="section-block" id="exam-question4">
                     <h2 class="section-title reveal">Question 4</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les interactions médicamenteuses majeures des antitussifs ?</strong></p><label><input type="checkbox" name="q4" value="a"> Dépresseurs du SNC → potentiation de la sédation</label><label><input type="checkbox" name="q4" value="b"> IMAO + Dextrométhorphane → syndrome sérotoninergique</label><label><input type="checkbox" name="q4" value="c"> Alcool → dépression respiratoire majorée</label><label><input type="checkbox" name="q4" value="d"> Anticholinergiques → majoration des effets indésirables</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quelles sont les interactions médicamenteuses majeures des antitussifs ?</strong></p><label><input type="checkbox" name="q4" value="a"> Dépresseurs du SNC</label><label><input type="checkbox" name="q4" value="b"> IMAO avec dextrométhorphane</label><label><input type="checkbox" name="q4" value="c"> Antihistaminiques sédatifs + autres sédatifs</label><label><input type="checkbox" name="q4" value="d"> Antibiotiques</label></div>
                 </section>
                 <section class="section-block" id="exam-question5">
                     <h2 class="section-title reveal">Question 5</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la grossesse et l'allaitement avec les antitussifs opiacés :</strong></p><label><input type="checkbox" name="q5" value="a"> CI absolue au 3ème trimestre</label><label><input type="checkbox" name="q5" value="b"> Risque de dépression respiratoire néonatale</label><label><input type="checkbox" name="q5" value="c"> Passage dans le lait maternel</label><label><input type="checkbox" name="q5" value="d"> Privilégier le Butamirate pendant l'allaitement</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la grossesse et l'allaitement avec les antitussifs :</strong></p><label><input type="checkbox" name="q5" value="a"> Opiacés déconseillés surtout au 3ème trimestre</label><label><input type="checkbox" name="q5" value="b"> Antihistaminiques contre-indiqués au 1er trimestre</label><label><input type="checkbox" name="q5" value="c"> Dextrométhorphane plus toléré avec prudence</label><label><input type="checkbox" name="q5" value="d"> Sans danger pendant toute la grossesse</label></div>
                 </section>
                 <section class="section-block" id="exam-question6">
                     <h2 class="section-title reveal">Question 6</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Butamirate (Sinecod) :</strong></p><label><input type="checkbox" name="q6" value="a"> Antitussif non opiacé périphérique</label><label><input type="checkbox" name="q6" value="b"> Pas d'effet sédatif</label><label><input type="checkbox" name="q6" value="c"> Posologie 15-30 mL 3-4 fois/jour</label><label><input type="checkbox" name="q6" value="d"> Effet opiacé central puissant</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Butamirate (Sinecod®) :</strong></p><label><input type="checkbox" name="q6" value="a"> Antitussif non opiacé</label><label><input type="checkbox" name="q6" value="b"> Faible effet sédatif</label><label><input type="checkbox" name="q6" value="c"> Ne pas associer aux mucolytiques/expectorants</label><label><input type="checkbox" name="q6" value="d"> Opiacé</label></div>
                 </section>
                 <section class="section-block" id="exam-question7">
                     <h2 class="section-title reveal">Question 7</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant la Codéine :</strong></p><label><input type="checkbox" name="q7" value="a"> Prodrogue convertie en morphine</label><label><input type="checkbox" name="q7" value="b"> Interdite chez l'enfant de moins de 12 ans</label><label><input type="checkbox" name="q7" value="c"> Effet sédatif important</label><label><input type="checkbox" name="q7" value="d"> Sans risque de dépendance</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Dextrométhorphane :</strong></p><label><input type="checkbox" name="q7" value="a"> Dérivé morphinique sans effet narcotique</label><label><input type="checkbox" name="q7" value="b"> Pas d'addiction ni dépression respiratoire aux doses usuelles</label><label><input type="checkbox" name="q7" value="c"> Risque de syndrome sérotoninergique avec ISRS/IMAO</label><label><input type="checkbox" name="q7" value="d"> Effet sédatif majeur</label></div>
                 </section>
                 <section class="section-block" id="exam-question8">
                     <h2 class="section-title reveal">Question 8</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant les antihistaminiques antitussifs (Oxomémazine, Prométhazine) :</strong></p><label><input type="checkbox" name="q8" value="a"> Fort pouvoir sédatif</label><input type="checkbox" name="q8" value="b"> CI chez le glaucomateux</label><label><input type="checkbox" name="q8" value="c"> CI dans l'hyperplasie bénigne de la prostate</label><label><input type="checkbox" name="q8" value="d"> Peuvent être pris le matin sans risque</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant l'Oxomémazine et la Prométhazine :</strong></p><label><input type="checkbox" name="q8" value="a"> Antihistaminiques H1 sédatifs</label><label><input type="checkbox" name="q8" value="b"> Effet anticholinergique asséchant</label><label><input type="checkbox" name="q8" value="c"> Utiles pour la toux nocturne</label><label><input type="checkbox" name="q8" value="d"> Sans somnolence</label></div>
                 </section>
                 <section class="section-block" id="exam-question9">
                     <h2 class="section-title reveal">Question 9</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant le Dextrométhorphane :</strong></p><label><input type="checkbox" name="q9" value="a"> Proche des opiacés</label><label><input type="checkbox" name="q9" value="b"> Pas d'effet analgésique</label><label><input type="checkbox" name="q9" value="c"> CI avec les IMAO</label><label><input type="checkbox" name="q9" value="d"> Peut provoquer des hallucinations à forte dose</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant les terpènes et huiles essentielles :</strong></p><label><input type="checkbox" name="q9" value="a"> Action balsamique et légèrement expectorante</label><label><input type="checkbox" name="q9" value="b"> Contre-indication chez l'épileptique</label><label><input type="checkbox" name="q9" value="c"> Prudence chez les asthmatiques allergiques</label><label><input type="checkbox" name="q9" value="d"> Opioïdes</label></div>
                 </section>
                 <section class="section-block" id="exam-question10">
                     <h2 class="section-title reveal">Question 10</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong>Concernant les mucolytiques / fluidifiants (Zecuf, Bronchonet) :</strong></p><label><input type="checkbox" name="q10" value="a"> Ce sont des expectorants</label><label><input type="checkbox" name="q10" value="b"> Indiqués dans la toux grasse</label><label><input type="checkbox" name="q10" value="c"> Ne doivent pas être utilisés dans la toux sèche</label><label><input type="checkbox" name="q10" value="d"> Ce sont des antitussifs opiacés</label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong>Quel est le conseil principal à donner aux patients sous antitussifs ?</strong></p><label><input type="checkbox" name="q10" value="a"> Hydratation 1,5 à 2 L/jour</label><label><input type="checkbox" name="q10" value="b"> Ne pas supprimer une toux grasse</label><label><input type="checkbox" name="q10" value="c"> Distinguer antitussif et expectorant</label><label><input type="checkbox" name="q10" value="d"> Donner un antitussif sur toux grasse</label></div>
                 </section>
                 <section class="section-block" style="border-bottom: none;">
                     <div class="card reveal reveal-delay-1" style="text-align: center;">
@@ -1101,7 +1101,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="social-links">
             <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1114,7 +1113,6 @@
         <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
     </footer>
 
-    <!-- Drug Images Modal -->
     <div class="modal-overlay" id="drugModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeDrugModal()">&times;</button>
@@ -1124,7 +1122,6 @@
     </div>
 
     <script>
-        // Stars
         (function createStars() {
             const container = document.getElementById('starsContainer');
             const fragment = document.createDocumentFragment();
@@ -1143,18 +1140,21 @@
             container.appendChild(fragment);
         })();
 
-        // Reveal animations
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ==================== SIDE DOTS & BOTTOM DOTS – GESTION DYNAMIQUE LEÇON / EXAMEN ====================
         const sideDotsContainer = document.getElementById('sideDots');
         const bottomDotsContainer = document.getElementById('bottomDotsNav');
 
-        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions', 'grossesse', 'substances', 'conseil'];
-        const examSectionIDs = ['exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5', 'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'];
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'substances', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
 
         const lessonTooltips = {
             intro: 'Introduction',
@@ -1248,7 +1248,6 @@
         updateDots('lesson');
         updateActiveDot();
 
-        // Mobile menu
         const menuToggle = document.getElementById('menuToggle');
         const mobileOverlay = document.getElementById('mobileMenuOverlay');
         const closeBtn = document.getElementById('closeMobileMenu');
@@ -1267,7 +1266,6 @@
             }
         });
 
-        // Nav hide on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -1277,7 +1275,6 @@
             lastScroll = st;
         }, { passive: true });
 
-        // Theme
         const themeToggle = document.getElementById('themeToggle');
         const htmlEl = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1289,7 +1286,6 @@
             localStorage.setItem('theme', next);
         });
 
-        // Drug modal
         const drugImages = {};
 
         function showDrugModal(drugName) {
@@ -1298,7 +1294,8 @@
             const container = document.getElementById('modalImagesContainer');
             container.innerHTML = '';
             const imgs = drugImages[drugName] || [];
-            if (!imgs.length) container.innerHTML = '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
             else imgs.forEach(src => {
                 const img = document.createElement('img');
                 img.src = src;
@@ -1321,7 +1318,6 @@
             if (e.key === 'Escape') closeDrugModal();
         });
 
-        // Toggle Lesson/Examen
         const btnLesson = document.getElementById('btnLesson');
         const btnExamen = document.getElementById('btnExamen');
         const lessonContent = document.getElementById('lessonContent');
@@ -1351,17 +1347,16 @@
         btnLesson.addEventListener('click', showLesson);
         btnExamen.addEventListener('click', showExam);
 
-        // Exam QCM logic
         const correctAnswers = {
-            q1: ['a', 'b', 'd'],
-            q2: ['a', 'c', 'd'],
-            q3: ['a', 'b', 'c', 'd'],
-            q4: ['a', 'b', 'c', 'd'],
-            q5: ['a', 'b', 'c', 'd'],
+            q1: ['a', 'b'],
+            q2: ['a', 'c'],
+            q3: ['a', 'b', 'c'],
+            q4: ['a', 'b', 'c'],
+            q5: ['a', 'b', 'c'],
             q6: ['a', 'b', 'c'],
             q7: ['a', 'b', 'c'],
             q8: ['a', 'b', 'c'],
-            q9: ['a', 'b', 'c', 'd'],
+            q9: ['a', 'b', 'c'],
             q10: ['a', 'b', 'c']
         };
 
@@ -1406,7 +1401,8 @@
             }
 
             const pct = Math.round((totalScore / totalQuestions) * 100);
-            let msg = `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            let msg =
+                `Votre score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
             if (pct >= 80) msg += "🌟 Excellent !";
             else if (pct >= 50) msg += "📚 Continuez à réviser.";
             else msg += "🔍 Révisez le cours et réessayez.";
@@ -1423,7 +1419,6 @@
         }
         document.getElementById('resetExam').addEventListener('click', resetExam);
 
-        // Initialisation
         updateActiveDot();
     </script>
 </body>
