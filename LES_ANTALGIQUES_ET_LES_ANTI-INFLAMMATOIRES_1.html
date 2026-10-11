@@ -166,18 +166,20 @@
         .icon-btn.settings-btn i { transition: transform 0.5s ease; }
         .icon-btn.settings-btn:hover i { transform: rotate(180deg); }
         .icon-btn.support-btn {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            background: linear-gradient(135deg, #ffeb3b, #ff9800);
             border-color: transparent;
-            color: #fff;
-            animation: heartbeat 2s ease-in-out infinite;
+            color: #1a1a1a;
+            animation: giftGlow 2.5s ease-in-out infinite;
         }
         .icon-btn.support-btn:hover {
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(238, 90, 111, 0.5);
+            transform: translateY(-3px) scale(1.1) rotate(-8deg);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.55);
         }
-        @keyframes heartbeat {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(238, 90, 111, 0.5); }
-            50% { box-shadow: 0 0 0 10px rgba(238, 90, 111, 0); }
+        .icon-btn.support-btn i { transition: transform 0.4s ease; }
+        .icon-btn.support-btn:hover i { transform: scale(1.15); }
+        @keyframes giftGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
         }
 
         .settings-wrapper { position: relative; }
@@ -309,7 +311,7 @@
         .support-modal.open .support-content { transform: scale(1); }
 
         .support-header {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a6f, #c44569);
+            background: linear-gradient(135deg, #ffeb3b, #ff9800, #f57c00);
             padding: 32px 30px 25px;
             text-align: center;
             position: relative;
@@ -321,7 +323,7 @@
             position: absolute;
             top: -50%; left: -50%;
             width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
             animation: rotate 20s linear infinite;
         }
         @keyframes rotate {
@@ -334,7 +336,12 @@
             margin-bottom: 12px;
             position: relative;
             z-index: 1;
-            animation: heartbeat 1.5s ease-in-out infinite;
+            animation: giftBounce 2s ease-in-out infinite;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
         }
         .support-header h2 {
             color: #fff;
@@ -343,9 +350,10 @@
             position: relative;
             z-index: 1;
             margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         .support-header p {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             font-size: 0.95rem;
             position: relative;
             z-index: 1;
@@ -405,9 +413,7 @@
         }
         .support-method-icon.paypal { background: linear-gradient(135deg, #0070ba, #003087); }
         .support-method-icon.ccp { background: linear-gradient(135deg, #00a86b, #007d4f); }
-        .support-method-icon.binance { background: linear-gradient(135deg, #f0b90b, #f8d33a); color: #1a1a1a; }
-        .support-method-icon.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
-        .support-method-icon.email { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+        .support-method-icon.flexy { background: linear-gradient(135deg, #00bcd4, #0097a7); }
 
         .support-method-info { flex: 1; min-width: 0; }
         .support-method-info h4 {
@@ -450,7 +456,7 @@
             top: 18px; right: 18px;
             width: 40px; height: 40px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             border: none;
             color: #fff;
             font-size: 1.3rem;
@@ -459,7 +465,7 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        .support-close:hover { background: rgba(255, 255, 255, 0.35); transform: rotate(90deg); }
+        .support-close:hover { background: rgba(255, 255, 255, 0.45); transform: rotate(90deg); }
         html[dir="rtl"] .support-close { right: auto; left: 18px; }
 
         .support-footer {
@@ -469,7 +475,7 @@
             font-size: 0.85rem;
             color: var(--text-secondary);
         }
-        .support-footer i { color: #ee5a6f; margin: 0 4px; }
+        .support-footer i { color: #ff9800; margin: 0 4px; }
 
         .copy-toast {
             position: fixed;
@@ -883,7 +889,7 @@
             </a>
             <div class="nav-right">
                 <button class="icon-btn support-btn" id="supportBtn" aria-label="Support" title="Soutenir">
-                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-gift"></i>
                 </button>
 
                 <div class="settings-wrapper">
@@ -1227,7 +1233,7 @@
         <div class="support-content">
             <button class="support-close" id="closeSupport" aria-label="Fermer">&times;</button>
             <div class="support-header">
-                <div class="support-header-icon"><i class="fas fa-heart"></i></div>
+                <div class="support-header-icon"><i class="fas fa-gift"></i></div>
                 <h2 data-i18n="support_title">Soutenir GhaniPharma</h2>
                 <p data-i18n="support_subtitle">Votre soutien m'aide à créer plus de contenu éducatif</p>
             </div>
@@ -1237,6 +1243,7 @@
                     <span data-i18n="support_info">Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏</span>
                 </div>
                 <div class="support-methods">
+                    <!-- PayPal -->
                     <a href="https://www.paypal.me/ghanipharma" target="_blank" rel="noopener noreferrer" class="support-method">
                         <div class="support-method-icon paypal"><i class="fab fa-paypal"></i></div>
                         <div class="support-method-info">
@@ -1247,43 +1254,33 @@
                             <i class="fas fa-copy"></i>
                         </button>
                     </a>
-                    <div class="support-method" onclick="copyToClipboard('00234567890123456789', this.querySelector('.support-copy-btn'))">
+
+                    <!-- RIP CCP -->
+                    <div class="support-method" onclick="copyToClipboard('00799999002345678901', this.querySelector('.support-copy-btn'))">
                         <div class="support-method-icon ccp"><i class="fas fa-university"></i></div>
                         <div class="support-method-info">
-                            <h4 data-i18n="ccp_title">Compte CCP (Algérie)</h4>
-                            <p>00234567890123456789</p>
+                            <h4 data-i18n="rip_title">RIP CCP (Algérie)</h4>
+                            <p>00799999002345678901</p>
                         </div>
                         <button class="support-copy-btn">
                             <i class="fas fa-copy"></i>
                         </button>
                     </div>
-                    <div class="support-method" onclick="copyToClipboard('TQn9Y2khEsLJW1ChVWFMSMeRDow5KcbLSE', this.querySelector('.support-copy-btn'))">
-                        <div class="support-method-icon binance"><i class="fab fa-bitcoin"></i></div>
+
+                    <!-- Flexy -->
+                    <div class="support-method" onclick="copyToClipboard('+213555079282', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon flexy"><i class="fas fa-mobile-alt"></i></div>
                         <div class="support-method-info">
-                            <h4 data-i18n="crypto_title">USDT (TRC20)</h4>
-                            <p>TQn9Y2khEsLJW1ChVWFMSMeRDow5KcbLSE</p>
+                            <h4 data-i18n="flexy_title">Flexy</h4>
+                            <p>+213 555 079 282</p>
                         </div>
                         <button class="support-copy-btn">
                             <i class="fas fa-copy"></i>
                         </button>
                     </div>
-                    <a href="https://wa.me/213600000000?text=Bonjour%20GhaniPharma" target="_blank" rel="noopener noreferrer" class="support-method">
-                        <div class="support-method-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
-                        <div class="support-method-info">
-                            <h4>WhatsApp</h4>
-                            <p>+213 600 000 000</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@ghanipharma.com" class="support-method">
-                        <div class="support-method-icon email"><i class="fas fa-envelope"></i></div>
-                        <div class="support-method-info">
-                            <h4>Email</h4>
-                            <p>contact@ghanipharma.com</p>
-                        </div>
-                    </a>
                 </div>
                 <div class="support-footer">
-                    <span data-i18n="support_footer">Merci de tout cœur</span> <i class="fas fa-heart"></i>
+                    <span data-i18n="support_footer">Merci de tout cœur</span> <i class="fas fa-gift"></i>
                 </div>
             </div>
         </div>
@@ -1451,6 +1448,8 @@
                 support_title: 'Soutenir GhaniPharma',
                 support_subtitle: "Votre soutien m'aide à créer plus de contenu éducatif",
                 support_info: "Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏",
+                rip_title: 'RIP CCP (Algérie)',
+                flexy_title: 'Flexy',
                 ccp_title: 'Compte CCP (Algérie)',
                 crypto_title: 'USDT (TRC20)',
                 support_footer: 'Merci de tout cœur',
@@ -1585,6 +1584,8 @@
                 support_title: 'دعم GhaniPharma',
                 support_subtitle: 'دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي',
                 support_info: 'إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساهمة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏',
+                rip_title: 'RIP CCP (الجزائر)',
+                flexy_title: 'فليكسي',
                 ccp_title: 'حساب CCP (الجزائر)',
                 crypto_title: 'USDT (TRC20)',
                 support_footer: 'شكراً من كل قلبي',
@@ -1719,6 +1720,8 @@
                 support_title: 'Support GhaniPharma',
                 support_subtitle: 'Your support helps me create more educational content',
                 support_info: 'If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏',
+                rip_title: 'RIP CCP (Algeria)',
+                flexy_title: 'Flexy',
                 ccp_title: 'CCP Account (Algeria)',
                 crypto_title: 'USDT (TRC20)',
                 support_footer: 'Thank you from the bottom of my heart',
@@ -1726,7 +1729,7 @@
             }
         };
 
-        // ==================== DOT TRANSLATIONS (sidebar index) ====================
+        // ==================== DOT TRANSLATIONS ====================
         const dotTranslations = {
             fr: {
                 intro: 'Introduction', mecanisme: 'Mécanisme', indications: 'Indications',
@@ -1752,6 +1755,7 @@
         };
 
         let currentLang = localStorage.getItem('lang') || 'fr';
+        const htmlEl = document.documentElement;
 
         // ==================== SIDE DOTS ====================
         const sideDotsContainer = document.getElementById('sideDots');
@@ -1868,7 +1872,6 @@
                 opt.classList.toggle('active', opt.dataset.lang === lang);
             });
 
-            // 🔄 إعادة بناء النقاط الجانبية باللغة الجديدة
             const isExamMode = document.getElementById('examContent').style.display !== 'none';
             updateDots(isExamMode ? 'exam' : 'lesson');
             updateActiveDot();
@@ -1904,7 +1907,6 @@
         }, { passive: true });
 
         // ==================== THEME ====================
-        const htmlEl = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlEl.setAttribute('data-theme', savedTheme);
         updateThemeOptionActive(savedTheme);
