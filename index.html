@@ -733,6 +733,22 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* Fix gallery in RTL */
+        html[dir="rtl"] .gallery-wrapper {
+            mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
+        }
+        html[dir="rtl"] .gallery-track {
+            animation: scrollRTL 70s linear infinite;
+        }
+        @keyframes scrollRTL {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+        html[dir="rtl"] .gallery-wrapper:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
         .section-title {
             font-size: 2.5rem; font-weight: 800;
             margin-bottom: 20px;
@@ -1249,11 +1265,11 @@
                         </div>
                         <div class="contact-card">
                             <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/213555079282" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            <a href="https://wa.me/213555079282" target="_blank" rel="noopener noreferrer" data-i18n="contact_whatsapp">WhatsApp</a>
                         </div>
                         <div class="contact-card">
                             <i class="fab fa-telegram"></i>
-                            <a href="https://t.me/ghanirouabah" target="_blank" rel="noopener noreferrer">Telegram</a>
+                            <a href="https://t.me/ghanirouabah" target="_blank" rel="noopener noreferrer" data-i18n="contact_telegram">Telegram</a>
                         </div>
                     </div>
 
@@ -1264,15 +1280,15 @@
                             <input type="hidden" name="_language" value="fr">
                             <div class="form-group">
                                 <label><i class="fas fa-user"></i> <span data-i18n="form_name">Votre nom</span></label>
-                                <input type="text" name="name" required placeholder="Entrez votre nom complet">
+                                <input type="text" name="name" required data-i18n-ph="form_name_ph" placeholder="Entrez votre nom complet">
                             </div>
                             <div class="form-group">
                                 <label><i class="fas fa-envelope"></i> <span data-i18n="form_email">Votre email</span></label>
-                                <input type="email" name="email" required placeholder="Entrez votre adresse email">
+                                <input type="email" name="email" required data-i18n-ph="form_email_ph" placeholder="Entrez votre adresse email">
                             </div>
                             <div class="form-group">
                                 <label><i class="fas fa-comment"></i> <span data-i18n="form_message">Votre message</span></label>
-                                <textarea name="message" required placeholder="Tapez votre message ici..."></textarea>
+                                <textarea name="message" required data-i18n-ph="form_message_ph" placeholder="Tapez votre message ici..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
                                 <i class="fas fa-paper-plane"></i> <span data-i18n="form_send">Envoyer le message</span>
@@ -1385,6 +1401,11 @@
                 form_sending: 'Envoi...',
                 form_success: '✅ Votre message a été envoyé avec succès !',
                 form_error: "❌ Une erreur s'est produite. Veuillez réessayer.",
+                form_name_ph: 'Entrez votre nom complet',
+                form_email_ph: 'Entrez votre adresse email',
+                form_message_ph: 'Tapez votre message ici...',
+                contact_whatsapp: 'WhatsApp',
+                contact_telegram: 'Telegram',
                 badge_available: 'Disponible',
                 badge_unavailable: 'Bientôt disponible',
                 page: 'Page',
@@ -1398,7 +1419,24 @@
                 rip_title: 'RIP CCP (Algérie)',
                 flexy_title: 'Flexy',
                 support_footer: 'Merci de tout cœur',
-                copied: 'Copié !'
+                copied: 'Copié !',
+                mod_intro: "INTRODUCTION AUX MÉDICAMENTS",
+                mod_antalgiques: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES",
+                mod_allergo: "ALLERGOLOGIE ET PNEUMOLOGIE",
+                mod_infectio: "INFECTIOLOGIE",
+                mod_gastro: "GASTRO-ENTÉROLOGIE",
+                mod_diabeto: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS",
+                mod_cardio: "CARDIOLOGIE ET ANGIOLOGIE",
+                mod_hemato: "HÉMATOLOGIE ET HÉMOSTASE",
+                mod_orl: "OTO-RHINO-LARYNGOLOGIE (ORL)",
+                mod_ophtalmo: "OPHTALMOLOGIE",
+                mod_thyroide: "LES MÉDICAMENTS DE LA GLANDE THYROIDE",
+                mod_gyn: "GYNÉCOLOGIE",
+                mod_uro: "UROLOGIE",
+                mod_derma: "DERMATOLOGIE",
+                mod_rhu: "RHUMATOLOGIE",
+                mod_neuro: "NEUROLOGIE ET PSYCHOLOGIE",
+                mod_vitamines: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS"
             },
             ar: {
                 theme: 'المظهر', light: 'فاتح', dark: 'داكن', language: 'اللغة',
@@ -1428,6 +1466,11 @@
                 form_sending: 'جارٍ الإرسال...',
                 form_success: '✅ تم إرسال رسالتك بنجاح!',
                 form_error: '❌ حدث خطأ. يرجى المحاولة مرة أخرى.',
+                form_name_ph: 'أدخل اسمك الكامل',
+                form_email_ph: 'أدخل بريدك الإلكتروني',
+                form_message_ph: 'اكتب رسالتك هنا...',
+                contact_whatsapp: 'واتساب',
+                contact_telegram: 'تيليجرام',
                 badge_available: 'متوفر',
                 badge_unavailable: 'قريباً',
                 page: 'صفحة',
@@ -1441,7 +1484,24 @@
                 rip_title: 'RIP CCP (الجزائر)',
                 flexy_title: 'فليكسي',
                 support_footer: 'شكراً من كل قلبي',
-                copied: 'تم النسخ!'
+                copied: 'تم النسخ!',
+                mod_intro: 'مقدمة في الأدوية',
+                mod_antalgiques: 'المسكنات ومضادات الالتهاب',
+                mod_allergo: 'علم الحساسية وأمراض الرئة',
+                mod_infectio: 'علم الأمراض المعدية',
+                mod_gastro: 'أمراض الجهاز الهضمي',
+                mod_diabeto: 'السكري وخافضات الدهون',
+                mod_cardio: 'أمراض القلب والأوعية',
+                mod_hemato: 'أمراض الدم والتخثر',
+                mod_orl: 'أمراض الأنف والأذن والحنجرة',
+                mod_ophtalmo: 'طب العيون',
+                mod_thyroide: 'أدوية الغدة الدرقية',
+                mod_gyn: 'أمراض النساء',
+                mod_uro: 'المسالك البولية',
+                mod_derma: 'الأمراض الجلدية',
+                mod_rhu: 'الروماتيزم',
+                mod_neuro: 'الأعصاب والطب النفسي',
+                mod_vitamines: 'الفيتامينات والمعادن والأحماض الأمينية'
             },
             en: {
                 theme: 'Theme', light: 'Light', dark: 'Dark', language: 'Language',
@@ -1471,6 +1531,11 @@
                 form_sending: 'Sending...',
                 form_success: '✅ Your message has been sent successfully!',
                 form_error: '❌ An error occurred. Please try again.',
+                form_name_ph: 'Enter your full name',
+                form_email_ph: 'Enter your email address',
+                form_message_ph: 'Type your message here...',
+                contact_whatsapp: 'WhatsApp',
+                contact_telegram: 'Telegram',
                 badge_available: 'Available',
                 badge_unavailable: 'Coming soon',
                 page: 'Page',
@@ -1484,7 +1549,24 @@
                 rip_title: 'RIP CCP (Algeria)',
                 flexy_title: 'Flexy',
                 support_footer: 'Thank you from the bottom of my heart',
-                copied: 'Copied!'
+                copied: 'Copied!',
+                mod_intro: "INTRODUCTION TO MEDICATIONS",
+                mod_antalgiques: "ANALGESICS AND ANTI-INFLAMMATORY DRUGS",
+                mod_allergo: "ALLERGOLOGY AND PNEUMOLOGY",
+                mod_infectio: "INFECTIOLOGY",
+                mod_gastro: "GASTROENTEROLOGY",
+                mod_diabeto: "DIABETOLOGY AND LIPID-LOWERING DRUGS",
+                mod_cardio: "CARDIOLOGY AND ANGIOLOGY",
+                mod_hemato: "HEMATOLOGY AND HEMOSTASIS",
+                mod_orl: "OTORHINOLARYNGOLOGY (ENT)",
+                mod_ophtalmo: "OPHTHALMOLOGY",
+                mod_thyroide: "THYROID GLAND MEDICATIONS",
+                mod_gyn: "GYNECOLOGY",
+                mod_uro: "UROLOGY",
+                mod_derma: "DERMATOLOGY",
+                mod_rhu: "RHEUMATOLOGY",
+                mod_neuro: "NEUROLOGY AND PSYCHOLOGY",
+                mod_vitamines: "VITAMINS, MINERALS AND AMINO ACIDS"
             }
         };
 
@@ -1525,11 +1607,19 @@
             localStorage.setItem('lang', lang);
             const t = translations[lang];
 
+            // Translate text content
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (t[key] !== undefined) el.textContent = t[key];
             });
 
+            // Translate placeholders
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.dataset.i18nPh;
+                if (t[key] !== undefined) el.placeholder = t[key];
+            });
+
+            // Update HTML direction
             if (lang === 'ar') {
                 htmlEl.setAttribute('dir', 'rtl');
                 htmlEl.setAttribute('lang', 'ar');
@@ -1538,11 +1628,12 @@
                 htmlEl.setAttribute('lang', lang);
             }
 
+            // Update active lang button
             document.querySelectorAll('.lang-option').forEach(opt => {
                 opt.classList.toggle('active', opt.dataset.lang === lang);
             });
 
-            // Rebuild modules to translate badges/pagination
+            // Rebuild modules to translate titles
             buildSubjects();
         }
 
@@ -1580,23 +1671,23 @@
             matieres: {
                 title: "Modules de Pharmacie",
                 subjects: [
-                    { name: "INTRODUCTION AUX MÉDICAMENTS", img: "#", sems: [1], available: false, pageName: "INTRODUCTION_AUX_MEDICAMENTS" },
-                    { name: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES", img: "#", sems: [1,2,3], available: true, pageName: "LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES" },
-                    { name: "ALLERGOLOGIE ET PNEUMOLOGIE", img: "#", sems: [1,2], available: true, pageName: "ALLERGOLOGIE_ET_PNEUMOLOGIE" },
-                    { name: "INFECTIOLOGIE", img: "#", sems: [1], available: true, pageName: "INFECTIOLOGIE" },
-                    { name: "GASTRO-ENTÉROLOGIE", img: "#", sems: [1,2], available: true, pageName: "GASTRO-ENTEROLOGIE" },
-                    { name: "DIABÉTOLOGIE ET LES HYPOLIPÉMIANTS", img: "#", sems: [1,2], available: true, pageName: "DIABETOLOGIE_ET_LES_HYPOLIPEMIANTS" },
-                    { name: "CARDIOLOGIE ET ANGIOLOGIE", img: "#", sems: [1], available: true, pageName: "CARDIOLOGIE_ET_ANGIOLOGIE" },
-                    { name: "HÉMATOLOGIE ET HÉMOSTASE", img: "#", sems: [1], available: true, pageName: "HEMATOLOGIE_ET_HEMOSTASE" },
-                    { name: "OTO-RHINO-LARYNGOLOGIE (ORL)", img: "#", sems: [1], available: true, pageName: "OTO-RHINO-LARYNGOLOGIE_ORL" },
-                    { name: "OPHTALMOLOGIE", img: "#", sems: [1], available: true, pageName: "OPHTALMOLOGIE" },
-                    { name: "LES MÉDICAMENTS DE LA GLANDE THYROIDE", img: "#", sems: [1], available: true, pageName: "LES_MEDICAMENTS_DE_LA_GLANDE_THYROIDE" },
-                    { name: "GYNÉCOLOGIE", img: "#", sems: [1], available: true, pageName: "GYNECOLOGIE" },
-                    { name: "UROLOGIE", img: "#", sems: [1], available: true, pageName: "UROLOGIE" },
-                    { name: "DERMATOLOGIE", img: "#", sems: [1], available: true, pageName: "DERMATOLOGIE" },
-                    { name: "RHUMATOLOGIE", img: "#", sems: [1], available: true, pageName: "RHUMATOLOGIE" },
-                    { name: "NEUROLOGIE ET PSYCHOLOGIE", img: "#", sems: [1], available: true, pageName: "NEUROLOGIE_ET_PSYCHOLOGIE" },
-                    { name: "VITAMINES, MINÉRAUX ET ACIDES AMINÉS", img: "#", sems: [1], available: true, pageName: "VITAMINES,_MINÉRAUX_ET_ACIDES_AMINÉS" }
+                    { i18nKey: "mod_intro", img: "#", sems: [1], available: false, pageName: "INTRODUCTION_AUX_MEDICAMENTS" },
+                    { i18nKey: "mod_antalgiques", img: "#", sems: [1,2,3], available: true, pageName: "LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES" },
+                    { i18nKey: "mod_allergo", img: "#", sems: [1,2], available: true, pageName: "ALLERGOLOGIE_ET_PNEUMOLOGIE" },
+                    { i18nKey: "mod_infectio", img: "#", sems: [1], available: true, pageName: "INFECTIOLOGIE" },
+                    { i18nKey: "mod_gastro", img: "#", sems: [1,2], available: true, pageName: "GASTRO-ENTEROLOGIE" },
+                    { i18nKey: "mod_diabeto", img: "#", sems: [1,2], available: true, pageName: "DIABETOLOGIE_ET_LES_HYPOLIPEMIANTS" },
+                    { i18nKey: "mod_cardio", img: "#", sems: [1], available: true, pageName: "CARDIOLOGIE_ET_ANGIOLOGIE" },
+                    { i18nKey: "mod_hemato", img: "#", sems: [1], available: true, pageName: "HEMATOLOGIE_ET_HEMOSTASE" },
+                    { i18nKey: "mod_orl", img: "#", sems: [1], available: true, pageName: "OTO-RHINO-LARYNGOLOGIE_ORL" },
+                    { i18nKey: "mod_ophtalmo", img: "#", sems: [1], available: true, pageName: "OPHTALMOLOGIE" },
+                    { i18nKey: "mod_thyroide", img: "#", sems: [1], available: true, pageName: "LES_MEDICAMENTS_DE_LA_GLANDE_THYROIDE" },
+                    { i18nKey: "mod_gyn", img: "#", sems: [1], available: true, pageName: "GYNECOLOGIE" },
+                    { i18nKey: "mod_uro", img: "#", sems: [1], available: true, pageName: "UROLOGIE" },
+                    { i18nKey: "mod_derma", img: "#", sems: [1], available: true, pageName: "DERMATOLOGIE" },
+                    { i18nKey: "mod_rhu", img: "#", sems: [1], available: true, pageName: "RHUMATOLOGIE" },
+                    { i18nKey: "mod_neuro", img: "#", sems: [1], available: true, pageName: "NEUROLOGIE_ET_PSYCHOLOGIE" },
+                    { i18nKey: "mod_vitamines", img: "#", sems: [1], available: true, pageName: "VITAMINES,_MINÉRAUX_ET_ACIDES_AMINÉS" }
                 ]
             }
         };
@@ -1689,6 +1780,9 @@
 
                 const imgSrc = getImageSource(sub);
 
+                // Get translated title
+                const translatedName = t[sub.i18nKey] || sub.i18nKey;
+
                 return `
                     <div class="subject-card ${availabilityClass}">
                         <a href="${linkHref}" ${linkOnClick} target="${linkTarget}" style="display: block; text-decoration: none;">
@@ -1697,7 +1791,7 @@
                         <div class="subject-card-body">
                             <div class="subject-card-title">
                                 <a href="${linkHref}" ${linkOnClick} target="${linkTarget}" style="text-decoration: none; color: var(--text-heading);">
-                                    <span>${sub.name}</span>
+                                    <span>${translatedName}</span>
                                 </a>
                             </div>
                             ${badgeHTML}
