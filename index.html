@@ -69,8 +69,9 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        /* ⚠️ Modifié : scroll-behavior: auto au lieu de smooth pour éviter le conflit avec JS */
-        html { scroll-behavior: auto; }
+        /* NOTE: scroll-behavior: smooth a été retiré volontairement pour éviter
+           le conflit avec window.scrollTo({ behavior: 'smooth' }) en JavaScript.
+           Le défilement fluide est géré uniquement via JS. */
 
         html[dir="rtl"] body { font-family: 'Segoe UI', 'Tahoma', system-ui, sans-serif; }
         html[dir="rtl"] .side-dots { right: auto; left: 25px; }
@@ -734,6 +735,7 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* Fix gallery in RTL */
         html[dir="rtl"] .gallery-wrapper {
             mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
             -webkit-mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
@@ -1071,6 +1073,7 @@
 </head>
 <body>
 
+    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Z979C9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="universe-bg">
@@ -1606,16 +1609,19 @@
             localStorage.setItem('lang', lang);
             const t = translations[lang];
 
+            // Translate text content
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (t[key] !== undefined) el.textContent = t[key];
             });
 
+            // Translate placeholders
             document.querySelectorAll('[data-i18n-ph]').forEach(el => {
                 const key = el.dataset.i18nPh;
                 if (t[key] !== undefined) el.placeholder = t[key];
             });
 
+            // Update HTML direction
             if (lang === 'ar') {
                 htmlEl.setAttribute('dir', 'rtl');
                 htmlEl.setAttribute('lang', 'ar');
@@ -1624,10 +1630,12 @@
                 htmlEl.setAttribute('lang', lang);
             }
 
+            // Update active lang button
             document.querySelectorAll('.lang-option').forEach(opt => {
                 opt.classList.toggle('active', opt.dataset.lang === lang);
             });
 
+            // Rebuild modules to translate titles
             buildSubjects();
         }
 
@@ -1691,36 +1699,13 @@
         let currentPage = 1;
         const itemsPerPage = 6;
 
-        // ==================== SCROLL SMOOTH FIX ====================
-        // ✅ NOUVEAU : Variables pour éviter les conflits pendant le scroll programmatique
-        let isProgrammaticScroll = false;
-        let scrollEndTimer;
-
         function scrollToSection(sectionName) {
             const section = document.getElementById(`section-${sectionName}`);
-            if (!section) return;
-
-            // Hauteur fixe du nav (ne dépend pas de offsetHeight qui peut être 0 si caché)
-            const NAV_HEIGHT = 70;
-            const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-
-            // ✅ Désactive temporairement le listener d'auto-hide du nav
-            isProgrammaticScroll = true;
-
-            // ✅ Force l'affichage du nav pendant le défilement
-            document.getElementById('topNav').classList.remove('hidden');
-
-            window.scrollTo({
-                top: sectionTop - NAV_HEIGHT - 10,
-                behavior: 'smooth'
-            });
-
-            // ✅ Réactive après la fin du scroll fluide
-            clearTimeout(scrollEndTimer);
-            scrollEndTimer = setTimeout(() => {
-                isProgrammaticScroll = false;
-            }, 900);
-
+            if (section) {
+                const navHeight = document.getElementById('topNav').offsetHeight;
+                const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({ top: sectionTop - navHeight - 10, behavior: 'smooth' });
+            }
             closeMobileMenu();
         }
 
@@ -1796,6 +1781,8 @@
                 }
 
                 const imgSrc = getImageSource(sub);
+
+                // Get translated title
                 const translatedName = t[sub.i18nKey] || sub.i18nKey;
 
                 return `
@@ -1840,12 +1827,9 @@
             setTimeout(() => {
                 const modulesSection = document.getElementById('section-modules');
                 if (modulesSection) {
-                    const NAV_HEIGHT = 70;
+                    const navHeight = document.getElementById('topNav').offsetHeight;
                     const sectionTop = modulesSection.getBoundingClientRect().top + window.pageYOffset;
-                    isProgrammaticScroll = true;
-                    window.scrollTo({ top: sectionTop - NAV_HEIGHT - 20, behavior: 'smooth' });
-                    clearTimeout(scrollEndTimer);
-                    scrollEndTimer = setTimeout(() => { isProgrammaticScroll = false; }, 900);
+                    window.scrollTo({ top: sectionTop - navHeight - 20, behavior: 'smooth' });
                 }
             }, 100);
         }
@@ -1913,18 +1897,14 @@
         const dots = document.querySelectorAll('.dot');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        // ✅ MODIFIÉ : Utilise NAV_HEIGHT fixe + protection contre scroll programmatique
         function updateActiveSection() {
-            // Ignore pendant le défilement programmatique pour éviter le flickering
-            if (isProgrammaticScroll) return;
-
-            const NAV_HEIGHT = 70;
             const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navHeight = document.getElementById('topNav').offsetHeight;
             let activeSection = 'home';
             sections.forEach(section => {
                 const el = document.getElementById(`section-${section}`);
                 if (el) {
-                    const top = el.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
                     const bottom = top + el.offsetHeight;
                     if (scrollPos >= top && scrollPos < bottom) activeSection = section;
                 }
@@ -1934,11 +1914,8 @@
         }
         window.addEventListener('scroll', updateActiveSection, { passive: true });
 
-        // ✅ MODIFIÉ : Ignore l'auto-hide pendant le scroll programmatique
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
-            if (isProgrammaticScroll) return;
-
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const topNav = document.getElementById('topNav');
             if (scrollTop > lastScrollTop && scrollTop > 150) topNav.classList.add('hidden');
@@ -2109,6 +2086,7 @@
             window.showAlert = showToast;
         });
 
+        // Run immediately
         applyLanguage(currentLang);
         updateActiveSection();
     </script>
