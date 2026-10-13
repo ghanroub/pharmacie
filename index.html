@@ -855,20 +855,31 @@
             border-color: rgba(0, 188, 212, 0.5);
         }
         .subject-card.unavailable { opacity: 0.55; filter: grayscale(30%); }
+
+        /* ✅ MODIFIÉ : affichage complet de l'image via <img> + object-fit */
         .subject-card-img {
             height: 170px;
-            background-size: cover;
-            background-position: center;
             position: relative; cursor: pointer;
-            background-color: #1a1a2e;
+            background-color: #0f0f22;
             transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-        .subject-card-img.loaded { opacity: 1; }
+        .subject-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
         .subject-card-img::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0; height: 60px;
             background: linear-gradient(transparent, var(--bg-card));
+            pointer-events: none;
         }
         .subject-card-body {
             padding: 22px;
@@ -1038,7 +1049,7 @@
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.8rem; }
             .subjects-grid { grid-template-columns: 1fr; gap: 15px; }
-            .subject-card-img { height: 140px; }
+            .subject-card-img { height: 180px; }
             .gallery-item { width: 140px; height: 100px; }
             .container { padding: 0 15px; }
             .stat-number { font-size: 2.2rem; }
@@ -1063,7 +1074,7 @@
             .contact-form-wrapper { padding: 22px; }
             .subject-card-body { padding: 15px; }
             .subject-card-title { font-size: 1rem; }
-            .subject-card-img { height: 120px; }
+            .subject-card-img { height: 160px; }
         }
     </style>
 </head>
@@ -1634,7 +1645,6 @@
         }
 
         // ==================== IMAGES DES MATIÈRES ====================
-        // Dictionnaire : pageName de la matière → URL de son image
         const subjectImages = {
             "INTRODUCTION_AUX_MEDICAMENTS": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885134/INTRODUCTION_AUX_M%C3%89DICAMENTS.jpg",
             "LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885132/LES_ANTALGIQUES_ET_LES_ANTI_INFLAMMATOIRES.jpg",
@@ -1642,7 +1652,7 @@
             "INFECTIOLOGIE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885134/INFECTIOLOGIE.jpg",
             "GASTRO-ENTEROLOGIE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885134/GASTRO-ENTEROLOGIE.jpg",
             "DIABETOLOGIE_ET_LES_HYPOLIPEMIANTS": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885140/DIABETOLOGIE_ET_LES_HYPOLIPEMIANTS.jpg",
-            "CARDIOLOGIE_ET_ANGIOLOGIE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885140/CARDIOLOGIE_ET_ANGIOLOGIE.jpg",
+            "CARDIOLOGIE_ET_ANGIOLOGIE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791916718/CARDIOLOGIE_ET_ANGIOLOGIE.jpg",
             "HEMATOLOGIE_ET_HEMOSTASE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885140/HEMATOLOGIE_ET_HEMOSTASE.jpg",
             "OTO-RHINO-LARYNGOLOGIE_ORL": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885138/OTO-RHINO-LARYNGOLOGIE_ORL.jpg",
             "OPHTALMOLOGIE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885125/OPHTALMOLOGIE.jpg",
@@ -1654,25 +1664,6 @@
             "NEUROLOGIE_ET_PSYCHOLOGIE": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885125/NEUROLOGIE_ET_PSYCHOLOGIE.jpg",
             "VITAMINES,_MINÉRAUX_ET_ACIDES_AMINÉS": "https://res.cloudinary.com/s6y8zztk/image/upload/v1791885125/VITAMINES_MIN%C3%89RAUX_ET_ACIDES_AMIN%C3%89S.jpg"
         };
-
-        // Galerie : on reprend les images dans l'ordre exact des matières
-        function buildGallery() {
-            const track = document.getElementById('galleryTrack');
-            const orderedImages = modulesData.matieres.subjects.map(
-                sub => subjectImages[sub.pageName]
-            ).filter(Boolean);
-            const allImages = [...orderedImages, ...orderedImages]; // duplication pour boucle infinie
-            const fragment = document.createDocumentFragment();
-            allImages.forEach(src => {
-                const imgEl = document.createElement('img');
-                imgEl.src = src;
-                imgEl.alt = 'Module de pharmacie';
-                imgEl.className = 'gallery-item';
-                imgEl.loading = 'lazy';
-                fragment.appendChild(imgEl);
-            });
-            track.appendChild(fragment);
-        }
 
         // ==================== MODULES DATA ====================
         const modulesData = {
@@ -1700,6 +1691,26 @@
             }
         };
 
+        // Galerie : on reprend les images dans l'ordre exact des matières
+        function buildGallery() {
+            const track = document.getElementById('galleryTrack');
+            const orderedImages = modulesData.matieres.subjects.map(
+                sub => subjectImages[sub.pageName]
+            ).filter(Boolean);
+            const allImages = [...orderedImages, ...orderedImages];
+            const fragment = document.createDocumentFragment();
+            allImages.forEach(src => {
+                const imgEl = document.createElement('img');
+                imgEl.src = src;
+                imgEl.alt = 'Module de pharmacie';
+                imgEl.className = 'gallery-item';
+                imgEl.loading = 'lazy';
+                fragment.appendChild(imgEl);
+            });
+            track.innerHTML = '';
+            track.appendChild(fragment);
+        }
+
         const currentTab = 'matieres';
         let currentPage = 1;
         const itemsPerPage = 6;
@@ -1724,21 +1735,12 @@
         }
 
         function getImageSource(sub) {
-            // Si la matière possède une image dédiée, on l'utilise
             if (sub.pageName && subjectImages[sub.pageName]) {
                 return subjectImages[sub.pageName];
             }
-            // Sinon, image SVG par défaut
             return 'data:image/svg+xml,' + encodeURIComponent(`
                 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
                     <rect width="400" height="200" fill="#1a1a2e"/>
-                    <defs>
-                        <linearGradient id="skg" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.2"/>
-                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.2"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="400" height="200" fill="url(#skg)"/>
                     <text x="200" y="90" text-anchor="middle" fill="#667eea" font-size="40">📚</text>
                     <text x="200" y="130" text-anchor="middle" fill="#999" font-size="13">Image à venir</text>
                 </svg>
@@ -1792,12 +1794,12 @@
 
                 return `
                     <div class="subject-card ${availabilityClass}">
-                        <a href="${linkHref}" ${linkOnClick} target="${linkTarget}" style="display: block; text-decoration: none;">
-                            <div class="subject-card-img lazy-img" data-src="${imgSrc}" style="background: #1a1a2e;"></div>
+                        <a href="${linkHref}" ${linkOnclick} target="${linkTarget}" style="display: block; text-decoration: none;">
+                            <div class="subject-card-img lazy-img" data-src="${imgSrc}"></div>
                         </a>
                         <div class="subject-card-body">
                             <div class="subject-card-title">
-                                <a href="${linkHref}" ${linkOnClick} target="${linkTarget}" style="text-decoration: none; color: var(--text-heading);">
+                                <a href="${linkHref}" ${linkOnclick} target="${linkTarget}" style="text-decoration: none; color: var(--text-heading);">
                                     <span>${translatedName}</span>
                                 </a>
                             </div>
@@ -1839,6 +1841,7 @@
             }, 100);
         }
 
+        // ✅ MODIFIÉ : création d'une vraie balise <img> pour afficher l'image entière
         function initLazyLoading() {
             const lazyImages = document.querySelectorAll('.lazy-img');
             const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -1847,16 +1850,19 @@
                         const imgDiv = entry.target;
                         const src = imgDiv.getAttribute('data-src');
                         if (src) {
-                            const tempImg = new Image();
-                            tempImg.onload = function() {
-                                imgDiv.style.backgroundImage = `url('${src}')`;
+                            const img = document.createElement('img');
+                            img.alt = 'Module de pharmacie';
+                            img.loading = 'lazy';
+                            img.onload = function() {
                                 imgDiv.classList.add('loaded');
                             };
-                            tempImg.onerror = function() {
+                            img.onerror = function() {
                                 imgDiv.style.background = '#1a1a2e';
                                 imgDiv.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#667eea;font-size:40px;">📚</div>';
                             };
-                            tempImg.src = src;
+                            img.src = src;
+                            imgDiv.innerHTML = '';
+                            imgDiv.appendChild(img);
                         }
                         observer.unobserve(imgDiv);
                     }
