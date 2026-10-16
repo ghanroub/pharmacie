@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur les anti-inflammatoires non stéroïdiens (AINS) - GhaniPharma">
+    <meta name="keywords" content="pharmacie, AINS, anti-inflammatoires, diclofénac, ibuprofène, cours pharmacie, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Les AINS - GhaniPharma">
+    <meta property="og:description" content="Cours complet sur les AINS">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Les AINS | GhaniPharma</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        html[dir="rtl"] body { font-family: 'Segoe UI', 'Tahoma', system-ui, sans-serif; }
+        html[dir="rtl"] .side-dots { right: auto; left: 25px; }
+        html[dir="rtl"] .dot-tooltip { right: auto; left: 30px; }
+        html[dir="rtl"] .dot-tooltip::after {
+            right: auto; left: -8px;
+            border-left: none;
+            border-right: 8px solid rgba(0, 0, 0, 0.9);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .star {
+            position: absolute; background: white; border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay); opacity: 0;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
+        }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
+
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+        .top-nav.hidden { transform: translateY(-100%); }
+        .nav-container {
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none; color: var(--accent);
+            font-size: 1.5rem; font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .logo-icon {
+            width: 42px; height: 42px; background: none;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+        }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        .nav-link {
+            position: relative; padding: 10px 22px;
+            color: var(--text-secondary); text-decoration: none;
+            font-weight: 500; border-radius: 30px;
+            transition: all 0.3s ease; cursor: pointer;
+            border: none; background: none;
+            font-size: 0.95rem; white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-link:hover { color: var(--text-heading); background: rgba(128, 128, 128, 0.1); }
+        .nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.2); }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: 4px; left: 50%;
+            transform: translateX(-50%); width: 22px; height: 3px;
+            background: var(--primary); border-radius: 3px;
+        }
+
+        .icon-btn {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--text-heading);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .icon-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+        }
+        .icon-btn.settings-btn i { transition: transform 0.5s ease; }
+        .icon-btn.settings-btn:hover i { transform: rotate(180deg); }
+        .icon-btn.support-btn {
+            background: linear-gradient(135deg, #ffeb3b, #ff9800);
+            border-color: transparent;
+            color: #1a1a1a;
+            animation: giftGlow 2.5s ease-in-out infinite;
+        }
+        .icon-btn.support-btn:hover {
+            transform: translateY(-3px) scale(1.1) rotate(-8deg);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.55);
+        }
+        .icon-btn.support-btn i { transition: transform 0.4s ease; }
+        .icon-btn.support-btn:hover i { transform: scale(1.15); }
+        @keyframes giftGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+        }
+
+        .settings-wrapper { position: relative; }
+        .settings-dropdown {
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 0;
+            min-width: 260px;
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1100;
+        }
+        html[dir="rtl"] .settings-dropdown { right: auto; left: 0; transform-origin: top left; }
+        .settings-dropdown.open {
+            opacity: 1; visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .settings-section { margin-bottom: 16px; }
+        .settings-section:last-child { margin-bottom: 0; }
+        .settings-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .settings-label i { color: var(--primary); font-size: 0.85rem; }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .theme-option {
+            padding: 12px 10px;
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .theme-option i { font-size: 1.3rem; }
+        .theme-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .theme-option.active {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--primary);
+        }
+
+        .lang-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .lang-option {
+            padding: 10px 6px;
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .lang-option .flag { font-size: 1.4rem; line-height: 1; }
+        .lang-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .lang-option.active {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--primary);
+        }
+
+        .support-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 2500;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+            padding: 20px;
+        }
+        .support-modal.open { visibility: visible; opacity: 1; }
+        .support-content {
+            background: var(--bg-card);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+        .support-modal.open .support-content { transform: scale(1); }
+
+        .support-header {
+            background: linear-gradient(135deg, #ffeb3b, #ff9800, #f57c00);
+            padding: 32px 30px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .support-header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .support-header-icon {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            animation: giftBounce 2s ease-in-out infinite;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        .support-header h2 {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .support-header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-body {
+            padding: 28px 30px 30px;
+            overflow-y: auto;
+        }
+
+        .support-info {
+            background: rgba(0, 188, 212, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .support-info i { color: var(--accent); margin-right: 6px; }
+        html[dir="rtl"] .support-info i { margin-right: 0; margin-left: 6px; }
+
+        .support-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .support-method {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .support-method:hover {
+            border-color: var(--primary);
+            transform: translateX(6px);
+            background: rgba(0, 188, 212, 0.08);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.2);
+        }
+        html[dir="rtl"] .support-method:hover { transform: translateX(-6px); }
+        .support-method-icon {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .support-method-icon.paypal { background: linear-gradient(135deg, #0070ba, #003087); }
+        .support-method-icon.ccp { background: linear-gradient(135deg, #00a86b, #007d4f); }
+        .support-method-icon.flexy { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+
+        .support-method-info { flex: 1; min-width: 0; }
+        .support-method-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 3px;
+        }
+        .support-method-info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+        }
+        .support-copy-btn {
+            background: rgba(128, 128, 128, 0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+        .support-copy-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+        .support-copy-btn.copied {
+            background: #00c853;
+            color: #fff;
+            border-color: #00c853;
+        }
+
+        .support-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .support-close:hover { background: rgba(255, 255, 255, 0.45); transform: rotate(90deg); }
+        html[dir="rtl"] .support-close { right: auto; left: 18px; }
+
+        .support-footer {
+            text-align: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .support-footer i { color: #ff9800; margin: 0 4px; }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #00c853;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 3000;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%; max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
+        .mobile-menu-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px; height: 40px;
+            font-size: 1.2rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .mobile-menu-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .mobile-nav-link {
+            display: flex; align-items: center; justify-content: center;
+            gap: 12px; padding: 16px 20px; margin: 12px 0;
+            background: var(--bg-glass); border-radius: 60px;
+            color: var(--text-heading); font-size: 1.2rem; font-weight: 600;
+            text-decoration: none; transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover {
+            border-color: var(--primary); background: rgba(0, 188, 212, 0.1);
+            transform: translateX(6px);
+        }
+        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
+        .menu-toggle {
+            display: none; background: none; border: none;
+            color: var(--text-heading); font-size: 1.8rem;
+            cursor: pointer; padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover { transform: rotate(90deg); }
+
+        .toggle-buttons {
+            display: flex; gap: 15px; justify-content: center;
+            margin-top: 20px; margin-bottom: 40px;
+        }
+        .toggle-btn {
+            padding: 12px 30px; border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary); cursor: pointer;
+            font-size: 1rem; font-weight: 600;
+            transition: all 0.3s ease; outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        .toggle-btn:hover {
+            border-color: var(--primary); color: var(--text-heading);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        .toggle-btn.active {
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary); color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .side-dots {
+            position: fixed; top: 50%; right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex; flex-direction: column; gap: 22px;
+            padding: 20px 0;
+        }
+        .side-dots::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--border-glass) 10%, var(--border-glass) 90%, transparent);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .dot {
+            width: 12px; height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%; cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1;
+        }
+        .dot:hover {
+            background: var(--accent); border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+            transform: scale(1.3);
+        }
+        .dot.active {
+            background: var(--primary); border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+        }
+        .dot-tooltip {
+            position: absolute; right: 30px; top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9); color: #fff;
+            padding: 6px 18px; border-radius: 20px;
+            font-size: 0.8rem; white-space: nowrap;
+            pointer-events: none; opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .dot-tooltip::after {
+            content: ''; position: absolute; top: 50%; right: -8px;
+            transform: translateY(-50%);
+            border-left: 8px solid rgba(0, 0, 0, 0.9);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        .dot:hover .dot-tooltip, .dot.active .dot-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-4px);
+        }
+        [data-theme="light"] .dot-tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
+            border-color: rgba(0,0,0,0.1);
+        }
+        [data-theme="light"] .dot-tooltip::after { border-left-color: rgba(255, 255, 255, 0.95); }
+
+        .bottom-dots-nav { display: none; }
+        @media (min-width: 993px) { .side-dots { display: flex; } .bottom-dots-nav { display: none; } }
+        @media (max-width: 992px) {
+            .side-dots { display: none; }
+            .bottom-dots-nav {
+                display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+                background: var(--nav-bg);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border-top: 1px solid var(--border-glass);
+                padding: 10px 15px; gap: 8px; justify-content: center;
+                z-index: 999; overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .bottom-dots-nav::-webkit-scrollbar { display: none; }
+            .bottom-dot {
+                min-width: 28px; height: 28px; border-radius: 50%;
+                background: rgba(128, 128, 128, 0.2);
+                border: 2px solid transparent; cursor: pointer;
+                display: flex; align-items: center; justify-content: center;
+                font-size: 0.75rem; color: var(--text-secondary);
+                transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0;
+            }
+            .bottom-dot.active {
+                background: rgba(0, 188, 212, 0.2);
+                border-color: var(--primary); color: var(--primary);
+                box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+            }
+            .main-wrapper { padding-bottom: 70px; }
+        }
+
+        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+        .section-block {
+            padding: 80px 0; position: relative;
+            min-height: auto;
+            display: flex; flex-direction: column; justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
+        }
+        .section-block:last-of-type { border-bottom: none; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .hero-section {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; min-height: 60vh; padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px; border-radius: 50px;
+            font-size: 0.9rem; color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px; letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px; margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 2.2rem; font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: var(--text-secondary); font-size: 1.1rem;
+            margin-bottom: 40px; max-width: 700px;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px; padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .drug-link {
+            cursor: pointer; color: var(--primary);
+            font-weight: 600; text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%; max-width: 700px;
+            max-height: 85vh; padding: 40px 30px;
+            position: relative; overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            font-size: 1.8rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.3s ease;
+            line-height: 1;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .modal-images {
+            display: flex; flex-wrap: wrap; gap: 20px;
+            justify-content: center; margin-top: 20px;
+        }
+        .modal-images img {
+            max-width: 100%; height: auto; border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+        }
+        .modal-placeholder {
+            color: var(--text-secondary); font-style: italic;
+            text-align: center; width: 100%; padding: 30px;
+            border: 2px dashed var(--border-glass); border-radius: 16px;
+        }
+
+        .question-card label {
+            display: block; margin-bottom: 8px; cursor: pointer;
+            padding: 8px 12px; border-radius: 8px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        html[dir="rtl"] .question-card label { border-left: none; border-right: 4px solid transparent; }
+        .question-card label:hover { background: rgba(0, 188, 212, 0.05); }
+        .question-card input[type="checkbox"] { margin-right: 10px; accent-color: var(--primary); }
+        html[dir="rtl"] .question-card input[type="checkbox"] { margin-right: 0; margin-left: 10px; }
+        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853 !important; }
+        html[dir="rtl"] .correct-answer { border-left: none; border-right: 4px solid #00c853 !important; }
+        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744 !important; }
+        html[dir="rtl"] .wrong-answer { border-left: none; border-right: 4px solid #ff1744 !important; }
+        .missed-answer { background: rgba(255, 200, 0, 0.2) !important; border-left: 4px solid #ffc107 !important; }
+        html[dir="rtl"] .missed-answer { border-left: none; border-right: 4px solid #ffc107 !important; }
+        .result-message { text-align: center; font-size: 1.2rem; margin-top: 20px; font-weight: 700; }
+        .qcm-instruction {
+            text-align: center; margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px; padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p { color: var(--primary); margin: 0; }
+
+        .site-footer {
+            text-align: center; padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex; justify-content: center; gap: 20px;
+            margin-bottom: 25px; flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-heading); text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
+        }
+        .social-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 15px; }
+            .modal-content { width: 95%; padding: 25px 20px; }
+            .toggle-buttons { flex-direction: column; align-items: center; }
+            .settings-dropdown { right: -60px; min-width: 240px; }
+            html[dir="rtl"] .settings-dropdown { right: auto; left: -60px; }
+            .support-content { max-width: 95%; }
+            .support-header { padding: 26px 20px 20px; }
+            .support-header-icon { font-size: 2.8rem; }
+            .support-header h2 { font-size: 1.3rem; }
+            .support-body { padding: 22px 20px 24px; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+            .nav-logo .logo-icon { width: 36px; height: 36px; }
+            .icon-btn { width: 40px; height: 40px; font-size: 1rem; }
+            .nav-right { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="icon-btn support-btn" id="supportBtn" aria-label="Support" title="Soutenir">
+                    <i class="fas fa-gift"></i>
+                </button>
+
+                <div class="settings-wrapper">
+                    <button class="icon-btn settings-btn" id="settingsBtn" aria-label="Paramètres" title="Paramètres">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="settings-dropdown" id="settingsDropdown">
+                        <div class="settings-section">
+                            <div class="settings-label"><i class="fas fa-palette"></i> <span data-i18n="theme">Thème</span></div>
+                            <div class="theme-options">
+                                <button class="theme-option" data-theme-value="light">
+                                    <i class="fas fa-sun"></i>
+                                    <span data-i18n="light">Clair</span>
+                                </button>
+                                <button class="theme-option active" data-theme-value="dark">
+                                    <i class="fas fa-moon"></i>
+                                    <span data-i18n="dark">Sombre</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <div class="settings-label"><i class="fas fa-globe"></i> <span data-i18n="language">Langue</span></div>
+                            <div class="lang-options">
+                                <button class="lang-option" data-lang="ar">
+                                    <span class="flag">🇩🇿</span>
+                                    <span>عربي</span>
+                                </button>
+                                <button class="lang-option active" data-lang="fr">
+                                    <span class="flag">🇫🇷</span>
+                                    <span>FR</span>
+                                </button>
+                                <button class="lang-option" data-lang="en">
+                                    <span class="flag">🇬🇧</span>
+                                    <span>EN</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> <span data-i18n="home">Accueil</span></a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> <span data-i18n="about">À propos</span></a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> <span data-i18n="modules">Modules</span></a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> <span data-i18n="contact">Contact</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> <span data-i18n="home">Accueil</span></a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> <span data-i18n="about">À propos</span></a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> <span data-i18n="modules">Modules</span></a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> <span data-i18n="contact">Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-dots" id="sideDots"></div>
+    <div class="bottom-dots-nav" id="bottomDotsNav"></div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-pills"></i> <span data-i18n="pharmacology">Pharmacologie</span></div>
+                <h1 class="hero-title reveal reveal-delay-1" data-i18n="hero_title">LES ANTI‑INFLAMMATOIRES NON STÉROÏDIENS</h1>
+                <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero_subtitle">AINS : mécanismes, indications, contre‑indications et conseils à l'officine.</p>
+                <div class="toggle-buttons reveal reveal-delay-3">
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> <span data-i18n="lesson">Leçon</span></button>
+                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> <span data-i18n="exam">Examen</span></button>
+                </div>
+            </section>
+
+            <div id="lessonContent">
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal" data-i18n="mechanism_title">Mécanisme d'action</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p data-i18n="mechanism_text">Les AINS inhibent les enzymes <strong>cyclo‑oxygénases (COX‑1 et/ou COX‑2)</strong>, bloquant ainsi la synthèse des <strong>prostaglandines</strong>. Ces dernières étant les médiateurs de l'inflammation, de la douleur et de la fièvre.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-indications">
+                    <h2 class="section-title reveal" data-i18n="indications_title">Indications générales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li data-i18n="indication_1">Douleurs dentaires</li>
+                            <li data-i18n="indication_2">Dysménorrhées (règles douloureuses)</li>
+                            <li data-i18n="indication_3">Maladies rhumatismales</li>
+                            <li data-i18n="indication_4">Arthrose</li>
+                            <li data-i18n="indication_5">Hernie discale</li>
+                            <li data-i18n="indication_6">Douleurs post‑opératoires</li>
+                            <li data-i18n="indication_7">Fièvre (pour certains AINS)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal" data-i18n="contre_title">Contre‑indications majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li data-i18n="contre_1">Hypertension artérielle sévère</li>
+                            <li data-i18n="contre_2">Ulcère gastroduodénal évolutif (ou antécédent)</li>
+                            <li data-i18n="contre_3">Asthme (notamment déclenché par l'aspirine)</li>
+                            <li data-i18n="contre_4">Insuffisance rénale sévère</li>
+                            <li data-i18n="contre_5">Varicelle</li>
+                            <li data-i18n="contre_6">Grossesse (3e trimestre) et allaitement (sauf avis médical strict)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal" data-i18n="interactions_title">Interactions médicamenteuses majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong data-i18n="inter_label">Association aux anti‑vitamines K (Sintrom) :</strong> <span data-i18n="inter_text">contre‑indiquée ou nécessite une surveillance extrême car risque d'hémorragie grave.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal" data-i18n="grossesse_title">Grossesse et allaitement</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong data-i18n="grossesse_label">Grossesse :</strong> <span data-i18n="grossesse_text">Formellement contre‑indiqués à partir du 6e mois (3e trimestre) (risque de fermeture prématurée du canal artériel et d'insuffisance rénale fœtale).</span></p>
+                        <p><strong data-i18n="allaitement_label">Allaitement :</strong> <span data-i18n="allaitement_text">La molécule passe dans le lait. Privilégier des traitements de courte durée sur avis médical.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-ains-classiques">
+                    <h2 class="section-title reveal" data-i18n="ains_classiques_title">AINS classiques</h2>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="diclofenac_title">1. Diclofénac (Sodique et Potassique)</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Divido')">Divido</span>,
+                            <span class="drug-link" onclick="showDrugModal('Biofenac')">Biofenac</span>,
+                            <span class="drug-link" onclick="showDrugModal('Flovenac')">Flovenac</span>,
+                            <span class="drug-link" onclick="showDrugModal('Clofenal')">Clofenal</span>,
+                            <span class="drug-link" onclick="showDrugModal('Voltarene')">Voltarene</span>,
+                            <span class="drug-link" onclick="showDrugModal('Vortex')">Vortex</span>,
+                            <span class="drug-link" onclick="showDrugModal('Voltum')">Voltum</span>,
+                            <span class="drug-link" onclick="showDrugModal('Votafène')">Votafène</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fenaquène')">Fenaquène</span>,
+                            <span class="drug-link" onclick="showDrugModal('Cigel')">Cigel</span>,
+                            <span class="drug-link" onclick="showDrugModal('Tabiflex Cool')">Tabiflex Cool</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rapidus')">Rapidus</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="diclofenac_formes">Comprimés, gélules, suppositoires, pommades/gels.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="diclofenac_posologie">50 mg, 2 à 3 fois par jour (Max 150 mg/j). Le Diclofénac potassique (Rapidus) a une absorption plus rapide pour les douleurs aiguës.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="diclofenac_particularite">Antalgique et anti‑inflammatoire puissant. Largement utilisé pour la rhumatologie et les douleurs dentaires.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="diclofenac_conseil">Prendre impérativement au cours ou à la fin des repas pour limiter l'irritation gastrique. Le gel s'utilise 1 à 2 fois par jour, sans pansement occlusif.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);" data-i18n="naproxene_title">2. Naproxène sodique</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Apranax')">Apranax</span>,
+                            <span class="drug-link" onclick="showDrugModal('Nopain')">Nopain</span>,
+                            <span class="drug-link" onclick="showDrugModal('Nhupain')">Nhupain</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="naproxene_formes">Comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="naproxene_posologie">Dose initiale 550 mg, puis 275 mg toutes les 6‑8h (Max 1375 mg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="naproxene_particularite">Demi‑vie plasmatique longue (12 à 17 heures). Très efficace sur les douleurs inflammatoires et la dysménorrhée.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="naproxene_conseil">Prendre avec de la nourriture. Prévenir le patient que l'effet est prolongé, il ne faut pas multiplier les prises inutilement.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-3">
+                        <h3 style="color:var(--primary);" data-i18n="piroxicam_title">3. Piroxicam</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Feldene')">Feldene</span>,
+                            <span class="drug-link" onclick="showDrugModal('Prixam')">Prixam</span>,
+                            <span class="drug-link" onclick="showDrugModal('Palinoxam')">Palinoxam</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fenoxam')">Fenoxam</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fradene')">Fradene</span>,
+                            <span class="drug-link" onclick="showDrugModal('Cycladol')">Cycladol</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="piroxicam_formes">Gélules, comprimés, suppositoires.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="piroxicam_posologie">20 mg en une seule prise quotidienne (1 fois par jour).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="piroxicam_particularite">Demi‑vie extrêmement longue (environ 50h), ce qui expose à un risque d'accumulation. Souvent réservé aux pathologies chroniques.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="piroxicam_conseil">Bien préciser une prise unique par jour (le matin ou le soir). Conseiller une protection gastrique si utilisé au long cours.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="meloxicam_title">4. Méloxicam</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Melox')">Melox</span>,
+                            <span class="drug-link" onclick="showDrugModal('Motion')">Motion</span>,
+                            <span class="drug-link" onclick="showDrugModal('Moven')">Moven</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="meloxicam_formes">Comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="meloxicam_posologie">7,5 mg à 15 mg en une seule prise quotidienne (Max 15 mg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="meloxicam_particularite">Anti‑inflammatoire préférentiel de la COX‑2 (proche des coxibs).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="meloxicam_conseil">Une seule prise par jour au moment des repas.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);" data-i18n="ibuprofene_title">5. Ibuprofène</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Xydol')">Xydol</span>,
+                            <span class="drug-link" onclick="showDrugModal('Prof')">Prof</span>,
+                            <span class="drug-link" onclick="showDrugModal('Neupren')">Neupren</span>,
+                            <span class="drug-link" onclick="showDrugModal('Sapofen')">Sapofen</span>,
+                            <span class="drug-link" onclick="showDrugModal('Algifen')">Algifen</span>,
+                            <span class="drug-link" onclick="showDrugModal('Antaifen')">Antaifen</span>,
+                            <span class="drug-link" onclick="showDrugModal('Lamifene')">Lamifene</span>,
+                            <span class="drug-link" onclick="showDrugModal('Ibutol')">Ibutol</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="ibuprofene_formes">Comprimés, sachets, sirops, gel local.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="ibuprofene_posologie">400 mg, 3 fois par jour (Max 2400 mg/j) (limité à 1200 mg/j sans prescription en officine).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ibuprofene_particularite">Le chef de file des AINS pour la douleur et la fièvre. Très courte durée d'action.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="ibuprofene_conseil">Ne pas associer avec d'autres AINS. Prendre au cours du repas. Pour la fièvre ou la douleur aiguë, ne pas dépasser 3 jours (5 jours pour la douleur) sans avis médical.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-3">
+                        <h3 style="color:var(--primary);" data-i18n="ketoprofene_title">6. Kétoprofène</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Profenid')">Profenid</span>,
+                            <span class="drug-link" onclick="showDrugModal('Ketofen')">Ketofen</span>,
+                            <span class="drug-link" onclick="showDrugModal('Ketum')">Ketum</span>,
+                            <span class="drug-link" onclick="showDrugModal('Kefentech')">Kefentech</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="ketoprofene_formes">Gélules, comprimés, suppositoires, gel/pommade.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="ketoprofene_posologie">100 mg 1 à 2 fois par jour ou 50 mg 3 fois par jour. (Max 200 mg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ketoprofene_particularite">Très puissant, excellent pour les crises aiguës rhumatismales. Le gel est un de nos meilleurs alliés pour les entorses et tendinites.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="ketoprofene_conseil">Ne pas appliquer le gel sous un pansement occlusif. Espacer les prises orales d'au moins 12h pour la forme LP (libération prolongée).</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="flurbiprofene_title">7. Flurbiprofène</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Xydol Gyn')">Xydol Gyn</span>,
+                            <span class="drug-link" onclick="showDrugModal('Fludis')">Fludis</span>,
+                            <span class="drug-link" onclick="showDrugModal('Menodis')">Menodis</span>,
+                            <span class="drug-link" onclick="showDrugModal('Antadys')">Antadys</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="flurbiprofene_formes">Comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="flurbiprofene_posologie">50 à 100 mg, 2 à 3 fois par jour (Max 300 mg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="flurbiprofene_particularite">C'est la molécule de référence pour les dysménorrhées.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="flurbiprofene_conseil">Dès l'apparition des règles douloureuses, prendre la première dose au plus vite. Le prendre avec un repas léger.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);" data-i18n="niflumique_title">8. Acide niflumique (Niflumil)</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Niflumène')">Niflumène</span>,
+                            <span class="drug-link" onclick="showDrugModal('Niflumate')">Niflumate</span>,
+                            <span class="drug-link" onclick="showDrugModal('Inflamine')">Inflamine</span>,
+                            <span class="drug-link" onclick="showDrugModal('Nifluril')">Nifluril</span>,
+                            <span class="drug-link" onclick="showDrugModal('Usénil')">Usénil</span>,
+                            <span class="drug-link" onclick="showDrugModal('Flucidal')">Flucidal</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="niflumique_formes">Comprimés, suppositoires, gel.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="niflumique_posologie">250 mg, 2 à 3 fois par jour (Max 750 mg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="niflumique_particularite">Famille des fénamates. Souvent indiqué en stomatologie (douleurs dentaires, aphtes) et ORL.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="niflumique_conseil">Peut provoquer des diarrhées, en prévenir le patient. À prendre à la fin des repas.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-ains-speciaux">
+                    <h2 class="section-title reveal" data-i18n="ains_speciaux_title">AINS spéciaux & apparentés</h2>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="celecoxib_title">9. Célécoxib (Coxib)</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Celebrex')">Celebrex</span>,
+                            <span class="drug-link" onclick="showDrugModal('Rumabrex')">Rumabrex</span>,
+                            <span class="drug-link" onclick="showDrugModal('Arbrex')">Arbrex</span>,
+                            <span class="drug-link" onclick="showDrugModal('Celecobrex')">Celecobrex</span>,
+                            <span class="drug-link" onclick="showDrugModal('Celexoc')">Celexoc</span>,
+                            <span class="drug-link" onclick="showDrugModal('Inicox')">Inicox</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="celecoxib_formes">Gélules.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="celecoxib_posologie">200 mg/j pour l'arthrose, jusqu'à 400 mg/j pour la polyarthrite rhumatoïde.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="celecoxib_particularite">AINS sélectif de la COX‑2. Moins d'effets indésirables gastro‑duodénaux que les AINS classiques, mais surveillance du risque cardiovasculaire accrue.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="celecoxib_conseil">À prendre indépendamment des repas. Informer le patient de consulter son médecin en cas de douleurs thoraciques ou d'œdèmes des membres inférieurs.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);" data-i18n="indometacine_title">10. Indométacine</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Indomet')">Indomet</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="indometacine_formes">Comprimés, suppositoires, pommade.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="indometacine_posologie">25 à 50 mg, 2 à 3 fois par jour (Max 200 mg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="indometacine_particularite">Très puissant, réservé aux pathologies inflammatoires sévères.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="indometacine_conseil">Attention aux effets secondaires neurologiques (céphalées violentes, vertiges, confusion). Alerter le patient de ces signes pour qu'il consulte vite.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-3">
+                        <h3 style="color:var(--primary);" data-i18n="aspirine_title">11. Acide acétylsalicylique (Aspirine)</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Aspégic')">Aspégic</span>,
+                            <span class="drug-link" onclick="showDrugModal('Aspirine')">Aspirine</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="aspirine_formes">Comprimés, sachets effervescents.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="aspirine_posologie">500 à 1000 mg, 3 à 4 fois par jour pour l'effet antalgique/antipyrétique (Max 4 g/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aspirine_particularite">Effet antiagrégant plaquettaire puissant.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="aspirine_conseil">Proscrire formellement chez l'enfant atteint de varicelle ou de syndrome grippal (risque de syndrome de Reye). Toujours prendre au cours des repas pour éviter les gastrites.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="amylase_title">12. Alfa‑amylase (Note : enzyme, pas un AINS)</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong>
+                            <span class="drug-link" onclick="showDrugModal('Lamylase')">Lamylase</span>,
+                            <span class="drug-link" onclick="showDrugModal('Maxilase')">Maxilase</span>,
+                            <span class="drug-link" onclick="showDrugModal('Megamylase')">Megamylase</span>,
+                            <span class="drug-link" onclick="showDrugModal('Ximale')">Ximale</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="amylase_formes">Comprimés à sucer, lyophilisats.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle & Max :</strong> <span data-i18n="amylase_posologie">2 à 3 comprimés par jour, à laisser fondre en bouche.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="amylase_particularite">Indiqué pour l'inflammation de la gorge (angines, pharyngites). Possède une action anti‑œdémateuse et anti‑inflammatoire locale.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique au patient :</strong> <span data-i18n="amylase_conseil">Ne pas croquer, laisser fondre lentement sous la langue. À distance des repas pour une efficacité optimale.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                    <h2 class="section-title reveal" data-i18n="conseil_final_title">Conseils généraux pour votre stage</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong data-i18n="duree_label">Durée du traitement :</strong> <span data-i18n="conseil_duree">Un AINS pour une douleur aiguë (dentaire) doit être de courte durée (< 5 jours). Les maladies rhumatismales nécessitent un traitement de longue durée avec surveillance.</span></li>
+                            <li><strong data-i18n="formes_locales_label">Formes locales :</strong> <span data-i18n="conseil_locales">Pour les pommades et gels AINS, une application le soir ou 2 applications par jour.</span></li>
+                            <li><strong data-i18n="protection_label">Protection gastrique :</strong> <span data-i18n="conseil_protection">En cas de prise au long cours et de facteurs de risque (âge, ATCD), association systématique avec un Inhibiteur de la Pompe à Protons (IPP, comme l'oméprazole) hautement recommandée.</span></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div id="examContent" style="display: none;">
+                <div class="qcm-instruction card reveal reveal-delay-1">
+                    <p><i class="fas fa-info-circle"></i> <strong data-i18n="qcm_label">QCM :</strong> <span data-i18n="qcm_instruction">Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</span></p>
+                </div>
+
+                <section class="section-block" id="exam-question1">
+                    <h2 class="section-title reveal" data-i18n="q1_title">Question 1</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q1_text">Quel est le mécanisme d'action principal des AINS ?</strong></p><label><input type="checkbox" name="q1" value="a"> <span data-i18n="q1_a">Inhibition des cyclo‑oxygénases (COX)</span></label><label><input type="checkbox" name="q1" value="b"> <span data-i18n="q1_b">Blocage des récepteurs opioïdes µ</span></label><label><input type="checkbox" name="q1" value="c"> <span data-i18n="q1_c">Inhibition de la synthèse des prostaglandines</span></label><label><input type="checkbox" name="q1" value="d"> <span data-i18n="q1_d">Activation des canaux potassiques</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question2">
+                    <h2 class="section-title reveal" data-i18n="q2_title">Question 2</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q2_text">Quelles sont les contre‑indications majeures des AINS ?</strong></p><label><input type="checkbox" name="q2" value="a"> <span data-i18n="q2_a">Ulcère gastroduodénal évolutif</span></label><label><input type="checkbox" name="q2" value="b"> <span data-i18n="q2_b">Asthme déclenché par l'aspirine</span></label><label><input type="checkbox" name="q2" value="c"> <span data-i18n="q2_c">Insuffisance rénale sévère</span></label><label><input type="checkbox" name="q2" value="d"> <span data-i18n="q2_d">Grossesse au 3e trimestre</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question3">
+                    <h2 class="section-title reveal" data-i18n="q3_title">Question 3</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q3_text">Quelle interaction médicamenteuse est particulièrement dangereuse avec les AINS ?</strong></p><label><input type="checkbox" name="q3" value="a"> <span data-i18n="q3_a">Association aux anti‑vitamines K (AVK) : risque hémorragique</span></label><label><input type="checkbox" name="q3" value="b"> <span data-i18n="q3_b">Association aux benzodiazépines : dépression respiratoire</span></label><label><input type="checkbox" name="q3" value="c"> <span data-i18n="q3_c">Association aux ISRS : syndrome sérotoninergique</span></label><label><input type="checkbox" name="q3" value="d"> <span data-i18n="q3_d">Association aux diurétiques : hypokaliémie</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question4">
+                    <h2 class="section-title reveal" data-i18n="q4_title">Question 4</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q4_text">Concernant le Diclofénac, quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q4" value="a"> <span data-i18n="q4_a">Le Diclofénac potassique (Rapidus) a une absorption plus rapide</span></label><label><input type="checkbox" name="q4" value="b"> <span data-i18n="q4_b">La dose maximale est de 150 mg/j</span></label><label><input type="checkbox" name="q4" value="c"> <span data-i18n="q4_c">Le gel s'utilise sous pansement occlusif pour une meilleure efficacité</span></label><label><input type="checkbox" name="q4" value="d"> <span data-i18n="q4_d">Il doit être pris pendant les repas pour limiter l'irritation gastrique</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question5">
+                    <h2 class="section-title reveal" data-i18n="q5_title">Question 5</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q5_text">Quels AINS sont indiqués en priorité dans les dysménorrhées ?</strong></p><label><input type="checkbox" name="q5" value="a"> <span data-i18n="q5_a">Flurbiprofène</span></label><label><input type="checkbox" name="q5" value="b"> <span data-i18n="q5_b">Naproxène sodique</span></label><label><input type="checkbox" name="q5" value="c"> <span data-i18n="q5_c">Célécoxib</span></label><label><input type="checkbox" name="q5" value="d"> <span data-i18n="q5_d">Indométacine</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question6">
+                    <h2 class="section-title reveal" data-i18n="q6_title">Question 6</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q6_text">Concernant le Piroxicam, quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q6" value="a"> <span data-i18n="q6_a">Sa demi‑vie est d'environ 50 heures</span></label><label><input type="checkbox" name="q6" value="b"> <span data-i18n="q6_b">Il se prend en une seule prise quotidienne</span></label><label><input type="checkbox" name="q6" value="c"> <span data-i18n="q6_c">Il est réservé aux douleurs aiguës de courte durée</span></label><label><input type="checkbox" name="q6" value="d"> <span data-i18n="q6_d">Il peut entraîner une accumulation en cas d'utilisation prolongée</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question7">
+                    <h2 class="section-title reveal" data-i18n="q7_title">Question 7</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q7_text">Quels conseils donner à un patient sous Ibuprofène ?</strong></p><label><input type="checkbox" name="q7" value="a"> <span data-i18n="q7_a">Ne pas associer avec d'autres AINS</span></label><label><input type="checkbox" name="q7" value="b"> <span data-i18n="q7_b">Prendre au cours du repas</span></label><label><input type="checkbox" name="q7" value="c"> <span data-i18n="q7_c">Ne pas dépasser 3 jours pour la fièvre sans avis médical</span></label><label><input type="checkbox" name="q7" value="d"> <span data-i18n="q7_d">Il peut être pris à jeun sans risque</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question8">
+                    <h2 class="section-title reveal" data-i18n="q8_title">Question 8</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q8_text">Quelle est la particularité du Célécoxib ?</strong></p><label><input type="checkbox" name="q8" value="a"> <span data-i18n="q8_a">C'est un inhibiteur sélectif de la COX‑2</span></label><label><input type="checkbox" name="q8" value="b"> <span data-i18n="q8_b">Il entraîne moins d'effets indésirables gastro‑duodénaux</span></label><label><input type="checkbox" name="q8" value="c"> <span data-i18n="q8_c">Il est contre‑indiqué en cas de risque cardiovasculaire</span></label><label><input type="checkbox" name="q8" value="d"> <span data-i18n="q8_d">Il se prend obligatoirement au cours des repas</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question9">
+                    <h2 class="section-title reveal" data-i18n="q9_title">Question 9</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q9_text">Concernant l'Aspirine, quelles précautions sont essentielles ?</strong></p><label><input type="checkbox" name="q9" value="a"> <span data-i18n="q9_a">Contre‑indiquée chez l'enfant en cas de varicelle ou syndrome grippal</span></label><label><input type="checkbox" name="q9" value="b"> <span data-i18n="q9_b">Toujours prendre au cours des repas</span></label><label><input type="checkbox" name="q9" value="c"> <span data-i18n="q9_c">Elle a un effet antiagrégant plaquettaire puissant</span></label><label><input type="checkbox" name="q9" value="d"> <span data-i18n="q9_d">Elle est sans danger pendant la grossesse</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question10">
+                    <h2 class="section-title reveal" data-i18n="q10_title">Question 10</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q10_text">Quels sont les conseils généraux pour l'utilisation des AINS ?</strong></p><label><input type="checkbox" name="q10" value="a"> <span data-i18n="q10_a">Durée courte pour une douleur aiguë (moins de 5 jours)</span></label><label><input type="checkbox" name="q10" value="b"> <span data-i18n="q10_b">Les formes locales s'appliquent 1 à 2 fois par jour</span></label><label><input type="checkbox" name="q10" value="c"> <span data-i18n="q10_c">Une protection gastrique (IPP) est recommandée en cas de prise prolongée</span></label><label><input type="checkbox" name="q10" value="d"> <span data-i18n="q10_d">Les AINS peuvent être associés sans risque entre eux</span></label></div>
+                </section>
+
+                <section class="section-block" style="border-bottom: none;">
+                    <div class="card reveal reveal-delay-1" style="text-align: center;">
+                        <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;" data-i18n="check_btn">Vérifier mes réponses</button>
+                        <button class="toggle-btn" id="resetExam" data-i18n="reset_btn">Réinitialiser</button>
+                        <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
+    <div class="support-modal" id="supportModal">
+        <div class="support-content">
+            <button class="support-close" id="closeSupport" aria-label="Fermer">&times;</button>
+            <div class="support-header">
+                <div class="support-header-icon"><i class="fas fa-gift"></i></div>
+                <h2 data-i18n="support_title">Soutenir GhaniPharma</h2>
+                <p data-i18n="support_subtitle">Votre soutien m'aide à créer plus de contenu éducatif</p>
+            </div>
+            <div class="support-body">
+                <div class="support-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-i18n="support_info">Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏</span>
+                </div>
+                <div class="support-methods">
+                    <a href="https://www.paypal.me/ghanipharma" target="_blank" rel="noopener noreferrer" class="support-method">
+                        <div class="support-method-icon paypal"><i class="fab fa-paypal"></i></div>
+                        <div class="support-method-info">
+                            <h4>PayPal</h4>
+                            <p>paypal.me/ghanipharma</p>
+                        </div>
+                        <button class="support-copy-btn" onclick="event.preventDefault(); copyToClipboard('https://www.paypal.me/ghanipharma', this);">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </a>
+                    <div class="support-method" onclick="copyToClipboard('00799999002345678901', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon ccp"><i class="fas fa-university"></i></div>
+                        <div class="support-method-info">
+                            <h4 data-i18n="rip_title">RIP CCP (Algérie)</h4>
+                            <p>00799999002345678901</p>
+                        </div>
+                        <button class="support-copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="support-method" onclick="copyToClipboard('+213555079282', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon flexy"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="support-method-info">
+                            <h4 data-i18n="flexy_title">Flexy</h4>
+                            <p>+213 555 079 282</p>
+                        </div>
+                        <button class="support-copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="support-footer">
+                    <span data-i18n="support_footer">Merci de tout cœur</span> <i class="fas fa-gift"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-toast" id="copyToast">
+        <i class="fas fa-check-circle"></i>
+        <span data-i18n="copied">Copié !</span>
+    </div>
+
+    <script>
+        // ==================== Stars ====================
+        (function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // ==================== Reveal ====================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== TRANSLATIONS ====================
+        const translations = {
+            fr: {
+                theme: 'Thème', light: 'Clair', dark: 'Sombre', language: 'Langue',
+                home: 'Accueil', about: 'À propos', modules: 'Modules', contact: 'Contact',
+                pharmacology: 'Pharmacologie',
+                hero_title: 'LES ANTI‑INFLAMMATOIRES NON STÉROÏDIENS',
+                hero_subtitle: "AINS : mécanismes, indications, contre‑indications et conseils à l'officine.",
+                lesson: 'Leçon', exam: 'Examen',
+                mechanism_title: "Mécanisme d'action",
+                mechanism_text: "Les AINS inhibent les enzymes cyclo‑oxygénases (COX‑1 et/ou COX‑2), bloquant ainsi la synthèse des prostaglandines. Ces dernières étant les médiateurs de l'inflammation, de la douleur et de la fièvre.",
+                indications_title: 'Indications générales',
+                indication_1: 'Douleurs dentaires', indication_2: 'Dysménorrhées (règles douloureuses)',
+                indication_3: 'Maladies rhumatismales', indication_4: 'Arthrose',
+                indication_5: 'Hernie discale', indication_6: 'Douleurs post‑opératoires',
+                indication_7: 'Fièvre (pour certains AINS)',
+                contre_title: 'Contre‑indications majeures',
+                contre_1: 'Hypertension artérielle sévère',
+                contre_2: 'Ulcère gastroduodénal évolutif (ou antécédent)',
+                contre_3: "Asthme (notamment déclenché par l'aspirine)",
+                contre_4: 'Insuffisance rénale sévère',
+                contre_5: 'Varicelle',
+                contre_6: 'Grossesse (3e trimestre) et allaitement (sauf avis médical strict)',
+                interactions_title: 'Interactions médicamenteuses majeures',
+                inter_label: 'Association aux anti‑vitamines K (Sintrom) :',
+                inter_text: "contre‑indiquée ou nécessite une surveillance extrême car risque d'hémorragie grave.",
+                grossesse_title: 'Grossesse et allaitement',
+                grossesse_label: 'Grossesse :',
+                grossesse_text: "Formellement contre‑indiqués à partir du 6e mois (3e trimestre) (risque de fermeture prématurée du canal artériel et d'insuffisance rénale fœtale).",
+                allaitement_label: 'Allaitement :',
+                allaitement_text: 'La molécule passe dans le lait. Privilégier des traitements de courte durée sur avis médical.',
+                ains_classiques_title: 'AINS classiques',
+                noms_commerciaux: 'Noms commerciaux :',
+                formes_label: 'Formes :',
+                posologie_label: 'Posologie usuelle & Max :',
+                particularite_label: 'Particularité :',
+                conseil_pratique: 'Conseil pratique au patient :',
+                diclofenac_title: '1. Diclofénac (Sodique et Potassique)',
+                diclofenac_formes: 'Comprimés, gélules, suppositoires, pommades/gels.',
+                diclofenac_posologie: '50 mg, 2 à 3 fois par jour (Max 150 mg/j). Le Diclofénac potassique (Rapidus) a une absorption plus rapide pour les douleurs aiguës.',
+                diclofenac_particularite: 'Antalgique et anti‑inflammatoire puissant. Largement utilisé pour la rhumatologie et les douleurs dentaires.',
+                diclofenac_conseil: "Prendre impérativement au cours ou à la fin des repas pour limiter l'irritation gastrique. Le gel s'utilise 1 à 2 fois par jour, sans pansement occlusif.",
+                naproxene_title: '2. Naproxène sodique',
+                naproxene_formes: 'Comprimés.',
+                naproxene_posologie: 'Dose initiale 550 mg, puis 275 mg toutes les 6‑8h (Max 1375 mg/j).',
+                naproxene_particularite: 'Demi‑vie plasmatique longue (12 à 17 heures). Très efficace sur les douleurs inflammatoires et la dysménorrhée.',
+                naproxene_conseil: "Prendre avec de la nourriture. Prévenir le patient que l'effet est prolongé, il ne faut pas multiplier les prises inutilement.",
+                piroxicam_title: '3. Piroxicam',
+                piroxicam_formes: 'Gélules, comprimés, suppositoires.',
+                piroxicam_posologie: '20 mg en une seule prise quotidienne (1 fois par jour).',
+                piroxicam_particularite: "Demi‑vie extrêmement longue (environ 50h), ce qui expose à un risque d'accumulation. Souvent réservé aux pathologies chroniques.",
+                piroxicam_conseil: 'Bien préciser une prise unique par jour (le matin ou le soir). Conseiller une protection gastrique si utilisé au long cours.',
+                meloxicam_title: '4. Méloxicam',
+                meloxicam_formes: 'Comprimés.',
+                meloxicam_posologie: '7,5 mg à 15 mg en une seule prise quotidienne (Max 15 mg/j).',
+                meloxicam_particularite: 'Anti‑inflammatoire préférentiel de la COX‑2 (proche des coxibs).',
+                meloxicam_conseil: 'Une seule prise par jour au moment des repas.',
+                ibuprofene_title: '5. Ibuprofène',
+                ibuprofene_formes: 'Comprimés, sachets, sirops, gel local.',
+                ibuprofene_posologie: '400 mg, 3 fois par jour (Max 2400 mg/j) (limité à 1200 mg/j sans prescription en officine).',
+                ibuprofene_particularite: "Le chef de file des AINS pour la douleur et la fièvre. Très courte durée d'action.",
+                ibuprofene_conseil: "Ne pas associer avec d'autres AINS. Prendre au cours du repas. Pour la fièvre ou la douleur aiguë, ne pas dépasser 3 jours (5 jours pour la douleur) sans avis médical.",
+                ketoprofene_title: '6. Kétoprofène',
+                ketoprofene_formes: 'Gélules, comprimés, suppositoires, gel/pommade.',
+                ketoprofene_posologie: '100 mg 1 à 2 fois par jour ou 50 mg 3 fois par jour. (Max 200 mg/j).',
+                ketoprofene_particularite: 'Très puissant, excellent pour les crises aiguës rhumatismales. Le gel est un de nos meilleurs alliés pour les entorses et tendinites.',
+                ketoprofene_conseil: "Ne pas appliquer le gel sous un pansement occlusif. Espacer les prises orales d'au moins 12h pour la forme LP (libération prolongée).",
+                flurbiprofene_title: '7. Flurbiprofène',
+                flurbiprofene_formes: 'Comprimés.',
+                flurbiprofene_posologie: '50 à 100 mg, 2 à 3 fois par jour (Max 300 mg/j).',
+                flurbiprofene_particularite: "C'est la molécule de référence pour les dysménorrhées.",
+                flurbiprofene_conseil: "Dès l'apparition des règles douloureuses, prendre la première dose au plus vite. Le prendre avec un repas léger.",
+                niflumique_title: '8. Acide niflumique (Niflumil)',
+                niflumique_formes: 'Comprimés, suppositoires, gel.',
+                niflumique_posologie: '250 mg, 2 à 3 fois par jour (Max 750 mg/j).',
+                niflumique_particularite: 'Famille des fénamates. Souvent indiqué en stomatologie (douleurs dentaires, aphtes) et ORL.',
+                niflumique_conseil: 'Peut provoquer des diarrhées, en prévenir le patient. À prendre à la fin des repas.',
+                ains_speciaux_title: 'AINS spéciaux & apparentés',
+                celecoxib_title: '9. Célécoxib (Coxib)',
+                celecoxib_formes: 'Gélules.',
+                celecoxib_posologie: "200 mg/j pour l'arthrose, jusqu'à 400 mg/j pour la polyarthrite rhumatoïde.",
+                celecoxib_particularite: "AINS sélectif de la COX‑2. Moins d'effets indésirables gastro‑duodénaux que les AINS classiques, mais surveillance du risque cardiovasculaire accrue.",
+                celecoxib_conseil: "À prendre indépendamment des repas. Informer le patient de consulter son médecin en cas de douleurs thoraciques ou d'œdèmes des membres inférieurs.",
+                indometacine_title: '10. Indométacine',
+                indometacine_formes: 'Comprimés, suppositoires, pommade.',
+                indometacine_posologie: '25 à 50 mg, 2 à 3 fois par jour (Max 200 mg/j).',
+                indometacine_particularite: 'Très puissant, réservé aux pathologies inflammatoires sévères.',
+                indometacine_conseil: "Attention aux effets secondaires neurologiques (céphalées violentes, vertiges, confusion). Alerter le patient de ces signes pour qu'il consulte vite.",
+                aspirine_title: '11. Acide acétylsalicylique (Aspirine)',
+                aspirine_formes: 'Comprimés, sachets effervescents.',
+                aspirine_posologie: "500 à 1000 mg, 3 à 4 fois par jour pour l'effet antalgique/antipyrétique (Max 4 g/j).",
+                aspirine_particularite: 'Effet antiagrégant plaquettaire puissant.',
+                aspirine_conseil: "Proscrire formellement chez l'enfant atteint de varicelle ou de syndrome grippal (risque de syndrome de Reye). Toujours prendre au cours des repas pour éviter les gastrites.",
+                amylase_title: '12. Alfa‑amylase (Note : enzyme, pas un AINS)',
+                amylase_formes: 'Comprimés à sucer, lyophilisats.',
+                amylase_posologie: '2 à 3 comprimés par jour, à laisser fondre en bouche.',
+                amylase_particularite: "Indiqué pour l'inflammation de la gorge (angines, pharyngites). Possède une action anti‑œdémateuse et anti‑inflammatoire locale.",
+                amylase_conseil: 'Ne pas croquer, laisser fondre lentement sous la langue. À distance des repas pour une efficacité optimale.',
+                conseil_final_title: 'Conseils généraux pour votre stage',
+                duree_label: 'Durée du traitement :',
+                conseil_duree: 'Un AINS pour une douleur aiguë (dentaire) doit être de courte durée (< 5 jours). Les maladies rhumatismales nécessitent un traitement de longue durée avec surveillance.',
+                formes_locales_label: 'Formes locales :',
+                conseil_locales: 'Pour les pommades et gels AINS, une application le soir ou 2 applications par jour.',
+                protection_label: 'Protection gastrique :',
+                conseil_protection: "En cas de prise au long cours et de facteurs de risque (âge, ATCD), association systématique avec un Inhibiteur de la Pompe à Protons (IPP, comme l'oméprazole) hautement recommandée.",
+                qcm_label: 'QCM :',
+                qcm_instruction: 'Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.',
+                check_btn: 'Vérifier mes réponses', reset_btn: 'Réinitialiser',
+                q1_title: 'Question 1', q2_title: 'Question 2', q3_title: 'Question 3', q4_title: 'Question 4', q5_title: 'Question 5',
+                q6_title: 'Question 6', q7_title: 'Question 7', q8_title: 'Question 8', q9_title: 'Question 9', q10_title: 'Question 10',
+                q1_text: "Quel est le mécanisme d'action principal des AINS ?",
+                q1_a: 'Inhibition des cyclo‑oxygénases (COX)', q1_b: 'Blocage des récepteurs opioïdes µ', q1_c: 'Inhibition de la synthèse des prostaglandines', q1_d: 'Activation des canaux potassiques',
+                q2_text: 'Quelles sont les contre‑indications majeures des AINS ?',
+                q2_a: 'Ulcère gastroduodénal évolutif', q2_b: "Asthme déclenché par l'aspirine", q2_c: 'Insuffisance rénale sévère', q2_d: 'Grossesse au 3e trimestre',
+                q3_text: 'Quelle interaction médicamenteuse est particulièrement dangereuse avec les AINS ?',
+                q3_a: 'Association aux anti‑vitamines K (AVK) : risque hémorragique', q3_b: 'Association aux benzodiazépines : dépression respiratoire', q3_c: 'Association aux ISRS : syndrome sérotoninergique', q3_d: 'Association aux diurétiques : hypokaliémie',
+                q4_text: 'Concernant le Diclofénac, quelles affirmations sont correctes ?',
+                q4_a: 'Le Diclofénac potassique (Rapidus) a une absorption plus rapide', q4_b: 'La dose maximale est de 150 mg/j', q4_c: "Le gel s'utilise sous pansement occlusif pour une meilleure efficacité", q4_d: "Il doit être pris pendant les repas pour limiter l'irritation gastrique",
+                q5_text: 'Quels AINS sont indiqués en priorité dans les dysménorrhées ?',
+                q5_a: 'Flurbiprofène', q5_b: 'Naproxène sodique', q5_c: 'Célécoxib', q5_d: 'Indométacine',
+                q6_text: 'Concernant le Piroxicam, quelles affirmations sont correctes ?',
+                q6_a: "Sa demi‑vie est d'environ 50 heures", q6_b: 'Il se prend en une seule prise quotidienne', q6_c: 'Il est réservé aux douleurs aiguës de courte durée', q6_d: "Il peut entraîner une accumulation en cas d'utilisation prolongée",
+                q7_text: 'Quels conseils donner à un patient sous Ibuprofène ?',
+                q7_a: "Ne pas associer avec d'autres AINS", q7_b: 'Prendre au cours du repas', q7_c: 'Ne pas dépasser 3 jours pour la fièvre sans avis médical', q7_d: 'Il peut être pris à jeun sans risque',
+                q8_text: 'Quelle est la particularité du Célécoxib ?',
+                q8_a: "C'est un inhibiteur sélectif de la COX‑2", q8_b: "Il entraîne moins d'effets indésirables gastro‑duodénaux", q8_c: 'Il est contre‑indiqué en cas de risque cardiovasculaire', q8_d: 'Il se prend obligatoirement au cours des repas',
+                q9_text: "Concernant l'Aspirine, quelles précautions sont essentielles ?",
+                q9_a: "Contre‑indiquée chez l'enfant en cas de varicelle ou syndrome grippal", q9_b: 'Toujours prendre au cours des repas', q9_c: 'Elle a un effet antiagrégant plaquettaire puissant', q9_d: 'Elle est sans danger pendant la grossesse',
+                q10_text: "Quels sont les conseils généraux pour l'utilisation des AINS ?",
+                q10_a: 'Durée courte pour une douleur aiguë (moins de 5 jours)', q10_b: "Les formes locales s'appliquent 1 à 2 fois par jour", q10_c: 'Une protection gastrique (IPP) est recommandée en cas de prise prolongée', q10_d: 'Les AINS peuvent être associés sans risque entre eux',
+                support_title: 'Soutenir GhaniPharma',
+                support_subtitle: "Votre soutien m'aide à créer plus de contenu éducatif",
+                support_info: "Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏",
+                rip_title: 'RIP CCP (Algérie)',
+                flexy_title: 'Flexy',
+                support_footer: 'Merci de tout cœur',
+                copied: 'Copié !'
+            },
+            ar: {
+                theme: 'المظهر', light: 'فاتح', dark: 'داكن', language: 'اللغة',
+                home: 'الرئيسية', about: 'حول', modules: 'الدروس', contact: 'اتصل بنا',
+                pharmacology: 'علم الأدوية',
+                hero_title: 'مضادات الالتهاب غير الستيرويدية',
+                hero_subtitle: 'مضادات الالتهاب: الآليات، الاستطبابات، مضادات الاستطباب والنصائح في الصيدلية.',
+                lesson: 'الدرس', exam: 'الاختبار',
+                mechanism_title: 'آلية العمل',
+                mechanism_text: 'تُثبّط مضادات الالتهاب غير الستيرويدية إنزيمات السيكلوأوكسيجيناز (COX-1 و/أو COX-2)، مما يحجب تخليق البروستاغلاندينات. هذه الأخيرة هي وسطاء الالتهاب والألم والحمى.',
+                indications_title: 'الاستطبابات العامة',
+                indication_1: 'آلام الأسنان', indication_2: 'عسر الطمث (آلام الدورة الشهرية)',
+                indication_3: 'أمراض الروماتيزم', indication_4: 'الفصال العظمي',
+                indication_5: 'الانزلاق الغضروفي', indication_6: 'آلام ما بعد الجراحة',
+                indication_7: 'الحمى (لبعض مضادات الالتهاب)',
+                contre_title: 'مضادات الاستطباب الرئيسية',
+                contre_1: 'ارتفاع ضغط الدم الشديد',
+                contre_2: 'القرحة المعدية المعوية النشطة (أو تاريخ سابق)',
+                contre_3: 'الربو (خاصة المُحفَّز بالأسبرين)',
+                contre_4: 'الفشل الكلوي الشديد',
+                contre_5: 'الجدري',
+                contre_6: 'الحمل (الثلث الثالث) والرضاعة (إلا بإشراف طبي صارم)',
+                interactions_title: 'التداخلات الدوائية الرئيسية',
+                inter_label: 'الجمع مع مضادات فيتامين K (Sintrom):',
+                inter_text: 'ممنوع أو يتطلب مراقبة شديدة لخطر النزيف الخطير.',
+                grossesse_title: 'الحمل والرضاعة',
+                grossesse_label: 'الحمل:',
+                grossesse_text: 'ممنوعة تماماً من الشهر السادس (الثلث الثالث) (خطر الإغلاق المبكر للقناة الشريانية والفشل الكلوي الجنيني).',
+                allaitement_label: 'الرضاعة:',
+                allaitement_text: 'الجزيء يمر إلى الحليب. يُفضّل العلاجات قصيرة المدة بإشراف طبي.',
+                ains_classiques_title: 'مضادات الالتهاب الكلاسيكية',
+                noms_commerciaux: 'الأسماء التجارية:',
+                formes_label: 'الأشكال:',
+                posologie_label: 'الجرعة المعتادة والقصوى:',
+                particularite_label: 'الخصوصية:',
+                conseil_pratique: 'نصيحة عملية للمريض:',
+                diclofenac_title: '1. الديكلوفيناك (الصوديوم والبوتاسيوم)',
+                diclofenac_formes: 'أقراص، كبسولات، تحاميل، مراهم/جيليات.',
+                diclofenac_posologie: '50 ملغ، 2 إلى 3 مرات يومياً (الحد الأقصى 150 ملغ/يوم). ديكلوفيناك البوتاسيوم (Rapidus) له امتصاص أسرع للآلام الحادة.',
+                diclofenac_particularite: 'مسكن ومضاد قوي للالتهاب. يُستخدم على نطاق واسع في الروماتيزم وآلام الأسنان.',
+                diclofenac_conseil: 'يجب تناوله أثناء أو في نهاية الوجبات للحد من تهيج المعدة. الجل يُستخدم 1 إلى 2 مرات يومياً، بدون ضمادة محكمة.',
+                naproxene_title: '2. نابروكسين الصوديوم',
+                naproxene_formes: 'أقراص.',
+                naproxene_posologie: 'جرعة أولية 550 ملغ، ثم 275 ملغ كل 6-8 ساعات (الحد الأقصى 1375 ملغ/يوم).',
+                naproxene_particularite: 'عمر نصفي بلازمي طويل (12 إلى 17 ساعة). فعال جداً في الآلام الالتهابية وعسر الطمث.',
+                naproxene_conseil: 'يُتناول مع الطعام. نبّه المريض أن التأثير مطوّل، فلا يجب تكرار الجرعات بلا داع.',
+                piroxicam_title: '3. البيروكسيكام',
+                piroxicam_formes: 'كبسولات، أقراص، تحاميل.',
+                piroxicam_posologie: '20 ملغ في جرعة واحدة يومياً (مرة واحدة يومياً).',
+                piroxicam_particularite: 'عمر نصفي طويل جداً (حوالي 50 ساعة)، مما يعرّض لخطر التراكم. غالباً ما يُحتفظ به للأمراض المزمنة.',
+                piroxicam_conseil: 'وضّح جيداً أنه جرعة واحدة يومياً (صباحاً أو مساءً). انصح بحماية المعدة إذا استُخدم على المدى الطويل.',
+                meloxicam_title: '4. الميلوكسيكام',
+                meloxicam_formes: 'أقراص.',
+                meloxicam_posologie: '7.5 ملغ إلى 15 ملغ في جرعة واحدة يومياً (الحد الأقصى 15 ملغ/يوم).',
+                meloxicam_particularite: 'مضاد التهاب تفضيلي لـ COX-2 (قريب من الكوكسيب).',
+                meloxicam_conseil: 'جرعة واحدة يومياً مع الوجبات.',
+                ibuprofene_title: '5. الإيبوبروفين',
+                ibuprofene_formes: 'أقراص، أكياس، شراب، جل موضعي.',
+                ibuprofene_posologie: '400 ملغ، 3 مرات يومياً (الحد الأقصى 2400 ملغ/يوم) (يقتصر على 1200 ملغ/يوم بدون وصفة في الصيدلية).',
+                ibuprofene_particularite: 'زعيم مضادات الالتهاب للألم والحمى. مدة تأثير قصيرة جداً.',
+                ibuprofene_conseil: 'لا تجمعه مع مضادات الالتهاب الأخرى. تناوله أثناء الوجبة. للحمى أو الألم الحاد، لا تتجاوز 3 أيام (5 أيام للألم) بدون استشارة طبية.',
+                ketoprofene_title: '6. الكيتوبروفين',
+                ketoprofene_formes: 'كبسولات، أقراص، تحاميل، جل/مرهم.',
+                ketoprofene_posologie: '100 ملغ 1 إلى 2 مرات يومياً أو 50 ملغ 3 مرات يومياً. (الحد الأقصى 200 ملغ/يوم).',
+                ketoprofene_particularite: 'قوي جداً، ممتاز للنوبات الروماتيزمية الحادة. الجل هو أحد أفضل حلفائنا للالتواءات والتهاب الأوتار.',
+                ketoprofene_conseil: 'لا تُطبّق الجل تحت ضمادة محكمة. افصل الجرعات الفموية لمدة 12 ساعة على الأقل للشكل الممتد (إطلاق ممتد).',
+                flurbiprofene_title: '7. الفلوربيبروفين',
+                flurbiprofene_formes: 'أقراص.',
+                flurbiprofene_posologie: '50 إلى 100 ملغ، 2 إلى 3 مرات يومياً (الحد الأقصى 300 ملغ/يوم).',
+                flurbiprofene_particularite: 'هو الجزيء المرجعي لعسر الطمث.',
+                flurbiprofene_conseil: 'منذ ظهور آلام الدورة الشهرية، تناول الجرعة الأولى في أسرع وقت. تناوله مع وجبة خفيفة.',
+                niflumique_title: '8. حمض النيفلوميك (Niflumil)',
+                niflumique_formes: 'أقراص، تحاميل، جل.',
+                niflumique_posologie: '250 ملغ، 2 إلى 3 مرات يومياً (الحد الأقصى 750 ملغ/يوم).',
+                niflumique_particularite: 'من عائلة الفينامات. غالباً ما يُوصف في طب الفم (آلام الأسنان، القلاع) والأنف والأذن والحنجرة.',
+                niflumique_conseil: 'قد يسبب الإسهال، فحذّر المريض. يُتناول في نهاية الوجبات.',
+                ains_speciaux_title: 'مضادات الالتهاب الخاصة وما يشبهها',
+                celecoxib_title: '9. السيليكوكسيب (كوكسيب)',
+                celecoxib_formes: 'كبسولات.',
+                celecoxib_posologie: '200 ملغ/يوم للفصال العظمي، حتى 400 ملغ/يوم للرثوي المفصلي.',
+                celecoxib_particularite: 'مضاد التهاب انتقائي لـ COX-2. آثار جانبية معدية معوية أقل من مضادات الالتهاب الكلاسيكية، لكن مراقبة الخطر القلبي الوعائي متزايدة.',
+                celecoxib_conseil: 'يُتناول بشكل مستقل عن الوجبات. أبلغ المريض بضرورة استشارة طبيبه في حال آلام صدرية أو وذمات في الأطراف السفلية.',
+                indometacine_title: '10. الإندوميتاسين',
+                indometacine_formes: 'أقراص، تحاميل، مرهم.',
+                indometacine_posologie: '25 إلى 50 ملغ، 2 إلى 3 مرات يومياً (الحد الأقصى 200 ملغ/يوم).',
+                indometacine_particularite: 'قوي جداً، مخصص للأمراض الالتهابية الشديدة.',
+                indometacine_conseil: 'احذر من الآثار الجانبية العصبية (صداع شديد، دوار، ارتباك). نبّه المريض من هذه العلامات لاستشارة الطبيب بسرعة.',
+                aspirine_title: '11. حمض أسيتيل الساليسيليك (الأسبرين)',
+                aspirine_formes: 'أقراص، أكياس فوارة.',
+                aspirine_posologie: '500 إلى 1000 ملغ، 3 إلى 4 مرات يومياً للتأثير المسكن/الخافض للحرارة (الحد الأقصى 4 غ/يوم).',
+                aspirine_particularite: 'تأثير مضاد قوي لتكدس الصفائح الدموية.',
+                aspirine_conseil: 'يُمنع تماماً عند الأطفال المصابين بالجدري أو متلازمة الأنفلونزا (خطر متلازمة راي). يُتناول دائماً مع الوجبات لتجنب التهاب المعدة.',
+                amylase_title: '12. الألفا أميليز (ملاحظة: إنزيم، وليس مضاد التهاب)',
+                amylase_formes: 'أقراص مص، مجففات.',
+                amylase_posologie: '2 إلى 3 أقراص يومياً، تُترك لتذوب في الفم.',
+                amylase_particularite: 'مخصص لالتهاب الحلق (التهاب اللوزتين، البلعوم). له تأثير مضاد للوذمة ومضاد للالتهاب موضعي.',
+                amylase_conseil: 'لا تمضغ، اتركه يذوب ببطء تحت اللسان. بعيداً عن الوجبات لفعالية مثلى.',
+                conseil_final_title: 'نصائح عامة لتدريبك',
+                duree_label: 'مدة العلاج:',
+                conseil_duree: 'مضاد الالتهاب للألم الحاد (الأسنان) يجب أن يكون قصير المدة (< 5 أيام). الأمراض الروماتيزمية تتطلب علاجاً طويل الأمد مع مراقبة.',
+                formes_locales_label: 'الأشكال الموضعية:',
+                conseil_locales: 'للمراهم والجيليات المضادة للالتهاب، تطبيق واحد في المساء أو تطبيقان يومياً.',
+                protection_label: 'حماية المعدة:',
+                conseil_protection: 'في حالة الاستخدام الطويل وعوامل الخطر (العمر، تاريخ طبي)، يُوصى بشدة بالجمع المنتظم مع مثبط مضخة البروتون (IPP، مثل الأوميبرازول).',
+                qcm_label: 'اختبار متعدد الخيارات:',
+                qcm_instruction: 'ضع علامة على جميع الإجابات الصحيحة لكل سؤال. إجابة خاطئة واحدة تُلغي السؤال بالكامل (0 نقطة). الإجابات الصحيحة الجزئية تمنح نقاطاً جزئية.',
+                check_btn: 'تحقق من إجاباتي', reset_btn: 'إعادة تعيين',
+                q1_title: 'السؤال 1', q2_title: 'السؤال 2', q3_title: 'السؤال 3', q4_title: 'السؤال 4', q5_title: 'السؤال 5',
+                q6_title: 'السؤال 6', q7_title: 'السؤال 7', q8_title: 'السؤال 8', q9_title: 'السؤال 9', q10_title: 'السؤال 10',
+                q1_text: 'ما هي آلية العمل الرئيسية لمضادات الالتهاب غير الستيرويدية؟',
+                q1_a: 'تثبيط السيكلوأوكسيجيناز (COX)', q1_b: 'حجب مستقبلات الأفيون µ', q1_c: 'تثبيط تخليق البروستاغلاندينات', q1_d: 'تنشيط قنوات البوتاسيوم',
+                q2_text: 'ما هي مضادات الاستطباب الرئيسية لمضادات الالتهاب غير الستيرويدية؟',
+                q2_a: 'القرحة المعدية المعوية النشطة', q2_b: 'الربو المُحفَّز بالأسبرين', q2_c: 'الفشل الكلوي الشديد', q2_d: 'الحمل في الثلث الثالث',
+                q3_text: 'ما هو التداخل الدوائي الخطير بشكل خاص مع مضادات الالتهاب غير الستيرويدية؟',
+                q3_a: 'الجمع مع مضادات فيتامين K (AVK): خطر النزيف', q3_b: 'الجمع مع البنزوديازيبينات: تثبيط تنفسي', q3_c: 'الجمع مع ISRS: متلازمة السيروتونين', q3_d: 'الجمع مع مدرات البول: نقص بوتاسيوم الدم',
+                q4_text: 'بخصوص الديكلوفيناك، أي العبارات صحيحة؟',
+                q4_a: 'ديكلوفيناك البوتاسيوم (Rapidus) له امتصاص أسرع', q4_b: 'الجرعة القصوى هي 150 ملغ/يوم', q4_c: 'الجل يُستخدم تحت ضمادة محكمة لفعالية أفضل', q4_d: 'يجب تناوله أثناء الوجبات للحد من تهيج المعدة',
+                q5_text: 'ما هي مضادات الالتهاب الموصى بها بشكل أساسي في عسر الطمث؟',
+                q5_a: 'الفلوربيبروفين', q5_b: 'نابروكسين الصوديوم', q5_c: 'السيليكوكسيب', q5_d: 'الإندوميتاسين',
+                q6_text: 'بخصوص البيروكسيكام، أي العبارات صحيحة؟',
+                q6_a: 'عمره النصفي حوالي 50 ساعة', q6_b: 'يُتناول في جرعة واحدة يومياً', q6_c: 'مخصص للآلام الحادة قصيرة المدة', q6_d: 'قد يسبب تراكماً في حالة الاستخدام المطول',
+                q7_text: 'ما هي النصائح التي تُقدَّم لمريض يتناول الإيبوبروفين؟',
+                q7_a: 'لا تجمعه مع مضادات الالتهاب الأخرى', q7_b: 'تناوله أثناء الوجبة', q7_c: 'لا تتجاوز 3 أيام للحمى بدون استشارة طبية', q7_d: 'يمكن تناوله على معدة فارغة بدون خطر',
+                q8_text: 'ما هي خصوصية السيليكوكسيب؟',
+                q8_a: 'هو مثبط انتقائي لـ COX-2', q8_b: 'يسبب آثاراً جانبية معدية معوية أقل', q8_c: 'ممنوع في حالة خطر القلب والأوعية الدموية', q8_d: 'يجب تناوله أثناء الوجبات',
+                q9_text: 'بخصوص الأسبرين، ما هي الاحتياطات الأساسية؟',
+                q9_a: 'ممنوع عند الأطفال في حالة الجدري أو متلازمة الأنفلونزا', q9_b: 'يُتناول دائماً مع الوجبات', q9_c: 'له تأثير قوي مضاد لتكدس الصفائح', q9_d: 'آمن أثناء الحمل',
+                q10_text: 'ما هي النصائح العامة لاستخدام مضادات الالتهاب غير الستيرويدية؟',
+                q10_a: 'مدة قصيرة للألم الحاد (أقل من 5 أيام)', q10_b: 'الأشكال الموضعية تُطبَّق 1 إلى 2 مرات يومياً', q10_c: 'يُنصح بحماية المعدة (IPP) في حالة الاستخدام المطول', q10_d: 'يمكن جمع مضادات الالتهاب معاً بدون خطر',
+                support_title: 'دعم GhaniPharma',
+                support_subtitle: 'دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي',
+                support_info: 'إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساهمة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏',
+                rip_title: 'RIP CCP (الجزائر)',
+                flexy_title: 'فليكسي',
+                support_footer: 'شكراً من كل قلبي',
+                copied: 'تم النسخ!'
+            },
+            en: {
+                theme: 'Theme', light: 'Light', dark: 'Dark', language: 'Language',
+                home: 'Home', about: 'About', modules: 'Modules', contact: 'Contact',
+                pharmacology: 'Pharmacology',
+                hero_title: 'NON-STEROIDAL ANTI-INFLAMMATORY DRUGS',
+                hero_subtitle: 'NSAIDs: mechanisms, indications, contraindications and pharmacy advice.',
+                lesson: 'Lesson', exam: 'Exam',
+                mechanism_title: 'Mechanism of action',
+                mechanism_text: 'NSAIDs inhibit cyclooxygenase enzymes (COX-1 and/or COX-2), thereby blocking the synthesis of prostaglandins. These are the mediators of inflammation, pain and fever.',
+                indications_title: 'General indications',
+                indication_1: 'Dental pain', indication_2: 'Dysmenorrhea (painful periods)',
+                indication_3: 'Rheumatic diseases', indication_4: 'Osteoarthritis',
+                indication_5: 'Disc herniation', indication_6: 'Post-operative pain',
+                indication_7: 'Fever (for some NSAIDs)',
+                contre_title: 'Major contraindications',
+                contre_1: 'Severe hypertension',
+                contre_2: 'Active gastroduodenal ulcer (or history)',
+                contre_3: 'Asthma (especially aspirin-triggered)',
+                contre_4: 'Severe renal failure',
+                contre_5: 'Chickenpox',
+                contre_6: 'Pregnancy (3rd trimester) and breastfeeding (unless strict medical advice)',
+                interactions_title: 'Major drug interactions',
+                inter_label: 'Combination with anti-vitamin K (Sintrom):',
+                inter_text: 'contraindicated or requires extreme monitoring because of the risk of serious hemorrhage.',
+                grossesse_title: 'Pregnancy and breastfeeding',
+                grossesse_label: 'Pregnancy:',
+                grossesse_text: 'Strictly contraindicated from the 6th month (3rd trimester) (risk of premature closure of the ductus arteriosus and fetal renal failure).',
+                allaitement_label: 'Breastfeeding:',
+                allaitement_text: 'The molecule passes into milk. Prefer short-term treatments on medical advice.',
+                ains_classiques_title: 'Classic NSAIDs',
+                noms_commerciaux: 'Brand names:',
+                formes_label: 'Forms:',
+                posologie_label: 'Usual & Max dosage:',
+                particularite_label: 'Particularity:',
+                conseil_pratique: 'Practical patient advice:',
+                diclofenac_title: '1. Diclofenac (Sodium and Potassium)',
+                diclofenac_formes: 'Tablets, capsules, suppositories, ointments/gels.',
+                diclofenac_posologie: '50 mg, 2 to 3 times a day (Max 150 mg/day). Potassium diclofenac (Rapidus) has faster absorption for acute pain.',
+                diclofenac_particularite: 'Powerful analgesic and anti-inflammatory. Widely used in rheumatology and dental pain.',
+                diclofenac_conseil: 'Must be taken with or at the end of meals to limit gastric irritation. The gel is used 1 to 2 times a day, without occlusive dressing.',
+                naproxene_title: '2. Naproxen sodium',
+                naproxene_formes: 'Tablets.',
+                naproxene_posologie: 'Initial dose 550 mg, then 275 mg every 6-8h (Max 1375 mg/day).',
+                naproxene_particularite: 'Long plasma half-life (12 to 17 hours). Very effective on inflammatory pain and dysmenorrhea.',
+                naproxene_conseil: 'Take with food. Warn the patient that the effect is prolonged, do not multiply doses unnecessarily.',
+                piroxicam_title: '3. Piroxicam',
+                piroxicam_formes: 'Capsules, tablets, suppositories.',
+                piroxicam_posologie: '20 mg in a single daily dose (once a day).',
+                piroxicam_particularite: 'Extremely long half-life (about 50h), which exposes to a risk of accumulation. Often reserved for chronic pathologies.',
+                piroxicam_conseil: 'Clearly specify a single daily dose (morning or evening). Advise gastric protection if used long-term.',
+                meloxicam_title: '4. Meloxicam',
+                meloxicam_formes: 'Tablets.',
+                meloxicam_posologie: '7.5 mg to 15 mg in a single daily dose (Max 15 mg/day).',
+                meloxicam_particularite: 'Preferential COX-2 anti-inflammatory (close to coxibs).',
+                meloxicam_conseil: 'One dose per day at mealtimes.',
+                ibuprofene_title: '5. Ibuprofen',
+                ibuprofene_formes: 'Tablets, sachets, syrups, local gel.',
+                ibuprofene_posologie: '400 mg, 3 times a day (Max 2400 mg/day) (limited to 1200 mg/day without prescription in pharmacy).',
+                ibuprofene_particularite: 'The leader of NSAIDs for pain and fever. Very short duration of action.',
+                ibuprofene_conseil: 'Do not combine with other NSAIDs. Take during meals. For fever or acute pain, do not exceed 3 days (5 days for pain) without medical advice.',
+                ketoprofene_title: '6. Ketoprofen',
+                ketoprofene_formes: 'Capsules, tablets, suppositories, gel/ointment.',
+                ketoprofene_posologie: '100 mg 1 to 2 times a day or 50 mg 3 times a day. (Max 200 mg/day).',
+                ketoprofene_particularite: 'Very powerful, excellent for acute rheumatic attacks. The gel is one of our best allies for sprains and tendinitis.',
+                ketoprofene_conseil: 'Do not apply the gel under an occlusive dressing. Space oral doses at least 12h apart for the ER (extended-release) form.',
+                flurbiprofene_title: '7. Flurbiprofen',
+                flurbiprofene_formes: 'Tablets.',
+                flurbiprofene_posologie: '50 to 100 mg, 2 to 3 times a day (Max 300 mg/day).',
+                flurbiprofene_particularite: 'It is the reference molecule for dysmenorrhea.',
+                flurbiprofene_conseil: 'At the onset of painful periods, take the first dose as soon as possible. Take with a light meal.',
+                niflumique_title: '8. Niflumic acid (Niflumil)',
+                niflumique_formes: 'Tablets, suppositories, gel.',
+                niflumique_posologie: '250 mg, 2 to 3 times a day (Max 750 mg/day).',
+                niflumique_particularite: 'Fenamate family. Often indicated in stomatology (dental pain, aphthae) and ENT.',
+                niflumique_conseil: 'May cause diarrhea, warn the patient. Take at the end of meals.',
+                ains_speciaux_title: 'Special NSAIDs & related',
+                celecoxib_title: '9. Celecoxib (Coxib)',
+                celecoxib_formes: 'Capsules.',
+                celecoxib_posologie: '200 mg/day for osteoarthritis, up to 400 mg/day for rheumatoid arthritis.',
+                celecoxib_particularite: 'Selective COX-2 NSAID. Fewer gastro-duodenal side effects than classic NSAIDs, but increased cardiovascular risk monitoring.',
+                celecoxib_conseil: 'Take independently of meals. Inform the patient to consult their doctor in case of chest pain or lower limb edema.',
+                indometacine_title: '10. Indomethacin',
+                indometacine_formes: 'Tablets, suppositories, ointment.',
+                indometacine_posologie: '25 to 50 mg, 2 to 3 times a day (Max 200 mg/day).',
+                indometacine_particularite: 'Very powerful, reserved for severe inflammatory pathologies.',
+                indometacine_conseil: 'Watch out for neurological side effects (severe headaches, dizziness, confusion). Alert the patient to these signs to consult quickly.',
+                aspirine_title: '11. Acetylsalicylic acid (Aspirin)',
+                aspirine_formes: 'Tablets, effervescent sachets.',
+                aspirine_posologie: '500 to 1000 mg, 3 to 4 times a day for analgesic/antipyretic effect (Max 4 g/day).',
+                aspirine_particularite: 'Powerful antiplatelet effect.',
+                aspirine_conseil: 'Strictly prohibit in children with chickenpox or flu syndrome (risk of Reye syndrome). Always take with meals to avoid gastritis.',
+                amylase_title: '12. Alpha-amylase (Note: enzyme, not an NSAID)',
+                amylase_formes: 'Sucking tablets, lyophilisates.',
+                amylase_posologie: '2 to 3 tablets a day, to be dissolved in the mouth.',
+                amylase_particularite: 'Indicated for throat inflammation (tonsillitis, pharyngitis). Has anti-edematous and local anti-inflammatory action.',
+                amylase_conseil: 'Do not chew, let dissolve slowly under the tongue. Away from meals for optimal efficacy.',
+                conseil_final_title: 'General advice for your internship',
+                duree_label: 'Treatment duration:',
+                conseil_duree: 'An NSAID for acute pain (dental) should be short-term (< 5 days). Rheumatic diseases require long-term treatment with monitoring.',
+                formes_locales_label: 'Local forms:',
+                conseil_locales: 'For NSAID ointments and gels, one application in the evening or 2 applications per day.',
+                protection_label: 'Gastric protection:',
+                conseil_protection: 'In case of long-term use and risk factors (age, history), systematic combination with a Proton Pump Inhibitor (PPI, such as omeprazole) is highly recommended.',
+                qcm_label: 'MCQ:',
+                qcm_instruction: 'Check all correct answers for each question. A single wrong answer checked cancels the whole question (0 points). Partial correct answers give partial points.',
+                check_btn: 'Check my answers', reset_btn: 'Reset',
+                q1_title: 'Question 1', q2_title: 'Question 2', q3_title: 'Question 3', q4_title: 'Question 4', q5_title: 'Question 5',
+                q6_title: 'Question 6', q7_title: 'Question 7', q8_title: 'Question 8', q9_title: 'Question 9', q10_title: 'Question 10',
+                q1_text: 'What is the main mechanism of action of NSAIDs?',
+                q1_a: 'Inhibition of cyclooxygenases (COX)', q1_b: 'Blocking of µ opioid receptors', q1_c: 'Inhibition of prostaglandin synthesis', q1_d: 'Activation of potassium channels',
+                q2_text: 'What are the major contraindications of NSAIDs?',
+                q2_a: 'Active gastroduodenal ulcer', q2_b: 'Aspirin-triggered asthma', q2_c: 'Severe renal failure', q2_d: 'Pregnancy in the 3rd trimester',
+                q3_text: 'Which drug interaction is particularly dangerous with NSAIDs?',
+                q3_a: 'Combination with anti-vitamin K (VKAs): bleeding risk', q3_b: 'Combination with benzodiazepines: respiratory depression', q3_c: 'Combination with SSRIs: serotonin syndrome', q3_d: 'Combination with diuretics: hypokalemia',
+                q4_text: 'Regarding Diclofenac, which statements are correct?',
+                q4_a: 'Potassium diclofenac (Rapidus) has faster absorption', q4_b: 'The maximum dose is 150 mg/day', q4_c: 'The gel is used under occlusive dressing for better efficacy', q4_d: 'It should be taken during meals to limit gastric irritation',
+                q5_text: 'Which NSAIDs are primarily indicated for dysmenorrhea?',
+                q5_a: 'Flurbiprofen', q5_b: 'Naproxen sodium', q5_c: 'Celecoxib', q5_d: 'Indomethacin',
+                q6_text: 'Regarding Piroxicam, which statements are correct?',
+                q6_a: 'Its half-life is about 50 hours', q6_b: 'It is taken in a single daily dose', q6_c: 'It is reserved for acute short-term pain', q6_d: 'It can cause accumulation with prolonged use',
+                q7_text: 'What advice should be given to a patient on Ibuprofen?',
+                q7_a: 'Do not combine with other NSAIDs', q7_b: 'Take during meals', q7_c: 'Do not exceed 3 days for fever without medical advice', q7_d: 'It can be taken on an empty stomach without risk',
+                q8_text: 'What is the particularity of Celecoxib?',
+                q8_a: 'It is a selective COX-2 inhibitor', q8_b: 'It causes fewer gastro-duodenal side effects', q8_c: 'It is contraindicated in case of cardiovascular risk', q8_d: 'It must be taken during meals',
+                q9_text: 'Regarding Aspirin, which precautions are essential?',
+                q9_a: 'Contraindicated in children with chickenpox or flu syndrome', q9_b: 'Always take with meals', q9_c: 'It has a powerful antiplatelet effect', q9_d: 'It is safe during pregnancy',
+                q10_text: 'What are the general recommendations for the use of NSAIDs?',
+                q10_a: 'Short duration for acute pain (less than 5 days)', q10_b: 'Local forms are applied 1 to 2 times a day', q10_c: 'Gastric protection (PPI) is recommended for prolonged use', q10_d: 'NSAIDs can be combined with each other without risk',
+                support_title: 'Support GhaniPharma',
+                support_subtitle: 'Your support helps me create more educational content',
+                support_info: 'If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏',
+                rip_title: 'RIP CCP (Algeria)',
+                flexy_title: 'Flexy',
+                support_footer: 'Thank you from the bottom of my heart',
+                copied: 'Copied!'
+            }
+        };
+
+        const dotTranslations = {
+            fr: {
+                intro: 'Introduction', mecanisme: 'Mécanisme', indications: 'Indications',
+                'contre-indications': 'Contre‑indications', interactions: 'Interactions',
+                grossesse: 'Grossesse', 'ains-classiques': 'AINS classiques',
+                'ains-speciaux': 'AINS spéciaux', conseil: 'Conseil final',
+                question: 'Question'
+            },
+            ar: {
+                intro: 'مقدمة', mecanisme: 'آلية العمل', indications: 'الاستطبابات',
+                'contre-indications': 'مضادات الاستطباب', interactions: 'التداخلات',
+                grossesse: 'الحمل والرضاعة', 'ains-classiques': 'مضادات الالتهاب الكلاسيكية',
+                'ains-speciaux': 'مضادات الالتهاب الخاصة', conseil: 'نصيحة أخيرة',
+                question: 'السؤال'
+            },
+            en: {
+                intro: 'Introduction', mecanisme: 'Mechanism', indications: 'Indications',
+                'contre-indications': 'Contraindications', interactions: 'Interactions',
+                grossesse: 'Pregnancy', 'ains-classiques': 'Classic NSAIDs',
+                'ains-speciaux': 'Special NSAIDs', conseil: 'Final advice',
+                question: 'Question'
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'fr';
+        const htmlEl = document.documentElement;
+
+        // ==================== SIDE DOTS ====================
+        const sideDotsContainer = document.getElementById('sideDots');
+        const bottomDotsContainer = document.getElementById('bottomDotsNav');
+
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'ains-classiques', 'ains-speciaux', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
+
+        function getLessonTooltips() {
+            const t = dotTranslations[currentLang];
+            return lessonSectionIDs.map(id => t[id] || id);
+        }
+
+        function getExamTooltips() {
+            const t = dotTranslations[currentLang];
+            return examSectionIDs.map((id, index) => `${t.question} ${index + 1}`);
+        }
+
+        function generateDotsHTML(ids, tooltips, isBottom = false) {
+            const containerClass = isBottom ? 'bottom-dot' : 'dot';
+            let html = '';
+            ids.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                const tooltip = tooltips[index];
+                if (!isBottom) {
+                    html += `<div class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}" title="${tooltip}">
+                                <span class="dot-tooltip">${tooltip}</span>
+                            </div>`;
+                } else {
+                    html += `<button class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}">
+                                ${index + 1}
+                            </button>`;
+                }
+            });
+            return html;
+        }
+
+        function updateDots(mode) {
+            const isExam = mode === 'exam';
+            const ids = isExam ? examSectionIDs : lessonSectionIDs;
+            const tooltips = isExam ? getExamTooltips() : getLessonTooltips();
+            sideDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, false);
+            bottomDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, true);
+        }
+
+        document.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot, .bottom-dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const selector = isExamMode ? dotId : 'section-' + dotId;
+            const targetEl = document.getElementById(selector);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+            document.querySelectorAll('#bottomDotsNav .bottom-dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => { updateActiveDot(); ticking = false; });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // ==================== LANGUAGE ====================
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            const t = translations[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+
+            if (lang === 'ar') {
+                htmlEl.setAttribute('dir', 'rtl');
+                htmlEl.setAttribute('lang', 'ar');
+            } else {
+                htmlEl.setAttribute('dir', 'ltr');
+                htmlEl.setAttribute('lang', lang);
+            }
+
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
+            });
+
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            updateDots(isExamMode ? 'exam' : 'lesson');
+            updateActiveDot();
+        }
+
+        // ==================== Mobile menu ====================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== Nav hide on scroll ====================
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // ==================== THEME ====================
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        updateThemeOptionActive(savedTheme);
+
+        function updateThemeOptionActive(theme) {
+            document.querySelectorAll('.theme-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.themeValue === theme);
+            });
+        }
+
+        document.querySelectorAll('.theme-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                const theme = opt.dataset.themeValue;
+                htmlEl.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                updateThemeOptionActive(theme);
+            });
+        });
+
+        // ==================== SETTINGS ====================
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsDropdown = document.getElementById('settingsDropdown');
+
+        settingsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            settingsDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!settingsDropdown.contains(e.target) && !settingsBtn.contains(e.target)) {
+                settingsDropdown.classList.remove('open');
+            }
+        });
+
+        // ==================== SUPPORT MODAL ====================
+        const supportBtn = document.getElementById('supportBtn');
+        const supportModal = document.getElementById('supportModal');
+        const closeSupport = document.getElementById('closeSupport');
+
+        supportBtn.addEventListener('click', () => {
+            supportModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeSupport.addEventListener('click', () => {
+            supportModal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        supportModal.addEventListener('click', (e) => {
+            if (e.target === supportModal) {
+                supportModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== COPY ====================
+        function copyToClipboard(text, btnEl) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+                if (btnEl) {
+                    btnEl.classList.add('copied');
+                    const icon = btnEl.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-check';
+                        setTimeout(() => {
+                            btnEl.classList.remove('copied');
+                            icon.className = 'fas fa-copy';
+                        }, 2000);
+                    }
+                }
+            }).catch(err => console.error('Erreur:', err));
+        }
+
+        const copyToast = document.getElementById('copyToast');
+        let toastTimeout;
+        function showToast() {
+            copyToast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => copyToast.classList.remove('show'), 2000);
+        }
+
+        // ==================== IMAGES ====================
+        const drugImages = {};
+
+        function showDrugModal(drugName) {
+            const modal = document.getElementById('drugModal');
+            document.getElementById('modalTitle').textContent = drugName;
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = '';
+            const imgs = drugImages[drugName] || [];
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = drugName + ' - GhaniPharma';
+                img.loading = 'lazy';
+                container.appendChild(img);
+            });
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeDrugModal();
+                supportModal.classList.remove('open');
+                settingsDropdown.classList.remove('open');
+            }
+        });
+
+        // ==================== Toggle Lesson/Exam ====================
+        const btnLesson = document.getElementById('btnLesson');
+        const btnExamen = document.getElementById('btnExamen');
+        const lessonContent = document.getElementById('lessonContent');
+        const examContent = document.getElementById('examContent');
+
+        function showLesson() {
+            lessonContent.style.display = 'block';
+            examContent.style.display = 'none';
+            updateDots('lesson');
+            btnLesson.classList.add('active');
+            btnExamen.classList.remove('active');
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
+            updateActiveDot();
+        }
+
+        function showExam() {
+            lessonContent.style.display = 'none';
+            examContent.style.display = 'block';
+            updateDots('exam');
+            btnLesson.classList.remove('active');
+            btnExamen.classList.add('active');
+            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            resetExam();
+            updateActiveDot();
+        }
+
+        btnLesson.addEventListener('click', showLesson);
+        btnExamen.addEventListener('click', showExam);
+
+        // ==================== EXAM ====================
+        const correctAnswers = {
+            q1: ['a', 'c'],
+            q2: ['a', 'b', 'c', 'd'],
+            q3: ['a'],
+            q4: ['a', 'b', 'd'],
+            q5: ['a', 'b'],
+            q6: ['a', 'b', 'd'],
+            q7: ['a', 'b', 'c'],
+            q8: ['a', 'b'],
+            q9: ['a', 'b', 'c'],
+            q10: ['a', 'b', 'c']
+        };
+
+        document.getElementById('checkExam').addEventListener('click', () => {
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+
+            let totalScore = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                const correctVals = correctAnswers[q];
+                const allCheckboxes = document.querySelectorAll(`input[name="${q}"]`);
+                let hasWrongSelected = false;
+                let correctSelectedCount = 0;
+
+                allCheckboxes.forEach(cb => {
+                    const label = cb.parentElement;
+                    if (cb.checked) {
+                        if (correctVals.includes(cb.value)) {
+                            correctSelectedCount++;
+                            label.classList.add('correct-answer');
+                        } else {
+                            hasWrongSelected = true;
+                            label.classList.add('wrong-answer');
+                        }
+                    } else {
+                        if (correctVals.includes(cb.value)) label.classList.add('missed-answer');
+                    }
+                });
+
+                if (hasWrongSelected) { /* 0 */ }
+                else if (correctSelectedCount === correctVals.length) totalScore += 1;
+                else if (correctSelectedCount > 0) totalScore += correctSelectedCount / correctVals.length;
+            }
+
+            const pct = Math.round((totalScore / totalQuestions) * 100);
+            let msg = `Score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            if (pct >= 80) msg += "🌟 Excellent !";
+            else if (pct >= 50) msg += "📚 Continuez à réviser.";
+            else msg += "🔍 Révisez le cours et réessayez.";
+            document.getElementById('examResult').innerHTML = msg;
+            document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        function resetExam() {
+            document.querySelectorAll('.question-card input[type="checkbox"]').forEach(i => i.checked = false);
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+            document.getElementById('examResult').textContent = '';
+        }
+        document.getElementById('resetExam').addEventListener('click', resetExam);
+
+        // ==================== Init ====================
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                applyLanguage(opt.dataset.lang);
+            });
+        });
+
+        updateDots('lesson');
+        updateActiveDot();
+        applyLanguage(currentLang);
+    </script>
+</body>
+</html>

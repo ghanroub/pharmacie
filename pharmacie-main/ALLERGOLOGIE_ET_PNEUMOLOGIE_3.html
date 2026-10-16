@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur les antitussifs - GhaniPharma">
+    <meta name="keywords" content="pharmacie, antitussifs, toux, codéine, dextrométhorphane, oxéladine, cours pharmacie, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Les Antitussifs - GhaniPharma">
+    <meta property="og:description" content="Cours complet sur les antitussifs et la prise en charge de la toux">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Les Antitussifs | GhaniPharma</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        html[dir="rtl"] body { font-family: 'Segoe UI', 'Tahoma', system-ui, sans-serif; }
+        html[dir="rtl"] .side-dots { right: auto; left: 25px; }
+        html[dir="rtl"] .dot-tooltip { right: auto; left: 30px; }
+        html[dir="rtl"] .dot-tooltip::after {
+            right: auto; left: -8px;
+            border-left: none;
+            border-right: 8px solid rgba(0, 0, 0, 0.9);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .star {
+            position: absolute; background: white; border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay); opacity: 0;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
+        }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
+
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+        .top-nav.hidden { transform: translateY(-100%); }
+        .nav-container {
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none; color: var(--accent);
+            font-size: 1.5rem; font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .logo-icon {
+            width: 42px; height: 42px; background: none;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+        }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        .nav-link {
+            position: relative; padding: 10px 22px;
+            color: var(--text-secondary); text-decoration: none;
+            font-weight: 500; border-radius: 30px;
+            transition: all 0.3s ease; cursor: pointer;
+            border: none; background: none;
+            font-size: 0.95rem; white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-link:hover { color: var(--text-heading); background: rgba(128, 128, 128, 0.1); }
+        .nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.2); }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: 4px; left: 50%;
+            transform: translateX(-50%); width: 22px; height: 3px;
+            background: var(--primary); border-radius: 3px;
+        }
+
+        .icon-btn {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--text-heading);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .icon-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+        }
+        .icon-btn.settings-btn i { transition: transform 0.5s ease; }
+        .icon-btn.settings-btn:hover i { transform: rotate(180deg); }
+        .icon-btn.support-btn {
+            background: linear-gradient(135deg, #ffeb3b, #ff9800);
+            border-color: transparent;
+            color: #1a1a1a;
+            animation: giftGlow 2.5s ease-in-out infinite;
+        }
+        .icon-btn.support-btn:hover {
+            transform: translateY(-3px) scale(1.1) rotate(-8deg);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.55);
+        }
+        .icon-btn.support-btn i { transition: transform 0.4s ease; }
+        .icon-btn.support-btn:hover i { transform: scale(1.15); }
+        @keyframes giftGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+        }
+
+        .settings-wrapper { position: relative; }
+        .settings-dropdown {
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 0;
+            min-width: 260px;
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1100;
+        }
+        html[dir="rtl"] .settings-dropdown { right: auto; left: 0; transform-origin: top left; }
+        .settings-dropdown.open {
+            opacity: 1; visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .settings-section { margin-bottom: 16px; }
+        .settings-section:last-child { margin-bottom: 0; }
+        .settings-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .settings-label i { color: var(--primary); font-size: 0.85rem; }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .theme-option {
+            padding: 12px 10px;
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .theme-option i { font-size: 1.3rem; }
+        .theme-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .theme-option.active {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--primary);
+        }
+
+        .lang-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .lang-option {
+            padding: 10px 6px;
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .lang-option .flag { font-size: 1.4rem; line-height: 1; }
+        .lang-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .lang-option.active {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--primary);
+        }
+
+        .support-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 2500;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+            padding: 20px;
+        }
+        .support-modal.open { visibility: visible; opacity: 1; }
+        .support-content {
+            background: var(--bg-card);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+        .support-modal.open .support-content { transform: scale(1); }
+
+        .support-header {
+            background: linear-gradient(135deg, #ffeb3b, #ff9800, #f57c00);
+            padding: 32px 30px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .support-header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .support-header-icon {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            animation: giftBounce 2s ease-in-out infinite;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        .support-header h2 {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .support-header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-body {
+            padding: 28px 30px 30px;
+            overflow-y: auto;
+        }
+
+        .support-info {
+            background: rgba(0, 188, 212, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .support-info i { color: var(--accent); margin-right: 6px; }
+        html[dir="rtl"] .support-info i { margin-right: 0; margin-left: 6px; }
+
+        .support-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .support-method {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .support-method:hover {
+            border-color: var(--primary);
+            transform: translateX(6px);
+            background: rgba(0, 188, 212, 0.08);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.2);
+        }
+        html[dir="rtl"] .support-method:hover { transform: translateX(-6px); }
+        .support-method-icon {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .support-method-icon.paypal { background: linear-gradient(135deg, #0070ba, #003087); }
+        .support-method-icon.ccp { background: linear-gradient(135deg, #00a86b, #007d4f); }
+        .support-method-icon.flexy { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+
+        .support-method-info { flex: 1; min-width: 0; }
+        .support-method-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 3px;
+        }
+        .support-method-info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+        }
+        .support-copy-btn {
+            background: rgba(128, 128, 128, 0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+        .support-copy-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+        .support-copy-btn.copied {
+            background: #00c853;
+            color: #fff;
+            border-color: #00c853;
+        }
+
+        .support-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .support-close:hover { background: rgba(255, 255, 255, 0.45); transform: rotate(90deg); }
+        html[dir="rtl"] .support-close { right: auto; left: 18px; }
+
+        .support-footer {
+            text-align: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .support-footer i { color: #ff9800; margin: 0 4px; }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #00c853;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 3000;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%; max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
+        .mobile-menu-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px; height: 40px;
+            font-size: 1.2rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .mobile-menu-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .mobile-nav-link {
+            display: flex; align-items: center; justify-content: center;
+            gap: 12px; padding: 16px 20px; margin: 12px 0;
+            background: var(--bg-glass); border-radius: 60px;
+            color: var(--text-heading); font-size: 1.2rem; font-weight: 600;
+            text-decoration: none; transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover {
+            border-color: var(--primary); background: rgba(0, 188, 212, 0.1);
+            transform: translateX(6px);
+        }
+        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
+        .menu-toggle {
+            display: none; background: none; border: none;
+            color: var(--text-heading); font-size: 1.8rem;
+            cursor: pointer; padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover { transform: rotate(90deg); }
+
+        .toggle-buttons {
+            display: flex; gap: 15px; justify-content: center;
+            margin-top: 20px; margin-bottom: 40px;
+        }
+        .toggle-btn {
+            padding: 12px 30px; border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary); cursor: pointer;
+            font-size: 1rem; font-weight: 600;
+            transition: all 0.3s ease; outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        .toggle-btn:hover {
+            border-color: var(--primary); color: var(--text-heading);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        .toggle-btn.active {
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary); color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .side-dots {
+            position: fixed; top: 50%; right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex; flex-direction: column; gap: 22px;
+            padding: 20px 0;
+        }
+        .side-dots::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--border-glass) 10%, var(--border-glass) 90%, transparent);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .dot {
+            width: 12px; height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%; cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1;
+        }
+        .dot:hover {
+            background: var(--accent); border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+            transform: scale(1.3);
+        }
+        .dot.active {
+            background: var(--primary); border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+        }
+        .dot-tooltip {
+            position: absolute; right: 30px; top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9); color: #fff;
+            padding: 6px 18px; border-radius: 20px;
+            font-size: 0.8rem; white-space: nowrap;
+            pointer-events: none; opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .dot-tooltip::after {
+            content: ''; position: absolute; top: 50%; right: -8px;
+            transform: translateY(-50%);
+            border-left: 8px solid rgba(0, 0, 0, 0.9);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        .dot:hover .dot-tooltip, .dot.active .dot-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-4px);
+        }
+        [data-theme="light"] .dot-tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
+            border-color: rgba(0,0,0,0.1);
+        }
+        [data-theme="light"] .dot-tooltip::after { border-left-color: rgba(255, 255, 255, 0.95); }
+
+        .bottom-dots-nav { display: none; }
+        @media (min-width: 993px) { .side-dots { display: flex; } .bottom-dots-nav { display: none; } }
+        @media (max-width: 992px) {
+            .side-dots { display: none; }
+            .bottom-dots-nav {
+                display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+                background: var(--nav-bg);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border-top: 1px solid var(--border-glass);
+                padding: 10px 15px; gap: 8px; justify-content: center;
+                z-index: 999; overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .bottom-dots-nav::-webkit-scrollbar { display: none; }
+            .bottom-dot {
+                min-width: 28px; height: 28px; border-radius: 50%;
+                background: rgba(128, 128, 128, 0.2);
+                border: 2px solid transparent; cursor: pointer;
+                display: flex; align-items: center; justify-content: center;
+                font-size: 0.75rem; color: var(--text-secondary);
+                transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0;
+            }
+            .bottom-dot.active {
+                background: rgba(0, 188, 212, 0.2);
+                border-color: var(--primary); color: var(--primary);
+                box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+            }
+            .main-wrapper { padding-bottom: 70px; }
+        }
+
+        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+        .section-block {
+            padding: 80px 0; position: relative;
+            min-height: auto;
+            display: flex; flex-direction: column; justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
+        }
+        .section-block:last-of-type { border-bottom: none; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .hero-section {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; min-height: 60vh; padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px; border-radius: 50px;
+            font-size: 0.9rem; color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px; letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px; margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 2.2rem; font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: var(--text-secondary); font-size: 1.1rem;
+            margin-bottom: 40px; max-width: 700px;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px; padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .drug-link {
+            cursor: pointer; color: var(--primary);
+            font-weight: 600; text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%; max-width: 700px;
+            max-height: 85vh; padding: 40px 30px;
+            position: relative; overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            font-size: 1.8rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.3s ease;
+            line-height: 1;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .modal-images {
+            display: flex; flex-wrap: wrap; gap: 20px;
+            justify-content: center; margin-top: 20px;
+        }
+        .modal-images img {
+            max-width: 100%; height: auto; border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+        }
+        .modal-placeholder {
+            color: var(--text-secondary); font-style: italic;
+            text-align: center; width: 100%; padding: 30px;
+            border: 2px dashed var(--border-glass); border-radius: 16px;
+        }
+
+        .question-card label {
+            display: block; margin-bottom: 8px; cursor: pointer;
+            padding: 8px 12px; border-radius: 8px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        html[dir="rtl"] .question-card label { border-left: none; border-right: 4px solid transparent; }
+        .question-card label:hover { background: rgba(0, 188, 212, 0.05); }
+        .question-card input[type="checkbox"] { margin-right: 10px; accent-color: var(--primary); }
+        html[dir="rtl"] .question-card input[type="checkbox"] { margin-right: 0; margin-left: 10px; }
+        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853 !important; }
+        html[dir="rtl"] .correct-answer { border-left: none; border-right: 4px solid #00c853 !important; }
+        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744 !important; }
+        html[dir="rtl"] .wrong-answer { border-left: none; border-right: 4px solid #ff1744 !important; }
+        .missed-answer { background: rgba(255, 200, 0, 0.2) !important; border-left: 4px solid #ffc107 !important; }
+        html[dir="rtl"] .missed-answer { border-left: none; border-right: 4px solid #ffc107 !important; }
+        .result-message { text-align: center; font-size: 1.2rem; margin-top: 20px; font-weight: 700; }
+        .qcm-instruction {
+            text-align: center; margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px; padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p { color: var(--primary); margin: 0; }
+
+        .site-footer {
+            text-align: center; padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex; justify-content: center; gap: 20px;
+            margin-bottom: 25px; flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-heading); text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
+        }
+        .social-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 15px; }
+            .modal-content { width: 95%; padding: 25px 20px; }
+            .toggle-buttons { flex-direction: column; align-items: center; }
+            .settings-dropdown { right: -60px; min-width: 240px; }
+            html[dir="rtl"] .settings-dropdown { right: auto; left: -60px; }
+            .support-content { max-width: 95%; }
+            .support-header { padding: 26px 20px 20px; }
+            .support-header-icon { font-size: 2.8rem; }
+            .support-header h2 { font-size: 1.3rem; }
+            .support-body { padding: 22px 20px 24px; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+            .nav-logo .logo-icon { width: 36px; height: 36px; }
+            .icon-btn { width: 40px; height: 40px; font-size: 1rem; }
+            .nav-right { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <!-- Header -->
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="icon-btn support-btn" id="supportBtn" aria-label="Support" title="Soutenir">
+                    <i class="fas fa-gift"></i>
+                </button>
+
+                <div class="settings-wrapper">
+                    <button class="icon-btn settings-btn" id="settingsBtn" aria-label="Paramètres" title="Paramètres">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="settings-dropdown" id="settingsDropdown">
+                        <div class="settings-section">
+                            <div class="settings-label"><i class="fas fa-palette"></i> <span data-i18n="theme">Thème</span></div>
+                            <div class="theme-options">
+                                <button class="theme-option" data-theme-value="light">
+                                    <i class="fas fa-sun"></i>
+                                    <span data-i18n="light">Clair</span>
+                                </button>
+                                <button class="theme-option active" data-theme-value="dark">
+                                    <i class="fas fa-moon"></i>
+                                    <span data-i18n="dark">Sombre</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <div class="settings-label"><i class="fas fa-globe"></i> <span data-i18n="language">Langue</span></div>
+                            <div class="lang-options">
+                                <button class="lang-option" data-lang="ar">
+                                    <span class="flag">🇩🇿</span>
+                                    <span>عربي</span>
+                                </button>
+                                <button class="lang-option active" data-lang="fr">
+                                    <span class="flag">🇫🇷</span>
+                                    <span>FR</span>
+                                </button>
+                                <button class="lang-option" data-lang="en">
+                                    <span class="flag">🇬🇧</span>
+                                    <span>EN</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> <span data-i18n="home">Accueil</span></a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> <span data-i18n="about">À propos</span></a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> <span data-i18n="modules">Modules</span></a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> <span data-i18n="contact">Contact</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> <span data-i18n="home">Accueil</span></a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> <span data-i18n="about">À propos</span></a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> <span data-i18n="modules">Modules</span></a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> <span data-i18n="contact">Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side dots -->
+    <div class="side-dots" id="sideDots"></div>
+    <div class="bottom-dots-nav" id="bottomDotsNav"></div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-lungs"></i> <span data-i18n="pharmacology">Pharmacologie</span></div>
+                <h1 class="hero-title reveal reveal-delay-1" data-i18n="hero_title">LES ANTITUSSIFS</h1>
+                <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero_subtitle">Classification, mécanismes, indications et conseils à l'officine pour la prise en charge de la toux.</p>
+                <div class="toggle-buttons reveal reveal-delay-3">
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> <span data-i18n="lesson">Leçon</span></button>
+                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> <span data-i18n="exam">Examen</span></button>
+                </div>
+            </section>
+
+            <div id="lessonContent">
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal" data-i18n="mechanism_title">Mécanisme d'action</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p data-i18n="mechanism_text">Les antitussifs ont pour objectif de réduire le réflexe de toux. Ils agissent principalement de manière centrale en déprimant le centre de la toux situé dans le cerveau, ce qui diminue la fréquence et l'intensité des quintes. Certains ont également une action périphérique ou antihistaminique qui potentialise l'effet sédatif et assèche les sécrétions.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-indications">
+                    <h2 class="section-title reveal" data-i18n="indications_title">Indications générales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p data-i18n="indications_text">Traitement symptomatique de courte durée des toux sèches, non productives, d'irritation, quinteuses et/ou nocturnes. Ils ne doivent jamais être utilisés pour une toux grasse, car ils empêcheraient l'expulsion des sécrétions bronchiques.</p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal" data-i18n="contre_title">Contre‑indications et principales précautions</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong data-i18n="respiratoire_label">Insuffisance respiratoire et asthme :</strong> <span data-i18n="contre_respiratoire">contre-indication absolue en raison du risque de dépression respiratoire.</span></li>
+                            <li><strong data-i18n="toux_grasse_label">Toux grasse :</strong> <span data-i18n="contre_toux_grasse">ne doit pas être traitée par un antitussif.</span></li>
+                            <li><strong data-i18n="somnolence_label">Somnolence :</strong> <span data-i18n="contre_somnolence">prévenir les patients des risques lors de la conduite automobile ou l'utilisation de machines.</span></li>
+                            <li><strong data-i18n="enfant_label">Chez l'enfant :</strong> <span data-i18n="contre_enfant">de nombreuses formes sont réservées à l'adulte et à l'enfant de plus de 12 ou 15 ans.</span></li>
+                            <li><strong data-i18n="allaitement_label">Allaitement :</strong> <span data-i18n="contre_allaitement">la codéine est formellement contre-indiquée en raison du risque d'intoxication opioïde du nourrisson.</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal" data-i18n="interactions_title">Interactions médicamenteuses majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong data-i18n="inter_1_strong">Dépresseurs du SNC (anxiolytiques, neuroleptiques, antidépresseurs) :</strong> <span data-i18n="inter_1">risque de potentialisation de la sédation et de la dépression respiratoire.</span></li>
+                            <li><strong data-i18n="inter_2_strong">IMAO et ISRS :</strong> <span data-i18n="inter_2">association formellement contre-indiquée avec le dextrométhorphane, risque de syndrome sérotoninergique.</span></li>
+                            <li><strong data-i18n="inter_3_strong">Alcool :</strong> <span data-i18n="inter_3">à éviter, car il potentialise les effets sédatifs.</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal" data-i18n="grossesse_title">Grossesse et Allaitement</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong data-i18n="grossesse_label">Grossesse :</strong> <span data-i18n="grossesse_text">par précaution, l'utilisation est généralement déconseillée, surtout au premier trimestre. La codéine peut entraîner une insuffisance respiratoire et un syndrome de sevrage chez le nouveau-né en fin de grossesse. Le dextrométhorphane peut être utilisé brièvement.</span></p>
+                        <p><strong data-i18n="allaitement_label">Allaitement :</strong> <span data-i18n="allaitement_text">la plupart des antitussifs passent dans le lait maternel. La codéine est formellement contre-indiquée.</span></p>
+                    </div>
+                </section>
+
+                <!-- I. Antitussifs non opiacés -->
+                <section class="section-block" id="section-non-opiaces">
+                    <h2 class="section-title reveal" data-i18n="non_opiaces_title">I. Antitussifs non opiacés</h2>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="oxeladine_title">1. Oxéladine</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('EUPNEX')">EUPNEX®</span> <span data-i18n="sirop_180">(Sirop 10 mg/5 ml, flacon de 180 ml).</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="oxeladine_formes">Sirop.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="oxeladine_posologie">5 ml (1 cuillère à café) par prise, à renouveler toutes les 4 heures si besoin, sans dépasser 5 prises par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="oxeladine_particularite">Action antitussive élective sur le centre de la toux, sans effet sédatif ni dépresseur respiratoire.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="oxeladine_conseil">Respecter un intervalle minimum de 4 heures entre les prises. Le sirop contient du saccharose (3,3 g par cuillère), à prendre en compte en cas de diabète.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);" data-i18n="butamirate_title">2. Citrate de butamirate</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('SINECOD')">SINECOD®</span> <span data-i18n="sirop_200">(Sirop 0,15 %, flacon de 200 ml).</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="butamirate_formes">Sirop, gouttes.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="butamirate_posologie">15 ml (3 cuillères) 4 fois par jour. Dose maximale : 60 ml/jour.</span></p>
+                        <p><strong data-i18n="posologie_enfant_label">Posologie Enfant :</strong> <span data-i18n="butamirate_enfant">3 à 6 ans : 5 ml 3 fois par jour ; 6 à 12 ans : 10 ml 3 fois par jour ; adolescents &gt; 12 ans : 15 ml 3 à 4 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="butamirate_particularite">Antitussif central non opiacé, il ne provoque pas de somnolence ni de dépression respiratoire. Indiqué pour la toux sèche d'étiologies diverses.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="butamirate_conseil">La durée maximale de traitement sans avis médical est de 7 jours. Éviter l'association avec un expectorant. Déconseillé pendant la grossesse et l'allaitement.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-3">
+                        <h3 style="color:var(--primary);" data-i18n="denoral_title">3. Clocinizine + Pholcodine</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('Denoral')">Denoral®</span> <span data-i18n="adulte_enfant">(Adulte et Enfant).</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="denoral_formes">Sirop.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="denoral_posologie">Selon le produit, généralement 1 cuillère à soupe (15 ml) 3 à 4 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="denoral_particularite">Antitussif opiacé (pholcodine) associé à un antihistaminique (clocinizine). Retiré du marché en Algérie depuis janvier 2023.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="denoral_conseil">Ne plus délivrer. Expliquer au patient le motif du retrait (risque d'allergie croisée grave avec les curares utilisés en anesthésie).</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);"><span class="drug-link" data-i18n="zecuf_title" onclick="showDrugModal('Zecuf')">4. Zecuf®</span></h3>
+                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="zecuf_dci">Association de plantes médicinales (Adhatoda vasica, Ocimum sanctum, Glycyrrhiza glabra, Zingiber officinale, etc.).</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="zecuf_formes">Sirop (avec ou sans sucre), pastilles.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="zecuf_posologie">5 à 10 ml (1 à 2 cuillères à café) 3 fois par jour. Dose maximale : 30 ml/jour. Enfants de 2 à 6 ans : 2,5 à 5 ml 3 fois par jour ; &gt; 6 ans : 5 ml 3 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="zecuf_particularite">Phytothérapie indiquée pour la toux sèche, grasse, allergique et tabagique. Absence de composants à action centrale, donc pas de somnolence.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="zecuf_conseil">Éviter l'utilisation prolongée (plus de 10 jours) sans avis médical. Contre-indiqué pendant l'allaitement et chez les enfants de moins de 5 ans.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);"><span class="drug-link" data-i18n="bronchonet_title" onclick="showDrugModal('Bronchonet')">5. Bronchonet®</span></h3>
+                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="bronchonet_dci">Association de plantes médicinales (Adhatoda vasica, Ocimum sanctum, Solanum surattense, etc.) et de miel.</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="bronchonet_formes">Sirop (avec ou sans sucre), 100 ml.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="bronchonet_posologie">5 à 10 ml, 2 à 3 fois par jour. Dose maximale : 30 ml/jour. Enfant de plus de 3 ans : 2,5 à 5 ml, 2 à 3 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="bronchonet_particularite">Indiqué pour la toux sèche, allergique, asthmatique et du fumeur. Sans somnolence.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="bronchonet_conseil">Déconseillé pendant la grossesse en raison de l'effet abortif de l'Adhatoda vasica. Pour les enfants de plus de 3 ans.</span></p>
+                    </div>
+
+                    <div class="card reveal reveal-delay-3">
+                        <h3 style="color:var(--primary);"><span class="drug-link" data-i18n="touxkid_title" onclick="showDrugModal('Toux Kid')">6. Toux Kid®</span></h3>
+                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="touxkid_dci">Association de plantes médicinales (Adhatoda vasica, Ocimum sanctum, Solanum surattense, etc.) et de miel.</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="touxkid_formes">Sirop 100 ml.</span></p>
+                        <p><strong data-i18n="posologie_enfant_label">Posologie Enfant :</strong> <span data-i18n="touxkid_posologie">Nourrisson et enfant de 1 à 6 ans : 1 cuillère à café (5 ml), 2 à 3 fois par jour. Enfant et adolescent de 6 à 15 ans : 2 cuillères à café (10 ml), 2 à 3 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="touxkid_particularite">Spécialement formulé pour les enfants dès 1 an pour apaiser les toux sèches et irritatives, notamment nocturnes.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="touxkid_conseil">Contient de la fraise, ne pas utiliser en cas d'allergie.</span></p>
+                    </div>
+                </section>
+
+                <!-- II. Antitussifs opiacés -->
+                <section class="section-block" id="section-opiaces">
+                    <h2 class="section-title reveal" data-i18n="opiaces_title">II. Antitussifs opiacés</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="dextro_title">7. Dextrométhorphane</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('BRONCHOCALM')">BRONCHOCALM®</span> <span data-i18n="sirop_label">(Sirop)</span>, <span class="drug-link" onclick="showDrugModal('HUMEX TOUX SÈCHE')">HUMEX TOUX SÈCHE®</span>.</p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="dextro_formes">Sirop, comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="dextro_posologie">15 à 30 mg par prise, à renouveler toutes les 4 à 6 heures. Dose maximale : 120 mg/jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="dextro_particularite">Antitussif de première intention, avec un meilleur profil de sécurité que la codéine. Sans effet analgésique ni dépresseur respiratoire aux doses thérapeutiques.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="dextro_conseil">Respecter la dose maximale. Bien que disponible sans ordonnance, un usage prolongé doit être évité. Contre-indiqué avec les IMAO et les ISRS.</span></p>
+                    </div>
+                </section>
+
+                <!-- III. Antihistaminiques antitussifs -->
+                <section class="section-block" id="section-antihistaminiques">
+                    <h2 class="section-title reveal" data-i18n="antihist_title">III. Antihistaminiques antitussifs</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="oxomemazine_title">8. Oxomémazine</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('TOPLEXIL')">TOPLEXIL®</span> <span data-i18n="sirop_033">(Sirop 0,33 mg/ml)</span>, <span class="drug-link" onclick="showDrugModal('OXOMERAL')">OXOMERAL®</span>.</p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="oxomemazine_formes">Sirop.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="oxomemazine_posologie">10 ml par prise, 4 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="oxomemazine_particularite">Effet sédatif marqué, très efficace pour les toux sèches survenant la nuit.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="oxomemazine_conseil">Prévenir de la somnolence (ne pas conduire). Éviter l'association avec d'autres médicaments sédatifs ou anticholinergiques.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-2">
+                        <h3 style="color:var(--primary);" data-i18n="promethazine_title">9. Prométhazine</h3>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('FLUISEDAL')">FLUISEDAL®</span> <span data-i18n="sirop_005">(Sirop 0,05 %)</span>.</p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="promethazine_formes">Sirop.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="promethazine_posologie">15 ml (1 cuillère à soupe) par prise, 3 à 4 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="promethazine_particularite">Propriétés anticholinergiques et sédatives. Indiquée pour les toux sèches et les toux allergiques non productives.</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="promethazine_conseil">Risque de constipation sévère en cas d'association avec d'autres médicaments anticholinergiques. Déconseillé pendant la grossesse.</span></p>
+                    </div>
+                </section>
+
+                <!-- IV. Opiacés + antihistaminiques -->
+                <section class="section-block" id="section-mentex">
+                    <h2 class="section-title reveal" data-i18n="mentex_title">IV. Antitussifs opiacés + antihistaminiques</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);"><span class="drug-link" data-i18n="mentex_drug_title" onclick="showDrugModal('Mentex')">10. Mentex® (Rhume et grippe)</span></h3>
+                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="mentex_dci">Association de diphénhydramine (12,5 mg), dextrométhorphane (15 mg), pseudoéphédrine (30 mg), chlorure d'ammonium (125 mg), citrate de sodium (57 mg) et menthol (1 mg) pour 5 ml.</span></p>
+                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="mentex_formes">Sirop (flacon de 125 ml avec bouchon doseur).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="mentex_posologie">Selon l'âge et la forme.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="mentex_particularite">À base de Menthol et d'huiles essentielles (revitalisant et anti-irritatif local).</span></p>
+                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="mentex_conseil">À réserver pour les symptômes d'irritation du nez et de la gorge. Ne pas donner aux épileptiques. Le menthol peut provoquer une agitation chez l'enfant. Bien hydrater en cas de prise orale.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                    <h2 class="section-title reveal" data-i18n="conseil_final_title">Conseil ultime pour votre stage</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p data-i18n="conseil_final_text">« L'hydratation est votre meilleure alliée. Toujours conseiller au patient de boire 1,5 à 2 litres d'eau par jour pour fluidifier les sécrétions si la toux s'installe. Expliquez à vos patients que la toux est un réflexe naturel de défense des voies aériennes. Il ne faut pas la supprimer totalement tant qu'elle est grasse et expectorante. Ce n'est que lorsqu'elle est sèche et épuisante qu'on utilise les antitussifs. » Distinguer clairement antitussif (toux sèche) et expectorant/mucolytique (toux grasse) lors de vos conseils à l'officine !</p>
+                    </div>
+                </section>
+            </div>
+
+            <div id="examContent" style="display: none;">
+                <div class="qcm-instruction card reveal reveal-delay-1">
+                    <p><i class="fas fa-info-circle"></i> <strong data-i18n="qcm_label">QCM :</strong> <span data-i18n="qcm_instruction">Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</span></p>
+                </div>
+                <section class="section-block" id="exam-question1">
+                    <h2 class="section-title reveal" data-i18n="q1_title">Question 1</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q1_text">Parmi les propositions suivantes, quelles sont les caractéristiques générales des antitussifs ?</strong></p>
+                        <label><input type="checkbox" name="q1" value="a"> <span data-i18n="q1_a">Ils réduisent le réflexe de toux</span></label>
+                        <label><input type="checkbox" name="q1" value="b"> <span data-i18n="q1_b">Ils agissent principalement de manière centrale</span></label>
+                        <label><input type="checkbox" name="q1" value="c"> <span data-i18n="q1_c">Ils sont indiqués pour la toux grasse</span></label>
+                        <label><input type="checkbox" name="q1" value="d"> <span data-i18n="q1_d">Certains ont une action périphérique ou antihistaminique</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question2">
+                    <h2 class="section-title reveal" data-i18n="q2_title">Question 2</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q2_text">Quelles sont les contre-indications majeures des antitussifs ?</strong></p>
+                        <label><input type="checkbox" name="q2" value="a"> <span data-i18n="q2_a">Insuffisance respiratoire et asthme</span></label>
+                        <label><input type="checkbox" name="q2" value="b"> <span data-i18n="q2_b">Toux grasse</span></label>
+                        <label><input type="checkbox" name="q2" value="c"> <span data-i18n="q2_c">Hypertension artérielle</span></label>
+                        <label><input type="checkbox" name="q2" value="d"> <span data-i18n="q2_d">Allaitement (codéine)</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question3">
+                    <h2 class="section-title reveal" data-i18n="q3_title">Question 3</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q3_text">Concernant l'Oxéladine (EUPNEX®), quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q3" value="a"> <span data-i18n="q3_a">Action antitussive élective sur le centre de la toux</span></label>
+                        <label><input type="checkbox" name="q3" value="b"> <span data-i18n="q3_b">Sans effet sédatif ni dépresseur respiratoire</span></label>
+                        <label><input type="checkbox" name="q3" value="c"> <span data-i18n="q3_c">Respecter un intervalle minimum de 4 heures entre les prises</span></label>
+                        <label><input type="checkbox" name="q3" value="d"> <span data-i18n="q3_d">Contient du saccharose (attention au diabète)</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question4">
+                    <h2 class="section-title reveal" data-i18n="q4_title">Question 4</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q4_text">Concernant le Dextrométhorphane, quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q4" value="a"> <span data-i18n="q4_a">Antitussif de première intention</span></label>
+                        <label><input type="checkbox" name="q4" value="b"> <span data-i18n="q4_b">Dose maximale : 120 mg/jour</span></label>
+                        <label><input type="checkbox" name="q4" value="c"> <span data-i18n="q4_c">Contre-indiqué avec les IMAO et les ISRS</span></label>
+                        <label><input type="checkbox" name="q4" value="d"> <span data-i18n="q4_d">Effet dépresseur respiratoire aux doses thérapeutiques</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question5">
+                    <h2 class="section-title reveal" data-i18n="q5_title">Question 5</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q5_text">Concernant la Codéine pendant l'allaitement, quelle est la conduite à tenir ?</strong></p>
+                        <label><input type="checkbox" name="q5" value="a"> <span data-i18n="q5_a">Formellement contre-indiquée</span></label>
+                        <label><input type="checkbox" name="q5" value="b"> <span data-i18n="q5_b">Risque d'intoxication opioïde du nourrisson</span></label>
+                        <label><input type="checkbox" name="q5" value="c"> <span data-i18n="q5_c">Autorisée sans restriction</span></label>
+                        <label><input type="checkbox" name="q5" value="d"> <span data-i18n="q5_d">Préférer une alternative non opiacée</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question6">
+                    <h2 class="section-title reveal" data-i18n="q6_title">Question 6</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q6_text">Concernant l'Oxomémazine (TOPLEXIL®), quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q6" value="a"> <span data-i18n="q6_a">Effet sédatif marqué</span></label>
+                        <label><input type="checkbox" name="q6" value="b"> <span data-i18n="q6_b">Très efficace pour les toux sèches nocturnes</span></label>
+                        <label><input type="checkbox" name="q6" value="c"> <span data-i18n="q6_c">Prévenir de la somnolence (ne pas conduire)</span></label>
+                        <label><input type="checkbox" name="q6" value="d"> <span data-i18n="q6_d">Peut être associée sans risque aux autres sédatifs</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question7">
+                    <h2 class="section-title reveal" data-i18n="q7_title">Question 7</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q7_text">Concernant le Denoral® (clocinizine + pholcodine), quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q7" value="a"> <span data-i18n="q7_a">Contient un antitussif opiacé et un antihistaminique</span></label>
+                        <label><input type="checkbox" name="q7" value="b"> <span data-i18n="q7_b">Retiré du marché en Algérie depuis janvier 2023</span></label>
+                        <label><input type="checkbox" name="q7" value="c"> <span data-i18n="q7_c">Risque d'allergie croisée grave avec les curares</span></label>
+                        <label><input type="checkbox" name="q7" value="d"> <span data-i18n="q7_d">Doit être délivré en première intention</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question8">
+                    <h2 class="section-title reveal" data-i18n="q8_title">Question 8</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q8_text">Concernant le Zecuf®, quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q8" value="a"> <span data-i18n="q8_a">C'est un produit de phytothérapie</span></label>
+                        <label><input type="checkbox" name="q8" value="b"> <span data-i18n="q8_b">Indiqué pour la toux sèche, grasse, allergique et tabagique</span></label>
+                        <label><input type="checkbox" name="q8" value="c"> <span data-i18n="q8_c">Pas de somnolence (absence d'action centrale)</span></label>
+                        <label><input type="checkbox" name="q8" value="d"> <span data-i18n="q8_d">Contre-indiqué chez les enfants de moins de 5 ans</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question9">
+                    <h2 class="section-title reveal" data-i18n="q9_title">Question 9</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q9_text">Concernant le Mentex®, quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q9" value="a"> <span data-i18n="q9_a">Contient de la diphénhydramine et du dextrométhorphane</span></label>
+                        <label><input type="checkbox" name="q9" value="b"> <span data-i18n="q9_b">Contient de la pseudoéphédrine</span></label>
+                        <label><input type="checkbox" name="q9" value="c"> <span data-i18n="q9_c">Ne pas donner aux épileptiques</span></label>
+                        <label><input type="checkbox" name="q9" value="d"> <span data-i18n="q9_d">Le menthol peut provoquer une agitation chez l'enfant</span></label>
+                    </div>
+                </section>
+                <section class="section-block" id="exam-question10">
+                    <h2 class="section-title reveal" data-i18n="q10_title">Question 10</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q10_text">Concernant la toux et les antitussifs, quelles affirmations sont correctes ?</strong></p>
+                        <label><input type="checkbox" name="q10" value="a"> <span data-i18n="q10_a">La toux est un réflexe naturel de défense des voies aériennes</span></label>
+                        <label><input type="checkbox" name="q10" value="b"> <span data-i18n="q10_b">Il ne faut pas la supprimer tant qu'elle est grasse et expectorante</span></label>
+                        <label><input type="checkbox" name="q10" value="c"> <span data-i18n="q10_c">Les antitussifs sont indiqués pour la toux sèche et épuisante</span></label>
+                        <label><input type="checkbox" name="q10" value="d"> <span data-i18n="q10_d">Conseiller une bonne hydratation (1,5 à 2 L d'eau par jour)</span></label>
+                    </div>
+                </section>
+                <section class="section-block" style="border-bottom: none;">
+                    <div class="card reveal reveal-delay-1" style="text-align: center;">
+                        <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;" data-i18n="check_btn">Vérifier mes réponses</button>
+                        <button class="toggle-btn" id="resetExam" data-i18n="reset_btn">Réinitialiser</button>
+                        <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
+    <div class="support-modal" id="supportModal">
+        <div class="support-content">
+            <button class="support-close" id="closeSupport" aria-label="Fermer">&times;</button>
+            <div class="support-header">
+                <div class="support-header-icon"><i class="fas fa-gift"></i></div>
+                <h2 data-i18n="support_title">Soutenir GhaniPharma</h2>
+                <p data-i18n="support_subtitle">Votre soutien m'aide à créer plus de contenu éducatif</p>
+            </div>
+            <div class="support-body">
+                <div class="support-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-i18n="support_info">Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏</span>
+                </div>
+                <div class="support-methods">
+                    <a href="https://www.paypal.me/ghanipharma" target="_blank" rel="noopener noreferrer" class="support-method">
+                        <div class="support-method-icon paypal"><i class="fab fa-paypal"></i></div>
+                        <div class="support-method-info">
+                            <h4>PayPal</h4>
+                            <p>paypal.me/ghanipharma</p>
+                        </div>
+                        <button class="support-copy-btn" onclick="event.preventDefault(); copyToClipboard('https://www.paypal.me/ghanipharma', this);">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </a>
+
+                    <div class="support-method" onclick="copyToClipboard('00799999002345678901', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon ccp"><i class="fas fa-university"></i></div>
+                        <div class="support-method-info">
+                            <h4 data-i18n="rip_title">RIP CCP (Algérie)</h4>
+                            <p>00799999002345678901</p>
+                        </div>
+                        <button class="support-copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div class="support-method" onclick="copyToClipboard('+213555079282', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon flexy"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="support-method-info">
+                            <h4 data-i18n="flexy_title">Flexy</h4>
+                            <p>+213 555 079 282</p>
+                        </div>
+                        <button class="support-copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="support-footer">
+                    <span data-i18n="support_footer">Merci de tout cœur</span> <i class="fas fa-gift"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-toast" id="copyToast">
+        <i class="fas fa-check-circle"></i>
+        <span data-i18n="copied">Copié !</span>
+    </div>
+
+    <script>
+        // ==================== Stars ====================
+        (function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // ==================== Reveal ====================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== TRANSLATIONS ====================
+        const translations = {
+            fr: {
+                theme: 'Thème', light: 'Clair', dark: 'Sombre', language: 'Langue',
+                home: 'Accueil', about: 'À propos', modules: 'Modules', contact: 'Contact',
+                pharmacology: 'Pharmacologie',
+                hero_title: 'LES ANTITUSSIFS',
+                hero_subtitle: "Classification, mécanismes, indications et conseils à l'officine pour la prise en charge de la toux.",
+                lesson: 'Leçon', exam: 'Examen',
+                mechanism_title: "Mécanisme d'action",
+                mechanism_text: "Les antitussifs ont pour objectif de réduire le réflexe de toux. Ils agissent principalement de manière centrale en déprimant le centre de la toux situé dans le cerveau, ce qui diminue la fréquence et l'intensité des quintes. Certains ont également une action périphérique ou antihistaminique qui potentialise l'effet sédatif et assèche les sécrétions.",
+                indications_title: 'Indications générales',
+                indications_text: "Traitement symptomatique de courte durée des toux sèches, non productives, d'irritation, quinteuses et/ou nocturnes. Ils ne doivent jamais être utilisés pour une toux grasse, car ils empêcheraient l'expulsion des sécrétions bronchiques.",
+                contre_title: 'Contre‑indications et principales précautions',
+                respiratoire_label: 'Insuffisance respiratoire et asthme :',
+                contre_respiratoire: "contre-indication absolue en raison du risque de dépression respiratoire.",
+                toux_grasse_label: 'Toux grasse :',
+                contre_toux_grasse: 'ne doit pas être traitée par un antitussif.',
+                somnolence_label: 'Somnolence :',
+                contre_somnolence: "prévenir les patients des risques lors de la conduite automobile ou l'utilisation de machines.",
+                enfant_label: "Chez l'enfant :",
+                contre_enfant: "de nombreuses formes sont réservées à l'adulte et à l'enfant de plus de 12 ou 15 ans.",
+                allaitement_label: 'Allaitement :',
+                contre_allaitement: "la codéine est formellement contre-indiquée en raison du risque d'intoxication opioïde du nourrisson.",
+                interactions_title: 'Interactions médicamenteuses majeures',
+                inter_1_strong: 'Dépresseurs du SNC (anxiolytiques, neuroleptiques, antidépresseurs) :',
+                inter_1: 'risque de potentialisation de la sédation et de la dépression respiratoire.',
+                inter_2_strong: 'IMAO et ISRS :',
+                inter_2: 'association formellement contre-indiquée avec le dextrométhorphane, risque de syndrome sérotoninergique.',
+                inter_3_strong: 'Alcool :',
+                inter_3: 'à éviter, car il potentialise les effets sédatifs.',
+                grossesse_title: 'Grossesse et Allaitement',
+                grossesse_label: 'Grossesse :',
+                grossesse_text: "par précaution, l'utilisation est généralement déconseillée, surtout au premier trimestre. La codéine peut entraîner une insuffisance respiratoire et un syndrome de sevrage chez le nouveau-né en fin de grossesse. Le dextrométhorphane peut être utilisé brièvement.",
+                allaitement_text: "la plupart des antitussifs passent dans le lait maternel. La codéine est formellement contre-indiquée.",
+                non_opiaces_title: 'I. Antitussifs non opiacés',
+                oxeladine_title: '1. Oxéladine',
+                noms_commerciaux: 'Noms commerciaux (Algérie) :',
+                sirop_180: '(Sirop 10 mg/5 ml, flacon de 180 ml).',
+                sirop_200: '(Sirop 0,15 %, flacon de 200 ml).',
+                sirop_033: '(Sirop 0,33 mg/ml)',
+                sirop_005: '(Sirop 0,05 %)',
+                sirop_label: '(Sirop)',
+                adulte_enfant: '(Adulte et Enfant).',
+                formes_label: 'Formes :',
+                posologie_label: 'Posologie Adulte :',
+                posologie_enfant_label: 'Posologie Enfant :',
+                particularite_label: 'Particularité :',
+                conseil_pharma: 'Conseil Pharmacien :',
+                dci_label: 'DCI :',
+                oxeladine_formes: 'Sirop.',
+                oxeladine_posologie: '5 ml (1 cuillère à café) par prise, à renouveler toutes les 4 heures si besoin, sans dépasser 5 prises par jour.',
+                oxeladine_particularite: 'Action antitussive élective sur le centre de la toux, sans effet sédatif ni dépresseur respiratoire.',
+                oxeladine_conseil: 'Respecter un intervalle minimum de 4 heures entre les prises. Le sirop contient du saccharose (3,3 g par cuillère), à prendre en compte en cas de diabète.',
+                butamirate_title: '2. Citrate de butamirate',
+                butamirate_formes: 'Sirop, gouttes.',
+                butamirate_posologie: '15 ml (3 cuillères) 4 fois par jour. Dose maximale : 60 ml/jour.',
+                butamirate_enfant: '3 à 6 ans : 5 ml 3 fois par jour ; 6 à 12 ans : 10 ml 3 fois par jour ; adolescents > 12 ans : 15 ml 3 à 4 fois par jour.',
+                butamirate_particularite: 'Antitussif central non opiacé, il ne provoque pas de somnolence ni de dépression respiratoire. Indiqué pour la toux sèche d\'étiologies diverses.',
+                butamirate_conseil: "La durée maximale de traitement sans avis médical est de 7 jours. Éviter l'association avec un expectorant. Déconseillé pendant la grossesse et l'allaitement.",
+                denoral_title: '3. Clocinizine + Pholcodine',
+                denoral_formes: 'Sirop.',
+                denoral_posologie: 'Selon le produit, généralement 1 cuillère à soupe (15 ml) 3 à 4 fois par jour.',
+                denoral_particularite: 'Antitussif opiacé (pholcodine) associé à un antihistaminique (clocinizine). Retiré du marché en Algérie depuis janvier 2023.',
+                denoral_conseil: "Ne plus délivrer. Expliquer au patient le motif du retrait (risque d'allergie croisée grave avec les curares utilisés en anesthésie).",
+                zecuf_title: '4. Zecuf®',
+                zecuf_dci: 'Association de plantes médicinales (Adhatoda vasica, Ocimum sanctum, Glycyrrhiza glabra, Zingiber officinale, etc.).',
+                zecuf_formes: 'Sirop (avec ou sans sucre), pastilles.',
+                zecuf_posologie: '5 à 10 ml (1 à 2 cuillères à café) 3 fois par jour. Dose maximale : 30 ml/jour. Enfants de 2 à 6 ans : 2,5 à 5 ml 3 fois par jour ; > 6 ans : 5 ml 3 fois par jour.',
+                zecuf_particularite: 'Phytothérapie indiquée pour la toux sèche, grasse, allergique et tabagique. Absence de composants à action centrale, donc pas de somnolence.',
+                zecuf_conseil: "Éviter l'utilisation prolongée (plus de 10 jours) sans avis médical. Contre-indiqué pendant l'allaitement et chez les enfants de moins de 5 ans.",
+                bronchonet_title: '5. Bronchonet®',
+                bronchonet_dci: 'Association de plantes médicinales (Adhatoda vasica, Ocimum sanctum, Solanum surattense, etc.) et de miel.',
+                bronchonet_formes: 'Sirop (avec ou sans sucre), 100 ml.',
+                bronchonet_posologie: '5 à 10 ml, 2 à 3 fois par jour. Dose maximale : 30 ml/jour. Enfant de plus de 3 ans : 2,5 à 5 ml, 2 à 3 fois par jour.',
+                bronchonet_particularite: 'Indiqué pour la toux sèche, allergique, asthmatique et du fumeur. Sans somnolence.',
+                bronchonet_conseil: "Déconseillé pendant la grossesse en raison de l'effet abortif de l'Adhatoda vasica. Pour les enfants de plus de 3 ans.",
+                touxkid_title: '6. Toux Kid®',
+                touxkid_dci: 'Association de plantes médicinales (Adhatoda vasica, Ocimum sanctum, Solanum surattense, etc.) et de miel.',
+                touxkid_formes: 'Sirop 100 ml.',
+                touxkid_posologie: 'Nourrisson et enfant de 1 à 6 ans : 1 cuillère à café (5 ml), 2 à 3 fois par jour. Enfant et adolescent de 6 à 15 ans : 2 cuillères à café (10 ml), 2 à 3 fois par jour.',
+                touxkid_particularite: 'Spécialement formulé pour les enfants dès 1 an pour apaiser les toux sèches et irritatives, notamment nocturnes.',
+                touxkid_conseil: "Contient de la fraise, ne pas utiliser en cas d'allergie.",
+                opiaces_title: 'II. Antitussifs opiacés',
+                dextro_title: '7. Dextrométhorphane',
+                dextro_formes: 'Sirop, comprimés.',
+                dextro_posologie: '15 à 30 mg par prise, à renouveler toutes les 4 à 6 heures. Dose maximale : 120 mg/jour.',
+                dextro_particularite: "Antitussif de première intention, avec un meilleur profil de sécurité que la codéine. Sans effet analgésique ni dépresseur respiratoire aux doses thérapeutiques.",
+                dextro_conseil: 'Respecter la dose maximale. Bien que disponible sans ordonnance, un usage prolongé doit être évité. Contre-indiqué avec les IMAO et les ISRS.',
+                antihist_title: 'III. Antihistaminiques antitussifs',
+                oxomemazine_title: '8. Oxomémazine',
+                oxomemazine_formes: 'Sirop.',
+                oxomemazine_posologie: '10 ml par prise, 4 fois par jour.',
+                oxomemazine_particularite: 'Effet sédatif marqué, très efficace pour les toux sèches survenant la nuit.',
+                oxomemazine_conseil: "Prévenir de la somnolence (ne pas conduire). Éviter l'association avec d'autres médicaments sédatifs ou anticholinergiques.",
+                promethazine_title: '9. Prométhazine',
+                promethazine_formes: 'Sirop.',
+                promethazine_posologie: '15 ml (1 cuillère à soupe) par prise, 3 à 4 fois par jour.',
+                promethazine_particularite: 'Propriétés anticholinergiques et sédatives. Indiquée pour les toux sèches et les toux allergiques non productives.',
+                promethazine_conseil: "Risque de constipation sévère en cas d'association avec d'autres médicaments anticholinergiques. Déconseillé pendant la grossesse.",
+                mentex_title: 'IV. Antitussifs opiacés + antihistaminiques',
+                mentex_drug_title: '10. Mentex® (Rhume et grippe)',
+                mentex_dci: "Association de diphénhydramine (12,5 mg), dextrométhorphane (15 mg), pseudoéphédrine (30 mg), chlorure d'ammonium (125 mg), citrate de sodium (57 mg) et menthol (1 mg) pour 5 ml.",
+                mentex_formes: 'Sirop (flacon de 125 ml avec bouchon doseur).',
+                mentex_posologie: "Selon l'âge et la forme.",
+                mentex_particularite: "À base de Menthol et d'huiles essentielles (revitalisant et anti-irritatif local).",
+                mentex_conseil: "À réserver pour les symptômes d'irritation du nez et de la gorge. Ne pas donner aux épileptiques. Le menthol peut provoquer une agitation chez l'enfant. Bien hydrater en cas de prise orale.",
+                conseil_final_title: 'Conseil ultime pour votre stage',
+                conseil_final_text: "« L'hydratation est votre meilleure alliée. Toujours conseiller au patient de boire 1,5 à 2 litres d'eau par jour pour fluidifier les sécrétions si la toux s'installe. Expliquez à vos patients que la toux est un réflexe naturel de défense des voies aériennes. Il ne faut pas la supprimer totalement tant qu'elle est grasse et expectorante. Ce n'est que lorsqu'elle est sèche et épuisante qu'on utilise les antitussifs. » Distinguer clairement antitussif (toux sèche) et expectorant/mucolytique (toux grasse) lors de vos conseils à l'officine !",
+                qcm_label: 'QCM :',
+                qcm_instruction: 'Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.',
+                check_btn: 'Vérifier mes réponses',
+                reset_btn: 'Réinitialiser',
+                q1_title: 'Question 1', q2_title: 'Question 2', q3_title: 'Question 3', q4_title: 'Question 4', q5_title: 'Question 5',
+                q6_title: 'Question 6', q7_title: 'Question 7', q8_title: 'Question 8', q9_title: 'Question 9', q10_title: 'Question 10',
+                q1_text: 'Parmi les propositions suivantes, quelles sont les caractéristiques générales des antitussifs ?',
+                q1_a: 'Ils réduisent le réflexe de toux', q1_b: 'Ils agissent principalement de manière centrale', q1_c: 'Ils sont indiqués pour la toux grasse', q1_d: 'Certains ont une action périphérique ou antihistaminique',
+                q2_text: 'Quelles sont les contre-indications majeures des antitussifs ?',
+                q2_a: 'Insuffisance respiratoire et asthme', q2_b: 'Toux grasse', q2_c: 'Hypertension artérielle', q2_d: 'Allaitement (codéine)',
+                q3_text: "Concernant l'Oxéladine (EUPNEX®), quelles affirmations sont correctes ?",
+                q3_a: 'Action antitussive élective sur le centre de la toux', q3_b: 'Sans effet sédatif ni dépresseur respiratoire', q3_c: 'Respecter un intervalle minimum de 4 heures entre les prises', q3_d: 'Contient du saccharose (attention au diabète)',
+                q4_text: 'Concernant le Dextrométhorphane, quelles affirmations sont correctes ?',
+                q4_a: 'Antitussif de première intention', q4_b: 'Dose maximale : 120 mg/jour', q4_c: 'Contre-indiqué avec les IMAO et les ISRS', q4_d: 'Effet dépresseur respiratoire aux doses thérapeutiques',
+                q5_text: "Concernant la Codéine pendant l'allaitement, quelle est la conduite à tenir ?",
+                q5_a: 'Formellement contre-indiquée', q5_b: "Risque d'intoxication opioïde du nourrisson", q5_c: 'Autorisée sans restriction', q5_d: 'Préférer une alternative non opiacée',
+                q6_text: "Concernant l'Oxomémazine (TOPLEXIL®), quelles affirmations sont correctes ?",
+                q6_a: 'Effet sédatif marqué', q6_b: 'Très efficace pour les toux sèches nocturnes', q6_c: 'Prévenir de la somnolence (ne pas conduire)', q6_d: 'Peut être associée sans risque aux autres sédatifs',
+                q7_text: 'Concernant le Denoral® (clocinizine + pholcodine), quelles affirmations sont correctes ?',
+                q7_a: 'Contient un antitussif opiacé et un antihistaminique', q7_b: 'Retiré du marché en Algérie depuis janvier 2023', q7_c: "Risque d'allergie croisée grave avec les curares", q7_d: 'Doit être délivré en première intention',
+                q8_text: 'Concernant le Zecuf®, quelles affirmations sont correctes ?',
+                q8_a: "C'est un produit de phytothérapie", q8_b: 'Indiqué pour la toux sèche, grasse, allergique et tabagique', q8_c: "Pas de somnolence (absence d'action centrale)", q8_d: 'Contre-indiqué chez les enfants de moins de 5 ans',
+                q9_text: 'Concernant le Mentex®, quelles affirmations sont correctes ?',
+                q9_a: 'Contient de la diphénhydramine et du dextrométhorphane', q9_b: 'Contient de la pseudoéphédrine', q9_c: 'Ne pas donner aux épileptiques', q9_d: "Le menthol peut provoquer une agitation chez l'enfant",
+                q10_text: 'Concernant la toux et les antitussifs, quelles affirmations sont correctes ?',
+                q10_a: "La toux est un réflexe naturel de défense des voies aériennes", q10_b: "Il ne faut pas la supprimer tant qu'elle est grasse et expectorante", q10_c: 'Les antitussifs sont indiqués pour la toux sèche et épuisante', q10_d: "Conseiller une bonne hydratation (1,5 à 2 L d'eau par jour)",
+                support_title: 'Soutenir GhaniPharma',
+                support_subtitle: "Votre soutien m'aide à créer plus de contenu éducatif",
+                support_info: "Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏",
+                rip_title: 'RIP CCP (Algérie)',
+                flexy_title: 'Flexy',
+                support_footer: 'Merci de tout cœur',
+                copied: 'Copié !'
+            },
+            ar: {
+                theme: 'المظهر', light: 'فاتح', dark: 'داكن', language: 'اللغة',
+                home: 'الرئيسية', about: 'حول', modules: 'الدروس', contact: 'اتصل بنا',
+                pharmacology: 'علم الأدوية',
+                hero_title: 'مضادات السعال',
+                hero_subtitle: 'التصنيف، الآليات، الاستطبابات والنصائح في الصيدلية للتعامل مع السعال.',
+                lesson: 'الدرس', exam: 'الاختبار',
+                mechanism_title: 'آلية العمل',
+                mechanism_text: 'تهدف مضادات السعال إلى تقليل منعكس السعال. تعمل بشكل رئيسي مركزياً عبر تثبيط مركز السعال في الدماغ، مما يقلل من تكرار وشدة النوبات. بعضها له أيضاً تأثير محيطي أو مضاد للهيستامين يعزز التأثير المهدئ ويجفف الإفرازات.',
+                indications_title: 'الاستطبابات العامة',
+                indications_text: 'علاج عرضي قصير المدى للسعال الجاف، غير المنتج، التهيجي، النوبي و/أو الليلي. لا يجب أبداً استخدامها للسعال المنتج، لأنها ستمنع طرد الإفرازات الشعبية.',
+                contre_title: 'مضادات الاستطباب والاحتياطات الرئيسية',
+                respiratoire_label: 'القصور التنفسي والربو :',
+                contre_respiratoire: 'مضاد استطباب مطلق بسبب خطر التثبيط التنفسي.',
+                toux_grasse_label: 'السعال المنتج :',
+                contre_toux_grasse: 'لا يجب علاجه بمضاد السعال.',
+                somnolence_label: 'النعاس :',
+                contre_somnolence: 'تحذير المرضى من مخاطر القيادة أو استخدام الآلات.',
+                enfant_label: 'عند الأطفال :',
+                contre_enfant: 'العديد من الأشكال مخصصة للبالغين والأطفال فوق 12 أو 15 سنة.',
+                allaitement_label: 'الرضاعة :',
+                contre_allaitement: 'الكودايين ممنوع تماماً بسبب خطر التسمم الأفيوني للرضيع.',
+                interactions_title: 'التداخلات الدوائية الرئيسية',
+                inter_1_strong: 'مثبطات الجهاز العصبي المركزي (مهدئات، مضادات الذهان، مضادات الاكتئاب) :',
+                inter_1: 'خطر تعزيز التهدئة والتثبيط التنفسي.',
+                inter_2_strong: 'مثبطات MAO و ISRS :',
+                inter_2: 'ممنوعة تماماً مع الديكستروميثورفان، خطر متلازمة السيروتونين.',
+                inter_3_strong: 'الكحول :',
+                inter_3: 'يجب تجنبه لأنه يعزز التأثيرات المهدئة.',
+                grossesse_title: 'الحمل والرضاعة',
+                grossesse_label: 'الحمل :',
+                grossesse_text: 'كاحتياط، يُنصح عموماً بعدم الاستخدام، خاصة في الثلث الأول. الكودايين يمكن أن يسبب فشلاً تنفسياً ومتلازمة انسحاب عند المولود في نهاية الحمل. يمكن استخدام الديكستروميثورفان لفترة قصيرة.',
+                allaitement_text: 'معظم مضادات السعال تنتقل إلى حليب الأم. الكودايين ممنوع تماماً.',
+                non_opiaces_title: 'I. مضادات السعال غير الأفيونية',
+                oxeladine_title: '1. أوكسيلادين',
+                noms_commerciaux: 'الأسماء التجارية (الجزائر) :',
+                sirop_180: '(شراب 10 ملغ/5 مل، زجاجة 180 مل).',
+                sirop_200: '(شراب 0,15%، زجاجة 200 مل).',
+                sirop_033: '(شراب 0,33 ملغ/مل)',
+                sirop_005: '(شراب 0,05%)',
+                sirop_label: '(شراب)',
+                adulte_enfant: '(للبالغ والطفل).',
+                formes_label: 'الأشكال :',
+                posologie_label: 'الجرعة للبالغين :',
+                posologie_enfant_label: 'جرعة الأطفال :',
+                particularite_label: 'الخصوصية :',
+                conseil_pharma: 'نصيحة الصيدلي :',
+                dci_label: 'الاسم العلمي :',
+                oxeladine_formes: 'شراب.',
+                oxeladine_posologie: '5 مل (ملعقة صغيرة) لكل جرعة، تُكرر كل 4 ساعات عند الحاجة، دون تجاوز 5 جرعات يومياً.',
+                oxeladine_particularite: 'تأثير مضاد للسعال انتقائي على مركز السعال، بدون تأثير مهدئ أو مثبط للتنفس.',
+                oxeladine_conseil: 'احترام فاصل زمني لا يقل عن 4 ساعات بين الجرعات. الشراب يحتوي على السكروز (3,3 غ لكل ملعقة)، يجب مراعاته في حالة السكري.',
+                butamirate_title: '2. سترات البوتاميرات',
+                butamirate_formes: 'شراب، قطرات.',
+                butamirate_posologie: '15 مل (3 ملاعق) 4 مرات يومياً. الجرعة القصوى: 60 مل/يوم.',
+                butamirate_enfant: '3 إلى 6 سنوات: 5 مل 3 مرات يومياً ؛ 6 إلى 12 سنة: 10 مل 3 مرات يومياً ؛ المراهقون > 12 سنة: 15 مل 3 إلى 4 مرات يومياً.',
+                butamirate_particularite: 'مضاد سعال مركزي غير أفيوني، لا يسبب النعاس أو التثبيط التنفسي. مُشار إليه للسعال الجاف من مسببات مختلفة.',
+                butamirate_conseil: 'مدة العلاج القصوى بدون استشارة طبية هي 7 أيام. تجنب الجمع مع طارد للبلغم. غير مُستحسن خلال الحمل والرضاعة.',
+                denoral_title: '3. كلوسينيزين + فولكودين',
+                denoral_formes: 'شراب.',
+                denoral_posologie: 'حسب المنتج، عادة ملعقة كبيرة (15 مل) 3 إلى 4 مرات يومياً.',
+                denoral_particularite: 'مضاد سعال أفيوني (فولكودين) مرتبط بمضاد هيستامين (كلوسينيزين). سُحب من السوق في الجزائر منذ يناير 2023.',
+                denoral_conseil: 'لا يجب صرفه. اشرح للمريض سبب السحب (خطر حساسية متصالبة خطيرة مع الكورار المستخدم في التخدير).',
+                zecuf_title: '4. زيكوف®',
+                zecuf_dci: 'تركيبة من النباتات الطبية (Adhatoda vasica، Ocimum sanctum، Glycyrrhiza glabra، Zingiber officinale، إلخ).',
+                zecuf_formes: 'شراب (مع أو بدون سكر)، أقراص.',
+                zecuf_posologie: '5 إلى 10 مل (1 إلى 2 ملعقة صغيرة) 3 مرات يومياً. الجرعة القصوى: 30 مل/يوم. الأطفال من 2 إلى 6 سنوات: 2,5 إلى 5 مل 3 مرات يومياً ؛ > 6 سنوات: 5 مل 3 مرات يومياً.',
+                zecuf_particularite: 'علاج بالنباتات مُشار إليه للسعال الجاف، المنتج، التحسسي وسعال المدخنين. غياب مكونات ذات تأثير مركزي، لذلك لا نعاس.',
+                zecuf_conseil: 'تجنب الاستخدام المطوّل (أكثر من 10 أيام) بدون استشارة طبية. ممنوع خلال الرضاعة وعند الأطفال أقل من 5 سنوات.',
+                bronchonet_title: '5. برونشونيت®',
+                bronchonet_dci: 'تركيبة من النباتات الطبية (Adhatoda vasica، Ocimum sanctum، Solanum surattense، إلخ) والعسل.',
+                bronchonet_formes: 'شراب (مع أو بدون سكر)، 100 مل.',
+                bronchonet_posologie: '5 إلى 10 مل، 2 إلى 3 مرات يومياً. الجرعة القصوى: 30 مل/يوم. طفل فوق 3 سنوات: 2,5 إلى 5 مل، 2 إلى 3 مرات يومياً.',
+                bronchonet_particularite: 'مُشار إليه للسعال الجاف، التحسسي، الربوي وسعال المدخن. بدون نعاس.',
+                bronchonet_conseil: 'غير مُستحسن خلال الحمل بسبب التأثير المجهض لـ Adhatoda vasica. للأطفال فوق 3 سنوات.',
+                touxkid_title: '6. تو كيد®',
+                touxkid_dci: 'تركيبة من النباتات الطبية (Adhatoda vasica، Ocimum sanctum، Solanum surattense، إلخ) والعسل.',
+                touxkid_formes: 'شراب 100 مل.',
+                touxkid_posologie: 'الرضيع والطفل من 1 إلى 6 سنوات: ملعقة صغيرة (5 مل)، 2 إلى 3 مرات يومياً. الطفل والمراهق من 6 إلى 15 سنة: ملعقتان صغيرتان (10 مل)، 2 إلى 3 مرات يومياً.',
+                touxkid_particularite: 'مُصمم خصيصاً للأطفال من عمر سنة لتهدئة السعال الجاف والتهيجي، خاصة الليلي.',
+                touxkid_conseil: 'يحتوي على الفراولة، لا يُستخدم في حالة الحساسية.',
+                opiaces_title: 'II. مضادات السعال الأفيونية',
+                dextro_title: '7. ديكستروميثورفان',
+                dextro_formes: 'شراب، أقراص.',
+                dextro_posologie: '15 إلى 30 ملغ لكل جرعة، تُكرر كل 4 إلى 6 ساعات. الجرعة القصوى: 120 ملغ/يوم.',
+                dextro_particularite: 'مضاد سعال من الخط الأول، بملف أمان أفضل من الكودايين. بدون تأثير مسكن أو مثبط للتنفس بالجرعات العلاجية.',
+                dextro_conseil: 'احترام الجرعة القصوى. على الرغم من توفره بدون وصفة، يجب تجنب الاستخدام المطوّل. ممنوع مع مثبطات MAO و ISRS.',
+                antihist_title: 'III. مضادات الهيستامين المضادة للسعال',
+                oxomemazine_title: '8. أوكسوميمازين',
+                oxomemazine_formes: 'شراب.',
+                oxomemazine_posologie: '10 مل لكل جرعة، 4 مرات يومياً.',
+                oxomemazine_particularite: 'تأثير مهدئ ملحوظ، فعال جداً للسعال الجاف الذي يحدث ليلاً.',
+                oxomemazine_conseil: 'تحذير من النعاس (لا تقود). تجنب الجمع مع أدوية مهدئة أو مضادة للكولين أخرى.',
+                promethazine_title: '9. بروميثازين',
+                promethazine_formes: 'شراب.',
+                promethazine_posologie: '15 مل (ملعقة كبيرة) لكل جرعة، 3 إلى 4 مرات يومياً.',
+                promethazine_particularite: 'خصائص مضادة للكولين ومهدئة. مُشار إليه للسعال الجاف والسعال التحسسي غير المنتج.',
+                promethazine_conseil: 'خطر إمساك شديد في حالة الجمع مع أدوية مضادة للكولين أخرى. غير مُستحسن خلال الحمل.',
+                mentex_title: 'IV. مضادات السعال الأفيونية + مضادات الهيستامين',
+                mentex_drug_title: '10. منتكس® (الزكام والإنفلونزا)',
+                mentex_dci: 'تركيبة من ديفينهيدرامين (12,5 ملغ)، ديكستروميثورفان (15 ملغ)، سودوإيفيدرين (30 ملغ)، كلوريد الأمونيوم (125 ملغ)، سيترات الصوديوم (57 ملغ) والمنثول (1 ملغ) لكل 5 مل.',
+                mentex_formes: 'شراب (زجاجة 125 مل مع غطاء قياس).',
+                mentex_posologie: 'حسب العمر والشكل.',
+                mentex_particularite: 'يعتمد على المنثول والزيوت الأساسية (منشط ومضاد للتهيج الموضعي).',
+                mentex_conseil: 'يُخصص لأعراض تهيج الأنف والحلق. لا يُعطى لمرضى الصرع. المنثول يمكن أن يسبب هياجاً عند الأطفال. شرب الكثير من الماء في حالة تناول الفموي.',
+                conseil_final_title: 'نصيحة أخيرة لتدريبك',
+                conseil_final_text: '«الإماهة هي أفضل حليف لك. انصح المريض دائماً بشرب 1,5 إلى 2 لتر من الماء يومياً لتمييع الإفرازات إذا بدأ السعال. اشرح لمرضاك أن السعال منعكس طبيعي للدفاع عن المسالك الهوائية. لا يجب كبته تماماً طالما أنه منتج وطارد للبلغم. فقط عندما يكون جافاً ومرهقاً نستخدم مضادات السعال.» ميّز بوضوح بين مضاد السعال (السعال الجاف) وطارد البلغم/مذيب البلغم (السعال المنتج) في نصائحك في الصيدلية!',
+                qcm_label: 'اختبار متعدد الخيارات :',
+                qcm_instruction: 'ضع علامة على جميع الإجابات الصحيحة لكل سؤال. إجابة خاطئة واحدة تُلغي السؤال بالكامل (0 نقطة). الإجابات الصحيحة الجزئية تمنح نقاطاً جزئية.',
+                check_btn: 'تحقق من إجاباتي',
+                reset_btn: 'إعادة تعيين',
+                q1_title: 'السؤال 1', q2_title: 'السؤال 2', q3_title: 'السؤال 3', q4_title: 'السؤال 4', q5_title: 'السؤال 5',
+                q6_title: 'السؤال 6', q7_title: 'السؤال 7', q8_title: 'السؤال 8', q9_title: 'السؤال 9', q10_title: 'السؤال 10',
+                q1_text: 'من بين الاقتراحات التالية، ما هي الخصائص العامة لمضادات السعال؟',
+                q1_a: 'تقلل منعكس السعال', q1_b: 'تعمل بشكل رئيسي مركزياً', q1_c: 'مُشار إليها للسعال المنتج', q1_d: 'بعضها له تأثير محيطي أو مضاد للهيستامين',
+                q2_text: 'ما هي مضادات الاستطباب الرئيسية لمضادات السعال؟',
+                q2_a: 'القصور التنفسي والربو', q2_b: 'السعال المنتج', q2_c: 'ارتفاع ضغط الدم', q2_d: 'الرضاعة (الكودايين)',
+                q3_text: 'بخصوص الأوكسيلادين (EUPNEX®)، أي العبارات صحيحة؟',
+                q3_a: 'تأثير مضاد للسعال انتقائي على مركز السعال', q3_b: 'بدون تأثير مهدئ أو مثبط للتنفس', q3_c: 'احترام فاصل زمني لا يقل عن 4 ساعات بين الجرعات', q3_d: 'يحتوي على السكروز (احتياط في السكري)',
+                q4_text: 'بخصوص الديكستروميثورفان، أي العبارات صحيحة؟',
+                q4_a: 'مضاد سعال من الخط الأول', q4_b: 'الجرعة القصوى: 120 ملغ/يوم', q4_c: 'ممنوع مع مثبطات MAO و ISRS', q4_d: 'تأثير مثبط للتنفس بالجرعات العلاجية',
+                q5_text: 'بخصوص الكودايين خلال الرضاعة، ما هو التصرف الصحيح؟',
+                q5_a: 'ممنوع تماماً', q5_b: 'خطر التسمم الأفيوني للرضيع', q5_c: 'مسموح بدون قيود', q5_d: 'تفضيل بديل غير أفيوني',
+                q6_text: 'بخصوص الأوكسوميمازين (TOPLEXIL®)، أي العبارات صحيحة؟',
+                q6_a: 'تأثير مهدئ ملحوظ', q6_b: 'فعال جداً للسعال الجاف الليلي', q6_c: 'تحذير من النعاس (لا تقود)', q6_d: 'يمكن ربطه بدون خطر مع المهدئات الأخرى',
+                q7_text: 'بخصوص Denoral® (كلوسينيزين + فولكودين)، أي العبارات صحيحة؟',
+                q7_a: 'يحتوي على مضاد سعال أفيوني ومضاد هيستامين', q7_b: 'سُحب من السوق في الجزائر منذ يناير 2023', q7_c: 'خطر حساسية متصالبة خطيرة مع الكورار', q7_d: 'يجب صرفه في الخط الأول',
+                q8_text: 'بخصوص زيكوف®، أي العبارات صحيحة؟',
+                q8_a: 'منتج من العلاج بالنباتات', q8_b: 'مُشار إليه للسعال الجاف، المنتج، التحسسي وسعال المدخن', q8_c: 'لا نعاس (غياب التأثير المركزي)', q8_d: 'ممنوع عند الأطفال أقل من 5 سنوات',
+                q9_text: 'بخصوص منتكس®، أي العبارات صحيحة؟',
+                q9_a: 'يحتوي على ديفينهيدرامين وديكستروميثورفان', q9_b: 'يحتوي على سودوإيفيدرين', q9_c: 'لا يُعطى لمرضى الصرع', q9_d: 'المنثول يمكن أن يسبب هياجاً عند الأطفال',
+                q10_text: 'بخصوص السعال ومضادات السعال، أي العبارات صحيحة؟',
+                q10_a: 'السعال منعكس طبيعي للدفاع عن المسالك الهوائية', q10_b: 'لا يجب كبته طالما أنه منتج وطارد للبلغم', q10_c: 'مضادات السعال مُشار إليها للسعال الجاف والمرهق', q10_d: 'نصح بإماهة جيدة (1,5 إلى 2 لتر ماء يومياً)',
+                support_title: 'دعم GhaniPharma',
+                support_subtitle: 'دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي',
+                support_info: 'إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساهمة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏',
+                rip_title: 'RIP CCP (الجزائر)',
+                flexy_title: 'فليكسي',
+                support_footer: 'شكراً من كل قلبي',
+                copied: 'تم النسخ!'
+            },
+            en: {
+                theme: 'Theme', light: 'Light', dark: 'Dark', language: 'Language',
+                home: 'Home', about: 'About', modules: 'Modules', contact: 'Contact',
+                pharmacology: 'Pharmacology',
+                hero_title: 'ANTITUSSIVES',
+                hero_subtitle: 'Classification, mechanisms, indications and pharmacy advice for cough management.',
+                lesson: 'Lesson', exam: 'Exam',
+                mechanism_title: 'Mechanism of action',
+                mechanism_text: 'Antitussives aim to reduce the cough reflex. They act mainly centrally by depressing the cough center located in the brain, which decreases the frequency and intensity of coughing fits. Some also have a peripheral or antihistamine action that potentiates the sedative effect and dries secretions.',
+                indications_title: 'General indications',
+                indications_text: 'Short-term symptomatic treatment of dry, non-productive, irritating, spasmodic and/or nocturnal coughs. They must never be used for a productive cough, as they would prevent the expulsion of bronchial secretions.',
+                contre_title: 'Contraindications and main precautions',
+                respiratoire_label: 'Respiratory failure and asthma:',
+                contre_respiratoire: 'absolute contraindication due to the risk of respiratory depression.',
+                toux_grasse_label: 'Productive cough:',
+                contre_toux_grasse: 'must not be treated with an antitussive.',
+                somnolence_label: 'Drowsiness:',
+                contre_somnolence: 'warn patients about the risks when driving or using machines.',
+                enfant_label: 'In children:',
+                contre_enfant: 'many forms are reserved for adults and children over 12 or 15 years.',
+                allaitement_label: 'Breastfeeding:',
+                contre_allaitement: 'codeine is strictly contraindicated due to the risk of opioid intoxication of the infant.',
+                interactions_title: 'Major drug interactions',
+                inter_1_strong: 'CNS depressants (anxiolytics, neuroleptics, antidepressants):',
+                inter_1: 'risk of potentiation of sedation and respiratory depression.',
+                inter_2_strong: 'MAOIs and SSRIs:',
+                inter_2: 'strictly contraindicated combination with dextromethorphan, risk of serotonin syndrome.',
+                inter_3_strong: 'Alcohol:',
+                inter_3: 'to be avoided, as it potentiates sedative effects.',
+                grossesse_title: 'Pregnancy and Breastfeeding',
+                grossesse_label: 'Pregnancy:',
+                grossesse_text: 'as a precaution, use is generally discouraged, especially in the first trimester. Codeine can cause respiratory failure and withdrawal syndrome in the newborn at the end of pregnancy. Dextromethorphan can be used briefly.',
+                allaitement_text: 'most antitussives pass into breast milk. Codeine is strictly contraindicated.',
+                non_opiaces_title: 'I. Non-opioid antitussives',
+                oxeladine_title: '1. Oxeladine',
+                noms_commerciaux: 'Brand names (Algeria):',
+                sirop_180: '(Syrup 10 mg/5 ml, 180 ml bottle).',
+                sirop_200: '(Syrup 0.15%, 200 ml bottle).',
+                sirop_033: '(Syrup 0.33 mg/ml)',
+                sirop_005: '(Syrup 0.05%)',
+                sirop_label: '(Syrup)',
+                adulte_enfant: '(Adult and Child).',
+                formes_label: 'Forms:',
+                posologie_label: 'Adult dosage:',
+                posologie_enfant_label: 'Child dosage:',
+                particularite_label: 'Particularity:',
+                conseil_pharma: 'Pharmacist advice:',
+                dci_label: 'INN:',
+                oxeladine_formes: 'Syrup.',
+                oxeladine_posologie: '5 ml (1 teaspoon) per dose, to be repeated every 4 hours if needed, without exceeding 5 doses per day.',
+                oxeladine_particularite: 'Selective antitussive action on the cough center, without sedative or respiratory depressant effect.',
+                oxeladine_conseil: 'Respect a minimum interval of 4 hours between doses. The syrup contains sucrose (3.3 g per spoon), to be taken into account in case of diabetes.',
+                butamirate_title: '2. Butamirate citrate',
+                butamirate_formes: 'Syrup, drops.',
+                butamirate_posologie: '15 ml (3 spoons) 4 times a day. Maximum dose: 60 ml/day.',
+                butamirate_enfant: '3 to 6 years: 5 ml 3 times a day; 6 to 12 years: 10 ml 3 times a day; adolescents > 12 years: 15 ml 3 to 4 times a day.',
+                butamirate_particularite: 'Central non-opioid antitussive, it does not cause drowsiness or respiratory depression. Indicated for dry cough of various etiologies.',
+                butamirate_conseil: 'The maximum duration of treatment without medical advice is 7 days. Avoid combination with an expectorant. Not recommended during pregnancy and breastfeeding.',
+                denoral_title: '3. Clocinizine + Pholcodine',
+                denoral_formes: 'Syrup.',
+                denoral_posologie: 'Depending on the product, usually 1 tablespoon (15 ml) 3 to 4 times a day.',
+                denoral_particularite: 'Opioid antitussive (pholcodine) combined with an antihistamine (clocinizine). Withdrawn from the Algerian market since January 2023.',
+                denoral_conseil: 'No longer dispense. Explain to the patient the reason for withdrawal (risk of serious cross-allergy with curares used in anesthesia).',
+                zecuf_title: '4. Zecuf®',
+                zecuf_dci: 'Combination of medicinal plants (Adhatoda vasica, Ocimum sanctum, Glycyrrhiza glabra, Zingiber officinale, etc.).',
+                zecuf_formes: 'Syrup (with or without sugar), pastilles.',
+                zecuf_posologie: '5 to 10 ml (1 to 2 teaspoons) 3 times a day. Maximum dose: 30 ml/day. Children 2 to 6 years: 2.5 to 5 ml 3 times a day; > 6 years: 5 ml 3 times a day.',
+                zecuf_particularite: 'Phytotherapy indicated for dry, productive, allergic and smoker\'s cough. Absence of centrally acting components, therefore no drowsiness.',
+                zecuf_conseil: 'Avoid prolonged use (more than 10 days) without medical advice. Contraindicated during breastfeeding and in children under 5 years.',
+                bronchonet_title: '5. Bronchonet®',
+                bronchonet_dci: 'Combination of medicinal plants (Adhatoda vasica, Ocimum sanctum, Solanum surattense, etc.) and honey.',
+                bronchonet_formes: 'Syrup (with or without sugar), 100 ml.',
+                bronchonet_posologie: '5 to 10 ml, 2 to 3 times a day. Maximum dose: 30 ml/day. Child over 3 years: 2.5 to 5 ml, 2 to 3 times a day.',
+                bronchonet_particularite: "Indicated for dry, allergic, asthmatic and smoker's cough. No drowsiness.",
+                bronchonet_conseil: 'Not recommended during pregnancy due to the abortifacient effect of Adhatoda vasica. For children over 3 years.',
+                touxkid_title: '6. Toux Kid®',
+                touxkid_dci: 'Combination of medicinal plants (Adhatoda vasica, Ocimum sanctum, Solanum surattense, etc.) and honey.',
+                touxkid_formes: 'Syrup 100 ml.',
+                touxkid_posologie: 'Infant and child 1 to 6 years: 1 teaspoon (5 ml), 2 to 3 times a day. Child and adolescent 6 to 15 years: 2 teaspoons (10 ml), 2 to 3 times a day.',
+                touxkid_particularite: 'Specially formulated for children from 1 year to soothe dry and irritating coughs, especially nocturnal ones.',
+                touxkid_conseil: 'Contains strawberry, do not use in case of allergy.',
+                opiaces_title: 'II. Opioid antitussives',
+                dextro_title: '7. Dextromethorphan',
+                dextro_formes: 'Syrup, tablets.',
+                dextro_posologie: '15 to 30 mg per dose, to be repeated every 4 to 6 hours. Maximum dose: 120 mg/day.',
+                dextro_particularite: 'First-line antitussive, with a better safety profile than codeine. No analgesic or respiratory depressant effect at therapeutic doses.',
+                dextro_conseil: 'Respect the maximum dose. Although available without prescription, prolonged use should be avoided. Contraindicated with MAOIs and SSRIs.',
+                antihist_title: 'III. Antihistamine antitussives',
+                oxomemazine_title: '8. Oxomemazine',
+                oxomemazine_formes: 'Syrup.',
+                oxomemazine_posologie: '10 ml per dose, 4 times a day.',
+                oxomemazine_particularite: 'Marked sedative effect, very effective for dry coughs occurring at night.',
+                oxomemazine_conseil: 'Warn about drowsiness (do not drive). Avoid combination with other sedative or anticholinergic drugs.',
+                promethazine_title: '9. Promethazine',
+                promethazine_formes: 'Syrup.',
+                promethazine_posologie: '15 ml (1 tablespoon) per dose, 3 to 4 times a day.',
+                promethazine_particularite: 'Anticholinergic and sedative properties. Indicated for dry coughs and non-productive allergic coughs.',
+                promethazine_conseil: 'Risk of severe constipation when combined with other anticholinergic drugs. Not recommended during pregnancy.',
+                mentex_title: 'IV. Opioid antitussives + antihistamines',
+                mentex_drug_title: '10. Mentex® (Cold and flu)',
+                mentex_dci: 'Combination of diphenhydramine (12.5 mg), dextromethorphan (15 mg), pseudoephedrine (30 mg), ammonium chloride (125 mg), sodium citrate (57 mg) and menthol (1 mg) per 5 ml.',
+                mentex_formes: 'Syrup (125 ml bottle with dosing cap).',
+                mentex_posologie: 'Depending on age and form.',
+                mentex_particularite: 'Based on Menthol and essential oils (revitalizing and local anti-irritant).',
+                mentex_conseil: 'To be reserved for symptoms of nose and throat irritation. Do not give to epileptics. Menthol can cause agitation in children. Stay well hydrated in case of oral intake.',
+                conseil_final_title: 'Ultimate advice for your internship',
+                conseil_final_text: '"Hydration is your best ally. Always advise the patient to drink 1.5 to 2 liters of water per day to fluidify secretions if the cough sets in. Explain to your patients that cough is a natural defense reflex of the airways. It should not be completely suppressed as long as it is productive and expectorant. It is only when it is dry and exhausting that antitussives are used." Clearly distinguish antitussive (dry cough) and expectorant/mucolytic (productive cough) in your pharmacy advice!',
+                qcm_label: 'MCQ:',
+                qcm_instruction: 'Check all correct answers for each question. A single wrong answer checked cancels the whole question (0 points). Partial correct answers give partial points.',
+                check_btn: 'Check my answers',
+                reset_btn: 'Reset',
+                q1_title: 'Question 1', q2_title: 'Question 2', q3_title: 'Question 3', q4_title: 'Question 4', q5_title: 'Question 5',
+                q6_title: 'Question 6', q7_title: 'Question 7', q8_title: 'Question 8', q9_title: 'Question 9', q10_title: 'Question 10',
+                q1_text: 'Among the following proposals, what are the general characteristics of antitussives?',
+                q1_a: 'They reduce the cough reflex', q1_b: 'They act mainly centrally', q1_c: 'They are indicated for productive cough', q1_d: 'Some have a peripheral or antihistamine action',
+                q2_text: 'What are the major contraindications of antitussives?',
+                q2_a: 'Respiratory failure and asthma', q2_b: 'Productive cough', q2_c: 'Hypertension', q2_d: 'Breastfeeding (codeine)',
+                q3_text: 'Regarding Oxeladine (EUPNEX®), which statements are correct?',
+                q3_a: 'Selective antitussive action on the cough center', q3_b: 'No sedative or respiratory depressant effect', q3_c: 'Respect a minimum interval of 4 hours between doses', q3_d: 'Contains sucrose (caution in diabetes)',
+                q4_text: 'Regarding Dextromethorphan, which statements are correct?',
+                q4_a: 'First-line antitussive', q4_b: 'Maximum dose: 120 mg/day', q4_c: 'Contraindicated with MAOIs and SSRIs', q4_d: 'Respiratory depressant effect at therapeutic doses',
+                q5_text: 'Regarding Codeine during breastfeeding, what is the correct approach?',
+                q5_a: 'Strictly contraindicated', q5_b: 'Risk of opioid intoxication of the infant', q5_c: 'Authorized without restriction', q5_d: 'Prefer a non-opioid alternative',
+                q6_text: 'Regarding Oxomemazine (TOPLEXIL®), which statements are correct?',
+                q6_a: 'Marked sedative effect', q6_b: 'Very effective for nocturnal dry coughs', q6_c: 'Warn about drowsiness (do not drive)', q6_d: 'Can be safely combined with other sedatives',
+                q7_text: 'Regarding Denoral® (clocinizine + pholcodine), which statements are correct?',
+                q7_a: 'Contains an opioid antitussive and an antihistamine', q7_b: 'Withdrawn from the Algerian market since January 2023', q7_c: 'Risk of serious cross-allergy with curares', q7_d: 'Should be dispensed as first-line',
+                q8_text: 'Regarding Zecuf®, which statements are correct?',
+                q8_a: 'It is a phytotherapy product', q8_b: "Indicated for dry, productive, allergic and smoker's cough", q8_c: 'No drowsiness (absence of central action)', q8_d: 'Contraindicated in children under 5 years',
+                q9_text: 'Regarding Mentex®, which statements are correct?',
+                q9_a: 'Contains diphenhydramine and dextromethorphan', q9_b: 'Contains pseudoephedrine', q9_c: 'Do not give to epileptics', q9_d: 'Menthol can cause agitation in children',
+                q10_text: 'Regarding cough and antitussives, which statements are correct?',
+                q10_a: 'Cough is a natural defense reflex of the airways', q10_b: 'It should not be suppressed as long as it is productive and expectorant', q10_c: 'Antitussives are indicated for dry and exhausting cough', q10_d: 'Advise good hydration (1.5 to 2 L of water per day)',
+                support_title: 'Support GhaniPharma',
+                support_subtitle: 'Your support helps me create more educational content',
+                support_info: 'If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏',
+                rip_title: 'RIP CCP (Algeria)',
+                flexy_title: 'Flexy',
+                support_footer: 'Thank you from the bottom of my heart',
+                copied: 'Copied!'
+            }
+        };
+
+        // ==================== DOT TRANSLATIONS ====================
+        const dotTranslations = {
+            fr: {
+                intro: 'Introduction', mecanisme: 'Mécanisme', indications: 'Indications',
+                'contre-indications': 'Contre‑indications', interactions: 'Interactions',
+                grossesse: 'Grossesse', 'non-opiaces': 'Non opiacés', opiaces: 'Opiacés',
+                antihistaminiques: 'Antihistaminiques', mentex: 'Mentex', conseil: 'Conseil ultime',
+                question: 'Question'
+            },
+            ar: {
+                intro: 'مقدمة', mecanisme: 'آلية العمل', indications: 'الاستطبابات',
+                'contre-indications': 'مضادات الاستطباب', interactions: 'التداخلات',
+                grossesse: 'الحمل والرضاعة', 'non-opiaces': 'غير أفيونية', opiaces: 'أفيونية',
+                antihistaminiques: 'مضادات الهيستامين', mentex: 'منتكس', conseil: 'نصيحة أخيرة',
+                question: 'السؤال'
+            },
+            en: {
+                intro: 'Introduction', mecanisme: 'Mechanism', indications: 'Indications',
+                'contre-indications': 'Contraindications', interactions: 'Interactions',
+                grossesse: 'Pregnancy', 'non-opiaces': 'Non-opioid', opiaces: 'Opioid',
+                antihistaminiques: 'Antihistamines', mentex: 'Mentex', conseil: 'Final advice',
+                question: 'Question'
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'fr';
+        const htmlEl = document.documentElement;
+
+        // ==================== SIDE DOTS ====================
+        const sideDotsContainer = document.getElementById('sideDots');
+        const bottomDotsContainer = document.getElementById('bottomDotsNav');
+
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'non-opiaces', 'opiaces', 'antihistaminiques', 'mentex', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
+
+        function getLessonTooltips() {
+            const t = dotTranslations[currentLang];
+            return lessonSectionIDs.map(id => t[id] || id);
+        }
+
+        function getExamTooltips() {
+            const t = dotTranslations[currentLang];
+            return examSectionIDs.map((id, index) => `${t.question} ${index + 1}`);
+        }
+
+        function generateDotsHTML(ids, tooltips, isBottom = false) {
+            const containerClass = isBottom ? 'bottom-dot' : 'dot';
+            let html = '';
+            ids.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                const tooltip = tooltips[index];
+                if (!isBottom) {
+                    html += `<div class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}" title="${tooltip}">
+                                <span class="dot-tooltip">${tooltip}</span>
+                            </div>`;
+                } else {
+                    html += `<button class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}">
+                                ${index + 1}
+                            </button>`;
+                }
+            });
+            return html;
+        }
+
+        function updateDots(mode) {
+            const isExam = mode === 'exam';
+            const ids = isExam ? examSectionIDs : lessonSectionIDs;
+            const tooltips = isExam ? getExamTooltips() : getLessonTooltips();
+            sideDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, false);
+            bottomDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, true);
+        }
+
+        document.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot, .bottom-dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const selector = isExamMode ? dotId : 'section-' + dotId;
+            const targetEl = document.getElementById(selector);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+            document.querySelectorAll('#bottomDotsNav .bottom-dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => { updateActiveDot(); ticking = false; });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // ==================== LANGUAGE ====================
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            const t = translations[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+
+            if (lang === 'ar') {
+                htmlEl.setAttribute('dir', 'rtl');
+                htmlEl.setAttribute('lang', 'ar');
+            } else {
+                htmlEl.setAttribute('dir', 'ltr');
+                htmlEl.setAttribute('lang', lang);
+            }
+
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
+            });
+
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            updateDots(isExamMode ? 'exam' : 'lesson');
+            updateActiveDot();
+        }
+
+        // ==================== Mobile menu ====================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== Nav hide on scroll ====================
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // ==================== THEME ====================
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        updateThemeOptionActive(savedTheme);
+
+        function updateThemeOptionActive(theme) {
+            document.querySelectorAll('.theme-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.themeValue === theme);
+            });
+        }
+
+        document.querySelectorAll('.theme-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                const theme = opt.dataset.themeValue;
+                htmlEl.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                updateThemeOptionActive(theme);
+            });
+        });
+
+        // ==================== SETTINGS ====================
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsDropdown = document.getElementById('settingsDropdown');
+
+        settingsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            settingsDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!settingsDropdown.contains(e.target) && !settingsBtn.contains(e.target)) {
+                settingsDropdown.classList.remove('open');
+            }
+        });
+
+        // ==================== SUPPORT MODAL ====================
+        const supportBtn = document.getElementById('supportBtn');
+        const supportModal = document.getElementById('supportModal');
+        const closeSupport = document.getElementById('closeSupport');
+
+        supportBtn.addEventListener('click', () => {
+            supportModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeSupport.addEventListener('click', () => {
+            supportModal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        supportModal.addEventListener('click', (e) => {
+            if (e.target === supportModal) {
+                supportModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== COPY ====================
+        function copyToClipboard(text, btnEl) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+                if (btnEl) {
+                    btnEl.classList.add('copied');
+                    const icon = btnEl.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-check';
+                        setTimeout(() => {
+                            btnEl.classList.remove('copied');
+                            icon.className = 'fas fa-copy';
+                        }, 2000);
+                    }
+                }
+            }).catch(err => console.error('Erreur:', err));
+        }
+
+        const copyToast = document.getElementById('copyToast');
+        let toastTimeout;
+        function showToast() {
+            copyToast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => copyToast.classList.remove('show'), 2000);
+        }
+
+        // ==================== IMAGES ====================
+        const drugImages = {
+            'EUPNEX': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238704/Eupnex.png'],
+            'SINECOD': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238705/Sinecod.jpg'],
+            'Denoral': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238704/Denoral.jpg'],
+            'Zecuf': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238708/Zecuf.jpg'],
+            'Bronchonet': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238704/Bronchonet.jpg'],
+            'Toux Kid': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238707/Toux_Kid.png'],
+            'BRONCHOCALM': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238704/Bronchocalm.jpg'],
+            'HUMEX TOUX SÈCHE': [
+                'https://res.cloudinary.com/s6y8zztk/image/upload/v1787238705/Humex_Toux_S%C3%A8che_Oxom%C3%A9mazine.jpg',
+                'https://res.cloudinary.com/s6y8zztk/image/upload/v1787238705/Humex_Toux_S%C3%A8che_DXM.webp'
+            ],
+            'TOPLEXIL': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238707/Toplexil.jpg'],
+            'OXOMERAL': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238705/Oxomeral.png'],
+            'FLUISEDAL': [
+                'https://res.cloudinary.com/s6y8zztk/image/upload/v1787238704/Fluisedal_TS.jpg',
+                'https://res.cloudinary.com/s6y8zztk/image/upload/v1787238704/Fluisedal_TG.jpg'
+            ],
+            'Mentex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1787238705/Mentex.jpg']
+        };
+
+        function showDrugModal(drugName) {
+            const modal = document.getElementById('drugModal');
+            document.getElementById('modalTitle').textContent = drugName;
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = '';
+            const imgs = drugImages[drugName] || [];
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = drugName + ' - GhaniPharma';
+                img.loading = 'lazy';
+                container.appendChild(img);
+            });
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeDrugModal();
+                supportModal.classList.remove('open');
+                settingsDropdown.classList.remove('open');
+            }
+        });
+
+        // ==================== Toggle Lesson/Exam ====================
+        const btnLesson = document.getElementById('btnLesson');
+        const btnExamen = document.getElementById('btnExamen');
+        const lessonContent = document.getElementById('lessonContent');
+        const examContent = document.getElementById('examContent');
+
+        function showLesson() {
+            lessonContent.style.display = 'block';
+            examContent.style.display = 'none';
+            updateDots('lesson');
+            btnLesson.classList.add('active');
+            btnExamen.classList.remove('active');
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
+            updateActiveDot();
+        }
+
+        function showExam() {
+            lessonContent.style.display = 'none';
+            examContent.style.display = 'block';
+            updateDots('exam');
+            btnLesson.classList.remove('active');
+            btnExamen.classList.add('active');
+            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            resetExam();
+            updateActiveDot();
+        }
+
+        btnLesson.addEventListener('click', showLesson);
+        btnExamen.addEventListener('click', showExam);
+
+        // ==================== EXAM ====================
+        const correctAnswers = {
+            q1: ['a', 'b', 'd'],
+            q2: ['a', 'b', 'd'],
+            q3: ['a', 'b', 'c', 'd'],
+            q4: ['a', 'b', 'c'],
+            q5: ['a', 'b', 'd'],
+            q6: ['a', 'b', 'c'],
+            q7: ['a', 'b', 'c'],
+            q8: ['a', 'b', 'c', 'd'],
+            q9: ['a', 'b', 'c', 'd'],
+            q10: ['a', 'b', 'c', 'd']
+        };
+
+        document.getElementById('checkExam').addEventListener('click', () => {
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+
+            let totalScore = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                const correctVals = correctAnswers[q];
+                const allCheckboxes = document.querySelectorAll(`input[name="${q}"]`);
+                let hasWrongSelected = false;
+                let correctSelectedCount = 0;
+
+                allCheckboxes.forEach(cb => {
+                    const label = cb.parentElement;
+                    if (cb.checked) {
+                        if (correctVals.includes(cb.value)) {
+                            correctSelectedCount++;
+                            label.classList.add('correct-answer');
+                        } else {
+                            hasWrongSelected = true;
+                            label.classList.add('wrong-answer');
+                        }
+                    } else {
+                        if (correctVals.includes(cb.value)) label.classList.add('missed-answer');
+                    }
+                });
+
+                if (hasWrongSelected) { /* 0 */ }
+                else if (correctSelectedCount === correctVals.length) totalScore += 1;
+                else if (correctSelectedCount > 0) totalScore += correctSelectedCount / correctVals.length;
+            }
+
+            const pct = Math.round((totalScore / totalQuestions) * 100);
+            let msg = `Score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            if (pct >= 80) msg += "🌟 Excellent !";
+            else if (pct >= 50) msg += "📚 Continuez à réviser.";
+            else msg += "🔍 Révisez le cours et réessayez.";
+            document.getElementById('examResult').innerHTML = msg;
+            document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        function resetExam() {
+            document.querySelectorAll('.question-card input[type="checkbox"]').forEach(i => i.checked = false);
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+            document.getElementById('examResult').textContent = '';
+        }
+        document.getElementById('resetExam').addEventListener('click', resetExam);
+
+        // ==================== Init ====================
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                applyLanguage(opt.dataset.lang);
+            });
+        });
+
+        updateDots('lesson');
+        updateActiveDot();
+        applyLanguage(currentLang);
+    </script>
+</body>
+</html>
