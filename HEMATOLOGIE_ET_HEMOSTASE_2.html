@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Cours complet sur 2. Les antianémiques - GhaniPharma">
+    <meta name="keywords" content="pharmacie, hematologie et hemostase, cours pharmacie, GhaniPharma">
+    <meta name="author" content="Ghani Rouabah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="2. Les antianémiques - GhaniPharma">
+    <meta property="og:description" content="Cours complet sur 2. Les antianémiques">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>2. Les antianémiques | GhaniPharma</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1b2735;
+            --bg-card: rgba(10, 10, 30, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --text-heading: #ffffff;
+            --accent: #ffeb3b;
+            --primary: #00bcd4;
+            --nav-bg: rgba(10, 10, 26, 0.85);
+            --footer-border: rgba(255, 255, 255, 0.08);
+            --gradient-hero: linear-gradient(135deg, #ffeb3b, #ff9800, #00bcd4, #4fc3f7);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e8edf2;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.1);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-heading: #1a202c;
+            --accent: #d4a900;
+            --primary: #0097a7;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --footer-border: rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #d4a900, #e67e00, #0097a7, #26c6da);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        html[dir="rtl"] body { font-family: 'Segoe UI', 'Tahoma', system-ui, sans-serif; }
+        html[dir="rtl"] .side-dots { right: auto; left: 25px; }
+        html[dir="rtl"] .dot-tooltip { right: auto; left: 30px; }
+        html[dir="rtl"] .dot-tooltip::after {
+            right: auto; left: -8px;
+            border-left: none;
+            border-right: 8px solid rgba(0, 0, 0, 0.9);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .universe-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .star {
+            position: absolute; background: white; border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay); opacity: 0;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.8); }
+        }
+        [data-theme="light"] .star { animation: none !important; opacity: 0.15 !important; }
+
+        .top-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+        .top-nav.hidden { transform: translateY(-100%); }
+        .nav-container {
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none; color: var(--accent);
+            font-size: 1.5rem; font-weight: 800;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+        .nav-logo:hover { color: var(--text-heading); transform: scale(1.05); }
+        .logo-icon {
+            width: 42px; height: 42px; background: none;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: white;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 0 0 18px rgba(0, 188, 212, 0); }
+        }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+        .nav-link {
+            position: relative; padding: 10px 22px;
+            color: var(--text-secondary); text-decoration: none;
+            font-weight: 500; border-radius: 30px;
+            transition: all 0.3s ease; cursor: pointer;
+            border: none; background: none;
+            font-size: 0.95rem; white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-link:hover { color: var(--text-heading); background: rgba(128, 128, 128, 0.1); }
+        .nav-link.active { color: #fff; background: rgba(0, 188, 212, 0.2); }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: 4px; left: 50%;
+            transform: translateX(-50%); width: 22px; height: 3px;
+            background: var(--primary); border-radius: 3px;
+        }
+
+        .icon-btn {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--text-heading);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .icon-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+        }
+        .icon-btn.settings-btn i { transition: transform 0.5s ease; }
+        .icon-btn.settings-btn:hover i { transform: rotate(180deg); }
+        .icon-btn.support-btn {
+            background: linear-gradient(135deg, #ffeb3b, #ff9800);
+            border-color: transparent;
+            color: #1a1a1a;
+            animation: giftGlow 2.5s ease-in-out infinite;
+        }
+        .icon-btn.support-btn:hover {
+            transform: translateY(-3px) scale(1.1) rotate(-8deg);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.55);
+        }
+        .icon-btn.support-btn i { transition: transform 0.4s ease; }
+        .icon-btn.support-btn:hover i { transform: scale(1.15); }
+        @keyframes giftGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+        }
+
+        .settings-wrapper { position: relative; }
+        .settings-dropdown {
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 0;
+            min-width: 260px;
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1100;
+        }
+        html[dir="rtl"] .settings-dropdown { right: auto; left: 0; transform-origin: top left; }
+        .settings-dropdown.open {
+            opacity: 1; visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .settings-section { margin-bottom: 16px; }
+        .settings-section:last-child { margin-bottom: 0; }
+        .settings-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .settings-label i { color: var(--primary); font-size: 0.85rem; }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .theme-option {
+            padding: 12px 10px;
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .theme-option i { font-size: 1.3rem; }
+        .theme-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .theme-option.active {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--primary);
+        }
+
+        .lang-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .lang-option {
+            padding: 10px 6px;
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            background: var(--bg-glass);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .lang-option .flag { font-size: 1.4rem; line-height: 1; }
+        .lang-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .lang-option.active {
+            border-color: var(--primary);
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--primary);
+        }
+
+        .support-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 2500;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+            padding: 20px;
+        }
+        .support-modal.open { visibility: visible; opacity: 1; }
+        .support-content {
+            background: var(--bg-card);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+        .support-modal.open .support-content { transform: scale(1); }
+
+        .support-header {
+            background: linear-gradient(135deg, #ffeb3b, #ff9800, #f57c00);
+            padding: 32px 30px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .support-header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .support-header-icon {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            animation: giftBounce 2s ease-in-out infinite;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        .support-header h2 {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .support-header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-body {
+            padding: 28px 30px 30px;
+            overflow-y: auto;
+        }
+
+        .support-info {
+            background: rgba(0, 188, 212, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .support-info i { color: var(--accent); margin-right: 6px; }
+        html[dir="rtl"] .support-info i { margin-right: 0; margin-left: 6px; }
+
+        .support-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .support-method {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .support-method:hover {
+            border-color: var(--primary);
+            transform: translateX(6px);
+            background: rgba(0, 188, 212, 0.08);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.2);
+        }
+        html[dir="rtl"] .support-method:hover { transform: translateX(-6px); }
+        .support-method-icon {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .support-method-icon.paypal { background: linear-gradient(135deg, #0070ba, #003087); }
+        .support-method-icon.ccp { background: linear-gradient(135deg, #00a86b, #007d4f); }
+        .support-method-icon.flexy { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+
+        .support-method-info { flex: 1; min-width: 0; }
+        .support-method-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 3px;
+        }
+        .support-method-info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+        }
+        .support-copy-btn {
+            background: rgba(128, 128, 128, 0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+        .support-copy-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+        .support-copy-btn.copied {
+            background: #00c853;
+            color: #fff;
+            border-color: #00c853;
+        }
+
+        .support-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .support-close:hover { background: rgba(255, 255, 255, 0.45); transform: rotate(90deg); }
+        html[dir="rtl"] .support-close { right: auto; left: 18px; }
+
+        .support-footer {
+            text-align: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .support-footer i { color: #ff9800; margin: 0 4px; }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #00c853;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 3000;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1100;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open { visibility: visible; opacity: 1; }
+        .mobile-menu-popup {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 85%; max-width: 320px;
+            padding: 30px 20px 40px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
+        .mobile-menu-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 40px; height: 40px;
+            font-size: 1.2rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .mobile-menu-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .mobile-nav-link {
+            display: flex; align-items: center; justify-content: center;
+            gap: 12px; padding: 16px 20px; margin: 12px 0;
+            background: var(--bg-glass); border-radius: 60px;
+            color: var(--text-heading); font-size: 1.2rem; font-weight: 600;
+            text-decoration: none; transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-link:hover {
+            border-color: var(--primary); background: rgba(0, 188, 212, 0.1);
+            transform: translateX(6px);
+        }
+        .mobile-nav-link i { color: var(--primary); width: 28px; font-size: 1.3rem; }
+        .menu-toggle {
+            display: none; background: none; border: none;
+            color: var(--text-heading); font-size: 1.8rem;
+            cursor: pointer; padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover { transform: rotate(90deg); }
+
+        .toggle-buttons {
+            display: flex; gap: 15px; justify-content: center;
+            margin-top: 20px; margin-bottom: 40px;
+        }
+        .toggle-btn {
+            padding: 12px 30px; border-radius: 30px;
+            border: 2px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-secondary); cursor: pointer;
+            font-size: 1rem; font-weight: 600;
+            transition: all 0.3s ease; outline: none;
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        .toggle-btn:hover {
+            border-color: var(--primary); color: var(--text-heading);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        }
+        .toggle-btn.active {
+            background: rgba(0, 188, 212, 0.2);
+            border-color: var(--primary); color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .side-dots {
+            position: fixed; top: 50%; right: 25px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex; flex-direction: column; gap: 22px;
+            padding: 20px 0;
+        }
+        .side-dots::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--border-glass) 10%, var(--border-glass) 90%, transparent);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .dot {
+            width: 12px; height: 12px;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%; cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid transparent;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1;
+        }
+        .dot:hover {
+            background: var(--accent); border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(255, 235, 59, 0.5);
+            transform: scale(1.3);
+        }
+        .dot.active {
+            background: var(--primary); border-color: var(--primary);
+            transform: scale(1.7);
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.6);
+        }
+        .dot-tooltip {
+            position: absolute; right: 30px; top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.9); color: #fff;
+            padding: 6px 18px; border-radius: 20px;
+            font-size: 0.8rem; white-space: nowrap;
+            pointer-events: none; opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .dot-tooltip::after {
+            content: ''; position: absolute; top: 50%; right: -8px;
+            transform: translateY(-50%);
+            border-left: 8px solid rgba(0, 0, 0, 0.9);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        .dot:hover .dot-tooltip, .dot.active .dot-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-4px);
+        }
+        [data-theme="light"] .dot-tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
+            border-color: rgba(0,0,0,0.1);
+        }
+        [data-theme="light"] .dot-tooltip::after { border-left-color: rgba(255, 255, 255, 0.95); }
+
+        .bottom-dots-nav { display: none; }
+        @media (min-width: 993px) { .side-dots { display: flex; } .bottom-dots-nav { display: none; } }
+        @media (max-width: 992px) {
+            .side-dots { display: none; }
+            .bottom-dots-nav {
+                display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+                background: var(--nav-bg);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border-top: 1px solid var(--border-glass);
+                padding: 10px 15px; gap: 8px; justify-content: center;
+                z-index: 999; overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .bottom-dots-nav::-webkit-scrollbar { display: none; }
+            .bottom-dot {
+                min-width: 28px; height: 28px; border-radius: 50%;
+                background: rgba(128, 128, 128, 0.2);
+                border: 2px solid transparent; cursor: pointer;
+                display: flex; align-items: center; justify-content: center;
+                font-size: 0.75rem; color: var(--text-secondary);
+                transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0;
+            }
+            .bottom-dot.active {
+                background: rgba(0, 188, 212, 0.2);
+                border-color: var(--primary); color: var(--primary);
+                box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+            }
+            .main-wrapper { padding-bottom: 70px; }
+        }
+
+        .main-wrapper { position: relative; z-index: 1; padding-top: 90px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+        .section-block {
+            padding: 80px 0; position: relative;
+            min-height: auto;
+            display: flex; flex-direction: column; justify-content: center;
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.5s ease;
+        }
+        .section-block:last-of-type { border-bottom: none; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .hero-section {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; min-height: 60vh; padding: 40px 20px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            padding: 8px 22px; border-radius: 50px;
+            font-size: 0.9rem; color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-hero);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            margin-bottom: 20px; letter-spacing: -1px;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px; margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 2.2rem; font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: var(--text-secondary); font-size: 1.1rem;
+            margin-bottom: 40px; max-width: 700px;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px; padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .drug-link {
+            cursor: pointer; color: var(--primary);
+            font-weight: 600; text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        .drug-link:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            visibility: hidden; opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s ease;
+        }
+        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 32px;
+            width: 90%; max-width: 700px;
+            max-height: 85vh; padding: 40px 30px;
+            position: relative; overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            font-size: 1.8rem; color: var(--text-heading);
+            cursor: pointer; transition: all 0.3s ease;
+            line-height: 1;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+        .modal-images {
+            display: flex; flex-wrap: wrap; gap: 20px;
+            justify-content: center; margin-top: 20px;
+        }
+        .modal-images img {
+            max-width: 100%; height: auto; border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+        }
+        .modal-placeholder {
+            color: var(--text-secondary); font-style: italic;
+            text-align: center; width: 100%; padding: 30px;
+            border: 2px dashed var(--border-glass); border-radius: 16px;
+        }
+
+        .question-card label {
+            display: block; margin-bottom: 8px; cursor: pointer;
+            padding: 8px 12px; border-radius: 8px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        html[dir="rtl"] .question-card label { border-left: none; border-right: 4px solid transparent; }
+        .question-card label:hover { background: rgba(0, 188, 212, 0.05); }
+        .question-card input[type="checkbox"] { margin-right: 10px; accent-color: var(--primary); }
+        html[dir="rtl"] .question-card input[type="checkbox"] { margin-right: 0; margin-left: 10px; }
+        .correct-answer { background: rgba(0, 200, 0, 0.2) !important; border-left: 4px solid #00c853 !important; }
+        html[dir="rtl"] .correct-answer { border-left: none; border-right: 4px solid #00c853 !important; }
+        .wrong-answer { background: rgba(255, 0, 0, 0.2) !important; border-left: 4px solid #ff1744 !important; }
+        html[dir="rtl"] .wrong-answer { border-left: none; border-right: 4px solid #ff1744 !important; }
+        .missed-answer { background: rgba(255, 200, 0, 0.2) !important; border-left: 4px solid #ffc107 !important; }
+        html[dir="rtl"] .missed-answer { border-left: none; border-right: 4px solid #ffc107 !important; }
+        .result-message { text-align: center; font-size: 1.2rem; margin-top: 20px; font-weight: 700; }
+        .qcm-instruction {
+            text-align: center; margin-bottom: 20px;
+            background: rgba(0, 188, 212, 0.05);
+            border-radius: 16px; padding: 18px 20px;
+            border: 1px solid var(--border-glass);
+        }
+        .qcm-instruction p { color: var(--primary); margin: 0; }
+
+        .site-footer {
+            text-align: center; padding: 50px 20px;
+            border-top: 1px solid var(--footer-border);
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        .social-links {
+            display: flex; justify-content: center; gap: 20px;
+            margin-bottom: 25px; flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(128, 128, 128, 0.06);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-heading); text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-glass);
+        }
+        .social-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .copyright { color: var(--text-secondary); font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { display: none !important; }
+            .nav-logo { font-size: 1.2rem; }
+            .hero-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 15px; }
+            .modal-content { width: 95%; padding: 25px 20px; }
+            .toggle-buttons { flex-direction: column; align-items: center; }
+            .settings-dropdown { right: -60px; min-width: 240px; }
+            html[dir="rtl"] .settings-dropdown { right: auto; left: -60px; }
+            .support-content { max-width: 95%; }
+            .support-header { padding: 26px 20px 20px; }
+            .support-header-icon { font-size: 2.8rem; }
+            .support-header h2 { font-size: 1.3rem; }
+            .support-body { padding: 22px 20px 24px; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 1.2rem; }
+            .nav-logo .logo-icon { width: 36px; height: 36px; }
+            .icon-btn { width: 40px; height: 40px; font-size: 1rem; }
+            .nav-right { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
+
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo">
+                </span>
+                GhaniPharma
+            </a>
+            <div class="nav-right">
+                <button class="icon-btn support-btn" id="supportBtn" aria-label="Support" title="Soutenir">
+                    <i class="fas fa-gift"></i>
+                </button>
+
+                <div class="settings-wrapper">
+                    <button class="icon-btn settings-btn" id="settingsBtn" aria-label="Paramètres" title="Paramètres">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="settings-dropdown" id="settingsDropdown">
+                        <div class="settings-section">
+                            <div class="settings-label"><i class="fas fa-palette"></i> <span data-i18n="theme">Thème</span></div>
+                            <div class="theme-options">
+                                <button class="theme-option" data-theme-value="light">
+                                    <i class="fas fa-sun"></i>
+                                    <span data-i18n="light">Clair</span>
+                                </button>
+                                <button class="theme-option active" data-theme-value="dark">
+                                    <i class="fas fa-moon"></i>
+                                    <span data-i18n="dark">Sombre</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <div class="settings-label"><i class="fas fa-globe"></i> <span data-i18n="language">Langue</span></div>
+                            <div class="lang-options">
+                                <button class="lang-option" data-lang="ar">
+                                    <span class="flag">🇩🇿</span>
+                                    <span>عربي</span>
+                                </button>
+                                <button class="lang-option active" data-lang="fr">
+                                    <span class="flag">🇫🇷</span>
+                                    <span>FR</span>
+                                </button>
+                                <button class="lang-option" data-lang="en">
+                                    <span class="flag">🇬🇧</span>
+                                    <span>EN</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinksDesktop">
+                    <li><a class="nav-link" href="index.html#section-home"><i class="fas fa-home"></i> <span data-i18n="home">Accueil</span></a></li>
+                    <li><a class="nav-link" href="index.html#section-about"><i class="fas fa-info-circle"></i> <span data-i18n="about">À propos</span></a></li>
+                    <li><a class="nav-link active" href="index.html#section-modules"><i class="fas fa-book"></i> <span data-i18n="modules">Modules</span></a></li>
+                    <li><a class="nav-link" href="index.html#section-contact"><i class="fas fa-envelope"></i> <span data-i18n="contact">Contact</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-popup">
+            <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <span class="logo-icon" style="display: inline-block; background: none;">
+                    <img src="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png" alt="Logo" style="width: 3rem; height: 3rem; object-fit: contain;">
+                </span>
+                <h3 style="color: var(--accent); margin-top: 5px;">GhaniPharma</h3>
+            </div>
+            <div>
+                <a href="index.html#section-home" class="mobile-nav-link"><i class="fas fa-home"></i> <span data-i18n="home">Accueil</span></a>
+                <a href="index.html#section-about" class="mobile-nav-link"><i class="fas fa-info-circle"></i> <span data-i18n="about">À propos</span></a>
+                <a href="index.html#section-modules" class="mobile-nav-link"><i class="fas fa-book"></i> <span data-i18n="modules">Modules</span></a>
+                <a href="index.html#section-contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> <span data-i18n="contact">Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-dots" id="sideDots"></div>
+    <div class="bottom-dots-nav" id="bottomDotsNav"></div>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <section class="hero-section" id="section-intro">
+                <div class="hero-badge reveal"><i class="fas fa-capsules"></i> <span data-i18n="pharmacology">Pharmacologie</span></div>
+                <h1 class="hero-title reveal reveal-delay-1" data-i18n="hero_title">2. LES ANTIANÉMIQUES</h1>
+                <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero_subtitle">Sels de fer (hydroxyde ferrique polymaltose, sulfate ferreux, fumarate), associations fer + vitamine B9, cyanocobalamine (B12) et acide folique (B9) : mécanismes, indications, conseils d'absorption et noms commerciaux en Algérie.</p>
+                <div class="toggle-buttons reveal reveal-delay-3">
+                    <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> <span data-i18n="lesson">Leçon</span></button>
+                    <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> <span data-i18n="exam">Examen</span></button>
+                </div>
+            </section>
+
+            <div id="lessonContent">
+                <section class="section-block" id="section-mecanisme">
+                    <h2 class="section-title reveal" data-i18n="mechanism_title">Mécanisme d'action</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><span data-i18n="mechanism_text_1">Les antianémiques corrigent les carences responsables d'anémie. Le fer est indispensable à la synthèse de l'hémoglobine : les sels ferreux (fer divalent) et l'hydroxyde ferrique polymaltose (fer trivalent) apportent le fer nécessaire à l'érythropoïèse. La vitamine B9 (acide folique) et la vitamine B12 (cyanocobalamine) sont nécessaires à la synthèse de l'ADN et à la maturation des globules rouges ; leur carence provoque une anémie mégaloblastique. L'association fer + acide folique est particulièrement utile pendant la grossesse.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-indications">
+                    <h2 class="section-title reveal" data-i18n="indications_title">Indications générales</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li data-i18n="indication_1">Traitement et prévention de l'anémie ferriprive (carence en fer).</li>
+                            <li data-i18n="indication_2">Anémie mégaloblastique par carence en vitamine B9 ou B12.</li>
+                            <li data-i18n="indication_3">Anémie de Biermer (carence en vitamine B12).</li>
+                            <li data-i18n="indication_4">Prévention des carences pendant la grossesse (fer + acide folique).</li>
+                            <li data-i18n="indication_5">Carences liées à une alimentation insuffisante ou à des pertes chroniques.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-contre-indications">
+                    <h2 class="section-title reveal" data-i18n="contre_title">Contre-indications & Précautions majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong data-i18n="ci_absolues_label">CI absolues :</strong> <span data-i18n="ci_absolues">Allergie connue aux composants. Contre-indications : surcharge en fer (hémochromatose, thalassémie, anémie non ferriprive), ulcère gastro-duodénal évolutif et maladies inflammatoires de l'intestin pour les sels de fer oraux. Ne pas administrer de fer sans avoir confirmé la carence.</span></p>
+                        <p><strong data-i18n="note_label">Note :</strong> <span data-i18n="note_text">Pour une meilleure absorption, prendre le fer avant les repas (à jeun) avec une boisson riche en vitamine C (jus d'orange). Éviter le café, le thé et le lait au même moment. Le surdosage peut provoquer des troubles digestifs (constipation, diarrhée, nausées, selles noires).</span></p>
+                        <p><strong data-i18n="precautions_label">Précautions :</strong> <span data-i18n="precautions_text">Prendre à distance des médicaments qui diminuent l'absorption du fer : cyclines, quinolones, hormones thyroïdiennes, traitements de l'ostéoporose. Les selles noires sont normales sous fer. Chez l'enfant, respecter la dose et garder le flacon hors de portée (risque d'intoxication).</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-interactions">
+                    <h2 class="section-title reveal" data-i18n="interactions_title">Interactions médicamenteuses majeures</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <ul style="padding-left:20px;">
+                            <li><strong data-i18n="inter_1_strong">Les cyclines et les quinolones</strong> <span data-i18n="inter_1"> : le fer diminue leur absorption (respecter un intervalle d'environ 2 h).</span></li>
+                            <li><strong data-i18n="inter_2_strong">Les hormones thyroïdiennes et les traitements de l'ostéoporose</strong> <span data-i18n="inter_2"> : le fer diminue leur absorption.</span></li>
+                            <li><strong data-i18n="inter_3_strong">Café, thé et lait</strong> <span data-i18n="inter_3"> : diminuent l'absorption du fer (éviter au même moment).</span></li>
+                            <li><strong data-i18n="inter_4_strong">Vitamine C (jus d'orange)</strong> <span data-i18n="inter_4"> : améliore l'absorption du fer (à privilégier).</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-grossesse">
+                    <h2 class="section-title reveal" data-i18n="grossesse_title">Grossesse et Allaitement</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong data-i18n="grossesse_label">Grossesse :</strong> <span data-i18n="grossesse_text">Les besoins en fer et en acide folique augmentent pendant la grossesse : l'association fer + vitamine B9 est souvent prescrite. La vitamine B12 est utilisée en cas de carence confirmée. Tout apport de fer doit être encadré par un médecin.</span></p>
+                        <p><strong data-i18n="allaitement_label">Allaitement :</strong> <span data-i18n="allaitement_text">Le fer, la vitamine B9 et la vitamine B12 sont compatibles avec l'allaitement aux doses usuelles. Demander conseil au pharmacien ou au médecin.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-substances">
+                    <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
+
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fer_polymaltose_title">1. Hydroxyde ferrique polymaltose (fer trivalent)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_polymaltose_gen">Hydroxyde ferrique polymaltose (Fe3+).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal("Orofer")">Orofer</span>,
+                            <span class="drug-link" onclick="showDrugModal("Orofer plus")">Orofer plus</span>,
+                            <span class="drug-link" onclick="showDrugModal("Selofer")">Selofer</span>,
+                            <span class="drug-link" onclick="showDrugModal("Trifer")">Trifer</span>,
+                            <span class="drug-link" onclick="showDrugModal("Hausmann")">Hausmann</span>,
+                            <span class="drug-link" onclick="showDrugModal("Ferrum")">Ferrum</span>,
+                            <span class="drug-link" onclick="showDrugModal("Ferrocure")">Ferrocure</span>,
+                            <span class="drug-link" onclick="showDrugModal("Geofer")">Geofer</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_polymaltose_formes">Comprimés, sirop, solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_polymaltose_posologie">Adulte : 1 à 2 comprimés par jour ; enfant selon l'âge et le poids.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_polymaltose_particularite">Bien absorbé et généralement mieux toléré que les sels ferreux.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_polymaltose_conseil">À prendre avant les repas avec une boisson riche en vitamine C.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fer_ferreux_title">2. Sulfate ferreux et gluconate ferreux</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_ferreux_gen">Sulfate ferreux / gluconate ferreux (fer divalent).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal("Tardyferon")">Tardyferon</span>,
+                            <span class="drug-link" onclick="showDrugModal("Tot'hema")">Tot'hema</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_ferreux_formes">Comprimés ; ampoules buvables (Tot'hema : 10 ml = fer 50 mg + cuivre 0,70 mg + manganèse 1,33 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_ferreux_posologie">Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_ferreux_particularite">Sels ferreux souvent responsables de troubles digestifs et de selles noires.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_ferreux_conseil">À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fer_fumarate_title">3. Fumarate ferreux et feredetate de sodium</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_fumarate_gen">Fumarate ferreux / feredetate de sodium.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal("Fumacur")">Fumacur</span>,
+                            <span class="drug-link" onclick="showDrugModal("Federate")">Federate</span>,
+                            <span class="drug-link" onclick="showDrugModal("Ferolam")">Ferolam</span>,
+                            <span class="drug-link" onclick="showDrugModal("Ferrostrane")">Ferrostrane</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_fumarate_formes">Comprimés, solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_fumarate_posologie">Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_fumarate_particularite">Autres formes de fer oral utilisées dans la carence martiale.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_fumarate_conseil">Prendre à distance des aliments et médicaments qui freinent l'absorption.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fer_b9_title">4. Fer + acide folique (FER + VIT B9)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_b9_gen">Hydroxyde ferrique polymaltose ou sulfate ferreux + acide folique.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal("Trifer fol")">Trifer fol</span>,
+                            <span class="drug-link" onclick="showDrugModal("Tardyferon B9")">Tardyferon B9</span>,
+                            <span class="drug-link" onclick="showDrugModal("Zanitra")">Zanitra</span>,
+                            <span class="drug-link" onclick="showDrugModal("Fonitra")">Fonitra</span>,
+                            <span class="drug-link" onclick="showDrugModal("Selofer fol")">Selofer fol</span>,
+                            <span class="drug-link" onclick="showDrugModal("Novofer plus")">Novofer plus</span>,
+                            <span class="drug-link" onclick="showDrugModal("Razes")">Razes</span>,
+                            <span class="drug-link" onclick="showDrugModal("Ferro sanol gyn")">Ferro sanol gyn</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_b9_formes">Comprimés, gélules.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_b9_posologie">Généralement 1 comprimé par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_b9_particularite">Indiqué dans l'anémie ferriprive associée à une carence en B9 et pendant la grossesse.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_b9_conseil">Prévenir les carences chez la femme enceinte et en période de croissance.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="cyanocobalamine_title">5. Cyanocobalamine (vitamine B12)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cyanocobalamine_gen">Cyanocobalamine (vitamine B12).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal("Cobamine")">Cobamine</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cyanocobalamine_formes">Ampoules injectables, comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cyanocobalamine_posologie">Selon la carence : 1 ampoule IM par jour puis dose d'entretien.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="cyanocobalamine_particularite">Indiquée dans l'anémie de Biermer (carence en vitamine B12).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="cyanocobalamine_conseil">Traitement parfois poursuivi à vie ; ne pas interrompre sans avis.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="acide_folique_title">6. Acide folique (vitamine B9)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acide_folique_gen">Acide folique (vitamine B9).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal("Foliden")">Foliden</span>,
+                            <span class="drug-link" onclick="showDrugModal("Folacid")">Folacid</span>,
+                            <span class="drug-link" onclick="showDrugModal("Hupfoliq")">Hupfoliq</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acide_folique_formes">Comprimés 5 mg.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acide_folique_posologie">1 comprimé par jour selon la prescription.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acide_folique_particularite">Indiqué dans les anémies mégaloblastiques et en prévention pendant la grossesse.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acide_folique_conseil">Débuter avant la conception dans un projet de grossesse.</span></p>
+                    </div>
+                </section>
+
+                <section class="section-block" id="section-conseil" style="border-bottom: none;">
+                    <h2 class="section-title reveal" data-i18n="conseil_final_title">Conseil ultime pour votre stage</h2>
+                    <div class="card reveal reveal-delay-1">
+                        <p><strong data-i18n="conseil_chef">💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :</strong></p>
+                        <p style="font-size: 1.1rem; margin-top: 15px; padding: 20px; background: rgba(0, 188, 212, 0.1); border-radius: 12px; border-left: 4px solid var(--primary);" data-i18n="conseil_final_text">
+                            « Prenez votre fer à jeun avec un jus d'orange : la vitamine C augmente son absorption. Évitez le café, le thé et le lait au même moment, ainsi que les cyclines, quinolones et hormones thyroïdiennes. Des selles noires ne doivent pas vous inquiéter, mais consultez en cas de douleur abdominale importante. Ne donnez jamais de fer à un enfant sans prescription. »
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <div id="examContent" style="display: none;">
+                <div class="qcm-instruction card reveal reveal-delay-1">
+                    <p><i class="fas fa-info-circle"></i> <strong data-i18n="qcm_label">QCM :</strong> <span data-i18n="qcm_instruction">Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.</span></p>
+                </div>
+                <section class="section-block" id="exam-question1">
+                    <h2 class="section-title reveal" data-i18n="q1_title">Question 1</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q1_text">Concernant l'hydroxyde ferrique polymaltose (fer trivalent) :</strong></p><label><input type="checkbox" name="q1" value="a"> <span data-i18n="q1_a">Il est généralement mieux toléré que les sels ferreux</span></label><label><input type="checkbox" name="q1" value="b"> <span data-i18n="q1_b">Il provoque moins de troubles digestifs</span></label><label><input type="checkbox" name="q1" value="c"> <span data-i18n="q1_c">Il se prend avec une boisson riche en vitamine C</span></label><label><input type="checkbox" name="q1" value="d"> <span data-i18n="q1_d">Il donne des selles noires très rares</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question2">
+                    <h2 class="section-title reveal" data-i18n="q2_title">Question 2</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q2_text">Quels signes évoquent une anémie ferriprive ?</strong></p><label><input type="checkbox" name="q2" value="a"> <span data-i18n="q2_a">Pâleur</span></label><label><input type="checkbox" name="q2" value="b"> <span data-i18n="q2_b">Fatigue et faiblesse</span></label><label><input type="checkbox" name="q2" value="c"> <span data-i18n="q2_c">Cheveux blancs</span></label><label><input type="checkbox" name="q2" value="d"> <span data-i18n="q2_d">Fièvre élevée</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question3">
+                    <h2 class="section-title reveal" data-i18n="q3_title">Question 3</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q3_text">Quels conseils améliorent l'absorption du fer ?</strong></p><label><input type="checkbox" name="q3" value="a"> <span data-i18n="q3_a">Prendre le fer avant les repas</span></label><label><input type="checkbox" name="q3" value="b"> <span data-i18n="q3_b">L'associer à une boisson riche en vitamine C</span></label><label><input type="checkbox" name="q3" value="c"> <span data-i18n="q3_c">Éviter le café et le thé au même moment</span></label><label><input type="checkbox" name="q3" value="d"> <span data-i18n="q3_d">Le prendre avec du lait</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question4">
+                    <h2 class="section-title reveal" data-i18n="q4_title">Question 4</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q4_text">Quels sont les effets indésirables fréquents du fer oral ?</strong></p><label><input type="checkbox" name="q4" value="a"> <span data-i18n="q4_a">Troubles digestifs</span></label><label><input type="checkbox" name="q4" value="b"> <span data-i18n="q4_b">Selles noires</span></label><label><input type="checkbox" name="q4" value="c"> <span data-i18n="q4_c">Constipation ou diarrhée</span></label><label><input type="checkbox" name="q4" value="d"> <span data-i18n="q4_d">Surdité</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question5">
+                    <h2 class="section-title reveal" data-i18n="q5_title">Question 5</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q5_text">La vitamine B12 (cyanocobalamine) est indiquée dans :</strong></p><label><input type="checkbox" name="q5" value="a"> <span data-i18n="q5_a">L'anémie de Biermer</span></label><label><input type="checkbox" name="q5" value="b"> <span data-i18n="q5_b">La carence en vitamine B12</span></label><label><input type="checkbox" name="q5" value="c"> <span data-i18n="q5_c">L'anémie ferriprive isolée</span></label><label><input type="checkbox" name="q5" value="d"> <span data-i18n="q5_d">L'angine</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question6">
+                    <h2 class="section-title reveal" data-i18n="q6_title">Question 6</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q6_text">Concernant l'acide folique (vitamine B9) :</strong></p><label><input type="checkbox" name="q6" value="a"> <span data-i18n="q6_a">C'est la vitamine B9</span></label><label><input type="checkbox" name="q6" value="b"> <span data-i18n="q6_b">Il est indiqué pendant la grossesse</span></label><label><input type="checkbox" name="q6" value="c"> <span data-i18n="q6_c">Il prévient les anomalies du tube neural</span></label><label><input type="checkbox" name="q6" value="d"> <span data-i18n="q6_d">C'est un anticoagulant</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question7">
+                    <h2 class="section-title reveal" data-i18n="q7_title">Question 7</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q7_text">Les associations FER + VIT B9 contiennent :</strong></p><label><input type="checkbox" name="q7" value="a"> <span data-i18n="q7_a">Du fer</span></label><label><input type="checkbox" name="q7" value="b"> <span data-i18n="q7_b">De l'acide folique</span></label><label><input type="checkbox" name="q7" value="c"> <span data-i18n="q7_c">Du paracétamol</span></label><label><input type="checkbox" name="q7" value="d"> <span data-i18n="q7_d">De l'aspirine</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question8">
+                    <h2 class="section-title reveal" data-i18n="q8_title">Question 8</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q8_text">Que faire si le fer provoque des troubles digestifs ?</strong></p><label><input type="checkbox" name="q8" value="a"> <span data-i18n="q8_a">Le prendre pendant le repas</span></label><label><input type="checkbox" name="q8" value="b"> <span data-i18n="q8_b">Le signaler au médecin</span></label><label><input type="checkbox" name="q8" value="c"> <span data-i18n="q8_c">Doubler la dose</span></label><label><input type="checkbox" name="q8" value="d"> <span data-i18n="q8_d">Arrêter seul le traitement</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question9">
+                    <h2 class="section-title reveal" data-i18n="q9_title">Question 9</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q9_text">Le surdosage en fer peut provoquer :</strong></p><label><input type="checkbox" name="q9" value="a"> <span data-i18n="q9_a">Constipation</span></label><label><input type="checkbox" name="q9" value="b"> <span data-i18n="q9_b">Diarrhée</span></label><label><input type="checkbox" name="q9" value="c"> <span data-i18n="q9_c">Nausées et vomissements</span></label><label><input type="checkbox" name="q9" value="d"> <span data-i18n="q9_d">Une amélioration de l'audition</span></label></div>
+                </section>
+                <section class="section-block" id="exam-question10">
+                    <h2 class="section-title reveal" data-i18n="q10_title">Question 10</h2>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q10_text">Quels produits faut-il éviter autour de la prise de fer ?</strong></p><label><input type="checkbox" name="q10" value="a"> <span data-i18n="q10_a">Le café</span></label><label><input type="checkbox" name="q10" value="b"> <span data-i18n="q10_b">Le thé</span></label><label><input type="checkbox" name="q10" value="c"> <span data-i18n="q10_c">Les cyclines et quinolones</span></label><label><input type="checkbox" name="q10" value="d"> <span data-i18n="q10_d">L'eau</span></label></div>
+                </section>
+                <section class="section-block" style="border-bottom: none;">
+                    <div class="card reveal reveal-delay-1" style="text-align: center;">
+                        <button class="toggle-btn active" id="checkExam" style="margin-right: 15px;" data-i18n="check_btn">Vérifier mes réponses</button>
+                        <button class="toggle-btn" id="resetExam" data-i18n="reset_btn">Réinitialiser</button>
+                        <div id="examResult" class="result-message" style="margin-top: 20px;"></div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Vb7Hh2E8fewxLyVJbh2c" class="social-link whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/ghanipharma" class="social-link telegram" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.facebook.com/ghani.rouabah.2025" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ghani.rouabah/" class="social-link instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ghani.rouabah" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghani-Rouabah" class="social-link youtube" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 GhaniPharma. Tous droits réservés.</p>
+    </footer>
+
+    <div class="modal-overlay" id="drugModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDrugModal()">&times;</button>
+            <h2 id="modalTitle" style="color:var(--text-heading); margin-bottom:20px;"></h2>
+            <div class="modal-images" id="modalImagesContainer"></div>
+        </div>
+    </div>
+
+    <div class="support-modal" id="supportModal">
+        <div class="support-content">
+            <button class="support-close" id="closeSupport" aria-label="Fermer">&times;</button>
+            <div class="support-header">
+                <div class="support-header-icon"><i class="fas fa-gift"></i></div>
+                <h2 data-i18n="support_title">Soutenir GhaniPharma</h2>
+                <p data-i18n="support_subtitle">Votre soutien m'aide à créer plus de contenu éducatif</p>
+            </div>
+            <div class="support-body">
+                <div class="support-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-i18n="support_info">Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏</span>
+                </div>
+                <div class="support-methods">
+                    <a href="https://www.paypal.me/ghanipharma" target="_blank" rel="noopener noreferrer" class="support-method">
+                        <div class="support-method-icon paypal"><i class="fab fa-paypal"></i></div>
+                        <div class="support-method-info">
+                            <h4>PayPal</h4>
+                            <p>paypal.me/ghanipharma</p>
+                        </div>
+                        <button class="support-copy-btn" onclick="event.preventDefault(); copyToClipboard('https://www.paypal.me/ghanipharma', this);">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </a>
+                    <div class="support-method" onclick="copyToClipboard('00799999002345678901', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon ccp"><i class="fas fa-university"></i></div>
+                        <div class="support-method-info">
+                            <h4 data-i18n="rip_title">RIP CCP (Algérie)</h4>
+                            <p>00799999002345678901</p>
+                        </div>
+                        <button class="support-copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="support-method" onclick="copyToClipboard('+213555079282', this.querySelector('.support-copy-btn'))">
+                        <div class="support-method-icon flexy"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="support-method-info">
+                            <h4 data-i18n="flexy_title">Flexy</h4>
+                            <p>+213 555 079 282</p>
+                        </div>
+                        <button class="support-copy-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="support-footer">
+                    <span data-i18n="support_footer">Merci de tout cœur</span> <i class="fas fa-gift"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-toast" id="copyToast">
+        <i class="fas fa-check-circle"></i>
+        <span data-i18n="copied">Copié !</span>
+    </div>
+
+    <script>
+        // ==================== Stars ====================
+        (function createStars() {
+            const container = document.getElementById('starsContainer');
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+                star.style.setProperty('--delay', Math.random() * 5 + 's');
+                fragment.appendChild(star);
+            }
+            container.appendChild(fragment);
+        })();
+
+        // ==================== Reveal ====================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ==================== TRANSLATIONS ====================
+        const translations = {
+            fr: {
+                theme: "Thème",
+                light: "Clair",
+                dark: "Sombre",
+                language: "Langue",
+                home: "Accueil",
+                about: "À propos",
+                modules: "Modules",
+                contact: "Contact",
+                pharmacology: "Pharmacologie",
+                lesson: "Leçon",
+                exam: "Examen",
+                mechanism_title: "Mécanisme d'action",
+                indications_title: "Indications générales",
+                contre_title: "Contre-indications & Précautions majeures",
+                ci_absolues_label: "CI absolues :",
+                note_label: "Note :",
+                precautions_label: "Précautions :",
+                interactions_title: "Interactions médicamenteuses majeures",
+                grossesse_title: "Grossesse et Allaitement",
+                grossesse_label: "Grossesse :",
+                allaitement_label: "Allaitement :",
+                substances_title: "Les substances actives",
+                generique_label: "Générique :",
+                noms_commerciaux: "Noms commerciaux (Algérie) :",
+                formes_label: "Formes pharmaceutiques :",
+                posologie_label: "Posologie usuelle (Adulte) & Max :",
+                particularite_label: "Particularité :",
+                conseil_pratique: "Conseil pratique du pharmacien :",
+                conseil_final_title: "Conseil ultime pour votre stage",
+                conseil_chef: "💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :",
+                qcm_label: "QCM :",
+                qcm_instruction: "Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.",
+                check_btn: "Vérifier mes réponses",
+                reset_btn: "Réinitialiser",
+                q1_title: "Question 1",
+                q2_title: "Question 2",
+                q3_title: "Question 3",
+                q4_title: "Question 4",
+                q5_title: "Question 5",
+                q6_title: "Question 6",
+                q7_title: "Question 7",
+                q8_title: "Question 8",
+                q9_title: "Question 9",
+                q10_title: "Question 10",
+                section_title: "Les cours disponibles",
+                subject_badge: "CLASSES DE MEDECAMENTS",
+                support_title: "Soutenir GhaniPharma",
+                support_subtitle: "Votre soutien m'aide à créer plus de contenu éducatif",
+                support_info: "Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏",
+                rip_title: "RIP CCP (Algérie)",
+                flexy_title: "Flexy",
+                support_footer: "Merci de tout cœur",
+                copied: "Copié !",
+                hero_title: "2. LES ANTIANÉMIQUES",
+                hero_subtitle: "Sels de fer (hydroxyde ferrique polymaltose, sulfate ferreux, fumarate), associations fer + vitamine B9, cyanocobalamine (B12) et acide folique (B9) : mécanismes, indications, conseils d'absorption et noms commerciaux en Algérie.",
+                fer_polymaltose_title: "1. Hydroxyde ferrique polymaltose (fer trivalent)",
+                fer_polymaltose_gen: "Hydroxyde ferrique polymaltose (Fe3+).",
+                fer_polymaltose_formes: "Comprimés, sirop, solution buvable.",
+                fer_polymaltose_posologie: "Adulte : 1 à 2 comprimés par jour ; enfant selon l'âge et le poids.",
+                fer_polymaltose_particularite: "Bien absorbé et généralement mieux toléré que les sels ferreux.",
+                fer_polymaltose_conseil: "À prendre avant les repas avec une boisson riche en vitamine C.",
+                fer_ferreux_title: "2. Sulfate ferreux et gluconate ferreux",
+                fer_ferreux_gen: "Sulfate ferreux / gluconate ferreux (fer divalent).",
+                fer_ferreux_formes: "Comprimés ; ampoules buvables (Tot'hema : 10 ml = fer 50 mg + cuivre 0,70 mg + manganèse 1,33 mg).",
+                fer_ferreux_posologie: "Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.",
+                fer_ferreux_particularite: "Sels ferreux souvent responsables de troubles digestifs et de selles noires.",
+                fer_ferreux_conseil: "À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.",
+                fer_fumarate_title: "3. Fumarate ferreux et feredetate de sodium",
+                fer_fumarate_gen: "Fumarate ferreux / feredetate de sodium.",
+                fer_fumarate_formes: "Comprimés, solution buvable.",
+                fer_fumarate_posologie: "Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.",
+                fer_fumarate_particularite: "Autres formes de fer oral utilisées dans la carence martiale.",
+                fer_fumarate_conseil: "Prendre à distance des aliments et médicaments qui freinent l'absorption.",
+                fer_b9_title: "4. Fer + acide folique (FER + VIT B9)",
+                fer_b9_gen: "Hydroxyde ferrique polymaltose ou sulfate ferreux + acide folique.",
+                fer_b9_formes: "Comprimés, gélules.",
+                fer_b9_posologie: "Généralement 1 comprimé par jour.",
+                fer_b9_particularite: "Indiqué dans l'anémie ferriprive associée à une carence en B9 et pendant la grossesse.",
+                fer_b9_conseil: "Prévenir les carences chez la femme enceinte et en période de croissance.",
+                cyanocobalamine_title: "5. Cyanocobalamine (vitamine B12)",
+                cyanocobalamine_gen: "Cyanocobalamine (vitamine B12).",
+                cyanocobalamine_formes: "Ampoules injectables, comprimés.",
+                cyanocobalamine_posologie: "Selon la carence : 1 ampoule IM par jour puis dose d'entretien.",
+                cyanocobalamine_particularite: "Indiquée dans l'anémie de Biermer (carence en vitamine B12).",
+                cyanocobalamine_conseil: "Traitement parfois poursuivi à vie ; ne pas interrompre sans avis.",
+                acide_folique_title: "6. Acide folique (vitamine B9)",
+                acide_folique_gen: "Acide folique (vitamine B9).",
+                acide_folique_formes: "Comprimés 5 mg.",
+                acide_folique_posologie: "1 comprimé par jour selon la prescription.",
+                acide_folique_particularite: "Indiqué dans les anémies mégaloblastiques et en prévention pendant la grossesse.",
+                acide_folique_conseil: "Débuter avant la conception dans un projet de grossesse.",
+                indication_1: "Traitement et prévention de l'anémie ferriprive (carence en fer).",
+                indication_2: "Anémie mégaloblastique par carence en vitamine B9 ou B12.",
+                indication_3: "Anémie de Biermer (carence en vitamine B12).",
+                indication_4: "Prévention des carences pendant la grossesse (fer + acide folique).",
+                indication_5: "Carences liées à une alimentation insuffisante ou à des pertes chroniques.",
+                inter_1_strong: "Les cyclines et les quinolones",
+                inter_1: " : le fer diminue leur absorption (respecter un intervalle d'environ 2 h).",
+                inter_2_strong: "Les hormones thyroïdiennes et les traitements de l'ostéoporose",
+                inter_2: " : le fer diminue leur absorption.",
+                inter_3_strong: "Café, thé et lait",
+                inter_3: " : diminuent l'absorption du fer (éviter au même moment).",
+                inter_4_strong: "Vitamine C (jus d'orange)",
+                inter_4: " : améliore l'absorption du fer (à privilégier).",
+                q1_text: "Concernant l'hydroxyde ferrique polymaltose (fer trivalent) :",
+                q1_a: "Il est généralement mieux toléré que les sels ferreux",
+                q1_b: "Il provoque moins de troubles digestifs",
+                q1_c: "Il se prend avec une boisson riche en vitamine C",
+                q1_d: "Il donne des selles noires très rares",
+                q2_text: "Quels signes évoquent une anémie ferriprive ?",
+                q2_a: "Pâleur",
+                q2_b: "Fatigue et faiblesse",
+                q2_c: "Cheveux blancs",
+                q2_d: "Fièvre élevée",
+                q3_text: "Quels conseils améliorent l'absorption du fer ?",
+                q3_a: "Prendre le fer avant les repas",
+                q3_b: "L'associer à une boisson riche en vitamine C",
+                q3_c: "Éviter le café et le thé au même moment",
+                q3_d: "Le prendre avec du lait",
+                q4_text: "Quels sont les effets indésirables fréquents du fer oral ?",
+                q4_a: "Troubles digestifs",
+                q4_b: "Selles noires",
+                q4_c: "Constipation ou diarrhée",
+                q4_d: "Surdité",
+                q5_text: "La vitamine B12 (cyanocobalamine) est indiquée dans :",
+                q5_a: "L'anémie de Biermer",
+                q5_b: "La carence en vitamine B12",
+                q5_c: "L'anémie ferriprive isolée",
+                q5_d: "L'angine",
+                q6_text: "Concernant l'acide folique (vitamine B9) :",
+                q6_a: "C'est la vitamine B9",
+                q6_b: "Il est indiqué pendant la grossesse",
+                q6_c: "Il prévient les anomalies du tube neural",
+                q6_d: "C'est un anticoagulant",
+                q7_text: "Les associations FER + VIT B9 contiennent :",
+                q7_a: "Du fer",
+                q7_b: "De l'acide folique",
+                q7_c: "Du paracétamol",
+                q7_d: "De l'aspirine",
+                q8_text: "Que faire si le fer provoque des troubles digestifs ?",
+                q8_a: "Le prendre pendant le repas",
+                q8_b: "Le signaler au médecin",
+                q8_c: "Doubler la dose",
+                q8_d: "Arrêter seul le traitement",
+                q9_text: "Le surdosage en fer peut provoquer :",
+                q9_a: "Constipation",
+                q9_b: "Diarrhée",
+                q9_c: "Nausées et vomissements",
+                q9_d: "Une amélioration de l'audition",
+                q10_text: "Quels produits faut-il éviter autour de la prise de fer ?",
+                q10_a: "Le café",
+                q10_b: "Le thé",
+                q10_c: "Les cyclines et quinolones",
+                q10_d: "L'eau",
+                mechanism_text_1: "Les antianémiques corrigent les carences responsables d'anémie. Le fer est indispensable à la synthèse de l'hémoglobine : les sels ferreux (fer divalent) et l'hydroxyde ferrique polymaltose (fer trivalent) apportent le fer nécessaire à l'érythropoïèse. La vitamine B9 (acide folique) et la vitamine B12 (cyanocobalamine) sont nécessaires à la synthèse de l'ADN et à la maturation des globules rouges ; leur carence provoque une anémie mégaloblastique. L'association fer + acide folique est particulièrement utile pendant la grossesse.",
+                ci_absolues: "Allergie connue aux composants. Contre-indications : surcharge en fer (hémochromatose, thalassémie, anémie non ferriprive), ulcère gastro-duodénal évolutif et maladies inflammatoires de l'intestin pour les sels de fer oraux. Ne pas administrer de fer sans avoir confirmé la carence.",
+                note_text: "Pour une meilleure absorption, prendre le fer avant les repas (à jeun) avec une boisson riche en vitamine C (jus d'orange). Éviter le café, le thé et le lait au même moment. Le surdosage peut provoquer des troubles digestifs (constipation, diarrhée, nausées, selles noires).",
+                precautions_text: "Prendre à distance des médicaments qui diminuent l'absorption du fer : cyclines, quinolones, hormones thyroïdiennes, traitements de l'ostéoporose. Les selles noires sont normales sous fer. Chez l'enfant, respecter la dose et garder le flacon hors de portée (risque d'intoxication).",
+                grossesse_text: "Les besoins en fer et en acide folique augmentent pendant la grossesse : l'association fer + vitamine B9 est souvent prescrite. La vitamine B12 est utilisée en cas de carence confirmée. Tout apport de fer doit être encadré par un médecin.",
+                allaitement_text: "Le fer, la vitamine B9 et la vitamine B12 sont compatibles avec l'allaitement aux doses usuelles. Demander conseil au pharmacien ou au médecin.",
+                conseil_final_text: "« Prenez votre fer à jeun avec un jus d'orange : la vitamine C augmente son absorption. Évitez le café, le thé et le lait au même moment, ainsi que les cyclines, quinolones et hormones thyroïdiennes. Des selles noires ne doivent pas vous inquiéter, mais consultez en cas de douleur abdominale importante. Ne donnez jamais de fer à un enfant sans prescription. »"
+            },
+            ar: {
+                theme: "المظهر",
+                light: "فاتح",
+                dark: "داكن",
+                language: "اللغة",
+                home: "الرئيسية",
+                about: "حول",
+                modules: "الدروس",
+                contact: "اتصل بنا",
+                pharmacology: "علم الأدوية",
+                lesson: "الدرس",
+                exam: "الاختبار",
+                mechanism_title: "آلية العمل",
+                indications_title: "الاستطبابات العامة",
+                contre_title: "مضادات الاستطباب والاحتياطات الرئيسية",
+                ci_absolues_label: "مضادات استطباب مطلقة:",
+                note_label: "ملاحظة:",
+                precautions_label: "احتياطات:",
+                interactions_title: "التداخلات الدوائية الرئيسية",
+                grossesse_title: "الحمل والرضاعة",
+                grossesse_label: "الحمل:",
+                allaitement_label: "الرضاعة:",
+                substances_title: "المواد الفعالة",
+                generique_label: "الاسم العلمي:",
+                noms_commerciaux: "الأسماء التجارية (الجزائر):",
+                formes_label: "الأشكال الصيدلانية:",
+                posologie_label: "الجرعة المعتادة (للبالغين) والقصوى:",
+                particularite_label: "الخصوصية:",
+                conseil_pratique: "نصيحة عملية للصيدلي:",
+                conseil_final_title: "نصيحة أخيرة لتدريبك",
+                conseil_chef: "💡 نصيحة «رئيس الرف» لكل مرضاك:",
+                qcm_label: "اختبار متعدد الخيارات:",
+                qcm_instruction: "اختر كل الإجابات الصحيحة لكل سؤال. إجابة خاطئة واحدة تُلغي السؤال كاملاً (صفر نقطة). الإجابات الصحيحة الجزئية تعطي نقاطاً جزئية.",
+                check_btn: "تحقق من إجاباتي",
+                reset_btn: "إعادة تعيين",
+                q1_title: "السؤال 1",
+                q2_title: "السؤال 2",
+                q3_title: "السؤال 3",
+                q4_title: "السؤال 4",
+                q5_title: "السؤال 5",
+                q6_title: "السؤال 6",
+                q7_title: "السؤال 7",
+                q8_title: "السؤال 8",
+                q9_title: "السؤال 9",
+                q10_title: "السؤال 10",
+                section_title: "الدروس المتاحة",
+                subject_badge: "أصناف الأدوية",
+                support_title: "دعم GhaniPharma",
+                support_subtitle: "دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي",
+                support_info: "إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساعدة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏",
+                rip_title: "RIP CCP (الجزائر)",
+                flexy_title: "فليكسي",
+                support_footer: "شكراً من القلب",
+                copied: "تم النسخ!",
+                hero_title: "مضادات فقر الدم",
+                hero_subtitle: "أملاح الحديد (هيدروكسيد الحديد متعدد المالتوز، كبريتات الحديدوز، الفومارات)، اقترانات الحديد + فيتامين B9، السيانوكوبالامين (B12) وحمض الفوليك (B9): الآليات، الاستطبابات، نصائح الامتصاص والأسماء التجارية في الجزائر.",
+                fer_polymaltose_title: "1. هيدروكسيد الحديد متعدد المالتوز (حديد ثلاثي)",
+                fer_polymaltose_gen: "هيدروكسيد الحديد متعدد المالتوز (Fe3+).",
+                fer_polymaltose_formes: "أقراص، شراب، محلول فموي.",
+                fer_polymaltose_posologie: "بالغين: قرص إلى قرصين يومياً؛ الطفل حسب العمر والوزن.",
+                fer_polymaltose_particularite: "امتصاص جيد وحيازة أفضل عادة من أملاح الحديدوز.",
+                fer_polymaltose_conseil: "يُؤخذ قبل الوجبات مع مشروب غني بفيتامين C.",
+                fer_ferreux_title: "2. كبريتات الحديدوز وغلوكونات الحديدوز",
+                fer_ferreux_gen: "كبريتات الحديدوز / غلوكونات الحديدوز (حديد ثنائي).",
+                fer_ferreux_formes: "أقراص؛ أمبولات فموية (Tot'hema: 10 مل = حديد 50 مغ + نحاس 0,70 مغ + منغنيز 1,33 مغ).",
+                fer_ferreux_posologie: "بالغين: قرص 1-2 مرات يومياً؛ متابعة بيولوجية منتظمة.",
+                fer_ferreux_particularite: "أملاح الحديدوز مسؤولة غالباً عن اضطرابات هضمية وبراز أسود.",
+                fer_ferreux_conseil: "على معدة فارغة مع فيتامين C؛ تجنّب القهوة والشاي والحليب في نفس الوقت.",
+                fer_fumarate_title: "3. فومارات الحديدوز وفيريديتات الصوديوم",
+                fer_fumarate_gen: "فومارات الحديدوز / فيريديتات الصوديوم.",
+                fer_fumarate_formes: "أقراص، محلول فموي.",
+                fer_fumarate_posologie: "حسب العمر والمنتج: جرعة واحدة أو جرعتان يومياً.",
+                fer_fumarate_particularite: "أشكال أخرى من الحديد الفموي المستعملة في عوز الحديد.",
+                fer_fumarate_conseil: "خُذه بعيداً عن الأغذية والأدوية التي تعيق الامتصاص.",
+                fer_b9_title: "4. الحديد + حمض الفوليك (FER + VIT B9)",
+                fer_b9_gen: "هيدروكسيد الحديد متعدد المالتوز أو كبريتات الحديدوز + حمض الفوليك.",
+                fer_b9_formes: "أقراص، كبسولات.",
+                fer_b9_posologie: "عادة قرص واحد يومياً.",
+                fer_b9_particularite: "مطلوب في فقر الدم بعوز الحديد المرافق لنقص B9 وأثناء الحمل.",
+                fer_b9_conseil: "الوقاية من النقص عند الحامل وفي فترة النمو.",
+                cyanocobalamine_title: "5. السيانوكوبالامين (فيتامين B12)",
+                cyanocobalamine_gen: "السيانوكوبالامين (فيتامين B12).",
+                cyanocobalamine_formes: "أمبولات حقن، أقراص.",
+                cyanocobalamine_posologie: "حسب النقص: أمبولة عضلياً يومياً ثم جرعة صيانة.",
+                cyanocobalamine_particularite: "مطلوبة في فقر دم بيرمر (نقص فيتامين B12).",
+                cyanocobalamine_conseil: "قد يُواصل العلاج مدى الحياة؛ لا تقطعه دون رأي طبي.",
+                acide_folique_title: "6. حمض الفوليك (فيتامين B9)",
+                acide_folique_gen: "حمض الفوليك (فيتامين B9).",
+                acide_folique_formes: "أقراص 5 مغ.",
+                acide_folique_posologie: "قرص واحد يومياً حسب الوصفة.",
+                acide_folique_particularite: "مطلوب في فقر الدم ضخم الكريات وللوقاية أثناء الحمل.",
+                acide_folique_conseil: "يُبدأ قبل الحمل في مشروع الحمل.",
+                indication_1: "علاج والوقاية من فقر الدم بعوز الحديد.",
+                indication_2: "فقر الدم ضخم الكريات الناتج عن نقص فيتامين B9 أو B12.",
+                indication_3: "فقر دم بيرمر (نقص فيتامين B12).",
+                indication_4: "الوقاية من النقص أثناء الحمل (الحديد + حمض الفوليك).",
+                indication_5: "النقص المرتبط بتغذية غير كافية أو فقدان مزمن.",
+                inter_1_strong: "التتراسيكلينات والكينولونات",
+                inter_1: " : الحديد يقلّل امتصاصها (احترم فاصلاً زمنياً نحو ساعتين).",
+                inter_2_strong: "الهرمونات الدرقية وأدوية هشاشة العظام",
+                inter_2: " : الحديد يقلّل امتصاصها.",
+                inter_3_strong: "القهوة والشاي والحليب",
+                inter_3: " : تقلّل امتصاص الحديد (تجنّبها في نفس الوقت).",
+                inter_4_strong: "الفيتامين C (عصير البرتقال)",
+                inter_4: " : يحسّن امتصاص الحديد (يُفضّل).",
+                q1_text: "بخصوص هيدروكسيد الحديد متعدد المالتوز (حديد ثلاثي):",
+                q1_a: "عادة أفضل تحمّلاً من أملاح الحديدوز",
+                q1_b: "يسبب اضطرابات هضمية أقل",
+                q1_c: "يُؤخذ مع مشروب غني بفيتامين C",
+                q1_d: "نادراً ما يسبب برازاً أسود",
+                q2_text: "ما العلامات التي تدل على فقر الدم بعوز الحديد؟",
+                q2_a: "الشحوب",
+                q2_b: "التعب والوهن",
+                q2_c: "الشعر الأبيض",
+                q2_d: "حمى مرتفعة",
+                q3_text: "ما النصائح التي تحسّن امتصاص الحديد؟",
+                q3_a: "تناول الحديد قبل الوجبات",
+                q3_b: "قرانه بمشروب غني بفيتامين C",
+                q3_c: "تجنّب القهوة والشاي في نفس الوقت",
+                q3_d: "تناوله مع الحليب",
+                q4_text: "ما الآثار الجانبية الشائعة للحديد الفموي؟",
+                q4_a: "اضطرابات هضمية",
+                q4_b: "براز أسود",
+                q4_c: "إمساك أو إسهال",
+                q4_d: "الصمم",
+                q5_text: "فيتامين B12 (السيانوكوبالامين) مطلوب في:",
+                q5_a: "فقر دم بيرمر",
+                q5_b: "نقص فيتامين B12",
+                q5_c: "فقر الدم بعوز الحديد المعزول",
+                q5_d: "التهاب اللوزتين",
+                q6_text: "بخصوص حمض الفوليك (فيتامين B9):",
+                q6_a: "هو فيتامين B9",
+                q6_b: "مطلوب أثناء الحمل",
+                q6_c: "يقي من تشوّهات الأنبوب العصبي",
+                q6_d: "مضاد للتخثر",
+                q7_text: "اقترانات الحديد + فيتامين B9 تحتوي على:",
+                q7_a: "الحديد",
+                q7_b: "حمض الفوليك",
+                q7_c: "الباراسيتامول",
+                q7_d: "الأسبرين",
+                q8_text: "ماذا تفعل إذا سبب الحديد اضطرابات هضمية؟",
+                q8_a: "تناوله مع الوجبة",
+                q8_b: "إبلاغ الطبيب",
+                q8_c: "مضاعفة الجرعة",
+                q8_d: "إيقاف العلاج منفرداً",
+                q9_text: "الجرعة المفرطة من الحديد قد تسبب:",
+                q9_a: "الإمساك",
+                q9_b: "الإسهال",
+                q9_c: "الغثيان والقيء",
+                q9_d: "تحسّن السمع",
+                q10_text: "ما المنتجات التي يجب تجنّبها حول تناول الحديد؟",
+                q10_a: "القهوة",
+                q10_b: "الشاي",
+                q10_c: "التتراسيكلينات والكينولونات",
+                q10_d: "الماء",
+                mechanism_text_1: "تصحّح مضادات فقر الدم النقص المسؤول عن فقر الدم. الحديد ضروري لتصنيع الهيموغلوبين: أملاح الحديدوز (حديد ثنائي التكافؤ) وهيدروكسيد الحديد متعدد المالتوز (حديد ثلاثي التكافؤ) توفّر الحديد اللازم لتكوّن الكريات الحمراء. الفيتامين B9 (حمض الفوليك) والفيتامين B12 (السيانوكوبالامين) ضروريان لتصنيع الحمض النووي ونضوج الكريات الحمراء؛ ويسبب نقصهما فقر دم ضخم الكريات. اقتران الحديد + حمض الفوليك مفيد خصوصاً أثناء الحمل.",
+                ci_absolues: "الحساسية المعروفة للمكوّنات. مضادات الاستطباب: فرط حمل الحديد (داء ترسّب الأصبغة الدموية، الثلاسيميا، فقر الدم غير العوزي)، القرحة الهضمية النشطة وأمراض الأمعاء الالتهابية بالنسبة لأملاح الحديد الفموية. لا تُعطِ الحديد دون تأكيد النقص.",
+                note_text: "لأفضل امتصاص، تناول الحديد قبل الوجبات (على معدة فارغة) مع مشروب غني بفيتامين C (عصير البرتقال). تجنّب القهوة والشاي والحليب في نفس الوقت. الجرعة المفرطة قد تسبب اضطرابات هضمية (إمساك، إسهال، غثيان، براز أسود).",
+                precautions_text: "خُذ الحديد بعيداً عن الأدوية التي تقلّل امتصاصه: التتراسيكلينات، الكينولونات، الهرمونات الدرقية، أدوية هشاشة العظام. البراز الأسود طبيعي تحت الحديد. عند الطفل، احترم الجرعة واحفظ القارورة بعيداً عن متناوله (خطر التسمّم).",
+                grossesse_text: "تزداد الحاجة إلى الحديد وحمض الفوليك أثناء الحمل: غالباً ما يُوصف اقتران الحديد + فيتامين B9. يُستعمل فيتامين B12 عند تأكيد النقص. يجب أن يكون أي إعطاء للحديد تحت إشراف طبي.",
+                allaitement_text: "الحديد وفيتامين B9 وفيتامين B12 متوافقة مع الرضاعة بالجرعات المعتادة. اطلب نصيحة الصيدلي أو الطبيب.",
+                conseil_final_text: "« تناول الحديد على معدة فارغة مع عصير البرتقال: فيتامين C يزيد امتصاصه. تجنّب القهوة والشاي والحليب في نفس الوقت، وكذلك التتراسيكلينات والكينولونات والهرمونات الدرقية. البراز الأسود لا يستدعي القلق، لكن استشر الطبيب عند ألم بطني شديد. لا تعطِ الحديد لطفل دون وصفة. »"
+            },
+            en: {
+                theme: "Theme",
+                light: "Light",
+                dark: "Dark",
+                language: "Language",
+                home: "Home",
+                about: "About",
+                modules: "Modules",
+                contact: "Contact",
+                pharmacology: "Pharmacology",
+                lesson: "Lesson",
+                exam: "Exam",
+                mechanism_title: "Mechanism of action",
+                indications_title: "General indications",
+                contre_title: "Major contraindications & precautions",
+                ci_absolues_label: "Absolute CIs:",
+                note_label: "Note:",
+                precautions_label: "Precautions:",
+                interactions_title: "Major drug interactions",
+                grossesse_title: "Pregnancy and Breastfeeding",
+                grossesse_label: "Pregnancy:",
+                allaitement_label: "Breastfeeding:",
+                substances_title: "Active substances",
+                generique_label: "Generic:",
+                noms_commerciaux: "Trade names (Algeria):",
+                formes_label: "Pharmaceutical forms:",
+                posologie_label: "Usual adult dose & max:",
+                particularite_label: "Particularity:",
+                conseil_pratique: "Pharmacist's practical advice:",
+                conseil_final_title: "Ultimate advice for your internship",
+                conseil_chef: "💡 The \"Section manager\" tip to pass on to all your patients:",
+                qcm_label: "MCQ:",
+                qcm_instruction: "Check all correct answers for each question. A single wrong answer cancels the whole question (0 point). Partial correct answers give partial points.",
+                check_btn: "Check my answers",
+                reset_btn: "Reset",
+                q1_title: "Question 1",
+                q2_title: "Question 2",
+                q3_title: "Question 3",
+                q4_title: "Question 4",
+                q5_title: "Question 5",
+                q6_title: "Question 6",
+                q7_title: "Question 7",
+                q8_title: "Question 8",
+                q9_title: "Question 9",
+                q10_title: "Question 10",
+                section_title: "Available lessons",
+                subject_badge: "DRUG CLASSES",
+                support_title: "Support GhaniPharma",
+                support_subtitle: "Your support helps me create more educational content",
+                support_info: "If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏",
+                rip_title: "RIP CCP (Algeria)",
+                flexy_title: "Flexy",
+                support_footer: "Thank you wholeheartedly",
+                copied: "Copied!",
+                hero_title: "ANTIANEMICS",
+                hero_subtitle: "Iron salts (iron polymaltose hydroxide, ferrous sulfate, fumarate), iron + vitamin B9 combinations, cyanocobalamin (B12) and folic acid (B9): mechanisms, indications, absorption advice and Algerian brand names.",
+                fer_polymaltose_title: "1. Iron polymaltose hydroxide (trivalent iron)",
+                fer_polymaltose_gen: "Iron polymaltose hydroxide (Fe3+).",
+                fer_polymaltose_formes: "Tablets, syrup, oral solution.",
+                fer_polymaltose_posologie: "Adult: 1 to 2 tablets daily; child according to age and weight.",
+                fer_polymaltose_particularite: "Well absorbed and generally better tolerated than ferrous salts.",
+                fer_polymaltose_conseil: "Take before meals with a vitamin C-rich drink.",
+                fer_ferreux_title: "2. Ferrous sulfate and ferrous gluconate",
+                fer_ferreux_gen: "Ferrous sulfate / ferrous gluconate (divalent iron).",
+                fer_ferreux_formes: "Tablets; oral ampoules (Tot'hema: 10 ml = iron 50 mg + copper 0.70 mg + manganese 1.33 mg).",
+                fer_ferreux_posologie: "Adult: 1 tablet 1 to 2 times daily; regular biological follow-up.",
+                fer_ferreux_particularite: "Ferrous salts often cause digestive disorders and black stools.",
+                fer_ferreux_conseil: "On an empty stomach with vitamin C; avoid coffee, tea and milk at the same time.",
+                fer_fumarate_title: "3. Ferrous fumarate and sodium feredetate",
+                fer_fumarate_gen: "Ferrous fumarate / sodium feredetate.",
+                fer_fumarate_formes: "Tablets, oral solution.",
+                fer_fumarate_posologie: "According to age and product: one or two doses daily.",
+                fer_fumarate_particularite: "Other oral iron forms used in iron deficiency.",
+                fer_fumarate_conseil: "Take away from foods and drugs that impair absorption.",
+                fer_b9_title: "4. Iron + folic acid (IRON + VIT B9)",
+                fer_b9_gen: "Iron polymaltose hydroxide or ferrous sulfate + folic acid.",
+                fer_b9_formes: "Tablets, capsules.",
+                fer_b9_posologie: "Generally 1 tablet daily.",
+                fer_b9_particularite: "Indicated in iron-deficiency anemia associated with B9 deficiency and during pregnancy.",
+                fer_b9_conseil: "Prevent deficiencies in pregnant women and during growth.",
+                cyanocobalamine_title: "5. Cyanocobalamin (vitamin B12)",
+                cyanocobalamine_gen: "Cyanocobalamin (vitamin B12).",
+                cyanocobalamine_formes: "Injectable ampoules, tablets.",
+                cyanocobalamine_posologie: "According to deficiency: 1 IM ampoule daily then maintenance dose.",
+                cyanocobalamine_particularite: "Indicated in Biermer anemia (vitamin B12 deficiency).",
+                cyanocobalamine_conseil: "Treatment sometimes continued for life; do not interrupt without advice.",
+                acide_folique_title: "6. Folic acid (vitamin B9)",
+                acide_folique_gen: "Folic acid (vitamin B9).",
+                acide_folique_formes: "Tablets 5 mg.",
+                acide_folique_posologie: "One tablet daily as prescribed.",
+                acide_folique_particularite: "Indicated in megaloblastic anemias and for prevention during pregnancy.",
+                acide_folique_conseil: "Start before conception in a pregnancy plan.",
+                indication_1: "Treatment and prevention of iron-deficiency anemia.",
+                indication_2: "Megaloblastic anemia due to vitamin B9 or B12 deficiency.",
+                indication_3: "Biermer anemia (vitamin B12 deficiency).",
+                indication_4: "Prevention of deficiencies during pregnancy (iron + folic acid).",
+                indication_5: "Deficiencies linked to insufficient diet or chronic losses.",
+                inter_1_strong: "Tetracyclines and quinolones",
+                inter_1: ": iron reduces their absorption (keep an interval of about 2 h).",
+                inter_2_strong: "Thyroid hormones and osteoporosis treatments",
+                inter_2: ": iron reduces their absorption.",
+                inter_3_strong: "Coffee, tea and milk",
+                inter_3: ": reduce iron absorption (avoid at the same time).",
+                inter_4_strong: "Vitamin C (orange juice)",
+                inter_4: ": improves iron absorption (preferred).",
+                q1_text: "Regarding iron polymaltose hydroxide (trivalent iron):",
+                q1_a: "It is generally better tolerated than ferrous salts",
+                q1_b: "It causes fewer digestive disorders",
+                q1_c: "It is taken with a vitamin C-rich drink",
+                q1_d: "It very rarely causes black stools",
+                q2_text: "Which signs suggest iron-deficiency anemia?",
+                q2_a: "Pallor",
+                q2_b: "Fatigue and weakness",
+                q2_c: "White hair",
+                q2_d: "High fever",
+                q3_text: "Which advice improves iron absorption?",
+                q3_a: "Take iron before meals",
+                q3_b: "Combine it with a vitamin C-rich drink",
+                q3_c: "Avoid coffee and tea at the same time",
+                q3_d: "Take it with milk",
+                q4_text: "What are the frequent side effects of oral iron?",
+                q4_a: "Digestive disorders",
+                q4_b: "Black stools",
+                q4_c: "Constipation or diarrhea",
+                q4_d: "Deafness",
+                q5_text: "Vitamin B12 (cyanocobalamin) is indicated in:",
+                q5_a: "Biermer anemia",
+                q5_b: "Vitamin B12 deficiency",
+                q5_c: "Isolated iron-deficiency anemia",
+                q5_d: "Angina",
+                q6_text: "Regarding folic acid (vitamin B9):",
+                q6_a: "It is vitamin B9",
+                q6_b: "It is indicated during pregnancy",
+                q6_c: "It prevents neural tube defects",
+                q6_d: "It is an anticoagulant",
+                q7_text: "Iron + vitamin B9 combinations contain:",
+                q7_a: "Iron",
+                q7_b: "Folic acid",
+                q7_c: "Paracetamol",
+                q7_d: "Aspirin",
+                q8_text: "What to do if iron causes digestive disorders?",
+                q8_a: "Take it during a meal",
+                q8_b: "Report it to the doctor",
+                q8_c: "Double the dose",
+                q8_d: "Stop the treatment alone",
+                q9_text: "Iron overdose may cause:",
+                q9_a: "Constipation",
+                q9_b: "Diarrhea",
+                q9_c: "Nausea and vomiting",
+                q9_d: "Improved hearing",
+                q10_text: "Which products should be avoided around iron intake?",
+                q10_a: "Coffee",
+                q10_b: "Tea",
+                q10_c: "Tetracyclines and quinolones",
+                q10_d: "Water",
+                mechanism_text_1: "Antianemics correct the deficiencies responsible for anemia. Iron is essential for hemoglobin synthesis: ferrous salts (divalent iron) and iron polymaltose hydroxide (trivalent iron) supply the iron needed for erythropoiesis. Vitamin B9 (folic acid) and vitamin B12 (cyanocobalamin) are needed for DNA synthesis and red blood cell maturation; their deficiency causes megaloblastic anemia. The iron + folic acid combination is particularly useful during pregnancy.",
+                ci_absolues: "Known allergy to components. Contraindications: iron overload (hemochromatosis, thalassemia, non-iron-deficiency anemia), active gastro-duodenal ulcer and inflammatory bowel diseases for oral iron salts. Do not give iron without confirming the deficiency.",
+                note_text: "For better absorption, take iron before meals (on an empty stomach) with a vitamin C-rich drink (orange juice). Avoid coffee, tea and milk at the same time. Overdose may cause digestive disorders (constipation, diarrhea, nausea, black stools).",
+                precautions_text: "Take iron away from drugs that reduce its absorption: tetracyclines, quinolones, thyroid hormones, osteoporosis treatments. Black stools are normal on iron. In children, respect the dose and keep the bottle out of reach (risk of poisoning).",
+                grossesse_text: "Iron and folic acid requirements increase during pregnancy: the iron + vitamin B9 combination is often prescribed. Vitamin B12 is used in case of confirmed deficiency. Any iron intake should be supervised by a doctor.",
+                allaitement_text: "Iron, vitamin B9 and vitamin B12 are compatible with breastfeeding at usual doses. Ask the pharmacist or doctor for advice.",
+                conseil_final_text: "\"Take your iron on an empty stomach with orange juice: vitamin C increases its absorption. Avoid coffee, tea and milk at the same time, as well as tetracyclines, quinolones and thyroid hormones. Black stools should not worry you, but see a doctor if there is significant abdominal pain. Never give iron to a child without a prescription.\""
+            },
+        };
+
+        const dotTranslations = {
+                        "fr": {
+                                        "intro": "Introduction",
+                                        "mecanisme": "Mécanisme",
+                                        "indications": "Indications",
+                                        "contre-indications": "Contre-indications",
+                                        "interactions": "Interactions",
+                                        "grossesse": "Grossesse",
+                                        "substances": "Substances actives",
+                                        "conseil": "Conseil final",
+                                        "question": "Question"
+                        },
+                        "ar": {
+                                        "intro": "مقدمة",
+                                        "mecanisme": "آلية العمل",
+                                        "indications": "الاستطبابات",
+                                        "contre-indications": "مضادات الاستطباب",
+                                        "interactions": "التداخلات",
+                                        "grossesse": "الحمل",
+                                        "substances": "المواد الفعالة",
+                                        "conseil": "نصيحة أخيرة",
+                                        "question": "السؤال"
+                        },
+                        "en": {
+                                        "intro": "Introduction",
+                                        "mecanisme": "Mechanism",
+                                        "indications": "Indications",
+                                        "contre-indications": "Contraindications",
+                                        "interactions": "Interactions",
+                                        "grossesse": "Pregnancy",
+                                        "substances": "Active substances",
+                                        "conseil": "Final advice",
+                                        "question": "Question"
+                        }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'fr';
+        const htmlEl = document.documentElement;
+
+        // ==================== SIDE DOTS ====================
+        const sideDotsContainer = document.getElementById('sideDots');
+        const bottomDotsContainer = document.getElementById('bottomDotsNav');
+
+        const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
+            'grossesse', 'substances', 'conseil'
+        ];
+        const examSectionIDs = [
+            'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
+            'exam-question6', 'exam-question7', 'exam-question8', 'exam-question9', 'exam-question10'
+        ];
+
+        function getLessonTooltips() {
+            const t = dotTranslations[currentLang];
+            return lessonSectionIDs.map(id => t[id] || id);
+        }
+
+        function getExamTooltips() {
+            const t = dotTranslations[currentLang];
+            return examSectionIDs.map((id, index) => `${t.question} ${index + 1}`);
+        }
+
+        function generateDotsHTML(ids, tooltips, isBottom = false) {
+            const containerClass = isBottom ? 'bottom-dot' : 'dot';
+            let html = '';
+            ids.forEach((id, index) => {
+                const activeClass = index === 0 ? ' active' : '';
+                const tooltip = tooltips[index];
+                if (!isBottom) {
+                    html += `<div class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}" title="${tooltip}">
+                                <span class="dot-tooltip">${tooltip}</span>
+                            </div>`;
+                } else {
+                    html += `<button class="${containerClass}${activeClass}" data-dot="${id}" aria-label="${tooltip}">
+                                ${index + 1}
+                            </button>`;
+                }
+            });
+            return html;
+        }
+
+        function updateDots(mode) {
+            const isExam = mode === 'exam';
+            const ids = isExam ? examSectionIDs : lessonSectionIDs;
+            const tooltips = isExam ? getExamTooltips() : getLessonTooltips();
+            sideDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, false);
+            bottomDotsContainer.innerHTML = generateDotsHTML(ids, tooltips, true);
+        }
+
+        document.addEventListener('click', (e) => {
+            const dot = e.target.closest('.dot, .bottom-dot');
+            if (!dot) return;
+            const dotId = dot.dataset.dot;
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const selector = isExamMode ? dotId : 'section-' + dotId;
+            const targetEl = document.getElementById(selector);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        function updateActiveDot() {
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            const sectionIDs = isExamMode ? examSectionIDs : lessonSectionIDs;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+            const navH = document.getElementById('topNav').offsetHeight;
+            let active = sectionIDs[0];
+
+            sectionIDs.forEach(id => {
+                const selector = isExamMode ? id : 'section-' + id;
+                const el = document.getElementById(selector);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) active = id;
+                }
+            });
+
+            document.querySelectorAll('#sideDots .dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+            document.querySelectorAll('#bottomDotsNav .bottom-dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.dot === active);
+            });
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => { updateActiveDot(); ticking = false; });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // ==================== LANGUAGE ====================
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            const t = translations[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+
+            if (lang === 'ar') {
+                htmlEl.setAttribute('dir', 'rtl');
+                htmlEl.setAttribute('lang', 'ar');
+            } else {
+                htmlEl.setAttribute('dir', 'ltr');
+                htmlEl.setAttribute('lang', lang);
+            }
+
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
+            });
+
+            const isExamMode = document.getElementById('examContent').style.display !== 'none';
+            updateDots(isExamMode ? 'exam' : 'lesson');
+            updateActiveDot();
+        }
+
+        // ==================== Mobile menu ====================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        closeBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== Nav hide on scroll ====================
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.getElementById('topNav');
+            if (st > lastScroll && st > 150) nav.classList.add('hidden');
+            else if (st < lastScroll) nav.classList.remove('hidden');
+            lastScroll = st;
+        }, { passive: true });
+
+        // ==================== THEME ====================
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        updateThemeOptionActive(savedTheme);
+
+        function updateThemeOptionActive(theme) {
+            document.querySelectorAll('.theme-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.themeValue === theme);
+            });
+        }
+
+        document.querySelectorAll('.theme-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                const theme = opt.dataset.themeValue;
+                htmlEl.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                updateThemeOptionActive(theme);
+            });
+        });
+
+        // ==================== SETTINGS ====================
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsDropdown = document.getElementById('settingsDropdown');
+
+        settingsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            settingsDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!settingsDropdown.contains(e.target) && !settingsBtn.contains(e.target)) {
+                settingsDropdown.classList.remove('open');
+            }
+        });
+
+        // ==================== SUPPORT MODAL ====================
+        const supportBtn = document.getElementById('supportBtn');
+        const supportModal = document.getElementById('supportModal');
+        const closeSupport = document.getElementById('closeSupport');
+
+        supportBtn.addEventListener('click', () => {
+            supportModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeSupport.addEventListener('click', () => {
+            supportModal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        supportModal.addEventListener('click', (e) => {
+            if (e.target === supportModal) {
+                supportModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ==================== COPY ====================
+        function copyToClipboard(text, btnEl) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+                if (btnEl) {
+                    btnEl.classList.add('copied');
+                    const icon = btnEl.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-check';
+                        setTimeout(() => {
+                            btnEl.classList.remove('copied');
+                            icon.className = 'fas fa-copy';
+                        }, 2000);
+                    }
+                }
+            }).catch(err => console.error('Erreur:', err));
+        }
+
+        const copyToast = document.getElementById('copyToast');
+        let toastTimeout;
+        function showToast() {
+            copyToast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => copyToast.classList.remove('show'), 2000);
+        }
+
+        // ==================== IMAGES DES MÉDICAMENTS ====================
+        const drugImages = {
+                    "Orofer": [],
+                    "Orofer plus": [],
+                    "Selofer": [],
+                    "Trifer": [],
+                    "Hausmann": [],
+                    "Ferrum": [],
+                    "Ferrocure": [],
+                    "Geofer": [],
+                    "Tardyferon": [],
+                    "Tot'hema": [],
+                    "Fumacur": [],
+                    "Federate": [],
+                    "Ferolam": [],
+                    "Ferrostrane": [],
+                    "Trifer fol": [],
+                    "Tardyferon B9": [],
+                    "Zanitra": [],
+                    "Fonitra": [],
+                    "Selofer fol": [],
+                    "Novofer plus": [],
+                    "Razes": [],
+                    "Ferro sanol gyn": [],
+                    "Cobamine": [],
+                    "Foliden": [],
+                    "Folacid": [],
+                    "Hupfoliq": []
+        };
+
+        function showDrugModal(drugName) {
+            const modal = document.getElementById('drugModal');
+            document.getElementById('modalTitle').textContent = drugName;
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = '';
+            const imgs = drugImages[drugName] || [];
+            if (!imgs.length) container.innerHTML =
+                '<div class="modal-placeholder">Aucune image disponible pour ce médicament.</div>';
+            else imgs.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = drugName + ' - GhaniPharma';
+                img.loading = 'lazy';
+                container.appendChild(img);
+            });
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrugModal() {
+            document.getElementById('drugModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('drugModal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) closeDrugModal();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeDrugModal();
+                supportModal.classList.remove('open');
+                settingsDropdown.classList.remove('open');
+            }
+        });
+
+        // ==================== Toggle Lesson/Exam ====================
+        const btnLesson = document.getElementById('btnLesson');
+        const btnExamen = document.getElementById('btnExamen');
+        const lessonContent = document.getElementById('lessonContent');
+        const examContent = document.getElementById('examContent');
+
+        function showLesson() {
+            lessonContent.style.display = 'block';
+            examContent.style.display = 'none';
+            updateDots('lesson');
+            btnLesson.classList.add('active');
+            btnExamen.classList.remove('active');
+            document.querySelectorAll('#lessonContent .reveal').forEach(el => revealObserver.observe(el));
+            updateActiveDot();
+        }
+
+        function showExam() {
+            lessonContent.style.display = 'none';
+            examContent.style.display = 'block';
+            updateDots('exam');
+            btnLesson.classList.remove('active');
+            btnExamen.classList.add('active');
+            document.querySelectorAll('#examContent .reveal').forEach(el => revealObserver.observe(el));
+            resetExam();
+            updateActiveDot();
+        }
+
+        btnLesson.addEventListener('click', showLesson);
+        btnExamen.addEventListener('click', showExam);
+
+        // ==================== EXAM ====================
+        const correctAnswers = {
+                    "q1": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q2": [
+                                "a",
+                                "b"
+                    ],
+                    "q3": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q4": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q5": [
+                                "a",
+                                "b"
+                    ],
+                    "q6": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q7": [
+                                "a",
+                                "b"
+                    ],
+                    "q8": [
+                                "a",
+                                "b"
+                    ],
+                    "q9": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q10": [
+                                "a",
+                                "b",
+                                "c"
+                    ]
+        };
+
+        document.getElementById('checkExam').addEventListener('click', () => {
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+
+            let totalScore = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                const correctVals = correctAnswers[q];
+                const allCheckboxes = document.querySelectorAll(`input[name="${q}"]`);
+                let hasWrongSelected = false;
+                let correctSelectedCount = 0;
+
+                allCheckboxes.forEach(cb => {
+                    const label = cb.parentElement;
+                    if (cb.checked) {
+                        if (correctVals.includes(cb.value)) {
+                            correctSelectedCount++;
+                            label.classList.add('correct-answer');
+                        } else {
+                            hasWrongSelected = true;
+                            label.classList.add('wrong-answer');
+                        }
+                    } else {
+                        if (correctVals.includes(cb.value)) label.classList.add('missed-answer');
+                    }
+                });
+
+                if (hasWrongSelected) { /* 0 */ }
+                else if (correctSelectedCount === correctVals.length) totalScore += 1;
+                else if (correctSelectedCount > 0) totalScore += correctSelectedCount / correctVals.length;
+            }
+
+            const pct = Math.round((totalScore / totalQuestions) * 100);
+            let msg = `Score : <strong>${totalScore.toFixed(2)} / ${totalQuestions}</strong> (${pct}%). `;
+            if (pct >= 80) msg += "🌟 Excellent !";
+            else if (pct >= 50) msg += "📚 Continuez à réviser.";
+            else msg += "🔍 Révisez le cours et réessayez.";
+            document.getElementById('examResult').innerHTML = msg;
+            document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        function resetExam() {
+            document.querySelectorAll('.question-card input[type="checkbox"]').forEach(i => i.checked = false);
+            document.querySelectorAll('.question-card label').forEach(l => {
+                l.classList.remove('correct-answer', 'wrong-answer', 'missed-answer');
+            });
+            document.getElementById('examResult').textContent = '';
+        }
+        document.getElementById('resetExam').addEventListener('click', resetExam);
+
+        // ==================== Init ====================
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                applyLanguage(opt.dataset.lang);
+            });
+        });
+
+        updateDots('lesson');
+        updateActiveDot();
+        applyLanguage(currentLang);
+    </script>
+</body>
+</html>
