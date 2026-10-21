@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="560" fill="#f7fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#0a0a1a">Lire une ordonnance</text>
+
+  <rect x="250" y="75" width="400" height="455" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="3"/>
+  <path d="M250 75 H650" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="280" y="115" font-size="22" font-weight="700" fill="#00bcd4">Rx</text>
+  <text x="620" y="115" text-anchor="end" font-size="14" fill="#64748b">Date : ....../....../......</text>
+
+  <text x="280" y="155" font-size="15" font-weight="700" fill="#0a0a1a">Prescripteur</text>
+  <text x="280" y="178" font-size="13" fill="#334155">Nom, spécialité, adresse, n° d'ordre</text>
+
+  <text x="280" y="215" font-size="15" font-weight="700" fill="#0a0a1a">Patient</text>
+  <text x="280" y="238" font-size="13" fill="#334155">Nom, prénom, âge, poids (enfant)</text>
+
+  <line x1="280" y1="258" x2="620" y2="258" stroke="#e2e8f0" stroke-width="2"/>
+
+  <text x="280" y="290" font-size="15" font-weight="700" fill="#0a0a1a">Médicament</text>
+  <text x="280" y="313" font-size="13" fill="#334155">DCI ou marque, dosage, forme</text>
+
+  <text x="280" y="350" font-size="15" font-weight="700" fill="#0a0a1a">Posologie</text>
+  <text x="280" y="373" font-size="13" fill="#334155">dose par prise, fréquence, durée</text>
+
+  <text x="280" y="410" font-size="15" font-weight="700" fill="#0a0a1a">Signature</text>
+  <text x="280" y="433" font-size="13" fill="#334155">et cachet du prescripteur</text>
+
+  <g font-size="14" font-weight="700">
+    <circle cx="700" cy="155" r="15" fill="#00bcd4"/><text x="700" y="160" text-anchor="middle" fill="#fff">1</text>
+    <circle cx="700" cy="215" r="15" fill="#00bcd4"/><text x="700" y="220" text-anchor="middle" fill="#fff">2</text>
+    <circle cx="700" cy="290" r="15" fill="#00bcd4"/><text x="700" y="295" text-anchor="middle" fill="#fff">3</text>
+    <circle cx="700" cy="350" r="15" fill="#00bcd4"/><text x="700" y="355" text-anchor="middle" fill="#fff">4</text>
+    <circle cx="700" cy="410" r="15" fill="#00bcd4"/><text x="700" y="415" text-anchor="middle" fill="#fff">5</text>
+  </g>
+  <g font-size="13" fill="#334155">
+    <text x="725" y="160">Qui prescrit</text>
+    <text x="725" y="220">Pour qui</text>
+    <text x="725" y="295">Quoi</text>
+    <text x="725" y="355">Comment</text>
+    <text x="725" y="415">Validation</text>
+  </g>
+
+  <rect x="55" y="475" width="215" height="42" rx="8" fill="#e0f7fa"/>
+  <text x="162" y="501" text-anchor="middle" font-size="13" fill="#006064">Vérifier : date, lisibilité, dose</text>
+</svg>

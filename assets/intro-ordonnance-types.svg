@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="470" fill="#f7fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#0a0a1a">Les types d'ordonnances</text>
+
+  <g>
+    <rect x="45" y="80" width="405" height="160" rx="14" fill="#ffffff" stroke="#00bcd4" stroke-width="3"/>
+    <rect x="70" y="105" width="70" height="90" rx="6" fill="#e0f7fa" stroke="#00bcd4" stroke-width="2"/>
+    <text x="105" y="160" text-anchor="middle" font-size="26" fill="#00bcd4">Rx</text>
+    <text x="160" y="130" font-size="19" font-weight="700" fill="#0a0a1a">Ordonnance simple</text>
+    <text x="160" y="160" font-size="14" fill="#334155">traitement ponctuel,</text>
+    <text x="160" y="182" font-size="14" fill="#334155">non renouvelable</text>
+  </g>
+
+  <g>
+    <rect x="450" y="80" width="405" height="160" rx="14" fill="#ffffff" stroke="#4caf50" stroke-width="3"/>
+    <rect x="475" y="105" width="70" height="90" rx="6" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="510" y="160" text-anchor="middle" font-size="26" fill="#4caf50">↻</text>
+    <text x="565" y="130" font-size="19" font-weight="700" fill="#0a0a1a">Renouvelable</text>
+    <text x="565" y="160" font-size="14" fill="#334155">maladie chronique,</text>
+    <text x="565" y="182" font-size="14" fill="#334155">renouvellement daté</text>
+  </g>
+
+  <g>
+    <rect x="45" y="260" width="405" height="160" rx="14" fill="#ffffff" stroke="#e53935" stroke-width="3"/>
+    <rect x="70" y="285" width="70" height="90" rx="6" fill="#ffebee" stroke="#e53935" stroke-width="2"/>
+    <text x="105" y="340" text-anchor="middle" font-size="24" fill="#e53935">!</text>
+    <text x="160" y="310" font-size="19" font-weight="700" fill="#0a0a1a">Sécurisée</text>
+    <text x="160" y="340" font-size="14" fill="#334155">stupéfiants, durée limitée,</text>
+    <text x="160" y="362" font-size="14" fill="#334155">quantité en chiffres et lettres</text>
+  </g>
+
+  <g>
+    <rect x="450" y="260" width="405" height="160" rx="14" fill="#ffffff" stroke="#9c27b0" stroke-width="3"/>
+    <rect x="475" y="285" width="70" height="90" rx="6" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="510" y="340" text-anchor="middle" font-size="24" fill="#9c27b0">H</text>
+    <text x="565" y="310" font-size="19" font-weight="700" fill="#0a0a1a">Hospitalière / magistrale</text>
+    <text x="565" y="340" font-size="14" fill="#334155">rétrocession, préparation</text>
+    <text x="565" y="362" font-size="14" fill="#334155">faite à la pharmacie</text>
+  </g>
+</svg>

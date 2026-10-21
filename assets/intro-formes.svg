@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="500" fill="#f7fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#0a0a1a">Les formes galéniques</text>
+
+  <g text-anchor="middle" font-size="14" fill="#0a0a1a">
+    <rect x="45" y="85" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="135" cy="145" r="34" fill="#00bcd4" opacity="0.25"/>
+    <ellipse cx="135" cy="145" rx="34" ry="20" fill="#00bcd4"/>
+    <text x="135" y="205">Comprimé</text>
+
+    <rect x="240" y="85" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="101" y="120" width="0" height="0" fill="none"/>
+    <rect x="315" y="118" width="64" height="38" rx="19" fill="#4caf50"/>
+    <rect x="315" y="118" width="64" height="19" rx="10" fill="#81c784"/>
+    <text x="330" y="205">Gélule</text>
+
+    <rect x="435" y="85" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="495" y="108" width="46" height="66" rx="8" fill="#ff9800" opacity="0.8"/>
+    <rect x="515" y="96" width="28" height="14" rx="4" fill="#ffb74d"/>
+    <text x="525" y="205">Sirop</text>
+
+    <rect x="630" y="85" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M700 108 L730 155 L700 198 L670 155 Z" fill="#9c27b0" opacity="0.75"/>
+    <rect x="712" y="100" width="8" height="26" rx="3" fill="#6a1b9a"/>
+    <text x="720" y="205">Injectable</text>
+  </g>
+
+  <g text-anchor="middle" font-size="14" fill="#0a0a1a">
+    <rect x="45" y="265" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M85 340 Q135 305 185 340 L185 365 Q135 335 85 365 Z" fill="#e91e63" opacity="0.6"/>
+    <text x="135" y="405">Pommade / crème</text>
+
+    <rect x="240" y="265" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M315 330 Q330 300 345 330 Q330 375 315 330 Z" fill="#3f51b5" opacity="0.7"/>
+    <text x="330" y="405">Suppositoire</text>
+
+    <rect x="435" y="265" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="495" y="300" width="40" height="75" rx="10" fill="#009688"/>
+    <rect x="505" y="320" width="60" height="26" rx="12" fill="#4db6ac"/>
+    <text x="525" y="405">Inhalateur</text>
+
+    <rect x="630" y="265" width="180" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="720" cy="330" r="30" fill="#795548" opacity="0.35"/>
+    <circle cx="720" cy="330" r="18" fill="#795548" opacity="0.6"/>
+    <text x="720" y="405">Voie locale</text>
+  </g>
+
+  <text x="450" y="460" text-anchor="middle" font-size="15" fill="#334155">Le choix dépend de l'âge, de l'état du patient et de l'effet recherché.</text>
+</svg>
