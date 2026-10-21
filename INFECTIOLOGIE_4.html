@@ -1028,15 +1028,17 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Quinolones</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="ciprofloxacine_title">1. Ciprofloxacine (quinolone)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ciprofloxacine_gen">Ciprofloxacine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Ciprofloxal")">Ciprofloxal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ciprolon")">Ciprolon</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ciprodar")">Ciprodar</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ciprotek")">Ciprotek</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cipro")">Cipro</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciprofloxal&quot;)">Ciprofloxal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciprolon&quot;)">Ciprolon</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciprodar&quot;)">Ciprodar</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciprotek&quot;)">Ciprotek</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cipro&quot;)">Cipro</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ciprofloxacine_formes">Comprimés (250 mg, 500 mg), Suspension, Poudre injectable IV.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ciprofloxacine_posologie">Adulte : 250 à 500 mg, 2 fois par jour. Enfant : 10 à 15 mg/kg, 2 fois par jour. Durée : 7 à 14 jours.</span></p>
@@ -1044,90 +1046,172 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ciprofloxacine_conseil">Prendre assis, avec un grand verre d'eau, à distance des antiacides, du lait et des compléments minéraux (2 h). Arrêter et consulter en cas de douleur tendineuse.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="autres_quinolones_title">2. Norfloxacine, Ofloxacine et Lévofloxacine</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="autres_quinolones_gen">Norfloxacine / Ofloxacine / Lévofloxacine.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="norfloxacine_title">Norfloxacine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="norfloxacine_gen">Norfloxacine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Norfloxal")">Norfloxal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Urobacid")">Urobacid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Oflacin")">Oflacin</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dotur")">Dotur</span>,
-                            <span class="drug-link" onclick="showDrugModal("Oflax")">Oflax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Novecin")">Novecin</span>,
-                            <span class="drug-link" onclick="showDrugModal("Levoflox")">Levoflox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Matador")">Matador</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tavanic")">Tavanic</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Norfloxal&quot;)">Norfloxal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Urobacid&quot;)">Urobacid</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="autres_quinolones_formes">Comprimés (200 mg, 400 mg, 500 mg), Poudre injectable (lévofloxacine).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="autres_quinolones_posologie">Norfloxacine : 400 mg, 2 fois par jour (infections urinaires). Ofloxacine : 200 à 400 mg, 2 fois/j. Lévofloxacine : 500 mg, 1 fois par jour.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="autres_quinolones_particularite">La norfloxacine est surtout urinaire ; le lévofloxacine est la molécule de choix des pneumopathies et des infections profondes (1 prise par jour).</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="autres_quinolones_conseil">Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="norfloxacine_formes">Comprimés (200 mg, 400 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="norfloxacine_posologie">Norfloxacine : 400 mg, 2 fois par jour (infections urinaires).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="norfloxacine_particularite">La norfloxacine est surtout urinaire.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="norfloxacine_conseil">Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="cyclines_title">3. Doxycycline et Lymécycline (cyclines)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cyclines_gen">Doxycycline / Lymécycline.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="ofloxacine_title">Ofloxacine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ofloxacine_gen">Ofloxacine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Vibramycine")">Vibramycine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Biomycine")">Biomycine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Doxyline")">Doxyline</span>,
-                            <span class="drug-link" onclick="showDrugModal("Doxynup")">Doxynup</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tétralysal")">Tétralysal</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Oflacin&quot;)">Oflacin</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dotur&quot;)">Dotur</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Oflax&quot;)">Oflax</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novecin&quot;)">Novecin</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cyclines_formes">Gélules et comprimés (100 mg), Sirop (25 mg/5 ml).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cyclines_posologie">Adulte : 100 mg, 1 à 2 fois par jour (1 g/j max). Enfant : 2 à 4 mg/kg, 2 fois/j (après 8 ans). Acné : 50 à 100 mg/j.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="cyclines_particularite">Très large spectre : pneumopathies atypiques, chlamydioses, acné, maladie de Lyme, rickettsioses. Souvent prescrite en cas d'acné, +8 ans.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="cyclines_conseil">Photosensibilisante : protection solaire. Prendre avec un grand verre d'eau en position assise, à 2 h des laitages, du fer et des antiacides.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ofloxacine_formes">Comprimés (200 mg, 400 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ofloxacine_posologie">Ofloxacine : 200 à 400 mg, 2 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ofloxacine_particularite">Fluoroquinolone à large spectre, active sur les Gram- et certains Gram+. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ofloxacine_conseil">Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.</span></p>
                     </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="levofloxacine_title">Lévofloxacine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="levofloxacine_gen">Lévofloxacine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Levoflox&quot;)">Levoflox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Matador&quot;)">Matador</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tavanic&quot;)">Tavanic</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="levofloxacine_formes">Comprimés (500 mg), Poudre injectable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="levofloxacine_posologie">Lévofloxacine : 500 mg, 1 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="levofloxacine_particularite">Le lévofloxacine est la molécule de choix des pneumopathies et des infections profondes (1 prise par jour).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="levofloxacine_conseil">Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Cyclines</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="doxycycline_title">Doxycycline</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="doxycycline_gen">Doxycycline.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Vibramycine&quot;)">Vibramycine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Biomycine&quot;)">Biomycine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Doxyline&quot;)">Doxyline</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Doxynup&quot;)">Doxynup</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="doxycycline_formes">Gélules et comprimés (100 mg), Sirop (25 mg/5 ml).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="doxycycline_posologie">Adulte : 100 mg, 1 à 2 fois par jour (1 g/j max). Enfant : 2 à 4 mg/kg, 2 fois/j (après 8 ans). Acné : 50 à 100 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="doxycycline_particularite">Très large spectre : pneumopathies atypiques, chlamydioses, acné, maladie de Lyme, rickettsioses. Souvent prescrite en cas d'acné, +8 ans.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="doxycycline_conseil">Photosensibilisante : protection solaire. Prendre avec un grand verre d'eau en position assise, à 2 h des laitages, du fer et des antiacides.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="lymecycline_title">Lymécycline</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lymecycline_gen">Lymécycline.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tétralysal&quot;)">Tétralysal</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lymecycline_formes">Gélules.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lymecycline_posologie">Posologie selon la prescription (données de classe — non spécifiées séparément dans le livre).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="lymecycline_particularite">Cycline à très large spectre : pneumopathies atypiques, chlamydioses, acné, maladie de Lyme, rickettsioses. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="lymecycline_conseil">Photosensibilisante : protection solaire. Prendre avec un grand verre d'eau en position assise, à 2 h des laitages, du fer et des antiacides.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Nitro-imidazolés</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="metronidazole_title">4. Métronidazole</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="metronidazole_gen">Métronidazole.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Flagyl")">Flagyl</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flazol")">Flazol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Metzol")">Metzol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nidazole")">Nidazole</span>,
-                            <span class="drug-link" onclick="showDrugModal("Imuzole")">Imuzole</span>,
-                            <span class="drug-link" onclick="showDrugModal("Biodazole")">Biodazole</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flagyl&quot;)">Flagyl</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flazol&quot;)">Flazol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Metzol&quot;)">Metzol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nidazole&quot;)">Nidazole</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Imuzole&quot;)">Imuzole</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Biodazole&quot;)">Biodazole</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="metronidazole_formes">Comprimés (250 mg, 500 mg), Sirop, Suspension, Suppositoire, Ampoule injectable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="metronidazole_posologie">Adulte : 500 mg à 1,5 g par jour en 3 prises. Amibiase/giardiase : dose adaptée selon prescription. Durée : 7 à 10 jours.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="metronidazole_particularite">Antiparasitaire et antibiotique anaérobie : traite amibiases, giardiases, trichomonases, vaginoses et infections à anaérobies (abcès, gingivites).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="metronidazole_conseil">Éviction totale de l'alcool pendant le traitement et 48 h après. Prendre pendant les repas pour limiter les nausées. Urines foncées sans gravité.</span></p>
                     </div>
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="cotrimoxazole_fosfomycine_title">5. Cotrimoxazole et Fosfomycine</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cotrimoxazole_fosfomycine_gen">Sulfaméthoxazole + Triméthoprime / Fosfomycine (trométamol).</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Cotrimoxale")">Cotrimoxale</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cotrim")">Cotrim</span>,
-                            <span class="drug-link" onclick="showDrugModal("Sulprim")">Sulprim</span>,
-                            <span class="drug-link" onclick="showDrugModal("Primazol")">Primazol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Bactisol")">Bactisol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Monuril")">Monuril</span>,
-                            <span class="drug-link" onclick="showDrugModal("Uricare")">Uricare</span>
-                        </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cotrimoxazole_fosfomycine_formes">Comprimés (400/80 mg, 800/160 mg), Sirop, Sachet granulé (Monuril 3 g).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cotrimoxazole_fosfomycine_posologie">Cotrimoxazole : 1 cp (800/160 mg) 2 fois par jour, 7 à 10 jours. Fosfomycine : 1 sachet de 3 g en dose unique à jeun (femme adulte).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="cotrimoxazole_fosfomycine_particularite">Deux inhibiteurs successifs de l'acide folique (association bactéricide) ; la fosfomycine est un traitement urinaire simple en dose unique (Monuril).</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="cotrimoxazole_fosfomycine_conseil">Monuril : dissoudre un sachet dans 150 ml d'eau froide et boire à jeun. Cotrimoxazole : boire beaucoup d'eau et éviter le soleil (photosensibilisation).</span></p>
                     </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Sulfamides</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="gent_fusidique_nitroxoline_title">6. Gentamicine, Acide fusidique et Nitroxoline</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="gent_fusidique_nitroxoline_gen">Gentamicine / Acide fusidique / Nitroxoline.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="cotrimoxazole_title">Cotrimoxazole</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cotrimoxazole_gen">Sulfaméthoxazole + Triméthoprime.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Gentalline")">Gentalline</span>,
-                            <span class="drug-link" onclick="showDrugModal("Gental")">Gental</span>,
-                            <span class="drug-link" onclick="showDrugModal("Gentalek")">Gentalek</span>,
-                            <span class="drug-link" onclick="showDrugModal("Gentadar")">Gentadar</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fucidine")">Fucidine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Naxolin")">Naxolin</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nibiol")">Nibiol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nabyol fort")">Nabyol fort</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nolib")">Nolib</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cotrimoxale&quot;)">Cotrimoxale</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cotrim&quot;)">Cotrim</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sulprim&quot;)">Sulprim</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Primazol&quot;)">Primazol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Bactisol&quot;)">Bactisol</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="gent_fusidique_nitroxoline_formes">Ampoules injectables IM/IV, Poudre, Comprimés, Gélules, Crème locale.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="gent_fusidique_nitroxoline_posologie">Gentamicine : 3 à 7 mg/kg/j en 1 à 2 prises IM/IV. Acide fusidique : 500 mg à 1 g, 3 fois/j. Nitroxoline : 100 mg, 3 à 4 fois/j (10 jours max).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="gent_fusidique_nitroxoline_particularite">La gentamicine est un aminoside injectable (néphro- et ototoxicité) ; l'acide fusidique est actif sur les staphylocoques (voie orale et locale) ; la nitroxoline est un antiseptique urinaire non absorbé.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="gent_fusidique_nitroxoline_conseil">Gentamicine : en milieu hospitalier avec ionogramme et créatinine. Nitroxoline : urines jaune-vert, à distance des autres traitements. Fucidine crème : usage local uniquement.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cotrimoxazole_formes">Comprimés (400/80 mg, 800/160 mg), Sirop.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cotrimoxazole_posologie">Cotrimoxazole : 1 cp (800/160 mg) 2 fois par jour, 7 à 10 jours.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="cotrimoxazole_particularite">Association de deux inhibiteurs successifs de l'acide folique (bactéricide).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="cotrimoxazole_conseil">Boire beaucoup d'eau et éviter le soleil (photosensibilisation).</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_5_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Aminosides</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="gentamicine_title">Gentamicine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="gentamicine_gen">Gentamicine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gentalline&quot;)">Gentalline</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gental&quot;)">Gental</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gentalek&quot;)">Gentalek</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gentadar&quot;)">Gentadar</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="gentamicine_formes">Ampoules injectables IM/IV, Poudre.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="gentamicine_posologie">Gentamicine : 3 à 7 mg/kg/j en 1 à 2 prises IM/IV.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="gentamicine_particularite">Aminoside injectable (néphro- et ototoxicité).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="gentamicine_conseil">En milieu hospitalier avec ionogramme et créatinine.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_6_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Fusidanes</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="acide_fusidique_title">Acide fusidique</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acide_fusidique_gen">Acide fusidique.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fucidine&quot;)">Fucidine</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acide_fusidique_formes">Comprimés, Gélules, Crème locale.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acide_fusidique_posologie">Acide fusidique : 500 mg à 1 g, 3 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acide_fusidique_particularite">Actif sur les staphylocoques (voie orale et locale).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acide_fusidique_conseil">Fucidine crème : usage local uniquement.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_7_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antibiotiques urinaires</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fosfomycine_title">Fosfomycine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fosfomycine_gen">Fosfomycine trométamol.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Monuril&quot;)">Monuril</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Uricare&quot;)">Uricare</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fosfomycine_formes">Sachet de granulés (3 g).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fosfomycine_posologie">Fosfomycine : 1 sachet de 3 g en dose unique à jeun (femme adulte).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fosfomycine_particularite">Traitement urinaire simple en dose unique (Monuril).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fosfomycine_conseil">Monuril : dissoudre un sachet dans 150 ml d'eau froide et boire à jeun.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_8_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiseptiques urinaires</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="nitroxoline_title">Nitroxoline</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="nitroxoline_gen">Nitroxoline.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Naxolin&quot;)">Naxolin</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nibiol&quot;)">Nibiol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nabyol fort&quot;)">Nabyol fort</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nolib&quot;)">Nolib</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="nitroxoline_formes">Comprimés (100 mg), Solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="nitroxoline_posologie">Nitroxoline : 100 mg, 3 à 4 fois par jour (10 jours max).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="nitroxoline_particularite">Antiseptique urinaire non absorbé.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="nitroxoline_conseil">Urines jaune-vert, à distance des autres traitements.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1365,36 +1449,80 @@
                 ciprofloxacine_posologie: "Adulte : 250 à 500 mg, 2 fois par jour. Enfant : 10 à 15 mg/kg, 2 fois par jour. Durée : 7 à 14 jours.",
                 ciprofloxacine_particularite: "Antibiotique de référence des infections urinaires, digestives (fièvre typhoïde) et ORL de l'adulte. Très bonne activité sur Pseudomonas.",
                 ciprofloxacine_conseil: "Prendre assis, avec un grand verre d'eau, à distance des antiacides, du lait et des compléments minéraux (2 h). Arrêter et consulter en cas de douleur tendineuse.",
-                autres_quinolones_title: "2. Norfloxacine, Ofloxacine et Lévofloxacine",
-                autres_quinolones_gen: "Norfloxacine / Ofloxacine / Lévofloxacine.",
-                autres_quinolones_formes: "Comprimés (200 mg, 400 mg, 500 mg), Poudre injectable (lévofloxacine).",
-                autres_quinolones_posologie: "Norfloxacine : 400 mg, 2 fois par jour (infections urinaires). Ofloxacine : 200 à 400 mg, 2 fois/j. Lévofloxacine : 500 mg, 1 fois par jour.",
-                autres_quinolones_particularite: "La norfloxacine est surtout urinaire ; le lévofloxacine est la molécule de choix des pneumopathies et des infections profondes (1 prise par jour).",
-                autres_quinolones_conseil: "Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.",
-                cyclines_title: "3. Doxycycline et Lymécycline (cyclines)",
-                cyclines_gen: "Doxycycline / Lymécycline.",
-                cyclines_formes: "Gélules et comprimés (100 mg), Sirop (25 mg/5 ml).",
-                cyclines_posologie: "Adulte : 100 mg, 1 à 2 fois par jour (1 g/j max). Enfant : 2 à 4 mg/kg, 2 fois/j (après 8 ans). Acné : 50 à 100 mg/j.",
-                cyclines_particularite: "Très large spectre : pneumopathies atypiques, chlamydioses, acné, maladie de Lyme, rickettsioses. Souvent prescrite en cas d'acné, +8 ans.",
-                cyclines_conseil: "Photosensibilisante : protection solaire. Prendre avec un grand verre d'eau en position assise, à 2 h des laitages, du fer et des antiacides.",
+                norfloxacine_title: "Norfloxacine",
+                norfloxacine_gen: "Norfloxacine.",
+                norfloxacine_formes: "Comprimés (200 mg, 400 mg).",
+                norfloxacine_posologie: "Norfloxacine : 400 mg, 2 fois par jour (infections urinaires).",
+                norfloxacine_particularite: "La norfloxacine est surtout urinaire.",
+                norfloxacine_conseil: "Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.",
+                ofloxacine_title: "Ofloxacine",
+                ofloxacine_gen: "Ofloxacine.",
+                ofloxacine_formes: "Comprimés (200 mg, 400 mg).",
+                ofloxacine_posologie: "Ofloxacine : 200 à 400 mg, 2 fois par jour.",
+                ofloxacine_particularite: "Fluoroquinolone à large spectre, active sur les Gram- et certains Gram+. (données de classe — non spécifiées séparément dans le livre)",
+                ofloxacine_conseil: "Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.",
+                levofloxacine_title: "Lévofloxacine",
+                levofloxacine_gen: "Lévofloxacine.",
+                levofloxacine_formes: "Comprimés (500 mg), Poudre injectable.",
+                levofloxacine_posologie: "Lévofloxacine : 500 mg, 1 fois par jour.",
+                levofloxacine_particularite: "Le lévofloxacine est la molécule de choix des pneumopathies et des infections profondes (1 prise par jour).",
+                levofloxacine_conseil: "Prendre pendant ou après les repas, sans lait ni antiacide dans les 2 h. Hydratation abondante. Contre-indiqué avant 18 ans.",
+                doxycycline_title: "Doxycycline",
+                doxycycline_gen: "Doxycycline.",
+                doxycycline_formes: "Gélules et comprimés (100 mg), Sirop (25 mg/5 ml).",
+                doxycycline_posologie: "Adulte : 100 mg, 1 à 2 fois par jour (1 g/j max). Enfant : 2 à 4 mg/kg, 2 fois/j (après 8 ans). Acné : 50 à 100 mg/j.",
+                doxycycline_particularite: "Très large spectre : pneumopathies atypiques, chlamydioses, acné, maladie de Lyme, rickettsioses. Souvent prescrite en cas d'acné, +8 ans.",
+                doxycycline_conseil: "Photosensibilisante : protection solaire. Prendre avec un grand verre d'eau en position assise, à 2 h des laitages, du fer et des antiacides.",
+                lymecycline_title: "Lymécycline",
+                lymecycline_gen: "Lymécycline.",
+                lymecycline_formes: "Gélules.",
+                lymecycline_posologie: "Posologie selon la prescription (données de classe — non spécifiées séparément dans le livre).",
+                lymecycline_particularite: "Cycline à très large spectre : pneumopathies atypiques, chlamydioses, acné, maladie de Lyme, rickettsioses. (données de classe — non spécifiées séparément dans le livre)",
+                lymecycline_conseil: "Photosensibilisante : protection solaire. Prendre avec un grand verre d'eau en position assise, à 2 h des laitages, du fer et des antiacides.",
                 metronidazole_title: "4. Métronidazole",
                 metronidazole_gen: "Métronidazole.",
                 metronidazole_formes: "Comprimés (250 mg, 500 mg), Sirop, Suspension, Suppositoire, Ampoule injectable.",
                 metronidazole_posologie: "Adulte : 500 mg à 1,5 g par jour en 3 prises. Amibiase/giardiase : dose adaptée selon prescription. Durée : 7 à 10 jours.",
                 metronidazole_particularite: "Antiparasitaire et antibiotique anaérobie : traite amibiases, giardiases, trichomonases, vaginoses et infections à anaérobies (abcès, gingivites).",
                 metronidazole_conseil: "Éviction totale de l'alcool pendant le traitement et 48 h après. Prendre pendant les repas pour limiter les nausées. Urines foncées sans gravité.",
-                cotrimoxazole_fosfomycine_title: "5. Cotrimoxazole et Fosfomycine",
-                cotrimoxazole_fosfomycine_gen: "Sulfaméthoxazole + Triméthoprime / Fosfomycine (trométamol).",
-                cotrimoxazole_fosfomycine_formes: "Comprimés (400/80 mg, 800/160 mg), Sirop, Sachet granulé (Monuril 3 g).",
-                cotrimoxazole_fosfomycine_posologie: "Cotrimoxazole : 1 cp (800/160 mg) 2 fois par jour, 7 à 10 jours. Fosfomycine : 1 sachet de 3 g en dose unique à jeun (femme adulte).",
-                cotrimoxazole_fosfomycine_particularite: "Deux inhibiteurs successifs de l'acide folique (association bactéricide) ; la fosfomycine est un traitement urinaire simple en dose unique (Monuril).",
-                cotrimoxazole_fosfomycine_conseil: "Monuril : dissoudre un sachet dans 150 ml d'eau froide et boire à jeun. Cotrimoxazole : boire beaucoup d'eau et éviter le soleil (photosensibilisation).",
-                gent_fusidique_nitroxoline_title: "6. Gentamicine, Acide fusidique et Nitroxoline",
-                gent_fusidique_nitroxoline_gen: "Gentamicine / Acide fusidique / Nitroxoline.",
-                gent_fusidique_nitroxoline_formes: "Ampoules injectables IM/IV, Poudre, Comprimés, Gélules, Crème locale.",
-                gent_fusidique_nitroxoline_posologie: "Gentamicine : 3 à 7 mg/kg/j en 1 à 2 prises IM/IV. Acide fusidique : 500 mg à 1 g, 3 fois/j. Nitroxoline : 100 mg, 3 à 4 fois/j (10 jours max).",
-                gent_fusidique_nitroxoline_particularite: "La gentamicine est un aminoside injectable (néphro- et ototoxicité) ; l'acide fusidique est actif sur les staphylocoques (voie orale et locale) ; la nitroxoline est un antiseptique urinaire non absorbé.",
-                gent_fusidique_nitroxoline_conseil: "Gentamicine : en milieu hospitalier avec ionogramme et créatinine. Nitroxoline : urines jaune-vert, à distance des autres traitements. Fucidine crème : usage local uniquement.",
+                cotrimoxazole_title: "Cotrimoxazole",
+                cotrimoxazole_gen: "Sulfaméthoxazole + Triméthoprime.",
+                cotrimoxazole_formes: "Comprimés (400/80 mg, 800/160 mg), Sirop.",
+                cotrimoxazole_posologie: "Cotrimoxazole : 1 cp (800/160 mg) 2 fois par jour, 7 à 10 jours.",
+                cotrimoxazole_particularite: "Association de deux inhibiteurs successifs de l'acide folique (bactéricide).",
+                cotrimoxazole_conseil: "Boire beaucoup d'eau et éviter le soleil (photosensibilisation).",
+                gentamicine_title: "Gentamicine",
+                gentamicine_gen: "Gentamicine.",
+                gentamicine_formes: "Ampoules injectables IM/IV, Poudre.",
+                gentamicine_posologie: "Gentamicine : 3 à 7 mg/kg/j en 1 à 2 prises IM/IV.",
+                gentamicine_particularite: "Aminoside injectable (néphro- et ototoxicité).",
+                gentamicine_conseil: "En milieu hospitalier avec ionogramme et créatinine.",
+                acide_fusidique_title: "Acide fusidique",
+                acide_fusidique_gen: "Acide fusidique.",
+                acide_fusidique_formes: "Comprimés, Gélules, Crème locale.",
+                acide_fusidique_posologie: "Acide fusidique : 500 mg à 1 g, 3 fois par jour.",
+                acide_fusidique_particularite: "Actif sur les staphylocoques (voie orale et locale).",
+                acide_fusidique_conseil: "Fucidine crème : usage local uniquement.",
+                fosfomycine_title: "Fosfomycine",
+                fosfomycine_gen: "Fosfomycine trométamol.",
+                fosfomycine_formes: "Sachet de granulés (3 g).",
+                fosfomycine_posologie: "Fosfomycine : 1 sachet de 3 g en dose unique à jeun (femme adulte).",
+                fosfomycine_particularite: "Traitement urinaire simple en dose unique (Monuril).",
+                fosfomycine_conseil: "Monuril : dissoudre un sachet dans 150 ml d'eau froide et boire à jeun.",
+                nitroxoline_title: "Nitroxoline",
+                nitroxoline_gen: "Nitroxoline.",
+                nitroxoline_formes: "Comprimés (100 mg), Solution buvable.",
+                nitroxoline_posologie: "Nitroxoline : 100 mg, 3 à 4 fois par jour (10 jours max).",
+                nitroxoline_particularite: "Antiseptique urinaire non absorbé.",
+                nitroxoline_conseil: "Urines jaune-vert, à distance des autres traitements.",
+                group_1_name: "Quinolones",
+                group_2_name: "Cyclines",
+                group_3_name: "Nitro-imidazolés",
+                group_4_name: "Sulfamides",
+                group_5_name: "Aminosides",
+                group_6_name: "Fusidanes",
+                group_7_name: "Antibiotiques urinaires",
+                group_8_name: "Antiseptiques urinaires",
                 indication_1: "Infections urinaires : cystites, prostatites, pyélonéphrites (norfloxacine, ciprofloxacine, fosfomycine).",
                 indication_2: "Infections digestives : diarrhées invasives et fièvre typhoïde (ciprofloxacine), amibiases et giardiases (métronidazole).",
                 indication_3: "Infections gynécologiques, dentaires et ORL à anaérobies (métronidazole) ; acné et pneumopathies atypiques (doxycycline).",
@@ -1528,36 +1656,80 @@
                 ciprofloxacine_posologie: "بالغين: 250 إلى 500 مغ، مرتين يومياً. طفل: 10 إلى 15 مغ/كغ، مرتين يومياً. المدة: 7 إلى 14 أيام.",
                 ciprofloxacine_particularite: "مضاد حيوي مرجعي لالتهابات المسالك البولية والهضمية (حُمّى التيفوئيد) والENT عند البالغ. نشاط ممتاز على الزائفة.",
                 ciprofloxacine_conseil: "تناوله جالساً مع كوب كبير من الماء، وبعيداً عن مضادات الحموضة والحليب والمكملات المعدنية (ساعتين). توقف واستشر عند ألم في الوتر.",
-                autres_quinolones_title: "2. نورفلوكساسين، أوفلوكساسين وليفوفلوكساسين",
-                autres_quinolones_gen: "نورفلوكساسين / أوفلوكساسين / ليفوفلوكساسين.",
-                autres_quinolones_formes: "أقراص (200 مغ، 400 مغ، 500 مغ)، مسحوق حقن (ليفوفلوكساسين).",
-                autres_quinolones_posologie: "نورفلوكساسين: 400 مغ، مرتين يومياً (التهابات المسالك البولية). أوفلوكساسين: 200 إلى 400 مغ، مرتين. ليفوفلوكساسين: 500 مغ، مرة يومياً.",
-                autres_quinolones_particularite: "النورفلوكساسين خصوصياً للمسالك البولية؛ والليفوفلوكساسين الجرعة المثلى للالتهاب الرئوي والالتهابات العميقة (جرعة واحدة يومياً).",
-                autres_quinolones_conseil: "تناوله مع الوجبات أو بعدها، دون حليب أو مضاد حموضة خلال ساعتين. شرب الماء بغزارة. ممنوع قبل 18 سنة.",
-                cyclines_title: "3. دوكسيسيكلين وليميسايكلين (سايكلينات)",
-                cyclines_gen: "دوكسيسيكلين / ليميسايكلين.",
-                cyclines_formes: "كبسولات وأقراص (100 مغ)، شراب (25 مغ/5 مل).",
-                cyclines_posologie: "بالغين: 100 مغ، مرة إلى مرتين يومياً (1 غ/يوم كحد أقصى). طفل: 2 إلى 4 مغ/كغ، مرتين (بعد 8 سنوات). حب الشباب: 50 إلى 100 مغ/يوم.",
-                cyclines_particularite: "طيف واسع جداً: الالتهاب الرئوي النموذجي، الكلاميديا، حب الشباب، مرض لايم، داء الريكتسيا. غالباً لحب الشباب، من 8 سنوات.",
-                cyclines_conseil: "مسببة حساسية للضوء: واقٍ من الشمس. تؤخذ مع كوب كبير من الماء في وضعية جلوس، وبعدها ساعتان عن الحليب والحديد ومضادات الحموضة.",
+                norfloxacine_title: "نورفلوكساسين",
+                norfloxacine_gen: "نورفلوكساسين.",
+                norfloxacine_formes: "أقراص (200 مغ، 400 مغ).",
+                norfloxacine_posologie: "نورفلوكساسين: 400 مغ، مرتين يومياً (التهابات المسالك البولية).",
+                norfloxacine_particularite: "النورفلوكساسين خصوصياً للمسالك البولية.",
+                norfloxacine_conseil: "تناوله مع الوجبات أو بعدها، دون حليب أو مضاد حموضة خلال ساعتين. شرب الماء بغزارة. ممنوع قبل 18 سنة.",
+                ofloxacine_title: "أوفلوكساسين",
+                ofloxacine_gen: "أوفلوكساسين.",
+                ofloxacine_formes: "أقراص (200 مغ، 400 مغ).",
+                ofloxacine_posologie: "أوفلوكساسين: 200 إلى 400 مغ، مرتين يومياً.",
+                ofloxacine_particularite: "فلوروكينولون واسع الطيف، فعال على سالبات الغرام وبعض موجباتها. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                ofloxacine_conseil: "تناوله مع الوجبات أو بعدها، دون حليب أو مضاد حموضة خلال ساعتين. شرب الماء بغزارة. ممنوع قبل 18 سنة.",
+                levofloxacine_title: "ليفوفلوكساسين",
+                levofloxacine_gen: "ليفوفلوكساسين.",
+                levofloxacine_formes: "أقراص (500 مغ)، مسحوق حقن.",
+                levofloxacine_posologie: "ليفوفلوكساسين: 500 مغ، مرة يومياً.",
+                levofloxacine_particularite: "الليفوفلوكساسين الجرعة المثلى للالتهاب الرئوي والالتهابات العميقة (جرعة واحدة يومياً).",
+                levofloxacine_conseil: "تناوله مع الوجبات أو بعدها، دون حليب أو مضاد حموضة خلال ساعتين. شرب الماء بغزارة. ممنوع قبل 18 سنة.",
+                doxycycline_title: "دوكسيسيكلين",
+                doxycycline_gen: "دوكسيسيكلين.",
+                doxycycline_formes: "كبسولات وأقراص (100 مغ)، شراب (25 مغ/5 مل).",
+                doxycycline_posologie: "بالغين: 100 مغ، مرة إلى مرتين يومياً (1 غ/يوم كحد أقصى). طفل: 2 إلى 4 مغ/كغ، مرتين (بعد 8 سنوات). حب الشباب: 50 إلى 100 مغ/يوم.",
+                doxycycline_particularite: "طيف واسع جداً: الالتهاب الرئوي النموذجي، الكلاميديا، حب الشباب، مرض لايم، داء الريكتسيا. غالباً لحب الشباب، من 8 سنوات.",
+                doxycycline_conseil: "مسببة حساسية للضوء: واقٍ من الشمس. تؤخذ مع كوب كبير من الماء في وضعية جلوس، وبعدها ساعتان عن الحليب والحديد ومضادات الحموضة.",
+                lymecycline_title: "ليميسايكلين",
+                lymecycline_gen: "ليميسايكلين.",
+                lymecycline_formes: "كبسولات.",
+                lymecycline_posologie: "الجرعة حسب الوصفة (بيانات صنفية — غير محددة بشكل منفصل في الكتاب).",
+                lymecycline_particularite: "سايكلين واسع الطيف جداً: الالتهاب الرئوي النموذجي، الكلاميديا، حب الشباب، مرض لايم، داء الريكتسيا. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                lymecycline_conseil: "مسببة حساسية للضوء: واقٍ من الشمس. تؤخذ مع كوب كبير من الماء في وضعية جلوس، وبعدها ساعتان عن الحليب والحديد ومضادات الحموضة.",
                 metronidazole_title: "4. ميترونيدازول",
                 metronidazole_gen: "ميترونيدازول.",
                 metronidazole_formes: "أقراص (250 مغ، 500 مغ)، شراب، شراب معلق، تحاميل، أمبولات حقن.",
                 metronidazole_posologie: "بالغين: 500 مغ إلى 1,5 غ يومياً في 3 جرعات. الأميبية/الجيلارديا: جرعة مناسبة حسب الوصفة. المدة: 7 إلى 10 أيام.",
                 metronidazole_particularite: "مضاد طفيليات ومضاد حيوي لاهوائي: يعالج الأميبية والجيلارديا والخميسات والتهابات المهبل والعدوى اللاهوائية (خراج، التهاب اللثة).",
                 metronidazole_conseil: "تجنّب كلي للخمر أثناء العلاج وبعده 48 ساعة. تؤخذ مع الوجبات لتقليل الغثيان. بول داكن بلا خطورة.",
-                cotrimoxazole_fosfomycine_title: "5. كوتريموكسازول وفوسفومايسين",
-                cotrimoxazole_fosfomycine_gen: "سلفاميثوكسازول + ثيميثوبريم / فوسفومايسين (تروميدامول).",
-                cotrimoxazole_fosfomycine_formes: "أقراص (400/80 مغ، 800/160 مغ)، شراب، كيس حبيبات (مونوريل 3 غ).",
-                cotrimoxazole_fosfomycine_posologie: "كوتريموكسازول: قرص (800/160 مغ) مرتين يومياً، 7 إلى 10 أيام. فوسفومايسين: كيس 3 غ بجرعة واحدة صائمة (امرأة بالغة).",
-                cotrimoxazole_fosfomycine_particularite: "مثبطان متتاليان لحمض الفوليك (اقتران قتالي)؛ والفوسفومايسين علاج بولي بسيط بجرعة واحدة (مونوريل).",
-                cotrimoxazole_fosfomycine_conseil: "مونوريل: أذب كيساً في 150 مل ماء بارد واشربه صائماً. كوتريموكسازول: اشرب الماء بغزارة وتجنّب الشمس (حساسية ضوئية).",
-                gent_fusidique_nitroxoline_title: "6. جنتاميسين، حمض الفوسيدك ونيتروكسولين",
-                gent_fusidique_nitroxoline_gen: "جنتاميسين / حمض الفوسيدك / نيتروكسولين.",
-                gent_fusidique_nitroxoline_formes: "أمبولات حقن عضلي/وريدي، مسحوق، أقراص، كبسولات، كريم موضعي.",
-                gent_fusidique_nitroxoline_posologie: "جنتاميسين: 3 إلى 7 مغ/كغ/يوم في جرعة إلى جرعتين عضلي/وريدي. حمض الفوسيدك: 500 مغ إلى 1 غ، 3 مرات يومياً. نيتروكسولين: 100 مغ، 3 إلى 4 مرات يومياً (10 أيام كحد أقصى).",
-                gent_fusidique_nitroxoline_particularite: "الجنتاميسين أمينوسايد للحقن (سام على الكلى والأذن)؛ حمض الفوسيدك فعال على المكورات العنقودية (فموي وموضعي)؛ النيتروكسولين مطهر بولي غير ممتص.",
-                gent_fusidique_nitroxoline_conseil: "جنتاميسين: في المستشفى مع تتبّع الكالسيوم والبوتاسيوم والكرياتينين. نيتروكسولين: بول أصفر-أخضر، بعيداً عن العلاجات الأخرى. كريم فيوسيدين: استعمال موضعي فقط.",
+                cotrimoxazole_title: "كوتريموكسازول",
+                cotrimoxazole_gen: "سلفاميثوكسازول + ثيميثوبريم.",
+                cotrimoxazole_formes: "أقراص (400/80 مغ، 800/160 مغ)، شراب.",
+                cotrimoxazole_posologie: "كوتريموكسازول: قرص (800/160 مغ) مرتين يومياً، 7 إلى 10 أيام.",
+                cotrimoxazole_particularite: "اقتران مثبطين متتاليين لحمض الفوليك (قتالي).",
+                cotrimoxazole_conseil: "اشرب الماء بغزارة وتجنّب الشمس (حساسية ضوئية).",
+                gentamicine_title: "جنتاميسين",
+                gentamicine_gen: "جنتاميسين.",
+                gentamicine_formes: "أمبولات حقن عضلي/وريدي، مسحوق.",
+                gentamicine_posologie: "جنتاميسين: 3 إلى 7 مغ/كغ/يوم في جرعة إلى جرعتين عضلي/وريدي.",
+                gentamicine_particularite: "أمينوسايد للحقن (سام على الكلى والأذن).",
+                gentamicine_conseil: "في المستشفى مع تتبّع الكالسيوم والبوتاسيوم والكرياتينين.",
+                acide_fusidique_title: "حمض الفوسيدك",
+                acide_fusidique_gen: "حمض الفوسيدك.",
+                acide_fusidique_formes: "أقراص، كبسولات، كريم موضعي.",
+                acide_fusidique_posologie: "حمض الفوسيدك: 500 مغ إلى 1 غ، 3 مرات يومياً.",
+                acide_fusidique_particularite: "فعال على المكورات العنقودية (فموي وموضعي).",
+                acide_fusidique_conseil: "كريم فيوسيدين: استعمال موضعي فقط.",
+                fosfomycine_title: "فوسفومايسين",
+                fosfomycine_gen: "فوسفومايسين تروميتامول.",
+                fosfomycine_formes: "كيس حبيبات (3 غ).",
+                fosfomycine_posologie: "فوسفومايسين: كيس 3 غ بجرعة واحدة صائمة (امرأة بالغة).",
+                fosfomycine_particularite: "علاج بولي بسيط بجرعة واحدة (مونوريل).",
+                fosfomycine_conseil: "مونوريل: أذب كيساً في 150 مل ماء بارد واشربه صائماً.",
+                nitroxoline_title: "نيتروكسولين",
+                nitroxoline_gen: "نيتروكسولين.",
+                nitroxoline_formes: "أقراص (100 مغ)، محلول فموي.",
+                nitroxoline_posologie: "نيتروكسولين: 100 مغ، 3 إلى 4 مرات يومياً (10 أيام كحد أقصى).",
+                nitroxoline_particularite: "مطهّر بولي غير ممتص.",
+                nitroxoline_conseil: "بول أصفر-أخضر، بعيداً عن العلاجات الأخرى.",
+                group_1_name: "الكينولونات",
+                group_2_name: "السايكلينات",
+                group_3_name: "مشتقات النيتروإيميدازول",
+                group_4_name: "السلفاميدات",
+                group_5_name: "الأمينوسيدات",
+                group_6_name: "الفوسيدانات",
+                group_7_name: "المضادات الحيوية البولية",
+                group_8_name: "المطهرات البولية",
                 indication_1: "التهابات المسالك البولية: التهاب المثانة، البروستات، الكلية الحويصلية (نورفلوكساسين، سيبروفلوكساسين، فوسفومايسين).",
                 indication_2: "العدوى الهضمية: الإسهال العدواني وحُمّى التيفوئيد (سيبروفلوكساسين)، الأميبية والجيلارديا (ميترونيدازول).",
                 indication_3: "التهابات النسائية والأسنان وال ENT اللاهوائية (ميترونيدازول)؛ حب الشباب والالتهابات الرئوية النموذجية (دوكسيسيكلين).",
@@ -1691,36 +1863,80 @@
                 ciprofloxacine_posologie: "Adult: 250 to 500 mg twice daily. Child: 10 to 15 mg/kg twice daily. Duration: 7 to 14 days.",
                 ciprofloxacine_particularite: "Reference antibiotic for urinary, digestive (typhoid fever) and ENT infections in adults. Very good activity against Pseudomonas.",
                 ciprofloxacine_conseil: "Take sitting, with a large glass of water, away from antacids, milk and mineral supplements (2 h). Stop and consult in case of tendon pain.",
-                autres_quinolones_title: "2. Norfloxacin, Ofloxacin and Levofloxacin",
-                autres_quinolones_gen: "Norfloxacin / Ofloxacin / Levofloxacin.",
-                autres_quinolones_formes: "Tablets (200 mg, 400 mg, 500 mg), Injectable powder (levofloxacin).",
-                autres_quinolones_posologie: "Norfloxacin: 400 mg twice daily (urinary infections). Ofloxacin: 200 to 400 mg twice daily. Levofloxacin: 500 mg once daily.",
-                autres_quinolones_particularite: "Norfloxacin is mainly for urinary tract; levofloxacin is the molecule of choice for pneumopathies and deep infections (once daily).",
-                autres_quinolones_conseil: "Take with or after meals, no milk or antacid within 2 h. Drink plenty of water. Contraindicated before 18 years.",
-                cyclines_title: "3. Doxycycline and Lymecycline (cyclines)",
-                cyclines_gen: "Doxycycline / Lymecycline.",
-                cyclines_formes: "Capsules and tablets (100 mg), Syrup (25 mg/5 ml).",
-                cyclines_posologie: "Adult: 100 mg once or twice daily (max 1 g/day). Child: 2 to 4 mg/kg twice daily (after 8 years). Acne: 50 to 100 mg/day.",
-                cyclines_particularite: "Very broad spectrum: atypical pneumopathies, chlamydias, acne, Lyme disease, rickettsioses. Often prescribed for acne, from 8 years.",
-                cyclines_conseil: "Photosensitizing: sun protection. Take with a large glass of water while sitting, 2 h away from dairy, iron and antacids.",
+                norfloxacine_title: "Norfloxacin",
+                norfloxacine_gen: "Norfloxacin.",
+                norfloxacine_formes: "Tablets (200 mg, 400 mg).",
+                norfloxacine_posologie: "Norfloxacin: 400 mg twice daily (urinary infections).",
+                norfloxacine_particularite: "Norfloxacin is mainly for urinary tract infections.",
+                norfloxacine_conseil: "Take with or after meals, no milk or antacid within 2 h. Drink plenty of water. Contraindicated before 18 years.",
+                ofloxacine_title: "Ofloxacin",
+                ofloxacine_gen: "Ofloxacin.",
+                ofloxacine_formes: "Tablets (200 mg, 400 mg).",
+                ofloxacine_posologie: "Ofloxacin: 200 to 400 mg twice daily.",
+                ofloxacine_particularite: "Broad-spectrum fluoroquinolone, active on Gram-negatives and some Gram-positives. (class-level data — not specified separately in the book)",
+                ofloxacine_conseil: "Take with or after meals, no milk or antacid within 2 h. Drink plenty of water. Contraindicated before 18 years.",
+                levofloxacine_title: "Levofloxacin",
+                levofloxacine_gen: "Levofloxacin.",
+                levofloxacine_formes: "Tablets (500 mg), Injectable powder.",
+                levofloxacine_posologie: "Levofloxacin: 500 mg once daily.",
+                levofloxacine_particularite: "Levofloxacin is the molecule of choice for pneumopathies and deep infections (once daily).",
+                levofloxacine_conseil: "Take with or after meals, no milk or antacid within 2 h. Drink plenty of water. Contraindicated before 18 years.",
+                doxycycline_title: "Doxycycline",
+                doxycycline_gen: "Doxycycline.",
+                doxycycline_formes: "Capsules and tablets (100 mg), Syrup (25 mg/5 ml).",
+                doxycycline_posologie: "Adult: 100 mg once or twice daily (max 1 g/day). Child: 2 to 4 mg/kg twice daily (after 8 years). Acne: 50 to 100 mg/day.",
+                doxycycline_particularite: "Very broad spectrum: atypical pneumopathies, chlamydias, acne, Lyme disease, rickettsioses. Often prescribed for acne, from 8 years.",
+                doxycycline_conseil: "Photosensitizing: sun protection. Take with a large glass of water while sitting, 2 h away from dairy, iron and antacids.",
+                lymecycline_title: "Lymecycline",
+                lymecycline_gen: "Lymecycline.",
+                lymecycline_formes: "Capsules.",
+                lymecycline_posologie: "Dosage as prescribed (class-level data — not specified separately in the book).",
+                lymecycline_particularite: "Very broad-spectrum cycline: atypical pneumopathies, chlamydias, acne, Lyme disease, rickettsioses. (class-level data — not specified separately in the book)",
+                lymecycline_conseil: "Photosensitizing: sun protection. Take with a large glass of water while sitting, 2 h away from dairy, iron and antacids.",
                 metronidazole_title: "4. Metronidazole",
                 metronidazole_gen: "Metronidazole.",
                 metronidazole_formes: "Tablets (250 mg, 500 mg), Syrup, Suspension, Suppository, Injectable ampoule.",
                 metronidazole_posologie: "Adult: 500 mg to 1.5 g daily in 3 doses. Amoebiasis/giardiasis: dose as prescribed. Duration: 7 to 10 days.",
                 metronidazole_particularite: "Antiparasitic and anaerobic antibiotic: treats amoebiasis, giardiasis, trichomoniasis, vaginitis and anaerobic infections (abscess, gingivitis).",
                 metronidazole_conseil: "Complete alcohol avoidance during treatment and 48 h after. Take with meals to reduce nausea. Dark urine, harmless.",
-                cotrimoxazole_fosfomycine_title: "5. Cotrimoxazole and Fosfomycin",
-                cotrimoxazole_fosfomycine_gen: "Sulfamethoxazole + trimethoprim / Fosfomycin (trometamol).",
-                cotrimoxazole_fosfomycine_formes: "Tablets (400/80 mg, 800/160 mg), Syrup, Granule sachet (Monuril 3 g).",
-                cotrimoxazole_fosfomycine_posologie: "Cotrimoxazole: 1 tablet (800/160 mg) twice daily, 7 to 10 days. Fosfomycin: one 3 g sachet as a single fasting dose (adult woman).",
-                cotrimoxazole_fosfomycine_particularite: "Two successive inhibitors of folic acid (bactericidal combination); fosfomycin is a simple single-dose urinary treatment (Monuril).",
-                cotrimoxazole_fosfomycine_conseil: "Monuril: dissolve one sachet in 150 ml cold water and drink fasting. Cotrimoxazole: drink plenty of water and avoid sun (photosensitization).",
-                gent_fusidique_nitroxoline_title: "6. Gentamicin, Fusidic acid and Nitroxoline",
-                gent_fusidique_nitroxoline_gen: "Gentamicin / Fusidic acid / Nitroxoline.",
-                gent_fusidique_nitroxoline_formes: "IM/IV injectable ampoules, Powder, Tablets, Capsules, Local cream.",
-                gent_fusidique_nitroxoline_posologie: "Gentamicin: 3 to 7 mg/kg/day in 1 to 2 IM/IV doses. Fusidic acid: 500 mg to 1 g three times daily. Nitroxoline: 100 mg three to four times daily (max 10 days).",
-                gent_fusidique_nitroxoline_particularite: "Gentamicin is an injectable aminoside (nephro- and ototoxic); fusidic acid is active against staphylococci (oral and local); nitroxoline is a non-absorbed urinary antiseptic.",
-                gent_fusidique_nitroxoline_conseil: "Gentamicin: hospital setting with electrolyte and creatinine monitoring. Nitroxoline: yellow-green urine, separated from other treatments. Fucidin cream: local use only.",
+                cotrimoxazole_title: "Cotrimoxazole",
+                cotrimoxazole_gen: "Sulfamethoxazole + trimethoprim.",
+                cotrimoxazole_formes: "Tablets (400/80 mg, 800/160 mg), Syrup.",
+                cotrimoxazole_posologie: "Cotrimoxazole: 1 tablet (800/160 mg) twice daily, 7 to 10 days.",
+                cotrimoxazole_particularite: "Combination of two successive folic acid inhibitors (bactericidal).",
+                cotrimoxazole_conseil: "Drink plenty of water and avoid sun (photosensitization).",
+                gentamicine_title: "Gentamicin",
+                gentamicine_gen: "Gentamicin.",
+                gentamicine_formes: "IM/IV injectable ampoules, Powder.",
+                gentamicine_posologie: "Gentamicin: 3 to 7 mg/kg/day in 1 to 2 IM/IV doses.",
+                gentamicine_particularite: "Injectable aminoside (nephro- and ototoxic).",
+                gentamicine_conseil: "In hospital with electrolyte and creatinine monitoring.",
+                acide_fusidique_title: "Fusidic acid",
+                acide_fusidique_gen: "Fusidic acid.",
+                acide_fusidique_formes: "Tablets, Capsules, Local cream.",
+                acide_fusidique_posologie: "Fusidic acid: 500 mg to 1 g three times daily.",
+                acide_fusidique_particularite: "Active against staphylococci (oral and local).",
+                acide_fusidique_conseil: "Fucidin cream: local use only.",
+                fosfomycine_title: "Fosfomycin",
+                fosfomycine_gen: "Fosfomycin trometamol.",
+                fosfomycine_formes: "Sachet of granules (3 g).",
+                fosfomycine_posologie: "Fosfomycin: one 3 g sachet as a single fasting dose (adult woman).",
+                fosfomycine_particularite: "Simple single-dose urinary treatment (Monuril).",
+                fosfomycine_conseil: "Monuril: dissolve one sachet in 150 ml cold water and drink fasting.",
+                nitroxoline_title: "Nitroxoline",
+                nitroxoline_gen: "Nitroxoline.",
+                nitroxoline_formes: "Tablets (100 mg), Oral solution.",
+                nitroxoline_posologie: "Nitroxoline: 100 mg three to four times daily (max 10 days).",
+                nitroxoline_particularite: "Non-absorbed urinary antiseptic.",
+                nitroxoline_conseil: "Yellow-green urine, separated from other treatments.",
+                group_1_name: "Quinolones",
+                group_2_name: "Cyclines",
+                group_3_name: "Nitroimidazoles",
+                group_4_name: "Sulfonamides",
+                group_5_name: "Aminoglycosides",
+                group_6_name: "Fusidanes",
+                group_7_name: "Urinary antibiotics",
+                group_8_name: "Urinary antiseptics",
                 indication_1: "Urinary infections: cystitis, prostatitis, pyelonephritis (norfloxacin, ciprofloxacin, fosfomycin).",
                 indication_2: "Digestive infections: invasive diarrhea and typhoid fever (ciprofloxacin), amoebiasis and giardiasis (metronidazole).",
                 indication_3: "Gynaecological, dental and ENT anaerobic infections (metronidazole); acne and atypical pneumopathies (doxycycline).",
@@ -2097,13 +2313,13 @@
                     "Sulprim": [],
                     "Primazol": [],
                     "Bactisol": [],
-                    "Monuril": [],
-                    "Uricare": [],
                     "Gentalline": [],
                     "Gental": [],
                     "Gentalek": [],
                     "Gentadar": [],
                     "Fucidine": [],
+                    "Monuril": [],
+                    "Uricare": [],
                     "Naxolin": [],
                     "Nibiol": [],
                     "Nabyol fort": [],

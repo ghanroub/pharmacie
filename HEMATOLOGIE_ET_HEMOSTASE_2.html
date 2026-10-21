@@ -1028,18 +1028,20 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Fers</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="fer_polymaltose_title">1. Hydroxyde ferrique polymaltose (fer trivalent)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_polymaltose_gen">Hydroxyde ferrique polymaltose (Fe3+).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Orofer")">Orofer</span>,
-                            <span class="drug-link" onclick="showDrugModal("Orofer plus")">Orofer plus</span>,
-                            <span class="drug-link" onclick="showDrugModal("Selofer")">Selofer</span>,
-                            <span class="drug-link" onclick="showDrugModal("Trifer")">Trifer</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hausmann")">Hausmann</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ferrum")">Ferrum</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ferrocure")">Ferrocure</span>,
-                            <span class="drug-link" onclick="showDrugModal("Geofer")">Geofer</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Orofer&quot;)">Orofer</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Orofer plus&quot;)">Orofer plus</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Selofer&quot;)">Selofer</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Trifer&quot;)">Trifer</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hausmann&quot;)">Hausmann</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ferrum&quot;)">Ferrum</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ferrocure&quot;)">Ferrocure</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Geofer&quot;)">Geofer</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_polymaltose_formes">Comprimés, sirop, solution buvable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_polymaltose_posologie">Adulte : 1 à 2 comprimés par jour ; enfant selon l'âge et le poids.</span></p>
@@ -1047,54 +1049,77 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_polymaltose_conseil">À prendre avant les repas avec une boisson riche en vitamine C.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="fer_ferreux_title">2. Sulfate ferreux et gluconate ferreux</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_ferreux_gen">Sulfate ferreux / gluconate ferreux (fer divalent).</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="sulfate_ferreux_title">2. Sulfate ferreux</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="sulfate_ferreux_gen">Sulfate ferreux (fer divalent).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Tardyferon")">Tardyferon</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tot'hema")">Tot'hema</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tardyferon&quot;)">Tardyferon</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_ferreux_formes">Comprimés ; ampoules buvables (Tot'hema : 10 ml = fer 50 mg + cuivre 0,70 mg + manganèse 1,33 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_ferreux_posologie">Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_ferreux_particularite">Sels ferreux souvent responsables de troubles digestifs et de selles noires.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_ferreux_conseil">À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="sulfate_ferreux_formes">Comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="sulfate_ferreux_posologie">Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="sulfate_ferreux_particularite">Sels ferreux souvent responsables de troubles digestifs et de selles noires. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="sulfate_ferreux_conseil">À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="fer_fumarate_title">3. Fumarate ferreux et feredetate de sodium</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_fumarate_gen">Fumarate ferreux / feredetate de sodium.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="gluconate_ferreux_title">3. Gluconate ferreux</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="gluconate_ferreux_gen">Gluconate ferreux (fer divalent).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Fumacur")">Fumacur</span>,
-                            <span class="drug-link" onclick="showDrugModal("Federate")">Federate</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ferolam")">Ferolam</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ferrostrane")">Ferrostrane</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tot'hema&quot;)">Tot'hema</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_fumarate_formes">Comprimés, solution buvable.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_fumarate_posologie">Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_fumarate_particularite">Autres formes de fer oral utilisées dans la carence martiale.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_fumarate_conseil">Prendre à distance des aliments et médicaments qui freinent l'absorption.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="gluconate_ferreux_formes">Ampoules buvables (Tot'hema : 10 ml = fer 50 mg + cuivre 0,70 mg + manganèse 1,33 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="gluconate_ferreux_posologie">Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="gluconate_ferreux_particularite">Sels ferreux souvent responsables de troubles digestifs et de selles noires. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="gluconate_ferreux_conseil">À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="fer_b9_title">4. Fer + acide folique (FER + VIT B9)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="fumarate_ferreux_title">4. Fumarate ferreux</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fumarate_ferreux_gen">Fumarate ferreux (fer divalent).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fumacur&quot;)">Fumacur</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ferolam&quot;)">Ferolam</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fumarate_ferreux_formes">Comprimés, solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fumarate_ferreux_posologie">Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fumarate_ferreux_particularite">Autres formes de fer oral utilisées dans la carence martiale. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fumarate_ferreux_conseil">Prendre à distance des aliments et médicaments qui freinent l'absorption.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="feredetate_sodium_title">5. Feredetate de sodium</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="feredetate_sodium_gen">Feredetate de sodium (fer trivalent).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Federate&quot;)">Federate</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ferrostrane&quot;)">Ferrostrane</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="feredetate_sodium_formes">Comprimés, solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="feredetate_sodium_posologie">Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="feredetate_sodium_particularite">Autres formes de fer oral utilisées dans la carence martiale. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="feredetate_sodium_conseil">Prendre à distance des aliments et médicaments qui freinent l'absorption.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fer_b9_title">6. Fer + acide folique (FER + VIT B9)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fer_b9_gen">Hydroxyde ferrique polymaltose ou sulfate ferreux + acide folique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Trifer fol")">Trifer fol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tardyferon B9")">Tardyferon B9</span>,
-                            <span class="drug-link" onclick="showDrugModal("Zanitra")">Zanitra</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fonitra")">Fonitra</span>,
-                            <span class="drug-link" onclick="showDrugModal("Selofer fol")">Selofer fol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Novofer plus")">Novofer plus</span>,
-                            <span class="drug-link" onclick="showDrugModal("Razes")">Razes</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ferro sanol gyn")">Ferro sanol gyn</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Trifer fol&quot;)">Trifer fol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tardyferon B9&quot;)">Tardyferon B9</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zanitra&quot;)">Zanitra</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fonitra&quot;)">Fonitra</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Selofer fol&quot;)">Selofer fol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novofer plus&quot;)">Novofer plus</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Razes&quot;)">Razes</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ferro sanol gyn&quot;)">Ferro sanol gyn</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fer_b9_formes">Comprimés, gélules.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fer_b9_posologie">Généralement 1 comprimé par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fer_b9_particularite">Indiqué dans l'anémie ferriprive associée à une carence en B9 et pendant la grossesse.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fer_b9_conseil">Prévenir les carences chez la femme enceinte et en période de croissance.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Vitamines antianémiques</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="cyanocobalamine_title">5. Cyanocobalamine (vitamine B12)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="cyanocobalamine_title">7. Cyanocobalamine (vitamine B12)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cyanocobalamine_gen">Cyanocobalamine (vitamine B12).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Cobamine")">Cobamine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cobamine&quot;)">Cobamine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cyanocobalamine_formes">Ampoules injectables, comprimés.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cyanocobalamine_posologie">Selon la carence : 1 ampoule IM par jour puis dose d'entretien.</span></p>
@@ -1102,17 +1127,18 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="cyanocobalamine_conseil">Traitement parfois poursuivi à vie ; ne pas interrompre sans avis.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="acide_folique_title">6. Acide folique (vitamine B9)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="acide_folique_title">8. Acide folique (vitamine B9)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acide_folique_gen">Acide folique (vitamine B9).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Foliden")">Foliden</span>,
-                            <span class="drug-link" onclick="showDrugModal("Folacid")">Folacid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hupfoliq")">Hupfoliq</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Foliden&quot;)">Foliden</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Folacid&quot;)">Folacid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hupfoliq&quot;)">Hupfoliq</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acide_folique_formes">Comprimés 5 mg.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acide_folique_posologie">1 comprimé par jour selon la prescription.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acide_folique_particularite">Indiqué dans les anémies mégaloblastiques et en prévention pendant la grossesse.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acide_folique_conseil">Débuter avant la conception dans un projet de grossesse.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1350,36 +1376,50 @@
                 fer_polymaltose_posologie: "Adulte : 1 à 2 comprimés par jour ; enfant selon l'âge et le poids.",
                 fer_polymaltose_particularite: "Bien absorbé et généralement mieux toléré que les sels ferreux.",
                 fer_polymaltose_conseil: "À prendre avant les repas avec une boisson riche en vitamine C.",
-                fer_ferreux_title: "2. Sulfate ferreux et gluconate ferreux",
-                fer_ferreux_gen: "Sulfate ferreux / gluconate ferreux (fer divalent).",
-                fer_ferreux_formes: "Comprimés ; ampoules buvables (Tot'hema : 10 ml = fer 50 mg + cuivre 0,70 mg + manganèse 1,33 mg).",
-                fer_ferreux_posologie: "Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.",
-                fer_ferreux_particularite: "Sels ferreux souvent responsables de troubles digestifs et de selles noires.",
-                fer_ferreux_conseil: "À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.",
-                fer_fumarate_title: "3. Fumarate ferreux et feredetate de sodium",
-                fer_fumarate_gen: "Fumarate ferreux / feredetate de sodium.",
-                fer_fumarate_formes: "Comprimés, solution buvable.",
-                fer_fumarate_posologie: "Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.",
-                fer_fumarate_particularite: "Autres formes de fer oral utilisées dans la carence martiale.",
-                fer_fumarate_conseil: "Prendre à distance des aliments et médicaments qui freinent l'absorption.",
-                fer_b9_title: "4. Fer + acide folique (FER + VIT B9)",
+                sulfate_ferreux_title: "2. Sulfate ferreux",
+                sulfate_ferreux_gen: "Sulfate ferreux (fer divalent).",
+                sulfate_ferreux_formes: "Comprimés.",
+                sulfate_ferreux_posologie: "Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.",
+                sulfate_ferreux_particularite: "Sels ferreux souvent responsables de troubles digestifs et de selles noires. (données de classe — non spécifiées séparément dans le livre)",
+                sulfate_ferreux_conseil: "À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.",
+                gluconate_ferreux_title: "3. Gluconate ferreux",
+                gluconate_ferreux_gen: "Gluconate ferreux (fer divalent).",
+                gluconate_ferreux_formes: "Ampoules buvables (Tot'hema : 10 ml = fer 50 mg + cuivre 0,70 mg + manganèse 1,33 mg).",
+                gluconate_ferreux_posologie: "Adulte : 1 comprimé 1 à 2 fois par jour ; suivi biologique régulier.",
+                gluconate_ferreux_particularite: "Sels ferreux souvent responsables de troubles digestifs et de selles noires. (données de classe — non spécifiées séparément dans le livre)",
+                gluconate_ferreux_conseil: "À jeun avec de la vitamine C ; éviter café, thé et lait au même moment.",
+                fumarate_ferreux_title: "4. Fumarate ferreux",
+                fumarate_ferreux_gen: "Fumarate ferreux (fer divalent).",
+                fumarate_ferreux_formes: "Comprimés, solution buvable.",
+                fumarate_ferreux_posologie: "Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.",
+                fumarate_ferreux_particularite: "Autres formes de fer oral utilisées dans la carence martiale. (données de classe — non spécifiées séparément dans le livre)",
+                fumarate_ferreux_conseil: "Prendre à distance des aliments et médicaments qui freinent l'absorption.",
+                feredetate_sodium_title: "5. Feredetate de sodium",
+                feredetate_sodium_gen: "Feredetate de sodium (fer trivalent).",
+                feredetate_sodium_formes: "Comprimés, solution buvable.",
+                feredetate_sodium_posologie: "Selon l'âge et le produit : 1 prise par jour ou 2 prises par jour.",
+                feredetate_sodium_particularite: "Autres formes de fer oral utilisées dans la carence martiale. (données de classe — non spécifiées séparément dans le livre)",
+                feredetate_sodium_conseil: "Prendre à distance des aliments et médicaments qui freinent l'absorption.",
+                fer_b9_title: "6. Fer + acide folique (FER + VIT B9)",
                 fer_b9_gen: "Hydroxyde ferrique polymaltose ou sulfate ferreux + acide folique.",
                 fer_b9_formes: "Comprimés, gélules.",
                 fer_b9_posologie: "Généralement 1 comprimé par jour.",
                 fer_b9_particularite: "Indiqué dans l'anémie ferriprive associée à une carence en B9 et pendant la grossesse.",
                 fer_b9_conseil: "Prévenir les carences chez la femme enceinte et en période de croissance.",
-                cyanocobalamine_title: "5. Cyanocobalamine (vitamine B12)",
+                cyanocobalamine_title: "7. Cyanocobalamine (vitamine B12)",
                 cyanocobalamine_gen: "Cyanocobalamine (vitamine B12).",
                 cyanocobalamine_formes: "Ampoules injectables, comprimés.",
                 cyanocobalamine_posologie: "Selon la carence : 1 ampoule IM par jour puis dose d'entretien.",
                 cyanocobalamine_particularite: "Indiquée dans l'anémie de Biermer (carence en vitamine B12).",
                 cyanocobalamine_conseil: "Traitement parfois poursuivi à vie ; ne pas interrompre sans avis.",
-                acide_folique_title: "6. Acide folique (vitamine B9)",
+                acide_folique_title: "8. Acide folique (vitamine B9)",
                 acide_folique_gen: "Acide folique (vitamine B9).",
                 acide_folique_formes: "Comprimés 5 mg.",
                 acide_folique_posologie: "1 comprimé par jour selon la prescription.",
                 acide_folique_particularite: "Indiqué dans les anémies mégaloblastiques et en prévention pendant la grossesse.",
                 acide_folique_conseil: "Débuter avant la conception dans un projet de grossesse.",
+                group_1_name: "Fers",
+                group_2_name: "Vitamines antianémiques",
                 indication_1: "Traitement et prévention de l'anémie ferriprive (carence en fer).",
                 indication_2: "Anémie mégaloblastique par carence en vitamine B9 ou B12.",
                 indication_3: "Anémie de Biermer (carence en vitamine B12).",
@@ -1513,36 +1553,50 @@
                 fer_polymaltose_posologie: "بالغين: قرص إلى قرصين يومياً؛ الطفل حسب العمر والوزن.",
                 fer_polymaltose_particularite: "امتصاص جيد وحيازة أفضل عادة من أملاح الحديدوز.",
                 fer_polymaltose_conseil: "يُؤخذ قبل الوجبات مع مشروب غني بفيتامين C.",
-                fer_ferreux_title: "2. كبريتات الحديدوز وغلوكونات الحديدوز",
-                fer_ferreux_gen: "كبريتات الحديدوز / غلوكونات الحديدوز (حديد ثنائي).",
-                fer_ferreux_formes: "أقراص؛ أمبولات فموية (Tot'hema: 10 مل = حديد 50 مغ + نحاس 0,70 مغ + منغنيز 1,33 مغ).",
-                fer_ferreux_posologie: "بالغين: قرص 1-2 مرات يومياً؛ متابعة بيولوجية منتظمة.",
-                fer_ferreux_particularite: "أملاح الحديدوز مسؤولة غالباً عن اضطرابات هضمية وبراز أسود.",
-                fer_ferreux_conseil: "على معدة فارغة مع فيتامين C؛ تجنّب القهوة والشاي والحليب في نفس الوقت.",
-                fer_fumarate_title: "3. فومارات الحديدوز وفيريديتات الصوديوم",
-                fer_fumarate_gen: "فومارات الحديدوز / فيريديتات الصوديوم.",
-                fer_fumarate_formes: "أقراص، محلول فموي.",
-                fer_fumarate_posologie: "حسب العمر والمنتج: جرعة واحدة أو جرعتان يومياً.",
-                fer_fumarate_particularite: "أشكال أخرى من الحديد الفموي المستعملة في عوز الحديد.",
-                fer_fumarate_conseil: "خُذه بعيداً عن الأغذية والأدوية التي تعيق الامتصاص.",
-                fer_b9_title: "4. الحديد + حمض الفوليك (FER + VIT B9)",
+                sulfate_ferreux_title: "2. كبريتات الحديدوز",
+                sulfate_ferreux_gen: "كبريتات الحديدوز (حديد ثنائي التكافؤ).",
+                sulfate_ferreux_formes: "أقراص.",
+                sulfate_ferreux_posologie: "بالغين: قرص 1-2 مرات يومياً؛ متابعة بيولوجية منتظمة.",
+                sulfate_ferreux_particularite: "أملاح الحديدوز مسؤولة غالباً عن اضطرابات هضمية وبراز أسود. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                sulfate_ferreux_conseil: "على معدة فارغة مع فيتامين C؛ تجنّب القهوة والشاي والحليب في نفس الوقت.",
+                gluconate_ferreux_title: "3. غلوكونات الحديدوز",
+                gluconate_ferreux_gen: "غلوكونات الحديدوز (حديد ثنائي التكافؤ).",
+                gluconate_ferreux_formes: "أمبولات فموية (Tot'hema: 10 مل = حديد 50 مغ + نحاس 0,70 مغ + منغنيز 1,33 مغ).",
+                gluconate_ferreux_posologie: "بالغين: قرص 1-2 مرات يومياً؛ متابعة بيولوجية منتظمة.",
+                gluconate_ferreux_particularite: "أملاح الحديدوز مسؤولة غالباً عن اضطرابات هضمية وبراز أسود. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                gluconate_ferreux_conseil: "على معدة فارغة مع فيتامين C؛ تجنّب القهوة والشاي والحليب في نفس الوقت.",
+                fumarate_ferreux_title: "4. فومارات الحديدوز",
+                fumarate_ferreux_gen: "فومارات الحديدوز (حديد ثنائي التكافؤ).",
+                fumarate_ferreux_formes: "أقراص، محلول فموي.",
+                fumarate_ferreux_posologie: "حسب العمر والمنتج: جرعة واحدة أو جرعتان يومياً.",
+                fumarate_ferreux_particularite: "أشكال أخرى من الحديد الفموي المستعملة في عوز الحديد. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                fumarate_ferreux_conseil: "خُذه بعيداً عن الأغذية والأدوية التي تعيق الامتصاص.",
+                feredetate_sodium_title: "5. فيريديتات الصوديوم",
+                feredetate_sodium_gen: "فيريديتات الصوديوم (حديد ثلاثي التكافؤ).",
+                feredetate_sodium_formes: "أقراص، محلول فموي.",
+                feredetate_sodium_posologie: "حسب العمر والمنتج: جرعة واحدة أو جرعتان يومياً.",
+                feredetate_sodium_particularite: "أشكال أخرى من الحديد الفموي المستعملة في عوز الحديد. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                feredetate_sodium_conseil: "خُذه بعيداً عن الأغذية والأدوية التي تعيق الامتصاص.",
+                fer_b9_title: "6. الحديد + حمض الفوليك (FER + VIT B9)",
                 fer_b9_gen: "هيدروكسيد الحديد متعدد المالتوز أو كبريتات الحديدوز + حمض الفوليك.",
                 fer_b9_formes: "أقراص، كبسولات.",
                 fer_b9_posologie: "عادة قرص واحد يومياً.",
                 fer_b9_particularite: "مطلوب في فقر الدم بعوز الحديد المرافق لنقص B9 وأثناء الحمل.",
                 fer_b9_conseil: "الوقاية من النقص عند الحامل وفي فترة النمو.",
-                cyanocobalamine_title: "5. السيانوكوبالامين (فيتامين B12)",
+                cyanocobalamine_title: "7. السيانوكوبالامين (فيتامين B12)",
                 cyanocobalamine_gen: "السيانوكوبالامين (فيتامين B12).",
                 cyanocobalamine_formes: "أمبولات حقن، أقراص.",
                 cyanocobalamine_posologie: "حسب النقص: أمبولة عضلياً يومياً ثم جرعة صيانة.",
                 cyanocobalamine_particularite: "مطلوبة في فقر دم بيرمر (نقص فيتامين B12).",
                 cyanocobalamine_conseil: "قد يُواصل العلاج مدى الحياة؛ لا تقطعه دون رأي طبي.",
-                acide_folique_title: "6. حمض الفوليك (فيتامين B9)",
+                acide_folique_title: "8. حمض الفوليك (فيتامين B9)",
                 acide_folique_gen: "حمض الفوليك (فيتامين B9).",
                 acide_folique_formes: "أقراص 5 مغ.",
                 acide_folique_posologie: "قرص واحد يومياً حسب الوصفة.",
                 acide_folique_particularite: "مطلوب في فقر الدم ضخم الكريات وللوقاية أثناء الحمل.",
                 acide_folique_conseil: "يُبدأ قبل الحمل في مشروع الحمل.",
+                group_1_name: "أملاح الحديد",
+                group_2_name: "فيتامينات مضادة لفقر الدم",
                 indication_1: "علاج والوقاية من فقر الدم بعوز الحديد.",
                 indication_2: "فقر الدم ضخم الكريات الناتج عن نقص فيتامين B9 أو B12.",
                 indication_3: "فقر دم بيرمر (نقص فيتامين B12).",
@@ -1676,36 +1730,50 @@
                 fer_polymaltose_posologie: "Adult: 1 to 2 tablets daily; child according to age and weight.",
                 fer_polymaltose_particularite: "Well absorbed and generally better tolerated than ferrous salts.",
                 fer_polymaltose_conseil: "Take before meals with a vitamin C-rich drink.",
-                fer_ferreux_title: "2. Ferrous sulfate and ferrous gluconate",
-                fer_ferreux_gen: "Ferrous sulfate / ferrous gluconate (divalent iron).",
-                fer_ferreux_formes: "Tablets; oral ampoules (Tot'hema: 10 ml = iron 50 mg + copper 0.70 mg + manganese 1.33 mg).",
-                fer_ferreux_posologie: "Adult: 1 tablet 1 to 2 times daily; regular biological follow-up.",
-                fer_ferreux_particularite: "Ferrous salts often cause digestive disorders and black stools.",
-                fer_ferreux_conseil: "On an empty stomach with vitamin C; avoid coffee, tea and milk at the same time.",
-                fer_fumarate_title: "3. Ferrous fumarate and sodium feredetate",
-                fer_fumarate_gen: "Ferrous fumarate / sodium feredetate.",
-                fer_fumarate_formes: "Tablets, oral solution.",
-                fer_fumarate_posologie: "According to age and product: one or two doses daily.",
-                fer_fumarate_particularite: "Other oral iron forms used in iron deficiency.",
-                fer_fumarate_conseil: "Take away from foods and drugs that impair absorption.",
-                fer_b9_title: "4. Iron + folic acid (IRON + VIT B9)",
+                sulfate_ferreux_title: "2. Ferrous sulfate",
+                sulfate_ferreux_gen: "Ferrous sulfate (divalent iron).",
+                sulfate_ferreux_formes: "Tablets.",
+                sulfate_ferreux_posologie: "Adult: 1 tablet 1 to 2 times daily; regular biological follow-up.",
+                sulfate_ferreux_particularite: "Ferrous salts often cause digestive disorders and black stools. (class data — not specified separately in the book)",
+                sulfate_ferreux_conseil: "On an empty stomach with vitamin C; avoid coffee, tea and milk at the same time.",
+                gluconate_ferreux_title: "3. Ferrous gluconate",
+                gluconate_ferreux_gen: "Ferrous gluconate (divalent iron).",
+                gluconate_ferreux_formes: "Oral ampoules (Tot'hema: 10 ml = iron 50 mg + copper 0.70 mg + manganese 1.33 mg).",
+                gluconate_ferreux_posologie: "Adult: 1 tablet 1 to 2 times daily; regular biological follow-up.",
+                gluconate_ferreux_particularite: "Ferrous salts often cause digestive disorders and black stools. (class data — not specified separately in the book)",
+                gluconate_ferreux_conseil: "On an empty stomach with vitamin C; avoid coffee, tea and milk at the same time.",
+                fumarate_ferreux_title: "4. Ferrous fumarate",
+                fumarate_ferreux_gen: "Ferrous fumarate (divalent iron).",
+                fumarate_ferreux_formes: "Tablets, oral solution.",
+                fumarate_ferreux_posologie: "According to age and product: one or two doses daily.",
+                fumarate_ferreux_particularite: "Other oral iron forms used in iron deficiency. (class data — not specified separately in the book)",
+                fumarate_ferreux_conseil: "Take away from foods and drugs that impair absorption.",
+                feredetate_sodium_title: "5. Sodium feredetate",
+                feredetate_sodium_gen: "Sodium feredetate (trivalent iron).",
+                feredetate_sodium_formes: "Tablets, oral solution.",
+                feredetate_sodium_posologie: "According to age and product: one or two doses daily.",
+                feredetate_sodium_particularite: "Other oral iron forms used in iron deficiency. (class data — not specified separately in the book)",
+                feredetate_sodium_conseil: "Take away from foods and drugs that impair absorption.",
+                fer_b9_title: "6. Iron + folic acid (IRON + VIT B9)",
                 fer_b9_gen: "Iron polymaltose hydroxide or ferrous sulfate + folic acid.",
                 fer_b9_formes: "Tablets, capsules.",
                 fer_b9_posologie: "Generally 1 tablet daily.",
                 fer_b9_particularite: "Indicated in iron-deficiency anemia associated with B9 deficiency and during pregnancy.",
                 fer_b9_conseil: "Prevent deficiencies in pregnant women and during growth.",
-                cyanocobalamine_title: "5. Cyanocobalamin (vitamin B12)",
+                cyanocobalamine_title: "7. Cyanocobalamin (vitamin B12)",
                 cyanocobalamine_gen: "Cyanocobalamin (vitamin B12).",
                 cyanocobalamine_formes: "Injectable ampoules, tablets.",
                 cyanocobalamine_posologie: "According to deficiency: 1 IM ampoule daily then maintenance dose.",
                 cyanocobalamine_particularite: "Indicated in Biermer anemia (vitamin B12 deficiency).",
                 cyanocobalamine_conseil: "Treatment sometimes continued for life; do not interrupt without advice.",
-                acide_folique_title: "6. Folic acid (vitamin B9)",
+                acide_folique_title: "8. Folic acid (vitamin B9)",
                 acide_folique_gen: "Folic acid (vitamin B9).",
                 acide_folique_formes: "Tablets 5 mg.",
                 acide_folique_posologie: "One tablet daily as prescribed.",
                 acide_folique_particularite: "Indicated in megaloblastic anemias and for prevention during pregnancy.",
                 acide_folique_conseil: "Start before conception in a pregnancy plan.",
+                group_1_name: "Iron salts",
+                group_2_name: "Antianemic vitamins",
                 indication_1: "Treatment and prevention of iron-deficiency anemia.",
                 indication_2: "Megaloblastic anemia due to vitamin B9 or B12 deficiency.",
                 indication_3: "Biermer anemia (vitamin B12 deficiency).",
@@ -2063,8 +2131,8 @@
                     "Tardyferon": [],
                     "Tot'hema": [],
                     "Fumacur": [],
-                    "Federate": [],
                     "Ferolam": [],
+                    "Federate": [],
                     "Ferrostrane": [],
                     "Trifer fol": [],
                     "Tardyferon B9": [],

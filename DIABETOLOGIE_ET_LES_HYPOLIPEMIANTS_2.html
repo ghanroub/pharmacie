@@ -1028,80 +1028,122 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Insulines rapides</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="insulines_rapides_title">1. Insulines analogues rapides (asparte, lispro, glulisine)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insulines_rapides_gen">Insuline asparte / lispro / glulisine.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="insuline_asparte_title">Insuline asparte</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_asparte_gen">Insuline asparte.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Novorapid")">Novorapid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Humalog")">Humalog</span>,
-                            <span class="drug-link" onclick="showDrugModal("Apidra")">Apidra</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novorapid&quot;)">Novorapid</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insulines_rapides_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insulines_rapides_posologie">Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insulines_rapides_particularite">Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insulines_rapides_conseil">Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_asparte_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_asparte_posologie">Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_asparte_particularite">Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_asparte_conseil">Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="insuline_reguliere_title">2. Insuline humaine rapide (régulière)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="insuline_lispro_title">Insuline lispro</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_lispro_gen">Insuline lispro.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humalog&quot;)">Humalog</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_lispro_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_lispro_posologie">Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_lispro_particularite">Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_lispro_conseil">Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="insuline_glulisine_title">Insuline glulisine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_glulisine_gen">Insuline glulisine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Apidra&quot;)">Apidra</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_glulisine_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_glulisine_posologie">Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_glulisine_particularite">Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_glulisine_conseil">Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="insuline_reguliere_title">Insuline humaine rapide (régulière)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_reguliere_gen">Insuline humaine régulière.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Humuline Rapid")">Humuline Rapid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Insuman Rapid")">Insuman Rapid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Actrapide")">Actrapide</span>,
-                            <span class="drug-link" onclick="showDrugModal("Insudal Rapid")">Insudal Rapid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Jusline R")">Jusline R</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humuline Rapid&quot;)">Humuline Rapid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insuman Rapid&quot;)">Insuman Rapid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Actrapide&quot;)">Actrapide</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insudal Rapid&quot;)">Insudal Rapid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Jusline R&quot;)">Jusline R</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_reguliere_formes">Solutions injectables (100 UI/ml), flacons ou stylos.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_reguliere_posologie">Adulte : injection sous-cutanée 30 à 40 minutes avant le début des repas, dose selon la glycémie. Durée d'effet : 6 à 8 heures.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_reguliere_particularite">Insuline humaine de action courte : se prend impérativement 30 à 40 minutes avant les repas pour couvrir le pic glycémique post-prandial.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_reguliere_conseil">Prévoir un intervalle régulier entre l'injection et le repas. Si le repas est retardé au-delà de 30 minutes, demander conseil (risque d'hypoglycémie).</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Insulines lentes</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="insulines_longues_title">3. Insulines longues (glargine, détémir)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insulines_longues_gen">Insuline glargine / détémir.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="insuline_glargine_title">Insuline glargine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_glargine_gen">Insuline glargine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lantus")">Lantus</span>,
-                            <span class="drug-link" onclick="showDrugModal("Abasaglar")">Abasaglar</span>,
-                            <span class="drug-link" onclick="showDrugModal("Basalogone")">Basalogone</span>,
-                            <span class="drug-link" onclick="showDrugModal("Levemir")">Levemir</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lantus&quot;)">Lantus</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Abasaglar&quot;)">Abasaglar</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Basalogone&quot;)">Basalogone</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insulines_longues_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insulines_longues_posologie">Glargine (Lantus) : 1 injection par jour, à heure fixe. Détémir (Levemir) : 1 à 2 injections par jour. Dose selon avis médical.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insulines_longues_particularite">Insulines basales de longue durée : glargine DA 60 à 90 min, DR jusqu'à 24 h ; détémir DR 14 à 24 h. Couvrent le besoin en insuline entre les repas et la nuit, sans pic marqué.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insulines_longues_conseil">Injecter sous cutané une fois par jour à heure fixe (le soir ou le matin selon prescription). Ne jamais administrer par voie intraveineuse sans personnel médical.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_glargine_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_glargine_posologie">Glargine (Lantus) : 1 injection par jour, à heure fixe. Dose selon avis médical.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_glargine_particularite">Insuline basale de longue durée : glargine DA 60 à 90 min, DR jusqu'à 24 h. Couvre le besoin en insuline entre les repas et la nuit, sans pic marqué.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_glargine_conseil">Injecter sous cutané une fois par jour à heure fixe (le soir ou le matin selon prescription). Ne jamais administrer par voie intraveineuse sans personnel médical.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="insuline_nph_title">4. Insuline humaine isophane / NPH (intermédiaire)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="insuline_detemir_title">Insuline détémir</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_detemir_gen">Insuline détémir.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Levemir&quot;)">Levemir</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_detemir_formes">Solutions injectables en stylo (100 UI/ml).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_detemir_posologie">Détémir (Levemir) : 1 à 2 injections par jour. Dose selon avis médical.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_detemir_particularite">Insuline basale de longue durée : détémir DR 14 à 24 h. Couvre le besoin en insuline entre les repas et la nuit, sans pic marqué.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_detemir_conseil">Injecter sous cutané une fois par jour à heure fixe (le soir ou le matin selon prescription). Ne jamais administrer par voie intraveineuse sans personnel médical.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Insulines intermédiaires</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="insuline_nph_title">Insuline humaine isophane / NPH (intermédiaire)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insuline_nph_gen">Insuline humaine isophane (NPH).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Insulatard HM")">Insulatard HM</span>,
-                            <span class="drug-link" onclick="showDrugModal("Humuline NPH")">Humuline NPH</span>,
-                            <span class="drug-link" onclick="showDrugModal("Jusline N")">Jusline N</span>,
-                            <span class="drug-link" onclick="showDrugModal("Insudal Basal")">Insudal Basal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Insuman Basal")">Insuman Basal</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insulatard HM&quot;)">Insulatard HM</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humuline NPH&quot;)">Humuline NPH</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Jusline N&quot;)">Jusline N</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insudal Basal&quot;)">Insudal Basal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insuman Basal&quot;)">Insuman Basal</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insuline_nph_formes">Suspensions injectables (100 UI/ml).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insuline_nph_posologie">Adulte : injection sous-cutanée le soir ou le matin, 1 à 2 fois par jour, dose selon avis médical. DA : 1 à 3 h, DR : jusqu'à 18 h.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insuline_nph_particularite">Insuline intermédiaire : couvre une partie du besoin basal (nuit). Action plus lente que l'insuline régulière, plus courte que les analogues longs.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insuline_nph_conseil">Bien agiter la suspension jusqu'à obtenir un aspect laiteux uniforme avant chaque injection. Ne pas agiter violemment (mousse).</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Insulines mixtes</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="insulines_mixtes_title">5. Insulines mixtes</h3>
+                        <h3 style="color:var(--primary);" data-i18n="insulines_mixtes_title">Insulines mixtes (prémélangées)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="insulines_mixtes_gen">Insuline rapide + insuline intermédiaire.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("NovoMix 30")">NovoMix 30</span>,
-                            <span class="drug-link" onclick="showDrugModal("Humalog Mix 25")">Humalog Mix 25</span>,
-                            <span class="drug-link" onclick="showDrugModal("Humalog Mix 50")">Humalog Mix 50</span>,
-                            <span class="drug-link" onclick="showDrugModal("Mixtard 30")">Mixtard 30</span>,
-                            <span class="drug-link" onclick="showDrugModal("Humuline Profil 30")">Humuline Profil 30</span>,
-                            <span class="drug-link" onclick="showDrugModal("Jusline 30/70")">Jusline 30/70</span>,
-                            <span class="drug-link" onclick="showDrugModal("Insudal Comb 25")">Insudal Comb 25</span>,
-                            <span class="drug-link" onclick="showDrugModal("Insuman Comb 25")">Insuman Comb 25</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;NovoMix 30&quot;)">NovoMix 30</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humalog Mix 25&quot;)">Humalog Mix 25</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humalog Mix 50&quot;)">Humalog Mix 50</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Mixtard 30&quot;)">Mixtard 30</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humuline Profil 30&quot;)">Humuline Profil 30</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Jusline 30/70&quot;)">Jusline 30/70</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insudal Comb 25&quot;)">Insudal Comb 25</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Insuman Comb 25&quot;)">Insuman Comb 25</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="insulines_mixtes_formes">Suspensions injectables en stylo ou flacon (100 UI/ml).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="insulines_mixtes_posologie">Adulte : 1 injection sous-cutanée 30 à 40 minutes avant le début des repas (selon la spécialité), dose selon avis médical.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="insulines_mixtes_particularite">Associent une insuline rapide et une insuline intermédiaire (par ex. NovoMix 30 : 30 % rapide, 70 % intermédiaire) : couvrent prandial et basal en une seule injection.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="insulines_mixtes_conseil">Bien agiter (10 à 20 retournements) avant injection jusqu'à aspect laiteux homogène. Ne pas laisser le stylo au soleil.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1333,36 +1375,58 @@
                 copied: "Copié !",
                 hero_title: "2. LES ANTIDIABÉTIQUES INJECTABLES : LES INSULINES",
                 hero_subtitle: "Insulines analogues rapides (asparte, lispro, glulisine), insuline humaine rapide, insulines longues (glargine, détémir), insuline humaine isophane/NPH et insulines mixtes : conservation, mécanismes, indications et noms commerciaux en Algérie.",
-                insulines_rapides_title: "1. Insulines analogues rapides (asparte, lispro, glulisine)",
-                insulines_rapides_gen: "Insuline asparte / lispro / glulisine.",
-                insulines_rapides_formes: "Solutions injectables en stylo (100 UI/ml).",
-                insulines_rapides_posologie: "Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.",
-                insulines_rapides_particularite: "Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie.",
-                insulines_rapides_conseil: "Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.",
-                insuline_reguliere_title: "2. Insuline humaine rapide (régulière)",
+                insuline_asparte_title: "Insuline asparte",
+                insuline_asparte_gen: "Insuline asparte.",
+                insuline_asparte_formes: "Solutions injectables en stylo (100 UI/ml).",
+                insuline_asparte_posologie: "Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.",
+                insuline_asparte_particularite: "Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie. (données de classe — non spécifiées séparément dans le livre)",
+                insuline_asparte_conseil: "Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.",
+                insuline_lispro_title: "Insuline lispro",
+                insuline_lispro_gen: "Insuline lispro.",
+                insuline_lispro_formes: "Solutions injectables en stylo (100 UI/ml).",
+                insuline_lispro_posologie: "Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.",
+                insuline_lispro_particularite: "Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie. (données de classe — non spécifiées séparément dans le livre)",
+                insuline_lispro_conseil: "Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.",
+                insuline_glulisine_title: "Insuline glulisine",
+                insuline_glulisine_gen: "Insuline glulisine.",
+                insuline_glulisine_formes: "Solutions injectables en stylo (100 UI/ml).",
+                insuline_glulisine_posologie: "Adulte : dose prescrite par le médecin, injectée par voie sous-cutanée 5 à 10 minutes avant ou après les repas, en fonction des repas et de la glycémie.",
+                insuline_glulisine_particularite: "Analogues prandiaux de synthèse : action en 5 à 10 minutes, durée de 3 à 6 heures. Permettent une injection très proche du repas, ce qui s'adapte mieux aux habitudes de vie. (données de classe — non spécifiées séparément dans le livre)",
+                insuline_glulisine_conseil: "Injecter sous cutané dans l'abdomen (plus rapide), la cuisse ou le bras. Rotation des sites. Ne pas mélanger dans la seringue avec une insuline longue sans avis.",
+                insuline_reguliere_title: "Insuline humaine rapide (régulière)",
                 insuline_reguliere_gen: "Insuline humaine régulière.",
                 insuline_reguliere_formes: "Solutions injectables (100 UI/ml), flacons ou stylos.",
                 insuline_reguliere_posologie: "Adulte : injection sous-cutanée 30 à 40 minutes avant le début des repas, dose selon la glycémie. Durée d'effet : 6 à 8 heures.",
                 insuline_reguliere_particularite: "Insuline humaine de action courte : se prend impérativement 30 à 40 minutes avant les repas pour couvrir le pic glycémique post-prandial.",
                 insuline_reguliere_conseil: "Prévoir un intervalle régulier entre l'injection et le repas. Si le repas est retardé au-delà de 30 minutes, demander conseil (risque d'hypoglycémie).",
-                insulines_longues_title: "3. Insulines longues (glargine, détémir)",
-                insulines_longues_gen: "Insuline glargine / détémir.",
-                insulines_longues_formes: "Solutions injectables en stylo (100 UI/ml).",
-                insulines_longues_posologie: "Glargine (Lantus) : 1 injection par jour, à heure fixe. Détémir (Levemir) : 1 à 2 injections par jour. Dose selon avis médical.",
-                insulines_longues_particularite: "Insulines basales de longue durée : glargine DA 60 à 90 min, DR jusqu'à 24 h ; détémir DR 14 à 24 h. Couvrent le besoin en insuline entre les repas et la nuit, sans pic marqué.",
-                insulines_longues_conseil: "Injecter sous cutané une fois par jour à heure fixe (le soir ou le matin selon prescription). Ne jamais administrer par voie intraveineuse sans personnel médical.",
-                insuline_nph_title: "4. Insuline humaine isophane / NPH (intermédiaire)",
+                insuline_glargine_title: "Insuline glargine",
+                insuline_glargine_gen: "Insuline glargine.",
+                insuline_glargine_formes: "Solutions injectables en stylo (100 UI/ml).",
+                insuline_glargine_posologie: "Glargine (Lantus) : 1 injection par jour, à heure fixe. Dose selon avis médical.",
+                insuline_glargine_particularite: "Insuline basale de longue durée : glargine DA 60 à 90 min, DR jusqu'à 24 h. Couvre le besoin en insuline entre les repas et la nuit, sans pic marqué.",
+                insuline_glargine_conseil: "Injecter sous cutané une fois par jour à heure fixe (le soir ou le matin selon prescription). Ne jamais administrer par voie intraveineuse sans personnel médical.",
+                insuline_detemir_title: "Insuline détémir",
+                insuline_detemir_gen: "Insuline détémir.",
+                insuline_detemir_formes: "Solutions injectables en stylo (100 UI/ml).",
+                insuline_detemir_posologie: "Détémir (Levemir) : 1 à 2 injections par jour. Dose selon avis médical.",
+                insuline_detemir_particularite: "Insuline basale de longue durée : détémir DR 14 à 24 h. Couvre le besoin en insuline entre les repas et la nuit, sans pic marqué.",
+                insuline_detemir_conseil: "Injecter sous cutané une fois par jour à heure fixe (le soir ou le matin selon prescription). Ne jamais administrer par voie intraveineuse sans personnel médical.",
+                insuline_nph_title: "Insuline humaine isophane / NPH (intermédiaire)",
                 insuline_nph_gen: "Insuline humaine isophane (NPH).",
                 insuline_nph_formes: "Suspensions injectables (100 UI/ml).",
                 insuline_nph_posologie: "Adulte : injection sous-cutanée le soir ou le matin, 1 à 2 fois par jour, dose selon avis médical. DA : 1 à 3 h, DR : jusqu'à 18 h.",
                 insuline_nph_particularite: "Insuline intermédiaire : couvre une partie du besoin basal (nuit). Action plus lente que l'insuline régulière, plus courte que les analogues longs.",
                 insuline_nph_conseil: "Bien agiter la suspension jusqu'à obtenir un aspect laiteux uniforme avant chaque injection. Ne pas agiter violemment (mousse).",
-                insulines_mixtes_title: "5. Insulines mixtes",
+                insulines_mixtes_title: "Insulines mixtes (prémélangées)",
                 insulines_mixtes_gen: "Insuline rapide + insuline intermédiaire.",
                 insulines_mixtes_formes: "Suspensions injectables en stylo ou flacon (100 UI/ml).",
                 insulines_mixtes_posologie: "Adulte : 1 injection sous-cutanée 30 à 40 minutes avant le début des repas (selon la spécialité), dose selon avis médical.",
                 insulines_mixtes_particularite: "Associent une insuline rapide et une insuline intermédiaire (par ex. NovoMix 30 : 30 % rapide, 70 % intermédiaire) : couvrent prandial et basal en une seule injection.",
                 insulines_mixtes_conseil: "Bien agiter (10 à 20 retournements) avant injection jusqu'à aspect laiteux homogène. Ne pas laisser le stylo au soleil.",
+                group_1_name: "Insulines rapides",
+                group_2_name: "Insulines lentes",
+                group_3_name: "Insulines intermédiaires",
+                group_4_name: "Insulines mixtes",
                 indication_1: "Diabète de type 1 : l'insuline est le seul traitement (traitement indispensable, aucun antidiabétique oral ne la remplace).",
                 indication_2: "Diabète de type 2 : insulinothérapie quand les antidiabétiques oraux ne suffisent plus, pendant la grossesse, la chirurgie ou les infections sévères.",
                 indication_3: "Analogues rapides et insuline régulière : couverture prandiale (repas), injections 5 à 10 min (analogues) ou 30 à 40 min (régulière) avant les repas.",
@@ -1490,36 +1554,58 @@
                 copied: "تم النسخ!",
                 hero_title: "مضادات السكري الحقنية: الأنسولين",
                 hero_subtitle: "أنسولين نظير سريع (أسبارت، ليسبرو، غلوليزين)، أنسولين بشري سريع، أنسولين طويل (غلارجين، ديتيمير)، أنسولين بشري إيزوفان/NPH وأنسولين مخلوط: الحفظ، الآليات، الاستطبابات والأسماء التجارية في الجزائر.",
-                insulines_rapides_title: "1. أنسولين نظير سريع (أسبارت، ليسبرو، غلوليزين)",
-                insulines_rapides_gen: "أنسولين أسبارت / ليسبرو / غلوليزين.",
-                insulines_rapides_formes: "محلولات حقن في قلم (100 وحدة/مل).",
-                insulines_rapides_posologie: "بالغين: الجرعة الموصوفة من الطبيب، حقناً تحت الجلد قبل الوجبات أو بعدها بـ5 إلى 10 دقائق، حسب الوجبات وقياس السكر.",
-                insulines_rapides_particularite: "نظائر قبل الوجبات مصنعة: تأثير خلال 5 إلى 10 دقائق ومدته 3 إلى 6 ساعات. تسمح بحقن قريب جداً من الوجبة، ما يتناسب أكثر مع نمط الحياة.",
-                insulines_rapides_conseil: "يُحقن تحت الجلد في البطن (أسرع)، الفخذ أو الذراع. تبديل المواقع. لا يُخلط في المحقن مع أنسولين طويل دون رأي طبي.",
-                insuline_reguliere_title: "2. أنسولين بشري سريع (منتظم)",
+                insuline_asparte_title: "أنسولين أسبارت",
+                insuline_asparte_gen: "أنسولين أسبارت.",
+                insuline_asparte_formes: "محلولات حقن في قلم (100 وحدة/مل).",
+                insuline_asparte_posologie: "بالغين: الجرعة الموصوفة من الطبيب، حقناً تحت الجلد قبل الوجبات أو بعدها بـ5 إلى 10 دقائق، حسب الوجبات وقياس السكر.",
+                insuline_asparte_particularite: "نظائر قبل الوجبات مصنعة: تأثير خلال 5 إلى 10 دقائق ومدته 3 إلى 6 ساعات. تسمح بحقن قريب جداً من الوجبة، ما يتناسب أكثر مع نمط الحياة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                insuline_asparte_conseil: "يُحقن تحت الجلد في البطن (أسرع)، الفخذ أو الذراع. تبديل المواقع. لا يُخلط في المحقن مع أنسولين طويل دون رأي طبي.",
+                insuline_lispro_title: "أنسولين ليسبرو",
+                insuline_lispro_gen: "أنسولين ليسبرو.",
+                insuline_lispro_formes: "محلولات حقن في قلم (100 وحدة/مل).",
+                insuline_lispro_posologie: "بالغين: الجرعة الموصوفة من الطبيب، حقناً تحت الجلد قبل الوجبات أو بعدها بـ5 إلى 10 دقائق، حسب الوجبات وقياس السكر.",
+                insuline_lispro_particularite: "نظائر قبل الوجبات مصنعة: تأثير خلال 5 إلى 10 دقائق ومدته 3 إلى 6 ساعات. تسمح بحقن قريب جداً من الوجبة، ما يتناسب أكثر مع نمط الحياة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                insuline_lispro_conseil: "يُحقن تحت الجلد في البطن (أسرع)، الفخذ أو الذراع. تبديل المواقع. لا يُخلط في المحقن مع أنسولين طويل دون رأي طبي.",
+                insuline_glulisine_title: "أنسولين غلوليزين",
+                insuline_glulisine_gen: "أنسولين غلوليزين.",
+                insuline_glulisine_formes: "محلولات حقن في قلم (100 وحدة/مل).",
+                insuline_glulisine_posologie: "بالغين: الجرعة الموصوفة من الطبيب، حقناً تحت الجلد قبل الوجبات أو بعدها بـ5 إلى 10 دقائق، حسب الوجبات وقياس السكر.",
+                insuline_glulisine_particularite: "نظائر قبل الوجبات مصنعة: تأثير خلال 5 إلى 10 دقائق ومدته 3 إلى 6 ساعات. تسمح بحقن قريب جداً من الوجبة، ما يتناسب أكثر مع نمط الحياة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                insuline_glulisine_conseil: "يُحقن تحت الجلد في البطن (أسرع)، الفخذ أو الذراع. تبديل المواقع. لا يُخلط في المحقن مع أنسولين طويل دون رأي طبي.",
+                insuline_reguliere_title: "أنسولين بشري سريع (منتظم)",
                 insuline_reguliere_gen: "أنسولين بشري منتظم.",
                 insuline_reguliere_formes: "محلولات حقن (100 وحدة/مل)، قوارير أو أقلام.",
                 insuline_reguliere_posologie: "بالغين: حقن تحت الجلد قبل بداية الوجبات بـ30 إلى 40 دقيقة، الجرعة حسب قياس السكر. مدة التأثير: 6 إلى 8 ساعات.",
                 insuline_reguliere_particularite: "أنسولين بشري قصير التأثير: يُؤخذ حتماً قبل الوجبات بـ30 إلى 40 دقيقة لتغطية ذروة السكر بعد الأكل.",
                 insuline_reguliere_conseil: "التزم بفترة منتظمة بين الحقن والوجبة. إذا تأخرت الوجبة أكثر من 30 دقيقة، اطلب النصيحة (خطر هبوط السكر).",
-                insulines_longues_title: "3. أنسولين طويل (غلارجين، ديتيمير)",
-                insulines_longues_gen: "أنسولين غلارجين / ديتيمير.",
-                insulines_longues_formes: "محلولات حقن في قلم (100 وحدة/مل).",
-                insulines_longues_posologie: "غلارجين (لانتوس): حقن واحد يومياً في ساعة ثابتة. ديتيمير (ليفيمير): حقن إلى 2 يومياً. الجرعة حسب رأي الطبيب.",
-                insulines_longues_particularite: "أنسولين قاعدية طويلة المفعول: غلارجين بدء التأثير 60 إلى 90 دقيقة ومدته حتى 24 ساعة؛ ديتيمير مدته 14 إلى 24 ساعة. تغطي حاجة الأنسولين بين الوجبات وليلاً دون ذروة واضحة.",
-                insulines_longues_conseil: "يُحقن تحت الجلد مرة يومياً في ساعة ثابتة (مساءً أو صباحاً حسب الوصفة). لا يُعطى وريدياً أبداً دون طاقم طبي.",
-                insuline_nph_title: "4. أنسولين بشري إيزوفان / NPH (متوسط)",
+                insuline_glargine_title: "أنسولين غلارجين",
+                insuline_glargine_gen: "أنسولين غلارجين.",
+                insuline_glargine_formes: "محلولات حقن في قلم (100 وحدة/مل).",
+                insuline_glargine_posologie: "غلارجين (لانتوس): حقن واحد يومياً في ساعة ثابتة. الجرعة حسب رأي الطبيب.",
+                insuline_glargine_particularite: "أنسولين قاعدية طويلة المفعول: غلارجين بدء التأثير 60 إلى 90 دقيقة ومدته حتى 24 ساعة. تغطي حاجة الأنسولين بين الوجبات وليلاً دون ذروة واضحة.",
+                insuline_glargine_conseil: "يُحقن تحت الجلد مرة يومياً في ساعة ثابتة (مساءً أو صباحاً حسب الوصفة). لا يُعطى وريدياً أبداً دون طاقم طبي.",
+                insuline_detemir_title: "أنسولين ديتيمير",
+                insuline_detemir_gen: "أنسولين ديتيمير.",
+                insuline_detemir_formes: "محلولات حقن في قلم (100 وحدة/مل).",
+                insuline_detemir_posologie: "ديتيمير (ليفيمير): حقن إلى 2 يومياً. الجرعة حسب رأي الطبيب.",
+                insuline_detemir_particularite: "أنسولين قاعدية طويلة المفعول: ديتيمير مدته 14 إلى 24 ساعة. تغطي حاجة الأنسولين بين الوجبات وليلاً دون ذروة واضحة.",
+                insuline_detemir_conseil: "يُحقن تحت الجلد مرة يومياً في ساعة ثابتة (مساءً أو صباحاً حسب الوصفة). لا يُعطى وريدياً أبداً دون طاقم طبي.",
+                insuline_nph_title: "أنسولين بشري إيزوفان / NPH (متوسط)",
                 insuline_nph_gen: "أنسولين بشري إيزوفان (NPH).",
                 insuline_nph_formes: "معلقات حقن (100 وحدة/مل).",
                 insuline_nph_posologie: "بالغين: حقن تحت الجلد مساءً أو صباحاً، مرة إلى 2 يومياً، الجرعة حسب رأي الطبيب. بدء التأثير: 1 إلى 3 ساعات، المدة: حتى 18 ساعة.",
                 insuline_nph_particularite: "أنسولين متوسط: يغطي جزءاً من الحاجة القاعدية (الليل). تأثير أبطأ من الأنسولين المنتظم وأقصر من النظائر الطويلة.",
                 insuline_nph_conseil: "هزّ المعلق حتى الحصول على مظهر حليبي متجانس قبل كل حقن. لا تهزّ بعنف (رغوة).",
-                insulines_mixtes_title: "5. الأنسولين المخلوط",
+                insulines_mixtes_title: "الأنسولين المخلوط (مسبق الخلط)",
                 insulines_mixtes_gen: "أنسولين سريع + أنسولين متوسط.",
                 insulines_mixtes_formes: "معلقات حقن في قلم أو قارورة (100 وحدة/مل).",
                 insulines_mixtes_posologie: "بالغين: حقن واحد تحت الجلد قبل بداية الوجبات بـ30 إلى 40 دقيقة (حسب المتخصص)، الجرعة حسب رأي الطبيب.",
                 insulines_mixtes_particularite: "تجمع أنسوليناً سريعاً ومتوسطاً (مثلاً نوفوميكس 30: 30٪ سريع و70٪ متوسط): تغطي الوجبات والقاعدية في حقن واحد.",
                 insulines_mixtes_conseil: "هزّ جيداً (10 إلى 20 انقلاباً) قبل الحقن حتى مظهر حليبي متجانس. لا تترك القلم في الشمس.",
+                group_1_name: "الأنسولينات السريعة",
+                group_2_name: "الأنسولينات البطيئة",
+                group_3_name: "الأنسولينات المتوسطة",
+                group_4_name: "الأنسولينات المخلوطة",
                 indication_1: "السكري من النوع 1: الأنسولين هو العلاج الوحيد (علاج ضروري، لا يحل محله أي مضاد سكري فموي).",
                 indication_2: "السكري من النوع 2: علاج بالأنسولين عندما لا تكفي مضادات السكري الفموية، أثناء الحمل أو الجراحة أو الالتهابات الشديدة.",
                 indication_3: "النظائر السريعة والأنسولين المنتظم: تغطية الوجبات، حقن قبل الوجبات بـ5 إلى 10 دقائق (نظائر) أو 30 إلى 40 دقيقة (منتظم).",
@@ -1647,36 +1733,58 @@
                 copied: "Copied!",
                 hero_title: "INJECTABLE ANTIDIABETICS: INSULINS",
                 hero_subtitle: "Rapid analogue insulins (aspart, lispro, glulisine), rapid human insulin, long insulins (glargine, detemir), human isophane/NPH insulin and mixed insulins: storage, mechanisms, indications and Algerian brand names.",
-                insulines_rapides_title: "1. Rapid analogue insulins (aspart, lispro, glulisine)",
-                insulines_rapides_gen: "Insulin aspart / lispro / glulisine.",
-                insulines_rapides_formes: "Injectable solutions in pen (100 U/ml).",
-                insulines_rapides_posologie: "Adult: dose prescribed by the doctor, injected subcutaneously 5 to 10 minutes before or after meals, according to meals and blood glucose.",
-                insulines_rapides_particularite: "Synthetic prandial analogues: onset in 5 to 10 minutes, duration of 3 to 6 hours. Allow injection very close to meals, better fitting lifestyle habits.",
-                insulines_rapides_conseil: "Inject subcutaneously into the abdomen (fastest), thigh or arm. Rotate sites. Do not mix in the syringe with a long insulin without advice.",
-                insuline_reguliere_title: "2. Rapid human insulin (regular)",
+                insuline_asparte_title: "Insulin aspart",
+                insuline_asparte_gen: "Insulin aspart.",
+                insuline_asparte_formes: "Injectable solutions in pen (100 U/ml).",
+                insuline_asparte_posologie: "Adult: dose prescribed by the doctor, injected subcutaneously 5 to 10 minutes before or after meals, according to meals and blood glucose.",
+                insuline_asparte_particularite: "Synthetic prandial analogues: onset in 5 to 10 minutes, duration of 3 to 6 hours. Allow injection very close to meals, better fitting lifestyle habits. (class data — not specified separately in the book)",
+                insuline_asparte_conseil: "Inject subcutaneously into the abdomen (fastest), thigh or arm. Rotate sites. Do not mix in the syringe with a long insulin without advice.",
+                insuline_lispro_title: "Insulin lispro",
+                insuline_lispro_gen: "Insulin lispro.",
+                insuline_lispro_formes: "Injectable solutions in pen (100 U/ml).",
+                insuline_lispro_posologie: "Adult: dose prescribed by the doctor, injected subcutaneously 5 to 10 minutes before or after meals, according to meals and blood glucose.",
+                insuline_lispro_particularite: "Synthetic prandial analogues: onset in 5 to 10 minutes, duration of 3 to 6 hours. Allow injection very close to meals, better fitting lifestyle habits. (class data — not specified separately in the book)",
+                insuline_lispro_conseil: "Inject subcutaneously into the abdomen (fastest), thigh or arm. Rotate sites. Do not mix in the syringe with a long insulin without advice.",
+                insuline_glulisine_title: "Insulin glulisine",
+                insuline_glulisine_gen: "Insulin glulisine.",
+                insuline_glulisine_formes: "Injectable solutions in pen (100 U/ml).",
+                insuline_glulisine_posologie: "Adult: dose prescribed by the doctor, injected subcutaneously 5 to 10 minutes before or after meals, according to meals and blood glucose.",
+                insuline_glulisine_particularite: "Synthetic prandial analogues: onset in 5 to 10 minutes, duration of 3 to 6 hours. Allow injection very close to meals, better fitting lifestyle habits. (class data — not specified separately in the book)",
+                insuline_glulisine_conseil: "Inject subcutaneously into the abdomen (fastest), thigh or arm. Rotate sites. Do not mix in the syringe with a long insulin without advice.",
+                insuline_reguliere_title: "Rapid human insulin (regular)",
                 insuline_reguliere_gen: "Human regular insulin.",
                 insuline_reguliere_formes: "Injectable solutions (100 U/ml), vials or pens.",
                 insuline_reguliere_posologie: "Adult: subcutaneous injection 30 to 40 minutes before the beginning of meals, dose according to blood glucose. Duration of action: 6 to 8 hours.",
                 insuline_reguliere_particularite: "Short-acting human insulin: must be taken 30 to 40 minutes before meals to cover the postprandial glucose peak.",
                 insuline_reguliere_conseil: "Keep a regular interval between injection and meal. If the meal is delayed beyond 30 minutes, seek advice (hypoglycemia risk).",
-                insulines_longues_title: "3. Long insulins (glargine, detemir)",
-                insulines_longues_gen: "Insulin glargine / detemir.",
-                insulines_longues_formes: "Injectable solutions in pen (100 U/ml).",
-                insulines_longues_posologie: "Glargine (Lantus): 1 daily injection at a fixed time. Detemir (Levemir): 1 to 2 daily injections. Dose per medical advice.",
-                insulines_longues_particularite: "Long-duration basal insulins: glargine onset 60 to 90 min, DR up to 24 h; detemir DR 14 to 24 h. Cover insulin needs between meals and at night, without a marked peak.",
-                insulines_longues_conseil: "Inject subcutaneously once daily at a fixed time (evening or morning per prescription). Never given intravenously without medical staff.",
-                insuline_nph_title: "4. Human isophane/NPH insulin (intermediate)",
+                insuline_glargine_title: "Insulin glargine",
+                insuline_glargine_gen: "Insulin glargine.",
+                insuline_glargine_formes: "Injectable solutions in pen (100 U/ml).",
+                insuline_glargine_posologie: "Glargine (Lantus): 1 daily injection at a fixed time. Dose per medical advice.",
+                insuline_glargine_particularite: "Long-duration basal insulin: glargine onset 60 to 90 min, DR up to 24 h. Covers insulin needs between meals and at night, without a marked peak.",
+                insuline_glargine_conseil: "Inject subcutaneously once daily at a fixed time (evening or morning per prescription). Never given intravenously without medical staff.",
+                insuline_detemir_title: "Insulin detemir",
+                insuline_detemir_gen: "Insulin detemir.",
+                insuline_detemir_formes: "Injectable solutions in pen (100 U/ml).",
+                insuline_detemir_posologie: "Detemir (Levemir): 1 to 2 daily injections. Dose per medical advice.",
+                insuline_detemir_particularite: "Long-duration basal insulin: detemir DR 14 to 24 h. Covers insulin needs between meals and at night, without a marked peak.",
+                insuline_detemir_conseil: "Inject subcutaneously once daily at a fixed time (evening or morning per prescription). Never given intravenously without medical staff.",
+                insuline_nph_title: "Human isophane/NPH insulin (intermediate)",
                 insuline_nph_gen: "Human isophane insulin (NPH).",
                 insuline_nph_formes: "Injectable suspensions (100 U/ml).",
                 insuline_nph_posologie: "Adult: subcutaneous injection in the evening or morning, 1 to 2 times daily, dose per medical advice. Onset: 1 to 3 h, DR: up to 18 h.",
                 insuline_nph_particularite: "Intermediate insulin: covers part of basal needs (night). Slower action than regular insulin, shorter than long analogues.",
                 insuline_nph_conseil: "Shake the suspension until a uniform milky appearance before each injection. Do not shake violently (foam).",
-                insulines_mixtes_title: "5. Mixed insulins",
+                insulines_mixtes_title: "Mixed (pre-mixed) insulins",
                 insulines_mixtes_gen: "Rapid insulin + intermediate insulin.",
                 insulines_mixtes_formes: "Injectable suspensions in pen or vial (100 U/ml).",
                 insulines_mixtes_posologie: "Adult: 1 subcutaneous injection 30 to 40 minutes before meals (depending on the brand), dose per medical advice.",
                 insulines_mixtes_particularite: "Combine a rapid and an intermediate insulin (e.g. NovoMix 30: 30% rapid, 70% intermediate): cover prandial and basal needs in one injection.",
                 insulines_mixtes_conseil: "Shake well (10 to 20 inversions) before injection until a homogeneous milky appearance. Do not leave the pen in the sun.",
+                group_1_name: "Rapid insulins",
+                group_2_name: "Long insulins",
+                group_3_name: "Intermediate insulins",
+                group_4_name: "Mixed insulins",
                 indication_1: "Type 1 diabetes: insulin is the only treatment (essential treatment, no oral antidiabetic replaces it).",
                 indication_2: "Type 2 diabetes: insulin therapy when oral antidiabetics are no longer sufficient, during pregnancy, surgery or severe infections.",
                 indication_3: "Rapid analogues and regular insulin: meal coverage, inject 5 to 10 min (analogues) or 30 to 40 min (regular) before meals.",

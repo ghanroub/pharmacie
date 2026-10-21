@@ -1028,93 +1028,151 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Biguanides</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="metformine_title">1. Métformine</h3>
+                        <h3 style="color:var(--primary);" data-i18n="metformine_title">Métformine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="metformine_gen">Métformine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Glucophage")">Glucophage</span>,
-                            <span class="drug-link" onclick="showDrugModal("Novoformine")">Novoformine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Stagid")">Stagid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Sitanorm")">Sitanorm</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glucophage&quot;)">Glucophage</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novoformine&quot;)">Novoformine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Stagid&quot;)">Stagid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sitanorm&quot;)">Sitanorm</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="metformine_formes">Comprimés (500 mg, 850 mg, 1 g), comprimés LP (Stagid 700 mg), sirop.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="metformine_posologie">Adulte : débuter par 500 mg, 1 à 2 fois par jour pendant les repas, augmenter progressivement jusqu'à 1,5 à 3 g par jour. Maximum : 3 g par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="metformine_particularite">Insulino-sensibilisant de première intention du diabète de type 2 : ne provoque pas d'hypoglycémie seul et peut entraîner une légère perte de poids.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="metformine_conseil">Prendre pendant ou juste après les repas, avec un grand verre d'eau, pour limiter les troubles digestifs. Arrêter en cas de vomissements ou de diarrhée sévère et consulter (risque de déshydratation).</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Sulfamides hypoglycémiants</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="sulfamides_title">2. Les sulfamides (glibenclamide, glipizide, gliclazide, glimepiride)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="sulfamides_gen">Glibenclamide / Glipizide / Gliclazide / Glimepiride.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="glibenclamide_title">Glibenclamide</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="glibenclamide_gen">Glibenclamide.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Daonil")">Daonil</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diabenil")">Diabenil</span>,
-                            <span class="drug-link" onclick="showDrugModal("Glibil")">Glibil</span>,
-                            <span class="drug-link" onclick="showDrugModal("Glybek")">Glybek</span>,
-                            <span class="drug-link" onclick="showDrugModal("Glatix")">Glatix</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diamicron")">Diamicron</span>,
-                            <span class="drug-link" onclick="showDrugModal("Glicron")">Glicron</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diabenorm")">Diabenorm</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diaphag")">Diaphag</span>,
-                            <span class="drug-link" onclick="showDrugModal("Corect")">Corect</span>,
-                            <span class="drug-link" onclick="showDrugModal("Larimel")">Larimel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Amarel")">Amarel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nazid")">Nazid</span>,
-                            <span class="drug-link" onclick="showDrugModal("IRYS")">IRYS</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Daonil&quot;)">Daonil</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diabenil&quot;)">Diabenil</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glibil&quot;)">Glibil</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diaphag&quot;)">Diaphag</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="sulfamides_formes">Comprimés (2,5 mg à 5 mg selon molécule).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="sulfamides_posologie">Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="sulfamides_particularite">Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="sulfamides_conseil">Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="glibenclamide_formes">Comprimés (2,5 mg à 5 mg selon molécule).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="glibenclamide_posologie">Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="glibenclamide_particularite">Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="glibenclamide_conseil">Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="glinides_title">3. Glinides (répaglinide)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="glinides_gen">Répaglinide.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="glipizide_title">Glipizide</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="glipizide_gen">Glipizide.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Novonorm")">Novonorm</span>,
-                            <span class="drug-link" onclick="showDrugModal("Neonorm")">Neonorm</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diaglinide")">Diaglinide</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glybek&quot;)">Glybek</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glatix&quot;)">Glatix</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="glinides_formes">Comprimés (0,5 mg, 1 mg, 2 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="glinides_posologie">Adulte : 0,5 à 4 mg, 2 à 3 fois par jour, directement avant les repas (environ 30 min avant).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="glinides_particularite">Glinide à action rapide : contrôle de la glycémie post-prandiale. Risque d'hypoglycémie moindre que les sulfamides de longue durée ; adapté aux repas irréguliers.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="glinides_conseil">Prendre le comprimé environ 30 minutes avant chaque repas principal. Si un repas est sauté, sauter aussi la prise correspondante.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="glipizide_formes">Comprimés (2,5 mg à 5 mg selon molécule).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="glipizide_posologie">Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="glipizide_particularite">Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="glipizide_conseil">Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="acarbose_title">4. Acarbose (inhibiteur des α-glucosidases)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="gliclazide_title">Gliclazide</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="gliclazide_gen">Gliclazide.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diamicron&quot;)">Diamicron</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glicron&quot;)">Glicron</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diabenorm&quot;)">Diabenorm</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="gliclazide_formes">Comprimés (2,5 mg à 5 mg selon molécule).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="gliclazide_posologie">Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="gliclazide_particularite">Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="gliclazide_conseil">Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="glimepiride_title">Glimepiride</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="glimepiride_gen">Glimepiride.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Amarel&quot;)">Amarel</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nazid&quot;)">Nazid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;IRYS&quot;)">IRYS</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Corect&quot;)">Corect</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Larimel&quot;)">Larimel</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="glimepiride_formes">Comprimés (2,5 mg à 5 mg selon molécule).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="glimepiride_posologie">Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="glimepiride_particularite">Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="glimepiride_conseil">Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Glinides</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="repaglinide_title">Répaglinide</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="repaglinide_gen">Répaglinide.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novonorm&quot;)">Novonorm</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Neonorm&quot;)">Neonorm</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diaglinide&quot;)">Diaglinide</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="repaglinide_formes">Comprimés (0,5 mg, 1 mg, 2 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="repaglinide_posologie">Adulte : 0,5 à 4 mg, 2 à 3 fois par jour, directement avant les repas (environ 30 min avant).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="repaglinide_particularite">Glinide à action rapide : contrôle de la glycémie post-prandiale. Risque d'hypoglycémie moindre que les sulfamides de longue durée ; adapté aux repas irréguliers.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="repaglinide_conseil">Prendre le comprimé environ 30 minutes avant chaque repas principal. Si un repas est sauté, sauter aussi la prise correspondante.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Inhibiteurs de l'alpha-glucosidase</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="acarbose_title">Acarbose</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acarbose_gen">Acarbose.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Glucobay")">Glucobay</span>,
-                            <span class="drug-link" onclick="showDrugModal("Arbose")">Arbose</span>,
-                            <span class="drug-link" onclick="showDrugModal("Acorbay")">Acorbay</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glucobay&quot;)">Glucobay</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Arbose&quot;)">Arbose</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Acorbay&quot;)">Acorbay</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acarbose_formes">Comprimés (50 mg, 100 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acarbose_posologie">Adulte : débuter par 50 mg, 3 fois par jour au début des repas, augmenter si besoin. Maximum : 300 mg par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acarbose_particularite">Diminue l'absorption intestinale du glucose et ralentit la vidange gastrique : action uniquement sur les sucres complexes (amidon).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acarbose_conseil">Avaler les comprimés avec un peu d'eau, au début des repas, en mâchant les petites doses avec la première bouchée. Troubles digestifs (gaz) fréquents en début de traitement, qui s'atténuent ensuite.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_5_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Inhibiteurs DPP-4</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="dpp4_title">5. Sitagliptine et vildagliptine (inhibiteurs de la DPP4)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="dpp4_gen">Sitagliptine / Vildagliptine.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="sitagliptine_title">Sitagliptine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="sitagliptine_gen">Sitagliptine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Januvia")">Januvia</span>,
-                            <span class="drug-link" onclick="showDrugModal("Galvus")">Galvus</span>,
-                            <span class="drug-link" onclick="showDrugModal("Galvip")">Galvip</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Januvia&quot;)">Januvia</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="dpp4_formes">Comprimés (Januvia 50 mg, 100 mg ; Galvus 50 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="dpp4_posologie">Adulte : sitagliptine 100 mg par jour ; vildagliptine 50 mg, 1 à 2 fois par jour pendant les repas.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="dpp4_particularite">Action sur les incrétines : augmentent la sécrétion d'insuline dépendante du glucose et diminuent celle du glucagon, sans risque majeur d'hypoglycémie.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="dpp4_conseil">À prendre avec les repas, à heure fixe. Signaler toute éruption cutanée ou douleur articulaire inhabituelle au médecin.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="sitagliptine_formes">Comprimés (50 mg, 100 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="sitagliptine_posologie">Adulte : 100 mg par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="sitagliptine_particularite">Action sur les incrétines : augmentent la sécrétion d'insuline dépendante du glucose et diminuent celle du glucagon, sans risque majeur d'hypoglycémie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="sitagliptine_conseil">À prendre avec les repas, à heure fixe. Signaler toute éruption cutanée ou douleur articulaire inhabituelle au médecin.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="liraglutide_title">6. Liraglutide (analogue de GLP-1)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="vildagliptine_title">Vildagliptine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vildagliptine_gen">Vildagliptine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Galvus&quot;)">Galvus</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Galvip&quot;)">Galvip</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vildagliptine_formes">Comprimés (50 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vildagliptine_posologie">Adulte : 50 mg, 1 à 2 fois par jour pendant les repas.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="vildagliptine_particularite">Action sur les incrétines : augmentent la sécrétion d'insuline dépendante du glucose et diminuent celle du glucagon, sans risque majeur d'hypoglycémie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vildagliptine_conseil">À prendre avec les repas, à heure fixe. Signaler toute éruption cutanée ou douleur articulaire inhabituelle au médecin.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_6_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Analogues du GLP-1</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="liraglutide_title">Liraglutide</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="liraglutide_gen">Liraglutide.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Victoza")">Victoza</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Victoza&quot;)">Victoza</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="liraglutide_formes">Solution injectable en stylo (6 mg/ml).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="liraglutide_posologie">Adulte : 0,6 mg par jour en injection sous-cutanée pendant 1 semaine, puis 1,2 mg par jour. Maximum : 1,8 mg par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="liraglutide_particularite">Analogue de GLP-1 : augmente la sécrétion d'insuline, diminue le glucagon, ralentit la vidange gastrique et provoque une perte de poids. Sous ordonnance uniquement.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="liraglutide_conseil">Injecter sous la peau dans l'abdomen, la cuisse ou le bras, à heure fixe, en alternant les sites d'injection. Ne pas intraveineux.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1346,42 +1404,72 @@
                 copied: "Copié !",
                 hero_title: "1. LES ANTIDIABÉTIQUES ORAUX ET ANALOGUES DE GLP-1",
                 hero_subtitle: "Métformine, sulfamides (glibenclamide, glipizide, gliclazide, glimepiride), glinides (répaglinide), inhibiteurs des α-glucosidases (acarbose), inhibiteurs de la DPP4 (sitagliptine, vildagliptine) et analogue de GLP-1 (liraglutide) : mécanismes, indications, contre-indications et noms commerciaux en Algérie.",
-                metformine_title: "1. Métformine",
+                metformine_title: "Métformine",
                 metformine_gen: "Métformine.",
                 metformine_formes: "Comprimés (500 mg, 850 mg, 1 g), comprimés LP (Stagid 700 mg), sirop.",
                 metformine_posologie: "Adulte : débuter par 500 mg, 1 à 2 fois par jour pendant les repas, augmenter progressivement jusqu'à 1,5 à 3 g par jour. Maximum : 3 g par jour.",
                 metformine_particularite: "Insulino-sensibilisant de première intention du diabète de type 2 : ne provoque pas d'hypoglycémie seul et peut entraîner une légère perte de poids.",
                 metformine_conseil: "Prendre pendant ou juste après les repas, avec un grand verre d'eau, pour limiter les troubles digestifs. Arrêter en cas de vomissements ou de diarrhée sévère et consulter (risque de déshydratation).",
-                sulfamides_title: "2. Les sulfamides (glibenclamide, glipizide, gliclazide, glimepiride)",
-                sulfamides_gen: "Glibenclamide / Glipizide / Gliclazide / Glimepiride.",
-                sulfamides_formes: "Comprimés (2,5 mg à 5 mg selon molécule).",
-                sulfamides_posologie: "Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.",
-                sulfamides_particularite: "Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal.",
-                sulfamides_conseil: "Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.",
-                glinides_title: "3. Glinides (répaglinide)",
-                glinides_gen: "Répaglinide.",
-                glinides_formes: "Comprimés (0,5 mg, 1 mg, 2 mg).",
-                glinides_posologie: "Adulte : 0,5 à 4 mg, 2 à 3 fois par jour, directement avant les repas (environ 30 min avant).",
-                glinides_particularite: "Glinide à action rapide : contrôle de la glycémie post-prandiale. Risque d'hypoglycémie moindre que les sulfamides de longue durée ; adapté aux repas irréguliers.",
-                glinides_conseil: "Prendre le comprimé environ 30 minutes avant chaque repas principal. Si un repas est sauté, sauter aussi la prise correspondante.",
-                acarbose_title: "4. Acarbose (inhibiteur des α-glucosidases)",
+                glibenclamide_title: "Glibenclamide",
+                glibenclamide_gen: "Glibenclamide.",
+                glibenclamide_formes: "Comprimés (2,5 mg à 5 mg selon molécule).",
+                glibenclamide_posologie: "Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.",
+                glibenclamide_particularite: "Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)",
+                glibenclamide_conseil: "Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.",
+                glipizide_title: "Glipizide",
+                glipizide_gen: "Glipizide.",
+                glipizide_formes: "Comprimés (2,5 mg à 5 mg selon molécule).",
+                glipizide_posologie: "Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.",
+                glipizide_particularite: "Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)",
+                glipizide_conseil: "Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.",
+                gliclazide_title: "Gliclazide",
+                gliclazide_gen: "Gliclazide.",
+                gliclazide_formes: "Comprimés (2,5 mg à 5 mg selon molécule).",
+                gliclazide_posologie: "Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.",
+                gliclazide_particularite: "Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)",
+                gliclazide_conseil: "Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.",
+                glimepiride_title: "Glimepiride",
+                glimepiride_gen: "Glimepiride.",
+                glimepiride_formes: "Comprimés (2,5 mg à 5 mg selon molécule).",
+                glimepiride_posologie: "Adulte : selon la molécule, 1 à 3 comprimés par jour, directement avant les repas. À adapter selon le dosage de la glycémie.",
+                glimepiride_particularite: "Stimulent la sécrétion d'insuline : risque d'hypoglycémie. Privilégier les molécules de demi-vie courte (gliclazide, glipizide) chez le sujet âgé et l'insuffisant rénal. (données de classe — non spécifiées séparément dans le livre)",
+                glimepiride_conseil: "Signaler les signes d'hypoglycémie (sueurs, tremblements, faim, confusion) : prise de sucre rapide et avis médical. Ne jamais sauter de repas sous sulfamides.",
+                repaglinide_title: "Répaglinide",
+                repaglinide_gen: "Répaglinide.",
+                repaglinide_formes: "Comprimés (0,5 mg, 1 mg, 2 mg).",
+                repaglinide_posologie: "Adulte : 0,5 à 4 mg, 2 à 3 fois par jour, directement avant les repas (environ 30 min avant).",
+                repaglinide_particularite: "Glinide à action rapide : contrôle de la glycémie post-prandiale. Risque d'hypoglycémie moindre que les sulfamides de longue durée ; adapté aux repas irréguliers.",
+                repaglinide_conseil: "Prendre le comprimé environ 30 minutes avant chaque repas principal. Si un repas est sauté, sauter aussi la prise correspondante.",
+                acarbose_title: "Acarbose",
                 acarbose_gen: "Acarbose.",
                 acarbose_formes: "Comprimés (50 mg, 100 mg).",
                 acarbose_posologie: "Adulte : débuter par 50 mg, 3 fois par jour au début des repas, augmenter si besoin. Maximum : 300 mg par jour.",
                 acarbose_particularite: "Diminue l'absorption intestinale du glucose et ralentit la vidange gastrique : action uniquement sur les sucres complexes (amidon).",
                 acarbose_conseil: "Avaler les comprimés avec un peu d'eau, au début des repas, en mâchant les petites doses avec la première bouchée. Troubles digestifs (gaz) fréquents en début de traitement, qui s'atténuent ensuite.",
-                dpp4_title: "5. Sitagliptine et vildagliptine (inhibiteurs de la DPP4)",
-                dpp4_gen: "Sitagliptine / Vildagliptine.",
-                dpp4_formes: "Comprimés (Januvia 50 mg, 100 mg ; Galvus 50 mg).",
-                dpp4_posologie: "Adulte : sitagliptine 100 mg par jour ; vildagliptine 50 mg, 1 à 2 fois par jour pendant les repas.",
-                dpp4_particularite: "Action sur les incrétines : augmentent la sécrétion d'insuline dépendante du glucose et diminuent celle du glucagon, sans risque majeur d'hypoglycémie.",
-                dpp4_conseil: "À prendre avec les repas, à heure fixe. Signaler toute éruption cutanée ou douleur articulaire inhabituelle au médecin.",
-                liraglutide_title: "6. Liraglutide (analogue de GLP-1)",
+                sitagliptine_title: "Sitagliptine",
+                sitagliptine_gen: "Sitagliptine.",
+                sitagliptine_formes: "Comprimés (50 mg, 100 mg).",
+                sitagliptine_posologie: "Adulte : 100 mg par jour.",
+                sitagliptine_particularite: "Action sur les incrétines : augmentent la sécrétion d'insuline dépendante du glucose et diminuent celle du glucagon, sans risque majeur d'hypoglycémie. (données de classe — non spécifiées séparément dans le livre)",
+                sitagliptine_conseil: "À prendre avec les repas, à heure fixe. Signaler toute éruption cutanée ou douleur articulaire inhabituelle au médecin.",
+                vildagliptine_title: "Vildagliptine",
+                vildagliptine_gen: "Vildagliptine.",
+                vildagliptine_formes: "Comprimés (50 mg).",
+                vildagliptine_posologie: "Adulte : 50 mg, 1 à 2 fois par jour pendant les repas.",
+                vildagliptine_particularite: "Action sur les incrétines : augmentent la sécrétion d'insuline dépendante du glucose et diminuent celle du glucagon, sans risque majeur d'hypoglycémie. (données de classe — non spécifiées séparément dans le livre)",
+                vildagliptine_conseil: "À prendre avec les repas, à heure fixe. Signaler toute éruption cutanée ou douleur articulaire inhabituelle au médecin.",
+                liraglutide_title: "Liraglutide",
                 liraglutide_gen: "Liraglutide.",
                 liraglutide_formes: "Solution injectable en stylo (6 mg/ml).",
                 liraglutide_posologie: "Adulte : 0,6 mg par jour en injection sous-cutanée pendant 1 semaine, puis 1,2 mg par jour. Maximum : 1,8 mg par jour.",
                 liraglutide_particularite: "Analogue de GLP-1 : augmente la sécrétion d'insuline, diminue le glucagon, ralentit la vidange gastrique et provoque une perte de poids. Sous ordonnance uniquement.",
                 liraglutide_conseil: "Injecter sous la peau dans l'abdomen, la cuisse ou le bras, à heure fixe, en alternant les sites d'injection. Ne pas intraveineux.",
+                group_1_name: "Biguanides",
+                group_2_name: "Sulfamides hypoglycémiants",
+                group_3_name: "Glinides",
+                group_4_name: "Inhibiteurs de l'alpha-glucosidase",
+                group_5_name: "Inhibiteurs DPP-4",
+                group_6_name: "Analogues du GLP-1",
                 indication_1: "Diabète de type 2 : la métformine est l'antidiabétique oral de première intention, en complément du régime alimentaire et de l'activité physique.",
                 indication_2: "Sulfamides : diabète de type 2 avec sécrétion d'insuline insuffisante (glycémie à jeun élevée).",
                 indication_3: "Glinides (répaglinide) : contrôle de la glycémie post-prandiale, en particulier si les repas sont irréguliers.",
@@ -1509,42 +1597,72 @@
                 copied: "تم النسخ!",
                 hero_title: "مضادات السكري الفموية ونظائر GLP-1",
                 hero_subtitle: "ميتفورمين، السلفاميدات (جلايكلاميد، جليبازيد، جليكلازيد، جليميبيريد)، الجلاينيدات (ريباغلينيد)، مثبطات ألفا-غلوكوسيديز (أكاربوز)، مثبطات DPP4 (سيتاغليبتين، فيلداغليبتين) ونظير GLP-1 (ليراغلوتايد): الآليات، الاستطبابات، مضادات الاستطباب والأسماء التجارية في الجزائر.",
-                metformine_title: "1. ميتفورمين",
+                metformine_title: "ميتفورمين",
                 metformine_gen: "ميتفورمين.",
                 metformine_formes: "أقراص (500 مغ، 850 مغ، 1 غ)، أقراص ممتدة الإفراز (ستاغيد 700 مغ)، شراب.",
                 metformine_posologie: "بالغين: البدء بـ500 مغ، مرة إلى مرتين يومياً مع الوجبات، ثم الزيادة تدريجياً حتى 1,5 إلى 3 غ يومياً. الحد الأقصى: 3 غ يومياً.",
                 metformine_particularite: "محسّن لحساسية الأنسولين من الخط الأول في السكري من النوع 2: لا يسبب هبوط سكر منفرداً وقد يُحدث فقداناً بسيطاً للوزن.",
                 metformine_conseil: "يُؤخذ مع الوجبة أو بعدها مباشرة، مع كوب كبير من الماء، للحد من الاضطرابات الهضمية. يتوقف عند القيء أو الإسهال الشديد مع الاستشارة (خطر الجفاف).",
-                sulfamides_title: "2. السلفاميدات (جلايكلاميد، جليبازيد، جليكلازيد، جليميبيريد)",
-                sulfamides_gen: "جلايكلاميد / جليبازيد / جليكلازيد / جليميبيريد.",
-                sulfamides_formes: "أقراص (2,5 مغ إلى 5 مغ حسب المادة).",
-                sulfamides_posologie: "بالغين: حسب المادة، 1 إلى 3 أقراص يومياً، مباشرة قبل الوجبات. تُعدّل حسب قياس السكر.",
-                sulfamides_particularite: "تحفّز إفراز الأنسولين: خطر هبوط السكر. يُفضّل المواد ذات نصف عمر قصير (جليكلازيد، جليبازيد) لدى المسنّين ومرضى القصور الكلوي.",
-                sulfamides_conseil: "أبلغ عن أعراض هبوط السكر (تعرّق، ارتجاف، جوع، اضطراب ذهني): تناول سكيراً سريعاً وخذ رأي الطبيب. لا تتخطَّ أبداً وجبة أثناء السلفاميدات.",
-                glinides_title: "3. الجلاينيدات (ريباغلينيد)",
-                glinides_gen: "ريباغلينيد.",
-                glinides_formes: "أقراص (0,5 مغ، 1 مغ، 2 مغ).",
-                glinides_posologie: "بالغين: 0,5 إلى 4 مغ، 2 إلى 3 مرات يومياً، مباشرة قبل الوجبات (نحو 30 دقيقة قبلها).",
-                glinides_particularite: "جلاينيد سريع التأثير: التحكم في السكر بعد الوجبات. خطر هبوط السكر أقل من السلفاميدات طويلة المفعول؛ مناسب للوجبات غير المنتظمة.",
-                glinides_conseil: "خذ القرص قبل كل وجبة رئيسية بنحو 30 دقيقة. إذا تُخطئت وجبة، تخطَّ الجرعة المقابلة.",
-                acarbose_title: "4. أكاربوز (مثبط ألفا-غلوكوسيديز)",
+                glibenclamide_title: "جلايكلاميد",
+                glibenclamide_gen: "جلايكلاميد.",
+                glibenclamide_formes: "أقراص (2,5 مغ إلى 5 مغ حسب المادة).",
+                glibenclamide_posologie: "بالغين: حسب المادة، 1 إلى 3 أقراص يومياً، مباشرة قبل الوجبات. تُعدّل حسب قياس السكر.",
+                glibenclamide_particularite: "تحفّز إفراز الأنسولين: خطر هبوط السكر. يُفضّل المواد ذات نصف عمر قصير (جليكلازيد، جليبازيد) لدى المسنّين ومرضى القصور الكلوي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                glibenclamide_conseil: "أبلغ عن أعراض هبوط السكر (تعرّق، ارتجاف، جوع، اضطراب ذهني): تناول سكيراً سريعاً وخذ رأي الطبيب. لا تتخطَّ أبداً وجبة أثناء السلفاميدات.",
+                glipizide_title: "جليبازيد",
+                glipizide_gen: "جليبازيد.",
+                glipizide_formes: "أقراص (2,5 مغ إلى 5 مغ حسب المادة).",
+                glipizide_posologie: "بالغين: حسب المادة، 1 إلى 3 أقراص يومياً، مباشرة قبل الوجبات. تُعدّل حسب قياس السكر.",
+                glipizide_particularite: "تحفّز إفراز الأنسولين: خطر هبوط السكر. يُفضّل المواد ذات نصف عمر قصير (جليكلازيد، جليبازيد) لدى المسنّين ومرضى القصور الكلوي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                glipizide_conseil: "أبلغ عن أعراض هبوط السكر (تعرّق، ارتجاف، جوع، اضطراب ذهني): تناول سكيراً سريعاً وخذ رأي الطبيب. لا تتخطَّ أبداً وجبة أثناء السلفاميدات.",
+                gliclazide_title: "جليكلازيد",
+                gliclazide_gen: "جليكلازيد.",
+                gliclazide_formes: "أقراص (2,5 مغ إلى 5 مغ حسب المادة).",
+                gliclazide_posologie: "بالغين: حسب المادة، 1 إلى 3 أقراص يومياً، مباشرة قبل الوجبات. تُعدّل حسب قياس السكر.",
+                gliclazide_particularite: "تحفّز إفراز الأنسولين: خطر هبوط السكر. يُفضّل المواد ذات نصف عمر قصير (جليكلازيد، جليبازيد) لدى المسنّين ومرضى القصور الكلوي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                gliclazide_conseil: "أبلغ عن أعراض هبوط السكر (تعرّق، ارتجاف، جوع، اضطراب ذهني): تناول سكيراً سريعاً وخذ رأي الطبيب. لا تتخطَّ أبداً وجبة أثناء السلفاميدات.",
+                glimepiride_title: "جليميبيريد",
+                glimepiride_gen: "جليميبيريد.",
+                glimepiride_formes: "أقراص (2,5 مغ إلى 5 مغ حسب المادة).",
+                glimepiride_posologie: "بالغين: حسب المادة، 1 إلى 3 أقراص يومياً، مباشرة قبل الوجبات. تُعدّل حسب قياس السكر.",
+                glimepiride_particularite: "تحفّز إفراز الأنسولين: خطر هبوط السكر. يُفضّل المواد ذات نصف عمر قصير (جليكلازيد، جليبازيد) لدى المسنّين ومرضى القصور الكلوي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                glimepiride_conseil: "أبلغ عن أعراض هبوط السكر (تعرّق، ارتجاف، جوع، اضطراب ذهني): تناول سكيراً سريعاً وخذ رأي الطبيب. لا تتخطَّ أبداً وجبة أثناء السلفاميدات.",
+                repaglinide_title: "ريباغلينيد",
+                repaglinide_gen: "ريباغلينيد.",
+                repaglinide_formes: "أقراص (0,5 مغ، 1 مغ، 2 مغ).",
+                repaglinide_posologie: "بالغين: 0,5 إلى 4 مغ، 2 إلى 3 مرات يومياً، مباشرة قبل الوجبات (نحو 30 دقيقة قبلها).",
+                repaglinide_particularite: "جلاينيد سريع التأثير: التحكم في السكر بعد الوجبات. خطر هبوط السكر أقل من السلفاميدات طويلة المفعول؛ مناسب للوجبات غير المنتظمة.",
+                repaglinide_conseil: "خذ القرص قبل كل وجبة رئيسية بنحو 30 دقيقة. إذا تُخطئت وجبة، تخطَّ الجرعة المقابلة.",
+                acarbose_title: "أكاربوز",
                 acarbose_gen: "أكاربوز.",
                 acarbose_formes: "أقراص (50 مغ، 100 مغ).",
                 acarbose_posologie: "بالغين: البدء بـ50 مغ، 3 مرات يومياً في بداية الوجبات، ثم الزيادة عند الحاجة. الحد الأقصى: 300 مغ يومياً.",
                 acarbose_particularite: "يقلّل الامتصاص المعوي للغلوكوز ويبطّئ إفراغ المعدة: تأثير على السكريات المعقدة (النشا) فقط.",
                 acarbose_conseil: "تُبلع الأقراص مع قليل من الماء، في بداية الوجبات، مع مضغ الجرعات الصغيرة مع أول لقمة. اضطرابات هضمية (غازات) شائعة في بداية العلاج ثم تخف.",
-                dpp4_title: "5. سيتاغليبتين وفيلداغليبتين (مثبطات DPP4)",
-                dpp4_gen: "سيتاغليبتين / فيلداغليبتين.",
-                dpp4_formes: "أقراص (جانوفيا 50 مغ، 100 مغ؛ جالفوس 50 مغ).",
-                dpp4_posologie: "بالغين: سيتاغليبتين 100 مغ يومياً؛ فيلداغليبتين 50 مغ، مرة إلى مرتين يومياً مع الوجبات.",
-                dpp4_particularite: "تأثير على ال incretines: يزيدان إفراز الأنسولين المتعلق بالغلوكوز ويقلّلان إفراز الغلوكاغون، دون خطر كبير لهبوط السكر.",
-                dpp4_conseil: "يُؤخذ مع الوجبات، في ساعة ثابتة. أبلغ الطبيب عن أي طفح جلدي أو ألم مفاصل غير معتاد.",
-                liraglutide_title: "6. ليراغلوتايد (نظير GLP-1)",
+                sitagliptine_title: "سيتاغليبتين",
+                sitagliptine_gen: "سيتاغليبتين.",
+                sitagliptine_formes: "أقراص (50 مغ، 100 مغ).",
+                sitagliptine_posologie: "بالغين: 100 مغ يومياً.",
+                sitagliptine_particularite: "تأثير على ال incretines: يزيدان إفراز الأنسولين المتعلق بالغلوكوز ويقلّلان إفراز الغلوكاغون، دون خطر كبير لهبوط السكر. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                sitagliptine_conseil: "يُؤخذ مع الوجبات، في ساعة ثابتة. أبلغ الطبيب عن أي طفح جلدي أو ألم مفاصل غير معتاد.",
+                vildagliptine_title: "فيلداغليبتين",
+                vildagliptine_gen: "فيلداغليبتين.",
+                vildagliptine_formes: "أقراص (50 مغ).",
+                vildagliptine_posologie: "بالغين: 50 مغ، مرة إلى مرتين يومياً مع الوجبات.",
+                vildagliptine_particularite: "تأثير على ال incretines: يزيدان إفراز الأنسولين المتعلق بالغلوكوز ويقلّلان إفراز الغلوكاغون، دون خطر كبير لهبوط السكر. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                vildagliptine_conseil: "يُؤخذ مع الوجبات، في ساعة ثابتة. أبلغ الطبيب عن أي طفح جلدي أو ألم مفاصل غير معتاد.",
+                liraglutide_title: "ليراغلوتايد",
                 liraglutide_gen: "ليراغلوتايد.",
                 liraglutide_formes: "محلول حقن في قلم (6 مغ/مل).",
                 liraglutide_posologie: "بالغين: 0,6 مغ يومياً حقناً تحت الجلد لمدة أسبوع، ثم 1,2 مغ يومياً. الحد الأقصى: 1,8 مغ يومياً.",
                 liraglutide_particularite: "نظير GLP-1: يزيد إفراز الأنسولين، يقلّل الغلوكاغون، يبطّئ إفراغ المعدة ويُحدث فقداناً للوزن. بوصفة طبية فقط.",
                 liraglutide_conseil: "يُحقن تحت الجلد في البطن أو الفخذ أو الذراع، في ساعة ثابتة، مع تبديل مواقع الحقن. لا يُحقن وريدياً.",
+                group_1_name: "البيغوانيدات",
+                group_2_name: "السلفاميدات المخفضة للسكر",
+                group_3_name: "الجلاينيدات",
+                group_4_name: "مثبطات ألفا-غلوكوسيديز",
+                group_5_name: "مثبطات DPP-4",
+                group_6_name: "نظائر GLP-1",
                 indication_1: "السكري من النوع 2: الميتفورمين هو مضاد السكري الفموي من الخط الأول، كمكمّل للحمية والنشاط البدني.",
                 indication_2: "السلفاميدات: السكري من النوع 2 مع إفراز أنسولين غير كافٍ (ارتفاع السكر صائم).",
                 indication_3: "الجلاينيدات (ريباغلينيد): التحكم في السكر بعد الوجبات، خصوصاً عند انتظام/عدم انتظام الوجبات.",
@@ -1672,42 +1790,72 @@
                 copied: "Copied!",
                 hero_title: "ORAL ANTIDIABETICS AND GLP-1 ANALOGUES",
                 hero_subtitle: "Metformin, sulfonylureas (glibenclamide, glipizide, gliclazide, glimepiride), glinides (repaglinide), alpha-glucosidase inhibitors (acarbose), DPP4 inhibitors (sitagliptin, vildagliptin) and GLP-1 analogue (liraglutide): mechanisms, indications, contraindications and Algerian brand names.",
-                metformine_title: "1. Metformin",
+                metformine_title: "Metformin",
                 metformine_gen: "Metformin.",
                 metformine_formes: "Tablets (500 mg, 850 mg, 1 g), sustained-release tablets (Stagid 700 mg), syrup.",
                 metformine_posologie: "Adult: start with 500 mg once or twice daily with meals, then increase gradually up to 1.5 to 3 g daily. Maximum: 3 g daily.",
                 metformine_particularite: "First-line insulin sensitizer for type 2 diabetes: does not cause hypoglycemia alone and may cause slight weight loss.",
                 metformine_conseil: "Take during or just after meals, with a large glass of water, to limit GI upset. Stop in case of vomiting or severe diarrhea and consult (risk of dehydration).",
-                sulfamides_title: "2. Sulfonylureas (glibenclamide, glipizide, gliclazide, glimepiride)",
-                sulfamides_gen: "Glibenclamide / Glipizide / Gliclazide / Glimepiride.",
-                sulfamides_formes: "Tablets (2.5 mg to 5 mg depending on molecule).",
-                sulfamides_posologie: "Adult: depending on the molecule, 1 to 3 tablets daily, just before meals. Adjust according to blood glucose measurement.",
-                sulfamides_particularite: "Stimulate insulin secretion: risk of hypoglycemia. Prefer short half-life molecules (gliclazide, glipizide) in the elderly and renal failure.",
-                sulfamides_conseil: "Report signs of hypoglycemia (sweating, trembling, hunger, confusion): take fast-acting sugar and seek medical advice. Never skip a meal while on sulfonylureas.",
-                glinides_title: "3. Glinides (repaglinide)",
-                glinides_gen: "Repaglinide.",
-                glinides_formes: "Tablets (0.5 mg, 1 mg, 2 mg).",
-                glinides_posologie: "Adult: 0.5 to 4 mg, 2 to 3 times daily, just before meals (about 30 min before).",
-                glinides_particularite: "Rapid-acting glinide: control of postprandial glycemia. Lower hypoglycemia risk than long-acting sulfonylureas; suited to irregular meals.",
-                glinides_conseil: "Take the tablet about 30 minutes before each main meal. If a meal is skipped, skip the corresponding dose as well.",
-                acarbose_title: "4. Acarbose (alpha-glucosidase inhibitor)",
+                glibenclamide_title: "Glibenclamide",
+                glibenclamide_gen: "Glibenclamide.",
+                glibenclamide_formes: "Tablets (2.5 mg to 5 mg depending on molecule).",
+                glibenclamide_posologie: "Adult: depending on the molecule, 1 to 3 tablets daily, just before meals. Adjust according to blood glucose measurement.",
+                glibenclamide_particularite: "Stimulate insulin secretion: risk of hypoglycemia. Prefer short half-life molecules (gliclazide, glipizide) in the elderly and renal failure. (class data — not specified separately in the book)",
+                glibenclamide_conseil: "Report signs of hypoglycemia (sweating, trembling, hunger, confusion): take fast-acting sugar and seek medical advice. Never skip a meal while on sulfonylureas.",
+                glipizide_title: "Glipizide",
+                glipizide_gen: "Glipizide.",
+                glipizide_formes: "Tablets (2.5 mg to 5 mg depending on molecule).",
+                glipizide_posologie: "Adult: depending on the molecule, 1 to 3 tablets daily, just before meals. Adjust according to blood glucose measurement.",
+                glipizide_particularite: "Stimulate insulin secretion: risk of hypoglycemia. Prefer short half-life molecules (gliclazide, glipizide) in the elderly and renal failure. (class data — not specified separately in the book)",
+                glipizide_conseil: "Report signs of hypoglycemia (sweating, trembling, hunger, confusion): take fast-acting sugar and seek medical advice. Never skip a meal while on sulfonylureas.",
+                gliclazide_title: "Gliclazide",
+                gliclazide_gen: "Gliclazide.",
+                gliclazide_formes: "Tablets (2.5 mg to 5 mg depending on molecule).",
+                gliclazide_posologie: "Adult: depending on the molecule, 1 to 3 tablets daily, just before meals. Adjust according to blood glucose measurement.",
+                gliclazide_particularite: "Stimulate insulin secretion: risk of hypoglycemia. Prefer short half-life molecules (gliclazide, glipizide) in the elderly and renal failure. (class data — not specified separately in the book)",
+                gliclazide_conseil: "Report signs of hypoglycemia (sweating, trembling, hunger, confusion): take fast-acting sugar and seek medical advice. Never skip a meal while on sulfonylureas.",
+                glimepiride_title: "Glimepiride",
+                glimepiride_gen: "Glimepiride.",
+                glimepiride_formes: "Tablets (2.5 mg to 5 mg depending on molecule).",
+                glimepiride_posologie: "Adult: depending on the molecule, 1 to 3 tablets daily, just before meals. Adjust according to blood glucose measurement.",
+                glimepiride_particularite: "Stimulate insulin secretion: risk of hypoglycemia. Prefer short half-life molecules (gliclazide, glipizide) in the elderly and renal failure. (class data — not specified separately in the book)",
+                glimepiride_conseil: "Report signs of hypoglycemia (sweating, trembling, hunger, confusion): take fast-acting sugar and seek medical advice. Never skip a meal while on sulfonylureas.",
+                repaglinide_title: "Repaglinide",
+                repaglinide_gen: "Repaglinide.",
+                repaglinide_formes: "Tablets (0.5 mg, 1 mg, 2 mg).",
+                repaglinide_posologie: "Adult: 0.5 to 4 mg, 2 to 3 times daily, just before meals (about 30 min before).",
+                repaglinide_particularite: "Rapid-acting glinide: control of postprandial glycemia. Lower hypoglycemia risk than long-acting sulfonylureas; suited to irregular meals.",
+                repaglinide_conseil: "Take the tablet about 30 minutes before each main meal. If a meal is skipped, skip the corresponding dose as well.",
+                acarbose_title: "Acarbose",
                 acarbose_gen: "Acarbose.",
                 acarbose_formes: "Tablets (50 mg, 100 mg).",
                 acarbose_posologie: "Adult: start with 50 mg three times daily at the beginning of meals, increase if needed. Maximum: 300 mg daily.",
                 acarbose_particularite: "Reduces intestinal glucose absorption and slows gastric emptying: acts only on complex sugars (starch).",
                 acarbose_conseil: "Swallow tablets with a little water at the beginning of meals, chewing small doses with the first bite. GI disorders (gas) are frequent at treatment start, then subside.",
-                dpp4_title: "5. Sitagliptin and vildagliptin (DPP4 inhibitors)",
-                dpp4_gen: "Sitagliptin / Vildagliptin.",
-                dpp4_formes: "Tablets (Januvia 50 mg, 100 mg; Galvus 50 mg).",
-                dpp4_posologie: "Adult: sitagliptin 100 mg daily; vildagliptin 50 mg once or twice daily with meals.",
-                dpp4_particularite: "Incretin action: increase glucose-dependent insulin secretion and decrease glucagon secretion, with no major hypoglycemia risk.",
-                dpp4_conseil: "Take with meals, at a fixed time. Report any unusual skin rash or joint pain to the doctor.",
-                liraglutide_title: "6. Liraglutide (GLP-1 analogue)",
+                sitagliptine_title: "Sitagliptin",
+                sitagliptine_gen: "Sitagliptin.",
+                sitagliptine_formes: "Tablets (50 mg, 100 mg).",
+                sitagliptine_posologie: "Adult: 100 mg daily.",
+                sitagliptine_particularite: "Incretin action: increase glucose-dependent insulin secretion and decrease glucagon secretion, with no major hypoglycemia risk. (class data — not specified separately in the book)",
+                sitagliptine_conseil: "Take with meals, at a fixed time. Report any unusual skin rash or joint pain to the doctor.",
+                vildagliptine_title: "Vildagliptin",
+                vildagliptine_gen: "Vildagliptin.",
+                vildagliptine_formes: "Tablets (50 mg).",
+                vildagliptine_posologie: "Adult: 50 mg once or twice daily with meals.",
+                vildagliptine_particularite: "Incretin action: increase glucose-dependent insulin secretion and decrease glucagon secretion, with no major hypoglycemia risk. (class data — not specified separately in the book)",
+                vildagliptine_conseil: "Take with meals, at a fixed time. Report any unusual skin rash or joint pain to the doctor.",
+                liraglutide_title: "Liraglutide",
                 liraglutide_gen: "Liraglutide.",
                 liraglutide_formes: "Injectable solution in pen (6 mg/ml).",
                 liraglutide_posologie: "Adult: 0.6 mg daily by subcutaneous injection for 1 week, then 1.2 mg daily. Maximum: 1.8 mg daily.",
                 liraglutide_particularite: "GLP-1 analogue: increases insulin secretion, decreases glucagon, slows gastric emptying and causes weight loss. Prescription only.",
                 liraglutide_conseil: "Inject subcutaneously into the abdomen, thigh or arm, at a fixed time, rotating injection sites. Never intravenously.",
+                group_1_name: "Biguanides",
+                group_2_name: "Sulfonylureas",
+                group_3_name: "Glinides",
+                group_4_name: "Alpha-glucosidase inhibitors",
+                group_5_name: "DPP-4 inhibitors",
+                group_6_name: "GLP-1 analogues",
                 indication_1: "Type 2 diabetes: metformin is the first-line oral antidiabetic, as an adjunct to diet and exercise.",
                 indication_2: "Sulfonylureas: type 2 diabetes with insufficient insulin secretion (high fasting glycemia).",
                 indication_3: "Glinides (repaglinide): control of postprandial glycemia, especially with irregular meals.",
@@ -2061,17 +2209,17 @@
                     "Daonil": [],
                     "Diabenil": [],
                     "Glibil": [],
+                    "Diaphag": [],
                     "Glybek": [],
                     "Glatix": [],
                     "Diamicron": [],
                     "Glicron": [],
                     "Diabenorm": [],
-                    "Diaphag": [],
-                    "Corect": [],
-                    "Larimel": [],
                     "Amarel": [],
                     "Nazid": [],
                     "IRYS": [],
+                    "Corect": [],
+                    "Larimel": [],
                     "Novonorm": [],
                     "Neonorm": [],
                     "Diaglinide": [],

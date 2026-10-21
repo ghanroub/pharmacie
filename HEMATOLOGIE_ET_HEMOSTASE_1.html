@@ -1028,11 +1028,13 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Anticoagulants</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="acenocoumarol_title">1. Acénocoumarol (AVK)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acenocoumarol_gen">Acénocoumarol (antivitamine K).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Sintrom")">Sintrom</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sintrom&quot;)">Sintrom</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acenocoumarol_formes">Comprimés (1 mg, 4 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acenocoumarol_posologie">Dose adaptée à l'INR, en une prise par jour, à heure fixe (de préférence le soir).</span></p>
@@ -1040,27 +1042,50 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acenocoumarol_conseil">Contrôle régulier de l'INR ; tout surdosage expose au risque hémorragique.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="hbpm_title">2. Héparines de bas poids moléculaire (HBPM)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="hbpm_gen">Énoxaparine sodique, nadroparine calcique, tinzaparine sodique.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="enoxaparine_title">2. Énoxaparine sodique (HBPM)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="enoxaparine_gen">Énoxaparine sodique (héparine de bas poids moléculaire).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lovenox")">Lovenox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Varenox")">Varenox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fraxiparine")">Fraxiparine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Innohep")">Innohep</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lovenox&quot;)">Lovenox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Varenox&quot;)">Varenox</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="hbpm_formes">Solution injectable sous-cutanée en seringues préremplies.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="hbpm_posologie">1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="hbpm_particularite">Effet anticoagulant rapide ; principale complication : hémorragie.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="hbpm_conseil">Injection dans le ventre en pli cutané, sans masser le point de ponction.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="enoxaparine_formes">Solution injectable sous-cutanée en seringues préremplies.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="enoxaparine_posologie">1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="enoxaparine_particularite">Effet anticoagulant rapide ; principale complication : hémorragie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="enoxaparine_conseil">Injection dans le ventre en pli cutané, sans masser le point de ponction.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="aspirine_a100_title">3. Acide acétylsalicylique (A100 mg)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="nadroparine_title">3. Nadroparine calcique (HBPM)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="nadroparine_gen">Nadroparine calcique (héparine de bas poids moléculaire).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fraxiparine&quot;)">Fraxiparine</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="nadroparine_formes">Solution injectable sous-cutanée en seringues préremplies.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="nadroparine_posologie">1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="nadroparine_particularite">Effet anticoagulant rapide ; principale complication : hémorragie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="nadroparine_conseil">Injection dans le ventre en pli cutané, sans masser le point de ponction.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="tinzaparine_title">4. Tinzaparine sodique (HBPM)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="tinzaparine_gen">Tinzaparine sodique (héparine de bas poids moléculaire).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Innohep&quot;)">Innohep</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="tinzaparine_formes">Solution injectable sous-cutanée en seringues préremplies.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="tinzaparine_posologie">1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="tinzaparine_particularite">Effet anticoagulant rapide ; principale complication : hémorragie. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="tinzaparine_conseil">Injection dans le ventre en pli cutané, sans masser le point de ponction.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiagrégants plaquettaires</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="aspirine_a100_title">5. Acide acétylsalicylique (A100 mg)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aspirine_a100_gen">Acide acétylsalicylique (aspirine) à faible dose.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Aspirine")">Aspirine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aspegic")">Aspegic</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aspec")">Aspec</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aspevasc")">Aspevasc</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspirine&quot;)">Aspirine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspegic&quot;)">Aspegic</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspec&quot;)">Aspec</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspevasc&quot;)">Aspevasc</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aspirine_a100_formes">Comprimés 100 mg (A100), sachets 100 mg.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aspirine_a100_posologie">1 comprimé par jour, à heure fixe.</span></p>
@@ -1068,28 +1093,32 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aspirine_a100_conseil">À prendre pendant ou après le repas ; ne pas associer à un autre AINS.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="clopidogrel_title">4. Clopidogrel</h3>
+                        <h3 style="color:var(--primary);" data-i18n="clopidogrel_title">6. Clopidogrel</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="clopidogrel_gen">Clopidogrel (antiagrégant plaquettaire).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Plavix")">Plavix</span>,
-                            <span class="drug-link" onclick="showDrugModal("Plagrel")">Plagrel</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Plavix&quot;)">Plavix</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Plagrel&quot;)">Plagrel</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="clopidogrel_formes">Comprimés 75 mg.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="clopidogrel_posologie">1 comprimé par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="clopidogrel_particularite">Inhibe l'agrégation plaquettaire (récepteur P2Y12).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="clopidogrel_conseil">À prendre au cours du repas, à heure fixe.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antihémorragiques</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="etamsylate_title">5. Étamsylate (antihémorragique)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="etamsylate_title">7. Étamsylate (antihémorragique)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="etamsylate_gen">Étamsylate (antihémorragique et vasculoprotecteur).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Dicynone")">Dicynone</span>,
-                            <span class="drug-link" onclick="showDrugModal("Novasmil")">Novasmil</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dicynone&quot;)">Dicynone</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novasmil&quot;)">Novasmil</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="etamsylate_formes">Comprimés 250 mg, solution buvable, solution injectable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="etamsylate_posologie">Adulte : 1 à 2 comprimés 2 à 3 fois par jour en période hémorragique.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="etamsylate_particularite">Renforce la résistance capillaire et réduit le temps de saignement.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="etamsylate_conseil">Ne remplace pas le traitement d'une cause grave ; usage limité dans le temps.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1327,30 +1356,45 @@
                 acenocoumarol_posologie: "Dose adaptée à l'INR, en une prise par jour, à heure fixe (de préférence le soir).",
                 acenocoumarol_particularite: "Antagonise la vitamine K, effet retardé (48-72 h).",
                 acenocoumarol_conseil: "Contrôle régulier de l'INR ; tout surdosage expose au risque hémorragique.",
-                hbpm_title: "2. Héparines de bas poids moléculaire (HBPM)",
-                hbpm_gen: "Énoxaparine sodique, nadroparine calcique, tinzaparine sodique.",
-                hbpm_formes: "Solution injectable sous-cutanée en seringues préremplies.",
-                hbpm_posologie: "1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.",
-                hbpm_particularite: "Effet anticoagulant rapide ; principale complication : hémorragie.",
-                hbpm_conseil: "Injection dans le ventre en pli cutané, sans masser le point de ponction.",
-                aspirine_a100_title: "3. Acide acétylsalicylique (A100 mg)",
+                enoxaparine_title: "2. Énoxaparine sodique (HBPM)",
+                enoxaparine_gen: "Énoxaparine sodique (héparine de bas poids moléculaire).",
+                enoxaparine_formes: "Solution injectable sous-cutanée en seringues préremplies.",
+                enoxaparine_posologie: "1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.",
+                enoxaparine_particularite: "Effet anticoagulant rapide ; principale complication : hémorragie. (données de classe — non spécifiées séparément dans le livre)",
+                enoxaparine_conseil: "Injection dans le ventre en pli cutané, sans masser le point de ponction.",
+                nadroparine_title: "3. Nadroparine calcique (HBPM)",
+                nadroparine_gen: "Nadroparine calcique (héparine de bas poids moléculaire).",
+                nadroparine_formes: "Solution injectable sous-cutanée en seringues préremplies.",
+                nadroparine_posologie: "1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.",
+                nadroparine_particularite: "Effet anticoagulant rapide ; principale complication : hémorragie. (données de classe — non spécifiées séparément dans le livre)",
+                nadroparine_conseil: "Injection dans le ventre en pli cutané, sans masser le point de ponction.",
+                tinzaparine_title: "4. Tinzaparine sodique (HBPM)",
+                tinzaparine_gen: "Tinzaparine sodique (héparine de bas poids moléculaire).",
+                tinzaparine_formes: "Solution injectable sous-cutanée en seringues préremplies.",
+                tinzaparine_posologie: "1 injection sous-cutanée par jour selon le poids ; dose préventive ou curative.",
+                tinzaparine_particularite: "Effet anticoagulant rapide ; principale complication : hémorragie. (données de classe — non spécifiées séparément dans le livre)",
+                tinzaparine_conseil: "Injection dans le ventre en pli cutané, sans masser le point de ponction.",
+                aspirine_a100_title: "5. Acide acétylsalicylique (A100 mg)",
                 aspirine_a100_gen: "Acide acétylsalicylique (aspirine) à faible dose.",
                 aspirine_a100_formes: "Comprimés 100 mg (A100), sachets 100 mg.",
                 aspirine_a100_posologie: "1 comprimé par jour, à heure fixe.",
                 aspirine_a100_particularite: "Antiagrégant plaquettaire à faible dose ; à forte dose, il devient antalgique et anti-inflammatoire.",
                 aspirine_a100_conseil: "À prendre pendant ou après le repas ; ne pas associer à un autre AINS.",
-                clopidogrel_title: "4. Clopidogrel",
+                clopidogrel_title: "6. Clopidogrel",
                 clopidogrel_gen: "Clopidogrel (antiagrégant plaquettaire).",
                 clopidogrel_formes: "Comprimés 75 mg.",
                 clopidogrel_posologie: "1 comprimé par jour.",
                 clopidogrel_particularite: "Inhibe l'agrégation plaquettaire (récepteur P2Y12).",
                 clopidogrel_conseil: "À prendre au cours du repas, à heure fixe.",
-                etamsylate_title: "5. Étamsylate (antihémorragique)",
+                etamsylate_title: "7. Étamsylate (antihémorragique)",
                 etamsylate_gen: "Étamsylate (antihémorragique et vasculoprotecteur).",
                 etamsylate_formes: "Comprimés 250 mg, solution buvable, solution injectable.",
                 etamsylate_posologie: "Adulte : 1 à 2 comprimés 2 à 3 fois par jour en période hémorragique.",
                 etamsylate_particularite: "Renforce la résistance capillaire et réduit le temps de saignement.",
                 etamsylate_conseil: "Ne remplace pas le traitement d'une cause grave ; usage limité dans le temps.",
+                group_1_name: "Anticoagulants",
+                group_2_name: "Antiagrégants plaquettaires",
+                group_3_name: "Antihémorragiques",
                 indication_1: "Prévention des accidents cardio et cérébro-vasculaires (notamment dus à l'athérosclérose).",
                 indication_2: "Phlébite, embolie pulmonaire et embolie cérébrale.",
                 indication_3: "Prévention de la pré-éclampsie et des fausses couches chez les femmes enceintes (aspirine).",
@@ -1484,30 +1528,45 @@
                 acenocoumarol_posologie: "جرعة معدّلة حسب الـ INR، في جرعة واحدة يومياً في ساعة ثابتة (يُفضّل مساءً).",
                 acenocoumarol_particularite: "يعاكس فيتامين K، تأثيره متأخر (48-72 ساعة).",
                 acenocoumarol_conseil: "مراقبة منتظمة للـ INR؛ أي جرعة مفرطة تعرّض لخطر النزف.",
-                hbpm_title: "2. الهيبارين منخفض الوزن الجزيئي (HBPM)",
-                hbpm_gen: "إينوكسابارين صودي، نادروبارين كالسي، تينزابارين صودي.",
-                hbpm_formes: "محلول حقن تحت الجلد في محاقن جاهزة.",
-                hbpm_posologie: "حقنة تحت الجلد واحدة يومياً حسب الوزن؛ جرعة وقائية أو علاجية.",
-                hbpm_particularite: "تأثير مضاد للتخثر سريع؛ المضاعفة الرئيسية: النزف.",
-                hbpm_conseil: "الحقن في البطن بطيّة جلدية دون تدليك موضع الوخز.",
-                aspirine_a100_title: "3. حمض الأسيتيل ساليسيليك (A100 مغ)",
+                enoxaparine_title: "2. إينوكسابارين صودي (HBPM)",
+                enoxaparine_gen: "إينوكسابارين صودي (هيبارين منخفض الوزن الجزيئي).",
+                enoxaparine_formes: "محلول حقن تحت الجلد في محاقن جاهزة.",
+                enoxaparine_posologie: "حقنة تحت الجلد واحدة يومياً حسب الوزن؛ جرعة وقائية أو علاجية.",
+                enoxaparine_particularite: "تأثير مضاد للتخثر سريع؛ المضاعفة الرئيسية: النزف. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                enoxaparine_conseil: "الحقن في البطن بطيّة جلدية دون تدليك موضع الوخز.",
+                nadroparine_title: "3. نادروبارين كالسي (HBPM)",
+                nadroparine_gen: "نادروبارين كالسي (هيبارين منخفض الوزن الجزيئي).",
+                nadroparine_formes: "محلول حقن تحت الجلد في محاقن جاهزة.",
+                nadroparine_posologie: "حقنة تحت الجلد واحدة يومياً حسب الوزن؛ جرعة وقائية أو علاجية.",
+                nadroparine_particularite: "تأثير مضاد للتخثر سريع؛ المضاعفة الرئيسية: النزف. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                nadroparine_conseil: "الحقن في البطن بطيّة جلدية دون تدليك موضع الوخز.",
+                tinzaparine_title: "4. تينزابارين صودي (HBPM)",
+                tinzaparine_gen: "تينزابارين صودي (هيبارين منخفض الوزن الجزيئي).",
+                tinzaparine_formes: "محلول حقن تحت الجلد في محاقن جاهزة.",
+                tinzaparine_posologie: "حقنة تحت الجلد واحدة يومياً حسب الوزن؛ جرعة وقائية أو علاجية.",
+                tinzaparine_particularite: "تأثير مضاد للتخثر سريع؛ المضاعفة الرئيسية: النزف. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                tinzaparine_conseil: "الحقن في البطن بطيّة جلدية دون تدليك موضع الوخز.",
+                aspirine_a100_title: "5. حمض الأسيتيل ساليسيليك (A100 مغ)",
                 aspirine_a100_gen: "حمض الأسيتيل ساليسيليك (الأسبرين) بجرعة منخفضة.",
                 aspirine_a100_formes: "أقراص 100 مغ (A100)، أكياس 100 مغ.",
                 aspirine_a100_posologie: "قرص واحد يومياً في ساعة ثابتة.",
                 aspirine_a100_particularite: "مضاد تكدّس الصفائح بجرعة منخفضة؛ بجرعة عالية يصبح مسكّناً ومضاداً للالتهاب.",
                 aspirine_a100_conseil: "يُؤخذ خلال الوجبة أو بعدها؛ لا تقرنه بمضاد التهاب غير ستيرويدي آخر.",
-                clopidogrel_title: "4. كلوبيدوغريل",
+                clopidogrel_title: "6. كلوبيدوغريل",
                 clopidogrel_gen: "كلوبيدوغريل (مضاد تكدّس الصفائح).",
                 clopidogrel_formes: "أقراص 75 مغ.",
                 clopidogrel_posologie: "قرص واحد يومياً.",
                 clopidogrel_particularite: "يثبّط تجمّع الصفائح (مستقبل P2Y12).",
                 clopidogrel_conseil: "يُؤخذ مع الوجبة في ساعة ثابتة.",
-                etamsylate_title: "5. إيتامسيلات (مضاد النزف)",
+                etamsylate_title: "7. إيتامسيلات (مضاد النزف)",
                 etamsylate_gen: "إيتامسيلات (مضاد للنزف وواقٍ للأوعية).",
                 etamsylate_formes: "أقراص 250 مغ، محلول فموي، محلول حقن.",
                 etamsylate_posologie: "بالغين: قرص إلى قرصين، 2-3 مرات يومياً خلال فترة النزف.",
                 etamsylate_particularite: "يقوّي مقاومة الشعيرات ويقلّل زمن النزف.",
                 etamsylate_conseil: "لا يعوّض علاج سبب خطير؛ استعمال محدود زمنياً.",
+                group_1_name: "مضادات التخثر",
+                group_2_name: "مضادات تكدّس الصفائح الدموية",
+                group_3_name: "مضادات النزف",
                 indication_1: "الوقاية من الحوادث القلبية والدماغية الوعائية (خصوصاً الناتجة عن تصلّب الشرايين).",
                 indication_2: "التهاب الوريد، الانصمام الرئوي والانصمام الدماغي.",
                 indication_3: "الوقاية من تسمّم الحمل والإجهاض عند الحوامل (الأسبرين).",
@@ -1641,30 +1700,45 @@
                 acenocoumarol_posologie: "Dose adjusted to INR, once daily at a fixed time (preferably in the evening).",
                 acenocoumarol_particularite: "Antagonizes vitamin K, delayed effect (48-72 h).",
                 acenocoumarol_conseil: "Regular INR monitoring; any overdose exposes to bleeding risk.",
-                hbpm_title: "2. Low molecular weight heparins (LMWH)",
-                hbpm_gen: "Enoxaparin sodium, nadroparin calcium, tinzaparin sodium.",
-                hbpm_formes: "Subcutaneous injectable solution in prefilled syringes.",
-                hbpm_posologie: "One subcutaneous injection daily according to weight; preventive or curative dose.",
-                hbpm_particularite: "Rapid anticoagulant effect; main complication: bleeding.",
-                hbpm_conseil: "Inject into the abdomen in a skin fold, without massaging the puncture site.",
-                aspirine_a100_title: "3. Acetylsalicylic acid (A100 mg)",
+                enoxaparine_title: "2. Enoxaparin sodium (LMWH)",
+                enoxaparine_gen: "Enoxaparin sodium (low molecular weight heparin).",
+                enoxaparine_formes: "Subcutaneous injectable solution in prefilled syringes.",
+                enoxaparine_posologie: "One subcutaneous injection daily according to weight; preventive or curative dose.",
+                enoxaparine_particularite: "Rapid anticoagulant effect; main complication: bleeding. (class data — not specified separately in the book)",
+                enoxaparine_conseil: "Inject into the abdomen in a skin fold, without massaging the puncture site.",
+                nadroparine_title: "3. Nadroparin calcium (LMWH)",
+                nadroparine_gen: "Nadroparin calcium (low molecular weight heparin).",
+                nadroparine_formes: "Subcutaneous injectable solution in prefilled syringes.",
+                nadroparine_posologie: "One subcutaneous injection daily according to weight; preventive or curative dose.",
+                nadroparine_particularite: "Rapid anticoagulant effect; main complication: bleeding. (class data — not specified separately in the book)",
+                nadroparine_conseil: "Inject into the abdomen in a skin fold, without massaging the puncture site.",
+                tinzaparine_title: "4. Tinzaparin sodium (LMWH)",
+                tinzaparine_gen: "Tinzaparin sodium (low molecular weight heparin).",
+                tinzaparine_formes: "Subcutaneous injectable solution in prefilled syringes.",
+                tinzaparine_posologie: "One subcutaneous injection daily according to weight; preventive or curative dose.",
+                tinzaparine_particularite: "Rapid anticoagulant effect; main complication: bleeding. (class data — not specified separately in the book)",
+                tinzaparine_conseil: "Inject into the abdomen in a skin fold, without massaging the puncture site.",
+                aspirine_a100_title: "5. Acetylsalicylic acid (A100 mg)",
                 aspirine_a100_gen: "Acetylsalicylic acid (aspirin) at low dose.",
                 aspirine_a100_formes: "Tablets 100 mg (A100), sachets 100 mg.",
                 aspirine_a100_posologie: "One tablet daily at a fixed time.",
                 aspirine_a100_particularite: "Antiplatelet at low dose; at high dose it becomes analgesic and anti-inflammatory.",
                 aspirine_a100_conseil: "Take during or after a meal; do not combine with another NSAID.",
-                clopidogrel_title: "4. Clopidogrel",
+                clopidogrel_title: "6. Clopidogrel",
                 clopidogrel_gen: "Clopidogrel (antiplatelet agent).",
                 clopidogrel_formes: "Tablets 75 mg.",
                 clopidogrel_posologie: "One tablet daily.",
                 clopidogrel_particularite: "Inhibits platelet aggregation (P2Y12 receptor).",
                 clopidogrel_conseil: "Take with a meal, at a fixed time.",
-                etamsylate_title: "5. Etamsylate (hemostatic)",
+                etamsylate_title: "7. Etamsylate (hemostatic)",
                 etamsylate_gen: "Etamsylate (hemostatic and vasculoprotective).",
                 etamsylate_formes: "Tablets 250 mg, oral solution, injectable solution.",
                 etamsylate_posologie: "Adult: 1 to 2 tablets 2 to 3 times daily during bleeding episodes.",
                 etamsylate_particularite: "Strengthens capillary resistance and reduces bleeding time.",
                 etamsylate_conseil: "Does not replace treatment of a serious cause; time-limited use.",
+                group_1_name: "Anticoagulants",
+                group_2_name: "Antiplatelet agents",
+                group_3_name: "Hemostatics",
                 indication_1: "Prevention of cardio- and cerebrovascular accidents (notably due to atherosclerosis).",
                 indication_2: "Phlebitis, pulmonary embolism and cerebral embolism.",
                 indication_3: "Prevention of pre-eclampsia and miscarriages in pregnant women (aspirin).",

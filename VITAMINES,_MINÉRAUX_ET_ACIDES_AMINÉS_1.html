@@ -1028,13 +1028,15 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Vitamines</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="vita1_vitamine_c_title">Vitamine C (acide ascorbique)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vita1_vitamine_c_gen">Acide ascorbique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("UPSA")">UPSA</span>,
-                            <span class="drug-link" onclick="showDrugModal("Vita-C")">Vita-C</span>,
-                            <span class="drug-link" onclick="showDrugModal("Vital C")">Vital C</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;UPSA&quot;)">UPSA</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Vita-C&quot;)">Vita-C</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Vital C&quot;)">Vital C</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vita1_vitamine_c_formes">Comprimés, comprimés effervescents, comprimés à croquer et solution buvable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vita1_vitamine_c_posologie">Adulte : 100 à 1000 mg/jour selon le besoin ; cure courte aux fortes doses.</span></p>
@@ -1045,7 +1047,7 @@
                         <h3 style="color:var(--primary);" data-i18n="vita1_vitamine_e_title">Vitamine E (tocophérol)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vita1_vitamine_e_gen">Tocophérol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Api E")">Api E</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Api E&quot;)">Api E</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vita1_vitamine_e_formes">Capsules, comprimés, ampoules buvables.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vita1_vitamine_e_posologie">Adulte : 100 à 500 mg/jour selon l'indication, sur avis médical.</span></p>
@@ -1053,16 +1055,41 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vita1_vitamine_e_conseil">Pas de fortes doses prolongées (accumulation) ; attention si traitement anticoagulant ; privilégier les sources alimentaires (huiles, noix).</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="vita1_vitamines_b_title">Vitamines B1, B6 et B12</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vita1_vitamines_b_gen">Thiamine, pyridoxine et cyanocobalamine.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="vita1_vitamine_b1_title">Vitamine B1 (thiamine)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vita1_vitamine_b1_gen">Thiamine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Neurovit")">Neurovit</span>,
-                            <span class="drug-link" onclick="showDrugModal("Novital")">Novital</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Neurovit&quot;)">Neurovit</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novital&quot;)">Novital</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vita1_vitamines_b_formes">Comprimés, comprimés effervescents, solution injectable.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vita1_vitamines_b_posologie">Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="vita1_vitamines_b_particularite">Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vita1_vitamines_b_conseil">Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vita1_vitamine_b1_formes">Comprimés, comprimés effervescents, solution injectable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vita1_vitamine_b1_posologie">Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="vita1_vitamine_b1_particularite">Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vita1_vitamine_b1_conseil">Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="vita1_vitamine_b6_title">Vitamine B6 (pyridoxine)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vita1_vitamine_b6_gen">Pyridoxine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Neurovit&quot;)">Neurovit</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novital&quot;)">Novital</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vita1_vitamine_b6_formes">Comprimés, comprimés effervescents, solution injectable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vita1_vitamine_b6_posologie">Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="vita1_vitamine_b6_particularite">Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vita1_vitamine_b6_conseil">Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="vita1_vitamine_b12_title">Vitamine B12 (cyanocobalamine)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vita1_vitamine_b12_gen">Cyanocobalamine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Neurovit&quot;)">Neurovit</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novital&quot;)">Novital</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vita1_vitamine_b12_formes">Comprimés, comprimés effervescents, solution injectable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vita1_vitamine_b12_posologie">Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="vita1_vitamine_b12_particularite">Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vita1_vitamine_b12_conseil">Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1306,12 +1333,25 @@
                 vita1_vitamine_e_posologie: "Adulte : 100 à 500 mg/jour selon l'indication, sur avis médical.",
                 vita1_vitamine_e_particularite: "Vitamine liposoluble antioxydante : protège les membranes cellulaires et lutte contre le vieillissement cellulaire.",
                 vita1_vitamine_e_conseil: "Pas de fortes doses prolongées (accumulation) ; attention si traitement anticoagulant ; privilégier les sources alimentaires (huiles, noix).",
-                vita1_vitamines_b_title: "Vitamines B1, B6 et B12",
-                vita1_vitamines_b_gen: "Thiamine, pyridoxine et cyanocobalamine.",
-                vita1_vitamines_b_formes: "Comprimés, comprimés effervescents, solution injectable.",
-                vita1_vitamines_b_posologie: "Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.",
-                vita1_vitamines_b_particularite: "Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique.",
-                vita1_vitamines_b_conseil: "Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.",
+                vita1_vitamine_b1_title: "Vitamine B1 (thiamine)",
+                vita1_vitamine_b1_gen: "Thiamine.",
+                vita1_vitamine_b1_formes: "Comprimés, comprimés effervescents, solution injectable.",
+                vita1_vitamine_b1_posologie: "Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.",
+                vita1_vitamine_b1_particularite: "Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique. (données de classe — non spécifiées séparément dans le livre)",
+                vita1_vitamine_b1_conseil: "Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.",
+                vita1_vitamine_b6_title: "Vitamine B6 (pyridoxine)",
+                vita1_vitamine_b6_gen: "Pyridoxine.",
+                vita1_vitamine_b6_formes: "Comprimés, comprimés effervescents, solution injectable.",
+                vita1_vitamine_b6_posologie: "Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.",
+                vita1_vitamine_b6_particularite: "Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique. (données de classe — non spécifiées séparément dans le livre)",
+                vita1_vitamine_b6_conseil: "Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.",
+                vita1_vitamine_b12_title: "Vitamine B12 (cyanocobalamine)",
+                vita1_vitamine_b12_gen: "Cyanocobalamine.",
+                vita1_vitamine_b12_formes: "Comprimés, comprimés effervescents, solution injectable.",
+                vita1_vitamine_b12_posologie: "Adulte : 1 à 2 comprimés/jour selon le produit ; cures selon la carence.",
+                vita1_vitamine_b12_particularite: "Complexe vitaminique B : métabolisme énergétique et fonctionnement nerveux ; la B12 est essentielle dans l'anémie mégaloblastique. (données de classe — non spécifiées séparément dans le livre)",
+                vita1_vitamine_b12_conseil: "Efficaces surtout en cas de carence avérée ; une alimentation équilibrée reste la base ; pas d'automédication prolongée.",
+                group_1_name: "Vitamines",
                 indication_1: "Carence et prévention de la carence en vitamine C (scorbut, fatigue).",
                 indication_2: "Asthénie fonctionnelle et convalescence.",
                 indication_3: "Carence en vitamine E et protection antioxydante.",
@@ -1451,12 +1491,25 @@
                 vita1_vitamine_e_posologie: "بالغين: 100 إلى 500 مغ/يوم حسب الاستطباب، برأي طبي.",
                 vita1_vitamine_e_particularite: "فيتامين ذوّاب في الدهون مضاد للأكسدة: يحمي أغشية الخلايا ويحارب شيخوخة الخلايا.",
                 vita1_vitamine_e_conseil: "لا جرعات عالية مطوّلة (تراكم)؛ احذر إن كان هناك علاج مضاد للتخثر؛ فضّل المصادر الغذائية (الزيوت، المكسرات).",
-                vita1_vitamines_b_title: "فيتامينات B1 و B6 و B12",
-                vita1_vitamines_b_gen: "الثيامين والبيريدوكسين والسيانوكوبالامين.",
-                vita1_vitamines_b_formes: "أقراص، أقراص فوارة، محلول للحقن.",
-                vita1_vitamines_b_posologie: "بالغين: 1 إلى 2 قرص/يوم حسب المنتج؛ علاج حسب النقص.",
-                vita1_vitamines_b_particularite: "مركب فيتامينات B: استقلاب الطاقة ووظائف الأعصاب؛ B12 أساسي في فقر الدم الضخم الأرومات.",
-                vita1_vitamines_b_conseil: "فعّالة خاصة عند نقص مؤكد؛ الغذاء المتوازن يبقى الأساس؛ لا علاج ذاتي مطوّل.",
+                vita1_vitamine_b1_title: "فيتامين B1 (الثيامين)",
+                vita1_vitamine_b1_gen: "الثيامين.",
+                vita1_vitamine_b1_formes: "أقراص، أقراص فوارة، محلول للحقن.",
+                vita1_vitamine_b1_posologie: "بالغين: 1 إلى 2 قرص/يوم حسب المنتج؛ علاج حسب النقص.",
+                vita1_vitamine_b1_particularite: "مركب فيتامينات B: استقلاب الطاقة ووظائف الأعصاب؛ B12 أساسي في فقر الدم الضخم الأرومات. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                vita1_vitamine_b1_conseil: "فعّالة خاصة عند نقص مؤكد؛ الغذاء المتوازن يبقى الأساس؛ لا علاج ذاتي مطوّل.",
+                vita1_vitamine_b6_title: "فيتامين B6 (البيريدوكسين)",
+                vita1_vitamine_b6_gen: "البيريدوكسين.",
+                vita1_vitamine_b6_formes: "أقراص، أقراص فوارة، محلول للحقن.",
+                vita1_vitamine_b6_posologie: "بالغين: 1 إلى 2 قرص/يوم حسب المنتج؛ علاج حسب النقص.",
+                vita1_vitamine_b6_particularite: "مركب فيتامينات B: استقلاب الطاقة ووظائف الأعصاب؛ B12 أساسي في فقر الدم الضخم الأرومات. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                vita1_vitamine_b6_conseil: "فعّالة خاصة عند نقص مؤكد؛ الغذاء المتوازن يبقى الأساس؛ لا علاج ذاتي مطوّل.",
+                vita1_vitamine_b12_title: "فيتامين B12 (السيانوكوبالامين)",
+                vita1_vitamine_b12_gen: "السيانوكوبالامين.",
+                vita1_vitamine_b12_formes: "أقراص، أقراص فوارة، محلول للحقن.",
+                vita1_vitamine_b12_posologie: "بالغين: 1 إلى 2 قرص/يوم حسب المنتج؛ علاج حسب النقص.",
+                vita1_vitamine_b12_particularite: "مركب فيتامينات B: استقلاب الطاقة ووظائف الأعصاب؛ B12 أساسي في فقر الدم الضخم الأرومات. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                vita1_vitamine_b12_conseil: "فعّالة خاصة عند نقص مؤكد؛ الغذاء المتوازن يبقى الأساس؛ لا علاج ذاتي مطوّل.",
+                group_1_name: "الفيتامينات",
                 indication_1: "نقص والوقاية من نقص فيتامين C (الأسقربوط، التعب).",
                 indication_2: "الوهن الوظيفي والنقاهة.",
                 indication_3: "نقص فيتامين E والحماية من الأكسدة.",
@@ -1596,12 +1649,25 @@
                 vita1_vitamine_e_posologie: "Adult: 100-500 mg/day depending on indication, on medical advice.",
                 vita1_vitamine_e_particularite: "Fat-soluble antioxidant vitamin: protects cell membranes and fights cellular ageing.",
                 vita1_vitamine_e_conseil: "No prolonged high doses (accumulation); caution with anticoagulant treatment; prefer dietary sources (oils, nuts).",
-                vita1_vitamines_b_title: "Vitamins B1, B6 and B12",
-                vita1_vitamines_b_gen: "Thiamine, pyridoxine and cyanocobalamin.",
-                vita1_vitamines_b_formes: "Tablets, effervescent tablets, injectable solution.",
-                vita1_vitamines_b_posologie: "Adult: 1-2 tablets/day depending on the product; courses according to the deficiency.",
-                vita1_vitamines_b_particularite: "B vitamin complex: energy metabolism and nerve function; B12 is essential in megaloblastic anaemia.",
-                vita1_vitamines_b_conseil: "Effective mainly in proven deficiency; a balanced diet remains the basis; no prolonged self-medication.",
+                vita1_vitamine_b1_title: "Vitamin B1 (thiamine)",
+                vita1_vitamine_b1_gen: "Thiamine.",
+                vita1_vitamine_b1_formes: "Tablets, effervescent tablets, injectable solution.",
+                vita1_vitamine_b1_posologie: "Adult: 1-2 tablets/day depending on the product; courses according to the deficiency.",
+                vita1_vitamine_b1_particularite: "B vitamin complex: energy metabolism and nerve function; B12 is essential in megaloblastic anaemia. (class data — not specified separately in the book)",
+                vita1_vitamine_b1_conseil: "Effective mainly in proven deficiency; a balanced diet remains the basis; no prolonged self-medication.",
+                vita1_vitamine_b6_title: "Vitamin B6 (pyridoxine)",
+                vita1_vitamine_b6_gen: "Pyridoxine.",
+                vita1_vitamine_b6_formes: "Tablets, effervescent tablets, injectable solution.",
+                vita1_vitamine_b6_posologie: "Adult: 1-2 tablets/day depending on the product; courses according to the deficiency.",
+                vita1_vitamine_b6_particularite: "B vitamin complex: energy metabolism and nerve function; B12 is essential in megaloblastic anaemia. (class data — not specified separately in the book)",
+                vita1_vitamine_b6_conseil: "Effective mainly in proven deficiency; a balanced diet remains the basis; no prolonged self-medication.",
+                vita1_vitamine_b12_title: "Vitamin B12 (cyanocobalamin)",
+                vita1_vitamine_b12_gen: "Cyanocobalamin.",
+                vita1_vitamine_b12_formes: "Tablets, effervescent tablets, injectable solution.",
+                vita1_vitamine_b12_posologie: "Adult: 1-2 tablets/day depending on the product; courses according to the deficiency.",
+                vita1_vitamine_b12_particularite: "B vitamin complex: energy metabolism and nerve function; B12 is essential in megaloblastic anaemia. (class data — not specified separately in the book)",
+                vita1_vitamine_b12_conseil: "Effective mainly in proven deficiency; a balanced diet remains the basis; no prolonged self-medication.",
+                group_1_name: "Vitamins",
                 indication_1: "Vitamin C deficiency and prevention (scurvy, fatigue).",
                 indication_2: "Functional asthenia and convalescence.",
                 indication_3: "Vitamin E deficiency and antioxidant protection.",

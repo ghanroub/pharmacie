@@ -1028,28 +1028,33 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Calcium</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="rhu4_calcium_title">Calcium</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu4_calcium_gen">Calcium (carbonate, gluconate, citrate).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Calcidose")">Calcidose</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ossecal")">Ossecal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Calperos")">Calperos</span>,
-                            <span class="drug-link" onclick="showDrugModal("Calcium D3 IVAL")">Calcium D3 IVAL</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Calcidose&quot;)">Calcidose</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ossecal&quot;)">Ossecal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Calperos&quot;)">Calperos</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Calcium D3 IVAL&quot;)">Calcium D3 IVAL</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu4_calcium_formes">Comprimés, comprimés effervescents, poudre, ampoules buvables.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu4_calcium_posologie">Adulte : 500 mg à 1 g de calcium élément par jour en 1 à 2 prises, au repas. Éviter de dépasser 2 g/jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu4_calcium_particularite">L'apport de calcium est nécessaire pendant un traitement anti-ostéoporotique (bisphosphonates) ; il se prend avec un grand verre d'eau, à distance des autres médicaments.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu4_calcium_conseil">Prendre au repas pour la tolérance ; espacer de 2 heures des cyclines, quinolones, fer et bisphosphonates.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Vitamine D</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="rhu4_vitamine_d3_title">Vitamine D3</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu4_vitamine_d3_gen">Vitamine D3 (cholécalciférol).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Dédrogyl")">Dédrogyl</span>,
-                            <span class="drug-link" onclick="showDrugModal("Vitamine D")">Vitamine D</span>,
-                            <span class="drug-link" onclick="showDrugModal("D-Three")">D-Three</span>,
-                            <span class="drug-link" onclick="showDrugModal("Solyne")">Solyne</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dédrogyl&quot;)">Dédrogyl</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Vitamine D&quot;)">Vitamine D</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;D-Three&quot;)">D-Three</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Solyne&quot;)">Solyne</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu4_vitamine_d3_formes">Ampoules buvables (200 000 UI/ml), solution en gouttes (400 UI, 800 UI).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu4_vitamine_d3_posologie">Prévention : 400 à 800 UI/jour. Dose de charge : ampoule de 200 000 UI/ml selon prescription ; ne pas répéter sans avis (risque de surdosage).</span></p>
@@ -1057,15 +1062,27 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu4_vitamine_d3_conseil">Agiter l'ampoule, prendre avec une boisson ou sur un morceau de pain ; respecter l'espacement des doses de charge.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="rhu4_derive_vitamine_d_title">Dérivés de la vitamine D (calcifédiol, alphacalcidol)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu4_derive_vitamine_d_gen">Alphacalcidol et calcifédiol.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="rhu4_calcifediol_title">Calcifédiol</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu4_calcifediol_gen">Calcifédiol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Un-Alfa")">Un-Alfa</span>
+                            
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu4_derive_vitamine_d_formes">Gélules (Un-Alfa 0,25 µg, 1 µg), solution buvable.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu4_derive_vitamine_d_posologie">Alphacalcidol : 1 à 3 µg/jour selon la calcémie, en une prise ; posologie adaptée au bilan biologique (insuffisant rénal).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu4_derive_vitamine_d_particularite">Utilisés dans l'hypoparathyroïdie et les troubles osseux des insuffisants rénaux car ils ne nécessitent pas d'activation rénale.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu4_derive_vitamine_d_conseil">Surveillance rapprochée de la calcémie et de la calciurie ; ne pas associer d'autres dérivés sans avis médical.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu4_calcifediol_formes">Gélules, solution buvable (données de classe).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu4_calcifediol_posologie">Non précisée séparément dans le livre ; posologie adaptée à la calcémie selon les données de classe.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu4_calcifediol_particularite">Utilisés dans l'hypoparathyroïdie et les troubles osseux des insuffisants rénaux car ils ne nécessitent pas d'activation rénale. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu4_calcifediol_conseil">Surveillance rapprochée de la calcémie et de la calciurie ; ne pas associer d'autres dérivés sans avis médical.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="rhu4_alphacalcidol_title">Alphacalcidol</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu4_alphacalcidol_gen">Alphacalcidol.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Un-Alfa&quot;)">Un-Alfa</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu4_alphacalcidol_formes">Gélules (0,25 µg, 1 µg), solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu4_alphacalcidol_posologie">1 à 3 µg/jour selon la calcémie, en une prise.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu4_alphacalcidol_particularite">Utilisés dans l'hypoparathyroïdie et les troubles osseux des insuffisants rénaux car ils ne nécessitent pas d'activation rénale. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu4_alphacalcidol_conseil">Surveillance rapprochée de la calcémie et de la calciurie ; ne pas associer d'autres dérivés sans avis médical.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1309,12 +1326,20 @@
                 rhu4_vitamine_d3_posologie: "Prévention : 400 à 800 UI/jour. Dose de charge : ampoule de 200 000 UI/ml selon prescription ; ne pas répéter sans avis (risque de surdosage).",
                 rhu4_vitamine_d3_particularite: "Stimule l'absorption du calcium et l'immunité ; traitement de la carence, du rachitisme (VIT D3), de l'ostéomalacie et prévention de l'ostéoporose.",
                 rhu4_vitamine_d3_conseil: "Agiter l'ampoule, prendre avec une boisson ou sur un morceau de pain ; respecter l'espacement des doses de charge.",
-                rhu4_derive_vitamine_d_title: "Dérivés de la vitamine D (calcifédiol, alphacalcidol)",
-                rhu4_derive_vitamine_d_gen: "Alphacalcidol et calcifédiol.",
-                rhu4_derive_vitamine_d_formes: "Gélules (Un-Alfa 0,25 µg, 1 µg), solution buvable.",
-                rhu4_derive_vitamine_d_posologie: "Alphacalcidol : 1 à 3 µg/jour selon la calcémie, en une prise ; posologie adaptée au bilan biologique (insuffisant rénal).",
-                rhu4_derive_vitamine_d_particularite: "Utilisés dans l'hypoparathyroïdie et les troubles osseux des insuffisants rénaux car ils ne nécessitent pas d'activation rénale.",
-                rhu4_derive_vitamine_d_conseil: "Surveillance rapprochée de la calcémie et de la calciurie ; ne pas associer d'autres dérivés sans avis médical.",
+                rhu4_calcifediol_title: "Calcifédiol",
+                rhu4_calcifediol_gen: "Calcifédiol.",
+                rhu4_calcifediol_formes: "Gélules, solution buvable (données de classe).",
+                rhu4_calcifediol_posologie: "Non précisée séparément dans le livre ; posologie adaptée à la calcémie selon les données de classe.",
+                rhu4_calcifediol_particularite: "Utilisés dans l'hypoparathyroïdie et les troubles osseux des insuffisants rénaux car ils ne nécessitent pas d'activation rénale. (données de classe — non spécifiées séparément dans le livre)",
+                rhu4_calcifediol_conseil: "Surveillance rapprochée de la calcémie et de la calciurie ; ne pas associer d'autres dérivés sans avis médical.",
+                rhu4_alphacalcidol_title: "Alphacalcidol",
+                rhu4_alphacalcidol_gen: "Alphacalcidol.",
+                rhu4_alphacalcidol_formes: "Gélules (0,25 µg, 1 µg), solution buvable.",
+                rhu4_alphacalcidol_posologie: "1 à 3 µg/jour selon la calcémie, en une prise.",
+                rhu4_alphacalcidol_particularite: "Utilisés dans l'hypoparathyroïdie et les troubles osseux des insuffisants rénaux car ils ne nécessitent pas d'activation rénale. (données de classe — non spécifiées séparément dans le livre)",
+                rhu4_alphacalcidol_conseil: "Surveillance rapprochée de la calcémie et de la calciurie ; ne pas associer d'autres dérivés sans avis médical.",
+                group_1_name: "Calcium",
+                group_2_name: "Vitamine D",
                 indication_1: "Carence en vitamine D, prévention ou traitement du rachitisme et de l'ostéomalacie.",
                 indication_2: "Ostéoporose (en association au calcium) et prévention des fractures.",
                 indication_3: "Hypocalcémie et carences d'apport en calcium.",
@@ -1454,12 +1479,20 @@
                 rhu4_vitamine_d3_posologie: "الوقاية: 400 إلى 800 وحدة/يوم. جرعة التحميل: أمبولة 200.000 وحدة/مل حسب الوصفة؛ لا تكررها دون رأي (خطر الجرعة الزائدة).",
                 rhu4_vitamine_d3_particularite: "يحفّز امتصاص الكالسيوم والمناعة؛ علاج نقص الفيتامين والكساح (VIT D3) وتلين العظام والوقاية من هشاشة العظام.",
                 rhu4_vitamine_d3_conseil: "رجّ الأمبولة، خذها مع شراب أو على قطعة خبز؛ احترم الفترة بين جرعات التحميل.",
-                rhu4_derive_vitamine_d_title: "مشتقات فيتامين D (كالسيفيديول، ألفاكالسيدول)",
-                rhu4_derive_vitamine_d_gen: "ألفاكالسيدول وكالسيفيديول.",
-                rhu4_derive_vitamine_d_formes: "كبسولات (Un-Alfa 0.25 ميكروغرام، 1 ميكروغرام)، محلول للشرب.",
-                rhu4_derive_vitamine_d_posologie: "ألفاكالسيدول: 1 إلى 3 ميكروغرام/يوم حسب كالسيوم الدم، في جرعة واحدة؛ جرعة معدّلة حسب التحليل (مريض الكلى).",
-                rhu4_derive_vitamine_d_particularite: "تُستخدم في قصور جارات الدرق واضطرابات العظام عند المرضى الكلويين لأنها لا تحتاج إلى تنشيط كلوي.",
-                rhu4_derive_vitamine_d_conseil: "متابعة قريبة لكالسيوم الدم وكالسيوم البول؛ لا تجمع مشتقات أخرى دون رأي طبي.",
+                rhu4_calcifediol_title: "كالسيفيديول",
+                rhu4_calcifediol_gen: "كالسيفيديول.",
+                rhu4_calcifediol_formes: "كبسولات، محلول للشرب (بيانات الصنف).",
+                rhu4_calcifediol_posologie: "غير محددة بشكل منفصل في الكتاب؛ الجرعة معدّلة حسب كالسيوم الدم وفق بيانات الصنف.",
+                rhu4_calcifediol_particularite: "تُستخدم في قصور جارات الدرق واضطرابات العظام عند المرضى الكلويين لأنها لا تحتاج إلى تنشيط كلوي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                rhu4_calcifediol_conseil: "متابعة قريبة لكالسيوم الدم وكالسيوم البول؛ لا تجمع مشتقات أخرى دون رأي طبي.",
+                rhu4_alphacalcidol_title: "ألفاكالسيدول",
+                rhu4_alphacalcidol_gen: "ألفاكالسيدول.",
+                rhu4_alphacalcidol_formes: "كبسولات (0.25 ميكروغرام، 1 ميكروغرام)، محلول للشرب.",
+                rhu4_alphacalcidol_posologie: "1 إلى 3 ميكروغرام/يوم حسب كالسيوم الدم، في جرعة واحدة.",
+                rhu4_alphacalcidol_particularite: "تُستخدم في قصور جارات الدرق واضطرابات العظام عند المرضى الكلويين لأنها لا تحتاج إلى تنشيط كلوي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                rhu4_alphacalcidol_conseil: "متابعة قريبة لكالسيوم الدم وكالسيوم البول؛ لا تجمع مشتقات أخرى دون رأي طبي.",
+                group_1_name: "الكالسيوم",
+                group_2_name: "فيتامين D",
                 indication_1: "نقص فيتامين D، الوقاية أو علاج الكساح وتلين العظام.",
                 indication_2: "هشاشة العظام (بالاقتران مع الكالسيوم) والوقاية من الكسور.",
                 indication_3: "انخفاض كالسيوم الدم ونقص المدخول من الكالسيوم.",
@@ -1599,12 +1632,20 @@
                 rhu4_vitamine_d3_posologie: "Prevention: 400-800 IU/day. Loading dose: 200,000 IU/ml ampoule as prescribed; do not repeat without advice (overdose risk).",
                 rhu4_vitamine_d3_particularite: "Stimulates calcium absorption and immunity; treats deficiency, rickets (VIT D3), osteomalacia and prevents osteoporosis.",
                 rhu4_vitamine_d3_conseil: "Shake the ampoule, take with a drink or on a piece of bread; respect the interval between loading doses.",
-                rhu4_derive_vitamine_d_title: "Vitamin D derivatives (calcifediol, alfacalcidol)",
-                rhu4_derive_vitamine_d_gen: "Alfacalcidol and calcifediol.",
-                rhu4_derive_vitamine_d_formes: "Capsules (Un-Alfa 0.25 µg, 1 µg), oral solution.",
-                rhu4_derive_vitamine_d_posologie: "Alfacalcidol: 1-3 µg/day according to calcium, in one dose; dose adapted to lab workup (renal patient).",
-                rhu4_derive_vitamine_d_particularite: "Used in hypoparathyroidism and bone disorders of renal patients because they do not require renal activation.",
-                rhu4_derive_vitamine_d_conseil: "Close monitoring of serum and urinary calcium; do not combine other derivatives without medical advice.",
+                rhu4_calcifediol_title: "Calcifediol",
+                rhu4_calcifediol_gen: "Calcifediol.",
+                rhu4_calcifediol_formes: "Capsules, oral solution (class data).",
+                rhu4_calcifediol_posologie: "Not specified separately in the book; dose adapted to serum calcium according to class data.",
+                rhu4_calcifediol_particularite: "Used in hypoparathyroidism and bone disorders of renal patients because they do not require renal activation. (class data — not specified separately in the book)",
+                rhu4_calcifediol_conseil: "Close monitoring of serum and urinary calcium; do not combine other derivatives without medical advice.",
+                rhu4_alphacalcidol_title: "Alfacalcidol",
+                rhu4_alphacalcidol_gen: "Alfacalcidol.",
+                rhu4_alphacalcidol_formes: "Capsules (0.25 µg, 1 µg), oral solution.",
+                rhu4_alphacalcidol_posologie: "1-3 µg/day according to serum calcium, in one dose.",
+                rhu4_alphacalcidol_particularite: "Used in hypoparathyroidism and bone disorders of renal patients because they do not require renal activation. (class data — not specified separately in the book)",
+                rhu4_alphacalcidol_conseil: "Close monitoring of serum and urinary calcium; do not combine other derivatives without medical advice.",
+                group_1_name: "Calcium",
+                group_2_name: "Vitamin D",
                 indication_1: "Vitamin D deficiency, prevention or treatment of rickets and osteomalacia.",
                 indication_2: "Osteoporosis (combined with calcium) and fracture prevention.",
                 indication_3: "Hypocalcemia and inadequate calcium intake.",

@@ -1028,12 +1028,14 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Bêta-bloquants</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="timolol_title">1. Timolol (bêta-bloquant)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="timolol_gen">Timolol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Ophtamolol")">Ophtamolol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Geltim LP")">Geltim LP</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ophtamolol&quot;)">Ophtamolol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Geltim LP&quot;)">Geltim LP</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="timolol_formes">Collyre en solution (0,25 %, 0,5 %), gélules LP (gel).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="timolol_posologie">1 goutte dans chaque œil, 1 à 2 fois par jour (matin et soir selon prescription).</span></p>
@@ -1044,20 +1046,23 @@
                         <h3 style="color:var(--primary);" data-i18n="carteolol_title">2. Céléolol (bêta-bloquant)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="carteolol_gen">Céléolol (Cartéolol).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Cartéol")">Cartéol</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cartéol&quot;)">Cartéol</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="carteolol_formes">Collyre en solution (1 %, 2 %).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="carteolol_posologie">1 goutte dans chaque œil, matin et soir.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="carteolol_particularite">Bêta-bloquant avec effet agoniste partiel (EAP) : risque moins important de bradycardie et de sécheresse oculaire que le timolol.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="carteolol_conseil">Bonne tolérance oculaire et systémique. Mêmes précautions cardiaques et respiratoires que le timolol.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Analogues des prostaglandines</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="latanoprost_title">3. Latanoprost (analogue des prostaglandines)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="latanoprost_gen">Latanoprost.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Xalatan")">Xalatan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Xalaprost")">Xalaprost</span>,
-                            <span class="drug-link" onclick="showDrugModal("Latasopt")">Latasopt</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xalatan&quot;)">Xalatan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xalaprost&quot;)">Xalaprost</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Latasopt&quot;)">Latasopt</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="latanoprost_formes">Collyre en solution (0,005 %). Conservation : 2-8 °C jusqu'à l'ouverture, puis 28 jours à température ambiante.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="latanoprost_posologie">1 goutte dans chaque œil, le soir, tous les jours. Ne pas dépasser 1 goutte/j/œil.</span></p>
@@ -1068,42 +1073,58 @@
                         <h3 style="color:var(--primary);" data-i18n="travoprost_title">4. Travoprost (analogue des prostaglandines)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="travoprost_gen">Travoprost.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Travatan")">Travatan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Travost")">Travost</span>,
-                            <span class="drug-link" onclick="showDrugModal("Travapost")">Travapost</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Travatan&quot;)">Travatan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Travost&quot;)">Travost</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Travapost&quot;)">Travapost</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="travoprost_formes">Collyre en solution (0,004 %). Conservation : 2-8 °C jusqu'à l'ouverture.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="travoprost_posologie">1 goutte dans chaque œil, le soir, tous les jours.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="travoprost_particularite">Analogue des prostaglandines de 3ème génération : puissant hypotonisant, prise unique quotidienne le soir.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="travoprost_conseil">Mêmes effets indésirables que le latanoprost (pousse des cils, hyperpigmentation irienne). Conserver au réfrigérateur, laisser le flacon revenir à température avant instillation.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Inhibiteurs de l'anhydrase carbonique</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="acetazolamide_title">5. Acétazolamide (Diamox)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acetazolamide_gen">Acétazolamide.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Diamox")">Diamox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lynox")">Lynox</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diamox&quot;)">Diamox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lynox&quot;)">Lynox</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acetazolamide_formes">Comprimés (250 mg), gélules, poudre injectable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acetazolamide_posologie">Glcome aigu : 500 mg en bolus IV, puis 250 mg toutes les 4 à 6 h. Traitement de fond : 250 mg, 2 à 4 fois par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acetazolamide_particularite">Inhibiteur de l'anhydrase carbonique : diminue la sécrétion d'humeur aqueuse. Usage oral (et injectable en urgence) dans le glaucome aigu et les urgences ophtalmologiques.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acetazolamide_conseil">Boire beaucoup d'eau. Surveiller fourmillements, acidose et kaliémie. Troubles visuels transitoires possibles (myopie induite) : ne pas conduire pendant la prise.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Associations</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="combos_antiglaucomateux_title">6. Associations : Cosopt et Xalacom</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="combos_antiglaucomateux_gen">Dorzolamide + timolol / Latanoprost + timolol.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="dorzolamide_timolol_title">6a. Dorzolamide + timolol (Cosopt)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="dorzolamide_timolol_gen">Dorzolamide + timolol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Cosopt")">Cosopt</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dorzasopt")">Dorzasopt</span>,
-                            <span class="drug-link" onclick="showDrugModal("Xalacom")">Xalacom</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dorzamid")">Dorzamid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Truzamid")">Truzamid</span>,
-                            <span class="drug-link" onclick="showDrugModal("Xolamol")">Xolamol</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cosopt&quot;)">Cosopt</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dorzasopt&quot;)">Dorzasopt</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xolamol&quot;)">Xolamol</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="combos_antiglaucomateux_formes">Collyre en solution (dorzolamide 2 % + timolol 0,5 % ; latanoprost 0,005 % + timolol 0,5 %).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="combos_antiglaucomateux_posologie">1 goutte dans chaque œil, 1 à 2 fois par jour selon la spécialité.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="combos_antiglaucomateux_particularite">Associations fixes : une seule instillation suffit pour obtenir un effet additif (baisse de PIO supérieure à chaque molécule seule) et améliorer l'observance du patient.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="combos_antiglaucomateux_conseil">Respecter les mêmes précautions que chaque molécule (asthme et bradycardie pour le timolol). Vérifier la conservation au réfrigérateur si indiqué. Ne pas instiller deux collyres à moins de 5 min d'intervalle.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="dorzolamide_timolol_formes">Collyre en solution (dorzolamide 2 % + timolol 0,5 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="dorzolamide_timolol_posologie">1 goutte dans chaque œil, 1 à 2 fois par jour selon la spécialité.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="dorzolamide_timolol_particularite">Associations fixes : une seule instillation suffit pour obtenir un effet additif (baisse de PIO supérieure à chaque molécule seule) et améliorer l'observance du patient. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="dorzolamide_timolol_conseil">Respecter les mêmes précautions que chaque molécule (asthme et bradycardie pour le timolol). Vérifier la conservation au réfrigérateur si indiqué. Ne pas instiller deux collyres à moins de 5 min d'intervalle.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="latanoprost_timolol_title">6b. Latanoprost + timolol (Xalacom)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="latanoprost_timolol_gen">Latanoprost + timolol.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xalacom&quot;)">Xalacom</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xolajam&quot;)">Xolajam</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="latanoprost_timolol_formes">Collyre en solution (latanoprost 0,005 % + timolol 0,5 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="latanoprost_timolol_posologie">1 goutte dans chaque œil, 1 à 2 fois par jour selon la spécialité.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="latanoprost_timolol_particularite">Associations fixes : une seule instillation suffit pour obtenir un effet additif (baisse de PIO supérieure à chaque molécule seule) et améliorer l'observance du patient. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="latanoprost_timolol_conseil">Respecter les mêmes précautions que chaque molécule (asthme et bradycardie pour le timolol). Vérifier la conservation au réfrigérateur si indiqué. Ne pas instiller deux collyres à moins de 5 min d'intervalle.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1365,12 +1386,22 @@
                 acetazolamide_posologie: "Glcome aigu : 500 mg en bolus IV, puis 250 mg toutes les 4 à 6 h. Traitement de fond : 250 mg, 2 à 4 fois par jour.",
                 acetazolamide_particularite: "Inhibiteur de l'anhydrase carbonique : diminue la sécrétion d'humeur aqueuse. Usage oral (et injectable en urgence) dans le glaucome aigu et les urgences ophtalmologiques.",
                 acetazolamide_conseil: "Boire beaucoup d'eau. Surveiller fourmillements, acidose et kaliémie. Troubles visuels transitoires possibles (myopie induite) : ne pas conduire pendant la prise.",
-                combos_antiglaucomateux_title: "6. Associations : Cosopt et Xalacom",
-                combos_antiglaucomateux_gen: "Dorzolamide + timolol / Latanoprost + timolol.",
-                combos_antiglaucomateux_formes: "Collyre en solution (dorzolamide 2 % + timolol 0,5 % ; latanoprost 0,005 % + timolol 0,5 %).",
-                combos_antiglaucomateux_posologie: "1 goutte dans chaque œil, 1 à 2 fois par jour selon la spécialité.",
-                combos_antiglaucomateux_particularite: "Associations fixes : une seule instillation suffit pour obtenir un effet additif (baisse de PIO supérieure à chaque molécule seule) et améliorer l'observance du patient.",
-                combos_antiglaucomateux_conseil: "Respecter les mêmes précautions que chaque molécule (asthme et bradycardie pour le timolol). Vérifier la conservation au réfrigérateur si indiqué. Ne pas instiller deux collyres à moins de 5 min d'intervalle.",
+                dorzolamide_timolol_title: "6a. Dorzolamide + timolol (Cosopt)",
+                dorzolamide_timolol_gen: "Dorzolamide + timolol.",
+                dorzolamide_timolol_formes: "Collyre en solution (dorzolamide 2 % + timolol 0,5 %).",
+                dorzolamide_timolol_posologie: "1 goutte dans chaque œil, 1 à 2 fois par jour selon la spécialité.",
+                dorzolamide_timolol_particularite: "Associations fixes : une seule instillation suffit pour obtenir un effet additif (baisse de PIO supérieure à chaque molécule seule) et améliorer l'observance du patient. (données de classe — non spécifiées séparément dans le livre)",
+                dorzolamide_timolol_conseil: "Respecter les mêmes précautions que chaque molécule (asthme et bradycardie pour le timolol). Vérifier la conservation au réfrigérateur si indiqué. Ne pas instiller deux collyres à moins de 5 min d'intervalle.",
+                latanoprost_timolol_title: "6b. Latanoprost + timolol (Xalacom)",
+                latanoprost_timolol_gen: "Latanoprost + timolol.",
+                latanoprost_timolol_formes: "Collyre en solution (latanoprost 0,005 % + timolol 0,5 %).",
+                latanoprost_timolol_posologie: "1 goutte dans chaque œil, 1 à 2 fois par jour selon la spécialité.",
+                latanoprost_timolol_particularite: "Associations fixes : une seule instillation suffit pour obtenir un effet additif (baisse de PIO supérieure à chaque molécule seule) et améliorer l'observance du patient. (données de classe — non spécifiées séparément dans le livre)",
+                latanoprost_timolol_conseil: "Respecter les mêmes précautions que chaque molécule (asthme et bradycardie pour le timolol). Vérifier la conservation au réfrigérateur si indiqué. Ne pas instiller deux collyres à moins de 5 min d'intervalle.",
+                group_1_name: "Bêta-bloquants",
+                group_2_name: "Analogues des prostaglandines",
+                group_3_name: "Inhibiteurs de l'anhydrase carbonique",
+                group_4_name: "Associations",
                 indication_1: "Glcome chronique à angle ouvert et hypertension oculaire (PIO ≥ 21 mmHg) : traitement de fond à vie.",
                 indication_2: "Bêta-bloquants (timolol, céléolol) : traitement de première intention, 1 à 2 instillations par jour.",
                 indication_3: "Analogues des prostaglandines (latanoprost, travoprost) : traitement de première intention, 1 instillation le soir, puissant effet hypotonisant.",
@@ -1528,12 +1559,22 @@
                 acetazolamide_posologie: "جلوكوما حاد: 500 مغ حقن وريدي، ثم 250 مغ كل 4 إلى 6 ساعات. علاج دائم: 250 مغ، 2 إلى 4 مرات يومياً.",
                 acetazolamide_particularite: "مثبط انهيدراز كربونيك: يُقلّل إفراز الزجاجية. استعمال فموي (وحقن في الطوارئ) في الجلوكوما الحاد وحالات طوارئ العين.",
                 acetazolamide_conseil: "اشرب الماء بغزارة. راقب التنميل والحمضية والبوتاسيوم. اضطرابات رؤية مؤقتة محتملة (قصور مكتسب): لا تُقد السيارة أثناء العلاج.",
-                combos_antiglaucomateux_title: "6. اقترانات: كوسوبت وزالاكوم",
-                combos_antiglaucomateux_gen: "دورزولاميد + تيمولول / لاتانوبروست + تيمولول.",
-                combos_antiglaucomateux_formes: "قطرات عينية محلول (دورزولاميد 2٪ + تيمولول 0,5٪؛ لاتانوبروست 0,005٪ + تيمولول 0,5٪).",
-                combos_antiglaucomateux_posologie: "قطرة في كل عين، 1 إلى 2 مرات يومياً حسب المتخصص.",
-                combos_antiglaucomateux_particularite: "اقترانات ثابتة: قطرة واحدة تكفي للحصول على تأثير مُجمّع (انخفاض الضغط أكبر من كل مادة منفردة) ويُحسّن التزام المريض.",
-                combos_antiglaucomateux_conseil: "احترم نفس الاحتياطات لكل مادة (الربو وبطء القلب للتيمولول). تحقق من الحفظ في الثلاجة إذا كان مذكوراً. لا تُقطر قطرتين بفترة أقل من 5 دقائق.",
+                dorzolamide_timolol_title: "6a. دورزولاميد + تيمولول (كوسوبت)",
+                dorzolamide_timolol_gen: "دورزولاميد + تيمولول.",
+                dorzolamide_timolol_formes: "قطرات عينية محلول (دورزولاميد 2٪ + تيمولول 0,5٪).",
+                dorzolamide_timolol_posologie: "قطرة في كل عين، 1 إلى 2 مرات يومياً حسب المتخصص.",
+                dorzolamide_timolol_particularite: "اقترانات ثابتة: قطرة واحدة تكفي للحصول على تأثير مُجمّع (انخفاض الضغط أكبر من كل مادة منفردة) ويُحسّن التزام المريض. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                dorzolamide_timolol_conseil: "احترم نفس الاحتياطات لكل مادة (الربو وبطء القلب للتيمولول). تحقق من الحفظ في الثلاجة إذا كان مذكوراً. لا تُقطر قطرتين بفترة أقل من 5 دقائق.",
+                latanoprost_timolol_title: "6b. لاتانوبروست + تيمولول (زالاكوم)",
+                latanoprost_timolol_gen: "لاتانوبروست + تيمولول.",
+                latanoprost_timolol_formes: "قطرات عينية محلول (لاتانوبروست 0,005٪ + تيمولول 0,5٪).",
+                latanoprost_timolol_posologie: "قطرة في كل عين، 1 إلى 2 مرات يومياً حسب المتخصص.",
+                latanoprost_timolol_particularite: "اقترانات ثابتة: قطرة واحدة تكفي للحصول على تأثير مُجمّع (انخفاض الضغط أكبر من كل مادة منفردة) ويُحسّن التزام المريض. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                latanoprost_timolol_conseil: "احترم نفس الاحتياطات لكل مادة (الربو وبطء القلب للتيمولول). تحقق من الحفظ في الثلاجة إذا كان مذكوراً. لا تُقطر قطرتين بفترة أقل من 5 دقائق.",
+                group_1_name: "حاصرات بيتا",
+                group_2_name: "نظائر البروستاغلاندين",
+                group_3_name: "مثبطات انهيدراز الكربونيك",
+                group_4_name: "الاقترانات",
                 indication_1: "جلوكوما مزمن مفتوح الزاوية وارتفاع الضغط داخل العين (≥ 21 ملم زئبق): علاج دائم مدى الحياة.",
                 indication_2: "حاصرات بيتا (تيمولول، سيليولول): علاج من الخط الأول، قطرة إلى قطرتين يومياً.",
                 indication_3: "نظائر البروستاغلاندين (لاتانوبروست، ترافوبروست): علاج من الخط الأول، قطرة مساءً، تأثير خافض قوي.",
@@ -1691,12 +1732,22 @@
                 acetazolamide_posologie: "Acute glaucoma: 500 mg IV bolus, then 250 mg every 4 to 6 h. Maintenance: 250 mg, 2 to 4 times daily.",
                 acetazolamide_particularite: "Carbonic anhydrase inhibitor: decreases aqueous humor secretion. Oral (and injectable in emergencies) use in acute glaucoma and ophthalmic emergencies.",
                 acetazolamide_conseil: "Drink plenty of water. Monitor tingling, acidosis and potassium. Possible transient visual disorders (induced myopia): do not drive during treatment.",
-                combos_antiglaucomateux_title: "6. Combinations: Cosopt and Xalacom",
-                combos_antiglaucomateux_gen: "Dorzolamide + timolol / Latanoprost + timolol.",
-                combos_antiglaucomateux_formes: "Eye drops solution (dorzolamide 2% + timolol 0.5%; latanoprost 0.005% + timolol 0.5%).",
-                combos_antiglaucomateux_posologie: "1 drop in each eye, 1 to 2 times daily depending on the product.",
-                combos_antiglaucomateux_particularite: "Fixed combinations: a single instillation gives an additive effect (greater IOP drop than each molecule alone) and improves patient compliance.",
-                combos_antiglaucomateux_conseil: "Follow the same precautions as each molecule (asthma and bradycardie for timolol). Check refrigerated storage if indicated. Do not instill two drops less than 5 minutes apart.",
+                dorzolamide_timolol_title: "6a. Dorzolamide + timolol (Cosopt)",
+                dorzolamide_timolol_gen: "Dorzolamide + timolol.",
+                dorzolamide_timolol_formes: "Eye drops solution (dorzolamide 2% + timolol 0.5%).",
+                dorzolamide_timolol_posologie: "1 drop in each eye, 1 to 2 times daily depending on the product.",
+                dorzolamide_timolol_particularite: "Fixed combinations: a single instillation gives an additive effect (greater IOP drop than each molecule alone) and improves patient compliance. (class-level data — not specified separately in the book)",
+                dorzolamide_timolol_conseil: "Follow the same precautions as each molecule (asthma and bradycardie for timolol). Check refrigerated storage if indicated. Do not instill two drops less than 5 minutes apart.",
+                latanoprost_timolol_title: "6b. Latanoprost + timolol (Xalacom)",
+                latanoprost_timolol_gen: "Latanoprost + timolol.",
+                latanoprost_timolol_formes: "Eye drops solution (latanoprost 0.005% + timolol 0.5%).",
+                latanoprost_timolol_posologie: "1 drop in each eye, 1 to 2 times daily depending on the product.",
+                latanoprost_timolol_particularite: "Fixed combinations: a single instillation gives an additive effect (greater IOP drop than each molecule alone) and improves patient compliance. (class-level data — not specified separately in the book)",
+                latanoprost_timolol_conseil: "Follow the same precautions as each molecule (asthma and bradycardie for timolol). Check refrigerated storage if indicated. Do not instill two drops less than 5 minutes apart.",
+                group_1_name: "Beta-blockers",
+                group_2_name: "Prostaglandin analogues",
+                group_3_name: "Carbonic anhydrase inhibitors",
+                group_4_name: "Combinations",
                 indication_1: "Chronic open-angle glaucoma and ocular hypertension (IOP ≥ 21 mmHg): lifelong treatment.",
                 indication_2: "Beta-blockers (timolol, carteolol): first-line treatment, 1 to 2 instillations daily.",
                 indication_3: "Prostaglandin analogues (latanoprost, travoprost): first-line treatment, one evening instillation, powerful IOP-lowering effect.",
@@ -2056,10 +2107,9 @@
                     "Lynox": [],
                     "Cosopt": [],
                     "Dorzasopt": [],
+                    "Xolamol": [],
                     "Xalacom": [],
-                    "Dorzamid": [],
-                    "Truzamid": [],
-                    "Xolamol": []
+                    "Xolajam": []
         };
 
         function showDrugModal(drugName) {

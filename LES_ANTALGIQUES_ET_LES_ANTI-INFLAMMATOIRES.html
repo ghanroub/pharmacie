@@ -19,12 +19,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours sur les antalgiques et les anti-inflammatoires : antalgiques (selon OMS), anti-inflammatoires stéroïdiens (corticoïdes) et AINS - GhaniPharma">
-    <meta name="keywords" content="antalgiques, anti-inflammatoires, AINS, corticoïdes, pharmacie, GhaniPharma, paliers OMS, stéroïdiens, non stéroïdiens">
+    <meta name="description" content="LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES : cours de pharmacie - GhaniPharma">
+    <meta name="keywords" content="les antalgiques et les anti-inflammatoires, pharmacie, cours, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES | GhaniPharma">
-    <meta property="og:description" content="Cours sur les antalgiques et les anti-inflammatoires">
+    <meta property="og:description" content="Cours sur LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES">
     <meta property="og:image" content="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -627,6 +627,41 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
+        .semester-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0 40px;
+        }
+        .semester-tab {
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-glass);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .semester-tab:hover {
+            border-color: var(--primary);
+            color: var(--text-heading);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.2);
+        }
+        .semester-tab.active-tab {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
+        }
+
         .semester-content {
             display: none;
             margin-bottom: 40px;
@@ -804,6 +839,7 @@
             .section-title { font-size: 1.5rem; }
             .lessons-grid { grid-template-columns: 1fr; }
             .container { padding: 0 15px; }
+            .semester-tab { padding: 10px 20px; font-size: 0.9rem; }
             .section-icon { width: 45px; height: 45px; font-size: 1.2rem; }
             .nav-logo { font-size: 1.2rem; }
             .settings-dropdown { right: -60px; min-width: 240px; }
@@ -816,6 +852,8 @@
         }
 
         @media (max-width: 480px) {
+            .semester-tabs { gap: 8px; }
+            .semester-tab { padding: 8px 16px; font-size: 0.8rem; }
             .lesson-card { padding: 18px; }
             .nav-logo { font-size: 1.2rem; }
             .nav-logo .logo-icon { width: 36px; height: 36px; }
@@ -918,7 +956,7 @@
 
             <div class="page-header">
                 <div class="subject-badge reveal">
-                    <i class="fas fa-pills"></i> <span data-i18n="subject_badge">LES CLASSES DE MEDECAMENTS</span>
+                    <i class="fas fa-pills"></i> <span data-i18n="subject_badge">CLASSES DE MEDECAMENTS</span>
                 </div>
                 <h1 class="page-title reveal reveal-delay-1" data-i18n="page_title">LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES</h1>
                 <p class="page-definition reveal reveal-delay-2">
@@ -930,7 +968,7 @@
             <div class="semester-content active" id="content-s1">
                 <div class="section-header">
                     <div class="section-icon">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-lungs"></i>
                     </div>
                     <div>
                         <h2 class="section-title" data-i18n="section_title">Les cours disponibles</h2>
@@ -939,47 +977,42 @@
                 </div>
 
                 <div class="lessons-grid">
-                    <!-- Leçon 1 : Les antalgiques (selon OMS) -->
                     <a href="LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES_1.html" class="lesson-card reveal reveal-delay-1">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-book"></i>
+                                <i class="fas fa-pills"></i>
                             </div>
                             <div>
                                 <h3 class="lesson-title" data-i18n="lesson1_title">1. Les antalgiques (selon OMS)</h3>
-                                <p class="lesson-desc" data-i18n="lesson1_desc">Classification en trois paliers, mécanismes d'action, exemples de molécules et règles de prescription.</p>
+                                <p class="lesson-desc" data-i18n="lesson1_desc">Les trois paliers de l'OMS : paracétamol et aspirine (palier 1), codéine et tramadol (palier 2), morphine, buprénorphine, oxycodone et fentanyl (palier 3).</p>
                             </div>
                         </div>
                         <div class="lesson-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
-
-                    <!-- Leçon 2 : Les anti-inflammatoires stéroïdiens (corticoïdes) -->
-                    <a href="LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES_2.html" class="lesson-card reveal reveal-delay-1">
+                    <a href="LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES_2.html" class="lesson-card reveal reveal-delay-2">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-book"></i>
+                                <i class="fas fa-capsules"></i>
                             </div>
                             <div>
                                 <h3 class="lesson-title" data-i18n="lesson2_title">2. Les anti-inflammatoires stéroïdiens (Les corticoïdes)</h3>
-                                <p class="lesson-desc" data-i18n="lesson2_desc">Propriétés anti-inflammatoires et immunosuppressives, principaux glucocorticoïdes, effets indésirables et précautions d'emploi.</p>
+                                <p class="lesson-desc" data-i18n="lesson2_desc">Les corticoïdes systémiques : hydrocortisone, prednisone, prednisolone, méthylprednisolone, dexaméthasone, bétaméthasone et triamcinolone.</p>
                             </div>
                         </div>
                         <div class="lesson-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
                     </a>
-
-                    <!-- Leçon 3 : Les anti-inflammatoires non stéroïdiens (AINS) -->
-                    <a href="LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES_3.html" class="lesson-card reveal reveal-delay-2">
+                    <a href="LES_ANTALGIQUES_ET_LES_ANTI-INFLAMMATOIRES_3.html" class="lesson-card reveal reveal-delay-3">
                         <div class="lesson-card-header">
                             <div class="lesson-icon">
-                                <i class="fas fa-book"></i>
+                                <i class="fas fa-fire"></i>
                             </div>
                             <div>
                                 <h3 class="lesson-title" data-i18n="lesson3_title">3. Les anti-inflammatoires non stéroïdiens (AINS)</h3>
-                                <p class="lesson-desc" data-i18n="lesson3_desc">Inhibition des cyclo-oxygénases, effets analgésiques, antipyrétiques et anti-inflammatoires, principaux représentants et risques associés.</p>
+                                <p class="lesson-desc" data-i18n="lesson3_desc">AINS classiques (diclofénac, naproxène, piroxicam, méloxicam, ibuprofène, kétoprofène, flurbiprofène, acide niflumique), coxibs, indométacine, aspirine et alfa-amylase.</p>
                             </div>
                         </div>
                         <div class="lesson-arrow">
@@ -1066,71 +1099,197 @@
         // ==================== TRANSLATIONS ====================
         const translations = {
             fr: {
-                theme: 'Thème', light: 'Clair', dark: 'Sombre', language: 'Langue',
-                home: 'Accueil', about: 'À propos', modules: 'Modules', contact: 'Contact',
-                subject_badge: 'LES CLASSES DE MEDECAMENTS',
-                page_title: 'LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES',
-                page_definition: "Les antalgiques sont des médicaments destinés à soulager la douleur, classés selon l'OMS en trois paliers. Les anti-inflammatoires, qu'ils soient stéroïdiens (corticoïdes) ou non stéroïdiens (AINS), réduisent l'inflammation et la douleur. Cette section présente les notions essentielles de pharmacologie pour ces classes thérapeutiques.",
-                section_title: 'Les cours disponibles',
-                section_subtitle: 'Cours sur les antalgiques et les anti-inflammatoires',
-                lesson1_title: '1. Les antalgiques (selon OMS)',
-                lesson1_desc: "Classification en trois paliers, mécanismes d'action, exemples de molécules et règles de prescription.",
-                lesson2_title: '2. Les anti-inflammatoires stéroïdiens (Les corticoïdes)',
-                lesson2_desc: "Propriétés anti-inflammatoires et immunosuppressives, principaux glucocorticoïdes, effets indésirables et précautions d'emploi.",
-                lesson3_title: '3. Les anti-inflammatoires non stéroïdiens (AINS)',
-                lesson3_desc: 'Inhibition des cyclo-oxygénases, effets analgésiques, antipyrétiques et anti-inflammatoires, principaux représentants et risques associés.',
-                support_title: 'Soutenir GhaniPharma',
+                theme: "Thème",
+                light: "Clair",
+                dark: "Sombre",
+                language: "Langue",
+                home: "Accueil",
+                about: "À propos",
+                modules: "Modules",
+                contact: "Contact",
+                pharmacology: "Pharmacologie",
+                lesson: "Leçon",
+                exam: "Examen",
+                mechanism_title: "Mécanisme d'action",
+                indications_title: "Indications générales",
+                contre_title: "Contre-indications & Précautions majeures",
+                ci_absolues_label: "CI absolues :",
+                note_label: "Note :",
+                precautions_label: "Précautions :",
+                interactions_title: "Interactions médicamenteuses majeures",
+                grossesse_title: "Grossesse et Allaitement",
+                grossesse_label: "Grossesse :",
+                allaitement_label: "Allaitement :",
+                substances_title: "Les substances actives",
+                generique_label: "Générique :",
+                noms_commerciaux: "Noms commerciaux (Algérie) :",
+                formes_label: "Formes pharmaceutiques :",
+                posologie_label: "Posologie usuelle (Adulte) & Max :",
+                particularite_label: "Particularité :",
+                conseil_pratique: "Conseil pratique du pharmacien :",
+                conseil_final_title: "Conseil ultime pour votre stage",
+                conseil_chef: "💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :",
+                qcm_label: "QCM :",
+                qcm_instruction: "Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.",
+                check_btn: "Vérifier mes réponses",
+                reset_btn: "Réinitialiser",
+                q1_title: "Question 1",
+                q2_title: "Question 2",
+                q3_title: "Question 3",
+                q4_title: "Question 4",
+                q5_title: "Question 5",
+                q6_title: "Question 6",
+                q7_title: "Question 7",
+                q8_title: "Question 8",
+                q9_title: "Question 9",
+                q10_title: "Question 10",
+                section_title: "Les cours disponibles",
+                subject_badge: "CLASSES DE MEDECAMENTS",
+                support_title: "Soutenir GhaniPharma",
                 support_subtitle: "Votre soutien m'aide à créer plus de contenu éducatif",
                 support_info: "Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏",
-                rip_title: 'RIP CCP (Algérie)',
-                flexy_title: 'Flexy',
-                support_footer: 'Merci de tout cœur',
-                copied: 'Copié !'
+                rip_title: "RIP CCP (Algérie)",
+                flexy_title: "Flexy",
+                support_footer: "Merci de tout cœur",
+                copied: "Copié !",
+                page_title: "LES ANTALGIQUES ET LES ANTI-INFLAMMATOIRES",
+                page_definition: "Les antalgiques sont des médicaments destinés à soulager la douleur, classés selon l'OMS en trois paliers. Les anti-inflammatoires, qu'ils soient stéroïdiens (corticoïdes) ou non stéroïdiens (AINS), réduisent l'inflammation et la douleur. Cette section présente les notions essentielles de pharmacologie pour ces classes thérapeutiques.",
+                section_subtitle: "Cours sur les antalgiques et les anti-inflammatoires",
+                lesson1_title: "1. Les antalgiques (selon OMS)",
+                lesson1_desc: "Les trois paliers de l'OMS : paracétamol et aspirine (palier 1), codéine et tramadol (palier 2), morphine, buprénorphine, oxycodone et fentanyl (palier 3).",
+                lesson2_title: "2. Les anti-inflammatoires stéroïdiens (Les corticoïdes)",
+                lesson2_desc: "Les corticoïdes systémiques : hydrocortisone, prednisone, prednisolone, méthylprednisolone, dexaméthasone, bétaméthasone et triamcinolone.",
+                lesson3_title: "3. Les anti-inflammatoires non stéroïdiens (AINS)",
+                lesson3_desc: "AINS classiques (diclofénac, naproxène, piroxicam, méloxicam, ibuprofène, kétoprofène, flurbiprofène, acide niflumique), coxibs, indométacine, aspirine et alfa-amylase."
             },
             ar: {
-                theme: 'المظهر', light: 'فاتح', dark: 'داكن', language: 'اللغة',
-                home: 'الرئيسية', about: 'حول', modules: 'الدروس', contact: 'اتصل بنا',
-                subject_badge: 'أصناف الأدوية',
-                page_title: 'المسكنات ومضادات الالتهاب',
-                page_definition: 'المسكنات هي أدوية مخصصة لتخفيف الألم، مصنفة حسب منظمة الصحة العالمية إلى ثلاث درجات. مضادات الالتهاب، سواء كانت ستيرويدية (كورتيكوستيرويدات) أو غير ستيرويدية، تقلل الالتهاب والألم. يقدم هذا القسم المفاهيم الأساسية لعلم الأدوية لهذه الفئات العلاجية.',
-                section_title: 'الدروس المتوفرة',
-                section_subtitle: 'دروس في المسكنات ومضادات الالتهاب',
-                lesson1_title: '1. المسكنات (حسب منظمة الصحة العالمية)',
-                lesson1_desc: 'التصنيف إلى ثلاث درجات، آليات العمل، أمثلة على الجزيئات وقواعد الوصف.',
-                lesson2_title: '2. مضادات الالتهاب الستيرويدية (الكورتيكوستيرويدات)',
-                lesson2_desc: 'الخصائص المضادة للالتهاب والمثبطة للمناعة، الجلوكوكورتيكويدات الرئيسية، الآثار الجانبية واحتياطات الاستخدام.',
-                lesson3_title: '3. مضادات الالتهاب غير الستيرويدية',
-                lesson3_desc: 'تثبيط السيكلوأوكسيجيناز، التأثيرات المسكنة والخافضة للحرارة والمضادة للالتهاب، الممثلين الرئيسيين والمخاطر المرتبطة.',
-                support_title: 'دعم GhaniPharma',
-                support_subtitle: 'دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي',
-                support_info: 'إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساهمة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏',
-                rip_title: 'RIP CCP (الجزائر)',
-                flexy_title: 'فليكسي',
-                support_footer: 'شكراً من كل قلبي',
-                copied: 'تم النسخ!'
+                theme: "المظهر",
+                light: "فاتح",
+                dark: "داكن",
+                language: "اللغة",
+                home: "الرئيسية",
+                about: "حول",
+                modules: "الدروس",
+                contact: "اتصل بنا",
+                pharmacology: "علم الأدوية",
+                lesson: "الدرس",
+                exam: "الاختبار",
+                mechanism_title: "آلية العمل",
+                indications_title: "الاستطبابات العامة",
+                contre_title: "مضادات الاستطباب والاحتياطات الرئيسية",
+                ci_absolues_label: "مضادات استطباب مطلقة:",
+                note_label: "ملاحظة:",
+                precautions_label: "احتياطات:",
+                interactions_title: "التداخلات الدوائية الرئيسية",
+                grossesse_title: "الحمل والرضاعة",
+                grossesse_label: "الحمل:",
+                allaitement_label: "الرضاعة:",
+                substances_title: "المواد الفعالة",
+                generique_label: "الاسم العلمي:",
+                noms_commerciaux: "الأسماء التجارية (الجزائر):",
+                formes_label: "الأشكال الصيدلانية:",
+                posologie_label: "الجرعة المعتادة (للبالغين) والقصوى:",
+                particularite_label: "الخصوصية:",
+                conseil_pratique: "نصيحة عملية للصيدلي:",
+                conseil_final_title: "نصيحة أخيرة لتدريبك",
+                conseil_chef: "💡 نصيحة «رئيس الرف» لكل مرضاك:",
+                qcm_label: "اختبار متعدد الخيارات:",
+                qcm_instruction: "اختر كل الإجابات الصحيحة لكل سؤال. إجابة خاطئة واحدة تُلغي السؤال كاملاً (صفر نقطة). الإجابات الصحيحة الجزئية تعطي نقاطاً جزئية.",
+                check_btn: "تحقق من إجاباتي",
+                reset_btn: "إعادة تعيين",
+                q1_title: "السؤال 1",
+                q2_title: "السؤال 2",
+                q3_title: "السؤال 3",
+                q4_title: "السؤال 4",
+                q5_title: "السؤال 5",
+                q6_title: "السؤال 6",
+                q7_title: "السؤال 7",
+                q8_title: "السؤال 8",
+                q9_title: "السؤال 9",
+                q10_title: "السؤال 10",
+                section_title: "الدروس المتاحة",
+                subject_badge: "أصناف الأدوية",
+                support_title: "دعم GhaniPharma",
+                support_subtitle: "دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي",
+                support_info: "إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساعدة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏",
+                rip_title: "RIP CCP (الجزائر)",
+                flexy_title: "فليكسي",
+                support_footer: "شكراً من القلب",
+                copied: "تم النسخ!",
+                page_title: "المسكنات ومضادات الالتهاب",
+                page_definition: "المسكنات هي أدوية مخصصة لتخفيف الألم، مصنفة حسب منظمة الصحة العالمية إلى ثلاث درجات. مضادات الالتهاب، سواء كانت ستيرويدية (كورتيكوستيرويدات) أو غير ستيرويدية، تقلل الالتهاب والألم. يقدم هذا القسم المفاهيم الأساسية لعلم الأدوية لهذه الفئات العلاجية.",
+                section_subtitle: "دروس في المسكنات ومضادات الالتهاب",
+                lesson1_title: "1. المسكنات (حسب منظمة الصحة العالمية)",
+                lesson1_desc: "المستويات الثلاثة لمنظمة الصحة العالمية: الباراسيتامول والأسبرين (المستوى 1)، الكودايين والترامادول (المستوى 2)، المورفين والبوبرينورفين والأوكسيكودون والفنتانيل (المستوى 3).",
+                lesson2_title: "2. مضادات الالتهاب الستيرويدية (الكورتيكوستيرويدات)",
+                lesson2_desc: "الكورتيكوستيرويدات الجهازية: هيدروكورتيزون، بريدنيزون، بريدنيزولون، ميثيل بريدنيزولون، ديكساميتازون، بيتاميتازون وتريامسينولون.",
+                lesson3_title: "3. مضادات الالتهاب غير الستيرويدية (AINS)",
+                lesson3_desc: "مضادات الالتهاب الكلاسيكية (ديكلوفيناك، نابروكسين، بيروكسيكام، ميلوكسيكام، إيبوبروفين، كيتوبروفين، فلوربيبروفين، حمض النيفلوميك)، الكوكسيب، إندوميتاسين، أسبرين وألفا أميليز."
             },
             en: {
-                theme: 'Theme', light: 'Light', dark: 'Dark', language: 'Language',
-                home: 'Home', about: 'About', modules: 'Modules', contact: 'Contact',
-                subject_badge: 'DRUG CLASSES',
-                page_title: 'ANALGESICS AND ANTI-INFLAMMATORY DRUGS',
-                page_definition: 'Analgesics are medications intended to relieve pain, classified according to the WHO into three levels. Anti-inflammatory drugs, whether steroidal (corticosteroids) or non-steroidal (NSAIDs), reduce inflammation and pain. This section presents the essential pharmacological concepts for these therapeutic classes.',
-                section_title: 'Available courses',
-                section_subtitle: 'Courses on analgesics and anti-inflammatory drugs',
-                lesson1_title: '1. Analgesics (according to WHO)',
-                lesson1_desc: 'Three-level classification, mechanisms of action, examples of molecules and prescription rules.',
-                lesson2_title: '2. Steroidal anti-inflammatory drugs (Corticosteroids)',
-                lesson2_desc: 'Anti-inflammatory and immunosuppressive properties, main glucocorticoids, side effects and precautions for use.',
-                lesson3_title: '3. Non-steroidal anti-inflammatory drugs (NSAIDs)',
-                lesson3_desc: 'Cyclooxygenase inhibition, analgesic, antipyretic and anti-inflammatory effects, main representatives and associated risks.',
-                support_title: 'Support GhaniPharma',
-                support_subtitle: 'Your support helps me create more educational content',
-                support_info: 'If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏',
-                rip_title: 'RIP CCP (Algeria)',
-                flexy_title: 'Flexy',
-                support_footer: 'Thank you from the bottom of my heart',
-                copied: 'Copied!'
-            }
+                theme: "Theme",
+                light: "Light",
+                dark: "Dark",
+                language: "Language",
+                home: "Home",
+                about: "About",
+                modules: "Modules",
+                contact: "Contact",
+                pharmacology: "Pharmacology",
+                lesson: "Lesson",
+                exam: "Exam",
+                mechanism_title: "Mechanism of action",
+                indications_title: "General indications",
+                contre_title: "Major contraindications & precautions",
+                ci_absolues_label: "Absolute CIs:",
+                note_label: "Note:",
+                precautions_label: "Precautions:",
+                interactions_title: "Major drug interactions",
+                grossesse_title: "Pregnancy and Breastfeeding",
+                grossesse_label: "Pregnancy:",
+                allaitement_label: "Breastfeeding:",
+                substances_title: "Active substances",
+                generique_label: "Generic:",
+                noms_commerciaux: "Trade names (Algeria):",
+                formes_label: "Pharmaceutical forms:",
+                posologie_label: "Usual adult dose & max:",
+                particularite_label: "Particularity:",
+                conseil_pratique: "Pharmacist's practical advice:",
+                conseil_final_title: "Ultimate advice for your internship",
+                conseil_chef: "💡 The \"Section manager\" tip to pass on to all your patients:",
+                qcm_label: "MCQ:",
+                qcm_instruction: "Check all correct answers for each question. A single wrong answer cancels the whole question (0 point). Partial correct answers give partial points.",
+                check_btn: "Check my answers",
+                reset_btn: "Reset",
+                q1_title: "Question 1",
+                q2_title: "Question 2",
+                q3_title: "Question 3",
+                q4_title: "Question 4",
+                q5_title: "Question 5",
+                q6_title: "Question 6",
+                q7_title: "Question 7",
+                q8_title: "Question 8",
+                q9_title: "Question 9",
+                q10_title: "Question 10",
+                section_title: "Available lessons",
+                subject_badge: "DRUG CLASSES",
+                support_title: "Support GhaniPharma",
+                support_subtitle: "Your support helps me create more educational content",
+                support_info: "If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏",
+                rip_title: "RIP CCP (Algeria)",
+                flexy_title: "Flexy",
+                support_footer: "Thank you wholeheartedly",
+                copied: "Copied!",
+                page_title: "ANALGESICS AND ANTI-INFLAMMATORY DRUGS",
+                page_definition: "Analgesics are medications intended to relieve pain, classified according to the WHO into three levels. Anti-inflammatory drugs, whether steroidal (corticosteroids) or non-steroidal (NSAIDs), reduce inflammation and pain. This section presents the essential pharmacological concepts for these therapeutic classes.",
+                section_subtitle: "Courses on analgesics and anti-inflammatory drugs",
+                lesson1_title: "1. Analgesics (according to WHO)",
+                lesson1_desc: "The three WHO levels: paracetamol and aspirin (level 1), codeine and tramadol (level 2), morphine, buprenorphine, oxycodone and fentanyl (level 3).",
+                lesson2_title: "2. Steroidal anti-inflammatory drugs (corticosteroids)",
+                lesson2_desc: "Systemic corticosteroids: hydrocortisone, prednisone, prednisolone, methylprednisolone, dexamethasone, betamethasone and triamcinolone.",
+                lesson3_title: "3. Non-steroidal anti-inflammatory drugs (NSAIDs)",
+                lesson3_desc: "Classic NSAIDs (diclofenac, naproxen, piroxicam, meloxicam, ibuprofen, ketoprofen, flurbiprofen, niflumic acid), coxibs, indomethacin, aspirin and alpha-amylase."
+            },
         };
 
         let currentLang = localStorage.getItem('lang') || 'fr';

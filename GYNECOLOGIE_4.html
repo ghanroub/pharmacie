@@ -1028,13 +1028,15 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Anti-prolactines</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="cabergoline_title">1. Cabergoline (anti-prolactine)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cabergoline_gen">Cabergoline.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Dostinex")">Dostinex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dostinova")">Dostinova</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cabernex")">Cabernex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dostinex&quot;)">Dostinex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dostinova&quot;)">Dostinova</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cabernex&quot;)">Cabernex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cabergoline_formes">Comprimés (0,5 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cabergoline_posologie">Hyperprolactinémie : 0,5 mg par semaine, à répartir en 1 à 2 prises, ajustée selon la prolactinémie.</span></p>
@@ -1045,59 +1047,82 @@
                         <h3 style="color:var(--primary);" data-i18n="bromocriptine_title">2. Bromocriptine (anti-prolactine)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="bromocriptine_gen">Bromocriptine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Parlodel")">Parlodel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Medocriptine")">Medocriptine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Parlodel&quot;)">Parlodel</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Medocriptine&quot;)">Medocriptine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="bromocriptine_formes">Comprimés (2,5 mg, 10 mg), gélules.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="bromocriptine_posologie">Débuter à 1,25 mg (demi-comprimé) le soir, augmenter progressivement jusqu'à 2,5 à 10 mg/j selon l'indication.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="bromocriptine_particularite">Agoniste dopaminergique : inhibe la sécrétion de prolactine, traite hyperprolactinémie, adénome à prolactine et galactorrhée. Aussi utilisé dans certaines indications neuro (acromégalie, Parkinson).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="bromocriptine_conseil">Commencer le soir à faible dose pour limiter nausées et hypotension orthostatique. Prudence en cas de conduite. Surveillance cardiaque en cas d'usage prolongé.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Inducteurs de l'ovulation</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="clomifene_title">3. Clomifène (inducteur d'ovulation)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="clomifene_gen">Citrate de clomifène.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Clomifene")">Clomifene</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Clomifene&quot;)">Clomifene</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="clomifene_formes">Comprimés (50 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="clomifene_posologie">1 comprimé par jour pendant 5 jours, en début de cycle (du 2ème au 6ème ou du 5ème au 9ème jour), sous contrôle médical.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="clomifene_particularite">Anti-œstrogène hypothalamique : augmente la sécrétion de GnRH puis de FSH/LH et déclenche l'ovulation dans l'infertilité anovulatoire (souvent SOPK).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="clomifene_conseil">Risque de grossesse multiple (jumeaux) et d'hyperstimulation ovarienne : surveillance échographique et hormonale. Arrêter dès le diagnostic de grossesse. Effets visuels : arrêter et consulter.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Anti-œstrogènes</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="tamoxifene_title">4. Tamoxifène (anti-œstrogène)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="tamoxifene_gen">Tamoxifène.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Nolvadex")">Nolvadex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nolvadex&quot;)">Nolvadex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="tamoxifene_formes">Comprimés (10 mg, 20 mg, 30 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="tamoxifene_posologie">20 mg par jour en une prise, pour une durée de 5 ans en général (cancer du sein). Traitement spécialisé.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="tamoxifene_particularite">Anti-œstrogène de référence du cancer du sein hormono-dépendant : bloque les récepteurs œstrogéniques des cellules tumorales. Effets secondaires : bouffées de chaleur, prise de poids, risque thromboembolique.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="tamoxifene_conseil">Surveillance du risque de thrombose (douleur de jambe, essoufflement), des troubles visuels et gynécologiques. Ne pas utiliser de produits à base de soja ou de millepertuis sans avis médical.</span></p>
                     </div>
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="anti_aromatase_title">5. Anti-aromatases (anastrozole, létrozole)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="anti_aromatase_gen">Anastrozole / Létrozole.</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Arimidex")">Arimidex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Femara")">Femara</span>
-                        </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="anti_aromatase_formes">Comprimés (1 mg, 2,5 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="anti_aromatase_posologie">1 comprimé par jour, durée de plusieurs années dans le cancer du sein (traitement spécialisé).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="anti_aromatase_particularite">Anti-aromatases : empêchent la transformation des androgènes en œstrogènes chez la femme ménopausée et privent la tumeur d'œstrogènes. Indiquées dans le cancer du sein hormono-dépendant.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="anti_aromatase_conseil">Bilan : douleurs articulaires et perte osseuse (surveillance de la densité osseuse, supplémentation en calcium/vitamine D). Contre-indiquées chez la femme non ménopausée.</span></p>
                     </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Anti-aromatases</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="anastrozole_title">5a. Anastrozole (anti-aromatase)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="anastrozole_gen">Anastrozole.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Arimidex&quot;)">Arimidex</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="anastrozole_formes">Comprimés (1 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="anastrozole_posologie">1 comprimé par jour, durée de plusieurs années dans le cancer du sein (traitement spécialisé).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="anastrozole_particularite">Anti-aromatases : empêchent la transformation des androgènes en œstrogènes chez la femme ménopausée et privent la tumeur d'œstrogènes. Indiquées dans le cancer du sein hormono-dépendant. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="anastrozole_conseil">Bilan : douleurs articulaires et perte osseuse (surveillance de la densité osseuse, supplémentation en calcium/vitamine D). Contre-indiquées chez la femme non ménopausée.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="letrozole_title">5b. Létrozole (anti-aromatase)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="letrozole_gen">Létrozole.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Femara&quot;)">Femara</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="letrozole_formes">Comprimés (2,5 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="letrozole_posologie">1 comprimé par jour, durée de plusieurs années dans le cancer du sein (traitement spécialisé).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="letrozole_particularite">Anti-aromatases : empêchent la transformation des androgènes en œstrogènes chez la femme ménopausée et privent la tumeur d'œstrogènes. Indiquées dans le cancer du sein hormono-dépendant. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="letrozole_conseil">Bilan : douleurs articulaires et perte osseuse (surveillance de la densité osseuse, supplémentation en calcium/vitamine D). Contre-indiquées chez la femme non ménopausée.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_5_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Anti-androgènes</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="cyproterone_title">6. Cyprotérone (anti-androgène)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="cyproterone_gen">Acétate de cyprotérone.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Androcure")">Androcure</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diane 35")">Diane 35</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Androcure&quot;)">Androcure</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diane 35&quot;)">Diane 35</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="cyproterone_formes">Comprimés (50 mg pour Androcure ; 2 mg + EE pour Diane 35).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="cyproterone_posologie">Selon prescription : hirsutisme/acné de la femme (Androcure) ; contraception + anti-acnéique (Diane 35, 21 jours sur 28).</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="cyproterone_particularite">Anti-androgène puissant : bloque les récepteurs androgéniques et a une action progestative. Utilisé dans l'hirsutisme, l'acné sévère et l'alopécie androgénique ; Diane 35 associe une action contraceptive.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="cyproterone_conseil">N'est pas une pilule de première intention : risque thrombotique et hépatique. Bilan hépatique et surveillance tensionnelle. Contre-indiqué pendant la grossesse et l'allaitement.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1353,18 +1378,29 @@
                 tamoxifene_posologie: "20 mg par jour en une prise, pour une durée de 5 ans en général (cancer du sein). Traitement spécialisé.",
                 tamoxifene_particularite: "Anti-œstrogène de référence du cancer du sein hormono-dépendant : bloque les récepteurs œstrogéniques des cellules tumorales. Effets secondaires : bouffées de chaleur, prise de poids, risque thromboembolique.",
                 tamoxifene_conseil: "Surveillance du risque de thrombose (douleur de jambe, essoufflement), des troubles visuels et gynécologiques. Ne pas utiliser de produits à base de soja ou de millepertuis sans avis médical.",
-                anti_aromatase_title: "5. Anti-aromatases (anastrozole, létrozole)",
-                anti_aromatase_gen: "Anastrozole / Létrozole.",
-                anti_aromatase_formes: "Comprimés (1 mg, 2,5 mg).",
-                anti_aromatase_posologie: "1 comprimé par jour, durée de plusieurs années dans le cancer du sein (traitement spécialisé).",
-                anti_aromatase_particularite: "Anti-aromatases : empêchent la transformation des androgènes en œstrogènes chez la femme ménopausée et privent la tumeur d'œstrogènes. Indiquées dans le cancer du sein hormono-dépendant.",
-                anti_aromatase_conseil: "Bilan : douleurs articulaires et perte osseuse (surveillance de la densité osseuse, supplémentation en calcium/vitamine D). Contre-indiquées chez la femme non ménopausée.",
+                anastrozole_title: "5a. Anastrozole (anti-aromatase)",
+                anastrozole_gen: "Anastrozole.",
+                anastrozole_formes: "Comprimés (1 mg).",
+                anastrozole_posologie: "1 comprimé par jour, durée de plusieurs années dans le cancer du sein (traitement spécialisé).",
+                anastrozole_particularite: "Anti-aromatases : empêchent la transformation des androgènes en œstrogènes chez la femme ménopausée et privent la tumeur d'œstrogènes. Indiquées dans le cancer du sein hormono-dépendant. (données de classe — non spécifiées séparément dans le livre)",
+                anastrozole_conseil: "Bilan : douleurs articulaires et perte osseuse (surveillance de la densité osseuse, supplémentation en calcium/vitamine D). Contre-indiquées chez la femme non ménopausée.",
+                letrozole_title: "5b. Létrozole (anti-aromatase)",
+                letrozole_gen: "Létrozole.",
+                letrozole_formes: "Comprimés (2,5 mg).",
+                letrozole_posologie: "1 comprimé par jour, durée de plusieurs années dans le cancer du sein (traitement spécialisé).",
+                letrozole_particularite: "Anti-aromatases : empêchent la transformation des androgènes en œstrogènes chez la femme ménopausée et privent la tumeur d'œstrogènes. Indiquées dans le cancer du sein hormono-dépendant. (données de classe — non spécifiées séparément dans le livre)",
+                letrozole_conseil: "Bilan : douleurs articulaires et perte osseuse (surveillance de la densité osseuse, supplémentation en calcium/vitamine D). Contre-indiquées chez la femme non ménopausée.",
                 cyproterone_title: "6. Cyprotérone (anti-androgène)",
                 cyproterone_gen: "Acétate de cyprotérone.",
                 cyproterone_formes: "Comprimés (50 mg pour Androcure ; 2 mg + EE pour Diane 35).",
                 cyproterone_posologie: "Selon prescription : hirsutisme/acné de la femme (Androcure) ; contraception + anti-acnéique (Diane 35, 21 jours sur 28).",
                 cyproterone_particularite: "Anti-androgène puissant : bloque les récepteurs androgéniques et a une action progestative. Utilisé dans l'hirsutisme, l'acné sévère et l'alopécie androgénique ; Diane 35 associe une action contraceptive.",
                 cyproterone_conseil: "N'est pas une pilule de première intention : risque thrombotique et hépatique. Bilan hépatique et surveillance tensionnelle. Contre-indiqué pendant la grossesse et l'allaitement.",
+                group_1_name: "Anti-prolactines",
+                group_2_name: "Inducteurs de l'ovulation",
+                group_3_name: "Anti-œstrogènes",
+                group_4_name: "Anti-aromatases",
+                group_5_name: "Anti-androgènes",
                 indication_1: "Hyperprolactinémie, adénome à prolactine, galactorrhée et troubles de la fertilité : cabergoline (Dostinex), bromocriptine (Parlodel).",
                 indication_2: "Induction de l'ovulation dans l'infertilité anovulatoire (syndrome des ovaires polykystiques) : clomifène.",
                 indication_3: "Cancer du sein hormono-dépendant : tamoxifène (Nolvadex) et anti-aromatases (anastrozole/Arimidex, létrozole/Femara).",
@@ -1516,18 +1552,29 @@
                 tamoxifene_posologie: "20 مغ يومياً في أخذة واحدة، لمدة 5 سنوات عادة (سرطان الثدي). علاج متخصص.",
                 tamoxifene_particularite: "مضاد الإستروجين المرجعي لسرطان الثدي المعتمد على الهرمونات: يحجب المستقبلات الإستروجينية لخلايا الورم. آثاره: هبّات حر، زيادة وزن، خطر خثري.",
                 tamoxifene_conseil: "راقب خطر الخثار (ألم الساق، ضيق نفس)، الاضطرابات البصرية والنسائية. لا تستعمل منتجات الصويا أو نبتة سانت جون دون رأي طبي.",
-                anti_aromatase_title: "5. مثبطات الأروماتاز (أناستروزول، ليتروزول)",
-                anti_aromatase_gen: "أناستروزول / ليتروزول.",
-                anti_aromatase_formes: "أقراص (1 مغ، 2,5 مغ).",
-                anti_aromatase_posologie: "قرص واحد يومياً، لمدة سنوات في سرطان الثدي (علاج متخصص).",
-                anti_aromatase_particularite: "مثبطات الأروماتاز: تمنع تحويل الأندروجينات إلى إستروجينات عند المرأة في سن اليأس وتحرم الورم منها. مطلوبة في سرطان الثدي المعتمد على الهرمونات.",
-                anti_aromatase_conseil: "الآثار: ألم مفصلي وفقدان عظام (مراقبة كثافة العظم، تعويض الكالسيوم/فيتامين D). ممنوعة عند غير الميئسات.",
+                anastrozole_title: "5a. أناستروزول (مثبط أروماتاز)",
+                anastrozole_gen: "أناستروزول.",
+                anastrozole_formes: "أقراص (1 مغ).",
+                anastrozole_posologie: "قرص واحد يومياً، لمدة سنوات في سرطان الثدي (علاج متخصص).",
+                anastrozole_particularite: "مثبطات الأروماتاز: تمنع تحويل الأندروجينات إلى إستروجينات عند المرأة في سن اليأس وتحرم الورم منها. مطلوبة في سرطان الثدي المعتمد على الهرمونات. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                anastrozole_conseil: "الآثار: ألم مفصلي وفقدان عظام (مراقبة كثافة العظم، تعويض الكالسيوم/فيتامين D). ممنوعة عند غير الميئسات.",
+                letrozole_title: "5b. ليتروزول (مثبط أروماتاز)",
+                letrozole_gen: "ليتروزول.",
+                letrozole_formes: "أقراص (2,5 مغ).",
+                letrozole_posologie: "قرص واحد يومياً، لمدة سنوات في سرطان الثدي (علاج متخصص).",
+                letrozole_particularite: "مثبطات الأروماتاز: تمنع تحويل الأندروجينات إلى إستروجينات عند المرأة في سن اليأس وتحرم الورم منها. مطلوبة في سرطان الثدي المعتمد على الهرمونات. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                letrozole_conseil: "الآثار: ألم مفصلي وفقدان عظام (مراقبة كثافة العظم، تعويض الكالسيوم/فيتامين D). ممنوعة عند غير الميئسات.",
                 cyproterone_title: "6. سيبروتيرون (مضاد أندروجين)",
                 cyproterone_gen: "أسيتات السيبروتيرون.",
                 cyproterone_formes: "أقراص (50 مغ لأندروكور؛ 2 مغ + إستروجين لديان 35).",
                 cyproterone_posologie: "حسب الوصفة: الشعرانية/حبّ الشباب عند المرأة (أندروكور)؛ منع حمل + مضاد لحبّ الشباب (ديان 35، 21 يوماً على 28).",
                 cyproterone_particularite: "مضاد أندروجيني قوي: يحجب المستقبلات الأندروجينية وله تأثير بروجستيني. يُستعمل في الشعرانية وحبّ الشباب الشديد والثعلبة الأندروجينية؛ ديان 35 يجمع تأثيراً مانعاً للحمل.",
                 cyproterone_conseil: "ليس حبة من الخط الأول: خطر خثري وكبدي. تحليل كبدي ومراقبة ضغط. ممنوع أثناء الحمل والرضاعة.",
+                group_1_name: "مضادات البرولاكتين",
+                group_2_name: "محفّزات الإباضة",
+                group_3_name: "مضادات الإستروجين",
+                group_4_name: "مثبطات الأروماتاز",
+                group_5_name: "مضادات الأندروجين",
                 indication_1: "فرط البرولاكتين، ورم البرولاكتين، ثرّ اللبن واضطرابات الخصوبة: كابيرغولين (دوستانيكس)، بروموكريبتين (بارلوديل).",
                 indication_2: "تحفيز الإباضة في العقم اللاإباضي (متلازمة المبيض المتعدد الأكياس): كلوميفين.",
                 indication_3: "سرطان الثدي المعتمد على الهرمونات: تاموكسيفين (نولفاديكس) ومثبطات الأروماتاز (أناستروزول/أريميديكس، ليتروزول/فيمارا).",
@@ -1679,18 +1726,29 @@
                 tamoxifene_posologie: "20 mg daily in one dose, usually for 5 years (breast cancer). Specialized treatment.",
                 tamoxifene_particularite: "Reference anti-estrogen for hormone-dependent breast cancer: blocks estrogen receptors of tumor cells. Side effects: hot flushes, weight gain, thromboembolic risk.",
                 tamoxifene_conseil: "Monitor thrombosis risk (leg pain, breathlessness), visual and gynecological disorders. Do not use soy or St. John's wort products without medical advice.",
-                anti_aromatase_title: "5. Aromatase inhibitors (anastrozole, letrozole)",
-                anti_aromatase_gen: "Anastrozole / Letrozole.",
-                anti_aromatase_formes: "Tablets (1 mg, 2.5 mg).",
-                anti_aromatase_posologie: "One tablet daily, for several years in breast cancer (specialized treatment).",
-                anti_aromatase_particularite: "Aromatase inhibitors: prevent the conversion of androgens to estrogens in menopausal women and deprive the tumor of estrogens. Indicated in hormone-dependent breast cancer.",
-                anti_aromatase_conseil: "Effects: joint pain and bone loss (bone density monitoring, calcium/vitamin D supplementation). Contraindicated in premenopausal women.",
+                anastrozole_title: "5a. Anastrozole (aromatase inhibitor)",
+                anastrozole_gen: "Anastrozole.",
+                anastrozole_formes: "Tablets (1 mg).",
+                anastrozole_posologie: "One tablet daily, for several years in breast cancer (specialized treatment).",
+                anastrozole_particularite: "Aromatase inhibitors: prevent the conversion of androgens to estrogens in menopausal women and deprive the tumor of estrogens. Indicated in hormone-dependent breast cancer. (class-level data — not specified separately in the book)",
+                anastrozole_conseil: "Effects: joint pain and bone loss (bone density monitoring, calcium/vitamin D supplementation). Contraindicated in premenopausal women.",
+                letrozole_title: "5b. Letrozole (aromatase inhibitor)",
+                letrozole_gen: "Letrozole.",
+                letrozole_formes: "Tablets (2.5 mg).",
+                letrozole_posologie: "One tablet daily, for several years in breast cancer (specialized treatment).",
+                letrozole_particularite: "Aromatase inhibitors: prevent the conversion of androgens to estrogens in menopausal women and deprive the tumor of estrogens. Indicated in hormone-dependent breast cancer. (class-level data — not specified separately in the book)",
+                letrozole_conseil: "Effects: joint pain and bone loss (bone density monitoring, calcium/vitamin D supplementation). Contraindicated in premenopausal women.",
                 cyproterone_title: "6. Cyproterone (anti-androgen)",
                 cyproterone_gen: "Cyproterone acetate.",
                 cyproterone_formes: "Tablets (50 mg for Androcure; 2 mg + EE for Diane 35).",
                 cyproterone_posologie: "As prescribed: female hirsutism/acne (Androcure); contraception + anti-acne (Diane 35, 21 days out of 28).",
                 cyproterone_particularite: "Powerful anti-androgen: blocks androgen receptors and has a progestative action. Used in hirsutism, severe acne and androgenic alopecia; Diane 35 adds a contraceptive action.",
                 cyproterone_conseil: "Not a first-line pill: thrombotic and hepatic risk. Liver tests and blood pressure monitoring. Contraindicated during pregnancy and breastfeeding.",
+                group_1_name: "Anti-prolactins",
+                group_2_name: "Ovulation inducers",
+                group_3_name: "Anti-estrogens",
+                group_4_name: "Aromatase inhibitors",
+                group_5_name: "Anti-androgens",
                 indication_1: "Hyperprolactinemia, prolactinoma, galactorrhea and fertility disorders: cabergoline (Dostinex), bromocriptine (Parlodel).",
                 indication_2: "Ovulation induction in anovulatory infertility (polycystic ovary syndrome): clomifene.",
                 indication_3: "Hormone-dependent breast cancer: tamoxifen (Nolvadex) and aromatase inhibitors (anastrozole/Arimidex, letrozole/Femara).",

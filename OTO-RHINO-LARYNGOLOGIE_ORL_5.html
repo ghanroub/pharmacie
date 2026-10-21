@@ -1027,11 +1027,13 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Maux de gorge</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="biclotymol_title">1. Biclotymol</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="biclotymol_gen">Biclotymol (antiseptique).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Hexaspray")">Hexaspray</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hexaspray&quot;)">Hexaspray</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="biclotymol_formes">Pulvérisation buccale (Hexaspray).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="biclotymol_posologie">Adulte et enfant de plus de 6 ans : 1 à 2 pulvérisations, 2 à 3 fois par jour, moins de 5 jours.</span></p>
@@ -1042,7 +1044,7 @@
                         <h3 style="color:var(--primary);" data-i18n="extrait_thym_title">2. Extrait de thym (thymol)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="extrait_thym_gen">Extrait de thym / thymol (antiseptique).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Thymoseptine")">Thymoseptine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Thymoseptine&quot;)">Thymoseptine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="extrait_thym_formes">Pulvérisation buccale, pastilles.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="extrait_thym_posologie">Selon l'âge et le produit (généralement à partir de 6 ans).</span></p>
@@ -1053,8 +1055,8 @@
                         <h3 style="color:var(--primary);" data-i18n="alpha_amylase_title">3. Alpha-amylase</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="alpha_amylase_gen">Alpha-amylase (enzyme anti-inflammatoire).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Maxilase")">Maxilase</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lamylase")">Lamylase</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Maxilase&quot;)">Maxilase</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lamylase&quot;)">Lamylase</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="alpha_amylase_formes">Sirop, comprimés, granules.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="alpha_amylase_posologie">Selon l'âge ; 2 à 3 prises par jour.</span></p>
@@ -1065,8 +1067,8 @@
                         <h3 style="color:var(--primary);" data-i18n="lysopaine_title">4. Cétylpyridinium + lysozyme (Lysopaïne)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lysopaine_gen">Chlorure de cétylpyridinium + chlorhydrate de lysozyme.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lysopaine")">Lysopaine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lysopay")">Lysopay</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lysopaine&quot;)">Lysopaine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lysopay&quot;)">Lysopay</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lysopaine_formes">Comprimés à sucer.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lysopaine_posologie">1 comprimé à sucer, 3 à 5 fois par jour, adulte et enfant de plus de 6 ans.</span></p>
@@ -1077,12 +1079,13 @@
                         <h3 style="color:var(--primary);" data-i18n="lidocaine_benzalkonium_title">5. Lidocaïne + benzalkonium (Humex mal de gorge)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lidocaine_benzalkonium_gen">Lidocaïne + chlorure de benzalkonium.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Humex mal de gorge")">Humex mal de gorge</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humex mal de gorge&quot;)">Humex mal de gorge</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lidocaine_benzalkonium_formes">Collutoire (solution à pulvériser dans la gorge).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lidocaine_benzalkonium_posologie">Selon la prescription ; adulte et enfant de plus de 6 ans, moins de 5 jours.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="lidocaine_benzalkonium_particularite">Anesthésique local + antiseptique ; soulage la douleur.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="lidocaine_benzalkonium_conseil">Risque de fausse route (anesthésie de la gorge) : ne pas manger ni boire juste après.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1344,6 +1347,7 @@
                 lidocaine_benzalkonium_posologie: "Selon la prescription ; adulte et enfant de plus de 6 ans, moins de 5 jours.",
                 lidocaine_benzalkonium_particularite: "Anesthésique local + antiseptique ; soulage la douleur.",
                 lidocaine_benzalkonium_conseil: "Risque de fausse route (anesthésie de la gorge) : ne pas manger ni boire juste après.",
+                group_1_name: "Maux de gorge",
                 indication_1: "Mal de gorge peu intense sans fièvre (antiseptiques, anti-inflammatoires d'appoint).",
                 indication_2: "Douleur de la gorge (lidocaïne, anesthésique local).",
                 indication_3: "Traitement local d'appoint des angines et pharyngites.",
@@ -1499,6 +1503,7 @@
                 lidocaine_benzalkonium_posologie: "حسب الوصفة؛ بالغ وطفل فوق 6 سنوات، أقل من 5 أيام.",
                 lidocaine_benzalkonium_particularite: "مخدّر موضعي + مطهّر؛ يسكّن الألم.",
                 lidocaine_benzalkonium_conseil: "خطر الشرقة (تخدير الحلق): لا تأكل أو تشرب بعده مباشرة.",
+                group_1_name: "أدوية التهاب الحلق",
                 indication_1: "التهاب الحلق الخفيف دون حمى (مطهّرات، مضادات التهاب مساعدة).",
                 indication_2: "ألم الحلق (ليدوكائين، مخدّر موضعي).",
                 indication_3: "علاج موضعي مساعد لالتهاب اللوزتين والبلعوم.",
@@ -1654,6 +1659,7 @@
                 lidocaine_benzalkonium_posologie: "As prescribed; adult and child over 6 years, under 5 days.",
                 lidocaine_benzalkonium_particularite: "Local anesthetic + antiseptic; relieves pain.",
                 lidocaine_benzalkonium_conseil: "Choking risk (throat anesthesia): do not eat or drink right after.",
+                group_1_name: "Sore throat medicines",
                 indication_1: "Mild sore throat without fever (antiseptics, adjunctive anti-inflammatories).",
                 indication_2: "Throat pain (lidocaine, local anesthetic).",
                 indication_3: "Adjunctive local treatment of angina and pharyngitis.",

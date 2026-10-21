@@ -1028,12 +1028,14 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Progestatifs</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="dydrogesterone_title">1. Dydrogestérone (Duphaston)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="dydrogesterone_gen">Dydrogestérone.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Duphaston")">Duphaston</span>,
-                            <span class="drug-link" onclick="showDrugModal("Retard Pharlon")">Retard Pharlon</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Duphaston&quot;)">Duphaston</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Retard Pharlon&quot;)">Retard Pharlon</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="dydrogesterone_formes">Comprimés (10 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="dydrogesterone_posologie">Troubles du cycle : 1 comprimé 2 fois par jour du 16ème au 25ème jour du cycle. Ménorragie : selon prescription.</span></p>
@@ -1044,8 +1046,8 @@
                         <h3 style="color:var(--primary);" data-i18n="nomegestrol_title">2. Nomégestrol</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="nomegestrol_gen">Acétate de nomégestrol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Nomegestrol")">Nomegestrol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Progeva")">Progeva</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nomegestrol&quot;)">Nomegestrol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Progeva&quot;)">Progeva</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="nomegestrol_formes">Comprimés (5 mg), sirop.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="nomegestrol_posologie">1 comprimé par jour du 16ème au 25ème jour du cycle, ou en continu selon prescription.</span></p>
@@ -1056,7 +1058,7 @@
                         <h3 style="color:var(--primary);" data-i18n="progesterone_utrogestan_title">3. Progestérone (Utrogestan)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="progesterone_utrogestan_gen">Progestérone naturelle (micronisée).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Utrogestan")">Utrogestan</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Utrogestan&quot;)">Utrogestan</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="progesterone_utrogestan_formes">Capsules (100 mg, 200 mg), ovules vaginaux.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="progesterone_utrogestan_posologie">Selon l'indication : 200 à 400 mg par jour, en une ou deux prises, le soir de préférence (sommeil).</span></p>
@@ -1064,13 +1066,27 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="progesterone_utrogestan_conseil">Peut provoquer somnolence et vertiges : prendre le soir au coucher. Prévenir d'une possible baisse de vigilance en début de traitement.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="progestogel_title">5. Progestogel (gel de progestérone)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="progestogel_gen">Progestérone (gel).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Progestogel&quot;)">Progestogel</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="progestogel_formes">Gel pour application locale mammaire (1 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="progestogel_posologie">1 à 2 applications par jour sur le sein douloureux, en massage doux, selon prescription.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="progestogel_particularite">Gel de progestérone à usage local mammaire : utilisé dans les mastodynies (douleurs des seins) et la mastose bénigne. Action locale directe, peu de passage systémique.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="progestogel_conseil">Usage local uniquement : ne pas appliquer sur un nodule non diagnostiqué, avis médical en cas de masse mammaire. Lavage des mains après application.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Œstrogènes</h3>
+                    <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="estradiol_noncontraceptif_title">4. Œstradiol (Progynova, Dermestril)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="estradiol_noncontraceptif_gen">Estradiol (valérate ou hémihydrate).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Progynova")">Progynova</span>,
-                            <span class="drug-link" onclick="showDrugModal("Progynova 2")">Progynova 2</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dermestril")">Dermestril</span>,
-                            <span class="drug-link" onclick="showDrugModal("Climaston")">Climaston</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Progynova&quot;)">Progynova</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Progynova 2&quot;)">Progynova 2</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dermestril&quot;)">Dermestril</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Climaston&quot;)">Climaston</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="estradiol_noncontraceptif_formes">Comprimés, dispositifs transdermiques (patchs), gel.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="estradiol_noncontraceptif_posologie">Comprimés : 1 à 2 mg/j en continu ou cyclique. Patch : 1 à 2 fois par semaine. Toujours associer un progestatif si utérus présent.</span></p>
@@ -1078,26 +1094,16 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="estradiol_noncontraceptif_conseil">Ne jamais utiliser seuls si l'utérus est présent : associer un progestatif 12-14 jours/mois pour protéger l'endomètre. Surveillance mammaire régulière. Ne pas fumer.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="progestogel_title">5. Progestogel (gel de progestérone)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="progestogel_gen">Progestérone (gel).</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Progestogel")">Progestogel</span>
-                        </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="progestogel_formes">Gel pour application locale mammaire (1 %).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="progestogel_posologie">1 à 2 applications par jour sur le sein douloureux, en massage doux, selon prescription.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="progestogel_particularite">Gel de progestérone à usage local mammaire : utilisé dans les mastodynies (douleurs des seins) et la mastose bénigne. Action locale directe, peu de passage systémique.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="progestogel_conseil">Usage local uniquement : ne pas appliquer sur un nodule non diagnostiqué, avis médical en cas de masse mammaire. Lavage des mains après application.</span></p>
-                    </div>
-                    <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="estriol_ovestin_title">6. Estriol (Ovestin)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="estriol_ovestin_gen">Estriol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Ovestin")">Ovestin</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ovestin&quot;)">Ovestin</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="estriol_ovestin_formes">Crème vaginale, ovules vaginaux (0,5 mg, 1 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="estriol_ovestin_posologie">1 application le soir au coucher, 1 à 2 fois par semaine après la phase d'attaque, selon prescription.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="estriol_ovestin_particularite">Œstrogène d'action locale : restaure la trophicité de la muqueuse vulvo-vaginale (sécheresse, atrophie, dyspareunie de la ménopause) avec une faible absorption systémique.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="estriol_ovestin_conseil">Bien que locale, respecter la contre-indication en cas de cancer du sein ou de l'utérus. Avis médical en cas de saignement. Ne pas associer à d'autres traitements vaginaux sans conseil.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1347,24 +1353,26 @@
                 progesterone_utrogestan_posologie: "Selon l'indication : 200 à 400 mg par jour, en une ou deux prises, le soir de préférence (sommeil).",
                 progesterone_utrogestan_particularite: "Progestérone naturelle : soutient la phase lutéale, favorise la grossesse (PMA), traite les troubles du cycle et la ménopause en association aux œstrogènes. Identique à l'hormone humaine.",
                 progesterone_utrogestan_conseil: "Peut provoquer somnolence et vertiges : prendre le soir au coucher. Prévenir d'une possible baisse de vigilance en début de traitement.",
-                estradiol_noncontraceptif_title: "4. Œstradiol (Progynova, Dermestril)",
-                estradiol_noncontraceptif_gen: "Estradiol (valérate ou hémihydrate).",
-                estradiol_noncontraceptif_formes: "Comprimés, dispositifs transdermiques (patchs), gel.",
-                estradiol_noncontraceptif_posologie: "Comprimés : 1 à 2 mg/j en continu ou cyclique. Patch : 1 à 2 fois par semaine. Toujours associer un progestatif si utérus présent.",
-                estradiol_noncontraceptif_particularite: "Traitement hormonal de la ménopause (THM) : corrige la carence œstrogénique, soulage les bouffées de chaleur et prévient la perte osseuse. Voie transdermique préférée en cas de risque thrombotique.",
-                estradiol_noncontraceptif_conseil: "Ne jamais utiliser seuls si l'utérus est présent : associer un progestatif 12-14 jours/mois pour protéger l'endomètre. Surveillance mammaire régulière. Ne pas fumer.",
                 progestogel_title: "5. Progestogel (gel de progestérone)",
                 progestogel_gen: "Progestérone (gel).",
                 progestogel_formes: "Gel pour application locale mammaire (1 %).",
                 progestogel_posologie: "1 à 2 applications par jour sur le sein douloureux, en massage doux, selon prescription.",
                 progestogel_particularite: "Gel de progestérone à usage local mammaire : utilisé dans les mastodynies (douleurs des seins) et la mastose bénigne. Action locale directe, peu de passage systémique.",
                 progestogel_conseil: "Usage local uniquement : ne pas appliquer sur un nodule non diagnostiqué, avis médical en cas de masse mammaire. Lavage des mains après application.",
+                estradiol_noncontraceptif_title: "4. Œstradiol (Progynova, Dermestril)",
+                estradiol_noncontraceptif_gen: "Estradiol (valérate ou hémihydrate).",
+                estradiol_noncontraceptif_formes: "Comprimés, dispositifs transdermiques (patchs), gel.",
+                estradiol_noncontraceptif_posologie: "Comprimés : 1 à 2 mg/j en continu ou cyclique. Patch : 1 à 2 fois par semaine. Toujours associer un progestatif si utérus présent.",
+                estradiol_noncontraceptif_particularite: "Traitement hormonal de la ménopause (THM) : corrige la carence œstrogénique, soulage les bouffées de chaleur et prévient la perte osseuse. Voie transdermique préférée en cas de risque thrombotique.",
+                estradiol_noncontraceptif_conseil: "Ne jamais utiliser seuls si l'utérus est présent : associer un progestatif 12-14 jours/mois pour protéger l'endomètre. Surveillance mammaire régulière. Ne pas fumer.",
                 estriol_ovestin_title: "6. Estriol (Ovestin)",
                 estriol_ovestin_gen: "Estriol.",
                 estriol_ovestin_formes: "Crème vaginale, ovules vaginaux (0,5 mg, 1 mg).",
                 estriol_ovestin_posologie: "1 application le soir au coucher, 1 à 2 fois par semaine après la phase d'attaque, selon prescription.",
                 estriol_ovestin_particularite: "Œstrogène d'action locale : restaure la trophicité de la muqueuse vulvo-vaginale (sécheresse, atrophie, dyspareunie de la ménopause) avec une faible absorption systémique.",
                 estriol_ovestin_conseil: "Bien que locale, respecter la contre-indication en cas de cancer du sein ou de l'utérus. Avis médical en cas de saignement. Ne pas associer à d'autres traitements vaginaux sans conseil.",
+                group_1_name: "Progestatifs",
+                group_2_name: "Œstrogènes",
                 indication_1: "Troubles du cycle et douleurs menstruelles (dysménorrhée) : dydrogestérone (Duphaston) du 16ème au 25ème jour du cycle.",
                 indication_2: "Ménorragies et métrorragies fonctionnelles, insuffisance lutéale : progestatifs de synthèse (nomégestrol, lévonorgestrel).",
                 indication_3: "Menopause : œstradiol (Progynova, Dermestril) pour traiter les bouffées de chaleur et prévenir l'ostéoporose, associé à un progestatif si utérus.",
@@ -1510,24 +1518,26 @@
                 progesterone_utrogestan_posologie: "حسب الاستطباب: 200 إلى 400 مغ يومياً، في أخذة أو أخذتين، مساءً يُفضّل (النوم).",
                 progesterone_utrogestan_particularite: "بروجستيرون طبيعي: يدعم طور الجسم الأصفر، يُسهّل الحمل (المساعدة على الإنجاب)، يعالج اضطرابات الدورة وسن اليأس مع الإستروجينات. مطابق للهرمون البشري.",
                 progesterone_utrogestan_conseil: "قد يُسبب نعاساً ودواراً: يُؤخذ مساءً عند النوم. حذّر من احتمال تراجع اليقظة في بداية العلاج.",
-                estradiol_noncontraceptif_title: "4. إستراديول (بروجينوفا، ديرمستريل)",
-                estradiol_noncontraceptif_gen: "إستراديول (فاليرات أو هيميهيدرات).",
-                estradiol_noncontraceptif_formes: "أقراص، لاصقات جلدية، جل.",
-                estradiol_noncontraceptif_posologie: "أقراص: 1 إلى 2 مغ يومياً باستمرار أو دوري. لاصقة: مرة إلى مرتين أسبوعياً. اقترن دائماً ببروجستين عند وجود الرحم.",
-                estradiol_noncontraceptif_particularite: "العلاج الهرموني لسن اليأس: يصحّح نقص الإستروجين ويخفّف هبّات الحر ويمنع فقدان العظام. الطريق الجلدي يُفضّل عند الخطر الخثري.",
-                estradiol_noncontraceptif_conseil: "لا يوجد خطر منفرداً إن وُجد الرحم: اقرن بروجستين 12-14 يوماً شهرياً لحماية بطانة الرحم. مراقبة ثديية منتظمة. لا تدخّن.",
                 progestogel_title: "5. بروجستوجل (جل بروجستيرون)",
                 progestogel_gen: "بروجستيرون (جل).",
                 progestogel_formes: "جل للتطبيق الموضعي الثديي (1٪).",
                 progestogel_posologie: "تطبيق واحد إلى اثنين يومياً على الثدي المؤلم، بتدليك لطيف، حسب الوصفة.",
                 progestogel_particularite: "جل بروجستيرون للاستعمال الموضعي الثديي: يُستعمل في ألم الثدي والكيسات الحميدة. تأثير موضعي مباشر وقليل المرور الجهازي.",
                 progestogel_conseil: "استعمال موضعي فقط: لا تطبّقه على كتلة غير مشخّصة، ورأي طبي عند وجود كتلة ثديية. اغسل اليدين بعد التطبيق.",
+                estradiol_noncontraceptif_title: "4. إستراديول (بروجينوفا، ديرمستريل)",
+                estradiol_noncontraceptif_gen: "إستراديول (فاليرات أو هيميهيدرات).",
+                estradiol_noncontraceptif_formes: "أقراص، لاصقات جلدية، جل.",
+                estradiol_noncontraceptif_posologie: "أقراص: 1 إلى 2 مغ يومياً باستمرار أو دوري. لاصقة: مرة إلى مرتين أسبوعياً. اقترن دائماً ببروجستين عند وجود الرحم.",
+                estradiol_noncontraceptif_particularite: "العلاج الهرموني لسن اليأس: يصحّح نقص الإستروجين ويخفّف هبّات الحر ويمنع فقدان العظام. الطريق الجلدي يُفضّل عند الخطر الخثري.",
+                estradiol_noncontraceptif_conseil: "لا يوجد خطر منفرداً إن وُجد الرحم: اقرن بروجستين 12-14 يوماً شهرياً لحماية بطانة الرحم. مراقبة ثديية منتظمة. لا تدخّن.",
                 estriol_ovestin_title: "6. إستريول (أوفيستين)",
                 estriol_ovestin_gen: "إستريول.",
                 estriol_ovestin_formes: "كريم مهبلي، تحميلات مهبلية (0,5 مغ، 1 مغ).",
                 estriol_ovestin_posologie: "تطبيق واحد مساءً عند النوم، مرة إلى مرتين أسبوعياً بعد مرحلة البداية، حسب الوصفة.",
                 estriol_ovestin_particularite: "إستروجين ذو تأثير موضعي: يُعيد تغذية الغشاء الفرجي المهبلي (جفاف، ضمور، عسر الجماع في سن اليأس) بامتصاص جهازي ضعيف.",
                 estriol_ovestin_conseil: "رغم أنه موضعي، احترم الحظر عند سرطان الثدي أو الرحم. رأي طبي عند النزيف. لا تقرنه بعلاجات مهبلية أخرى دون نصيحة.",
+                group_1_name: "البروجستينات",
+                group_2_name: "الإستروجينات",
                 indication_1: "اضطرابات الدورة وآلام الطمث (عسر الطمث): ديدروجستيرون (دوفاستون) من اليوم 16 إلى 25 من الدورة.",
                 indication_2: "النزيف الرحمي الوظيفي، قصور الجسم الأصفر: بروجستينات اصطناعية (نوميجستيرول، ليفونورجستريل).",
                 indication_3: "سن اليأس: إستراديول (بروجينوفا، ديرمستريل) لعلاج هبّات الحر والوقاية من هشاشة العظام، ويُقترن ببروجستين عند وجود الرحم.",
@@ -1673,24 +1683,26 @@
                 progesterone_utrogestan_posologie: "Depending on indication: 200 to 400 mg daily, in one or two doses, preferably in the evening (sleep).",
                 progesterone_utrogestan_particularite: "Natural progesterone: supports the luteal phase, favors pregnancy (ART), treats cycle disorders and menopause combined with estrogens. Identical to the human hormone.",
                 progesterone_utrogestan_conseil: "May cause drowsiness and dizziness: take in the evening at bedtime. Warn of possible reduced alertness at treatment start.",
-                estradiol_noncontraceptif_title: "4. Estradiol (Progynova, Dermestril)",
-                estradiol_noncontraceptif_gen: "Estradiol (valerate or hemihydrate).",
-                estradiol_noncontraceptif_formes: "Tablets, transdermal patches, gel.",
-                estradiol_noncontraceptif_posologie: "Tablets: 1 to 2 mg/day continuously or cyclically. Patch: 1 to 2 times weekly. Always combine a progestogen if uterus present.",
-                estradiol_noncontraceptif_particularite: "Menopausal hormone therapy (MHT): corrects estrogen deficiency, relieves hot flushes and prevents bone loss. Transdermal route preferred in case of thrombotic risk.",
-                estradiol_noncontraceptif_conseil: "Never use alone if the uterus is present: combine a progestogen 12-14 days/month to protect the endometrium. Regular breast monitoring. Do not smoke.",
                 progestogel_title: "5. Progestogel (progesterone gel)",
                 progestogel_gen: "Progesterone (gel).",
                 progestogel_formes: "Gel for local breast application (1%).",
                 progestogel_posologie: "1 to 2 applications daily on the painful breast, with gentle massage, as prescribed.",
                 progestogel_particularite: "Progesterone gel for local breast use: used in mastodynia (breast pain) and benign mastosis. Direct local action, little systemic passage.",
                 progestogel_conseil: "Local use only: do not apply to an undiagnosed nodule, medical advice if a breast mass is present. Wash hands after application.",
+                estradiol_noncontraceptif_title: "4. Estradiol (Progynova, Dermestril)",
+                estradiol_noncontraceptif_gen: "Estradiol (valerate or hemihydrate).",
+                estradiol_noncontraceptif_formes: "Tablets, transdermal patches, gel.",
+                estradiol_noncontraceptif_posologie: "Tablets: 1 to 2 mg/day continuously or cyclically. Patch: 1 to 2 times weekly. Always combine a progestogen if uterus present.",
+                estradiol_noncontraceptif_particularite: "Menopausal hormone therapy (MHT): corrects estrogen deficiency, relieves hot flushes and prevents bone loss. Transdermal route preferred in case of thrombotic risk.",
+                estradiol_noncontraceptif_conseil: "Never use alone if the uterus is present: combine a progestogen 12-14 days/month to protect the endometrium. Regular breast monitoring. Do not smoke.",
                 estriol_ovestin_title: "6. Estriol (Ovestin)",
                 estriol_ovestin_gen: "Estriol.",
                 estriol_ovestin_formes: "Vaginal cream, vaginal ovules (0.5 mg, 1 mg).",
                 estriol_ovestin_posologie: "1 application in the evening at bedtime, 1 to 2 times weekly after the attack phase, as prescribed.",
                 estriol_ovestin_particularite: "Estrogen with local action: restores vulvovaginal mucosa trophicity (dryness, atrophy, menopausal dyspareunia) with low systemic absorption.",
                 estriol_ovestin_conseil: "Though local, respect the contraindication in breast or uterine cancer. Medical advice if bleeding. Do not combine with other vaginal treatments without advice.",
+                group_1_name: "Progestogens",
+                group_2_name: "Estrogens",
                 indication_1: "Cycle disorders and menstrual pain (dysmenorrhea): dydrogesterone (Duphaston) from day 16 to day 25 of the cycle.",
                 indication_2: "Functional menorrhagia and metrorrhagia, luteal insufficiency: synthetic progestogens (nomegestrol, levonorgestrel).",
                 indication_3: "Menopause: estradiol (Progynova, Dermestril) to treat hot flushes and prevent osteoporosis, combined with a progestogen if uterus present.",
@@ -2042,11 +2054,11 @@
                     "Nomegestrol": [],
                     "Progeva": [],
                     "Utrogestan": [],
+                    "Progestogel": [],
                     "Progynova": [],
                     "Progynova 2": [],
                     "Dermestril": [],
                     "Climaston": [],
-                    "Progestogel": [],
                     "Ovestin": []
         };
 

@@ -1028,14 +1028,16 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Compléments alimentaires</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="complements_grossesse_title">1. Compléments de la grossesse</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="complements_grossesse_gen">Vitamines + minéraux + oligo-éléments (acide folique, fer, iode, vitamine D).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Gestarelle")">Gestarelle</span>,
-                            <span class="drug-link" onclick="showDrugModal("Pregna")">Pregna</span>,
-                            <span class="drug-link" onclick="showDrugModal("Génesia")">Génesia</span>,
-                            <span class="drug-link" onclick="showDrugModal("Vitonic")">Vitonic</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gestarelle&quot;)">Gestarelle</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Pregna&quot;)">Pregna</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Génesia&quot;)">Génesia</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Vitonic&quot;)">Vitonic</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="complements_grossesse_formes">Comprimés ou gélules, en boîtes de 30 à 90 unités.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="complements_grossesse_posologie">1 comprimé par jour au milieu du repas (pour éviter les nausées du fer), durant toute la grossesse.</span></p>
@@ -1046,19 +1048,22 @@
                         <h3 style="color:var(--primary);" data-i18n="phy_lait_title">2. Compléments de l'allaitement (Phy Lait)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="phy_lait_gen">Fenugrec (galactagogue naturel) + vitamines et minéraux.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Phy Lait")">Phy Lait</span>,
-                            <span class="drug-link" onclick="showDrugModal("Solyn")">Solyn</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Phy Lait&quot;)">Phy Lait</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Solyn&quot;)">Solyn</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="phy_lait_formes">Comprimés ou gélules, poudre.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="phy_lait_posologie">1 gélule 3 fois par jour avant les repas ; il est préférable de continuer l'utilisation pendant l'allaitement.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="phy_lait_particularite">À base de fenugrec : aide à régulariser la lactation et favorise la production de lait. Complément non hormonal, utilisé en cas d'allaitement difficile.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="phy_lait_conseil">Prendre avant les repas. Prudence chez la diabétique (risque d'hypoglycémie) et sous anticoagulants. Consulter en cas d'allaitement insuffisant malgré le complément.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Contraceptifs locaux</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="pharmatex_title">3. Pharmatex (spermicide au benzalkonium)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="pharmatex_gen">Chlorure de benzalkonium.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Pharmatex")">Pharmatex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Pharmatex&quot;)">Pharmatex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="pharmatex_formes">Ovule, crème, gel, éponge, capsule vaginale.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="pharmatex_posologie">1 ovule ou 1 dose de crème 5 à 10 minutes avant le rapport, renouveler à chaque rapport.</span></p>
@@ -1066,16 +1071,30 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="pharmatex_conseil">Efficacité modérée utilisé seul : préférer l'association au préservatif. Ne pas utiliser avec un préservatif en latex si le produit est gras. Pas de douche vaginale après le rapport.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="melagyne_title">4. Mélagyne / Abufene (béta-alanine, acide aminé)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="melagyne_gen">Béta-alanine / Acide aminé.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="melagyne_title">4a. Mélagyne (béta-alanine)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="melagyne_gen">Béta-alanine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Melagyne")">Melagyne</span>,
-                            <span class="drug-link" onclick="showDrugModal("Abufene")">Abufene</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Melagyne&quot;)">Melagyne</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="melagyne_formes">Ovule et crème vaginale (Melagyne) ; comprimés (Abufene).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="melagyne_posologie">Melagyne : 1 ovule avant le rapport. Abufene : 1 comprimé 2 à 3 fois par jour, selon la prescription.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="melagyne_particularite">Mélagyne : contraceptif local spermicide à base de béta-alanine (acide aminé). Abufene : acide aminé utilisé contre les bouffées de chaleur de la ménopause.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="melagyne_formes">Ovule et crème vaginale.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="melagyne_posologie">1 ovule avant le rapport.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="melagyne_particularite">Mélagyne : contraceptif local spermicide à base de béta-alanine (acide aminé). Abufene : acide aminé utilisé contre les bouffées de chaleur de la ménopause. (données de classe — non spécifiées séparément dans le livre)</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="melagyne_conseil">Melagyne : action immédiate, à renouveler à chaque rapport, ne pas associer au préservatif latex si le produit est gras. Abufene : produit non hormonal, effet variable.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Traitement de la ménopause</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="abufene_title">4b. Abufene (béta-alanine)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="abufene_gen">Béta-alanine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Abufene&quot;)">Abufene</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="abufene_formes">Comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="abufene_posologie">1 comprimé 2 à 3 fois par jour, selon la prescription.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="abufene_particularite">Mélagyne : contraceptif local spermicide à base de béta-alanine (acide aminé). Abufene : acide aminé utilisé contre les bouffées de chaleur de la ménopause. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="abufene_conseil">Melagyne : action immédiate, à renouveler à chaque rapport, ne pas associer au préservatif latex si le produit est gras. Abufene : produit non hormonal, effet variable.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1325,12 +1344,21 @@
                 pharmatex_posologie: "1 ovule ou 1 dose de crème 5 à 10 minutes avant le rapport, renouveler à chaque rapport.",
                 pharmatex_particularite: "Spermicide tensioactif : détruit les spermatozoïdes dans le vagin avant la rencontre avec l'ovule. Contraceptif local non hormonal, action limitée dans le temps.",
                 pharmatex_conseil: "Efficacité modérée utilisé seul : préférer l'association au préservatif. Ne pas utiliser avec un préservatif en latex si le produit est gras. Pas de douche vaginale après le rapport.",
-                melagyne_title: "4. Mélagyne / Abufene (béta-alanine, acide aminé)",
-                melagyne_gen: "Béta-alanine / Acide aminé.",
-                melagyne_formes: "Ovule et crème vaginale (Melagyne) ; comprimés (Abufene).",
-                melagyne_posologie: "Melagyne : 1 ovule avant le rapport. Abufene : 1 comprimé 2 à 3 fois par jour, selon la prescription.",
-                melagyne_particularite: "Mélagyne : contraceptif local spermicide à base de béta-alanine (acide aminé). Abufene : acide aminé utilisé contre les bouffées de chaleur de la ménopause.",
+                melagyne_title: "4a. Mélagyne (béta-alanine)",
+                melagyne_gen: "Béta-alanine.",
+                melagyne_formes: "Ovule et crème vaginale.",
+                melagyne_posologie: "1 ovule avant le rapport.",
+                melagyne_particularite: "Mélagyne : contraceptif local spermicide à base de béta-alanine (acide aminé). Abufene : acide aminé utilisé contre les bouffées de chaleur de la ménopause. (données de classe — non spécifiées séparément dans le livre)",
                 melagyne_conseil: "Melagyne : action immédiate, à renouveler à chaque rapport, ne pas associer au préservatif latex si le produit est gras. Abufene : produit non hormonal, effet variable.",
+                abufene_title: "4b. Abufene (béta-alanine)",
+                abufene_gen: "Béta-alanine.",
+                abufene_formes: "Comprimés.",
+                abufene_posologie: "1 comprimé 2 à 3 fois par jour, selon la prescription.",
+                abufene_particularite: "Mélagyne : contraceptif local spermicide à base de béta-alanine (acide aminé). Abufene : acide aminé utilisé contre les bouffées de chaleur de la ménopause. (données de classe — non spécifiées séparément dans le livre)",
+                abufene_conseil: "Melagyne : action immédiate, à renouveler à chaque rapport, ne pas associer au préservatif latex si le produit est gras. Abufene : produit non hormonal, effet variable.",
+                group_1_name: "Compléments alimentaires",
+                group_2_name: "Contraceptifs locaux",
+                group_3_name: "Traitement de la ménopause",
                 indication_1: "Grossesse et préconception : acide folique, fer, calcium, vitamine D et iode (Gestarelle, Pregna, Génesia, Vitonic).",
                 indication_2: "Allaitement : compléments riches en vitamines et minéraux, soutien de la lactation (Phy Lait à base de fenugrec).",
                 indication_3: "Contraception locale en complément ou en cas d'intolérance aux hormones : spermicides (Pharmatex, Melagyne).",
@@ -1476,12 +1504,21 @@
                 pharmatex_posologie: "تحميلة أو جرعة كريم 5 إلى 10 دقائق قبل العلاقة، تُجدّد في كل علاقة.",
                 pharmatex_particularite: "مانع فعّال سطحياً: يُدمّر النطاف في المهبل قبل وصولها إلى البويضة. مانع موضعي غير هرموني، تأثيره محدود زمنياً.",
                 pharmatex_conseil: "فعالية متوسطة إذا استُعمل وحده: يُفضّل اقترانه بالواقي. لا تستعمله مع واقٍ لاتكسي إذا كان المنتج دهنياً. لا غسول مهبلي بعد العلاقة.",
-                melagyne_title: "4. ميلاجين / أبوفين (بيتا-ألانين، حمض أميني)",
-                melagyne_gen: "بيتا-ألانين / حمض أميني.",
-                melagyne_formes: "تحميلة وكريم مهبلي (ميلاجين)؛ أقراص (أبوفين).",
-                melagyne_posologie: "ميلاجين: تحميلة قبل العلاقة. أبوفين: قرص 2 إلى 3 مرات يومياً، حسب الوصفة.",
-                melagyne_particularite: "ميلاجين: مانع موضعي مبني على بيتا-ألانين (حمض أميني). أبوفين: حمض أميني يُستعمل ضد هبّات الحر في سن اليأس.",
+                melagyne_title: "4a. ميلاجين (بيتا-ألانين)",
+                melagyne_gen: "بيتا-ألانين.",
+                melagyne_formes: "تحميلة وكريم مهبلي.",
+                melagyne_posologie: "تحميلة واحدة قبل العلاقة.",
+                melagyne_particularite: "ميلاجين: مانع موضعي مبني على بيتا-ألانين (حمض أميني). أبوفين: حمض أميني يُستعمل ضد هبّات الحر في سن اليأس. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
                 melagyne_conseil: "ميلاجين: تأثير فوري، يُجدّد في كل علاقة، لا تقرنه بالواقي اللاتكسي إذا كان دهنياً. أبوفين: منتج غير هرموني، تأثيره متغيّر.",
+                abufene_title: "4b. أبوفين (بيتا-ألانين)",
+                abufene_gen: "بيتا-ألانين.",
+                abufene_formes: "أقراص.",
+                abufene_posologie: "قرص واحد 2 إلى 3 مرات يومياً، حسب الوصفة.",
+                abufene_particularite: "ميلاجين: مانع موضعي مبني على بيتا-ألانين (حمض أميني). أبوفين: حمض أميني يُستعمل ضد هبّات الحر في سن اليأس. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                abufene_conseil: "ميلاجين: تأثير فوري، يُجدّد في كل علاقة، لا تقرنه بالواقي اللاتكسي إذا كان دهنياً. أبوفين: منتج غير هرموني، تأثيره متغيّر.",
+                group_1_name: "المكمّلات الغذائية",
+                group_2_name: "موانع الحمل الموضعية",
+                group_3_name: "علاج سن اليأس",
                 indication_1: "الحمل وما قبل الحمل: حمض الفوليك، الحديد، الكالسيوم، فيتامين D واليود (جيستاريل، بريغنا، جينيزيا، فيتونيك).",
                 indication_2: "الرضاعة: مكمّلات غنية بالفيتامينات والمعادن ودعم الإدرار (فاي ليت من الحلبة).",
                 indication_3: "منع الحمل الموضعي كمكمّل أو عند عدم تحمّل الهرمونات: الموانع (فارماتكس، ميلاجين).",
@@ -1627,12 +1664,21 @@
                 pharmatex_posologie: "1 ovule or 1 dose of cream 5 to 10 minutes before intercourse, renew each time.",
                 pharmatex_particularite: "Surfactant spermicide: destroys sperm in the vagina before contact with the egg. Non-hormonal local contraceptive, time-limited action.",
                 pharmatex_conseil: "Moderate efficacy when used alone: prefer combining with a condom. Do not use with a latex condom if the product is fatty. No douche after intercourse.",
-                melagyne_title: "4. Melagyne / Abufene (beta-alanine, amino acid)",
-                melagyne_gen: "Beta-alanine / Amino acid.",
-                melagyne_formes: "Vaginal ovule and cream (Melagyne); tablets (Abufene).",
-                melagyne_posologie: "Melagyne: 1 ovule before intercourse. Abufene: 1 tablet 2 to 3 times daily, as prescribed.",
-                melagyne_particularite: "Melagyne: local spermicide contraceptive based on beta-alanine (amino acid). Abufene: amino acid used against menopausal hot flushes.",
+                melagyne_title: "4a. Melagyne (beta-alanine)",
+                melagyne_gen: "Beta-alanine.",
+                melagyne_formes: "Vaginal ovule and cream.",
+                melagyne_posologie: "1 ovule before intercourse.",
+                melagyne_particularite: "Melagyne: local spermicide contraceptive based on beta-alanine (amino acid). Abufene: amino acid used against menopausal hot flushes. (class-level data — not specified separately in the book)",
                 melagyne_conseil: "Melagyne: immediate action, renew at each intercourse, do not combine with latex condom if fatty. Abufene: non-hormonal product, variable effect.",
+                abufene_title: "4b. Abufene (beta-alanine)",
+                abufene_gen: "Beta-alanine.",
+                abufene_formes: "Tablets.",
+                abufene_posologie: "1 tablet 2 to 3 times daily, as prescribed.",
+                abufene_particularite: "Melagyne: local spermicide contraceptive based on beta-alanine (amino acid). Abufene: amino acid used against menopausal hot flushes. (class-level data — not specified separately in the book)",
+                abufene_conseil: "Melagyne: immediate action, renew at each intercourse, do not combine with latex condom if fatty. Abufene: non-hormonal product, variable effect.",
+                group_1_name: "Food supplements",
+                group_2_name: "Local contraceptives",
+                group_3_name: "Menopausal treatment",
                 indication_1: "Pregnancy and preconception: folic acid, iron, calcium, vitamin D and iodine (Gestarelle, Pregna, Génesia, Vitonic).",
                 indication_2: "Breastfeeding: supplements rich in vitamins and minerals, lactation support (Phy Lait with fenugreek).",
                 indication_3: "Local contraception as a complement or in case of hormone intolerance: spermicides (Pharmatex, Melagyne).",

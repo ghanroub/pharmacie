@@ -1028,14 +1028,16 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Compléments alimentaires</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="rhu3_glucosamine_chondroitine_title">Glucosamine + chondroitine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu3_glucosamine_chondroitine_gen">Glucosamine + chondroitine sulfate (parfois + calcium, magnésium, vitamine C, vitamine D).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Chondroflex")">Chondroflex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Articosamine")">Articosamine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Glucoflex")">Glucoflex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Structum")">Structum</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Chondroflex&quot;)">Chondroflex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Articosamine&quot;)">Articosamine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Glucoflex&quot;)">Glucoflex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Structum&quot;)">Structum</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu3_glucosamine_chondroitine_formes">Comprimés, gélules, sachets.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu3_glucosamine_chondroitine_posologie">1 comprimé ou gélule 2 à 3 fois par jour au repas, ou 1 sachet par jour selon le produit ; cure de plusieurs semaines à 3 mois.</span></p>
@@ -1046,7 +1048,7 @@
                         <h3 style="color:var(--primary);" data-i18n="rhu3_uridine_b_title">Uridine + vitamines B12 et B9 (Keltican)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu3_uridine_b_gen">Uridine monophosphate + vitamine B12 + vitamine B9.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Keltican")">Keltican</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Keltican&quot;)">Keltican</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu3_uridine_b_formes">Gélules.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu3_uridine_b_posologie">1 gélule par jour, au repas.</span></p>
@@ -1057,14 +1059,15 @@
                         <h3 style="color:var(--primary);" data-i18n="rhu3_curcuma_compose_title">Curcuma + boswellia + écorce de saule</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu3_curcuma_compose_gen">Curcuma (curcumine) + boswellia + écorce de saule (harpagophytum), avec extraits bioactifs (pipérine, vitamine C, vitamine D).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Flexofytol")">Flexofytol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Artroblock")">Artroblock</span>,
-                            <span class="drug-link" onclick="showDrugModal("Arthrofit")">Arthrofit</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flexofytol&quot;)">Flexofytol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Artroblock&quot;)">Artroblock</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Arthrofit&quot;)">Arthrofit</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu3_curcuma_compose_formes">Gélules, comprimés, sachets.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu3_curcuma_compose_posologie">1 à 2 gélules par jour selon le produit, au moment des repas.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu3_curcuma_compose_particularite">Curcuma, boswellia et écorce de saule : confort articulaire et effet anti-inflammatoire naturel (salicine).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu3_curcuma_compose_conseil">Prudence avec les anticoagulants ; à éviter chez la femme enceinte ; l'effet est progressif.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1314,6 +1317,7 @@
                 rhu3_curcuma_compose_posologie: "1 à 2 gélules par jour selon le produit, au moment des repas.",
                 rhu3_curcuma_compose_particularite: "Curcuma, boswellia et écorce de saule : confort articulaire et effet anti-inflammatoire naturel (salicine).",
                 rhu3_curcuma_compose_conseil: "Prudence avec les anticoagulants ; à éviter chez la femme enceinte ; l'effet est progressif.",
+                group_1_name: "Compléments alimentaires",
                 indication_1: "Arthrose et douleurs articulaires : maintien de la souplesse et de la mobilité (glucosamine + chondroitine).",
                 indication_2: "Arthrose du genou et de la hanche (glucosamine + chondroitine ; curcuma).",
                 indication_3: "Polyneuropathies, névralgies et syndromes de la colonne vertébrale, soutien des nerfs périphériques endommagés (Keltican).",
@@ -1459,6 +1463,7 @@
                 rhu3_curcuma_compose_posologie: "1 إلى 2 كبسولة يومياً حسب المنتج، مع الوجبات.",
                 rhu3_curcuma_compose_particularite: "الكركم والبوسويليا ولحاء الصفصاف: راحة المفاصل وتأثير مضاد للالتهاب طبيعي (سليسين).",
                 rhu3_curcuma_compose_conseil: "حذر مع مضادات التخثر؛ يُجتنب لدى الحامل؛ التأثير تدريجي.",
+                group_1_name: "المكملات الغذائية",
                 indication_1: "خشونة المفاصل وآلامها: الحفاظ على المرونة والحركة (جلوكوزامين + كوندرويتين).",
                 indication_2: "خشونة مفصل الركبة والورك (جلوكوزامين + كوندرويتين؛ الكركم).",
                 indication_3: "الاعتلالات العصبية المتعددة والنَوْخ والتهاب الأعصاب ومتلازمات العمود الفقري، ودعم الأعصاب المحيطية المتضررة (Keltican).",
@@ -1604,6 +1609,7 @@
                 rhu3_curcuma_compose_posologie: "1-2 capsules daily depending on the product, with meals.",
                 rhu3_curcuma_compose_particularite: "Turmeric, boswellia and willow bark: joint comfort and natural anti-inflammatory effect (salicin).",
                 rhu3_curcuma_compose_conseil: "Caution with anticoagulants; avoid in pregnant women; the effect is progressive.",
+                group_1_name: "Dietary supplements",
                 indication_1: "Osteoarthritis and joint pain: maintaining suppleness and mobility (glucosamine + chondroitin).",
                 indication_2: "Knee and hip osteoarthritis (glucosamine + chondroitin; turmeric).",
                 indication_3: "Polyneuropathies, neuralgia and spinal syndromes, support of damaged peripheral nerves (Keltican).",

@@ -1028,14 +1028,16 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Inhibiteurs calciques</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="nifedipine_title">1. Nifédipine</h3>
+                        <h3 style="color:var(--primary);" data-i18n="nifedipine_title">Nifédipine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="nifedipine_gen">Nifédipine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Adipine")">Adipine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tensodipine")">Tensodipine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nidilat")">Nidilat</span>,
-                            <span class="drug-link" onclick="showDrugModal("Loxen")">Loxen</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Adipine&quot;)">Adipine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tensodipine&quot;)">Tensodipine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nidilat&quot;)">Nidilat</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Loxen&quot;)">Loxen</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="nifedipine_formes">Comprimés et comprimés LP (10 mg, 20 mg, 30 mg, 60 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="nifedipine_posologie">Adulte : 30 à 60 mg par jour (forme LP), 1 prise par jour, selon avis médical.</span></p>
@@ -1043,12 +1045,12 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="nifedipine_conseil">Avaler les comprimés entiers avec un verre d'eau, ne pas les croquer. Signaler les œdèmes des jambes (fréquents).</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="amlodipine_title">2. Amlodipine</h3>
+                        <h3 style="color:var(--primary);" data-i18n="amlodipine_title">Amlodipine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="amlodipine_gen">Amlodipine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Amlibon")">Amlibon</span>,
-                            <span class="drug-link" onclick="showDrugModal("Amlodal")">Amlodal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Amlor")">Amlor</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Amlibon&quot;)">Amlibon</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Amlodal&quot;)">Amlodal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Amlor&quot;)">Amlor</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="amlodipine_formes">Comprimés (5 mg, 10 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="amlodipine_posologie">Adulte : 5 à 10 mg par jour, 1 prise par jour, à heure fixe.</span></p>
@@ -1056,80 +1058,168 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="amlodipine_conseil">À heure fixe, avec ou sans repas. Œdèmes des chevilles possibles : en informer le médecin (ajustement possible).</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="lercanidipine_nicardipine_title">3. Lercanidipine et nicardipine</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lercanidipine_nicardipine_gen">Lercanidipine / Nicardipine.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="lercanidipine_title">Lercanidipine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lercanidipine_gen">Lercanidipine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Zanidip")">Zanidip</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lerca")">Lerca</span>,
-                            <span class="drug-link" onclick="showDrugModal("Depadium")">Depadium</span>,
-                            <span class="drug-link" onclick="showDrugModal("Pulsagen")">Pulsagen</span>,
-                            <span class="drug-link" onclick="showDrugModal("Epilat")">Epilat</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zanidip&quot;)">Zanidip</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lerca&quot;)">Lerca</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lercanidipine_nicardipine_formes">Comprimés (10 mg, 20 mg, 30 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lercanidipine_nicardipine_posologie">Adulte : lercanidipine 10 à 20 mg/j avant les repas ; nicardipine 30 à 60 mg, 2 fois/j. Selon avis médical.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="lercanidipine_nicardipine_particularite">Inhibiteurs calciques vasodilatateurs sélectifs : utiles dans l'HTA et l'angor. Lercanidipine : bonne tolérance, pas d'effet réflexe sur le cœur.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="lercanidipine_nicardipine_conseil">Lercanidipine : prendre avant les repas, à heure fixed, jamais avec du pamplemousse. Signaler les céphalées et les œdèmes.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lercanidipine_formes">Comprimés (10 mg, 20 mg, 30 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lercanidipine_posologie">Adulte : lercanidipine 10 à 20 mg/j avant les repas.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="lercanidipine_particularite">Inhibiteur calcique vasodilatateur sélectif : utile dans l'HTA et l'angor. Lercanidipine : bonne tolérance, pas d'effet réflexe sur le cœur. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="lercanidipine_conseil">Prendre avant les repas, à heure fixe, jamais avec du pamplemousse. Signaler les céphalées et les œdèmes.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="diltiazem_title">4. Diltiazem</h3>
+                        <h3 style="color:var(--primary);" data-i18n="nicardipine_title">Nicardipine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="nicardipine_gen">Nicardipine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Depadium&quot;)">Depadium</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Pulsagen&quot;)">Pulsagen</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Epilat&quot;)">Epilat</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="nicardipine_formes">Comprimés (10 mg, 20 mg, 30 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="nicardipine_posologie">Adulte : nicardipine 30 à 60 mg, 2 fois/j. Selon avis médical.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="nicardipine_particularite">Inhibiteur calcique vasodilatateur sélectif : utile dans l'HTA et l'angor. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="nicardipine_conseil">Prendre avant les repas, à heure fixe, jamais avec du pamplemousse. Signaler les céphalées et les œdèmes.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="diltiazem_title">Diltiazem</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="diltiazem_gen">Diltiazem.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Tildiem")">Tildiem</span>,
-                            <span class="drug-link" onclick="showDrugModal("Mono-Tildiem")">Mono-Tildiem</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tildiem&quot;)">Tildiem</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Mono-Tildiem&quot;)">Mono-Tildiem</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="diltiazem_formes">Comprimés et comprimés LP (60 mg, 90 mg, 120 mg, 300 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="diltiazem_posologie">Adulte : 200 à 300 mg par jour (forme LP), 1 prise par jour, selon avis médical.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="diltiazem_particularite">Inhibiteur calcique à action cardiaque : ralentit la fréquence et la conduction, en plus de la vasodilatation. Indiqué dans l'angor et certains troubles du rythme (avec bêta-bloquants et digoxine en antiarythmique).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="diltiazem_conseil">Contre-indiqué en cas d'insuffisance cardiaque décompensée ou de bloc. Ne pas associer aux bêta-bloquants sans avis (bradycardie).</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">ARA2 (sartans)</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="ara2_title">5. ARA2 (losartan, valsartan, irbésartan, candésartan, telmisartan)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ara2_gen">Losartan / Valsartan / Irbésartan / Candesartan / Telmisartan.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="losartan_title">Losartan</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="losartan_gen">Losartan.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Cozaar")">Cozaar</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hyzaar")">Hyzaar</span>,
-                            <span class="drug-link" onclick="showDrugModal("Valastan")">Valastan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Mizart")">Mizart</span>,
-                            <span class="drug-link" onclick="showDrugModal("Co-Tareg")">Co-Tareg</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aprovel")">Aprovel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aradex")">Aradex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Irbevel")">Irbevel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Atacand")">Atacand</span>,
-                            <span class="drug-link" onclick="showDrugModal("Blopress")">Blopress</span>,
-                            <span class="drug-link" onclick="showDrugModal("Sarcand")">Sarcand</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hytacand")">Hytacand</span>,
-                            <span class="drug-link" onclick="showDrugModal("Telmisart")">Telmisart</span>,
-                            <span class="drug-link" onclick="showDrugModal("Micardis")">Micardis</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cotensotel")">Cotensotel</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cozaar&quot;)">Cozaar</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hyzaar&quot;)">Hyzaar</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ara2_formes">Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ara2_posologie">Adulte : losartan 50 à 100 mg/j ; valsartan 80 à 320 mg/j ; irbésartan 150 à 300 mg/j ; candésartan 8 à 32 mg/j ; telmisartan 40 à 80 mg/j.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ara2_particularite">Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ara2_conseil">À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="losartan_formes">Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="losartan_posologie">Adulte : losartan 50 à 100 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="losartan_particularite">Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="losartan_conseil">À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="iec_title">6. IEC (captopril, périndopril, ramipril, quinapril)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="iec_gen">Captopril / Périndopril / Ramipril / Quinapril.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="valsartan_title">Valsartan</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="valsartan_gen">Valsartan.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Saipril")">Saipril</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lopril")">Lopril</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ecazide")">Ecazide</span>,
-                            <span class="drug-link" onclick="showDrugModal("Coversyl")">Coversyl</span>,
-                            <span class="drug-link" onclick="showDrugModal("Bipreterax")">Bipreterax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fluterax")">Fluterax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ramitec")">Ramitec</span>,
-                            <span class="drug-link" onclick="showDrugModal("Raminorm")">Raminorm</span>,
-                            <span class="drug-link" onclick="showDrugModal("Triatec")">Triatec</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tritazide")">Tritazide</span>,
-                            <span class="drug-link" onclick="showDrugModal("Acuitel")">Acuitel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tensoprel")">Tensoprel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Acuilix")">Acuilix</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cotensoprel")">Cotensoprel</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Valastan&quot;)">Valastan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Mizart&quot;)">Mizart</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tareg&quot;)">Tareg</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Co-Tareg&quot;)">Co-Tareg</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="iec_formes">Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="iec_posologie">Adulte : captopril 25 à 75 mg/j en 2 à 3 prises ; périndopril 4 à 8 mg/j ; ramipril 2,5 à 10 mg/j ; quinapril 20 à 40 mg/j.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="iec_particularite">Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="iec_conseil">Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="valsartan_formes">Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="valsartan_posologie">Adulte : valsartan 80 à 320 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="valsartan_particularite">Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="valsartan_conseil">À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="irbesartan_title">Irbésartan</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="irbesartan_gen">Irbésartan.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aprovel&quot;)">Aprovel</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aradex&quot;)">Aradex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Irbevel&quot;)">Irbevel</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="irbesartan_formes">Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="irbesartan_posologie">Adulte : irbésartan 150 à 300 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="irbesartan_particularite">Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="irbesartan_conseil">À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="candesartan_title">Candésartan</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="candesartan_gen">Candésartan.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Atacand&quot;)">Atacand</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Blopress&quot;)">Blopress</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sarcand&quot;)">Sarcand</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hytacand&quot;)">Hytacand</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="candesartan_formes">Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="candesartan_posologie">Adulte : candésartan 8 à 32 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="candesartan_particularite">Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="candesartan_conseil">À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="telmisartan_title">Telmisartan</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="telmisartan_gen">Telmisartan.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Telmisart&quot;)">Telmisart</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Micardis&quot;)">Micardis</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cotensotel&quot;)">Cotensotel</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="telmisartan_formes">Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="telmisartan_posologie">Adulte : telmisartan 40 à 80 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="telmisartan_particularite">Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="telmisartan_conseil">À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">IEC</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="captopril_title">Captopril</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="captopril_gen">Captopril.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Saipril&quot;)">Saipril</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lopril&quot;)">Lopril</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ecazide&quot;)">Ecazide</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="captopril_formes">Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="captopril_posologie">Adulte : captopril 25 à 75 mg/j en 2 à 3 prises.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="captopril_particularite">Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="captopril_conseil">Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="perindopril_title">Périndopril</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="perindopril_gen">Périndopril.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Coversyl&quot;)">Coversyl</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Bipreterax&quot;)">Bipreterax</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fluterax&quot;)">Fluterax</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="perindopril_formes">Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="perindopril_posologie">Adulte : périndopril 4 à 8 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="perindopril_particularite">Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="perindopril_conseil">Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="ramipril_title">Ramipril</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ramipril_gen">Ramipril.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ramitec&quot;)">Ramitec</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Raminorm&quot;)">Raminorm</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Triatec&quot;)">Triatec</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tritazide&quot;)">Tritazide</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ramipril_formes">Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ramipril_posologie">Adulte : ramipril 2,5 à 10 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ramipril_particularite">Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ramipril_conseil">Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="quinapril_title">Quinapril</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="quinapril_gen">Quinapril.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Acuitel&quot;)">Acuitel</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tensoprel&quot;)">Tensoprel</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Acuilix&quot;)">Acuilix</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cotensoprel&quot;)">Cotensoprel</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="quinapril_formes">Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="quinapril_posologie">Adulte : quinapril 20 à 40 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="quinapril_particularite">Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="quinapril_conseil">Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1361,42 +1451,93 @@
                 copied: "Copié !",
                 hero_title: "2. LES ANTIHYPERTENSEURS : INHIBITEURS CALCIQUES, ARA2 ET IEC",
                 hero_subtitle: "Inhibiteurs calciques (nifédipine, amlodipine, nicardipine, lercanidipine, diltiazem), ARA2 (losartan, valsartan, irbésartan, candésartan, telmisartan) et IEC (captopril, périndopril, ramipril, quinapril) : mécanismes, contre-indications et noms commerciaux en Algérie.",
-                nifedipine_title: "1. Nifédipine",
+                nifedipine_title: "Nifédipine",
                 nifedipine_gen: "Nifédipine.",
                 nifedipine_formes: "Comprimés et comprimés LP (10 mg, 20 mg, 30 mg, 60 mg).",
                 nifedipine_posologie: "Adulte : 30 à 60 mg par jour (forme LP), 1 prise par jour, selon avis médical.",
                 nifedipine_particularite: "Inhibiteur calcique vasodilatateur : fait baisser la pression artérielle par vasodilatation. Préférer les formes LP à libération contrôlée (éviter les formes à libération immédiate non protégées).",
                 nifedipine_conseil: "Avaler les comprimés entiers avec un verre d'eau, ne pas les croquer. Signaler les œdèmes des jambes (fréquents).",
-                amlodipine_title: "2. Amlodipine",
+                amlodipine_title: "Amlodipine",
                 amlodipine_gen: "Amlodipine.",
                 amlodipine_formes: "Comprimés (5 mg, 10 mg).",
                 amlodipine_posologie: "Adulte : 5 à 10 mg par jour, 1 prise par jour, à heure fixe.",
                 amlodipine_particularite: "Inhibiteur calcique de longue durée d'action (DA 6 à 12 h) : bonne couverture 24 h avec une seule prise. Existe en association avec valsartan (Exforge) ou candésartan (Unisia).",
                 amlodipine_conseil: "À heure fixe, avec ou sans repas. Œdèmes des chevilles possibles : en informer le médecin (ajustement possible).",
-                lercanidipine_nicardipine_title: "3. Lercanidipine et nicardipine",
-                lercanidipine_nicardipine_gen: "Lercanidipine / Nicardipine.",
-                lercanidipine_nicardipine_formes: "Comprimés (10 mg, 20 mg, 30 mg).",
-                lercanidipine_nicardipine_posologie: "Adulte : lercanidipine 10 à 20 mg/j avant les repas ; nicardipine 30 à 60 mg, 2 fois/j. Selon avis médical.",
-                lercanidipine_nicardipine_particularite: "Inhibiteurs calciques vasodilatateurs sélectifs : utiles dans l'HTA et l'angor. Lercanidipine : bonne tolérance, pas d'effet réflexe sur le cœur.",
-                lercanidipine_nicardipine_conseil: "Lercanidipine : prendre avant les repas, à heure fixed, jamais avec du pamplemousse. Signaler les céphalées et les œdèmes.",
-                diltiazem_title: "4. Diltiazem",
+                lercanidipine_title: "Lercanidipine",
+                lercanidipine_gen: "Lercanidipine.",
+                lercanidipine_formes: "Comprimés (10 mg, 20 mg, 30 mg).",
+                lercanidipine_posologie: "Adulte : lercanidipine 10 à 20 mg/j avant les repas.",
+                lercanidipine_particularite: "Inhibiteur calcique vasodilatateur sélectif : utile dans l'HTA et l'angor. Lercanidipine : bonne tolérance, pas d'effet réflexe sur le cœur. (données de classe — non spécifiées séparément dans le livre)",
+                lercanidipine_conseil: "Prendre avant les repas, à heure fixe, jamais avec du pamplemousse. Signaler les céphalées et les œdèmes.",
+                nicardipine_title: "Nicardipine",
+                nicardipine_gen: "Nicardipine.",
+                nicardipine_formes: "Comprimés (10 mg, 20 mg, 30 mg).",
+                nicardipine_posologie: "Adulte : nicardipine 30 à 60 mg, 2 fois/j. Selon avis médical.",
+                nicardipine_particularite: "Inhibiteur calcique vasodilatateur sélectif : utile dans l'HTA et l'angor. (données de classe — non spécifiées séparément dans le livre)",
+                nicardipine_conseil: "Prendre avant les repas, à heure fixe, jamais avec du pamplemousse. Signaler les céphalées et les œdèmes.",
+                diltiazem_title: "Diltiazem",
                 diltiazem_gen: "Diltiazem.",
                 diltiazem_formes: "Comprimés et comprimés LP (60 mg, 90 mg, 120 mg, 300 mg).",
                 diltiazem_posologie: "Adulte : 200 à 300 mg par jour (forme LP), 1 prise par jour, selon avis médical.",
                 diltiazem_particularite: "Inhibiteur calcique à action cardiaque : ralentit la fréquence et la conduction, en plus de la vasodilatation. Indiqué dans l'angor et certains troubles du rythme (avec bêta-bloquants et digoxine en antiarythmique).",
                 diltiazem_conseil: "Contre-indiqué en cas d'insuffisance cardiaque décompensée ou de bloc. Ne pas associer aux bêta-bloquants sans avis (bradycardie).",
-                ara2_title: "5. ARA2 (losartan, valsartan, irbésartan, candésartan, telmisartan)",
-                ara2_gen: "Losartan / Valsartan / Irbésartan / Candesartan / Telmisartan.",
-                ara2_formes: "Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.",
-                ara2_posologie: "Adulte : losartan 50 à 100 mg/j ; valsartan 80 à 320 mg/j ; irbésartan 150 à 300 mg/j ; candésartan 8 à 32 mg/j ; telmisartan 40 à 80 mg/j.",
-                ara2_particularite: "Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC.",
-                ara2_conseil: "À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.",
-                iec_title: "6. IEC (captopril, périndopril, ramipril, quinapril)",
-                iec_gen: "Captopril / Périndopril / Ramipril / Quinapril.",
-                iec_formes: "Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.",
-                iec_posologie: "Adulte : captopril 25 à 75 mg/j en 2 à 3 prises ; périndopril 4 à 8 mg/j ; ramipril 2,5 à 10 mg/j ; quinapril 20 à 40 mg/j.",
-                iec_particularite: "Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente.",
-                iec_conseil: "Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).",
+                losartan_title: "Losartan",
+                losartan_gen: "Losartan.",
+                losartan_formes: "Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.",
+                losartan_posologie: "Adulte : losartan 50 à 100 mg/j.",
+                losartan_particularite: "Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)",
+                losartan_conseil: "À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.",
+                valsartan_title: "Valsartan",
+                valsartan_gen: "Valsartan.",
+                valsartan_formes: "Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.",
+                valsartan_posologie: "Adulte : valsartan 80 à 320 mg/j.",
+                valsartan_particularite: "Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)",
+                valsartan_conseil: "À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.",
+                irbesartan_title: "Irbésartan",
+                irbesartan_gen: "Irbésartan.",
+                irbesartan_formes: "Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.",
+                irbesartan_posologie: "Adulte : irbésartan 150 à 300 mg/j.",
+                irbesartan_particularite: "Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)",
+                irbesartan_conseil: "À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.",
+                candesartan_title: "Candésartan",
+                candesartan_gen: "Candésartan.",
+                candesartan_formes: "Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.",
+                candesartan_posologie: "Adulte : candésartan 8 à 32 mg/j.",
+                candesartan_particularite: "Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)",
+                candesartan_conseil: "À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.",
+                telmisartan_title: "Telmisartan",
+                telmisartan_gen: "Telmisartan.",
+                telmisartan_formes: "Comprimés (25 mg à 80 mg selon molécule), associations fixes avec diurétique.",
+                telmisartan_posologie: "Adulte : telmisartan 40 à 80 mg/j.",
+                telmisartan_particularite: "Antagonistes des récepteurs de l'angiotensine II : antihypertenseurs de premier plan avec néphroprotection. Contre-indiqués pendant la grossesse. Moins de toux qu'avec les IEC. (données de classe — non spécifiées séparément dans le livre)",
+                telmisartan_conseil: "À heure fixe, avec ou sans repas. Surveiller la créatinine et la kaliémie. Jamais pendant la grossesse : prévenir le médecin dès qu'une grossesse est suspectée.",
+                captopril_title: "Captopril",
+                captopril_gen: "Captopril.",
+                captopril_formes: "Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.",
+                captopril_posologie: "Adulte : captopril 25 à 75 mg/j en 2 à 3 prises.",
+                captopril_particularite: "Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)",
+                captopril_conseil: "Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).",
+                perindopril_title: "Périndopril",
+                perindopril_gen: "Périndopril.",
+                perindopril_formes: "Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.",
+                perindopril_posologie: "Adulte : périndopril 4 à 8 mg/j.",
+                perindopril_particularite: "Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)",
+                perindopril_conseil: "Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).",
+                ramipril_title: "Ramipril",
+                ramipril_gen: "Ramipril.",
+                ramipril_formes: "Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.",
+                ramipril_posologie: "Adulte : ramipril 2,5 à 10 mg/j.",
+                ramipril_particularite: "Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)",
+                ramipril_conseil: "Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).",
+                quinapril_title: "Quinapril",
+                quinapril_gen: "Quinapril.",
+                quinapril_formes: "Comprimés (5 mg à 50 mg selon molécule), associations fixes avec indapamide ou hydrochlorothiazide.",
+                quinapril_posologie: "Adulte : quinapril 20 à 40 mg/j.",
+                quinapril_particularite: "Inhibiteurs de l'enzyme de conversion : réduisent la pression artérielle et assurent une néphroprotection et une protection cardiaque majeures (post-infarctus, insuffisance cardiaque). Toux sèche fréquente. (données de classe — non spécifiées séparément dans le livre)",
+                quinapril_conseil: "Toux sèche persistante : signaler au médecin (possible changement pour un ARA2). Jamais pendant la grossesse. Arrêter en cas de gonflement du visage ou des lèvres (urgence).",
+                group_1_name: "Inhibiteurs calciques",
+                group_2_name: "ARA2 (sartans)",
+                group_3_name: "IEC",
                 indication_1: "Hypertension artérielle : inhibiteurs calciques, ARA2 et IEC, en monothérapie ou en association (associations fixes courantes).",
                 indication_2: "Angor (douloureux) : inhibiteurs calciques (amlodipine, diltiazem) et IEC.",
                 indication_3: "Insuffisance cardiaque et post-infarctus : IEC (captopril, ramipril, périndopril) et ARA2 en cas d'intolérance aux IEC.",
@@ -1524,42 +1665,93 @@
                 copied: "تم النسخ!",
                 hero_title: "خافضات الضغط: مثبطات القنوات الكالسية وARA2 وIEC",
                 hero_subtitle: "مثبطات القنوات الكالسية (نيفيديبين، أملوديبين، نيكارديبين، ليركانيديبين، ديلتيازيم)، ARA2 (لوسارتان، فالسارتان، إربيسارتان، كانديسارتان، تلميسارتان) وIEC (كابتوبريل، بيريندوبريل، راميبريل، كينابريل): الآليات ومضادات الاستطباب والأسماء التجارية في الجزائر.",
-                nifedipine_title: "1. نيفيديبين",
+                nifedipine_title: "نيفيديبين",
                 nifedipine_gen: "نيفيديبين.",
                 nifedipine_formes: "أقراص وأقراص ممتدة الإفراز (10 مغ، 20 مغ، 30 مغ، 60 مغ).",
                 nifedipine_posologie: "بالغين: 30 إلى 60 مغ يومياً (الشكل الممتد)، جرعة واحدة يومياً، حسب رأي الطبيب.",
                 nifedipine_particularite: "موسّع وعائي من مثبطات القنوات الكالسية: يخفض ضغط الدم عبر توسع الأوعية. يُفضّل الأشكال ممتدة الإفراز (يُتجنّب الأشكال الفورية غير المحمية).",
                 nifedipine_conseil: "تُبلع الأقراص كاملة مع كوب من الماء، لا تُمضغ. أبلغ عن وذمة الساقين (شائعة).",
-                amlodipine_title: "2. أملوديبين",
+                amlodipine_title: "أملوديبين",
                 amlodipine_gen: "أملوديبين.",
                 amlodipine_formes: "أقراص (5 مغ، 10 مغ).",
                 amlodipine_posologie: "بالغين: 5 إلى 10 مغ يومياً، جرعة واحدة يومياً، في ساعة ثابتة.",
                 amlodipine_particularite: "مثبط قنوات كالسية طويل المفعول (بدء التأثير 6 إلى 12 ساعة): تغطية جيدة على 24 ساعة بجرعة واحدة. متوفر بالاقتران مع فالسارتان (إكسفورج) أو كانديسارتان (أونيسيا).",
                 amlodipine_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. احتمال وذمة الكاحلين: أخبر الطبيب (تعديل محتمل).",
-                lercanidipine_nicardipine_title: "3. ليركانيديبين ونيكارديبين",
-                lercanidipine_nicardipine_gen: "ليركانيديبين / نيكارديبين.",
-                lercanidipine_nicardipine_formes: "أقراص (10 مغ، 20 مغ، 30 مغ).",
-                lercanidipine_nicardipine_posologie: "بالغين: ليركانيديبين 10 إلى 20 مغ/يوم قبل الوجبات؛ نيكارديبين 30 إلى 60 مغ مرتين يومياً. حسب رأي الطبيب.",
-                lercanidipine_nicardipine_particularite: "موسّعات وعائية انتقائية من مثبطات القنوات الكالسية: مفيدة في ارتفاع الضغط والذبحة. ليركانيديبين: تحمل جيد، بلا تأثير انعكاسي على القلب.",
-                lercanidipine_nicardipine_conseil: "ليركانيديبين: يُؤخذ قبل الوجبات، في ساعة ثابتة، وليس مع الجريب فروت أبداً. أبلغ عن الصداع والوذمة.",
-                diltiazem_title: "4. ديلتيازيم",
+                lercanidipine_title: "ليركانيديبين",
+                lercanidipine_gen: "ليركانيديبين.",
+                lercanidipine_formes: "أقراص (10 مغ، 20 مغ، 30 مغ).",
+                lercanidipine_posologie: "بالغين: ليركانيديبين 10 إلى 20 مغ/يوم قبل الوجبات.",
+                lercanidipine_particularite: "موسّع وعائي انتقائي من مثبطات القنوات الكالسية: مفيد في ارتفاع الضغط والذبحة. ليركانيديبين: تحمل جيد، بلا تأثير انعكاسي على القلب. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                lercanidipine_conseil: "يُؤخذ قبل الوجبات، في ساعة ثابتة، وليس مع الجريب فروت أبداً. أبلغ عن الصداع والوذمة.",
+                nicardipine_title: "نيكارديبين",
+                nicardipine_gen: "نيكارديبين.",
+                nicardipine_formes: "أقراص (10 مغ، 20 مغ، 30 مغ).",
+                nicardipine_posologie: "بالغين: نيكارديبين 30 إلى 60 مغ مرتين يومياً. حسب رأي الطبيب.",
+                nicardipine_particularite: "موسّع وعائي انتقائي من مثبطات القنوات الكالسية: مفيد في ارتفاع الضغط والذبحة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                nicardipine_conseil: "يُؤخذ قبل الوجبات، في ساعة ثابتة، وليس مع الجريب فروت أبداً. أبلغ عن الصداع والوذمة.",
+                diltiazem_title: "ديلتيازيم",
                 diltiazem_gen: "ديلتيازيم.",
                 diltiazem_formes: "أقراص وأقراص ممتدة الإفراز (60 مغ، 90 مغ، 120 مغ، 300 مغ).",
                 diltiazem_posologie: "بالغين: 200 إلى 300 مغ يومياً (الشكل الممتد)، جرعة واحدة يومياً، حسب رأي الطبيب.",
                 diltiazem_particularite: "مثبط قنوات كالسية بتأثير قلبي: يُبطئ النبض والتوصيل، إضافة إلى توسع الأوعية. مطلوب في الذبحة وبعض اضطرابات النظم (مع حاصرات بيتا وديغوكسين كمضاد لاضطراب النظم).",
                 diltiazem_conseil: "ممنوع عند قصور القلب غير المعالج أو اضطراب التوصيل. لا يُقترن بحاصرات بيتا دون رأي طبي (بطء النبض).",
-                ara2_title: "5. ARA2 (لوسارتان، فالسارتان، إربيسارتان، كانديسارتان، تلميسارتان)",
-                ara2_gen: "لوسارتان / فالسارتان / إربيسارتان / كانديسارتان / تلميسارتان.",
-                ara2_formes: "أقراص (25 مغ إلى 80 مغ حسب المادة)، اقترانات ثابتة مع مدر.",
-                ara2_posologie: "بالغين: لوسارتان 50 إلى 100 مغ/يوم؛ فالسارتان 80 إلى 320 مغ/يوم؛ إربيسارتان 150 إلى 300 مغ/يوم؛ كانديسارتان 8 إلى 32 مغ/يوم؛ تلميسارتان 40 إلى 80 مغ/يوم.",
-                ara2_particularite: "مضادات مستقبلات أنجيوتيسين 2: خافضات ضغط رائدة مع حماية كلى. ممنوعة أثناء الحمل. سعال أقل من IEC.",
-                ara2_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. راقب الكرياتينين والبوتاسيوم. لا تُؤخذ أبداً أثناء الحمل: أخبر الطبيب فور الاشتباه بحمل.",
-                iec_title: "6. IEC (كابتوبريل، بيريندوبريل، راميبريل، كينابريل)",
-                iec_gen: "كابتوبريل / بيريندوبريل / راميبريل / كينابريل.",
-                iec_formes: "أقراص (5 مغ إلى 50 مغ حسب المادة)، اقترانات ثابتة مع إنداپاميد أو هيدروكلوروثيازيد.",
-                iec_posologie: "بالغين: كابتوبريل 25 إلى 75 مغ/يوم في 2 إلى 3 جرعات؛ بيريندوبريل 4 إلى 8 مغ/يوم؛ راميبريل 2,5 إلى 10 مغ/يوم؛ كينابريل 20 إلى 40 مغ/يوم.",
-                iec_particularite: "مثبطات إنزيم التحويل: تُقلّل ضغط الدم وتوفّر حماية كبية وقلبية كبيرة (ما بعد الاحتشاء، قصور القلب). سعال جاف متكرر.",
-                iec_conseil: "سعال جاف مستمر: أبلغ الطبيب (احتمال التحويل إلى ARA2). لا تُؤخذ أبداً أثناء الحمل. يتوقف عند انتفاخ الوجه أو الشفتين (حالة طارئة).",
+                losartan_title: "لوسارتان",
+                losartan_gen: "لوسارتان.",
+                losartan_formes: "أقراص (25 مغ إلى 80 مغ حسب المادة)، اقترانات ثابتة مع مدر.",
+                losartan_posologie: "بالغين: لوسارتان 50 إلى 100 مغ/يوم.",
+                losartan_particularite: "مضادات مستقبلات أنجيوتيسين 2: خافضات ضغط رائدة مع حماية كلوية. ممنوعة أثناء الحمل. سعال أقل من IEC. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                losartan_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. راقب الكرياتينين والبوتاسيوم. لا تُؤخذ أبداً أثناء الحمل: أخبر الطبيب فور الاشتباه بحمل.",
+                valsartan_title: "فالسارتان",
+                valsartan_gen: "فالسارتان.",
+                valsartan_formes: "أقراص (25 مغ إلى 80 مغ حسب المادة)، اقترانات ثابتة مع مدر.",
+                valsartan_posologie: "بالغين: فالسارتان 80 إلى 320 مغ/يوم.",
+                valsartan_particularite: "مضادات مستقبلات أنجيوتيسين 2: خافضات ضغط رائدة مع حماية كلوية. ممنوعة أثناء الحمل. سعال أقل من IEC. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                valsartan_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. راقب الكرياتينين والبوتاسيوم. لا تُؤخذ أبداً أثناء الحمل: أخبر الطبيب فور الاشتباه بحمل.",
+                irbesartan_title: "إربيسارتان",
+                irbesartan_gen: "إربيسارتان.",
+                irbesartan_formes: "أقراص (25 مغ إلى 80 مغ حسب المادة)، اقترانات ثابتة مع مدر.",
+                irbesartan_posologie: "بالغين: إربيسارتان 150 إلى 300 مغ/يوم.",
+                irbesartan_particularite: "مضادات مستقبلات أنجيوتيسين 2: خافضات ضغط رائدة مع حماية كلوية. ممنوعة أثناء الحمل. سعال أقل من IEC. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                irbesartan_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. راقب الكرياتينين والبوتاسيوم. لا تُؤخذ أبداً أثناء الحمل: أخبر الطبيب فور الاشتباه بحمل.",
+                candesartan_title: "كانديسارتان",
+                candesartan_gen: "كانديسارتان.",
+                candesartan_formes: "أقراص (25 مغ إلى 80 مغ حسب المادة)، اقترانات ثابتة مع مدر.",
+                candesartan_posologie: "بالغين: كانديسارتان 8 إلى 32 مغ/يوم.",
+                candesartan_particularite: "مضادات مستقبلات أنجيوتيسين 2: خافضات ضغط رائدة مع حماية كلوية. ممنوعة أثناء الحمل. سعال أقل من IEC. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                candesartan_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. راقب الكرياتينين والبوتاسيوم. لا تُؤخذ أبداً أثناء الحمل: أخبر الطبيب فور الاشتباه بحمل.",
+                telmisartan_title: "تلميسارتان",
+                telmisartan_gen: "تلميسارتان.",
+                telmisartan_formes: "أقراص (25 مغ إلى 80 مغ حسب المادة)، اقترانات ثابتة مع مدر.",
+                telmisartan_posologie: "بالغين: تلميسارتان 40 إلى 80 مغ/يوم.",
+                telmisartan_particularite: "مضادات مستقبلات أنجيوتيسين 2: خافضات ضغط رائدة مع حماية كلوية. ممنوعة أثناء الحمل. سعال أقل من IEC. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                telmisartan_conseil: "في ساعة ثابتة، مع الوجبة أو بدونها. راقب الكرياتينين والبوتاسيوم. لا تُؤخذ أبداً أثناء الحمل: أخبر الطبيب فور الاشتباه بحمل.",
+                captopril_title: "كابتوبريل",
+                captopril_gen: "كابتوبريل.",
+                captopril_formes: "أقراص (5 مغ إلى 50 مغ حسب المادة)، اقترانات ثابتة مع إنداپاميد أو هيدروكلوروثيازيد.",
+                captopril_posologie: "بالغين: كابتوبريل 25 إلى 75 مغ/يوم في 2 إلى 3 جرعات.",
+                captopril_particularite: "مثبطات إنزيم التحويل: تُقلّل ضغط الدم وتوفّر حماية كلوية وقلبية كبيرة (ما بعد الاحتشاء، قصور القلب). سعال جاف متكرر. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                captopril_conseil: "سعال جاف مستمر: أبلغ الطبيب (احتمال التحويل إلى ARA2). لا تُؤخذ أبداً أثناء الحمل. يتوقف عند انتفاخ الوجه أو الشفتين (حالة طارئة).",
+                perindopril_title: "بيريندوبريل",
+                perindopril_gen: "بيريندوبريل.",
+                perindopril_formes: "أقراص (5 مغ إلى 50 مغ حسب المادة)، اقترانات ثابتة مع إنداپاميد أو هيدروكلوروثيازيد.",
+                perindopril_posologie: "بالغين: بيريندوبريل 4 إلى 8 مغ/يوم.",
+                perindopril_particularite: "مثبطات إنزيم التحويل: تُقلّل ضغط الدم وتوفّر حماية كلوية وقلبية كبيرة (ما بعد الاحتشاء، قصور القلب). سعال جاف متكرر. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                perindopril_conseil: "سعال جاف مستمر: أبلغ الطبيب (احتمال التحويل إلى ARA2). لا تُؤخذ أبداً أثناء الحمل. يتوقف عند انتفاخ الوجه أو الشفتين (حالة طارئة).",
+                ramipril_title: "راميبريل",
+                ramipril_gen: "راميبريل.",
+                ramipril_formes: "أقراص (5 مغ إلى 50 مغ حسب المادة)، اقترانات ثابتة مع إنداپاميد أو هيدروكلوروثيازيد.",
+                ramipril_posologie: "بالغين: راميبريل 2,5 إلى 10 مغ/يوم.",
+                ramipril_particularite: "مثبطات إنزيم التحويل: تُقلّل ضغط الدم وتوفّر حماية كلوية وقلبية كبيرة (ما بعد الاحتشاء، قصور القلب). سعال جاف متكرر. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                ramipril_conseil: "سعال جاف مستمر: أبلغ الطبيب (احتمال التحويل إلى ARA2). لا تُؤخذ أبداً أثناء الحمل. يتوقف عند انتفاخ الوجه أو الشفتين (حالة طارئة).",
+                quinapril_title: "كينابريل",
+                quinapril_gen: "كينابريل.",
+                quinapril_formes: "أقراص (5 مغ إلى 50 مغ حسب المادة)، اقترانات ثابتة مع إنداپاميد أو هيدروكلوروثيازيد.",
+                quinapril_posologie: "بالغين: كينابريل 20 إلى 40 مغ/يوم.",
+                quinapril_particularite: "مثبطات إنزيم التحويل: تُقلّل ضغط الدم وتوفّر حماية كلوية وقلبية كبيرة (ما بعد الاحتشاء، قصور القلب). سعال جاف متكرر. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                quinapril_conseil: "سعال جاف مستمر: أبلغ الطبيب (احتمال التحويل إلى ARA2). لا تُؤخذ أبداً أثناء الحمل. يتوقف عند انتفاخ الوجه أو الشفتين (حالة طارئة).",
+                group_1_name: "مثبطات القنوات الكالسية",
+                group_2_name: "ARA2 (السارتان)",
+                group_3_name: "مثبطات إنزيم التحويل (IEC)",
                 indication_1: "ارتفاع ضغط الدم: مثبطات القنوات الكالسية وARA2 وIEC، كعلاج منفرد أو مقرّن (اقترانات ثابتة شائعة).",
                 indication_2: "الذبحة (المؤلمة): مثبطات القنوات الكالسية (أملوديبين، ديلتيازيم) وIEC.",
                 indication_3: "قصور القلب وما بعد الاحتشاء: IEC (كابتوبريل، راميبريل، بيريندوبريل) وARA2 عند عدم تحمّل IEC.",
@@ -1687,42 +1879,93 @@
                 copied: "Copied!",
                 hero_title: "ANTIHYPERTENSIVES: CALCIUM CHANNEL BLOCKERS, ARBS AND ACE INHIBITORS",
                 hero_subtitle: "Calcium channel blockers (nifedipine, amlodipine, nicardipine, lercanidipine, diltiazem), ARBs (losartan, valsartan, irbesartan, candesartan, telmisartan) and ACE inhibitors (captopril, perindopril, ramipril, quinapril): mechanisms, contraindications and Algerian brand names.",
-                nifedipine_title: "1. Nifedipine",
+                nifedipine_title: "Nifedipine",
                 nifedipine_gen: "Nifedipine.",
                 nifedipine_formes: "Tablets and sustained-release tablets (10 mg, 20 mg, 30 mg, 60 mg).",
                 nifedipine_posologie: "Adult: 30 to 60 mg daily (MR form), once daily, per medical advice.",
                 nifedipine_particularite: "Vasodilating calcium blocker: lowers blood pressure through vasodilation. Prefer controlled sustained-release forms (avoid unprotected immediate-release forms).",
                 nifedipine_conseil: "Swallow tablets whole with a glass of water, do not chew. Report leg edema (frequent).",
-                amlodipine_title: "2. Amlodipine",
+                amlodipine_title: "Amlodipine",
                 amlodipine_gen: "Amlodipine.",
                 amlodipine_formes: "Tablets (5 mg, 10 mg).",
                 amlodipine_posologie: "Adult: 5 to 10 mg daily, once daily, at a fixed time.",
                 amlodipine_particularite: "Long-acting calcium blocker (onset 6 to 12 h): good 24 h coverage with a single dose. Available combined with valsartan (Exforge) or candesartan (Unisia).",
                 amlodipine_conseil: "At a fixed time, with or without meals. Possible ankle edema: inform the doctor (possible adjustment).",
-                lercanidipine_nicardipine_title: "3. Lercanidipine and nicardipine",
-                lercanidipine_nicardipine_gen: "Lercanidipine / Nicardipine.",
-                lercanidipine_nicardipine_formes: "Tablets (10 mg, 20 mg, 30 mg).",
-                lercanidipine_nicardipine_posologie: "Adult: lercanidipine 10 to 20 mg/day before meals; nicardipine 30 to 60 mg twice daily. Per medical advice.",
-                lercanidipine_nicardipine_particularite: "Selective vasodilating calcium blockers: useful in hypertension and angina. Lercanidipine: good tolerance, no reflex effect on the heart.",
-                lercanidipine_nicardipine_conseil: "Lercanidipine: take before meals, at a fixed time, never with grapefruit. Report headaches and edema.",
-                diltiazem_title: "4. Diltiazem",
+                lercanidipine_title: "Lercanidipine",
+                lercanidipine_gen: "Lercanidipine.",
+                lercanidipine_formes: "Tablets (10 mg, 20 mg, 30 mg).",
+                lercanidipine_posologie: "Adult: lercanidipine 10 to 20 mg/day before meals.",
+                lercanidipine_particularite: "Selective vasodilating calcium blocker: useful in hypertension and angina. Lercanidipine: good tolerance, no reflex effect on the heart. (class data — not specified separately in the book)",
+                lercanidipine_conseil: "Take before meals, at a fixed time, never with grapefruit. Report headaches and edema.",
+                nicardipine_title: "Nicardipine",
+                nicardipine_gen: "Nicardipine.",
+                nicardipine_formes: "Tablets (10 mg, 20 mg, 30 mg).",
+                nicardipine_posologie: "Adult: nicardipine 30 to 60 mg twice daily. Per medical advice.",
+                nicardipine_particularite: "Selective vasodilating calcium blocker: useful in hypertension and angina. (class data — not specified separately in the book)",
+                nicardipine_conseil: "Take before meals, at a fixed time, never with grapefruit. Report headaches and edema.",
+                diltiazem_title: "Diltiazem",
                 diltiazem_gen: "Diltiazem.",
                 diltiazem_formes: "Tablets and sustained-release tablets (60 mg, 90 mg, 120 mg, 300 mg).",
                 diltiazem_posologie: "Adult: 200 to 300 mg daily (MR form), once daily, per medical advice.",
                 diltiazem_particularite: "Calcium blocker with cardiac action: slows rate and conduction, in addition to vasodilation. Indicated in angina and some arrhythmias (with beta-blockers and digoxin as antiarrhythmic).",
                 diltiazem_conseil: "Contraindicated in decompensated heart failure or block. Do not combine with beta-blockers without advice (bradycardia).",
-                ara2_title: "5. ARBs (losartan, valsartan, irbesartan, candesartan, telmisartan)",
-                ara2_gen: "Losartan / Valsartan / Irbesartan / Candesartan / Telmisartan.",
-                ara2_formes: "Tablets (25 mg to 80 mg depending on molecule), fixed combinations with a diuretic.",
-                ara2_posologie: "Adult: losartan 50 to 100 mg/day; valsartan 80 to 320 mg/day; irbesartan 150 to 300 mg/day; candesartan 8 to 32 mg/day; telmisartan 40 to 80 mg/day.",
-                ara2_particularite: "Angiotensin II receptor blockers: leading antihypertensives with renal protection. Contraindicated in pregnancy. Less cough than with ACE inhibitors.",
-                ara2_conseil: "At a fixed time, with or without meals. Monitor creatinine and potassium. Never in pregnancy: tell the doctor as soon as pregnancy is suspected.",
-                iec_title: "6. ACE inhibitors (captopril, perindopril, ramipril, quinapril)",
-                iec_gen: "Captopril / Perindopril / Ramipril / Quinapril.",
-                iec_formes: "Tablets (5 mg to 50 mg depending on molecule), fixed combinations with indapamide or hydrochlorothiazide.",
-                iec_posologie: "Adult: captopril 25 to 75 mg/day in 2 to 3 doses; perindopril 4 to 8 mg/day; ramipril 2.5 to 10 mg/day; quinapril 20 to 40 mg/day.",
-                iec_particularite: "Converting enzyme inhibitors: reduce blood pressure and provide major renal and cardiac protection (post-infarction, heart failure). Frequent dry cough.",
-                iec_conseil: "Persistent dry cough: inform the doctor (possible switch to an ARB). Never during pregnancy. Stop in case of swelling of the face or lips (emergency).",
+                losartan_title: "Losartan",
+                losartan_gen: "Losartan.",
+                losartan_formes: "Tablets (25 mg to 80 mg depending on molecule), fixed combinations with a diuretic.",
+                losartan_posologie: "Adult: losartan 50 to 100 mg/day.",
+                losartan_particularite: "Angiotensin II receptor blockers: leading antihypertensives with renal protection. Contraindicated in pregnancy. Less cough than with ACE inhibitors. (class data — not specified separately in the book)",
+                losartan_conseil: "At a fixed time, with or without meals. Monitor creatinine and potassium. Never in pregnancy: tell the doctor as soon as pregnancy is suspected.",
+                valsartan_title: "Valsartan",
+                valsartan_gen: "Valsartan.",
+                valsartan_formes: "Tablets (25 mg to 80 mg depending on molecule), fixed combinations with a diuretic.",
+                valsartan_posologie: "Adult: valsartan 80 to 320 mg/day.",
+                valsartan_particularite: "Angiotensin II receptor blockers: leading antihypertensives with renal protection. Contraindicated in pregnancy. Less cough than with ACE inhibitors. (class data — not specified separately in the book)",
+                valsartan_conseil: "At a fixed time, with or without meals. Monitor creatinine and potassium. Never in pregnancy: tell the doctor as soon as pregnancy is suspected.",
+                irbesartan_title: "Irbesartan",
+                irbesartan_gen: "Irbesartan.",
+                irbesartan_formes: "Tablets (25 mg to 80 mg depending on molecule), fixed combinations with a diuretic.",
+                irbesartan_posologie: "Adult: irbesartan 150 to 300 mg/day.",
+                irbesartan_particularite: "Angiotensin II receptor blockers: leading antihypertensives with renal protection. Contraindicated in pregnancy. Less cough than with ACE inhibitors. (class data — not specified separately in the book)",
+                irbesartan_conseil: "At a fixed time, with or without meals. Monitor creatinine and potassium. Never in pregnancy: tell the doctor as soon as pregnancy is suspected.",
+                candesartan_title: "Candesartan",
+                candesartan_gen: "Candesartan.",
+                candesartan_formes: "Tablets (25 mg to 80 mg depending on molecule), fixed combinations with a diuretic.",
+                candesartan_posologie: "Adult: candesartan 8 to 32 mg/day.",
+                candesartan_particularite: "Angiotensin II receptor blockers: leading antihypertensives with renal protection. Contraindicated in pregnancy. Less cough than with ACE inhibitors. (class data — not specified separately in the book)",
+                candesartan_conseil: "At a fixed time, with or without meals. Monitor creatinine and potassium. Never in pregnancy: tell the doctor as soon as pregnancy is suspected.",
+                telmisartan_title: "Telmisartan",
+                telmisartan_gen: "Telmisartan.",
+                telmisartan_formes: "Tablets (25 mg to 80 mg depending on molecule), fixed combinations with a diuretic.",
+                telmisartan_posologie: "Adult: telmisartan 40 to 80 mg/day.",
+                telmisartan_particularite: "Angiotensin II receptor blockers: leading antihypertensives with renal protection. Contraindicated in pregnancy. Less cough than with ACE inhibitors. (class data — not specified separately in the book)",
+                telmisartan_conseil: "At a fixed time, with or without meals. Monitor creatinine and potassium. Never in pregnancy: tell the doctor as soon as pregnancy is suspected.",
+                captopril_title: "Captopril",
+                captopril_gen: "Captopril.",
+                captopril_formes: "Tablets (5 mg to 50 mg depending on molecule), fixed combinations with indapamide or hydrochlorothiazide.",
+                captopril_posologie: "Adult: captopril 25 to 75 mg/day in 2 to 3 doses.",
+                captopril_particularite: "Converting enzyme inhibitors: reduce blood pressure and provide major renal and cardiac protection (post-infarction, heart failure). Frequent dry cough. (class data — not specified separately in the book)",
+                captopril_conseil: "Persistent dry cough: inform the doctor (possible switch to an ARB). Never during pregnancy. Stop in case of swelling of the face or lips (emergency).",
+                perindopril_title: "Perindopril",
+                perindopril_gen: "Perindopril.",
+                perindopril_formes: "Tablets (5 mg to 50 mg depending on molecule), fixed combinations with indapamide or hydrochlorothiazide.",
+                perindopril_posologie: "Adult: perindopril 4 to 8 mg/day.",
+                perindopril_particularite: "Converting enzyme inhibitors: reduce blood pressure and provide major renal and cardiac protection (post-infarction, heart failure). Frequent dry cough. (class data — not specified separately in the book)",
+                perindopril_conseil: "Persistent dry cough: inform the doctor (possible switch to an ARB). Never during pregnancy. Stop in case of swelling of the face or lips (emergency).",
+                ramipril_title: "Ramipril",
+                ramipril_gen: "Ramipril.",
+                ramipril_formes: "Tablets (5 mg to 50 mg depending on molecule), fixed combinations with indapamide or hydrochlorothiazide.",
+                ramipril_posologie: "Adult: ramipril 2.5 to 10 mg/day.",
+                ramipril_particularite: "Converting enzyme inhibitors: reduce blood pressure and provide major renal and cardiac protection (post-infarction, heart failure). Frequent dry cough. (class data — not specified separately in the book)",
+                ramipril_conseil: "Persistent dry cough: inform the doctor (possible switch to an ARB). Never during pregnancy. Stop in case of swelling of the face or lips (emergency).",
+                quinapril_title: "Quinapril",
+                quinapril_gen: "Quinapril.",
+                quinapril_formes: "Tablets (5 mg to 50 mg depending on molecule), fixed combinations with indapamide or hydrochlorothiazide.",
+                quinapril_posologie: "Adult: quinapril 20 to 40 mg/day.",
+                quinapril_particularite: "Converting enzyme inhibitors: reduce blood pressure and provide major renal and cardiac protection (post-infarction, heart failure). Frequent dry cough. (class data — not specified separately in the book)",
+                quinapril_conseil: "Persistent dry cough: inform the doctor (possible switch to an ARB). Never during pregnancy. Stop in case of swelling of the face or lips (emergency).",
+                group_1_name: "Calcium channel blockers",
+                group_2_name: "ARBs (sartans)",
+                group_3_name: "ACE inhibitors",
                 indication_1: "Hypertension: calcium channel blockers, ARBs and ACE inhibitors, as monotherapy or combined (common fixed combinations).",
                 indication_2: "Angina (painful): calcium channel blockers (amlodipine, diltiazem) and ACE inhibitors.",
                 indication_3: "Heart failure and post-infarction: ACE inhibitors (captopril, ramipril, perindopril) and ARBs in case of ACE inhibitor intolerance.",
@@ -2087,6 +2330,7 @@
                     "Hyzaar": [],
                     "Valastan": [],
                     "Mizart": [],
+                    "Tareg": [],
                     "Co-Tareg": [],
                     "Aprovel": [],
                     "Aradex": [],

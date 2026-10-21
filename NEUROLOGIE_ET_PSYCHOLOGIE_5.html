@@ -1028,13 +1028,15 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Benzodiazépines</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="neuro5_diazepam_title">Diazépam</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_diazepam_gen">Diazépam.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Valium")">Valium</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diazal")">Diazal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Orzépam")">Orzépam</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Valium&quot;)">Valium</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diazal&quot;)">Diazal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Orzépam&quot;)">Orzépam</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_diazepam_formes">Comprimés (5 mg, 10 mg), solution injectable, suppositoires.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_diazepam_posologie">Adulte : 5 à 10 mg en 2 à 3 prises/jour ; dose maximale variable ; prémédication par voie injectable ; dose réduite chez le sujet âgé.</span></p>
@@ -1045,7 +1047,7 @@
                         <h3 style="color:var(--primary);" data-i18n="neuro5_lorazepam_title">Lorazépam</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_lorazepam_gen">Lorazépam.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Temesta")">Temesta</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Temesta&quot;)">Temesta</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_lorazepam_formes">Comprimés (1 mg, 2,5 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_lorazepam_posologie">Adulte : 1 à 7,5 mg/jour en 2 à 3 prises ; dose réduite chez le sujet âgé (1 à 2 mg/jour).</span></p>
@@ -1056,9 +1058,9 @@
                         <h3 style="color:var(--primary);" data-i18n="neuro5_bromazepam_title">Bromazépam</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_bromazepam_gen">Bromazépam.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lexomil")">Lexomil</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lexopam")">Lexopam</span>,
-                            <span class="drug-link" onclick="showDrugModal("Kietyl")">Kietyl</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lexomil&quot;)">Lexomil</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lexopam&quot;)">Lexopam</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Kietyl&quot;)">Kietyl</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_bromazepam_formes">Comprimés quadrisécables (6 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_bromazepam_posologie">Adulte : 3 à 12 mg/jour en 2 à 3 prises ; commencer par 3 mg/jour ; dose réduite chez le sujet âgé.</span></p>
@@ -1066,28 +1068,41 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_bromazepam_conseil">Interdit de servir sans ordonnance ; comprimé sécable ; somnolence et dépendance ; sevrage progressif.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="neuro5_prazepam_clorazepate_title">Prazépam et clorazépate</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_prazepam_clorazepate_gen">Prazépam et clorazépate.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="neuro5_prazepam_title">Prazépam</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_prazepam_gen">Prazépam.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Transxène")">Transxène</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tranxène")">Tranxène</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cloraxene")">Cloraxene</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lysanxia")">Lysanxia</span>,
-                            <span class="drug-link" onclick="showDrugModal("Xavel")">Xavel</span>,
-                            <span class="drug-link" onclick="showDrugModal("Preziva")">Preziva</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Transxène&quot;)">Transxène</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lysanxia&quot;)">Lysanxia</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xavel&quot;)">Xavel</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Preziva&quot;)">Preziva</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_prazepam_clorazepate_formes">Comprimés, gélules, solution buvable.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_prazepam_clorazepate_posologie">Adulte : prazépam 10 à 30 mg/jour en 1 à 3 prises ; clorazépate 5 à 20 mg/jour selon les cas.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_prazepam_clorazepate_particularite">Benzodiazépines à longue durée d'action : anxiété chronique, sevrage alcoolique et prévention du delirium.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_prazepam_clorazepate_conseil">Interdit de servir sans ordonnance ; accumulation chez le sujet âgé ; somnolence et dépendance ; sevrage progressif.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_prazepam_formes">Comprimés, gélules, solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_prazepam_posologie">10 à 30 mg/jour en 1 à 3 prises.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_prazepam_particularite">Benzodiazépines à longue durée d'action : anxiété chronique, sevrage alcoolique et prévention du delirium. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_prazepam_conseil">Interdit de servir sans ordonnance ; accumulation chez le sujet âgé ; somnolence et dépendance ; sevrage progressif.</span></p>
                     </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="neuro5_clorazepate_title">Clorazépate</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_clorazepate_gen">Clorazépate.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tranxène&quot;)">Tranxène</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cloraxene&quot;)">Cloraxene</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_clorazepate_formes">Comprimés, gélules, solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_clorazepate_posologie">5 à 20 mg/jour selon les cas.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_clorazepate_particularite">Benzodiazépines à longue durée d'action : anxiété chronique, sevrage alcoolique et prévention du delirium. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_clorazepate_conseil">Interdit de servir sans ordonnance ; accumulation chez le sujet âgé ; somnolence et dépendance ; sevrage progressif.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Autres anxiolytiques</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="neuro5_hydroxyzine_title">Hydroxyzine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_hydroxyzine_gen">Hydroxyzine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Atarax")">Atarax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hydroxyl")">Hydroxyl</span>,
-                            <span class="drug-link" onclick="showDrugModal("Croxizine")">Croxizine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Atarax&quot;)">Atarax</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hydroxyl&quot;)">Hydroxyl</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Croxizine&quot;)">Croxizine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_hydroxyzine_formes">Comprimés (25 mg, 100 mg), sirop, solution injectable (hospital).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_hydroxyzine_posologie">Adulte : 25 à 100 mg/jour en 2 à 3 prises ; dose réduite chez le sujet âgé.</span></p>
@@ -1095,16 +1110,38 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_hydroxyzine_conseil">Interdit de servir sans ordonnance ; somnolence, sécheresse de la bouche ; prudence en conduite ; peut allonger le QT.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="neuro5_etifoxine_meprobamate_buspirone_title">Étifoxine, méprobamate et buspirone</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_etifoxine_meprobamate_buspirone_gen">Étifoxine, méprobamate et buspirone.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="neuro5_etifoxine_title">Étifoxine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_etifoxine_gen">Étifoxine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Stresam")">Stresam</span>,
-                            <span class="drug-link" onclick="showDrugModal("Equanil")">Equanil</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Stresam&quot;)">Stresam</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_etifoxine_meprobamate_buspirone_formes">Comprimés, gélules.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_etifoxine_meprobamate_buspirone_posologie">Étifoxine : 150 à 300 mg/jour en 2 à 3 prises, cure courte. Méprobamate : 400 à 1200 mg/jour. Buspirone : 15 à 30 mg/jour.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_etifoxine_meprobamate_buspirone_particularite">Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_etifoxine_meprobamate_buspirone_conseil">Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_etifoxine_formes">Comprimés, gélules.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_etifoxine_posologie">150 à 300 mg/jour en 2 à 3 prises, cure courte.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_etifoxine_particularite">Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_etifoxine_conseil">Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="neuro5_meprobamate_title">Méprobamate</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_meprobamate_gen">Méprobamate.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Equanil&quot;)">Equanil</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_meprobamate_formes">Comprimés, gélules.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_meprobamate_posologie">400 à 1200 mg/jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_meprobamate_particularite">Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_meprobamate_conseil">Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="neuro5_buspirone_title">Buspirone</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro5_buspirone_gen">Buspirone.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro5_buspirone_formes">Comprimés, gélules.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro5_buspirone_posologie">15 à 30 mg/jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro5_buspirone_particularite">Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro5_buspirone_conseil">Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1354,24 +1391,44 @@
                 neuro5_bromazepam_posologie: "Adulte : 3 à 12 mg/jour en 2 à 3 prises ; commencer par 3 mg/jour ; dose réduite chez le sujet âgé.",
                 neuro5_bromazepam_particularite: "Benzodiazépine très utilisée en officine : anxiété et manifestations psychosomatiques.",
                 neuro5_bromazepam_conseil: "Interdit de servir sans ordonnance ; comprimé sécable ; somnolence et dépendance ; sevrage progressif.",
-                neuro5_prazepam_clorazepate_title: "Prazépam et clorazépate",
-                neuro5_prazepam_clorazepate_gen: "Prazépam et clorazépate.",
-                neuro5_prazepam_clorazepate_formes: "Comprimés, gélules, solution buvable.",
-                neuro5_prazepam_clorazepate_posologie: "Adulte : prazépam 10 à 30 mg/jour en 1 à 3 prises ; clorazépate 5 à 20 mg/jour selon les cas.",
-                neuro5_prazepam_clorazepate_particularite: "Benzodiazépines à longue durée d'action : anxiété chronique, sevrage alcoolique et prévention du delirium.",
-                neuro5_prazepam_clorazepate_conseil: "Interdit de servir sans ordonnance ; accumulation chez le sujet âgé ; somnolence et dépendance ; sevrage progressif.",
+                neuro5_prazepam_title: "Prazépam",
+                neuro5_prazepam_gen: "Prazépam.",
+                neuro5_prazepam_formes: "Comprimés, gélules, solution buvable.",
+                neuro5_prazepam_posologie: "10 à 30 mg/jour en 1 à 3 prises.",
+                neuro5_prazepam_particularite: "Benzodiazépines à longue durée d'action : anxiété chronique, sevrage alcoolique et prévention du delirium. (données de classe — non spécifiées séparément dans le livre)",
+                neuro5_prazepam_conseil: "Interdit de servir sans ordonnance ; accumulation chez le sujet âgé ; somnolence et dépendance ; sevrage progressif.",
+                neuro5_clorazepate_title: "Clorazépate",
+                neuro5_clorazepate_gen: "Clorazépate.",
+                neuro5_clorazepate_formes: "Comprimés, gélules, solution buvable.",
+                neuro5_clorazepate_posologie: "5 à 20 mg/jour selon les cas.",
+                neuro5_clorazepate_particularite: "Benzodiazépines à longue durée d'action : anxiété chronique, sevrage alcoolique et prévention du delirium. (données de classe — non spécifiées séparément dans le livre)",
+                neuro5_clorazepate_conseil: "Interdit de servir sans ordonnance ; accumulation chez le sujet âgé ; somnolence et dépendance ; sevrage progressif.",
                 neuro5_hydroxyzine_title: "Hydroxyzine",
                 neuro5_hydroxyzine_gen: "Hydroxyzine.",
                 neuro5_hydroxyzine_formes: "Comprimés (25 mg, 100 mg), sirop, solution injectable (hospital).",
                 neuro5_hydroxyzine_posologie: "Adulte : 25 à 100 mg/jour en 2 à 3 prises ; dose réduite chez le sujet âgé.",
                 neuro5_hydroxyzine_particularite: "Antihistaminique sédatif : anxiolytique non benzodiazépinique, également antiémétique et utilisé comme hypnotique léger.",
                 neuro5_hydroxyzine_conseil: "Interdit de servir sans ordonnance ; somnolence, sécheresse de la bouche ; prudence en conduite ; peut allonger le QT.",
-                neuro5_etifoxine_meprobamate_buspirone_title: "Étifoxine, méprobamate et buspirone",
-                neuro5_etifoxine_meprobamate_buspirone_gen: "Étifoxine, méprobamate et buspirone.",
-                neuro5_etifoxine_meprobamate_buspirone_formes: "Comprimés, gélules.",
-                neuro5_etifoxine_meprobamate_buspirone_posologie: "Étifoxine : 150 à 300 mg/jour en 2 à 3 prises, cure courte. Méprobamate : 400 à 1200 mg/jour. Buspirone : 15 à 30 mg/jour.",
-                neuro5_etifoxine_meprobamate_buspirone_particularite: "Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent.",
-                neuro5_etifoxine_meprobamate_buspirone_conseil: "Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.",
+                neuro5_etifoxine_title: "Étifoxine",
+                neuro5_etifoxine_gen: "Étifoxine.",
+                neuro5_etifoxine_formes: "Comprimés, gélules.",
+                neuro5_etifoxine_posologie: "150 à 300 mg/jour en 2 à 3 prises, cure courte.",
+                neuro5_etifoxine_particularite: "Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent. (données de classe — non spécifiées séparément dans le livre)",
+                neuro5_etifoxine_conseil: "Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.",
+                neuro5_meprobamate_title: "Méprobamate",
+                neuro5_meprobamate_gen: "Méprobamate.",
+                neuro5_meprobamate_formes: "Comprimés, gélules.",
+                neuro5_meprobamate_posologie: "400 à 1200 mg/jour.",
+                neuro5_meprobamate_particularite: "Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent. (données de classe — non spécifiées séparément dans le livre)",
+                neuro5_meprobamate_conseil: "Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.",
+                neuro5_buspirone_title: "Buspirone",
+                neuro5_buspirone_gen: "Buspirone.",
+                neuro5_buspirone_formes: "Comprimés, gélules.",
+                neuro5_buspirone_posologie: "15 à 30 mg/jour.",
+                neuro5_buspirone_particularite: "Anxiolytiques non benzodiazépiniques : étifoxine dans l'anxiété et les manifestations somatiques, buspirone sans dépendance mais à effet lent. (données de classe — non spécifiées séparément dans le livre)",
+                neuro5_buspirone_conseil: "Interdit de servir sans ordonnance ; le buspirone n'agit pas immédiatement ; méprobamate : dépendance et danger en surdose.",
+                group_1_name: "Benzodiazépines",
+                group_2_name: "Autres anxiolytiques",
                 indication_1: "Anxiété réactionnelle et troubles anxieux (traitement d'appoint).",
                 indication_2: "Anxiété associée à un syndrome dépressif.",
                 indication_3: "Prémédication avant une intervention ou un examen (diazépam).",
@@ -1517,24 +1574,44 @@
                 neuro5_bromazepam_posologie: "بالغين: 3 إلى 12 مغ/يوم في 2 إلى 3 جرعات؛ البدء بـ 3 مغ/يوم؛ جرعة مخفّضة عند كبار السن.",
                 neuro5_bromazepam_particularite: "بنزوديازيبين كثير الاستعمال في الصيدلية: القلق والمظاهر النفسجسدية.",
                 neuro5_bromazepam_conseil: "يُمنع التسليم دون وصفة؛ قرص قابل للتقسيط؛ نعاس وتبعية؛ سحب تدريجي.",
-                neuro5_prazepam_clorazepate_title: "برازيبام وكلورازيبات",
-                neuro5_prazepam_clorazepate_gen: "برازيبام وكلورازيبات.",
-                neuro5_prazepam_clorazepate_formes: "أقراص، كبسولات، محلول للشرب.",
-                neuro5_prazepam_clorazepate_posologie: "بالغين: برازيبام 10 إلى 30 مغ/يوم في 1 إلى 3 جرعات؛ كلورازيبات 5 إلى 20 مغ/يوم حسب الحالة.",
-                neuro5_prazepam_clorazepate_particularite: "بنزوديازيبينات طويلة المفعول: القلق المزمن وسحب الكحول والوقاية من الهذيان.",
-                neuro5_prazepam_clorazepate_conseil: "يُمنع التسليم دون وصفة؛ تراكم عند كبار السن؛ نعاس وتبعية؛ سحب تدريجي.",
+                neuro5_prazepam_title: "برازيبام",
+                neuro5_prazepam_gen: "برازيبام.",
+                neuro5_prazepam_formes: "أقراص، كبسولات، محلول للشرب.",
+                neuro5_prazepam_posologie: "10 إلى 30 مغ/يوم في 1 إلى 3 جرعات.",
+                neuro5_prazepam_particularite: "بنزوديازيبينات طويلة المفعول: القلق المزمن وسحب الكحول والوقاية من الهذيان. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro5_prazepam_conseil: "يُمنع التسليم دون وصفة؛ تراكم عند كبار السن؛ نعاس وتبعية؛ سحب تدريجي.",
+                neuro5_clorazepate_title: "كلورازيبات",
+                neuro5_clorazepate_gen: "كلورازيبات.",
+                neuro5_clorazepate_formes: "أقراص، كبسولات، محلول للشرب.",
+                neuro5_clorazepate_posologie: "5 إلى 20 مغ/يوم حسب الحالة.",
+                neuro5_clorazepate_particularite: "بنزوديازيبينات طويلة المفعول: القلق المزمن وسحب الكحول والوقاية من الهذيان. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro5_clorazepate_conseil: "يُمنع التسليم دون وصفة؛ تراكم عند كبار السن؛ نعاس وتبعية؛ سحب تدريجي.",
                 neuro5_hydroxyzine_title: "هيدروكسيزين",
                 neuro5_hydroxyzine_gen: "هيدروكسيزين.",
                 neuro5_hydroxyzine_formes: "أقراص (25 مغ، 100 مغ)، شراب، محلول للحقن (مستشفى).",
                 neuro5_hydroxyzine_posologie: "بالغين: 25 إلى 100 مغ/يوم في 2 إلى 3 جرعات؛ جرعة مخفّضة عند كبار السن.",
                 neuro5_hydroxyzine_particularite: "مضاد للهيستامين مهدئ: مزيل للقلق غير بنزوديازيبيني، مضاد للقيء أيضاً ويُستعمل كمنوم خفيف.",
                 neuro5_hydroxyzine_conseil: "يُمنع التسليم دون وصفة؛ نعاس، جفاف الفم؛ حذر عند القيادة؛ قد يطيل QT.",
-                neuro5_etifoxine_meprobamate_buspirone_title: "إيتيفوكسين، ميبروبامات وبوسبيرون",
-                neuro5_etifoxine_meprobamate_buspirone_gen: "إيتيفوكسين، ميبروبامات وبوسبيرون.",
-                neuro5_etifoxine_meprobamate_buspirone_formes: "أقراص، كبسولات.",
-                neuro5_etifoxine_meprobamate_buspirone_posologie: "إيتيفوكسين: 150 إلى 300 مغ/يوم في 2 إلى 3 جرعات، علاج قصير. ميبروبامات: 400 إلى 1200 مغ/يوم. بوسبيرون: 15 إلى 30 مغ/يوم.",
-                neuro5_etifoxine_meprobamate_buspirone_particularite: "مزيلات قلق غير بنزوديازيبينية: إيتيفوكسين في القلق والمظاهر الجسدية، بوسبيرون دون تبعية لكن بمفعول بطيء.",
-                neuro5_etifoxine_meprobamate_buspirone_conseil: "يُمنع التسليم دون وصفة؛ البوسبيرون لا يعمل فوراً؛ ميبروبامات: تبعية وخطر عند الجرعة الزائدة.",
+                neuro5_etifoxine_title: "إيتيفوكسين",
+                neuro5_etifoxine_gen: "إيتيفوكسين.",
+                neuro5_etifoxine_formes: "أقراص، كبسولات.",
+                neuro5_etifoxine_posologie: "150 إلى 300 مغ/يوم في 2 إلى 3 جرعات، علاج قصير.",
+                neuro5_etifoxine_particularite: "مزيلات قلق غير بنزوديازيبينية: إيتيفوكسين في القلق والمظاهر الجسدية، بوسبيرون دون تبعية لكن بمفعول بطيء. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro5_etifoxine_conseil: "يُمنع التسليم دون وصفة؛ البوسبيرون لا يعمل فوراً؛ ميبروبامات: تبعية وخطر عند الجرعة الزائدة.",
+                neuro5_meprobamate_title: "ميبروبامات",
+                neuro5_meprobamate_gen: "ميبروبامات.",
+                neuro5_meprobamate_formes: "أقراص، كبسولات.",
+                neuro5_meprobamate_posologie: "400 إلى 1200 مغ/يوم.",
+                neuro5_meprobamate_particularite: "مزيلات قلق غير بنزوديازيبينية: إيتيفوكسين في القلق والمظاهر الجسدية، بوسبيرون دون تبعية لكن بمفعول بطيء. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro5_meprobamate_conseil: "يُمنع التسليم دون وصفة؛ البوسبيرون لا يعمل فوراً؛ ميبروبامات: تبعية وخطر عند الجرعة الزائدة.",
+                neuro5_buspirone_title: "بوسبيرون",
+                neuro5_buspirone_gen: "بوسبيرون.",
+                neuro5_buspirone_formes: "أقراص، كبسولات.",
+                neuro5_buspirone_posologie: "15 إلى 30 مغ/يوم.",
+                neuro5_buspirone_particularite: "مزيلات قلق غير بنزوديازيبينية: إيتيفوكسين في القلق والمظاهر الجسدية، بوسبيرون دون تبعية لكن بمفعول بطيء. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro5_buspirone_conseil: "يُمنع التسليم دون وصفة؛ البوسبيرون لا يعمل فوراً؛ ميبروبامات: تبعية وخطر عند الجرعة الزائدة.",
+                group_1_name: "البنزوديازيبينات",
+                group_2_name: "مزيلات قلق أخرى",
                 indication_1: "القلق التفاعلي واضطرابات القلق (علاج مساعد).",
                 indication_2: "القلق المصحوب بمتلازمة اكتئابية.",
                 indication_3: "التحضير قبل عملية أو فحص (ديازيبام).",
@@ -1680,24 +1757,44 @@
                 neuro5_bromazepam_posologie: "Adult: 3-12 mg/day in 2-3 doses; start with 3 mg/day; reduced dose in the elderly.",
                 neuro5_bromazepam_particularite: "Benzodiazepine widely used in the pharmacy: anxiety and psychosomatic manifestations.",
                 neuro5_bromazepam_conseil: "Dispensing without prescription is prohibited; scored tablet; drowsiness and dependence; progressive withdrawal.",
-                neuro5_prazepam_clorazepate_title: "Prazepam and clorazepate",
-                neuro5_prazepam_clorazepate_gen: "Prazepam and clorazepate.",
-                neuro5_prazepam_clorazepate_formes: "Tablets, capsules, oral solution.",
-                neuro5_prazepam_clorazepate_posologie: "Adult: prazepam 10-30 mg/day in 1-3 doses; clorazepate 5-20 mg/day depending on case.",
-                neuro5_prazepam_clorazepate_particularite: "Long-acting benzodiazepines: chronic anxiety, alcohol withdrawal and prevention of delirium.",
-                neuro5_prazepam_clorazepate_conseil: "Dispensing without prescription is prohibited; accumulation in the elderly; drowsiness and dependence; progressive withdrawal.",
+                neuro5_prazepam_title: "Prazepam",
+                neuro5_prazepam_gen: "Prazepam.",
+                neuro5_prazepam_formes: "Tablets, capsules, oral solution.",
+                neuro5_prazepam_posologie: "10-30 mg/day in 1-3 doses.",
+                neuro5_prazepam_particularite: "Long-acting benzodiazepines: chronic anxiety, alcohol withdrawal and prevention of delirium. (class data — not specified separately in the book)",
+                neuro5_prazepam_conseil: "Dispensing without prescription is prohibited; accumulation in the elderly; drowsiness and dependence; progressive withdrawal.",
+                neuro5_clorazepate_title: "Clorazepate",
+                neuro5_clorazepate_gen: "Clorazepate.",
+                neuro5_clorazepate_formes: "Tablets, capsules, oral solution.",
+                neuro5_clorazepate_posologie: "5-20 mg/day depending on the case.",
+                neuro5_clorazepate_particularite: "Long-acting benzodiazepines: chronic anxiety, alcohol withdrawal and prevention of delirium. (class data — not specified separately in the book)",
+                neuro5_clorazepate_conseil: "Dispensing without prescription is prohibited; accumulation in the elderly; drowsiness and dependence; progressive withdrawal.",
                 neuro5_hydroxyzine_title: "Hydroxyzine",
                 neuro5_hydroxyzine_gen: "Hydroxyzine.",
                 neuro5_hydroxyzine_formes: "Tablets (25 mg, 100 mg), syrup, injectable solution (hospital).",
                 neuro5_hydroxyzine_posologie: "Adult: 25-100 mg/day in 2-3 doses; reduced dose in the elderly.",
                 neuro5_hydroxyzine_particularite: "Sedative antihistamine: non-benzodiazepine anxiolytic, also antiemetic and used as a mild hypnotic.",
                 neuro5_hydroxyzine_conseil: "Dispensing without prescription is prohibited; drowsiness, dry mouth; caution when driving; may prolong QT.",
-                neuro5_etifoxine_meprobamate_buspirone_title: "Etifoxine, meprobamate and buspirone",
-                neuro5_etifoxine_meprobamate_buspirone_gen: "Etifoxine, meprobamate and buspirone.",
-                neuro5_etifoxine_meprobamate_buspirone_formes: "Tablets, capsules.",
-                neuro5_etifoxine_meprobamate_buspirone_posologie: "Etifoxine: 150-300 mg/day in 2-3 doses, short course. Meprobamate: 400-1200 mg/day. Buspirone: 15-30 mg/day.",
-                neuro5_etifoxine_meprobamate_buspirone_particularite: "Non-benzodiazepine anxiolytics: etifoxine in anxiety and somatic manifestations, buspirone without dependence but slow-acting.",
-                neuro5_etifoxine_meprobamate_buspirone_conseil: "Dispensing without prescription is prohibited; buspirone does not act immediately; meprobamate: dependence and overdose danger.",
+                neuro5_etifoxine_title: "Etifoxine",
+                neuro5_etifoxine_gen: "Etifoxine.",
+                neuro5_etifoxine_formes: "Tablets, capsules.",
+                neuro5_etifoxine_posologie: "150-300 mg/day in 2-3 doses, short course.",
+                neuro5_etifoxine_particularite: "Non-benzodiazepine anxiolytics: etifoxine in anxiety and somatic manifestations, buspirone without dependence but slow-acting. (class data — not specified separately in the book)",
+                neuro5_etifoxine_conseil: "Dispensing without prescription is prohibited; buspirone does not act immediately; meprobamate: dependence and overdose danger.",
+                neuro5_meprobamate_title: "Meprobamate",
+                neuro5_meprobamate_gen: "Meprobamate.",
+                neuro5_meprobamate_formes: "Tablets, capsules.",
+                neuro5_meprobamate_posologie: "400-1200 mg/day.",
+                neuro5_meprobamate_particularite: "Non-benzodiazepine anxiolytics: etifoxine in anxiety and somatic manifestations, buspirone without dependence but slow-acting. (class data — not specified separately in the book)",
+                neuro5_meprobamate_conseil: "Dispensing without prescription is prohibited; buspirone does not act immediately; meprobamate: dependence and overdose danger.",
+                neuro5_buspirone_title: "Buspirone",
+                neuro5_buspirone_gen: "Buspirone.",
+                neuro5_buspirone_formes: "Tablets, capsules.",
+                neuro5_buspirone_posologie: "15-30 mg/day.",
+                neuro5_buspirone_particularite: "Non-benzodiazepine anxiolytics: etifoxine in anxiety and somatic manifestations, buspirone without dependence but slow-acting. (class data — not specified separately in the book)",
+                neuro5_buspirone_conseil: "Dispensing without prescription is prohibited; buspirone does not act immediately; meprobamate: dependence and overdose danger.",
+                group_1_name: "Benzodiazepines",
+                group_2_name: "Other anxiolytics",
                 indication_1: "Reactive anxiety and anxiety disorders (adjunctive treatment).",
                 indication_2: "Anxiety associated with a depressive syndrome.",
                 indication_3: "Premedication before surgery or an examination (diazepam).",
@@ -2052,11 +2149,11 @@
                     "Lexopam": [],
                     "Kietyl": [],
                     "Transxène": [],
-                    "Tranxène": [],
-                    "Cloraxene": [],
                     "Lysanxia": [],
                     "Xavel": [],
                     "Preziva": [],
+                    "Tranxène": [],
+                    "Cloraxene": [],
                     "Atarax": [],
                     "Hydroxyl": [],
                     "Croxizine": [],

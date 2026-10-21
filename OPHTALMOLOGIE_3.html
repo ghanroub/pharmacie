@@ -1028,12 +1028,14 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Aminosides</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="gentamicine_opht_title">1. Gentamicine (aminoside)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="gentamicine_opht_gen">Gentamicine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Gentalline")">Gentalline</span>,
-                            <span class="drug-link" onclick="showDrugModal("Gentadar")">Gentadar</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gentalline&quot;)">Gentalline</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gentadar&quot;)">Gentadar</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="gentamicine_opht_formes">Collyre en solution (0,3 %), pommade ophtalmique.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="gentamicine_opht_posologie">1 à 2 gouttes dans chaque œil, 3 à 4 fois par jour, 5 à 7 jours.</span></p>
@@ -1044,75 +1046,111 @@
                         <h3 style="color:var(--primary);" data-i18n="tobramycine_opht_title">2. Tobramycine (aminoside)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="tobramycine_opht_gen">Tobramycine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Tobrex")">Tobrex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Obrax")">Obrax</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tobrex&quot;)">Tobrex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Obrax&quot;)">Obrax</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="tobramycine_opht_formes">Collyre en solution (0,3 %), pommade ophtalmique.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="tobramycine_opht_posologie">1 à 2 gouttes, 4 à 6 fois par jour les 2 premiers jours, puis 2 à 4 fois/j.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="tobramycine_opht_particularite">Aminoside de référence en ophtalmologie : excellent couverture des Pseudomonas aeruginosa, utile pour les porteurs de lentilles et les ulcères cornéens.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="tobramycine_opht_conseil">Sous ordonnance. Vigilance en cas d'utilisation prolongée (résistance et surinfection fongique). Ne pas utiliser pour une kératite virale.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Quinolones</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="ciprofloxacine_opht_title">3. Ciprofloxacine (quinolone)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ciprofloxacine_opht_gen">Chlorhydrate de ciprofloxacine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Ciloxan")">Ciloxan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ciprodar")">Ciprodar</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ciprotek")">Ciprotek</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciloxan&quot;)">Ciloxan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciprodar&quot;)">Ciprodar</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ciprotek&quot;)">Ciprotek</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ciprofloxacine_opht_formes">Collyre en solution (0,3 %), pommade ophtalmique.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ciprofloxacine_opht_posologie">1 à 2 gouttes toutes les 15 min à 1 h en phase aiguë, puis 4 fois par jour, 7 à 14 jours.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ciprofloxacine_opht_particularite">Quinolone à large spectre et bactéricide : pénètre bien la cornée, traitement de référence des kératites et ulcères bactériens (y compris Pseudomonas).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ciprofloxacine_opht_conseil">Sous ordonnance. Éviter les AINS en association. Les quinolones sont déconseillées chez l'enfant et le sujet jeune en usage systémique.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Macrolides</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="azithromycine_opht_title">4. Azithromycine (Azyter)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="azithromycine_opht_gen">Azithromycine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Azyter")">Azyter</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Azyter&quot;)">Azyter</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="azithromycine_opht_formes">Collyre en solution (15 mg/ml), flacon unidose.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="azithromycine_opht_posologie">1 goutte dans chaque œil, 2 fois par jour pendant 5 jours (goutte au réveil et au coucher).</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="azithromycine_opht_particularite">Macrolide ophtalmique à action prolongée : actif sur les germes atypiques (Chlamydia trachomatis) et les conjonctivites bactériennes. Posologie simplifiée : 2 instillations par jour.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="azithromycine_opht_conseil">Posologie impérative : 1 goutte matin ET 1 goutte le soir, 5 jours durant, même si l'œil est guéri avant. Flacon unidose à jeter après usage.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Autres anti-infectieux</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="acide_fusidique_opht_title">5. Acide fusidique</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acide_fusidique_opht_gen">Acide fusidique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Fucithalmic")">Fucithalmic</span>,
-                            <span class="drug-link" onclick="showDrugModal("Acifudal")">Acifudal</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fucithalmic&quot;)">Fucithalmic</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Acifudal&quot;)">Acifudal</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acide_fusidique_opht_formes">Collyre en solution (10 mg/g), pommade ophtalmique.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acide_fusidique_opht_posologie">1 goutte dans chaque œil, 2 fois par jour pendant 7 jours (collyre) ; pommade : 1 à 2 fois par jour.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acide_fusidique_opht_particularite">Antibiotique actif sur les staphylocoques (y compris certaines souches résistantes aux autres antibiotiques). Forme collyre visqueuse qui reste longtemps au contact.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acide_fusidique_opht_conseil">Sous ordonnance. La pommade trouble la vue : l'appliquer le soir au coucher. Retirer les lentilles pendant le traitement.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_5_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiseptiques</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="antiseptiques_opht_title">6. Antiseptiques : hexamidine et acide borique</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="antiseptiques_opht_gen">Hexamidine / Acide borique.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="hexamidine_opht_title">6a. Hexamidine (antiseptique)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="hexamidine_opht_gen">Hexamidine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Desomedine")">Desomedine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dacryoserum")">Dacryoserum</span>,
-                            <span class="drug-link" onclick="showDrugModal("Borax")">Borax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Tymer")">Tymer</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Desomedine&quot;)">Desomedine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Tymer&quot;)">Tymer</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="antiseptiques_opht_formes">Collyre en solution (hexamidine 0,05 %, acide borique 3 %), collutoire, poudre.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="antiseptiques_opht_posologie">1 à 2 gouttes, 2 à 4 fois par jour, en lavage oculaire (sérum boriqué) 1 à 2 fois par jour.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="antiseptiques_opht_particularite">Antiseptiques de surface : action bakéricide modérée, utilisés pour les irritations, conjonctivites simples et toilettes oculaires. Peuvent être délivrés sans ordonnance.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="antiseptiques_opht_conseil">Ne pas confondre avec un antibiotique : si les symptômes persistent plus de 48-72 h, consulter. Flacon contaminé si la solution est trouble : jeter.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="hexamidine_opht_formes">Collyre en solution (hexamidine 0,05 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="hexamidine_opht_posologie">1 à 2 gouttes, 2 à 4 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="hexamidine_opht_particularite">Antiseptiques de surface : action bakéricide modérée, utilisés pour les irritations, conjonctivites simples et toilettes oculaires. Peuvent être délivrés sans ordonnance. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="hexamidine_opht_conseil">Ne pas confondre avec un antibiotique : si les symptômes persistent plus de 48-72 h, consulter. Flacon contaminé si la solution est trouble : jeter.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="antiviraux_opht_title">7. Antiviraux : aciclovir et ganciclovir</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="antiviraux_opht_gen">Aciclovir / Ganciclovir.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="acide_borique_opht_title">6b. Acide borique (antiseptique)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acide_borique_opht_gen">Acide borique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Zovirax")">Zovirax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Virgan")">Virgan</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dacryoserum&quot;)">Dacryoserum</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Borax&quot;)">Borax</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="antiviraux_opht_formes">Pommade ophtalmique (aciclovir 3 %), gel ophtalmique (ganciclovir 0,15 %).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="antiviraux_opht_posologie">Aciclovir : 1 application 5 fois par jour. Virgan : 1 goutte 5 fois par jour, réduite à 3 fois/j dès l'amélioration.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="antiviraux_opht_particularite">Analogues nucléosidiques : inhibent la DNA polymérase du virus de l'herpès et bloquent la réplication virale. Traitement de la kératite herpétique (conjonctivite ou kératite dendritique).</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="antiviraux_opht_conseil">Dès les premiers picotements ou vésicules d'une poussée d'herpès, commencer le traitement. La corticothérapie est formellement contre-indiquée sans antiviral. Pommade : application au doigt ou dans le sac conjonctival.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acide_borique_opht_formes">Collyre en solution (acide borique 3 %), sérum boriqué.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acide_borique_opht_posologie">Lavage oculaire : 1 à 2 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="acide_borique_opht_particularite">Antiseptiques de surface : action bakéricide modérée, utilisés pour les irritations, conjonctivites simples et toilettes oculaires. Peuvent être délivrés sans ordonnance. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="acide_borique_opht_conseil">Ne pas confondre avec un antibiotique : si les symptômes persistent plus de 48-72 h, consulter. Flacon contaminé si la solution est trouble : jeter.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_6_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiviraux</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="aciclovir_opht_title">7a. Aciclovir (antiviral)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aciclovir_opht_gen">Aciclovir.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zovirax&quot;)">Zovirax</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aciclovir_opht_formes">Pommade ophtalmique (aciclovir 3 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aciclovir_opht_posologie">1 application 5 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aciclovir_opht_particularite">Analogues nucléosidiques : inhibent la DNA polymérase du virus de l'herpès et bloquent la réplication virale. Traitement de la kératite herpétique (conjonctivite ou kératite dendritique). (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aciclovir_opht_conseil">Dès les premiers picotements ou vésicules d'une poussée d'herpès, commencer le traitement. La corticothérapie est formellement contre-indiquée sans antiviral. Pommade : application au doigt ou dans le sac conjonctival.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="ganciclovir_opht_title">7b. Ganciclovir (antiviral)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ganciclovir_opht_gen">Ganciclovir.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Virgan&quot;)">Virgan</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ganciclovir_opht_formes">Gel ophtalmique (ganciclovir 0,15 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ganciclovir_opht_posologie">1 goutte 5 fois par jour, réduite à 3 fois par jour dès l'amélioration.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ganciclovir_opht_particularite">Analogues nucléosidiques : inhibent la DNA polymérase du virus de l'herpès et bloquent la réplication virale. Traitement de la kératite herpétique (conjonctivite ou kératite dendritique). (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ganciclovir_opht_conseil">Dès les premiers picotements ou vésicules d'une poussée d'herpès, commencer le traitement. La corticothérapie est formellement contre-indiquée sans antiviral. Pommade : application au doigt ou dans le sac conjonctival.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1374,18 +1412,36 @@
                 acide_fusidique_opht_posologie: "1 goutte dans chaque œil, 2 fois par jour pendant 7 jours (collyre) ; pommade : 1 à 2 fois par jour.",
                 acide_fusidique_opht_particularite: "Antibiotique actif sur les staphylocoques (y compris certaines souches résistantes aux autres antibiotiques). Forme collyre visqueuse qui reste longtemps au contact.",
                 acide_fusidique_opht_conseil: "Sous ordonnance. La pommade trouble la vue : l'appliquer le soir au coucher. Retirer les lentilles pendant le traitement.",
-                antiseptiques_opht_title: "6. Antiseptiques : hexamidine et acide borique",
-                antiseptiques_opht_gen: "Hexamidine / Acide borique.",
-                antiseptiques_opht_formes: "Collyre en solution (hexamidine 0,05 %, acide borique 3 %), collutoire, poudre.",
-                antiseptiques_opht_posologie: "1 à 2 gouttes, 2 à 4 fois par jour, en lavage oculaire (sérum boriqué) 1 à 2 fois par jour.",
-                antiseptiques_opht_particularite: "Antiseptiques de surface : action bakéricide modérée, utilisés pour les irritations, conjonctivites simples et toilettes oculaires. Peuvent être délivrés sans ordonnance.",
-                antiseptiques_opht_conseil: "Ne pas confondre avec un antibiotique : si les symptômes persistent plus de 48-72 h, consulter. Flacon contaminé si la solution est trouble : jeter.",
-                antiviraux_opht_title: "7. Antiviraux : aciclovir et ganciclovir",
-                antiviraux_opht_gen: "Aciclovir / Ganciclovir.",
-                antiviraux_opht_formes: "Pommade ophtalmique (aciclovir 3 %), gel ophtalmique (ganciclovir 0,15 %).",
-                antiviraux_opht_posologie: "Aciclovir : 1 application 5 fois par jour. Virgan : 1 goutte 5 fois par jour, réduite à 3 fois/j dès l'amélioration.",
-                antiviraux_opht_particularite: "Analogues nucléosidiques : inhibent la DNA polymérase du virus de l'herpès et bloquent la réplication virale. Traitement de la kératite herpétique (conjonctivite ou kératite dendritique).",
-                antiviraux_opht_conseil: "Dès les premiers picotements ou vésicules d'une poussée d'herpès, commencer le traitement. La corticothérapie est formellement contre-indiquée sans antiviral. Pommade : application au doigt ou dans le sac conjonctival.",
+                hexamidine_opht_title: "6a. Hexamidine (antiseptique)",
+                hexamidine_opht_gen: "Hexamidine.",
+                hexamidine_opht_formes: "Collyre en solution (hexamidine 0,05 %).",
+                hexamidine_opht_posologie: "1 à 2 gouttes, 2 à 4 fois par jour.",
+                hexamidine_opht_particularite: "Antiseptiques de surface : action bakéricide modérée, utilisés pour les irritations, conjonctivites simples et toilettes oculaires. Peuvent être délivrés sans ordonnance. (données de classe — non spécifiées séparément dans le livre)",
+                hexamidine_opht_conseil: "Ne pas confondre avec un antibiotique : si les symptômes persistent plus de 48-72 h, consulter. Flacon contaminé si la solution est trouble : jeter.",
+                acide_borique_opht_title: "6b. Acide borique (antiseptique)",
+                acide_borique_opht_gen: "Acide borique.",
+                acide_borique_opht_formes: "Collyre en solution (acide borique 3 %), sérum boriqué.",
+                acide_borique_opht_posologie: "Lavage oculaire : 1 à 2 fois par jour.",
+                acide_borique_opht_particularite: "Antiseptiques de surface : action bakéricide modérée, utilisés pour les irritations, conjonctivites simples et toilettes oculaires. Peuvent être délivrés sans ordonnance. (données de classe — non spécifiées séparément dans le livre)",
+                acide_borique_opht_conseil: "Ne pas confondre avec un antibiotique : si les symptômes persistent plus de 48-72 h, consulter. Flacon contaminé si la solution est trouble : jeter.",
+                aciclovir_opht_title: "7a. Aciclovir (antiviral)",
+                aciclovir_opht_gen: "Aciclovir.",
+                aciclovir_opht_formes: "Pommade ophtalmique (aciclovir 3 %).",
+                aciclovir_opht_posologie: "1 application 5 fois par jour.",
+                aciclovir_opht_particularite: "Analogues nucléosidiques : inhibent la DNA polymérase du virus de l'herpès et bloquent la réplication virale. Traitement de la kératite herpétique (conjonctivite ou kératite dendritique). (données de classe — non spécifiées séparément dans le livre)",
+                aciclovir_opht_conseil: "Dès les premiers picotements ou vésicules d'une poussée d'herpès, commencer le traitement. La corticothérapie est formellement contre-indiquée sans antiviral. Pommade : application au doigt ou dans le sac conjonctival.",
+                ganciclovir_opht_title: "7b. Ganciclovir (antiviral)",
+                ganciclovir_opht_gen: "Ganciclovir.",
+                ganciclovir_opht_formes: "Gel ophtalmique (ganciclovir 0,15 %).",
+                ganciclovir_opht_posologie: "1 goutte 5 fois par jour, réduite à 3 fois par jour dès l'amélioration.",
+                ganciclovir_opht_particularite: "Analogues nucléosidiques : inhibent la DNA polymérase du virus de l'herpès et bloquent la réplication virale. Traitement de la kératite herpétique (conjonctivite ou kératite dendritique). (données de classe — non spécifiées séparément dans le livre)",
+                ganciclovir_opht_conseil: "Dès les premiers picotements ou vésicules d'une poussée d'herpès, commencer le traitement. La corticothérapie est formellement contre-indiquée sans antiviral. Pommade : application au doigt ou dans le sac conjonctival.",
+                group_1_name: "Aminosides",
+                group_2_name: "Quinolones",
+                group_3_name: "Macrolides",
+                group_4_name: "Autres anti-infectieux",
+                group_5_name: "Antiseptiques",
+                group_6_name: "Antiviraux",
                 indication_1: "Conjonctivites bactériennes, blépharites, orgelets et dacryocystites (aminosides, quinolones, acide fusidique).",
                 indication_2: "Kératites bactériennes et ulcères cornéens : quinolones (ciprofloxacine) et tobramycine, sous contrôle ophtalmologique.",
                 indication_3: "Conjonctivites du nouveau-né et à Chlamydia : azithromycine (Azyter), posologie adaptée.",
@@ -1543,18 +1599,36 @@
                 acide_fusidique_opht_posologie: "قطرة في كل عين، مرتين يومياً لمدة 7 أيام (قطرات)؛ المرهم: مرة إلى مرتين يومياً.",
                 acide_fusidique_opht_particularite: "مضاد حيوي فعال على المكورات العنقودية (منها بعض السوائل المقاومة للمضادات الأخرى). شكل لزيج يبقى طويلاً في ملامسة العين.",
                 acide_fusidique_opht_conseil: "بوصفة طبي. المرهم يُضعف الرؤية: يُوضع مساءً عند النوم. أزِل العدسات أثناء العلاج.",
-                antiseptiques_opht_title: "6. المطهّرات: هكسامدين وحمض بوريك",
-                antiseptiques_opht_gen: "هكسامدين / حمض بوريك.",
-                antiseptiques_opht_formes: "قطرات عينية محلول (هكسامدين 0,05٪، حمض بوريك 3٪)، غسول، مسحوق.",
-                antiseptiques_opht_posologie: "قطرتان، 2 إلى 4 مرات يومياً، كغسل للعين (مصل بوريك) مرة إلى مرتين يومياً.",
-                antiseptiques_opht_particularite: "مطهّرات سطحية: تأثير باكتيريسيدي معتدل، تُستعمل للتهيجات والتهابات الملتحمة البسيطة وغسل العين. قد تُسلَّم دون وصفة.",
-                antiseptiques_opht_conseil: "لا تخلطها مع مضاد حيوي: إذا استمرت الأعراض أكثر من 48-72 ساعة، استشر الطبيب. القارورة ملوثة إذا كان المحلول مُعتِماً: ارمِها.",
-                antiviraux_opht_title: "7. المضادات الفيروسية: أسيلوفير وغانسيكلوفير",
-                antiviraux_opht_gen: "أسيلوفير / غانسيكلوفير.",
-                antiviraux_opht_formes: "مرهم عيني (أسيلوفير 3٪)، جل عيني (غانسيكلوفير 0,15٪).",
-                antiviraux_opht_posologie: "أسيلوفير: 5 مرات يومياً. فيرغان: قطرة 5 مرات يومياً، تُقلّل إلى 3 مرات يومياً فور التحسن.",
-                antiviraux_opht_particularite: "نظائر النوكليوسيدات: تُثبّط بوليميراز الدنا لفيروس الهربس وتمنع التكاثر الفيروسي. علاج التهاب القرنية بالهربس (ملتحمة أو قرنية تاجية).",
-                antiviraux_opht_conseil: "عند أول وخز أو حويصلات في نوبة هربس، ابدأ العلاج. العلاج بالكورتيكويدات ممنوع بحزم بدون مضاد فيروسي. المرهم: يُوضع باليد أو في كيس الملتحمة.",
+                hexamidine_opht_title: "6a. هكسامدين (مطهّر)",
+                hexamidine_opht_gen: "هكسامدين.",
+                hexamidine_opht_formes: "قطرات عينية محلول (هكسامدين 0,05٪).",
+                hexamidine_opht_posologie: "قطرتان، 2 إلى 4 مرات يومياً.",
+                hexamidine_opht_particularite: "مطهّرات سطحية: تأثير باكتيريسيدي معتدل، تُستعمل للتهيجات والتهابات الملتحمة البسيطة وغسل العين. قد تُسلَّم دون وصفة. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                hexamidine_opht_conseil: "لا تخلطها مع مضاد حيوي: إذا استمرت الأعراض أكثر من 48-72 ساعة، استشر الطبيب. القارورة ملوثة إذا كان المحلول مُعتِماً: ارمِها.",
+                acide_borique_opht_title: "6b. حمض البوريك (مطهّر)",
+                acide_borique_opht_gen: "حمض البوريك.",
+                acide_borique_opht_formes: "قطرات عينية محلول (حمض بوريك 3٪)، مصل بوريك.",
+                acide_borique_opht_posologie: "غسل العين: مرة إلى مرتين يومياً.",
+                acide_borique_opht_particularite: "مطهّرات سطحية: تأثير باكتيريسيدي معتدل، تُستعمل للتهيجات والتهابات الملتحمة البسيطة وغسل العين. قد تُسلَّم دون وصفة. (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                acide_borique_opht_conseil: "لا تخلطها مع مضاد حيوي: إذا استمرت الأعراض أكثر من 48-72 ساعة، استشر الطبيب. القارورة ملوثة إذا كان المحلول مُعتِماً: ارمِها.",
+                aciclovir_opht_title: "7a. أسيكلوفير (مضاد فيروسي)",
+                aciclovir_opht_gen: "أسيكلوفير.",
+                aciclovir_opht_formes: "مرهم عيني (أسيكلوفير 3٪).",
+                aciclovir_opht_posologie: "تطبيق واحد 5 مرات يومياً.",
+                aciclovir_opht_particularite: "نظائر النوكليوسيدات: تُثبّط بوليميراز الدنا لفيروس الهربس وتمنع التكاثر الفيروسي. علاج التهاب القرنية بالهربس (ملتحمة أو قرنية تاجية). (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                aciclovir_opht_conseil: "عند أول وخز أو حويصلات في نوبة هربس، ابدأ العلاج. العلاج بالكورتيكويدات ممنوع بحزم بدون مضاد فيروسي. المرهم: يُوضع باليد أو في كيس الملتحمة.",
+                ganciclovir_opht_title: "7b. غانسيكلوفير (مضاد فيروسي)",
+                ganciclovir_opht_gen: "غانسيكلوفير.",
+                ganciclovir_opht_formes: "جل عيني (غانسيكلوفير 0,15٪).",
+                ganciclovir_opht_posologie: "قطرة 5 مرات يومياً، تُقلّل إلى 3 مرات يومياً فور التحسن.",
+                ganciclovir_opht_particularite: "نظائر النوكليوسيدات: تُثبّط بوليميراز الدنا لفيروس الهربس وتمنع التكاثر الفيروسي. علاج التهاب القرنية بالهربس (ملتحمة أو قرنية تاجية). (بيانات صنفية — غير محددة بشكل منفصل في الكتاب)",
+                ganciclovir_opht_conseil: "عند أول وخز أو حويصلات في نوبة هربس، ابدأ العلاج. العلاج بالكورتيكويدات ممنوع بحزم بدون مضاد فيروسي. المرهم: يُوضع باليد أو في كيس الملتحمة.",
+                group_1_name: "الأمينوسايدات",
+                group_2_name: "الكينولونات",
+                group_3_name: "الماكروليدات",
+                group_4_name: "مضادات عدوى أخرى",
+                group_5_name: "المطهّرات",
+                group_6_name: "المضادات الفيروسية",
                 indication_1: "التهابات الملتحمة البكتيرية، التهاب الجفون، الخُرزة والتهاب الكيس الدمعي (أمينوسايدات، كينولونات، حمض فوزيديك).",
                 indication_2: "التهاب القرنية البكتيري وقرحات القرنية: كينولونات (سيبروفلوكساسين) وتوبراميسين، تحت متابعة طب العين.",
                 indication_3: "التهاب ملتحمة المولود وكلاميديا: أزيثرومايسين (أزيتر)، بجرعة مُكيّفة.",
@@ -1712,18 +1786,36 @@
                 acide_fusidique_opht_posologie: "1 drop in each eye, twice daily for 7 days (drops); ointment: 1 to 2 times daily.",
                 acide_fusidique_opht_particularite: "Antibiotic active on staphyloclocci (including some strains resistant to other antibiotics). Viscous drop form that stays in contact longer.",
                 acide_fusidique_opht_conseil: "Prescription required. The ointment blurs vision: apply in the evening at bedtime. Remove lenses during treatment.",
-                antiseptiques_opht_title: "6. Antiseptics: hexamidine and boric acid",
-                antiseptiques_opht_gen: "Hexamidine / Boric acid.",
-                antiseptiques_opht_formes: "Eye drops solution (hexamidine 0.05%, boric acid 3%), mouthwash, powder.",
-                antiseptiques_opht_posologie: "1 to 2 drops, 2 to 4 times daily, as eye wash (boric solution) 1 to 2 times daily.",
-                antiseptiques_opht_particularite: "Surface antiseptics: moderate bactericidal action, used for irritations, simple conjunctivitis and eye hygiene. May be dispensed without prescription.",
-                antiseptiques_opht_conseil: "Do not confuse with an antibiotic: if symptoms persist beyond 48-72 h, consult. Bottle is contaminated if the solution is cloudy: discard.",
-                antiviraux_opht_title: "7. Antivirals: aciclovir and ganciclovir",
-                antiviraux_opht_gen: "Aciclovir / Ganciclovir.",
-                antiviraux_opht_formes: "Ophthalmic ointment (aciclovir 3%), ophthalmic gel (ganciclovir 0.15%).",
-                antiviraux_opht_posologie: "Aciclovir: 1 application 5 times daily. Virgan: 1 drop 5 times daily, reduced to 3 times daily once improved.",
-                antiviraux_opht_particularite: "Nucleoside analogues: inhibit herpes virus DNA polymerase and block viral replication. Treatment of herpetic keratitis (conjunctivitis or dendritic keratitis).",
-                antiviraux_opht_conseil: "Start treatment at the first tingling or vesicles of a herpes outbreak. Corticosteroid therapy is strictly contraindicated without an antiviral. Ointment: apply with finger or in the conjunctival sac.",
+                hexamidine_opht_title: "6a. Hexamidine (antiseptic)",
+                hexamidine_opht_gen: "Hexamidine.",
+                hexamidine_opht_formes: "Eye drops solution (hexamidine 0.05%).",
+                hexamidine_opht_posologie: "1 to 2 drops, 2 to 4 times daily.",
+                hexamidine_opht_particularite: "Surface antiseptics: moderate bactericidal action, used for irritations, simple conjunctivitis and eye hygiene. May be dispensed without prescription. (class-level data — not specified separately in the book)",
+                hexamidine_opht_conseil: "Do not confuse with an antibiotic: if symptoms persist beyond 48-72 h, consult. Bottle is contaminated if the solution is cloudy: discard.",
+                acide_borique_opht_title: "6b. Boric acid (antiseptic)",
+                acide_borique_opht_gen: "Boric acid.",
+                acide_borique_opht_formes: "Eye drops solution (boric acid 3%), boric solution.",
+                acide_borique_opht_posologie: "Eye wash: 1 to 2 times daily.",
+                acide_borique_opht_particularite: "Surface antiseptics: moderate bactericidal action, used for irritations, simple conjunctivitis and eye hygiene. May be dispensed without prescription. (class-level data — not specified separately in the book)",
+                acide_borique_opht_conseil: "Do not confuse with an antibiotic: if symptoms persist beyond 48-72 h, consult. Bottle is contaminated if the solution is cloudy: discard.",
+                aciclovir_opht_title: "7a. Aciclovir (antiviral)",
+                aciclovir_opht_gen: "Aciclovir.",
+                aciclovir_opht_formes: "Ophthalmic ointment (aciclovir 3%).",
+                aciclovir_opht_posologie: "1 application 5 times daily.",
+                aciclovir_opht_particularite: "Nucleoside analogues: inhibit herpes virus DNA polymerase and block viral replication. Treatment of herpetic keratitis (conjunctivitis or dendritic keratitis). (class-level data — not specified separately in the book)",
+                aciclovir_opht_conseil: "Start treatment at the first tingling or vesicles of a herpes outbreak. Corticosteroid therapy is strictly contraindicated without an antiviral. Ointment: apply with finger or in the conjunctival sac.",
+                ganciclovir_opht_title: "7b. Ganciclovir (antiviral)",
+                ganciclovir_opht_gen: "Ganciclovir.",
+                ganciclovir_opht_formes: "Ophthalmic gel (ganciclovir 0.15%).",
+                ganciclovir_opht_posologie: "1 drop 5 times daily, reduced to 3 times daily once improved.",
+                ganciclovir_opht_particularite: "Nucleoside analogues: inhibit herpes virus DNA polymerase and block viral replication. Treatment of herpetic keratitis (conjunctivitis or dendritic keratitis). (class-level data — not specified separately in the book)",
+                ganciclovir_opht_conseil: "Start treatment at the first tingling or vesicles of a herpes outbreak. Corticosteroid therapy is strictly contraindicated without an antiviral. Ointment: apply with finger or in the conjunctival sac.",
+                group_1_name: "Aminoglycosides",
+                group_2_name: "Quinolones",
+                group_3_name: "Macrolides",
+                group_4_name: "Other anti-infectives",
+                group_5_name: "Antiseptics",
+                group_6_name: "Antivirals",
                 indication_1: "Bacterial conjunctivitis, blepharitis, stye and dacryocystitis (aminoglycosides, quinolones, fusidic acid).",
                 indication_2: "Bacterial keratitis and corneal ulcers: quinolones (ciprofloxacin) and tobramycin, under ophthalmological control.",
                 indication_3: "Neonatal and Chlamydia conjunctivitis: azithromycin (Azyter), adapted dosing.",
@@ -2081,9 +2173,9 @@
                     "Fucithalmic": [],
                     "Acifudal": [],
                     "Desomedine": [],
+                    "Tymer": [],
                     "Dacryoserum": [],
                     "Borax": [],
-                    "Tymer": [],
                     "Zovirax": [],
                     "Virgan": []
         };

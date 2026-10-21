@@ -1028,13 +1028,15 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Hormones thyroïdiennes</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="levothyroxine_title">1. Lévothyroxine (L-T4)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="levothyroxine_gen">Lévothyroxine (L-T4).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lévothyrox")">Lévothyrox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Berlthyrox")">Berlthyrox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Levotiron")">Levotiron</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lévothyrox&quot;)">Lévothyrox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Berlthyrox&quot;)">Berlthyrox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Levotiron&quot;)">Levotiron</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="levothyroxine_formes">Comprimés (25 µg à 200 µg, sous différents codes de couleur).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="levothyroxine_posologie">1 comprimé par jour le matin à jeun, 30 minutes avant le petit-déjeuner, avec un grand verre d'eau. Dose usuelle : 1,6 µg/kg/j, débuter progressivement chez le sujet âgé ou cardiaque.</span></p>
@@ -1045,19 +1047,22 @@
                         <h3 style="color:var(--primary);" data-i18n="liothyronine_title">2. Liothyronine (L-T3)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="liothyronine_gen">Liothyronine (L-T3).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Cynomel")">Cynomel</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cynomel&quot;)">Cynomel</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="liothyronine_formes">Comprimés (20 µg, 25 µg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="liothyronine_posologie">Traitement d'urgence (crise myxédémateuse) : forte dose initiale en milieu hospitalier, puis relais par la lévothyroxine. Court traitement uniquement.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="liothyronine_particularite">Forme active directe (T3) : action rapide mais brève (demi-vie de 1 jour). Réservée aux urgences, en milieu médical, et toujours suivie d'un relais par le L-T4.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="liothyronine_conseil">Ne jamais utiliser en traitement de fond ni en automédication : risque d'hyperthyroïdie iatrogène (tachycardie, angor, ostéoporose). Uniquement sur avis médical.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antithyroïdiens de synthèse</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="carbimazole_title">3. Carbimazole (antithyroïdien)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="carbimazole_gen">Carbimazole (Athyrozol).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Athyrozol")">Athyrozol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Crovimazole")">Crovimazole</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Athyrozol&quot;)">Athyrozol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Crovimazole&quot;)">Crovimazole</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="carbimazole_formes">Comprimés (20 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="carbimazole_posologie">Début : 20 à 60 mg par jour selon la thyréotoxicose, diminution progressive par paliers selon la T4 libre. Entretien : 5 à 15 mg/j.</span></p>
@@ -1068,12 +1073,13 @@
                         <h3 style="color:var(--primary);" data-i18n="benzylthiouracile_title">4. Benzylthiouracile (antithyroïdien)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="benzylthiouracile_gen">Benzylthiouracile.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Basdene")">Basdene</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Basdene&quot;)">Basdene</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="benzylthiouracile_formes">Comprimés (50 mg, 100 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="benzylthiouracile_posologie">Début : 200 à 400 mg par jour en 2 à 3 prises, puis entretien à dose adaptée selon la T4 libre.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="benzylthiouracile_particularite">Antithyroïdien apparenté au carbimazole : inhibe la thyroperoxydase et la conversion périphérique de T4 en T3. Préféré au carbimazole au 1er trimestre de grossesse.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="benzylthiouracile_conseil">Mêmes précautions que le carbimazole : surveillance de la NFS et arrêt immédiat si fièvre ou angine. Ne pas utiliser pendant l'allaitement.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1329,6 +1335,8 @@
                 benzylthiouracile_posologie: "Début : 200 à 400 mg par jour en 2 à 3 prises, puis entretien à dose adaptée selon la T4 libre.",
                 benzylthiouracile_particularite: "Antithyroïdien apparenté au carbimazole : inhibe la thyroperoxydase et la conversion périphérique de T4 en T3. Préféré au carbimazole au 1er trimestre de grossesse.",
                 benzylthiouracile_conseil: "Mêmes précautions que le carbimazole : surveillance de la NFS et arrêt immédiat si fièvre ou angine. Ne pas utiliser pendant l'allaitement.",
+                group_1_name: "Hormones thyroïdiennes",
+                group_2_name: "Antithyroïdiens de synthèse",
                 indication_1: "Hypothyroïdie (primaire, post-thyroïdectomie, post-iodothérapie) : lévothyroxine (L-T4) à dose substitutive quotidienne.",
                 indication_2: "Crise myxédémateuse : liothyronine (L-T3) en urgence, traitement de courte durée.",
                 indication_3: "Hyperthyroïdie (maladie de Basedow, adénome toxique, hyperthyroïdie nodulaire) : carbimazole (Athyrozol) ou benzylthiouracile (Basdene).",
@@ -1480,6 +1488,8 @@
                 benzylthiouracile_posologie: "البدء: 200 إلى 400 مغ يومياً في 2 إلى 3 جرعات، ثم المحافظة بجرعة مُكيّفة حسب T4 حر.",
                 benzylthiouracile_particularite: "مضاد درقي مرتبط بالكاربامازول: يثبط الثيروبيروكسيديز والتحويل المحيطي لـT4 إلى T3. يُفضّل على الكاربامازول في الثلث الأول من الحمل.",
                 benzylthiouracile_conseil: "نفس الاحتياطات كالكاربامازول: مراقبة العد الدموي ووقف فوري عند حمى أو التهاب لوزتين. لا يُستخدم أثناء الرضاعة.",
+                group_1_name: "الهرمونات الدرقية",
+                group_2_name: "مضادات الدرقية الاصطناعية",
                 indication_1: "قصور الغدة الدرقية (أولي، ما بعد استئصال الغدة، ما بعد علاج اليود): ليفوثيروكسين (L-T4) بجرعة تعويضية يومية.",
                 indication_2: "أزمة الميكسيديم: ليوثيرونين (L-T3) في الطوارئ، علاج قصير المدة.",
                 indication_3: "فرط الدرقية (مرض باسيدو، ورم سام، فرط الدرقية العقدية): كاربامازول (أثيروزول) أو بنزيلثيوريستيل (باسدين).",
@@ -1631,6 +1641,8 @@
                 benzylthiouracile_posologie: "Start: 200 to 400 mg daily in 2 to 3 doses, then maintenance at a dose adjusted to free T4.",
                 benzylthiouracile_particularite: "Antithyroid drug related to carbimazole: inhibits thyroid peroxidase and peripheral conversion of T4 to T3. Preferred over carbimazole in the first trimester of pregnancy.",
                 benzylthiouracile_conseil: "Same precautions as carbimazole: blood count monitoring and immediate stop if fever or angina. Do not use during breastfeeding.",
+                group_1_name: "Thyroid hormones",
+                group_2_name: "Synthetic antithyroid drugs",
                 indication_1: "Hypothyroidism (primary, post-thyroidectomy, post-iodine therapy): daily substitution-dose levothyroxine (L-T4).",
                 indication_2: "Myxedema coma: emergency liothyronine (L-T3), short-duration treatment.",
                 indication_3: "Hyperthyroidism (Basedow disease, toxic adenoma, nodular hyperthyroidism): carbimazole (Athyrozol) or benzylthiouracile (Basdene).",

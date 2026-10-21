@@ -1028,12 +1028,14 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Hypnotiques apparentés aux benzodiazépines</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="neuro6_zolpidem_title">Zolpidem</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro6_zolpidem_gen">Zolpidem.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Stilnox")">Stilnox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Zolidrate")">Zolidrate</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Stilnox&quot;)">Stilnox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zolidrate&quot;)">Zolidrate</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro6_zolpidem_formes">Comprimés sécables (10 mg), comprimés à libération prolongée.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro6_zolpidem_posologie">Adulte : 10 mg au coucher, à prendre juste avant de se coucher ; 5 mg chez le sujet âgé. Durée limitée à quelques jours.</span></p>
@@ -1041,30 +1043,44 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro6_zolpidem_conseil">Interdit de servir sans ordonnance ; prendre au lit immédiatement avant le coucher ; pas d'alcool ; sevrage progressif.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="neuro6_nitrazepam_flurazepam_title">Nitrazépam et flurazépam</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro6_nitrazepam_flurazepam_gen">Nitrazépam et flurazépam.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="neuro6_nitrazepam_title">Nitrazépam</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro6_nitrazepam_gen">Nitrazépam.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Nitraz")">Nitraz</span>,
-                            <span class="drug-link" onclick="showDrugModal("NZN")">NZN</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nazepam")">Nazepam</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nitraz&quot;)">Nitraz</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;NZN&quot;)">NZN</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro6_nitrazepam_flurazepam_formes">Comprimés (5 mg), comprimés à 10 mg, gouttes.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro6_nitrazepam_flurazepam_posologie">Adulte : nitrazépam 5 à 10 mg au coucher ; dose réduite chez le sujet âgé. Durée la plus courte possible, sans dépasser 4 semaines.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro6_nitrazepam_flurazepam_particularite">Benzodiazépines hypnotiques à durée d'action longue : maintien du sommeil ; également anticonvulsivant et myorelaxant (nitrazépam).</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro6_nitrazepam_flurazepam_conseil">Interdit de servir sans ordonnance ; somnolence au réveil ; dépendance ; jamais avec l'alcool ; sevrage progressif.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro6_nitrazepam_formes">Comprimés (5 mg), comprimés à 10 mg, gouttes.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro6_nitrazepam_posologie">5 à 10 mg au coucher ; dose réduite chez le sujet âgé. Durée la plus courte possible, sans dépasser 4 semaines.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro6_nitrazepam_particularite">Benzodiazépines hypnotiques à durée d'action longue : maintien du sommeil ; également anticonvulsivant et myorelaxant (nitrazépam). (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro6_nitrazepam_conseil">Interdit de servir sans ordonnance ; somnolence au réveil ; dépendance ; jamais avec l'alcool ; sevrage progressif.</span></p>
                     </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="neuro6_flurazepam_title">Flurazépam</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro6_flurazepam_gen">Flurazépam.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nazepam&quot;)">Nazepam</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro6_flurazepam_formes">Comprimés, gouttes (données de classe).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro6_flurazepam_posologie">Non précisée séparément dans le livre ; posologie adaptée selon les données de classe.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro6_flurazepam_particularite">Benzodiazépines hypnotiques à durée d'action longue : maintien du sommeil ; également anticonvulsivant et myorelaxant (nitrazépam). (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro6_flurazepam_conseil">Interdit de servir sans ordonnance ; somnolence au réveil ; dépendance ; jamais avec l'alcool ; sevrage progressif.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Hypnotiques antihistaminiques</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="neuro6_hydroxyzine_title">Hydroxyzine (hypnotique)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="neuro6_hydroxyzine_gen">Hydroxyzine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Atarax")">Atarax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Croxizine")">Croxizine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hydroxyl")">Hydroxyl</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Atarax&quot;)">Atarax</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Croxizine&quot;)">Croxizine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hydroxyl&quot;)">Hydroxyl</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="neuro6_hydroxyzine_formes">Comprimés (25 mg), sirop.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="neuro6_hydroxyzine_posologie">Adulte : 25 à 50 mg au coucher ; dose réduite chez le sujet âgé.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="neuro6_hydroxyzine_particularite">Antihistaminique sédatif utilisé comme hypnotique léger, sans les risques de dépendance des benzodiazépines.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="neuro6_hydroxyzine_conseil">Interdit de servir sans ordonnance ; somnolence au réveil ; bouche sèche ; prudence en conduite ; peut allonger le QT.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1302,18 +1318,26 @@
                 neuro6_zolpidem_posologie: "Adulte : 10 mg au coucher, à prendre juste avant de se coucher ; 5 mg chez le sujet âgé. Durée limitée à quelques jours.",
                 neuro6_zolpidem_particularite: "Hypnotique apparenté aux benzodiazépines : endormissement rapide, demi-vie courte ; risque de somnambulisme et de comportements automatiques.",
                 neuro6_zolpidem_conseil: "Interdit de servir sans ordonnance ; prendre au lit immédiatement avant le coucher ; pas d'alcool ; sevrage progressif.",
-                neuro6_nitrazepam_flurazepam_title: "Nitrazépam et flurazépam",
-                neuro6_nitrazepam_flurazepam_gen: "Nitrazépam et flurazépam.",
-                neuro6_nitrazepam_flurazepam_formes: "Comprimés (5 mg), comprimés à 10 mg, gouttes.",
-                neuro6_nitrazepam_flurazepam_posologie: "Adulte : nitrazépam 5 à 10 mg au coucher ; dose réduite chez le sujet âgé. Durée la plus courte possible, sans dépasser 4 semaines.",
-                neuro6_nitrazepam_flurazepam_particularite: "Benzodiazépines hypnotiques à durée d'action longue : maintien du sommeil ; également anticonvulsivant et myorelaxant (nitrazépam).",
-                neuro6_nitrazepam_flurazepam_conseil: "Interdit de servir sans ordonnance ; somnolence au réveil ; dépendance ; jamais avec l'alcool ; sevrage progressif.",
+                neuro6_nitrazepam_title: "Nitrazépam",
+                neuro6_nitrazepam_gen: "Nitrazépam.",
+                neuro6_nitrazepam_formes: "Comprimés (5 mg), comprimés à 10 mg, gouttes.",
+                neuro6_nitrazepam_posologie: "5 à 10 mg au coucher ; dose réduite chez le sujet âgé. Durée la plus courte possible, sans dépasser 4 semaines.",
+                neuro6_nitrazepam_particularite: "Benzodiazépines hypnotiques à durée d'action longue : maintien du sommeil ; également anticonvulsivant et myorelaxant (nitrazépam). (données de classe — non spécifiées séparément dans le livre)",
+                neuro6_nitrazepam_conseil: "Interdit de servir sans ordonnance ; somnolence au réveil ; dépendance ; jamais avec l'alcool ; sevrage progressif.",
+                neuro6_flurazepam_title: "Flurazépam",
+                neuro6_flurazepam_gen: "Flurazépam.",
+                neuro6_flurazepam_formes: "Comprimés, gouttes (données de classe).",
+                neuro6_flurazepam_posologie: "Non précisée séparément dans le livre ; posologie adaptée selon les données de classe.",
+                neuro6_flurazepam_particularite: "Benzodiazépines hypnotiques à durée d'action longue : maintien du sommeil ; également anticonvulsivant et myorelaxant (nitrazépam). (données de classe — non spécifiées séparément dans le livre)",
+                neuro6_flurazepam_conseil: "Interdit de servir sans ordonnance ; somnolence au réveil ; dépendance ; jamais avec l'alcool ; sevrage progressif.",
                 neuro6_hydroxyzine_title: "Hydroxyzine (hypnotique)",
                 neuro6_hydroxyzine_gen: "Hydroxyzine.",
                 neuro6_hydroxyzine_formes: "Comprimés (25 mg), sirop.",
                 neuro6_hydroxyzine_posologie: "Adulte : 25 à 50 mg au coucher ; dose réduite chez le sujet âgé.",
                 neuro6_hydroxyzine_particularite: "Antihistaminique sédatif utilisé comme hypnotique léger, sans les risques de dépendance des benzodiazépines.",
                 neuro6_hydroxyzine_conseil: "Interdit de servir sans ordonnance ; somnolence au réveil ; bouche sèche ; prudence en conduite ; peut allonger le QT.",
+                group_1_name: "Hypnotiques apparentés aux benzodiazépines",
+                group_2_name: "Hypnotiques antihistaminiques",
                 indication_1: "Insomnie occasionnelle ou transitoire de l'adulte.",
                 indication_2: "Insomnie sévère après échec des mesures d'hygiène du sommeil.",
                 indication_3: "Traitement de courte durée (quelques jours à quelques semaines).",
@@ -1447,18 +1471,26 @@
                 neuro6_zolpidem_posologie: "بالغين: 10 مغ عند النوم، تُؤخذ قبل النوم مباشرة؛ 5 مغ عند كبار السن. مدة محدودة ببضعة أيام.",
                 neuro6_zolpidem_particularite: "منوم قريب من البنزوديازيبينات: نوم سريع، عمر نصف قصير؛ خطر المشي أثناء النوم والسلوكات التلقائية.",
                 neuro6_zolpidem_conseil: "يُمنع التسليم دون وصفة؛ تُؤخذ في الفراش قبل النوم مباشرة؛ لا كحول؛ سحب تدريجي.",
-                neuro6_nitrazepam_flurazepam_title: "نيترازيبام وفلورازيبام",
-                neuro6_nitrazepam_flurazepam_gen: "نيترازيبام وفلورازيبام.",
-                neuro6_nitrazepam_flurazepam_formes: "أقراص (5 مغ)، أقراص 10 مغ، قطرات.",
-                neuro6_nitrazepam_flurazepam_posologie: "بالغين: نيترازيبام 5 إلى 10 مغ عند النوم؛ جرعة مخفّضة عند كبار السن. أقصر مدة ممكنة، دون تجاوز 4 أسابيع.",
-                neuro6_nitrazepam_flurazepam_particularite: "بنزوديازيبينات منومة طويلة المفعول: الحفاظ على النوم؛ مضادة للاختلاج ومرخية للعضلات أيضاً (نيترازيبام).",
-                neuro6_nitrazepam_flurazepam_conseil: "يُمنع التسليم دون وصفة؛ نعاس عند الاستيقاظ؛ تبعية؛ لا مع الكحول أبداً؛ سحب تدريجي.",
+                neuro6_nitrazepam_title: "نيترازيبام",
+                neuro6_nitrazepam_gen: "نيترازيبام.",
+                neuro6_nitrazepam_formes: "أقراص (5 مغ)، أقراص 10 مغ، قطرات.",
+                neuro6_nitrazepam_posologie: "5 إلى 10 مغ عند النوم؛ جرعة مخفّضة عند كبار السن. أقصر مدة ممكنة، دون تجاوز 4 أسابيع.",
+                neuro6_nitrazepam_particularite: "بنزوديازيبينات منومة طويلة المفعول: الحفاظ على النوم؛ مضادة للاختلاج ومرخية للعضلات أيضاً (نيترازيبام). (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro6_nitrazepam_conseil: "يُمنع التسليم دون وصفة؛ نعاس عند الاستيقاظ؛ تبعية؛ لا مع الكحول أبداً؛ سحب تدريجي.",
+                neuro6_flurazepam_title: "فلورازيبام",
+                neuro6_flurazepam_gen: "فلورازيبام.",
+                neuro6_flurazepam_formes: "أقراص، قطرات (بيانات الصنف).",
+                neuro6_flurazepam_posologie: "غير محددة بشكل منفصل في الكتاب؛ الجرعة معدّلة وفق بيانات الصنف.",
+                neuro6_flurazepam_particularite: "بنزوديازيبينات منومة طويلة المفعول: الحفاظ على النوم؛ مضادة للاختلاج ومرخية للعضلات أيضاً (نيترازيبام). (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                neuro6_flurazepam_conseil: "يُمنع التسليم دون وصفة؛ نعاس عند الاستيقاظ؛ تبعية؛ لا مع الكحول أبداً؛ سحب تدريجي.",
                 neuro6_hydroxyzine_title: "هيدروكسيزين (منوم)",
                 neuro6_hydroxyzine_gen: "هيدروكسيزين.",
                 neuro6_hydroxyzine_formes: "أقراص (25 مغ)، شراب.",
                 neuro6_hydroxyzine_posologie: "بالغين: 25 إلى 50 مغ عند النوم؛ جرعة مخفّضة عند كبار السن.",
                 neuro6_hydroxyzine_particularite: "مضاد للهيستامين مهدئ يُستعمل كمنوم خفيف، دون مخاطر تبعية البنزوديازيبينات.",
                 neuro6_hydroxyzine_conseil: "يُمنع التسليم دون وصفة؛ نعاس عند الاستيقاظ؛ جفاف الفم؛ حذر عند القيادة؛ قد يطيل QT.",
+                group_1_name: "المنومات القريبة من البنزوديازيبينات",
+                group_2_name: "المنومات المضادة للهيستامين",
                 indication_1: "الأرق العرضي أو العابر عند البالغين.",
                 indication_2: "الأرق الشديد بعد فشل تدابير نظافة النوم.",
                 indication_3: "علاج قصير المدة (بضعة أيام إلى بضعة أسابيع).",
@@ -1592,18 +1624,26 @@
                 neuro6_zolpidem_posologie: "Adult: 10 mg at bedtime, taken just before going to bed; 5 mg in the elderly. Duration limited to a few days.",
                 neuro6_zolpidem_particularite: "Hypnotic related to benzodiazepines: rapid sleep onset, short half-life; risk of sleepwalking and automatic behaviours.",
                 neuro6_zolpidem_conseil: "Dispensing without prescription is prohibited; take in bed immediately before sleep; no alcohol; progressive withdrawal.",
-                neuro6_nitrazepam_flurazepam_title: "Nitrazepam and flurazepam",
-                neuro6_nitrazepam_flurazepam_gen: "Nitrazepam and flurazepam.",
-                neuro6_nitrazepam_flurazepam_formes: "Tablets (5 mg), 10 mg tablets, drops.",
-                neuro6_nitrazepam_flurazepam_posologie: "Adult: nitrazepam 5-10 mg at bedtime; reduced dose in the elderly. Shortest possible duration, not exceeding 4 weeks.",
-                neuro6_nitrazepam_flurazepam_particularite: "Long-acting hypnotic benzodiazepines: sleep maintenance; also anticonvulsant and muscle relaxant (nitrazepam).",
-                neuro6_nitrazepam_flurazepam_conseil: "Dispensing without prescription is prohibited; morning drowsiness; dependence; never with alcohol; progressive withdrawal.",
+                neuro6_nitrazepam_title: "Nitrazepam",
+                neuro6_nitrazepam_gen: "Nitrazepam.",
+                neuro6_nitrazepam_formes: "Tablets (5 mg), 10 mg tablets, drops.",
+                neuro6_nitrazepam_posologie: "5-10 mg at bedtime; reduced dose in the elderly. Shortest possible duration, not exceeding 4 weeks.",
+                neuro6_nitrazepam_particularite: "Long-acting hypnotic benzodiazepines: sleep maintenance; also anticonvulsant and muscle relaxant (nitrazepam). (class data — not specified separately in the book)",
+                neuro6_nitrazepam_conseil: "Dispensing without prescription is prohibited; morning drowsiness; dependence; never with alcohol; progressive withdrawal.",
+                neuro6_flurazepam_title: "Flurazepam",
+                neuro6_flurazepam_gen: "Flurazepam.",
+                neuro6_flurazepam_formes: "Tablets, drops (class data).",
+                neuro6_flurazepam_posologie: "Not specified separately in the book; dose adapted according to class data.",
+                neuro6_flurazepam_particularite: "Long-acting hypnotic benzodiazepines: sleep maintenance; also anticonvulsant and muscle relaxant (nitrazepam). (class data — not specified separately in the book)",
+                neuro6_flurazepam_conseil: "Dispensing without prescription is prohibited; morning drowsiness; dependence; never with alcohol; progressive withdrawal.",
                 neuro6_hydroxyzine_title: "Hydroxyzine (hypnotic)",
                 neuro6_hydroxyzine_gen: "Hydroxyzine.",
                 neuro6_hydroxyzine_formes: "Tablets (25 mg), syrup.",
                 neuro6_hydroxyzine_posologie: "Adult: 25-50 mg at bedtime; reduced dose in the elderly.",
                 neuro6_hydroxyzine_particularite: "Sedative antihistamine used as a mild hypnotic, without the dependence risks of benzodiazepines.",
                 neuro6_hydroxyzine_conseil: "Dispensing without prescription is prohibited; morning drowsiness; dry mouth; caution when driving; may prolong QT.",
+                group_1_name: "Benzodiazepine-related hypnotics",
+                group_2_name: "Antihistamine hypnotics",
                 indication_1: "Occasional or transient insomnia in adults.",
                 indication_2: "Severe insomnia after failure of sleep hygiene measures.",
                 indication_3: "Short-term treatment (a few days to a few weeks).",

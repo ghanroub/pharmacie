@@ -1028,14 +1028,16 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antifongiques</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="fluconazole_title">1. Fluconazole (antifongique azolé)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fluconazole_gen">Fluconazole.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Diflucand")">Diflucand</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diflucare")">Diflucare</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flucand")">Flucand</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flukas")">Flukas</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diflucand&quot;)">Diflucand</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diflucare&quot;)">Diflucare</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flucand&quot;)">Flucand</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flukas&quot;)">Flukas</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fluconazole_formes">Gélules (150 mg, 200 mg), Sirop, Poudre injectable IV.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fluconazole_posologie">Adulte : 150 mg en dose unique (candidose vulvo-vaginale) ou 200 à 400 mg/j selon l'infection. Enfant : 3 à 6 mg/kg/j.</span></p>
@@ -1046,11 +1048,11 @@
                         <h3 style="color:var(--primary);" data-i18n="terbinafine_title">2. Terbinafine (antifongique allylamine)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="terbinafine_gen">Terbinafine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Terbifine")">Terbifine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Terbinan")">Terbinan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lamidaz")">Lamidaz</span>,
-                            <span class="drug-link" onclick="showDrugModal("Laminox")">Laminox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Terbil")">Terbil</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Terbifine&quot;)">Terbifine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Terbinan&quot;)">Terbinan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lamidaz&quot;)">Lamidaz</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Laminox&quot;)">Laminox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Terbil&quot;)">Terbil</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="terbinafine_formes">Comprimés (250 mg), Crème, Poudre, Spray, Solution.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="terbinafine_posologie">Adulte : 250 mg par jour pendant 2 à 6 semaines (dermophyties) ; onychomycoses : 3 mois. Topique : 1 à 2 fois/j pendant 1 à 4 semaines.</span></p>
@@ -1058,66 +1060,113 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="terbinafine_conseil">Prendre pendant ou après les repas. Surveiller le foie et l'odeur des urines (modification bénigne). Éviter l'alcool.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="griseofulvine_ampho_title">3. Griséofulvine et Amphothéricine B</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="griseofulvine_ampho_gen">Griséofulvine / Amphothéricine B.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="griseofulvine_title">Griséofulvine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="griseofulvine_gen">Griséofulvine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Mycozan")">Mycozan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fongenal")">Fongenal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fungizone")">Fungizone</span>,
-                            <span class="drug-link" onclick="showDrugModal("Amikoz")">Amikoz</span>,
-                            <span class="drug-link" onclick="showDrugModal("Veflat")">Veflat</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Mycozan&quot;)">Mycozan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fongenal&quot;)">Fongenal</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="griseofulvine_ampho_formes">Comprimés (250 mg, 500 mg), Sirop, Poudre injectable IV (amphothéricine B).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="griseofulvine_ampho_posologie">Griséofulvine : 15 à 20 mg/kg/j en 2 prises, plusieurs semaines (teigne). Amphothéricine B : posologie hospitalière IV selon poids.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="griseofulvine_ampho_particularite">Griséofulvine : antifongique des teignes (dermatophytes), active uniquement sur les kératines. Amphothéricine B : fongicide de référence des mycoses profondes, réservée à l'hôpital.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="griseofulvine_ampho_conseil">Griséofulvine : photosensibilisante, à prendre avec un repas gras. Amphothéricine B : surveillance de la créatinine, du potassium et de l'hématologie, en milieu hospitalier.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="griseofulvine_formes">Comprimés (250 mg, 500 mg), Sirop.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="griseofulvine_posologie">Griséofulvine : 15 à 20 mg/kg/j en 2 prises, plusieurs semaines (teigne).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="griseofulvine_particularite">Antifongique des teignes (dermatophytes), actif uniquement sur les kératines.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="griseofulvine_conseil">Photosensibilisante, à prendre avec un repas gras.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="antihelmintiques_title">4. Antihelmintiques : albendazole, pyrantel, flubendazole</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="antihelmintiques_gen">Albendazole / Pyrantel / Flubendazole.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="amphotericine_b_title">Amphotéricine B</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="amphotericine_b_gen">Amphotéricine B.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Oxyzol")">Oxyzol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Verten")">Verten</span>,
-                            <span class="drug-link" onclick="showDrugModal("Helmintox")">Helmintox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Combatrim")">Combatrim</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fluben")">Fluben</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fluvermal")">Fluvermal</span>,
-                            <span class="drug-link" onclick="showDrugModal("Fluverbien")">Fluverbien</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flumox")">Flumox</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fungizone&quot;)">Fungizone</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Amikoz&quot;)">Amikoz</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Veflat&quot;)">Veflat</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="antihelmintiques_formes">Comprimés, Gélules, Suspension buvable (sirop).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="antihelmintiques_posologie">Albendazole : 1 cp de 400 mg en dose unique (adulte). Pyrantel : 10 mg/kg en dose unique. Flubendazole : 100 mg, pendant 3 jours. Enfants selon âge et poids.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="antihelmintiques_particularite">Spectres complémentaires sur oxyures, ascaris et ancilostomes : le pyrantel paralyse le ver, albendazole et flubendazole épuisent ses réserves.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="antihelmintiques_conseil">En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="amphotericine_b_formes">Poudre injectable IV.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="amphotericine_b_posologie">Amphotéricine B : posologie hospitalière IV selon poids.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="amphotericine_b_particularite">Fongicide de référence des mycoses profondes, réservé à l'hôpital.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="amphotericine_b_conseil">Surveillance de la créatinine, du potassium et de l'hématologie, en milieu hospitalier.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiparasitaires</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="albendazole_title">Albendazole</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="albendazole_gen">Albendazole.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Oxyzol&quot;)">Oxyzol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Verten&quot;)">Verten</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Combatrim&quot;)">Combatrim</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="albendazole_formes">Comprimés (400 mg), Suspension buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="albendazole_posologie">Albendazole : 1 cp de 400 mg en dose unique (adulte). Enfants selon âge et poids.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="albendazole_particularite">Inhibe la polymérisation de la tubuline du ver, ce qui l'épuise ; actif sur oxyures, ascaris et ancilostomes.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="albendazole_conseil">En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="pyrantel_title">Pyrantel</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="pyrantel_gen">Pyrantel.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Helmintox&quot;)">Helmintox</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="pyrantel_formes">Comprimés, Suspension buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="pyrantel_posologie">Pyrantel : 10 mg/kg en dose unique. Enfants selon âge et poids.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="pyrantel_particularite">Provoque une paralysie spastique du ver aboutissant à son élimination ; actif sur oxyures et ascaris.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="pyrantel_conseil">En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="flubendazole_title">Flubendazole</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="flubendazole_gen">Flubendazole.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fluben&quot;)">Fluben</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fluvermal&quot;)">Fluvermal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fluverbien&quot;)">Fluverbien</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flumox&quot;)">Flumox</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="flubendazole_formes">Comprimés (100 mg), Suspension buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="flubendazole_posologie">Flubendazole : 100 mg, pendant 3 jours. Enfants selon âge et poids.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="flubendazole_particularite">Inhibe la polymérisation de la tubuline du ver, ce qui l'épuise ; actif sur oxyures, ascaris et ancilostomes.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="flubendazole_conseil">En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="metronidazole_para_title">5. Métronidazole (antiparasitaire)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="metronidazole_para_gen">Métronidazole.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Flagyl")">Flagyl</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flazol")">Flazol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Metzol")">Metzol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nidazole")">Nidazole</span>,
-                            <span class="drug-link" onclick="showDrugModal("Biodazole")">Biodazole</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flagyl&quot;)">Flagyl</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flazol&quot;)">Flazol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Metzol&quot;)">Metzol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nidazole&quot;)">Nidazole</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Biodazole&quot;)">Biodazole</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="metronidazole_para_formes">Comprimés (250 mg, 500 mg), Sirop, Suspension, Suppositoire.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="metronidazole_para_posologie">Adulte : 500 mg à 1,5 g par jour en 3 prises pendant 7 à 10 jours. Amibiase hépatique : doses plus élevées selon prescription.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="metronidazole_para_particularite">Antiparasitaire de référence de l'amibiase et de la giardiase, également actif sur Trichomonas vaginalis et les anaérobies.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="metronidazole_para_conseil">Éviction totale de l'alcool pendant le traitement et 48 h après. Prendre pendant les repas. Voir aussi la leçon 4 (usage antibactérien).</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiviraux</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="aciclovir_vaccin_title">6. Aciclovir et Vaccin antigrippal</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aciclovir_vaccin_gen">Aciclovir / Vaccin antigrippal inactivé.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="aciclovir_title">Aciclovir</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aciclovir_gen">Aciclovir.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Novaclovir")">Novaclovir</span>,
-                            <span class="drug-link" onclick="showDrugModal("Clovir")">Clovir</span>,
-                            <span class="drug-link" onclick="showDrugModal("Clovirax")">Clovirax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Vaxigrip")">Vaxigrip</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novaclovir&quot;)">Novaclovir</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Clovir&quot;)">Clovir</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Clovirax&quot;)">Clovirax</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aciclovir_vaccin_formes">Comprimés (200 mg, 400 mg), Crème, Poudre injectable IV, Seringue préremplie.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aciclovir_vaccin_posologie">Herpès labial : 200 mg, 5 fois par jour pendant 5 jours. Zona : 800 mg, 5 fois/j. Enfant : 20 mg/kg, 4 fois/j. Vaccin : 1 injection IM chaque automne.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aciclovir_vaccin_particularite">Analogique nucléosidique actif sur les virus Herpes (HSV 1 et 2) et VZV ; le vaccin antigrippal prévient la grippe mais ne la traite pas.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aciclovir_vaccin_conseil">Aciclovir : commencer dès les premiers signes (picotement), hydrater abondamment. Vaccin : se faire vacciner chaque année avant l'hiver, surtout femmes enceintes et sujets à risque.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aciclovir_formes">Comprimés (200 mg, 400 mg), Crème, Poudre injectable IV.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aciclovir_posologie">Herpès labial : 200 mg, 5 fois par jour pendant 5 jours. Zona : 800 mg, 5 fois/j. Enfant : 20 mg/kg, 4 fois/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aciclovir_particularite">Analogique nucléosidique actif sur les virus Herpes (HSV 1 et 2) et VZV.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aciclovir_conseil">Commencer dès les premiers signes (picotement), hydrater abondamment.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="vaccin_antigrippal_title">Vaccin antigrippal</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="vaccin_antigrippal_gen">Vaccin antigrippal inactivé.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Vaxigrip&quot;)">Vaxigrip</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="vaccin_antigrippal_formes">Seringue préremplie.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="vaccin_antigrippal_posologie">Vaccin : 1 injection IM chaque automne.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="vaccin_antigrippal_particularite">Prévient la grippe mais ne la traite pas.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="vaccin_antigrippal_conseil">Se faire vacciner chaque année avant l'hiver, surtout femmes enceintes et sujets à risque.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1361,30 +1410,57 @@
                 terbinafine_posologie: "Adulte : 250 mg par jour pendant 2 à 6 semaines (dermophyties) ; onychomycoses : 3 mois. Topique : 1 à 2 fois/j pendant 1 à 4 semaines.",
                 terbinafine_particularite: "Traitement de référence des onychomycoses et des dermophyties à trichophyton, en cours supérieur aux azolés.",
                 terbinafine_conseil: "Prendre pendant ou après les repas. Surveiller le foie et l'odeur des urines (modification bénigne). Éviter l'alcool.",
-                griseofulvine_ampho_title: "3. Griséofulvine et Amphothéricine B",
-                griseofulvine_ampho_gen: "Griséofulvine / Amphothéricine B.",
-                griseofulvine_ampho_formes: "Comprimés (250 mg, 500 mg), Sirop, Poudre injectable IV (amphothéricine B).",
-                griseofulvine_ampho_posologie: "Griséofulvine : 15 à 20 mg/kg/j en 2 prises, plusieurs semaines (teigne). Amphothéricine B : posologie hospitalière IV selon poids.",
-                griseofulvine_ampho_particularite: "Griséofulvine : antifongique des teignes (dermatophytes), active uniquement sur les kératines. Amphothéricine B : fongicide de référence des mycoses profondes, réservée à l'hôpital.",
-                griseofulvine_ampho_conseil: "Griséofulvine : photosensibilisante, à prendre avec un repas gras. Amphothéricine B : surveillance de la créatinine, du potassium et de l'hématologie, en milieu hospitalier.",
-                antihelmintiques_title: "4. Antihelmintiques : albendazole, pyrantel, flubendazole",
-                antihelmintiques_gen: "Albendazole / Pyrantel / Flubendazole.",
-                antihelmintiques_formes: "Comprimés, Gélules, Suspension buvable (sirop).",
-                antihelmintiques_posologie: "Albendazole : 1 cp de 400 mg en dose unique (adulte). Pyrantel : 10 mg/kg en dose unique. Flubendazole : 100 mg, pendant 3 jours. Enfants selon âge et poids.",
-                antihelmintiques_particularite: "Spectres complémentaires sur oxyures, ascaris et ancilostomes : le pyrantel paralyse le ver, albendazole et flubendazole épuisent ses réserves.",
-                antihelmintiques_conseil: "En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.",
+                griseofulvine_title: "Griséofulvine",
+                griseofulvine_gen: "Griséofulvine.",
+                griseofulvine_formes: "Comprimés (250 mg, 500 mg), Sirop.",
+                griseofulvine_posologie: "Griséofulvine : 15 à 20 mg/kg/j en 2 prises, plusieurs semaines (teigne).",
+                griseofulvine_particularite: "Antifongique des teignes (dermatophytes), actif uniquement sur les kératines.",
+                griseofulvine_conseil: "Photosensibilisante, à prendre avec un repas gras.",
+                amphotericine_b_title: "Amphotéricine B",
+                amphotericine_b_gen: "Amphotéricine B.",
+                amphotericine_b_formes: "Poudre injectable IV.",
+                amphotericine_b_posologie: "Amphotéricine B : posologie hospitalière IV selon poids.",
+                amphotericine_b_particularite: "Fongicide de référence des mycoses profondes, réservé à l'hôpital.",
+                amphotericine_b_conseil: "Surveillance de la créatinine, du potassium et de l'hématologie, en milieu hospitalier.",
+                albendazole_title: "Albendazole",
+                albendazole_gen: "Albendazole.",
+                albendazole_formes: "Comprimés (400 mg), Suspension buvable.",
+                albendazole_posologie: "Albendazole : 1 cp de 400 mg en dose unique (adulte). Enfants selon âge et poids.",
+                albendazole_particularite: "Inhibe la polymérisation de la tubuline du ver, ce qui l'épuise ; actif sur oxyures, ascaris et ancilostomes.",
+                albendazole_conseil: "En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.",
+                pyrantel_title: "Pyrantel",
+                pyrantel_gen: "Pyrantel.",
+                pyrantel_formes: "Comprimés, Suspension buvable.",
+                pyrantel_posologie: "Pyrantel : 10 mg/kg en dose unique. Enfants selon âge et poids.",
+                pyrantel_particularite: "Provoque une paralysie spastique du ver aboutissant à son élimination ; actif sur oxyures et ascaris.",
+                pyrantel_conseil: "En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.",
+                flubendazole_title: "Flubendazole",
+                flubendazole_gen: "Flubendazole.",
+                flubendazole_formes: "Comprimés (100 mg), Suspension buvable.",
+                flubendazole_posologie: "Flubendazole : 100 mg, pendant 3 jours. Enfants selon âge et poids.",
+                flubendazole_particularite: "Inhibe la polymérisation de la tubuline du ver, ce qui l'épuise ; actif sur oxyures, ascaris et ancilostomes.",
+                flubendazole_conseil: "En cas d'oxyures, répéter le traitement après 15 jours. Traiter tous les membres du foyer le même jour, couper les ongles et faire bouillir le linge de lit.",
                 metronidazole_para_title: "5. Métronidazole (antiparasitaire)",
                 metronidazole_para_gen: "Métronidazole.",
                 metronidazole_para_formes: "Comprimés (250 mg, 500 mg), Sirop, Suspension, Suppositoire.",
                 metronidazole_para_posologie: "Adulte : 500 mg à 1,5 g par jour en 3 prises pendant 7 à 10 jours. Amibiase hépatique : doses plus élevées selon prescription.",
                 metronidazole_para_particularite: "Antiparasitaire de référence de l'amibiase et de la giardiase, également actif sur Trichomonas vaginalis et les anaérobies.",
                 metronidazole_para_conseil: "Éviction totale de l'alcool pendant le traitement et 48 h après. Prendre pendant les repas. Voir aussi la leçon 4 (usage antibactérien).",
-                aciclovir_vaccin_title: "6. Aciclovir et Vaccin antigrippal",
-                aciclovir_vaccin_gen: "Aciclovir / Vaccin antigrippal inactivé.",
-                aciclovir_vaccin_formes: "Comprimés (200 mg, 400 mg), Crème, Poudre injectable IV, Seringue préremplie.",
-                aciclovir_vaccin_posologie: "Herpès labial : 200 mg, 5 fois par jour pendant 5 jours. Zona : 800 mg, 5 fois/j. Enfant : 20 mg/kg, 4 fois/j. Vaccin : 1 injection IM chaque automne.",
-                aciclovir_vaccin_particularite: "Analogique nucléosidique actif sur les virus Herpes (HSV 1 et 2) et VZV ; le vaccin antigrippal prévient la grippe mais ne la traite pas.",
-                aciclovir_vaccin_conseil: "Aciclovir : commencer dès les premiers signes (picotement), hydrater abondamment. Vaccin : se faire vacciner chaque année avant l'hiver, surtout femmes enceintes et sujets à risque.",
+                aciclovir_title: "Aciclovir",
+                aciclovir_gen: "Aciclovir.",
+                aciclovir_formes: "Comprimés (200 mg, 400 mg), Crème, Poudre injectable IV.",
+                aciclovir_posologie: "Herpès labial : 200 mg, 5 fois par jour pendant 5 jours. Zona : 800 mg, 5 fois/j. Enfant : 20 mg/kg, 4 fois/j.",
+                aciclovir_particularite: "Analogique nucléosidique actif sur les virus Herpes (HSV 1 et 2) et VZV.",
+                aciclovir_conseil: "Commencer dès les premiers signes (picotement), hydrater abondamment.",
+                vaccin_antigrippal_title: "Vaccin antigrippal",
+                vaccin_antigrippal_gen: "Vaccin antigrippal inactivé.",
+                vaccin_antigrippal_formes: "Seringue préremplie.",
+                vaccin_antigrippal_posologie: "Vaccin : 1 injection IM chaque automne.",
+                vaccin_antigrippal_particularite: "Prévient la grippe mais ne la traite pas.",
+                vaccin_antigrippal_conseil: "Se faire vacciner chaque année avant l'hiver, surtout femmes enceintes et sujets à risque.",
+                group_1_name: "Antifongiques",
+                group_2_name: "Antiparasitaires",
+                group_3_name: "Antiviraux",
                 indication_1: "Candidoses : muguet, candidose vulvo-vaginale et buccale (fluconazole).",
                 indication_2: "Dermophyties et onychomycoses à trichophyton (terbinafine), teigne du cuir chevelu (griséofulvine).",
                 indication_3: "Infections fongiques profondes à Candida et cryptococciques (amphothéricine B, milieu hospitalier).",
@@ -1524,30 +1600,57 @@
                 terbinafine_posologie: "بالغين: 250 مغ يومياً لمدة 2 إلى 6 أسابيع (فطريات جلدية)؛ فطريات الأظافر: 3 أشهر. موضعي: إلى مرتين يومياً لمدة 1 إلى 4 أسابيع.",
                 terbinafine_particularite: "العلاج المرجعي لفطريات الأظافر والجلد بالمكورات الثلاثية، بمدة أطول من الأزولات.",
                 terbinafine_conseil: "يُؤخذ مع الوجبات أو بعدها. راقب الكبد ورائحة البول (تغيّر حميد). تجنّب الخمر.",
-                griseofulvine_ampho_title: "3. غريزوفولفين وأمفوتيريسين B",
-                griseofulvine_ampho_gen: "غريزوفولفين / أمفوتيريسين B.",
-                griseofulvine_ampho_formes: "أقراص (250 مغ، 500 مغ)، شراب، مسحوق حقن وريدي (أمفوتيريسين B).",
-                griseofulvine_ampho_posologie: "غريزوفولفين: 15 إلى 20 مغ/كغ/يوم في جرعتين، عدة أسابيع (القُرَّاء). أمفوتيريسين B: جرعة مستشفية وريدية حسب الوزن.",
-                griseofulvine_ampho_particularite: "غريزوفولفين: مضاد فطري للقُرَّاء (مضادات جلدية)، فعال فقط على الكيراتين. أمفوتيريسين B: مرجع الفطريات العميقة، مخصص للمستشفى.",
-                griseofulvine_ampho_conseil: "غريزوفولفين: مسبب حساسية للضوء، يُؤخذ مع وجبة دهنية. أمفوتيريسين B: مراقبة الكرياتينين والبوتاسيوم وسمية الدم في المستشفى.",
-                antihelmintiques_title: "4. مضادات ديدانية: ألبندازول، بيرانتيل، فلوبيندازول",
-                antihelmintiques_gen: "ألبندازول / بيرانتيل / فلوبيندازول.",
-                antihelmintiques_formes: "أقراص، كبسولات، شراب معلق.",
-                antihelmintiques_posologie: "ألبندازول: قرص 400 مغ بجرعة واحدة (بالغين). بيرانتيل: 10 مغ/كغ بجرعة واحدة. فلوبيندازول: 100 مغ لمدة 3 أيام. الأطفال حسب العمر والوزن.",
-                antihelmintiques_particularite: "أطياف متكاملة على الشريان والديدان الطفيلية والأنكلستوم: البيرانتيل يشلّ الدودة، وألبندازول وفلوبيندازول يستنزفان مخزونها.",
-                antihelmintiques_conseil: "في حالة الشرى، كرر العلاج بعد 15 يوماً. عالج كل أفراد المنزل في نفس اليوم، اقطع الأظافر واغلّ ملاءات السرير.",
+                griseofulvine_title: "غريزوفولفين",
+                griseofulvine_gen: "غريزوفولفين.",
+                griseofulvine_formes: "أقراص (250 مغ، 500 مغ)، شراب.",
+                griseofulvine_posologie: "غريزوفولفين: 15 إلى 20 مغ/كغ/يوم في جرعتين، عدة أسابيع (القُرَّاء).",
+                griseofulvine_particularite: "مضاد فطري للقُرَّاء (مضادات جلدية)، فعال فقط على الكيراتين.",
+                griseofulvine_conseil: "مسبب حساسية للضوء، يُؤخذ مع وجبة دهنية.",
+                amphotericine_b_title: "أمفوتيريسين B",
+                amphotericine_b_gen: "أمفوتيريسين B.",
+                amphotericine_b_formes: "مسحوق حقن وريدي.",
+                amphotericine_b_posologie: "أمفوتيريسين B: جرعة مستشفية وريدية حسب الوزن.",
+                amphotericine_b_particularite: "مرجع الفطريات العميقة، مخصص للمستشفى.",
+                amphotericine_b_conseil: "مراقبة الكرياتينين والبوتاسيوم وسمية الدم في المستشفى.",
+                albendazole_title: "ألبندازول",
+                albendazole_gen: "ألبندازول.",
+                albendazole_formes: "أقراص (400 مغ)، شراب معلق.",
+                albendazole_posologie: "ألبندازول: قرص 400 مغ بجرعة واحدة (بالغين). الأطفال حسب العمر والوزن.",
+                albendazole_particularite: "يثبط بوليمرة التوبولين في الدودة فيستنزفها؛ فعال على الشريان والديدان الطفيلية والأنكلستوم.",
+                albendazole_conseil: "في حالة الشرى، كرر العلاج بعد 15 يوماً. عالج كل أفراد المنزل في نفس اليوم، اقطع الأظافر واغلّ ملاءات السرير.",
+                pyrantel_title: "بيرانتيل",
+                pyrantel_gen: "بيرانتيل.",
+                pyrantel_formes: "أقراص، شراب معلق.",
+                pyrantel_posologie: "بيرانتيل: 10 مغ/كغ بجرعة واحدة. الأطفال حسب العمر والوزن.",
+                pyrantel_particularite: "يسبب شللاً تشنجياً للدودة يؤدي إلى طردها؛ فعال على الشريان والديدان الطفيلية.",
+                pyrantel_conseil: "في حالة الشرى، كرر العلاج بعد 15 يوماً. عالج كل أفراد المنزل في نفس اليوم، اقطع الأظافر واغلّ ملاءات السرير.",
+                flubendazole_title: "فلوبيندازول",
+                flubendazole_gen: "فلوبيندازول.",
+                flubendazole_formes: "أقراص (100 مغ)، شراب معلق.",
+                flubendazole_posologie: "فلوبيندازول: 100 مغ لمدة 3 أيام. الأطفال حسب العمر والوزن.",
+                flubendazole_particularite: "يثبط بوليمرة التوبولين في الدودة فيستنزفها؛ فعال على الشريان والديدان الطفيلية والأنكلستوم.",
+                flubendazole_conseil: "في حالة الشرى، كرر العلاج بعد 15 يوماً. عالج كل أفراد المنزل في نفس اليوم، اقطع الأظافر واغلّ ملاءات السرير.",
                 metronidazole_para_title: "5. ميترونيدازول (مضاد طفيليات)",
                 metronidazole_para_gen: "ميترونيدازول.",
                 metronidazole_para_formes: "أقراص (250 مغ، 500 مغ)، شراب، شراب معلق، تحاميل.",
                 metronidazole_para_posologie: "بالغين: 500 مغ إلى 1,5 غ يومياً في 3 جرعات لمدة 7 إلى 10 أيام. الأميبية الكبدية: جرعات أعلى حسب الوصفة.",
                 metronidazole_para_particularite: "المرجع في الأميبية والجيلارديا، وفعال أيضاً على تريكوموناس المهبل والبكتيريا اللاهوائية.",
                 metronidazole_para_conseil: "تجنّب كلي للخمر أثناء العلاج وبعده 48 ساعة. يُؤخذ مع الوجبات. انظر أيضاً الدرس 4 (الاستعمال المضاد للبكتيريا).",
-                aciclovir_vaccin_title: "6. أسيلوفير ولقاح الإنفلونزا",
-                aciclovir_vaccin_gen: "أسيلوفير / لقاح إنفلونزا مفعّل (ميت).",
-                aciclovir_vaccin_formes: "أقراص (200 مغ، 400 مغ)، كريم، مسحوق حقن وريدي، محقنة معبأة.",
-                aciclovir_vaccin_posologie: "الهربس الشفوي: 200 مغ، 5 مرات يومياً لمدة 5 أيام. الحصبة المائية: 800 مغ، 5 مرات. طفل: 20 مغ/كغ، 4 مرات. اللقاح: حقن عضلي كل خريف.",
-                aciclovir_vaccin_particularite: "نظير نيوكليوسيد فعال على فيروسات الهربس (HSV 1 و2) والحصبة المائية؛ ولقاح الإنفلونزا يمنع المرض لكنه لا يعالجه.",
-                aciclovir_vaccin_conseil: "أسيلوفير: ابدأ مع أولى العلامات (وخز) واشرب الماء بغزارة. اللقاح: تلقَّ اللقاح كل عام قبل الشتاء، خصوصاً الحوامل والأشخاص في خطر.",
+                aciclovir_title: "أسيلوفير",
+                aciclovir_gen: "أسيلوفير.",
+                aciclovir_formes: "أقراص (200 مغ، 400 مغ)، كريم، مسحوق حقن وريدي.",
+                aciclovir_posologie: "الهربس الشفوي: 200 مغ، 5 مرات يومياً لمدة 5 أيام. الحصبة المائية: 800 مغ، 5 مرات. طفل: 20 مغ/كغ، 4 مرات.",
+                aciclovir_particularite: "نظير نيوكليوسيد فعال على فيروسات الهربس (HSV 1 و2) والحصبة المائية.",
+                aciclovir_conseil: "ابدأ مع أولى العلامات (وخز) واشرب الماء بغزارة.",
+                vaccin_antigrippal_title: "لقاح الإنفلونزا",
+                vaccin_antigrippal_gen: "لقاح إنفلونزا مثبط (ميت).",
+                vaccin_antigrippal_formes: "محقنة معبأة.",
+                vaccin_antigrippal_posologie: "اللقاح: حقن عضلي كل خريف.",
+                vaccin_antigrippal_particularite: "يمنع الإنفلونزا لكنه لا يعالجها.",
+                vaccin_antigrippal_conseil: "تلقَّ اللقاح كل عام قبل الشتاء، خصوصاً الحوامل والأشخاص في خطر.",
+                group_1_name: "مضادات الفطريات",
+                group_2_name: "مضادات الطفيليات",
+                group_3_name: "مضادات الفيروسات",
                 indication_1: "الفطريات: الخُраж الفموي وفطريات فرج ومهبل المرأة (فلوكونازول).",
                 indication_2: "الفطريات الجلدية والأظافر بالمكورات الثلاثية (تيربينافين)، القُرَّاء بفروة الرأس (غريزوفولفين).",
                 indication_3: "الفطريات العميقة بالكانديدا والكريبتوكوك (أمفوتيريسين B، بيئة مستشفية).",
@@ -1687,30 +1790,57 @@
                 terbinafine_posologie: "Adult: 250 mg daily for 2 to 6 weeks (dermatophytoses); nail infections: 3 months. Topical: 1 to 2 times daily for 1 to 4 weeks.",
                 terbinafine_particularite: "Reference treatment of nail and skin trichophyton infections, with a longer course than azoles.",
                 terbinafine_conseil: "Take with or after meals. Monitor liver and urine smell (benign change). Avoid alcohol.",
-                griseofulvine_ampho_title: "3. Griseofulvin and Amphotericin B",
-                griseofulvine_ampho_gen: "Griseofulvin / Amphotericin B.",
-                griseofulvine_ampho_formes: "Tablets (250 mg, 500 mg), Syrup, IV injectable powder (amphotericin B).",
-                griseofulvine_ampho_posologie: "Griseofulvin: 15 to 20 mg/kg/day in 2 doses, for several weeks (ringworm). Amphotericin B: hospital IV dose according to weight.",
-                griseofulvine_ampho_particularite: "Griseofulvin: antifungal for ringworm (dermatophytes), active only on keratins. Amphotericin B: reference fungicide for deep mycoses, hospital only.",
-                griseofulvine_ampho_conseil: "Griseofulvin: photosensitizing, take with a fatty meal. Amphotericin B: monitor creatinine, potassium and hematology in hospital.",
-                antihelmintiques_title: "4. Anthelmintics: albendazole, pyrantel, flubendazole",
-                antihelmintiques_gen: "Albendazole / Pyrantel / Flubendazole.",
-                antihelmintiques_formes: "Tablets, Capsules, Oral suspension (syrup).",
-                antihelmintiques_posologie: "Albendazole: one 400 mg tablet as a single dose (adults). Pyrantel: 10 mg/kg as a single dose. Flubendazole: 100 mg for 3 days. Children by age and weight.",
-                antihelmintiques_particularite: "Complementary spectra on pinworms, ascaris and hookworms: pyrantel paralyzes the worm, albendazole and flubendazole deplete its reserves.",
-                antihelmintiques_conseil: "In case of pinworms, repeat treatment after 15 days. Treat all household members the same day, cut nails and boil bed linen.",
+                griseofulvine_title: "Griseofulvin",
+                griseofulvine_gen: "Griseofulvin.",
+                griseofulvine_formes: "Tablets (250 mg, 500 mg), Syrup.",
+                griseofulvine_posologie: "Griseofulvin: 15 to 20 mg/kg/day in 2 doses, for several weeks (ringworm).",
+                griseofulvine_particularite: "Antifungal for ringworm (dermatophytes), active only on keratins.",
+                griseofulvine_conseil: "Photosensitizing, take with a fatty meal.",
+                amphotericine_b_title: "Amphotericin B",
+                amphotericine_b_gen: "Amphotericin B.",
+                amphotericine_b_formes: "IV injectable powder.",
+                amphotericine_b_posologie: "Amphotericin B: hospital IV dose according to weight.",
+                amphotericine_b_particularite: "Reference fungicide for deep mycoses, hospital only.",
+                amphotericine_b_conseil: "Monitor creatinine, potassium and hematology in hospital.",
+                albendazole_title: "Albendazole",
+                albendazole_gen: "Albendazole.",
+                albendazole_formes: "Tablets (400 mg), Oral suspension.",
+                albendazole_posologie: "Albendazole: one 400 mg tablet as a single dose (adults). Children by age and weight.",
+                albendazole_particularite: "Inhibits tubulin polymerization of the worm, depleting it; active on pinworms, ascaris and hookworms.",
+                albendazole_conseil: "In case of pinworms, repeat treatment after 15 days. Treat all household members the same day, cut nails and boil bed linen.",
+                pyrantel_title: "Pyrantel",
+                pyrantel_gen: "Pyrantel.",
+                pyrantel_formes: "Tablets, Oral suspension.",
+                pyrantel_posologie: "Pyrantel: 10 mg/kg as a single dose. Children by age and weight.",
+                pyrantel_particularite: "Causes spastic paralysis of the worm leading to its elimination; active on pinworms and ascaris.",
+                pyrantel_conseil: "In case of pinworms, repeat treatment after 15 days. Treat all household members the same day, cut nails and boil bed linen.",
+                flubendazole_title: "Flubendazole",
+                flubendazole_gen: "Flubendazole.",
+                flubendazole_formes: "Tablets (100 mg), Oral suspension.",
+                flubendazole_posologie: "Flubendazole: 100 mg for 3 days. Children by age and weight.",
+                flubendazole_particularite: "Inhibits tubulin polymerization of the worm, depleting it; active on pinworms, ascaris and hookworms.",
+                flubendazole_conseil: "In case of pinworms, repeat treatment after 15 days. Treat all household members the same day, cut nails and boil bed linen.",
                 metronidazole_para_title: "5. Metronidazole (antiparasitic)",
                 metronidazole_para_gen: "Metronidazole.",
                 metronidazole_para_formes: "Tablets (250 mg, 500 mg), Syrup, Suspension, Suppository.",
                 metronidazole_para_posologie: "Adult: 500 mg to 1.5 g daily in 3 doses for 7 to 10 days. Hepatic amoebiasis: higher doses as prescribed.",
                 metronidazole_para_particularite: "Reference antiparasitic for amoebiasis and giardiasis, also active on Trichomonas vaginalis and anaerobes.",
                 metronidazole_para_conseil: "Complete alcohol avoidance during treatment and 48 h after. Take with meals. See also lesson 4 (antibacterial use).",
-                aciclovir_vaccin_title: "6. Aciclovir and flu vaccine",
-                aciclovir_vaccin_gen: "Aciclovir / Inactivated flu vaccine.",
-                aciclovir_vaccin_formes: "Tablets (200 mg, 400 mg), Cream, IV injectable powder, Pre-filled syringe.",
-                aciclovir_vaccin_posologie: "Labial herpes: 200 mg five times daily for 5 days. Shingles: 800 mg five times daily. Child: 20 mg/kg four times daily. Vaccine: 1 IM injection each autumn.",
-                aciclovir_vaccin_particularite: "Nucleoside analogue active on herpes viruses (HSV 1 and 2) and VZV; the flu vaccine prevents flu but does not treat it.",
-                aciclovir_vaccin_conseil: "Aciclovir: start at the first signs (tingling) and drink plenty of water. Vaccine: get vaccinated every year before winter, especially pregnant women and at-risk subjects.",
+                aciclovir_title: "Aciclovir",
+                aciclovir_gen: "Aciclovir.",
+                aciclovir_formes: "Tablets (200 mg, 400 mg), Cream, IV injectable powder.",
+                aciclovir_posologie: "Labial herpes: 200 mg five times daily for 5 days. Shingles: 800 mg five times daily. Child: 20 mg/kg four times daily.",
+                aciclovir_particularite: "Nucleoside analogue active on herpes viruses (HSV 1 and 2) and VZV.",
+                aciclovir_conseil: "Start at the first signs (tingling) and drink plenty of water.",
+                vaccin_antigrippal_title: "Flu vaccine",
+                vaccin_antigrippal_gen: "Inactivated flu vaccine.",
+                vaccin_antigrippal_formes: "Pre-filled syringe.",
+                vaccin_antigrippal_posologie: "Vaccine: 1 IM injection each autumn.",
+                vaccin_antigrippal_particularite: "Prevents flu but does not treat it.",
+                vaccin_antigrippal_conseil: "Get vaccinated every year before winter, especially pregnant women and at-risk subjects.",
+                group_1_name: "Antifungals",
+                group_2_name: "Antiparasitics",
+                group_3_name: "Antivirals",
                 indication_1: "Candidiasis: oral thrush, vulvovaginal and oral candidiasis (fluconazole).",
                 indication_2: "Dermatophytoses and trichophyton nail infections (terbinafine), scalp ringworm (griseofulvin).",
                 indication_3: "Deep fungal infections with Candida and cryptococcal infections (amphotericin B, hospital setting).",
@@ -2073,8 +2203,8 @@
                     "Veflat": [],
                     "Oxyzol": [],
                     "Verten": [],
-                    "Helmintox": [],
                     "Combatrim": [],
+                    "Helmintox": [],
                     "Fluben": [],
                     "Fluvermal": [],
                     "Fluverbien": [],

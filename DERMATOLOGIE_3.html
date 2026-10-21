@@ -1028,11 +1028,13 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antibiotiques locaux</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="acide_fusidique_title">1. Acide fusidique</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="acide_fusidique_gen">Acide fusidique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Fucidine")">Fucidine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fucidine&quot;)">Fucidine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="acide_fusidique_formes">Crème, pommade (2 %), pansement.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="acide_fusidique_posologie">1 à 2 applications par jour sur la lésion, pendant 5 à 10 jours.</span></p>
@@ -1043,8 +1045,8 @@
                         <h3 style="color:var(--primary);" data-i18n="mupirocine_title">2. Mupirocine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="mupirocine_gen">Mupirocine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Bactroban")">Bactroban</span>,
-                            <span class="drug-link" onclick="showDrugModal("Infectoban")">Infectoban</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Bactroban&quot;)">Bactroban</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Infectoban&quot;)">Infectoban</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="mupirocine_formes">Pommade (2 %).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="mupirocine_posologie">1 à 3 applications par jour, pendant 5 à 10 jours.</span></p>
@@ -1055,50 +1057,57 @@
                         <h3 style="color:var(--primary);" data-i18n="metronidazole_title">3. Métronidazole</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="metronidazole_gen">Métronidazole.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Rozex")">Rozex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rozex&quot;)">Rozex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="metronidazole_formes">Crème, gel (0,75 % - 1 %).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="metronidazole_posologie">1 à 2 applications par jour, pendant 4 à 8 semaines (rosacée).</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="metronidazole_particularite">Indiqué dans la rosacée (rougeurs et boutons du visage). Effet progressif sur plusieurs semaines.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="metronidazole_conseil">Éviter le contour des yeux. La protection solaire est recommandée pendant le traitement.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiseptiques</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="povidone_iodée_title">4. Povidone iodée</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="povidone_iodée_gen">Polyvidone iodée.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="povidone_iodee_title">4. Povidone iodée</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="povidone_iodee_gen">Polyvidone iodée.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Betadine")">Betadine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Povip")">Povip</span>,
-                            <span class="drug-link" onclick="showDrugModal("Septidine")">Septidine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Betadine&quot;)">Betadine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Povip&quot;)">Povip</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Septidine&quot;)">Septidine</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="povidone_iodée_formes">Solution, scrub, compresses, gel (10 %).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="povidone_iodée_posologie">Antisepsie de la peau saine : application pure, temps de contact 1 à 2 minutes. Rincer pour les plaies.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="povidone_iodée_particularite">Antiseptique à large spectre (iode). Irritant, à éviter chez le nouveau-né.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="povidone_iodée_conseil">Ne pas mélanger avec d'autres antiseptiques. Teint la peau et les vêtements.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="povidone_iodee_formes">Solution, scrub, compresses, gel (10 %).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="povidone_iodee_posologie">Antisepsie de la peau saine : application pure, temps de contact 1 à 2 minutes. Rincer pour les plaies.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="povidone_iodee_particularite">Antiseptique à large spectre (iode). Irritant, à éviter chez le nouveau-né.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="povidone_iodee_conseil">Ne pas mélanger avec d'autres antiseptiques. Teint la peau et les vêtements.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="sulfadiazine_argentique_title">5. Sulfadiazine argentique</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="sulfadiazine_argentique_gen">Sulfadiazine argentique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Flamazine")">Flamazine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Sulfazine")">Sulfazine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flamazole")">Flamazole</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flamazine&quot;)">Flamazine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sulfazine&quot;)">Sulfazine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flamazole&quot;)">Flamazole</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="sulfadiazine_argentique_formes">Crème (1 %), pommade.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="sulfadiazine_argentique_posologie">Application en couche épaisse (2-3 mm) sur les brûlures, 1 à 2 fois par jour, sous pansement.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="sulfadiazine_argentique_particularite">Prévention et traitement de l'infection des brûlures (action antibactérienne de l'argent).</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="sulfadiazine_argentique_conseil">Nettoyer la brûlure avant application. Ne pas appliquer sur une plaie profonde sans avis médical.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiviraux</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="aciclovir_title">6. Aciclovir</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aciclovir_gen">Aciclovir.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Novaclovir")">Novaclovir</span>,
-                            <span class="drug-link" onclick="showDrugModal("Clovirax")">Clovirax</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Novaclovir&quot;)">Novaclovir</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Clovirax&quot;)">Clovirax</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aciclovir_formes">Crème (5 %).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aciclovir_posologie">Appliquer 5 fois par jour pendant 5 à 10 jours, dès les premiers signes.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aciclovir_particularite">Antiviral actif sur l'herpès labial (bouton de fièvre). Efficace s'il est appliqué tôt.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aciclovir_conseil">Appliquer dès les picotements. Ne pas toucher les yeux. Se laver les mains avant et après.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1348,12 +1357,12 @@
                 metronidazole_posologie: "1 à 2 applications par jour, pendant 4 à 8 semaines (rosacée).",
                 metronidazole_particularite: "Indiqué dans la rosacée (rougeurs et boutons du visage). Effet progressif sur plusieurs semaines.",
                 metronidazole_conseil: "Éviter le contour des yeux. La protection solaire est recommandée pendant le traitement.",
-                "povidone_iodée_title": "4. Povidone iodée",
-                "povidone_iodée_gen": "Polyvidone iodée.",
-                "povidone_iodée_formes": "Solution, scrub, compresses, gel (10 %).",
-                "povidone_iodée_posologie": "Antisepsie de la peau saine : application pure, temps de contact 1 à 2 minutes. Rincer pour les plaies.",
-                "povidone_iodée_particularite": "Antiseptique à large spectre (iode). Irritant, à éviter chez le nouveau-né.",
-                "povidone_iodée_conseil": "Ne pas mélanger avec d'autres antiseptiques. Teint la peau et les vêtements.",
+                povidone_iodee_title: "4. Povidone iodée",
+                povidone_iodee_gen: "Polyvidone iodée.",
+                povidone_iodee_formes: "Solution, scrub, compresses, gel (10 %).",
+                povidone_iodee_posologie: "Antisepsie de la peau saine : application pure, temps de contact 1 à 2 minutes. Rincer pour les plaies.",
+                povidone_iodee_particularite: "Antiseptique à large spectre (iode). Irritant, à éviter chez le nouveau-né.",
+                povidone_iodee_conseil: "Ne pas mélanger avec d'autres antiseptiques. Teint la peau et les vêtements.",
                 sulfadiazine_argentique_title: "5. Sulfadiazine argentique",
                 sulfadiazine_argentique_gen: "Sulfadiazine argentique.",
                 sulfadiazine_argentique_formes: "Crème (1 %), pommade.",
@@ -1366,6 +1375,9 @@
                 aciclovir_posologie: "Appliquer 5 fois par jour pendant 5 à 10 jours, dès les premiers signes.",
                 aciclovir_particularite: "Antiviral actif sur l'herpès labial (bouton de fièvre). Efficace s'il est appliqué tôt.",
                 aciclovir_conseil: "Appliquer dès les picotements. Ne pas toucher les yeux. Se laver les mains avant et après.",
+                group_1_name: "Antibiotiques locaux",
+                group_2_name: "Antiseptiques",
+                group_3_name: "Antiviraux",
                 indication_1: "Impétigo, folliculite et infections cutanées bactériennes (acide fusidique, mupirocine).",
                 indication_2: "Rosacée (métronidazole local).",
                 indication_3: "Désinfection des plaies et brûlures (povidone iodée, chlorhexidine, sulfadiazine argentique).",
@@ -1511,12 +1523,12 @@
                 metronidazole_posologie: "تطبيق 1-2 مرات يومياً، لمدة 4-8 أسابيع (الوردية).",
                 metronidazole_particularite: "مخصّص للوردية (احمرار وحبوب الوجه). تأثير تدريجي على عدة أسابيع.",
                 metronidazole_conseil: "تجنّب محيط العينين. يُنصح بالحماية من الشمس أثناء العلاج.",
-                "povidone_iodée_title": "4. بوفيدون أيودي",
-                "povidone_iodée_gen": "بوفيدون أيودي.",
-                "povidone_iodée_formes": "محلول، محلول غسول، كمادات، جل (10 %).",
-                "povidone_iodée_posologie": "تطهير الجلد السليم: تطبيق صافٍ، زمن التلامس 1-2 دقيقة. يُشطف للجروح.",
-                "povidone_iodée_particularite": "مطهّر واسع الطيف (يود). مهيّج، يُتجنّب عند الوليد.",
-                "povidone_iodée_conseil": "لا تخلطه مع مطهّرات أخرى. يصبغ الجلد والملابس.",
+                povidone_iodee_title: "4. بوفيدون أيودي",
+                povidone_iodee_gen: "بوفيدون أيودي.",
+                povidone_iodee_formes: "محلول، محلول غسول، كمادات، جل (10 %).",
+                povidone_iodee_posologie: "تطهير الجلد السليم: تطبيق صافٍ، زمن التلامس 1-2 دقيقة. يُشطف للجروح.",
+                povidone_iodee_particularite: "مطهّر واسع الطيف (يود). مهيّج، يُتجنّب عند الوليد.",
+                povidone_iodee_conseil: "لا تخلطه مع مطهّرات أخرى. يصبغ الجلد والملابس.",
                 sulfadiazine_argentique_title: "5. سلفاديازين فضي",
                 sulfadiazine_argentique_gen: "سلفاديازين فضي.",
                 sulfadiazine_argentique_formes: "كريم (1 %)، مرهم.",
@@ -1529,6 +1541,9 @@
                 aciclovir_posologie: "يُطبَّق 5 مرات يومياً لمدة 5-10 أيام، منذ أولى العلامات.",
                 aciclovir_particularite: "مضاد فيروسي فعّال على الهربس الشفوي (حمى البثور). فعّال إذا طُبِّق مبكراً.",
                 aciclovir_conseil: "يُطبَّق منذ الوخز. لا تلمس العينين. اغسل يديك قبل وبعد.",
+                group_1_name: "مضادات حيوية موضعية",
+                group_2_name: "مطهّرات",
+                group_3_name: "مضادات فيروسية",
                 indication_1: "القوباء، التهاب الجريبات والعدوى الجلدية البكتيرية (حمض الفوسيدك، موبيروسين).",
                 indication_2: "الوردية (ميترونيدازول موضعي).",
                 indication_3: "تطهير الجروح والحروق (بوفيدون أيودي، كلورهيكسيدين، سلفاديازين فضي).",
@@ -1674,12 +1689,12 @@
                 metronidazole_posologie: "1-2 applications daily, for 4-8 weeks (rosacea).",
                 metronidazole_particularite: "Indicated in rosacea (facial redness and pimples). Progressive effect over several weeks.",
                 metronidazole_conseil: "Avoid the eye contour. Sun protection is recommended during treatment.",
-                "povidone_iodée_title": "4. Povidone iodine",
-                "povidone_iodée_gen": "Povidone iodine.",
-                "povidone_iodée_formes": "Solution, scrub, compresses, gel (10 %).",
-                "povidone_iodée_posologie": "Skin antisepsis: pure application, contact time 1-2 minutes. Rinse for wounds.",
-                "povidone_iodée_particularite": "Broad-spectrum antiseptic (iodine). Irritant, avoid in newborns.",
-                "povidone_iodée_conseil": "Do not mix with other antiseptics. Stains skin and clothing.",
+                povidone_iodee_title: "4. Povidone iodine",
+                povidone_iodee_gen: "Povidone iodine.",
+                povidone_iodee_formes: "Solution, scrub, compresses, gel (10 %).",
+                povidone_iodee_posologie: "Skin antisepsis: pure application, contact time 1-2 minutes. Rinse for wounds.",
+                povidone_iodee_particularite: "Broad-spectrum antiseptic (iodine). Irritant, avoid in newborns.",
+                povidone_iodee_conseil: "Do not mix with other antiseptics. Stains skin and clothing.",
                 sulfadiazine_argentique_title: "5. Silver sulfadiazine",
                 sulfadiazine_argentique_gen: "Silver sulfadiazine.",
                 sulfadiazine_argentique_formes: "Cream (1 %), ointment.",
@@ -1692,6 +1707,9 @@
                 aciclovir_posologie: "Apply 5 times daily for 5-10 days, from the first signs.",
                 aciclovir_particularite: "Antiviral active on cold sores (fever blisters). Effective if applied early.",
                 aciclovir_conseil: "Apply at the tingling stage. Do not touch the eyes. Wash hands before and after.",
+                group_1_name: "Local antibiotics",
+                group_2_name: "Antiseptics",
+                group_3_name: "Antivirals",
                 indication_1: "Impetigo, folliculitis and bacterial skin infections (fusidic acid, mupirocin).",
                 indication_2: "Rosacea (topical metronidazole).",
                 indication_3: "Disinfection of wounds and burns (povidone iodine, chlorhexidine, silver sulfadiazine).",

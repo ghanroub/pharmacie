@@ -1028,12 +1028,14 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Cicatrisants et émollients</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="trolamine_title">1. Trolamine (Biafine)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="trolamine_gen">Trolamine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Biafine")">Biafine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Polydermyl")">Polydermyl</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Biafine&quot;)">Biafine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Polydermyl&quot;)">Polydermyl</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="trolamine_formes">Émulsion cutanée, crème.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="trolamine_posologie">Application en couche épaisse sur la brûlure ou la plaie, 2 à 4 fois par jour.</span></p>
@@ -1044,9 +1046,9 @@
                         <h3 style="color:var(--primary);" data-i18n="centella_asiatica_title">2. Centella asiatica (Madecassol)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="centella_asiatica_gen">Extrait de Centella asiatica (asiaticoside).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Madecassol")">Madecassol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Madecassine")">Madecassine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cicatryl-Bio")">Cicatryl-Bio</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Madecassol&quot;)">Madecassol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Madecassine&quot;)">Madecassine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cicatryl-Bio&quot;)">Cicatryl-Bio</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="centella_asiatica_formes">Crème, pommade, poudre.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="centella_asiatica_posologie">1 à 2 applications par jour sur la cicatrice ou la plaie, jusqu'à guérison.</span></p>
@@ -1057,48 +1059,68 @@
                         <h3 style="color:var(--primary);" data-i18n="dexpanthenol_title">3. Dexpanthénol / Vitamine B5 (Bepanthen)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="dexpanthenol_gen">Dexpanthénol (provitamine B5).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Bepanthen")">Bepanthen</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Bepanthen&quot;)">Bepanthen</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="dexpanthenol_formes">Crème, pommade, gel.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="dexpanthenol_posologie">Application 1 à 2 fois par jour sur la zone concernée (peau sèche, crevasses, érythème).</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="dexpanthenol_particularite">Réparateur et hydratant : idéal pour les crevasses, le dessèchement et l'érythème fessier.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="dexpanthenol_conseil">Bien toléré, sans parfum. Peut s'utiliser chez le nourrisson et la femme enceinte.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antipsoriasiques</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="calcipotriol_betamethasone_title">4. Calcipotriol / Daivobet</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="calcipotriol_betamethasone_gen">Calcipotriol (analogue vitamine D), association au bétaméthasone.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="calcipotriol_title">4. Calcipotriol (Daivonex)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="calcipotriol_gen">Calcipotriol (analogue de la vitamine D).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Daivonex")">Daivonex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Daivobet")">Daivobet</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Daivonex&quot;)">Daivonex</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="calcipotriol_betamethasone_formes">Pommade, gel, solution capillaire (50 µg/g) ; Daivobet (calcipotriol + bétaméthasone).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="calcipotriol_betamethasone_posologie">1 à 2 applications par jour sur les plaques de psoriasis. Ne pas dépasser la dose hebdomadaire indiquée.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="calcipotriol_betamethasone_particularite">Antipsoriasique de référence. Daivobet associe l'effet du calcipotriol et du dermocorticoïde.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="calcipotriol_betamethasone_conseil">Ne pas appliquer sur le visage. Éviter l'exposition solaire. Ne pas dépasser la dose maximale.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="calcipotriol_formes">Pommade, gel, solution capillaire (50 µg/g).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="calcipotriol_posologie">1 à 2 applications par jour sur les plaques de psoriasis. Ne pas dépasser la dose hebdomadaire indiquée.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="calcipotriol_particularite">Antipsoriasique de référence : analogue de la vitamine D qui régule la prolifération des kératinocytes.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="calcipotriol_conseil">Ne pas appliquer sur le visage. Éviter l'exposition solaire. Ne pas dépasser la dose maximale.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="crotamiton_title">5. Crotamiton (Eurax)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="calcipotriol_betamethasone_title">5. Calcipotriol + bétaméthasone (Daivobet)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="calcipotriol_betamethasone_gen">Calcipotriol + bétaméthasone (association fixe).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Daivobet&quot;)">Daivobet</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="calcipotriol_betamethasone_formes">Pommade (calcipotriol 50 µg/g + bétaméthasone).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="calcipotriol_betamethasone_posologie">1 à 2 applications par jour sur les plaques de psoriasis. Ne pas dépasser la dose hebdomadaire indiquée.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="calcipotriol_betamethasone_particularite">Association fixe d'un analogue de la vitamine D et d'un dermocorticoïde : effet antipsoriasique renforcé.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="calcipotriol_betamethasone_conseil">Ne pas appliquer sur le visage. Éviter l'exposition solaire. Ne pas dépasser la dose maximale.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antiprurigineux</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="crotamiton_title">6. Crotamiton (Eurax)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="crotamiton_gen">Crotamiton.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Eurax")">Eurax</span>,
-                            <span class="drug-link" onclick="showDrugModal("Euraxyl")">Euraxyl</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Eurax&quot;)">Eurax</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Euraxyl&quot;)">Euraxyl</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="crotamiton_formes">Crème, lotion (10 %).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="crotamiton_posologie">Antiprurigineux : application 2 à 3 fois par jour. Contre la gale : application puis rinçage selon protocole.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="crotamiton_particularite">Antihistaminique local et acaricide : soulage les démangeaisons et traite la gale.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="crotamiton_conseil">Éviter le contact avec les yeux et les muqueuses. Irritant sur la peau lésée.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_4_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Protecteurs</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="oxyde_zinc_title">6. Oxyde de zinc (Calmozinc)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="oxyde_zinc_title">7. Oxyde de zinc (Calmozinc)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="oxyde_zinc_gen">Oxyde de zinc, souvent associé à des carraghénates / dioxyde de titane.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Calmozinc")">Calmozinc</span>,
-                            <span class="drug-link" onclick="showDrugModal("Oxyplasine")">Oxyplasine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Calmozinc&quot;)">Calmozinc</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Oxyplasine&quot;)">Oxyplasine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="oxyde_zinc_formes">Crème, pommade protectrice.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="oxyde_zinc_posologie">Application après chaque change, en couche épaisse, sur la peau propre et sèche.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="oxyde_zinc_particularite">Protecteur et astringent : traitement et prévention de l'érythème fessier du nourrisson.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="oxyde_zinc_conseil">Bien sécher la peau avant l'application. Changer fréquemment les couches.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1348,24 +1370,34 @@
                 dexpanthenol_posologie: "Application 1 à 2 fois par jour sur la zone concernée (peau sèche, crevasses, érythème).",
                 dexpanthenol_particularite: "Réparateur et hydratant : idéal pour les crevasses, le dessèchement et l'érythème fessier.",
                 dexpanthenol_conseil: "Bien toléré, sans parfum. Peut s'utiliser chez le nourrisson et la femme enceinte.",
-                calcipotriol_betamethasone_title: "4. Calcipotriol / Daivobet",
-                calcipotriol_betamethasone_gen: "Calcipotriol (analogue vitamine D), association au bétaméthasone.",
-                calcipotriol_betamethasone_formes: "Pommade, gel, solution capillaire (50 µg/g) ; Daivobet (calcipotriol + bétaméthasone).",
+                calcipotriol_title: "4. Calcipotriol (Daivonex)",
+                calcipotriol_gen: "Calcipotriol (analogue de la vitamine D).",
+                calcipotriol_formes: "Pommade, gel, solution capillaire (50 µg/g).",
+                calcipotriol_posologie: "1 à 2 applications par jour sur les plaques de psoriasis. Ne pas dépasser la dose hebdomadaire indiquée.",
+                calcipotriol_particularite: "Antipsoriasique de référence : analogue de la vitamine D qui régule la prolifération des kératinocytes.",
+                calcipotriol_conseil: "Ne pas appliquer sur le visage. Éviter l'exposition solaire. Ne pas dépasser la dose maximale.",
+                calcipotriol_betamethasone_title: "5. Calcipotriol + bétaméthasone (Daivobet)",
+                calcipotriol_betamethasone_gen: "Calcipotriol + bétaméthasone (association fixe).",
+                calcipotriol_betamethasone_formes: "Pommade (calcipotriol 50 µg/g + bétaméthasone).",
                 calcipotriol_betamethasone_posologie: "1 à 2 applications par jour sur les plaques de psoriasis. Ne pas dépasser la dose hebdomadaire indiquée.",
-                calcipotriol_betamethasone_particularite: "Antipsoriasique de référence. Daivobet associe l'effet du calcipotriol et du dermocorticoïde.",
+                calcipotriol_betamethasone_particularite: "Association fixe d'un analogue de la vitamine D et d'un dermocorticoïde : effet antipsoriasique renforcé.",
                 calcipotriol_betamethasone_conseil: "Ne pas appliquer sur le visage. Éviter l'exposition solaire. Ne pas dépasser la dose maximale.",
-                crotamiton_title: "5. Crotamiton (Eurax)",
+                crotamiton_title: "6. Crotamiton (Eurax)",
                 crotamiton_gen: "Crotamiton.",
                 crotamiton_formes: "Crème, lotion (10 %).",
                 crotamiton_posologie: "Antiprurigineux : application 2 à 3 fois par jour. Contre la gale : application puis rinçage selon protocole.",
                 crotamiton_particularite: "Antihistaminique local et acaricide : soulage les démangeaisons et traite la gale.",
                 crotamiton_conseil: "Éviter le contact avec les yeux et les muqueuses. Irritant sur la peau lésée.",
-                oxyde_zinc_title: "6. Oxyde de zinc (Calmozinc)",
+                oxyde_zinc_title: "7. Oxyde de zinc (Calmozinc)",
                 oxyde_zinc_gen: "Oxyde de zinc, souvent associé à des carraghénates / dioxyde de titane.",
                 oxyde_zinc_formes: "Crème, pommade protectrice.",
                 oxyde_zinc_posologie: "Application après chaque change, en couche épaisse, sur la peau propre et sèche.",
                 oxyde_zinc_particularite: "Protecteur et astringent : traitement et prévention de l'érythème fessier du nourrisson.",
                 oxyde_zinc_conseil: "Bien sécher la peau avant l'application. Changer fréquemment les couches.",
+                group_1_name: "Cicatrisants et émollients",
+                group_2_name: "Antipsoriasiques",
+                group_3_name: "Antiprurigineux",
+                group_4_name: "Protecteurs",
                 indication_1: "Peau sèche, atopique et eczéma (crèmes émollientes : Dexeryl, Biafine).",
                 indication_2: "Brûlures superficielles et plaies (trolamine, H.E.C).",
                 indication_3: "Cicatrices et cicatrisation (centella asiatica/Madecassol, dexpanthénol/Bepanthen).",
@@ -1511,24 +1543,34 @@
                 dexpanthenol_posologie: "تطبيق 1-2 مرات يومياً على المنطقة المعنية (جلد جاف، تشققات، احمرار).",
                 dexpanthenol_particularite: "مُرمّم ومرطّب: مثالي للتشقّقات والجفاف واحمرار مقعد الرضيع.",
                 dexpanthenol_conseil: "جيد التحمل، بلا عطر. يمكن استعماله عند الرضيع والمرأة الحامل.",
-                calcipotriol_betamethasone_title: "4. كالسيبوتريول / Daivobet",
-                calcipotriol_betamethasone_gen: "كالسيبوتريول (نظير فيتامين D)، مع البيتاميتازون.",
-                calcipotriol_betamethasone_formes: "مرهم، جل، محلول للشعر (50 ميكروغرام/غ)؛ Daivobet (كالسيبوتريول + بيتاميتازون).",
+                calcipotriol_title: "4. كالسيبوتريول (Daivonex)",
+                calcipotriol_gen: "كالسيبوتريول (نظير فيتامين D).",
+                calcipotriol_formes: "مرهم، جل، محلول للشعر (50 ميكروغرام/غ).",
+                calcipotriol_posologie: "تطبيق 1-2 مرات يومياً على صفائح الصدفية. لا تتجاوز الجرعة الأسبوعية المحددة.",
+                calcipotriol_particularite: "مضاد الصدفية المرجعي: نظير فيتامين D ينظّم تكاثر الخلايا المقرّنة.",
+                calcipotriol_conseil: "لا يُطبَّق على الوجه. تجنّب التعرّض للشمس. لا تتجاوز الجرعة القصوى.",
+                calcipotriol_betamethasone_title: "5. كالسيبوتريول + بيتاميتازون (Daivobet)",
+                calcipotriol_betamethasone_gen: "كالسيبوتريول + بيتاميتازون (تركيب ثابت).",
+                calcipotriol_betamethasone_formes: "مرهم (كالسيبوتريول 50 ميكروغرام/غ + بيتاميتازون).",
                 calcipotriol_betamethasone_posologie: "تطبيق 1-2 مرات يومياً على صفائح الصدفية. لا تتجاوز الجرعة الأسبوعية المحددة.",
-                calcipotriol_betamethasone_particularite: "مضاد الصدفية المرجعي. يجمع Daivobet بين تأثير الكالسيبوتريول والستيرويد الجلدي.",
+                calcipotriol_betamethasone_particularite: "تركيب ثابت من نظير فيتامين D وستيرويد جلدي: تأثير مضاد للصدفية معزّز.",
                 calcipotriol_betamethasone_conseil: "لا يُطبَّق على الوجه. تجنّب التعرّض للشمس. لا تتجاوز الجرعة القصوى.",
-                crotamiton_title: "5. كروتاميتون (Eurax)",
+                crotamiton_title: "6. كروتاميتون (Eurax)",
                 crotamiton_gen: "كروتاميتون.",
                 crotamiton_formes: "كريم، محلول (10 %).",
                 crotamiton_posologie: "مضاد للحكة: تطبيق 2-3 مرات يومياً. ضد الجرب: تطبيق ثم شطف حسب البروتوكول.",
                 crotamiton_particularite: "مضاد هيستامين موضعي وقاتل للعث: يخفّف الحكة ويعالج الجرب.",
                 crotamiton_conseil: "تجنّب ملامسة العينين والمخاطيات. مهيّج على الجلد المتضرر.",
-                oxyde_zinc_title: "6. أكسيد الزنك (Calmozinc)",
+                oxyde_zinc_title: "7. أكسيد الزنك (Calmozinc)",
                 oxyde_zinc_gen: "أكسيد الزنك، غالباً مع الكاراجينان / ثنائي أكسيد التيتانيوم.",
                 oxyde_zinc_formes: "كريم، مرهم واقٍ.",
                 oxyde_zinc_posologie: "تطبيق بعد كل تغيير، بطبقة سميكة، على جلد نظيف وجاف.",
                 oxyde_zinc_particularite: "واقٍ وقابض: علاج والوقاية من احمرار مقعد الرضيع.",
                 oxyde_zinc_conseil: "جفّف الجلد جيداً قبل التطبيق. غيّر الحفاضات باستمرار.",
+                group_1_name: "شافية وملطّفة",
+                group_2_name: "مضادات الصدفية",
+                group_3_name: "مضادات الحكة",
+                group_4_name: "واقيات",
                 indication_1: "الجلد الجاف، التأتبي والإكزيما (كريمات ملطّفة: Dexeryl، Biafine).",
                 indication_2: "الحروق السطحية والجروح (ترولامين، H.E.C).",
                 indication_3: "الندوب والالتئام (سنتيلا آسياتيكا/Madecassol، ديكسبانثينول/Bepanthen).",
@@ -1674,24 +1716,34 @@
                 dexpanthenol_posologie: "Apply 1-2 times daily on the concerned area (dry skin, cracks, erythema).",
                 dexpanthenol_particularite: "Repairing and moisturizing: ideal for cracks, dryness and diaper rash.",
                 dexpanthenol_conseil: "Well tolerated, fragrance-free. Can be used in infants and pregnant women.",
-                calcipotriol_betamethasone_title: "4. Calcipotriol / Daivobet",
-                calcipotriol_betamethasone_gen: "Calcipotriol (vitamin D analogue), combination with betamethasone.",
-                calcipotriol_betamethasone_formes: "Ointment, gel, scalp solution (50 µg/g); Daivobet (calcipotriol + betamethasone).",
+                calcipotriol_title: "4. Calcipotriol (Daivonex)",
+                calcipotriol_gen: "Calcipotriol (vitamin D analogue).",
+                calcipotriol_formes: "Ointment, gel, scalp solution (50 µg/g).",
+                calcipotriol_posologie: "1-2 applications daily on psoriasis plaques. Do not exceed the indicated weekly dose.",
+                calcipotriol_particularite: "Reference antipsoriatic: vitamin D analogue that regulates keratinocyte proliferation.",
+                calcipotriol_conseil: "Do not apply on the face. Avoid sun exposure. Do not exceed the maximum dose.",
+                calcipotriol_betamethasone_title: "5. Calcipotriol + betamethasone (Daivobet)",
+                calcipotriol_betamethasone_gen: "Calcipotriol + betamethasone (fixed combination).",
+                calcipotriol_betamethasone_formes: "Ointment (calcipotriol 50 µg/g + betamethasone).",
                 calcipotriol_betamethasone_posologie: "1-2 applications daily on psoriasis plaques. Do not exceed the indicated weekly dose.",
-                calcipotriol_betamethasone_particularite: "Reference antipsoriatic. Daivobet combines the effect of calcipotriol and topical corticosteroid.",
+                calcipotriol_betamethasone_particularite: "Fixed combination of a vitamin D analogue and a topical corticosteroid: enhanced antipsoriatic effect.",
                 calcipotriol_betamethasone_conseil: "Do not apply on the face. Avoid sun exposure. Do not exceed the maximum dose.",
-                crotamiton_title: "5. Crotamiton (Eurax)",
+                crotamiton_title: "6. Crotamiton (Eurax)",
                 crotamiton_gen: "Crotamiton.",
                 crotamiton_formes: "Cream, lotion (10 %).",
                 crotamiton_posologie: "Antipruritic: apply 2-3 times daily. Against scabies: apply then rinse per protocol.",
                 crotamiton_particularite: "Local antihistamine and acaricidal: relieves itching and treats scabies.",
                 crotamiton_conseil: "Avoid contact with eyes and mucous membranes. Irritating on damaged skin.",
-                oxyde_zinc_title: "6. Zinc oxide (Calmozinc)",
+                oxyde_zinc_title: "7. Zinc oxide (Calmozinc)",
                 oxyde_zinc_gen: "Zinc oxide, often combined with carrageenans / titanium dioxide.",
                 oxyde_zinc_formes: "Cream, protective ointment.",
                 oxyde_zinc_posologie: "Apply after each change, in a thick layer, on clean dry skin.",
                 oxyde_zinc_particularite: "Protective and astringent: treatment and prevention of diaper rash in infants.",
                 oxyde_zinc_conseil: "Dry the skin well before application. Change diapers frequently.",
+                group_1_name: "Healing agents and emollients",
+                group_2_name: "Antipsoriatics",
+                group_3_name: "Antipruritics",
+                group_4_name: "Protective agents",
                 indication_1: "Dry, atopic skin and eczema (emollient creams: Dexeryl, Biafine).",
                 indication_2: "Superficial burns and wounds (trolamine, H.E.C).",
                 indication_3: "Scars and healing (centella asiatica/Madecassol, dexpanthenol/Bepanthen).",

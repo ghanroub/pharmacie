@@ -1028,16 +1028,18 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antisecrétoires IPP</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="omeprazole_title">1. Oméprazole</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="omeprazole_gen">Oméprazole (benzimidazolé).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lomzole")">Lomzole</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lomac")">Lomac</span>,
-                            <span class="drug-link" onclick="showDrugModal("Antag")">Antag</span>,
-                            <span class="drug-link" onclick="showDrugModal("Proton")">Proton</span>,
-                            <span class="drug-link" onclick="showDrugModal("Zimor")">Zimor</span>,
-                            <span class="drug-link" onclick="showDrugModal("Omed")">Omed</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lomzole&quot;)">Lomzole</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lomac&quot;)">Lomac</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Antag&quot;)">Antag</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Proton&quot;)">Proton</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zimor&quot;)">Zimor</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Omed&quot;)">Omed</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="omeprazole_formes">Gélules gastro-résistantes (10 mg, 20 mg, 40 mg), Comprimés.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="omeprazole_posologie">Adulte : 20 à 40 mg le matin à jeun, 30 minutes avant le petit-déjeuner. En association (H. pylori) : 20 mg 2 fois/j. Durée selon l'avis médical ; automédication ≤ 10 jours.</span></p>
@@ -1048,8 +1050,8 @@
                         <h3 style="color:var(--primary);" data-i18n="lansoprazole_title">2. Lansoprazole</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lansoprazole_gen">Lansoprazole (benzimidazolé).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Lansopomp")">Lansopomp</span>,
-                            <span class="drug-link" onclick="showDrugModal("Zopra")">Zopra</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lansopomp&quot;)">Lansopomp</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zopra&quot;)">Zopra</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lansoprazole_formes">Gélules gastro-résistantes (15 mg, 30 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lansoprazole_posologie">Adulte : 15 à 30 mg le matin à jeun, avant le petit-déjeuner. Durée selon l'indication ; automédication ≤ 10 jours.</span></p>
@@ -1060,9 +1062,9 @@
                         <h3 style="color:var(--primary);" data-i18n="pantoprazole_title">3. Pantoprazole</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="pantoprazole_gen">Pantoprazole (benzimidazolé).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Panop")">Panop</span>,
-                            <span class="drug-link" onclick="showDrugModal("Potonex")">Potonex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Protonex")">Protonex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Panop&quot;)">Panop</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Potonex&quot;)">Potonex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Protonex&quot;)">Protonex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="pantoprazole_formes">Comprimés gastro-résistants (20 mg, 40 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="pantoprazole_posologie">Adulte : 20 à 40 mg le matin à jeun, 30 à 60 minutes avant le repas. Durée selon l'indication ; automédication ≤ 10 jours.</span></p>
@@ -1073,31 +1075,35 @@
                         <h3 style="color:var(--primary);" data-i18n="esomeprazole_title">4. Ésoméprazole</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="esomeprazole_gen">Ésoméprazole (S-oméprazole).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Esoproton")">Esoproton</span>,
-                            <span class="drug-link" onclick="showDrugModal("Esoral")">Esoral</span>,
-                            <span class="drug-link" onclick="showDrugModal("Mesopral")">Mesopral</span>,
-                            <span class="drug-link" onclick="showDrugModal("Lisinox")">Lisinox</span>,
-                            <span class="drug-link" onclick="showDrugModal("Inexium")">Inexium</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Esoproton&quot;)">Esoproton</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Esoral&quot;)">Esoral</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Mesopral&quot;)">Mesopral</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Lisinox&quot;)">Lisinox</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Inexium&quot;)">Inexium</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="esomeprazole_formes">Comprimés gastro-résistants (20 mg, 40 mg), Sachets, Solution injectable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="esomeprazole_posologie">Adulte : 20 à 40 mg le matin à jeun, 30 à 60 minutes avant le repas. Forme injectable réservée à l'hôpital.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="esomeprazole_particularite">Énantiomère actif de l'oméprazole, action puissante : indiqué dans l'œsophagite, le RGO et la prévention des ulcères.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="esomeprazole_conseil">Ne pas croquer ni écraser le comprimé. Interaction possible avec le clopidogrel : signaler tout traitement associé au pharmacien.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antisecrétoires anti-H2</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="ranitidine_title">5. Ranitidine (anti-H2)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="ranitidine_gen">Ranitidine (antagoniste des récepteurs H2).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Ranitidine Mabo")">Ranitidine Mabo</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ranimat")">Ranimat</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aptidine")">Aptidine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ranitex")">Ranitex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ratidex")">Ratidex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ranitidine Mabo&quot;)">Ranitidine Mabo</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ranimat&quot;)">Ranimat</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aptidine&quot;)">Aptidine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ranitex&quot;)">Ranitex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ratidex&quot;)">Ratidex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="ranitidine_formes">Comprimés (150 mg, 300 mg), Effervescents, Solution injectable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="ranitidine_posologie">Adulte : 150 mg matin et soir ou 300 mg le soir. Automédication : ≤ 10 jours, après 15 ans.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="ranitidine_particularite">Anti-H2 qui diminue la sécrétion acide de façon réversible : alternative aux IPP quand une action plus douce suffit.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="ranitidine_conseil">Efficace surtout sur la sécrétion nocturne : la prise du soir est privilégiée. Réduire en cas d'insuffisance rénale.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1359,6 +1365,8 @@
                 ranitidine_posologie: "Adulte : 150 mg matin et soir ou 300 mg le soir. Automédication : ≤ 10 jours, après 15 ans.",
                 ranitidine_particularite: "Anti-H2 qui diminue la sécrétion acide de façon réversible : alternative aux IPP quand une action plus douce suffit.",
                 ranitidine_conseil: "Efficace surtout sur la sécrétion nocturne : la prise du soir est privilégiée. Réduire en cas d'insuffisance rénale.",
+                group_1_name: "Antisecrétoires IPP",
+                group_2_name: "Antisecrétoires anti-H2",
                 indication_1: "Reflux gastro-œsophagien (RGO) et œsophagite : IPP, traitement de référence.",
                 indication_2: "Ulcère gastrique ou duodénal et prévention des ulcères liés aux AINS.",
                 indication_3: "Éradication d'Helicobacter pylori : IPP en association à deux antibiotiques.",
@@ -1516,6 +1524,8 @@
                 ranitidine_posologie: "بالغين: 150 مغ صباحاً ومساءً أو 300 مغ مساءً. العلاج الذاتي: ≤ 10 أيام بعد سن 15.",
                 ranitidine_particularite: "مضاد H2 يقلل إفراز الحمض بشكل عكوس: بديل عن مثبطات المضخة عندما تكفي فعالية أخف.",
                 ranitidine_conseil: "فعّال خصوصاً على الإفراز الليلي: يُفضّل التناول مساءً. يُقلَّل في حالة القصور الكلوي.",
+                group_1_name: "مثبطات مضخة البروتون",
+                group_2_name: "مضادات H2",
                 indication_1: "الجزر المعدي المريئي والتهاب المريء: مثبطات المضخة، العلاج المرجعي.",
                 indication_2: "القرحة المعدية أو العفجية والوقاية من قرحة مضادات الالتهاب اللاستيرويدية.",
                 indication_3: "القضاء على الملوية البوابية: مثبط المضخة مع مضادين حيويين.",
@@ -1673,6 +1683,8 @@
                 ranitidine_posologie: "Adult: 150 mg morning and evening or 300 mg at night. Self-medication: ≤ 10 days, after age 15.",
                 ranitidine_particularite: "H2 blocker that reversibly reduces acid secretion: alternative to PPIs when a gentler action is sufficient.",
                 ranitidine_conseil: "Effective mainly on nocturnal secretion: evening intake is preferred. Reduce in renal impairment.",
+                group_1_name: "PPI antisecretory agents",
+                group_2_name: "H2-blocker antisecretory agents",
                 indication_1: "Gastro-oesophageal reflux disease (GERD) and oesophagitis: PPIs, the reference treatment.",
                 indication_2: "Gastric or duodenal ulcer and prevention of NSAID-related ulcers.",
                 indication_3: "Helicobacter pylori eradication: PPI combined with two antibiotics.",

@@ -1027,13 +1027,15 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Corticoïdes nasaux</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="beclometasone_title">1. Béclométasone nasale</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="beclometasone_gen">Béclométasone (diproprionate).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Beconase")">Beconase</span>,
-                            <span class="drug-link" onclick="showDrugModal("Rinoclenil")">Rinoclenil</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nasabec")">Nasabec</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Beconase&quot;)">Beconase</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rinoclenil&quot;)">Rinoclenil</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nasabec&quot;)">Nasabec</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="beclometasone_formes">Suspension pour pulvérisation nasale.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="beclometasone_posologie">1 à 2 pulvérisations par narine, 1 à 2 fois par jour.</span></p>
@@ -1044,8 +1046,8 @@
                         <h3 style="color:var(--primary);" data-i18n="mometasone_title">2. Mométasone nasale</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="mometasone_gen">Mométasone (furoate).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Momenex")">Momenex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nasonex")">Nasonex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Momenex&quot;)">Momenex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nasonex&quot;)">Nasonex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="mometasone_formes">Suspension pour pulvérisation nasale.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="mometasone_posologie">1 à 2 pulvérisations par narine 1 fois par jour.</span></p>
@@ -1056,9 +1058,9 @@
                         <h3 style="color:var(--primary);" data-i18n="fluticasone_title">3. Fluticasone nasale</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fluticasone_gen">Fluticasone (propionate / furoate).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Flucasone")">Flucasone</span>,
-                            <span class="drug-link" onclick="showDrugModal("Flixonase")">Flixonase</span>,
-                            <span class="drug-link" onclick="showDrugModal("Avamys")">Avamys</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flucasone&quot;)">Flucasone</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Flixonase&quot;)">Flixonase</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Avamys&quot;)">Avamys</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fluticasone_formes">Suspension pour pulvérisation nasale.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fluticasone_posologie">1 à 2 pulvérisations par narine 1 fois par jour.</span></p>
@@ -1066,28 +1068,61 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fluticasone_conseil">Ne pas dépasser la dose prescrite.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="budesonide_triamcinolone_title">4. Budésonide et triamcinolone nasales</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="budesonide_triamcinolone_gen">Budésonide / triamcinolone (corticoïdes nasaux).</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="budesonide_title">4. Budésonide nasal</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="budesonide_gen">Budésonide (corticoïde nasal).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Rhinocort")">Rhinocort</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nasacort")">Nasacort</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rhinocort&quot;)">Rhinocort</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Donicort&quot;)">Donicort</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="budesonide_triamcinolone_formes">Suspension pour pulvérisation nasale.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="budesonide_triamcinolone_posologie">1 à 2 pulvérisations par narine 1 à 2 fois par jour.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="budesonide_triamcinolone_particularite">Corticoïdes nasaux pour la rhinite allergique.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="budesonide_triamcinolone_conseil">Se moucher avant la pulvérisation.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="budesonide_formes">Suspension pour pulvérisation nasale.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="budesonide_posologie">1 à 2 pulvérisations par narine 1 à 2 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="budesonide_particularite">Corticoïdes nasaux pour la rhinite allergique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="budesonide_conseil">Se moucher avant la pulvérisation.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="framycetine_title">5. Framycétine (antibiotique nasal)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="triamcinolone_title">5. Triamcinolone nasale</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="triamcinolone_gen">Triamcinolone (corticoïde nasal).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nasacort&quot;)">Nasacort</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nasalone&quot;)">Nasalone</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Etacid&quot;)">Etacid</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nasacet&quot;)">Nasacet</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="triamcinolone_formes">Suspension pour pulvérisation nasale.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="triamcinolone_posologie">1 à 2 pulvérisations par narine 1 à 2 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="triamcinolone_particularite">Corticoïdes nasaux pour la rhinite allergique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="triamcinolone_conseil">Se moucher avant la pulvérisation.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antibiotiques nasaux</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="framycetine_title">6. Framycétine (antibiotique nasal)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="framycetine_gen">Framycétine sulfate (aminoside).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Soframycine")">Soframycine</span>,
-                            <span class="drug-link" onclick="showDrugModal("Niframycine")">Niframycine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Soframycine&quot;)">Soframycine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Niframycine&quot;)">Niframycine</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="framycetine_formes">Solution nasale en gouttes ou spray.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="framycetine_posologie">Quelques gouttes ou pulvérisations dans chaque narine, selon prescription.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="framycetine_particularite">Antibiotique nasal local.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="framycetine_conseil">Usage court et sur prescription.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Lavages nasaux</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="lavage_nasal_title">7. Lavage nasal (sérum salé / eau de mer)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="lavage_nasal_gen">Sérum physiologique isotonique / solution d'eau de mer.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sérum salé isotonique&quot;)">Sérum salé isotonique</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Eau de mer&quot;)">Eau de mer</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="lavage_nasal_formes">Solution isotonique ou hypertonique pour lavage nasal.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="lavage_nasal_posologie">Lavage de chaque narine selon besoin, plusieurs fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="lavage_nasal_particularite">Dégage le nez et humidifie les muqueuses ; peut être utilisé régulièrement.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="lavage_nasal_conseil">Utiliser une solution stérile ; ne pas partager l'embout.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1337,18 +1372,33 @@
                 fluticasone_posologie: "1 à 2 pulvérisations par narine 1 fois par jour.",
                 fluticasone_particularite: "Corticoïde nasal pour la rhinite allergique.",
                 fluticasone_conseil: "Ne pas dépasser la dose prescrite.",
-                budesonide_triamcinolone_title: "4. Budésonide et triamcinolone nasales",
-                budesonide_triamcinolone_gen: "Budésonide / triamcinolone (corticoïdes nasaux).",
-                budesonide_triamcinolone_formes: "Suspension pour pulvérisation nasale.",
-                budesonide_triamcinolone_posologie: "1 à 2 pulvérisations par narine 1 à 2 fois par jour.",
-                budesonide_triamcinolone_particularite: "Corticoïdes nasaux pour la rhinite allergique.",
-                budesonide_triamcinolone_conseil: "Se moucher avant la pulvérisation.",
-                framycetine_title: "5. Framycétine (antibiotique nasal)",
+                budesonide_title: "4. Budésonide nasal",
+                budesonide_gen: "Budésonide (corticoïde nasal).",
+                budesonide_formes: "Suspension pour pulvérisation nasale.",
+                budesonide_posologie: "1 à 2 pulvérisations par narine 1 à 2 fois par jour.",
+                budesonide_particularite: "Corticoïdes nasaux pour la rhinite allergique. (données de classe — non spécifiées séparément dans le livre)",
+                budesonide_conseil: "Se moucher avant la pulvérisation.",
+                triamcinolone_title: "5. Triamcinolone nasale",
+                triamcinolone_gen: "Triamcinolone (corticoïde nasal).",
+                triamcinolone_formes: "Suspension pour pulvérisation nasale.",
+                triamcinolone_posologie: "1 à 2 pulvérisations par narine 1 à 2 fois par jour.",
+                triamcinolone_particularite: "Corticoïdes nasaux pour la rhinite allergique. (données de classe — non spécifiées séparément dans le livre)",
+                triamcinolone_conseil: "Se moucher avant la pulvérisation.",
+                framycetine_title: "6. Framycétine (antibiotique nasal)",
                 framycetine_gen: "Framycétine sulfate (aminoside).",
                 framycetine_formes: "Solution nasale en gouttes ou spray.",
                 framycetine_posologie: "Quelques gouttes ou pulvérisations dans chaque narine, selon prescription.",
                 framycetine_particularite: "Antibiotique nasal local.",
                 framycetine_conseil: "Usage court et sur prescription.",
+                lavage_nasal_title: "7. Lavage nasal (sérum salé / eau de mer)",
+                lavage_nasal_gen: "Sérum physiologique isotonique / solution d'eau de mer.",
+                lavage_nasal_formes: "Solution isotonique ou hypertonique pour lavage nasal.",
+                lavage_nasal_posologie: "Lavage de chaque narine selon besoin, plusieurs fois par jour.",
+                lavage_nasal_particularite: "Dégage le nez et humidifie les muqueuses ; peut être utilisé régulièrement.",
+                lavage_nasal_conseil: "Utiliser une solution stérile ; ne pas partager l'embout.",
+                group_1_name: "Corticoïdes nasaux",
+                group_2_name: "Antibiotiques nasaux",
+                group_3_name: "Lavages nasaux",
                 indication_1: "Rhinite allergique et congestion nasale (corticoïdes nasaux).",
                 indication_2: "Polypose nasale et sinusite (corticoïdes nasaux).",
                 indication_3: "Infections nasales (framycétine).",
@@ -1492,18 +1542,33 @@
                 fluticasone_posologie: "رشّة إلى رشّتين في كل فتحة أنفية مرة واحدة يومياً.",
                 fluticasone_particularite: "كورتيكوئيد أنفي لالتهاب الأنف التحسسي.",
                 fluticasone_conseil: "لا تتجاوز الجرعة الموصوفة.",
-                budesonide_triamcinolone_title: "4. بوديزونيد وتريامسينولون أنفيان",
-                budesonide_triamcinolone_gen: "بوديزونيد / تريامسينولون (كورتيكوئيدات أنفية).",
-                budesonide_triamcinolone_formes: "معلق للرشّ الأنفي.",
-                budesonide_triamcinolone_posologie: "رشّة إلى رشّتين في كل فتحة أنفية 1-2 مرات يومياً.",
-                budesonide_triamcinolone_particularite: "كورتيكوئيدات أنفية لالتهاب الأنف التحسسي.",
-                budesonide_triamcinolone_conseil: "تمخّط قبل الرشّ.",
-                framycetine_title: "5. فراميسيتين (مضاد حيوي أنفي)",
+                budesonide_title: "4. بوديزونيد أنفي",
+                budesonide_gen: "بوديزونيد (كورتيكوئيد أنفي).",
+                budesonide_formes: "معلق للرشّ الأنفي.",
+                budesonide_posologie: "رشّة إلى رشّتين في كل فتحة أنفية 1-2 مرات يومياً.",
+                budesonide_particularite: "كورتيكوئيدات أنفية لالتهاب الأنف التحسسي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                budesonide_conseil: "تمخّط قبل الرشّ.",
+                triamcinolone_title: "5. تريامسينولون أنفي",
+                triamcinolone_gen: "تريامسينولون (كورتيكوئيد أنفي).",
+                triamcinolone_formes: "معلق للرشّ الأنفي.",
+                triamcinolone_posologie: "رشّة إلى رشّتين في كل فتحة أنفية 1-2 مرات يومياً.",
+                triamcinolone_particularite: "كورتيكوئيدات أنفية لالتهاب الأنف التحسسي. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                triamcinolone_conseil: "تمخّط قبل الرشّ.",
+                framycetine_title: "6. فراميسيتين (مضاد حيوي أنفي)",
                 framycetine_gen: "فراميسيتين كبريتات (أمينوزيد).",
                 framycetine_formes: "محلول أنفي في قطرات أو رشّ.",
                 framycetine_posologie: "بضع قطرات أو رشّات في كل فتحة أنفية حسب الوصفة.",
                 framycetine_particularite: "مضاد حيوي أنفي موضعي.",
                 framycetine_conseil: "استعمال قصير وبوصفة طبية.",
+                lavage_nasal_title: "7. غسل الأنف (محلول ملحي / ماء البحر)",
+                lavage_nasal_gen: "محلول ملحي فسيولوجي متساوي التوتر / محلول ماء البحر.",
+                lavage_nasal_formes: "محلول متساوي التوتر أو مفرط التوتر لغسل الأنف.",
+                lavage_nasal_posologie: "غسل كل فتحة أنفية حسب الحاجة، عدة مرات يومياً.",
+                lavage_nasal_particularite: "يفرّغ الأنف ويرطّب الأغشية المخاطية؛ يمكن استعماله بانتظام.",
+                lavage_nasal_conseil: "استعمل محلولاً معقّماً؛ لا تشارك الطرف.",
+                group_1_name: "كورتيكوئيدات أنفية",
+                group_2_name: "مضادات حيوية أنفية",
+                group_3_name: "محاليل غسل الأنف",
                 indication_1: "التهاب الأنف التحسسي واحتقان الأنف (الكورتيكوئيدات الأنفية).",
                 indication_2: "السلائل الأنفية والتهاب الجيوب (الكورتيكوئيدات الأنفية).",
                 indication_3: "العدوى الأنفية (فراميسيتين).",
@@ -1647,18 +1712,33 @@
                 fluticasone_posologie: "1 to 2 sprays per nostril once daily.",
                 fluticasone_particularite: "Nasal corticosteroid for allergic rhinitis.",
                 fluticasone_conseil: "Do not exceed the prescribed dose.",
-                budesonide_triamcinolone_title: "4. Nasal budesonide and triamcinolone",
-                budesonide_triamcinolone_gen: "Budesonide / triamcinolone (nasal corticosteroids).",
-                budesonide_triamcinolone_formes: "Suspension for nasal spray.",
-                budesonide_triamcinolone_posologie: "1 to 2 sprays per nostril 1 to 2 times daily.",
-                budesonide_triamcinolone_particularite: "Nasal corticosteroids for allergic rhinitis.",
-                budesonide_triamcinolone_conseil: "Blow your nose before spraying.",
-                framycetine_title: "5. Framycetin (nasal antibiotic)",
+                budesonide_title: "4. Nasal budesonide",
+                budesonide_gen: "Budesonide (nasal corticosteroid).",
+                budesonide_formes: "Suspension for nasal spray.",
+                budesonide_posologie: "1 to 2 sprays per nostril 1 to 2 times daily.",
+                budesonide_particularite: "Nasal corticosteroids for allergic rhinitis. (class data — not specified separately in the book)",
+                budesonide_conseil: "Blow your nose before spraying.",
+                triamcinolone_title: "5. Nasal triamcinolone",
+                triamcinolone_gen: "Triamcinolone (nasal corticosteroid).",
+                triamcinolone_formes: "Suspension for nasal spray.",
+                triamcinolone_posologie: "1 to 2 sprays per nostril 1 to 2 times daily.",
+                triamcinolone_particularite: "Nasal corticosteroids for allergic rhinitis. (class data — not specified separately in the book)",
+                triamcinolone_conseil: "Blow your nose before spraying.",
+                framycetine_title: "6. Framycetin (nasal antibiotic)",
                 framycetine_gen: "Framycetin sulfate (aminoglycoside).",
                 framycetine_formes: "Nasal solution in drops or spray.",
                 framycetine_posologie: "A few drops or sprays in each nostril, as prescribed.",
                 framycetine_particularite: "Local nasal antibiotic.",
                 framycetine_conseil: "Short use and on prescription.",
+                lavage_nasal_title: "7. Nasal washing (saline / sea water)",
+                lavage_nasal_gen: "Isotonic physiological saline / sea water solution.",
+                lavage_nasal_formes: "Isotonic or hypertonic solution for nasal washing.",
+                lavage_nasal_posologie: "Wash each nostril as needed, several times daily.",
+                lavage_nasal_particularite: "Clears the nose and moistens the mucous membranes; can be used regularly.",
+                lavage_nasal_conseil: "Use a sterile solution; do not share the tip.",
+                group_1_name: "Nasal corticosteroids",
+                group_2_name: "Nasal antibiotics",
+                group_3_name: "Nasal washes",
                 indication_1: "Allergic rhinitis and nasal congestion (nasal corticosteroids).",
                 indication_2: "Nasal polyposis and sinusitis (nasal corticosteroids).",
                 indication_3: "Nasal infections (framycetin).",
@@ -2012,9 +2092,15 @@
                     "Flixonase": [],
                     "Avamys": [],
                     "Rhinocort": [],
+                    "Donicort": [],
                     "Nasacort": [],
+                    "Nasalone": [],
+                    "Etacid": [],
+                    "Nasacet": [],
                     "Soframycine": [],
-                    "Niframycine": []
+                    "Niframycine": [],
+                    "Sérum salé isotonique": [],
+                    "Eau de mer": []
         };
 
         function showDrugModal(drugName) {

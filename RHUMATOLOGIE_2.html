@@ -1028,14 +1028,16 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Immunosuppresseurs</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="rhu2_methotrexate_title">Méthotrexate</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_methotrexate_gen">Méthotrexate.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Rumava")">Rumava</span>,
-                            <span class="drug-link" onclick="showDrugModal("Ebewe")">Ebewe</span>,
-                            <span class="drug-link" onclick="showDrugModal("Xaria")">Xaria</span>,
-                            <span class="drug-link" onclick="showDrugModal("Cytotrex")">Cytotrex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rumava&quot;)">Rumava</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Ebewe&quot;)">Ebewe</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xaria&quot;)">Xaria</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Cytotrex&quot;)">Cytotrex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_methotrexate_formes">Comprimés (2,5 mg et 10 mg), solution injectable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_methotrexate_posologie">Polyarthrite rhumatoïde : 7,5 à 25 mg une fois par semaine (jamais par jour), avec acide folique 24 à 48 h après. La posologie est adaptée par le spécialiste.</span></p>
@@ -1046,7 +1048,7 @@
                         <h3 style="color:var(--primary);" data-i18n="rhu2_leflunomide_title">Léflunomide</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_leflunomide_gen">Léflunomide.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Arava")">Arava</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Arava&quot;)">Arava</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_leflunomide_formes">Comprimés (10 mg, 20 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_leflunomide_posologie">20 mg une fois par jour ; dose de charge de 100 mg pendant 3 jours selon la prescription médicale.</span></p>
@@ -1057,7 +1059,7 @@
                         <h3 style="color:var(--primary);" data-i18n="rhu2_azathioprine_title">Azathioprine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_azathioprine_gen">Azathioprine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Imurel")">Imurel</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Imurel&quot;)">Imurel</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_azathioprine_formes">Comprimés (25 mg, 50 mg).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_azathioprine_posologie">1 à 3 mg/kg/jour en une à trois prises, selon l'indication.</span></p>
@@ -1065,45 +1067,82 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_azathioprine_conseil">Ne jamais associer à l'allopurinol sans avis (risque d'aplasie). Surveillance régulière de la NFS et boire suffisamment d'eau.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="rhu2_hydroxychloroquine_salazopyrine_title">Hydroxychloroquine et salazosulfapyridine</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_hydroxychloroquine_salazopyrine_gen">Hydroxychloroquine et salazosulfapyridine.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="rhu2_hydroxychloroquine_title">Hydroxychloroquine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_hydroxychloroquine_gen">Hydroxychloroquine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Plaquenil")">Plaquenil</span>,
-                            <span class="drug-link" onclick="showDrugModal("Salazopyrine")">Salazopyrine</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Plaquenil&quot;)">Plaquenil</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_hydroxychloroquine_salazopyrine_formes">Comprimés (200 mg) ; comprimés gastrorésistants (500 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_hydroxychloroquine_salazopyrine_posologie">Hydroxychloroquine : 200 à 400 mg/jour (maximum 6 mg/kg/j). Salazosulfapyridine : 500 mg/jour au début puis 2 g/jour en 2 à 3 prises.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_hydroxychloroquine_salazopyrine_particularite">Antipaludéen de synthèse et salicylé de fond : action lente (2 à 3 mois) sur la polyarthrite rhumatoïde et le lupus.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_hydroxychloroquine_salazopyrine_conseil">Contrôle ophtalmologique régulier pour l'hydroxychloroquine ; les comprimés de salazopyrine se prennent avec un grand verre d'eau au repas.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_hydroxychloroquine_formes">Comprimés (200 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_hydroxychloroquine_posologie">200 à 400 mg/jour (maximum 6 mg/kg/j).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_hydroxychloroquine_particularite">Antipaludéen de synthèse : action lente (2 à 3 mois) sur la polyarthrite rhumatoïde et le lupus.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_hydroxychloroquine_conseil">Contrôle ophtalmologique régulier pour l'hydroxychloroquine ; les comprimés de salazopyrine se prennent avec un grand verre d'eau au repas.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="rhu2_corticoides_infiltration_title">Corticoïdes injectables (infiltrations)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_corticoides_infiltration_gen">Méthylprednisolone, triamcinolone, bétaméthasone (voie injectable).</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="rhu2_salazosulfapyridine_title">Salazosulfapyridine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_salazosulfapyridine_gen">Salazosulfapyridine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Dépo-Medrol")">Dépo-Medrol</span>,
-                            <span class="drug-link" onclick="showDrugModal("Kenacort Retard")">Kenacort Retard</span>,
-                            <span class="drug-link" onclick="showDrugModal("Diprostene")">Diprostene</span>,
-                            <span class="drug-link" onclick="showDrugModal("Célestene")">Célestene</span>,
-                            <span class="drug-link" onclick="showDrugModal("Chronodose")">Chronodose</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Salazopyrine&quot;)">Salazopyrine</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_corticoides_infiltration_formes">Suspension injectable : méthylprednisolone 40-80 mg, triamcinolone 40-80 mg, bétaméthasone 4-7 mg.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_corticoides_infiltration_posologie">Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_corticoides_infiltration_particularite">Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_corticoides_infiltration_conseil">Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_salazosulfapyridine_formes">Comprimés gastrorésistants (500 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_salazosulfapyridine_posologie">500 mg/jour au début puis 2 g/jour en 2 à 3 prises.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_salazosulfapyridine_particularite">Salicylé de fond : action lente (2 à 3 mois) sur la polyarthrite rhumatoïde.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_salazosulfapyridine_conseil">Contrôle ophtalmologique régulier pour l'hydroxychloroquine ; les comprimés de salazopyrine se prennent avec un grand verre d'eau au repas.</span></p>
                     </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Corticoïdes injectables</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="rhu2_methylprednisolone_title">Méthylprednisolone</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_methylprednisolone_gen">Méthylprednisolone (voie injectable).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dépo-Medrol&quot;)">Dépo-Medrol</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_methylprednisolone_formes">Suspension injectable (40-80 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_methylprednisolone_posologie">Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_methylprednisolone_particularite">Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_methylprednisolone_conseil">Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="rhu2_triamcinolone_title">Triamcinolone</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_triamcinolone_gen">Triamcinolone (voie injectable).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Kenacort Retard&quot;)">Kenacort Retard</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_triamcinolone_formes">Suspension injectable (40-80 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_triamcinolone_posologie">Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_triamcinolone_particularite">Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_triamcinolone_conseil">Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="rhu2_betamethasone_title">Bétaméthasone</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_betamethasone_gen">Bétaméthasone (voie injectable).</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Diprostene&quot;)">Diprostene</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Célestene&quot;)">Célestene</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Chronodose&quot;)">Chronodose</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_betamethasone_formes">Suspension injectable (4-7 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_betamethasone_posologie">Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_betamethasone_particularite">Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_betamethasone_conseil">Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Acide hyaluronique</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="rhu2_acide_hyaluronique_title">Acide hyaluronique (infiltration)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="rhu2_acide_hyaluronique_gen">Acide hyaluronique (hyaluronate de sodium).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Hyaluflex")">Hyaluflex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hyalone")">Hyalone</span>,
-                            <span class="drug-link" onclick="showDrugModal("Hyalgan")">Hyalgan</span>,
-                            <span class="drug-link" onclick="showDrugModal("Sinovial")">Sinovial</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hyaluflex&quot;)">Hyaluflex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hyalone&quot;)">Hyalone</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Hyalgan&quot;)">Hyalgan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sinovial&quot;)">Sinovial</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="rhu2_acide_hyaluronique_formes">Gel stérile pour injection intra-articulaire (seringues préremplies).</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="rhu2_acide_hyaluronique_posologie">1 injection par semaine pendant 3 à 5 semaines selon l'articulation, puis renouvellement après 6 mois si besoin.</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="rhu2_acide_hyaluronique_particularite">Viscosupplémentation : restaure la viscoélasticité du liquide synovial et protège le cartilage de l'arthrose du genou et de la hanche.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="rhu2_acide_hyaluronique_conseil">Geste médical sous asepsie ; prévenir le patient d'un gonflement ou d'une douleur transitoire possible après l'injection.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1353,24 +1392,45 @@
                 rhu2_azathioprine_posologie: "1 à 3 mg/kg/jour en une à trois prises, selon l'indication.",
                 rhu2_azathioprine_particularite: "Prodrogue de la 6-mercaptopurine : immunosuppresseur utilisé dans les maladies auto-immunes, les leucémies et après greffe.",
                 rhu2_azathioprine_conseil: "Ne jamais associer à l'allopurinol sans avis (risque d'aplasie). Surveillance régulière de la NFS et boire suffisamment d'eau.",
-                rhu2_hydroxychloroquine_salazopyrine_title: "Hydroxychloroquine et salazosulfapyridine",
-                rhu2_hydroxychloroquine_salazopyrine_gen: "Hydroxychloroquine et salazosulfapyridine.",
-                rhu2_hydroxychloroquine_salazopyrine_formes: "Comprimés (200 mg) ; comprimés gastrorésistants (500 mg).",
-                rhu2_hydroxychloroquine_salazopyrine_posologie: "Hydroxychloroquine : 200 à 400 mg/jour (maximum 6 mg/kg/j). Salazosulfapyridine : 500 mg/jour au début puis 2 g/jour en 2 à 3 prises.",
-                rhu2_hydroxychloroquine_salazopyrine_particularite: "Antipaludéen de synthèse et salicylé de fond : action lente (2 à 3 mois) sur la polyarthrite rhumatoïde et le lupus.",
-                rhu2_hydroxychloroquine_salazopyrine_conseil: "Contrôle ophtalmologique régulier pour l'hydroxychloroquine ; les comprimés de salazopyrine se prennent avec un grand verre d'eau au repas.",
-                rhu2_corticoides_infiltration_title: "Corticoïdes injectables (infiltrations)",
-                rhu2_corticoides_infiltration_gen: "Méthylprednisolone, triamcinolone, bétaméthasone (voie injectable).",
-                rhu2_corticoides_infiltration_formes: "Suspension injectable : méthylprednisolone 40-80 mg, triamcinolone 40-80 mg, bétaméthasone 4-7 mg.",
-                rhu2_corticoides_infiltration_posologie: "Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.",
-                rhu2_corticoides_infiltration_particularite: "Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire.",
-                rhu2_corticoides_infiltration_conseil: "Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.",
+                rhu2_hydroxychloroquine_title: "Hydroxychloroquine",
+                rhu2_hydroxychloroquine_gen: "Hydroxychloroquine.",
+                rhu2_hydroxychloroquine_formes: "Comprimés (200 mg).",
+                rhu2_hydroxychloroquine_posologie: "200 à 400 mg/jour (maximum 6 mg/kg/j).",
+                rhu2_hydroxychloroquine_particularite: "Antipaludéen de synthèse : action lente (2 à 3 mois) sur la polyarthrite rhumatoïde et le lupus.",
+                rhu2_hydroxychloroquine_conseil: "Contrôle ophtalmologique régulier pour l'hydroxychloroquine ; les comprimés de salazopyrine se prennent avec un grand verre d'eau au repas.",
+                rhu2_salazosulfapyridine_title: "Salazosulfapyridine",
+                rhu2_salazosulfapyridine_gen: "Salazosulfapyridine.",
+                rhu2_salazosulfapyridine_formes: "Comprimés gastrorésistants (500 mg).",
+                rhu2_salazosulfapyridine_posologie: "500 mg/jour au début puis 2 g/jour en 2 à 3 prises.",
+                rhu2_salazosulfapyridine_particularite: "Salicylé de fond : action lente (2 à 3 mois) sur la polyarthrite rhumatoïde.",
+                rhu2_salazosulfapyridine_conseil: "Contrôle ophtalmologique régulier pour l'hydroxychloroquine ; les comprimés de salazopyrine se prennent avec un grand verre d'eau au repas.",
+                rhu2_methylprednisolone_title: "Méthylprednisolone",
+                rhu2_methylprednisolone_gen: "Méthylprednisolone (voie injectable).",
+                rhu2_methylprednisolone_formes: "Suspension injectable (40-80 mg).",
+                rhu2_methylprednisolone_posologie: "Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.",
+                rhu2_methylprednisolone_particularite: "Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire. (données de classe — non spécifiées séparément dans le livre)",
+                rhu2_methylprednisolone_conseil: "Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.",
+                rhu2_triamcinolone_title: "Triamcinolone",
+                rhu2_triamcinolone_gen: "Triamcinolone (voie injectable).",
+                rhu2_triamcinolone_formes: "Suspension injectable (40-80 mg).",
+                rhu2_triamcinolone_posologie: "Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.",
+                rhu2_triamcinolone_particularite: "Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire. (données de classe — non spécifiées séparément dans le livre)",
+                rhu2_triamcinolone_conseil: "Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.",
+                rhu2_betamethasone_title: "Bétaméthasone",
+                rhu2_betamethasone_gen: "Bétaméthasone (voie injectable).",
+                rhu2_betamethasone_formes: "Suspension injectable (4-7 mg).",
+                rhu2_betamethasone_posologie: "Infiltrations intra-articulaires ou locales : 1 injection tous les 1 à 3 mois, avec un maximum de 1 à 2 injections par an et par articulation.",
+                rhu2_betamethasone_particularite: "Corticoïdes d'action prolongée : Dépo-Medrol (méthylprednisolone NAD), Kenacort Retard (triamcinolone) et Diprostene (bétaméthasone) pour injection intra-articulaire. (données de classe — non spécifiées séparément dans le livre)",
+                rhu2_betamethasone_conseil: "Asepsie stricte ; repos de l'articulation 24 à 48 h après l'infiltration. Gestes réservés au médecin ; surveiller l'apparition d'une infection.",
                 rhu2_acide_hyaluronique_title: "Acide hyaluronique (infiltration)",
                 rhu2_acide_hyaluronique_gen: "Acide hyaluronique (hyaluronate de sodium).",
                 rhu2_acide_hyaluronique_formes: "Gel stérile pour injection intra-articulaire (seringues préremplies).",
                 rhu2_acide_hyaluronique_posologie: "1 injection par semaine pendant 3 à 5 semaines selon l'articulation, puis renouvellement après 6 mois si besoin.",
                 rhu2_acide_hyaluronique_particularite: "Viscosupplémentation : restaure la viscoélasticité du liquide synovial et protège le cartilage de l'arthrose du genou et de la hanche.",
                 rhu2_acide_hyaluronique_conseil: "Geste médical sous asepsie ; prévenir le patient d'un gonflement ou d'une douleur transitoire possible après l'injection.",
+                group_1_name: "Immunosuppresseurs",
+                group_2_name: "Corticoïdes injectables",
+                group_3_name: "Acide hyaluronique",
                 indication_1: "Polyarthrite rhumatoïde (traitement de fond : méthotrexate en 1ère intention, léflunomide, azathioprine, hydroxychloroquine, salazosulfapyridine).",
                 indication_2: "Maladies auto-immunes : lupus érythémateux disséminé, rectocolite hémorragique, maladie de Crohn, rhumatisme psoriasique.",
                 indication_3: "Arthrite juvénile et certains cancers ou leucémies (méthotrexate) ; greffes et transplantations (azathioprine).",
@@ -1516,24 +1576,45 @@
                 rhu2_azathioprine_posologie: "1 إلى 3 مغ/كغ/يوم في جرعة إلى ثلاث جرعات، حسب الاستطباب.",
                 rhu2_azathioprine_particularite: "دواء أولي يتحول إلى 6-ميركابتوبورين: مثبط مناعة يُستخدم في أمراض المناعة الذاتية واللوكيميا وبعد الزرع.",
                 rhu2_azathioprine_conseil: "لا تجمعه أبداً مع الألوبورينول دون رأي (خطر نقص نخاع العظم). متابعة منتظمة لتعداد الدم وشرب كمية كافية من الماء.",
-                rhu2_hydroxychloroquine_salazopyrine_title: "هيدروكسيكلوروكين وسالازوسولفابيريدين",
-                rhu2_hydroxychloroquine_salazopyrine_gen: "هيدروكسيكلوروكين وسالازوسولفابيريدين.",
-                rhu2_hydroxychloroquine_salazopyrine_formes: "أقراص (200 مغ)؛ أقراص مقاومة للمعدة (500 مغ).",
-                rhu2_hydroxychloroquine_salazopyrine_posologie: "هيدروكسيكلوروكين: 200 إلى 400 مغ/يوم (الحد الأقصى 6 مغ/كغ/يوم). سالازوسولفابيريدين: 500 مغ/يوم في البداية ثم 2 غ/يوم في 2-3 جرعات.",
-                rhu2_hydroxychloroquine_salazopyrine_particularite: "مضاد للملاريا مصنّع ودواء أساس ساليسيلي: تأثير بطيء (2 إلى 3 أشهر) على التهاب المفاصل الروماتويدي والذئبة.",
-                rhu2_hydroxychloroquine_salazopyrine_conseil: "فحص عيني منتظم للهيدروكسيكلوروكين؛ أقراص السالازوبيرين تُؤخذ مع كوب كبير من الماء أثناء الوجبة.",
-                rhu2_corticoides_infiltration_title: "الكورتيكوستيرويدات الحقنية (الحقن)",
-                rhu2_corticoides_infiltration_gen: "ميثيلبريدنيزولون، تريامسينولون، بيتاميتازون (طريق الحقن).",
-                rhu2_corticoides_infiltration_formes: "معلق حقن: ميثيلبريدنيزولون 40-80 مغ، تريامسينولون 40-80 مغ، بيتاميتازون 4-7 مغ.",
-                rhu2_corticoides_infiltration_posologie: "حقن داخل المفصل أو موضعي: حقنة واحدة كل 1 إلى 3 أشهر، بحد أقصى 1 إلى 2 حقنة سنوياً لكل مفصل.",
-                rhu2_corticoides_infiltration_particularite: "كورتيكوستيرويدات طويلة المفعول: Dépo-Medrol (ميثيلبريدنيزولون NAD)، Kenacort Retard (تريامسينولون) وDiprostene (بيتاميتازون) للحقن داخل المفصل.",
-                rhu2_corticoides_infiltration_conseil: "تعقيم صارم؛ راحة المفصل 24 إلى 48 ساعة بعد الحقن. الأعمال محجوزة للطبيب؛ راقب ظهور أي عدوى.",
+                rhu2_hydroxychloroquine_title: "هيدروكسيكلوروكين",
+                rhu2_hydroxychloroquine_gen: "هيدروكسيكلوروكين.",
+                rhu2_hydroxychloroquine_formes: "أقراص (200 مغ).",
+                rhu2_hydroxychloroquine_posologie: "200 إلى 400 مغ/يوم (الحد الأقصى 6 مغ/كغ/يوم).",
+                rhu2_hydroxychloroquine_particularite: "مضاد للملاريا مصنّع: تأثير بطيء (2 إلى 3 أشهر) على التهاب المفاصل الروماتويدي والذئبة.",
+                rhu2_hydroxychloroquine_conseil: "فحص عيني منتظم للهيدروكسيكلوروكين؛ أقراص السالازوبيرين تُؤخذ مع كوب كبير من الماء أثناء الوجبة.",
+                rhu2_salazosulfapyridine_title: "سالازوسولفابيريدين",
+                rhu2_salazosulfapyridine_gen: "سالازوسولفابيريدين.",
+                rhu2_salazosulfapyridine_formes: "أقراص مقاومة للمعدة (500 مغ).",
+                rhu2_salazosulfapyridine_posologie: "500 مغ/يوم في البداية ثم 2 غ/يوم في 2 إلى 3 جرعات.",
+                rhu2_salazosulfapyridine_particularite: "دواء أساس ساليسيلي: تأثير بطيء (2 إلى 3 أشهر) على التهاب المفاصل الروماتويدي.",
+                rhu2_salazosulfapyridine_conseil: "فحص عيني منتظم للهيدروكسيكلوروكين؛ أقراص السالازوبيرين تُؤخذ مع كوب كبير من الماء أثناء الوجبة.",
+                rhu2_methylprednisolone_title: "ميثيلبريدنيزولون",
+                rhu2_methylprednisolone_gen: "ميثيلبريدنيزولون (طريق الحقن).",
+                rhu2_methylprednisolone_formes: "معلق حقن (40-80 مغ).",
+                rhu2_methylprednisolone_posologie: "حقن داخل المفصل أو موضعي: حقنة واحدة كل 1 إلى 3 أشهر، بحد أقصى 1 إلى 2 حقنة سنوياً لكل مفصل.",
+                rhu2_methylprednisolone_particularite: "كورتيكوستيرويدات طويلة المفعول: Dépo-Medrol (ميثيلبريدنيزولون NAD)، Kenacort Retard (تريامسينولون) وDiprostene (بيتاميتازون) للحقن داخل المفصل. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                rhu2_methylprednisolone_conseil: "تعقيم صارم؛ راحة المفصل 24 إلى 48 ساعة بعد الحقن. الأعمال محجوزة للطبيب؛ راقب ظهور أي عدوى.",
+                rhu2_triamcinolone_title: "تريامسينولون",
+                rhu2_triamcinolone_gen: "تريامسينولون (طريق الحقن).",
+                rhu2_triamcinolone_formes: "معلق حقن (40-80 مغ).",
+                rhu2_triamcinolone_posologie: "حقن داخل المفصل أو موضعي: حقنة واحدة كل 1 إلى 3 أشهر، بحد أقصى 1 إلى 2 حقنة سنوياً لكل مفصل.",
+                rhu2_triamcinolone_particularite: "كورتيكوستيرويدات طويلة المفعول: Dépo-Medrol (ميثيلبريدنيزولون NAD)، Kenacort Retard (تريامسينولون) وDiprostene (بيتاميتازون) للحقن داخل المفصل. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                rhu2_triamcinolone_conseil: "تعقيم صارم؛ راحة المفصل 24 إلى 48 ساعة بعد الحقن. الأعمال محجوزة للطبيب؛ راقب ظهور أي عدوى.",
+                rhu2_betamethasone_title: "بيتاميتازون",
+                rhu2_betamethasone_gen: "بيتاميتازون (طريق الحقن).",
+                rhu2_betamethasone_formes: "معلق حقن (4-7 مغ).",
+                rhu2_betamethasone_posologie: "حقن داخل المفصل أو موضعي: حقنة واحدة كل 1 إلى 3 أشهر، بحد أقصى 1 إلى 2 حقنة سنوياً لكل مفصل.",
+                rhu2_betamethasone_particularite: "كورتيكوستيرويدات طويلة المفعول: Dépo-Medrol (ميثيلبريدنيزولون NAD)، Kenacort Retard (تريامسينولون) وDiprostene (بيتاميتازون) للحقن داخل المفصل. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                rhu2_betamethasone_conseil: "تعقيم صارم؛ راحة المفصل 24 إلى 48 ساعة بعد الحقن. الأعمال محجوزة للطبيب؛ راقب ظهور أي عدوى.",
                 rhu2_acide_hyaluronique_title: "حمض الهيالورونيك (الحقن)",
                 rhu2_acide_hyaluronique_gen: "حمض الهيالورونيك (هيالورونات الصوديوم).",
                 rhu2_acide_hyaluronique_formes: "هلام معقّم للحقن داخل المفصل (محاقن معبّأة مسبقاً).",
                 rhu2_acide_hyaluronique_posologie: "حقنة واحدة أسبوعياً لمدة 3 إلى 5 أسابيع حسب المفصل، ثم تكرار بعد 6 أشهر عند الحاجة.",
                 rhu2_acide_hyaluronique_particularite: "ترميم اللزوجة: يستعيد اللزوجة المرنة للسائل الزلالي ويحمي غضروف خشونة الركبة والورك.",
                 rhu2_acide_hyaluronique_conseil: "عمل طبي تحت التعقيم؛ أبلغ المريض بإمكانية حدوث وذمة أو ألم مؤقت بعد الحقن.",
+                group_1_name: "مثبطات المناعة",
+                group_2_name: "الكورتيكوستيرويدات الحقنية",
+                group_3_name: "حمض الهيالورونيك",
                 indication_1: "التهاب المفاصل الروماتويدي (علاج الأساس: الميثوتريكسات خط أول، الليلفونوميد، الأزاثيوبرين، الهيدروكسيكلوروكين، السالازوسولفابيريدين).",
                 indication_2: "أمراض المناعة الذاتية: الذئبة الحمامية الجهازية، التهاب القولون التقرحي، داء كرون، التهاب المفاصل الصدفي.",
                 indication_3: "التهاب المفاصل عند الأطفال وبعض السرطانات أو اللوكيميا (ميثوتريكسات)؛ زرع الأعضاء والزرع (أزاثيوبرين).",
@@ -1679,24 +1760,45 @@
                 rhu2_azathioprine_posologie: "1-3 mg/kg/day in one to three doses, depending on indication.",
                 rhu2_azathioprine_particularite: "Prodrug of 6-mercaptopurine: immunosuppressant used in autoimmune diseases, leukemias and after transplantation.",
                 rhu2_azathioprine_conseil: "Never combine with allopurinol without advice (risk of aplasia). Regular blood count monitoring and adequate water intake.",
-                rhu2_hydroxychloroquine_salazopyrine_title: "Hydroxychloroquine and sulfasalazine",
-                rhu2_hydroxychloroquine_salazopyrine_gen: "Hydroxychloroquine and sulfasalazine.",
-                rhu2_hydroxychloroquine_salazopyrine_formes: "Tablets (200 mg); gastro-resistant tablets (500 mg).",
-                rhu2_hydroxychloroquine_salazopyrine_posologie: "Hydroxychloroquine: 200-400 mg/day (max 6 mg/kg/day). Sulfasalazine: 500 mg/day initially then 2 g/day in 2-3 doses.",
-                rhu2_hydroxychloroquine_salazopyrine_particularite: "Synthetic antimalarial and salicylate maintenance drug: slow action (2-3 months) on rheumatoid arthritis and lupus.",
-                rhu2_hydroxychloroquine_salazopyrine_conseil: "Regular eye examination for hydroxychloroquine; sulfasalazine tablets are taken with a large glass of water at meals.",
-                rhu2_corticoides_infiltration_title: "Injectable corticosteroids (injections)",
-                rhu2_corticoides_infiltration_gen: "Methylprednisolone, triamcinolone, betamethasone (injectable).",
-                rhu2_corticoides_infiltration_formes: "Injectable suspension: methylprednisolone 40-80 mg, triamcinolone 40-80 mg, betamethasone 4-7 mg.",
-                rhu2_corticoides_infiltration_posologie: "Intra-articular or local injections: one injection every 1-3 months, with a maximum of 1-2 injections per year per joint.",
-                rhu2_corticoides_infiltration_particularite: "Long-acting corticosteroids: Dépo-Medrol (methylprednisolone NAD), Kenacort Retard (triamcinolone) and Diprostene (betamethasone) for intra-articular injection.",
-                rhu2_corticoides_infiltration_conseil: "Strict asepsis; joint rest for 24-48 h after injection. Procedure reserved for the physician; watch for infection.",
+                rhu2_hydroxychloroquine_title: "Hydroxychloroquine",
+                rhu2_hydroxychloroquine_gen: "Hydroxychloroquine.",
+                rhu2_hydroxychloroquine_formes: "Tablets (200 mg).",
+                rhu2_hydroxychloroquine_posologie: "200-400 mg/day (max 6 mg/kg/day).",
+                rhu2_hydroxychloroquine_particularite: "Synthetic antimalarial: slow action (2-3 months) on rheumatoid arthritis and lupus.",
+                rhu2_hydroxychloroquine_conseil: "Regular eye examination for hydroxychloroquine; sulfasalazine tablets are taken with a large glass of water at meals.",
+                rhu2_salazosulfapyridine_title: "Sulfasalazine",
+                rhu2_salazosulfapyridine_gen: "Sulfasalazine.",
+                rhu2_salazosulfapyridine_formes: "Gastro-resistant tablets (500 mg).",
+                rhu2_salazosulfapyridine_posologie: "500 mg/day initially then 2 g/day in 2-3 doses.",
+                rhu2_salazosulfapyridine_particularite: "Salicylate maintenance drug: slow action (2-3 months) on rheumatoid arthritis.",
+                rhu2_salazosulfapyridine_conseil: "Regular eye examination for hydroxychloroquine; sulfasalazine tablets are taken with a large glass of water at meals.",
+                rhu2_methylprednisolone_title: "Methylprednisolone",
+                rhu2_methylprednisolone_gen: "Methylprednisolone (injectable).",
+                rhu2_methylprednisolone_formes: "Injectable suspension (40-80 mg).",
+                rhu2_methylprednisolone_posologie: "Intra-articular or local injections: one injection every 1-3 months, with a maximum of 1-2 injections per year per joint.",
+                rhu2_methylprednisolone_particularite: "Long-acting corticosteroids: Dépo-Medrol (methylprednisolone NAD), Kenacort Retard (triamcinolone) and Diprostene (betamethasone) for intra-articular injection. (class data — not specified separately in the book)",
+                rhu2_methylprednisolone_conseil: "Strict asepsis; joint rest for 24-48 h after injection. Procedure reserved for the physician; watch for infection.",
+                rhu2_triamcinolone_title: "Triamcinolone",
+                rhu2_triamcinolone_gen: "Triamcinolone (injectable).",
+                rhu2_triamcinolone_formes: "Injectable suspension (40-80 mg).",
+                rhu2_triamcinolone_posologie: "Intra-articular or local injections: one injection every 1-3 months, with a maximum of 1-2 injections per year per joint.",
+                rhu2_triamcinolone_particularite: "Long-acting corticosteroids: Dépo-Medrol (methylprednisolone NAD), Kenacort Retard (triamcinolone) and Diprostene (betamethasone) for intra-articular injection. (class data — not specified separately in the book)",
+                rhu2_triamcinolone_conseil: "Strict asepsis; joint rest for 24-48 h after injection. Procedure reserved for the physician; watch for infection.",
+                rhu2_betamethasone_title: "Betamethasone",
+                rhu2_betamethasone_gen: "Betamethasone (injectable).",
+                rhu2_betamethasone_formes: "Injectable suspension (4-7 mg).",
+                rhu2_betamethasone_posologie: "Intra-articular or local injections: one injection every 1-3 months, with a maximum of 1-2 injections per year per joint.",
+                rhu2_betamethasone_particularite: "Long-acting corticosteroids: Dépo-Medrol (methylprednisolone NAD), Kenacort Retard (triamcinolone) and Diprostene (betamethasone) for intra-articular injection. (class data — not specified separately in the book)",
+                rhu2_betamethasone_conseil: "Strict asepsis; joint rest for 24-48 h after injection. Procedure reserved for the physician; watch for infection.",
                 rhu2_acide_hyaluronique_title: "Hyaluronic acid (injection)",
                 rhu2_acide_hyaluronique_gen: "Hyaluronic acid (sodium hyaluronate).",
                 rhu2_acide_hyaluronique_formes: "Sterile gel for intra-articular injection (pre-filled syringes).",
                 rhu2_acide_hyaluronique_posologie: "One injection weekly for 3-5 weeks depending on the joint, then repeat after 6 months if needed.",
                 rhu2_acide_hyaluronique_particularite: "Viscosupplementation: restores the viscoelasticity of synovial fluid and protects cartilage in knee and hip osteoarthritis.",
                 rhu2_acide_hyaluronique_conseil: "Medical procedure under asepsis; inform the patient of possible transient swelling or pain after injection.",
+                group_1_name: "Immunosuppressants",
+                group_2_name: "Injectable corticosteroids",
+                group_3_name: "Hyaluronic acid",
                 indication_1: "Rheumatoid arthritis (maintenance: methotrexate first-line, leflunomide, azathioprine, hydroxychloroquine, sulfasalazine).",
                 indication_2: "Autoimmune diseases: systemic lupus erythematosus, ulcerative colitis, Crohn disease, psoriatic arthritis.",
                 indication_3: "Juvenile arthritis and some cancers or leukemias (methotrexate); grafts and transplantations (azathioprine).",

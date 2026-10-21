@@ -1028,12 +1028,14 @@
                 <section class="section-block" id="section-substances">
                     <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
 
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Antigrippaux et rhume</h3>
                     <div class="card reveal reveal-delay-1">
                         <h3 style="color:var(--primary);" data-i18n="fervex_biovex_title">1. Paracétamol + antihistaminique + vitamine C (AP+AH+C)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fervex_biovex_gen">Paracétamol + acide ascorbique + phéniramine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Fervex")">Fervex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Biovex")">Biovex</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Fervex&quot;)">Fervex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Biovex&quot;)">Biovex</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fervex_biovex_formes">Sachets de poudre pour solution buvable.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fervex_biovex_posologie">1 sachet dans un verre d'eau chaude, jusqu'à 3 fois par jour.</span></p>
@@ -1041,24 +1043,34 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fervex_biovex_conseil">Ne pas associer à un autre médicament contenant du paracétamol.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="antalgique_vitc_title">2. Paracétamol ou aspirine + vitamine C (AP+C / AAS+C)</h3>
-                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="antalgique_vitc_gen">Paracétamol + acide ascorbique ; acide acétylsalicylique + acide ascorbique.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="paracetamol_vitc_title">2. Paracétamol + vitamine C (AP+C)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="paracetamol_vitc_gen">Paracétamol + acide ascorbique.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Efferalgan vitamine C")">Efferalgan vitamine C</span>,
-                            <span class="drug-link" onclick="showDrugModal("Dofebril C")">Dofebril C</span>,
-                            <span class="drug-link" onclick="showDrugModal("Aspirine UPSA vitamine C")">Aspirine UPSA vitamine C</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Efferalgan vitamine C&quot;)">Efferalgan vitamine C</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dofebril C&quot;)">Dofebril C</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="antalgique_vitc_formes">Comprimés effervescents, comprimés.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="antalgique_vitc_posologie">1 comprimé, jusqu'à 3 fois par jour (dose selon le poids et l'âge).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="antalgique_vitc_particularite">Antalgique et antipyrétique ; l'aspirine est déconseillée chez l'enfant.</span></p>
-                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="antalgique_vitc_conseil">Respecter la dose maximale de paracétamol (3 g/j).</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="paracetamol_vitc_formes">Comprimés effervescents, comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="paracetamol_vitc_posologie">1 comprimé, jusqu'à 3 fois par jour (dose selon le poids et l'âge).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="paracetamol_vitc_particularite">Antalgique et antipyrétique.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="paracetamol_vitc_conseil">Respecter la dose maximale de paracétamol (3 g/j).</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="panadol_extra_title">3. Paracétamol + caféine</h3>
+                        <h3 style="color:var(--primary);" data-i18n="aspirine_vitc_title">3. Aspirine + vitamine C (AAS+C)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aspirine_vitc_gen">Acide acétylsalicylique + acide ascorbique.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspirine UPSA vitamine C&quot;)">Aspirine UPSA vitamine C</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aspirine_vitc_formes">Comprimés effervescents, comprimés.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aspirine_vitc_posologie">1 comprimé, jusqu'à 3 fois par jour (dose selon le poids et l'âge).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aspirine_vitc_particularite">Antalgique et antipyrétique ; l'aspirine est déconseillée chez l'enfant.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aspirine_vitc_conseil">Aspirine contre-indiquée chez l'enfant de moins de 15 ans (risque de syndrome de Reye).</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="panadol_extra_title">4. Paracétamol + caféine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="panadol_extra_gen">Paracétamol + caféine (500 mg/65 mg).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Panadol Extra")">Panadol Extra</span>,
-                            <span class="drug-link" onclick="showDrugModal("Planadix Extra")">Planadix Extra</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Panadol Extra&quot;)">Panadol Extra</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Planadix Extra&quot;)">Planadix Extra</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="panadol_extra_formes">Comprimés.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="panadol_extra_posologie">1 comprimé, jusqu'à 3 fois par jour.</span></p>
@@ -1066,12 +1078,12 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="panadol_extra_conseil">Éviter le soir (insomnie) ; ne pas cumuler avec du café.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="gripex_doli_title">4. Paracétamol + décongestionnant (AP+D)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="gripex_doli_title">5. Paracétamol + décongestionnant (AP+D)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="gripex_doli_gen">Paracétamol + pseudoéphédrine (± phéniramine, phényléphrine, caféine).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Gripex")">Gripex</span>,
-                            <span class="drug-link" onclick="showDrugModal("Gripex plus")">Gripex plus</span>,
-                            <span class="drug-link" onclick="showDrugModal("Doli Rhume")">Doli Rhume</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gripex&quot;)">Gripex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Gripex plus&quot;)">Gripex plus</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Doli Rhume&quot;)">Doli Rhume</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="gripex_doli_formes">Comprimés, gélules, sachets.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="gripex_doli_posologie">Selon le produit ; respecter la posologie et une durée inférieure à 5 jours.</span></p>
@@ -1079,13 +1091,13 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="gripex_doli_conseil">Ne pas dépasser 5 jours ; éviter chez les hypertendus et cardiaques.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="actifed_humex_title">5. Paracétamol + antihistaminique + décongestionnant (AP+AH+D)</h3>
+                        <h3 style="color:var(--primary);" data-i18n="actifed_humex_title">6. Paracétamol + antihistaminique + décongestionnant (AP+AH+D)</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="actifed_humex_gen">Paracétamol + triprolidine/phéniramine/chlorphéniramine + pseudoéphédrine/phényléphrine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Actifed Rhume")">Actifed Rhume</span>,
-                            <span class="drug-link" onclick="showDrugModal("Humex Rhume")">Humex Rhume</span>,
-                            <span class="drug-link" onclick="showDrugModal("Rhumafed")">Rhumafed</span>,
-                            <span class="drug-link" onclick="showDrugModal("Rynza")">Rynza</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Actifed Rhume&quot;)">Actifed Rhume</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Humex Rhume&quot;)">Humex Rhume</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rhumafed&quot;)">Rhumafed</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rynza&quot;)">Rynza</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="actifed_humex_formes">Comprimés, gélules, sachets.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="actifed_humex_posologie">1 comprimé ou sachet, jusqu'à 3 fois par jour ; durée inférieure à 5 jours.</span></p>
@@ -1093,16 +1105,17 @@
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="actifed_humex_conseil">Somnolence (antihistaminique) : ne pas conduire ; éviter l'alcool.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="xydol_nurofen_title">6. Ibuprofène + pseudoéphédrine</h3>
+                        <h3 style="color:var(--primary);" data-i18n="xydol_nurofen_title">7. Ibuprofène + pseudoéphédrine</h3>
                         <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="xydol_nurofen_gen">Ibuprofène + pseudoéphédrine (200 mg/30 mg).</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal("Xydol Rhume")">Xydol Rhume</span>,
-                            <span class="drug-link" onclick="showDrugModal("Nurofen Rhume")">Nurofen Rhume</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xydol Rhume&quot;)">Xydol Rhume</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Nurofen Rhume&quot;)">Nurofen Rhume</span>
                         </p>
                         <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="xydol_nurofen_formes">Comprimés.</span></p>
                         <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="xydol_nurofen_posologie">1 comprimé, jusqu'à 3 fois par jour, pendant les repas (durée courte).</span></p>
                         <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="xydol_nurofen_particularite">AINS + décongestionnant ; éviter en cas d'ulcère ou d'hypertension.</span></p>
                         <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="xydol_nurofen_conseil">À prendre au cours des repas ; contre-indiqué dans l'ulcère et la grossesse.</span></p>
+                    </div>
                     </div>
                 </section>
 
@@ -1340,36 +1353,43 @@
                 fervex_biovex_posologie: "1 sachet dans un verre d'eau chaude, jusqu'à 3 fois par jour.",
                 fervex_biovex_particularite: "Antalgique/antipyrétique + antihistaminique (nez qui coule) + vitamine C.",
                 fervex_biovex_conseil: "Ne pas associer à un autre médicament contenant du paracétamol.",
-                antalgique_vitc_title: "2. Paracétamol ou aspirine + vitamine C (AP+C / AAS+C)",
-                antalgique_vitc_gen: "Paracétamol + acide ascorbique ; acide acétylsalicylique + acide ascorbique.",
-                antalgique_vitc_formes: "Comprimés effervescents, comprimés.",
-                antalgique_vitc_posologie: "1 comprimé, jusqu'à 3 fois par jour (dose selon le poids et l'âge).",
-                antalgique_vitc_particularite: "Antalgique et antipyrétique ; l'aspirine est déconseillée chez l'enfant.",
-                antalgique_vitc_conseil: "Respecter la dose maximale de paracétamol (3 g/j).",
-                panadol_extra_title: "3. Paracétamol + caféine",
+                paracetamol_vitc_title: "2. Paracétamol + vitamine C (AP+C)",
+                paracetamol_vitc_gen: "Paracétamol + acide ascorbique.",
+                paracetamol_vitc_formes: "Comprimés effervescents, comprimés.",
+                paracetamol_vitc_posologie: "1 comprimé, jusqu'à 3 fois par jour (dose selon le poids et l'âge).",
+                paracetamol_vitc_particularite: "Antalgique et antipyrétique.",
+                paracetamol_vitc_conseil: "Respecter la dose maximale de paracétamol (3 g/j).",
+                aspirine_vitc_title: "3. Aspirine + vitamine C (AAS+C)",
+                aspirine_vitc_gen: "Acide acétylsalicylique + acide ascorbique.",
+                aspirine_vitc_formes: "Comprimés effervescents, comprimés.",
+                aspirine_vitc_posologie: "1 comprimé, jusqu'à 3 fois par jour (dose selon le poids et l'âge).",
+                aspirine_vitc_particularite: "Antalgique et antipyrétique ; l'aspirine est déconseillée chez l'enfant.",
+                aspirine_vitc_conseil: "Aspirine contre-indiquée chez l'enfant de moins de 15 ans (risque de syndrome de Reye).",
+                panadol_extra_title: "4. Paracétamol + caféine",
                 panadol_extra_gen: "Paracétamol + caféine (500 mg/65 mg).",
                 panadol_extra_formes: "Comprimés.",
                 panadol_extra_posologie: "1 comprimé, jusqu'à 3 fois par jour.",
                 panadol_extra_particularite: "La caféine renforce l'effet antalgique.",
                 panadol_extra_conseil: "Éviter le soir (insomnie) ; ne pas cumuler avec du café.",
-                gripex_doli_title: "4. Paracétamol + décongestionnant (AP+D)",
+                gripex_doli_title: "5. Paracétamol + décongestionnant (AP+D)",
                 gripex_doli_gen: "Paracétamol + pseudoéphédrine (± phéniramine, phényléphrine, caféine).",
                 gripex_doli_formes: "Comprimés, gélules, sachets.",
                 gripex_doli_posologie: "Selon le produit ; respecter la posologie et une durée inférieure à 5 jours.",
                 gripex_doli_particularite: "Débouche le nez ; déconseillé chez l'hypertendu (pseudoéphédrine).",
                 gripex_doli_conseil: "Ne pas dépasser 5 jours ; éviter chez les hypertendus et cardiaques.",
-                actifed_humex_title: "5. Paracétamol + antihistaminique + décongestionnant (AP+AH+D)",
+                actifed_humex_title: "6. Paracétamol + antihistaminique + décongestionnant (AP+AH+D)",
                 actifed_humex_gen: "Paracétamol + triprolidine/phéniramine/chlorphéniramine + pseudoéphédrine/phényléphrine.",
                 actifed_humex_formes: "Comprimés, gélules, sachets.",
                 actifed_humex_posologie: "1 comprimé ou sachet, jusqu'à 3 fois par jour ; durée inférieure à 5 jours.",
                 actifed_humex_particularite: "Associe fièvre, congestion et écoulement nasal.",
                 actifed_humex_conseil: "Somnolence (antihistaminique) : ne pas conduire ; éviter l'alcool.",
-                xydol_nurofen_title: "6. Ibuprofène + pseudoéphédrine",
+                xydol_nurofen_title: "7. Ibuprofène + pseudoéphédrine",
                 xydol_nurofen_gen: "Ibuprofène + pseudoéphédrine (200 mg/30 mg).",
                 xydol_nurofen_formes: "Comprimés.",
                 xydol_nurofen_posologie: "1 comprimé, jusqu'à 3 fois par jour, pendant les repas (durée courte).",
                 xydol_nurofen_particularite: "AINS + décongestionnant ; éviter en cas d'ulcère ou d'hypertension.",
                 xydol_nurofen_conseil: "À prendre au cours des repas ; contre-indiqué dans l'ulcère et la grossesse.",
+                group_1_name: "Antigrippaux et rhume",
                 indication_1: "Fièvre, maux de tête et courbatures (paracétamol).",
                 indication_2: "Congestion nasale (décongestionnants).",
                 indication_3: "Écoulement nasal (antihistaminiques).",
@@ -1503,36 +1523,43 @@
                 fervex_biovex_posologie: "كيس واحد في كوب ماء ساخن، حتى 3 مرات يومياً.",
                 fervex_biovex_particularite: "مسكّن/خافض للحرارة + مضاد هيستامين (سيلان الأنف) + فيتامين C.",
                 fervex_biovex_conseil: "لا تقرنه بدواء آخر يحتوي على الباراسيتامول.",
-                antalgique_vitc_title: "2. باراسيتامول أو أسبرين + فيتامين C (AP+C / AAS+C)",
-                antalgique_vitc_gen: "باراسيتامول + حمض الأسكوربيك؛ حمض الأسيتيل ساليسيليك + حمض الأسكوربيك.",
-                antalgique_vitc_formes: "أقراص فوارة، أقراص.",
-                antalgique_vitc_posologie: "قرص واحد، حتى 3 مرات يومياً (الجرعة حسب الوزن والعمر).",
-                antalgique_vitc_particularite: "مسكّن وخافض للحرارة؛ الأسبرين غير مستحسن عند الطفل.",
-                antalgique_vitc_conseil: "احترم الجرعة القصوى للباراسيتامول (3 غ/يوم).",
-                panadol_extra_title: "3. باراسيتامول + كافيين",
+                paracetamol_vitc_title: "2. باراسيتامول + فيتامين C (AP+C)",
+                paracetamol_vitc_gen: "باراسيتامول + حمض الأسكوربيك.",
+                paracetamol_vitc_formes: "أقراص فوارة، أقراص.",
+                paracetamol_vitc_posologie: "قرص واحد، حتى 3 مرات يومياً (الجرعة حسب الوزن والعمر).",
+                paracetamol_vitc_particularite: "مسكّن وخافض للحرارة.",
+                paracetamol_vitc_conseil: "احترم الجرعة القصوى للباراسيتامول (3 غ/يوم).",
+                aspirine_vitc_title: "3. أسبرين + فيتامين C (AAS+C)",
+                aspirine_vitc_gen: "حمض الأسيتيل ساليسيليك + حمض الأسكوربيك.",
+                aspirine_vitc_formes: "أقراص فوارة، أقراص.",
+                aspirine_vitc_posologie: "قرص واحد، حتى 3 مرات يومياً (الجرعة حسب الوزن والعمر).",
+                aspirine_vitc_particularite: "مسكّن وخافض للحرارة؛ الأسبرين غير مستحسن عند الطفل.",
+                aspirine_vitc_conseil: "الأسبرين مضاد للاستطباب عند الطفل دون 15 سنة (خطر متلازمة راي).",
+                panadol_extra_title: "4. باراسيتامول + كافيين",
                 panadol_extra_gen: "باراسيتامول + كافيين (500 مغ/65 مغ).",
                 panadol_extra_formes: "أقراص.",
                 panadol_extra_posologie: "قرص واحد، حتى 3 مرات يومياً.",
                 panadol_extra_particularite: "الكافيين يعزّز التأثير المسكّن.",
                 panadol_extra_conseil: "تجنّب تناوله مساءً (أرق)؛ لا تجمعه مع القهوة.",
-                gripex_doli_title: "4. باراسيتامول + مزيل احتقان (AP+D)",
+                gripex_doli_title: "5. باراسيتامول + مزيل احتقان (AP+D)",
                 gripex_doli_gen: "باراسيتامول + سودوإيفيدرين (± فينيرامين، فينيليفرين، كافيين).",
                 gripex_doli_formes: "أقراص، كبسولات، أكياس.",
                 gripex_doli_posologie: "حسب المنتج؛ احترم الجرعة ومدة أقل من 5 أيام.",
                 gripex_doli_particularite: "يفتح الأنف؛ غير مستحسن عند مريض الضغط (سودوإيفيدرين).",
                 gripex_doli_conseil: "لا تتجاوز 5 أيام؛ تجنّبه عند مرضى الضغط والقلب.",
-                actifed_humex_title: "5. باراسيتامول + مضاد هيستامين + مزيل احتقان (AP+AH+D)",
+                actifed_humex_title: "6. باراسيتامول + مضاد هيستامين + مزيل احتقان (AP+AH+D)",
                 actifed_humex_gen: "باراسيتامول + تريبروليدين/فينيرامين/كلورفينيرامين + سودوإيفيدرين/فينيليفرين.",
                 actifed_humex_formes: "أقراص، كبسولات، أكياس.",
                 actifed_humex_posologie: "قرص أو كيس واحد، حتى 3 مرات يومياً؛ مدة أقل من 5 أيام.",
                 actifed_humex_particularite: "يجمع معالجة الحمى والاحتقان وسيلان الأنف.",
                 actifed_humex_conseil: "نعاس (مضاد الهيستامين): لا تقُد؛ تجنّب الكحول.",
-                xydol_nurofen_title: "6. إيبوبروفين + سودوإيفيدرين",
+                xydol_nurofen_title: "7. إيبوبروفين + سودوإيفيدرين",
                 xydol_nurofen_gen: "إيبوبروفين + سودوإيفيدرين (200 مغ/30 مغ).",
                 xydol_nurofen_formes: "أقراص.",
                 xydol_nurofen_posologie: "قرص واحد، حتى 3 مرات يومياً، خلال الوجبات (مدة قصيرة).",
                 xydol_nurofen_particularite: "مضاد التهاب غير ستيرويدي + مزيل احتقان؛ تجنّبه عند القرحة أو ارتفاع الضغط.",
                 xydol_nurofen_conseil: "يُؤخذ خلال الوجبات؛ مضاد للاستطباب في القرحة والحمل.",
+                group_1_name: "مضادات الإنفلونزا والرشح",
                 indication_1: "الحمى وصداع الرأس وآلام الجسم (باراسيتامول).",
                 indication_2: "احتقان الأنف (مزيلات الاحتقان).",
                 indication_3: "سيلان الأنف (مضادات الهيستامين).",
@@ -1666,36 +1693,43 @@
                 fervex_biovex_posologie: "1 sachet in a glass of hot water, up to 3 times daily.",
                 fervex_biovex_particularite: "Analgesic/antipyretic + antihistamine (runny nose) + vitamin C.",
                 fervex_biovex_conseil: "Do not combine with another paracetamol-containing medicine.",
-                antalgique_vitc_title: "2. Paracetamol or aspirin + vitamin C (P+C / ASA+C)",
-                antalgique_vitc_gen: "Paracetamol + ascorbic acid; acetylsalicylic acid + ascorbic acid.",
-                antalgique_vitc_formes: "Effervescent tablets, tablets.",
-                antalgique_vitc_posologie: "1 tablet, up to 3 times daily (dose according to weight and age).",
-                antalgique_vitc_particularite: "Analgesic and antipyretic; aspirin is not recommended in children.",
-                antalgique_vitc_conseil: "Respect the maximum paracetamol dose (3 g/day).",
-                panadol_extra_title: "3. Paracetamol + caffeine",
+                paracetamol_vitc_title: "2. Paracetamol + vitamin C (P+C)",
+                paracetamol_vitc_gen: "Paracetamol + ascorbic acid.",
+                paracetamol_vitc_formes: "Effervescent tablets, tablets.",
+                paracetamol_vitc_posologie: "1 tablet, up to 3 times daily (dose according to weight and age).",
+                paracetamol_vitc_particularite: "Analgesic and antipyretic.",
+                paracetamol_vitc_conseil: "Respect the maximum paracetamol dose (3 g/day).",
+                aspirine_vitc_title: "3. Aspirin + vitamin C (ASA+C)",
+                aspirine_vitc_gen: "Acetylsalicylic acid + ascorbic acid.",
+                aspirine_vitc_formes: "Effervescent tablets, tablets.",
+                aspirine_vitc_posologie: "1 tablet, up to 3 times daily (dose according to weight and age).",
+                aspirine_vitc_particularite: "Analgesic and antipyretic; aspirin is not recommended in children.",
+                aspirine_vitc_conseil: "Aspirin is contraindicated in children under 15 years (Reye syndrome risk).",
+                panadol_extra_title: "4. Paracetamol + caffeine",
                 panadol_extra_gen: "Paracetamol + caffeine (500 mg/65 mg).",
                 panadol_extra_formes: "Tablets.",
                 panadol_extra_posologie: "1 tablet, up to 3 times daily.",
                 panadol_extra_particularite: "Caffeine enhances the analgesic effect.",
                 panadol_extra_conseil: "Avoid in the evening (insomnia); do not combine with coffee.",
-                gripex_doli_title: "4. Paracetamol + decongestant (P+D)",
+                gripex_doli_title: "5. Paracetamol + decongestant (P+D)",
                 gripex_doli_gen: "Paracetamol + pseudoephedrine (± pheniramine, phenylephrine, caffeine).",
                 gripex_doli_formes: "Tablets, capsules, sachets.",
                 gripex_doli_posologie: "Depending on the product; respect the dosage and a duration under 5 days.",
                 gripex_doli_particularite: "Unblocks the nose; not recommended in hypertensives (pseudoephedrine).",
                 gripex_doli_conseil: "Do not exceed 5 days; avoid in hypertensives and cardiac patients.",
-                actifed_humex_title: "5. Paracetamol + antihistamine + decongestant (P+AH+D)",
+                actifed_humex_title: "6. Paracetamol + antihistamine + decongestant (P+AH+D)",
                 actifed_humex_gen: "Paracetamol + triprolidine/pheniramine/chlorpheniramine + pseudoephedrine/phenylephrine.",
                 actifed_humex_formes: "Tablets, capsules, sachets.",
                 actifed_humex_posologie: "1 tablet or sachet, up to 3 times daily; duration under 5 days.",
                 actifed_humex_particularite: "Combines treatment of fever, congestion and runny nose.",
                 actifed_humex_conseil: "Drowsiness (antihistamine): do not drive; avoid alcohol.",
-                xydol_nurofen_title: "6. Ibuprofen + pseudoephedrine",
+                xydol_nurofen_title: "7. Ibuprofen + pseudoephedrine",
                 xydol_nurofen_gen: "Ibuprofen + pseudoephedrine (200 mg/30 mg).",
                 xydol_nurofen_formes: "Tablets.",
                 xydol_nurofen_posologie: "1 tablet, up to 3 times daily, during meals (short duration).",
                 xydol_nurofen_particularite: "NSAID + decongestant; avoid in ulcer or hypertension.",
                 xydol_nurofen_conseil: "Take during meals; contraindicated in ulcer and pregnancy.",
+                group_1_name: "Cold and flu medicines",
                 indication_1: "Fever, headache and body aches (paracetamol).",
                 indication_2: "Nasal congestion (decongestants).",
                 indication_3: "Runny nose (antihistamines).",

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cours complet sur les antalgiques et l'échelle OMS - GhaniPharma">
-    <meta name="keywords" content="pharmacie, antalgiques, opioïdes, paracétamol, AINS, échelle OMS, cours pharmacie, GhaniPharma">
+    <meta name="description" content="Cours complet sur 1. Les antalgiques (selon OMS) - GhaniPharma">
+    <meta name="keywords" content="pharmacie, les antalgiques et les anti-inflammatoires, cours pharmacie, GhaniPharma">
     <meta name="author" content="Ghani Rouabah">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Les Antalgiques - GhaniPharma">
-    <meta property="og:description" content="Cours complet sur les antalgiques et l'échelle OMS">
+    <meta property="og:title" content="1. Les antalgiques (selon OMS) - GhaniPharma">
+    <meta property="og:description" content="Cours complet sur 1. Les antalgiques (selon OMS)">
     <meta property="og:image" content="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0a0a1a">
-    <title>Les Antalgiques | GhaniPharma</title>
+    <title>1. Les antalgiques (selon OMS) | GhaniPharma</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ghanroub/pharmacie/refs/heads/main/Gemini_Generated_Image_b8t8a3b8t8a3b8t8-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -520,6 +520,7 @@
             transform: scale(0.9);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
         .mobile-menu-overlay.open .mobile-menu-popup { transform: scale(1); }
         .mobile-menu-close {
@@ -878,7 +879,6 @@
 
     <div class="universe-bg"><div class="stars" id="starsContainer"></div></div>
 
-    <!-- Header -->
     <nav class="top-nav" id="topNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -941,7 +941,6 @@
         </div>
     </nav>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu-popup">
             <button class="mobile-menu-close" id="closeMobileMenu"><i class="fas fa-times"></i></button>
@@ -960,7 +959,6 @@
         </div>
     </div>
 
-    <!-- Side dots -->
     <div class="side-dots" id="sideDots"></div>
     <div class="bottom-dots-nav" id="bottomDotsNav"></div>
 
@@ -969,8 +967,8 @@
 
             <section class="hero-section" id="section-intro">
                 <div class="hero-badge reveal"><i class="fas fa-capsules"></i> <span data-i18n="pharmacology">Pharmacologie</span></div>
-                <h1 class="hero-title reveal reveal-delay-1" data-i18n="hero_title">LES ANTALGIQUES</h1>
-                <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero_subtitle">Classification selon l'échelle OMS, mécanismes, indications et conseils à l'officine.</p>
+                <h1 class="hero-title reveal reveal-delay-1" data-i18n="hero_title">1. LES ANTALGIQUES (SELON OMS)</h1>
+                <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero_subtitle">Classification selon l'échelle OMS (paliers 1 à 3), mécanismes, indications et conseils à l'officine : paracétamol, aspirine, codéine, tramadol, morphine, buprénorphine, oxycodone et fentanyl.</p>
                 <div class="toggle-buttons reveal reveal-delay-3">
                     <button class="toggle-btn active" id="btnLesson"><i class="fas fa-book-open"></i> <span data-i18n="lesson">Leçon</span></button>
                     <button class="toggle-btn" id="btnExamen"><i class="fas fa-pencil-alt"></i> <span data-i18n="exam">Examen</span></button>
@@ -981,8 +979,7 @@
                 <section class="section-block" id="section-mecanisme">
                     <h2 class="section-title reveal" data-i18n="mechanism_title">Mécanisme d'action</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong data-i18n="level1_label">Niveau 1 :</strong> <span data-i18n="mechanism_l1">Inhibe les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines (AINS), ou agit sur des voies centrales spécifiques (Paracétamol).</span></p>
-                        <p><strong data-i18n="levels23_label">Niveaux 2 & 3 :</strong> <span data-i18n="mechanism_l23">Agonistes des récepteurs aux opioïdes (principalement les récepteurs µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur.</span> <em data-i18n="mechanism_note">(Note : Le tramadol a aussi un effet sérotoninergique).</em></p>
+                        <p><span data-i18n="mechanism_text_1">Les antalgiques de niveau 1 (paracétamol, aspirine/AINS) inhibent les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines, ou agissent sur des voies centrales spécifiques (paracétamol). Les niveaux 2 et 3 sont des agonistes des récepteurs aux opioïdes (principalement µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur. Le tramadol possède en plus un effet sérotoninergique.</span></p>
                     </div>
                 </section>
 
@@ -990,21 +987,21 @@
                     <h2 class="section-title reveal" data-i18n="indications_title">Indications générales</h2>
                     <div class="card reveal reveal-delay-1">
                         <ul style="padding-left:20px;">
-                            <li><strong data-i18n="n1_label">N1 :</strong> <span data-i18n="indication_n1">Douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).</span></li>
-                            <li><strong data-i18n="n2_label">N2 :</strong> <span data-i18n="indication_n2">Douleurs modérées à sévères ou résistantes au Niveau 1 (post-opératoires, lombalgies aiguës).</span></li>
-                            <li><strong data-i18n="n3_label">N3 :</strong> <span data-i18n="indication_n3">Douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).</span></li>
+                            <li data-i18n="indication_1">Niveau 1 : douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).</li>
+                            <li data-i18n="indication_2">Niveau 2 : douleurs modérées à sévères ou résistantes au niveau 1 (post-opératoires, lombalgies aiguës).</li>
+                            <li data-i18n="indication_3">Niveau 3 : douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).</li>
+                            <li data-i18n="indication_4">Niveaux 2/3 : douleurs nécessitant un opioïde faible ou fort selon l'intensité et la réponse au traitement.</li>
+                            <li data-i18n="indication_5">Paracétamol : antalgique et antipyrétique de première intention ; aspirine/AINS dans les douleurs inflammatoires.</li>
                         </ul>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-contre-indications">
-                    <h2 class="section-title reveal" data-i18n="contre_title">Contre‑indications et précautions majeures</h2>
+                    <h2 class="section-title reveal" data-i18n="contre_title">Contre-indications & Précautions majeures</h2>
                     <div class="card reveal reveal-delay-1">
-                        <ul style="padding-left:20px;">
-                            <li><strong data-i18n="ains_label">AINS :</strong> <span data-i18n="contre_ains">Ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l'aspirine (asthme).</span></li>
-                            <li><strong data-i18n="paracetamol_label">Paracétamol :</strong> <span data-i18n="contre_para">Insuffisance hépatocellulaire grave.</span></li>
-                            <li><strong data-i18n="opioides_label">Opioïdes :</strong> <span data-i18n="contre_opio">Insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d'hypertension intracrânienne). IMAO (pour le tramadol et la péthidine).</span></li>
-                        </ul>
+                        <p><strong data-i18n="ci_absolues_label">CI absolues :</strong> <span data-i18n="ci_absolues">AINS : ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l'aspirine (asthme). Paracétamol : insuffisance hépatocellulaire grave. Opioïdes : insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d'hypertension intracrânienne), IMAO (tramadol et péthidine).</span></p>
+                        <p><strong data-i18n="note_label">Note :</strong> <span data-i18n="note_text">Le tramadol a aussi un effet sérotoninergique : ne jamais l'associer aux ISRS/IRSN (syndrome sérotoninergique). Les opioïdes exposent à une dépression respiratoire, majorée par les benzodiazépines et l'alcool.</span></p>
+                        <p><strong data-i18n="precautions_label">Précautions :</strong> <span data-i18n="precautions_text">AINS : protection gastrique par IPP si risque, prise au cours du repas, arrêt 7 jours avant chirurgie pour l'aspirine. Paracétamol : ne pas dépasser 3 g/j (4 g max) et vérifier les associations. Opioïdes : constipation systématique (laxatif), ordonnance sécurisée et carnet à souches pour les stupéfiants.</span></p>
                     </div>
                 </section>
 
@@ -1012,10 +1009,10 @@
                     <h2 class="section-title reveal" data-i18n="interactions_title">Interactions médicamenteuses majeures</h2>
                     <div class="card reveal reveal-delay-1">
                         <ul style="padding-left:20px;">
-                            <li><strong data-i18n="inter_1_strong">AINS + Anticoagulants/AVK :</strong> <span data-i18n="inter_1">Risque hémorragique majeur.</span></li>
-                            <li><strong data-i18n="inter_2_strong">AINS + Antihypertenseurs :</strong> <span data-i18n="inter_2">Diminution de l'efficacité anti-HTA.</span></li>
-                            <li><strong data-i18n="inter_3_strong">Opioïdes + Benzodiazépines/Alcool :</strong> <span data-i18n="inter_3">Dépression respiratoire sévère.</span></li>
-                            <li><strong data-i18n="inter_4_strong">Tramadol + Antidépresseurs (ISRS/IRSN) :</strong> <span data-i18n="inter_4">Syndrome sérotoninergique (confusion, hyperthermie, rigidité).</span></li>
+                            <li><strong data-i18n="inter_1_strong">AINS + anticoagulants/AVK</strong> <span data-i18n="inter_1"> : risque hémorragique majeur.</span></li>
+                            <li><strong data-i18n="inter_2_strong">AINS + antihypertenseurs</strong> <span data-i18n="inter_2"> : diminution de l'efficacité antihypertensive.</span></li>
+                            <li><strong data-i18n="inter_3_strong">Opioïdes + benzodiazépines/alcool</strong> <span data-i18n="inter_3"> : dépression respiratoire sévère.</span></li>
+                            <li><strong data-i18n="inter_4_strong">Tramadol + antidépresseurs (ISRS/IRSN)</strong> <span data-i18n="inter_4"> : syndrome sérotoninergique (confusion, hyperthermie, rigidité).</span></li>
                         </ul>
                     </div>
                 </section>
@@ -1023,132 +1020,187 @@
                 <section class="section-block" id="section-grossesse">
                     <h2 class="section-title reveal" data-i18n="grossesse_title">Grossesse et Allaitement</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p><strong data-i18n="n1_label">N1 :</strong> <span data-i18n="grossesse_n1">Paracétamol = antalgique de référence en court terme. AINS formellement contre‑indiqués au 3e trimestre.</span></p>
-                        <p><strong data-i18n="n2n3_label">N2/N3 :</strong> <span data-i18n="grossesse_n23">À éviter sauf stricte nécessité. Codéine déconseillée pendant l'allaitement (métaboliseurs rapides). Morphine possible sous surveillance.</span></p>
+                        <p><strong data-i18n="grossesse_label">Grossesse :</strong> <span data-i18n="grossesse_text">Paracétamol = antalgique de référence en court terme. AINS formellement contre-indiqués au 3e trimestre. Niveaux 2/3 : à éviter sauf stricte nécessité ; morphine possible sous surveillance.</span></p>
+                        <p><strong data-i18n="allaitement_label">Allaitement :</strong> <span data-i18n="allaitement_text">Codéine déconseillée pendant l'allaitement (métaboliseurs rapides). Morphine possible sous surveillance. Paracétamol et AINS : privilégier une courte durée sur avis médical.</span></p>
                     </div>
                 </section>
 
-                <section class="section-block" id="section-niveau1">
-                    <h2 class="section-title reveal" data-i18n="niveau1_title">NIVEAU 1 : Antalgiques non‑opioïdes</h2>
+                <section class="section-block" id="section-substances">
+                    <h2 class="section-title reveal" data-i18n="substances_title">Les substances actives</h2>
+
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_1_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Niveau 1 — Antalgiques non-opioïdes</h3>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="para_title">1. Paracétamol</h3>
+                        <h3 style="color:var(--primary);" data-i18n="paracetamol_title">1. Paracétamol</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="paracetamol_gen">Paracétamol.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Doliprane')">Doliprane</span>,
-                            <span class="drug-link" onclick="showDrugModal('Dolyc')">Dolyc</span>,
-                            <span class="drug-link" onclick="showDrugModal('Dofebril')">Dofebril</span>,
-                            <span class="drug-link" onclick="showDrugModal('Dafalgan')">Dafalgan</span>,
-                            <span class="drug-link" onclick="showDrugModal('Panadol')">Panadol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Efferalgan')">Efferalgan</span>,
-                            <span class="drug-link" onclick="showDrugModal('Paramol')">Paramol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Expandol')">Expandol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Sapramol')">Sapramol</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Doliprane&quot;)">Doliprane</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dolyc&quot;)">Dolyc</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dofebril&quot;)">Dofebril</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dafalgan&quot;)">Dafalgan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Panadol&quot;)">Panadol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Efferalgan&quot;)">Efferalgan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Paramol&quot;)">Paramol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Expandol&quot;)">Expandol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Sapramol&quot;)">Sapramol</span>
                         </p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="para_formes">Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="para_posologie">500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="para_particularite">Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.</span></p>
-                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="para_conseil">Vérifiez toujours les « médicaments rhume » associés. Interdit avec l'alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</span></p>
-                        <p style="margin-top:20px;"><strong data-i18n="associations_label">Associations :</strong></p>
-                        <h4 style="color:var(--accent); margin-top:15px;" data-i18n="para_cafeine">Paracétamol + Caféine</h4>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="paracetamol_formes">Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="paracetamol_posologie">500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="paracetamol_particularite">Antalgique et antipyrétique pur, aucun effet anti-inflammatoire.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="paracetamol_conseil">Vérifiez toujours les « médicaments rhume » associés. Interdit avec l'alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="paracetamol_cafeine_title">2. Paracétamol + Caféine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="paracetamol_cafeine_gen">Paracétamol + Caféine.</span></p>
                         <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Panadol Extra')">Panadol Extra</span>,
-                            <span class="drug-link" onclick="showDrugModal('Planadix')">Planadix</span>,
-                            <span class="drug-link" onclick="showDrugModal('Planadix Confort +')">Planadix Confort +</span>,
-                            <span class="drug-link" onclick="showDrugModal('Planadix Advance')">Planadix Advance</span>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Panadol Extra&quot;)">Panadol Extra</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Planadix&quot;)">Planadix</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Planadix Confort +&quot;)">Planadix Confort +</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Planadix Advance&quot;)">Planadix Advance</span>
                         </p>
-                        <h4 style="color:var(--accent); margin-top:15px;" data-i18n="para_vitc">Paracétamol + Vitamine C</h4>
-                        <p><strong data-i18n="nom_commercial">Nom commercial :</strong>
-                            <span class="drug-link" onclick="showDrugModal('Efferalgan VC')">Efferalgan VC</span>,
-                            <span class="drug-link" onclick="showDrugModal('Dofebril VC')">Dofebril VC</span>
-                        </p>
-                    </div>
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);" data-i18n="aspirine_title">2. Acide Acétylsalicylique (AINS)</h3>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong> <span class="drug-link" onclick="showDrugModal('Aspegic')">Aspegic</span>, <span class="drug-link" onclick="showDrugModal('Aspirine')">Aspirine</span>, <span class="drug-link" onclick="showDrugModal('Catalgine')">Catalgine</span>.</p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="aspirine_formes">Comprimés (500 mg), sachets pour solution buvable.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie Adulte :</strong> <span data-i18n="aspirine_posologie">500 mg toutes les 4 heures. Max 3 g/jour.</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aspirine_particularite">Anti‑inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).</span></p>
-                        <p><strong data-i18n="conseil_pharma">Conseil Pharmacien :</strong> <span data-i18n="aspirine_conseil">« Prenez‑le au cours ou à la fin d'un repas. » Rappeler l'allergie à l'aspirine. Pas d'enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.</span></p>
-                    </div>
-                </section>
-
-                <section class="section-block" id="section-niveau2">
-                    <h2 class="section-title reveal" data-i18n="niveau2_title">NIVEAU 2 : Opioïdes faibles</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="codeine_title">3. Paracétamol + Codéine</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="codeine_dci">Paracétamol + Codéine phosphate.</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('Codoliprane')">Codoliprane</span>, 
-                            <span class="drug-link" onclick="showDrugModal('Co‑Dolyc')">Co‑Dolyc</span>,
-                            <span class="drug-link" onclick="showDrugModal('Co‑paramol')">Co‑paramol</span>,
-                            <span class="drug-link" onclick="showDrugModal('Coparalgan')">Coparalgan</span>
-                        </p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="codeine_formes">Comprimés (400 mg/30 mg ou 500 mg/30 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="codeine_posologie">1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).</span></p>
-                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="codeine_particularite">La codéine est une prodrogue convertie en morphine par le CYP2D6.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="codeine_conseil">« Peut provoquer une constipation, hydratez‑vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.</span></p>
-                    </div>
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);" data-i18n="trama_para_title">4. Paracétamol + Tramadol</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="trama_para_dci">Paracétamol + Chlorhydrate de tramadol.</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong> 
-                            <span class="drug-link" onclick="showDrugModal('Di‑Dolex')">Di‑Dolex</span>, 
-                            <span class="drug-link" onclick="showDrugModal('Supradolex')">Supradolex</span>,
-                            <span class="drug-link" onclick="showDrugModal('Xamadol')">Xamadol</span>
-                        </p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="trama_para_formes">Comprimés (325 mg / 37.5 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="trama_para_posologie">1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="trama_para_conseil">« Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).</span></p>
-                    </div>
-                    <div class="card reveal reveal-delay-3">
-                        <h3 style="color:var(--primary);" data-i18n="trama_title">5. Tramadol seul</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="trama_dci">Tramadol.</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('Dolex')">Dolex</span>, <span class="drug-link" onclick="showDrugModal('Supramadol')">Supramadol</span>, <span class="drug-link" onclick="showDrugModal('Zodid')">Zodid</span>.</p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="trama_formes">Gélules (50 mg), comprimés LP (100 mg, 150 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="trama_posologie">50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="trama_conseil">« C'est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l'alcool et les somnifères.</span></p>
-                    </div>
-                </section>
-
-                <section class="section-block" id="section-niveau3">
-                    <h2 class="section-title reveal" data-i18n="niveau3_title">NIVEAU 3 : Opioïdes forts</h2>
-                    <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="morphine_title">6. Morphine</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="morphine_dci">Morphine.</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('Skénan')">Skénan</span> <span data-i18n="lp_label">(LP)</span>, <span class="drug-link" onclick="showDrugModal('Actiskénan')">Actiskénan</span> <span data-i18n="li_label">(LI)</span>.</p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="morphine_formes">Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="morphine_posologie">Actiskénan toutes les 4‑6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="morphine_conseil">« La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.</span></p>
-                    </div>
-                    <div class="card reveal reveal-delay-2">
-                        <h3 style="color:var(--primary);" data-i18n="bupr_title">7. Buprénorphine</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="bupr_dci">Buprénorphine.</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('Buprenal')">Buprenal</span>, <span class="drug-link" onclick="showDrugModal('Temgesic')">Temgesic</span>.</p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="bupr_formes">Comprimés sublinguaux (0.2 mg, 2 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="bupr_posologie">0.2‑0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="bupr_conseil">« Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.</span></p>
-                    </div>
-                    <div class="card reveal reveal-delay-3">
-                        <h3 style="color:var(--primary);" data-i18n="oxy_title">8. Oxycodone</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="oxy_dci">Oxycodone.</span></p>
-                        <p><strong data-i18n="nom_commercial">Nom commercial :</strong> <span class="drug-link" onclick="showDrugModal('Oxynorm')">Oxynorm</span>.</p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="oxy_formes">Gélules LP (5, 10, 20, 30, 40, 80 mg).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="oxy_posologie">10 mg toutes les 12h (LP) pour douleur chronique.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="oxy_conseil">Mêmes précautions que la morphine. Délivrance sous carnet à souches.</span></p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="paracetamol_cafeine_formes">Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="paracetamol_cafeine_posologie">500 mg à 1 g de paracétamol par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="paracetamol_cafeine_particularite">Association antalgique et antipyrétique de niveau 1 ; la caféine renforce légèrement l'effet antalgique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="paracetamol_cafeine_conseil">Même conseil que le paracétamol : ne pas dépasser 3 g/j et vérifier les associations. La caféine peut provoquer nervosité et insomnie.</span></p>
                     </div>
                     <div class="card reveal reveal-delay-1">
-                        <h3 style="color:var(--primary);" data-i18n="fenta_title">9 & 10. Fentanyl / Alfentanil</h3>
-                        <p><strong data-i18n="dci_label">DCI :</strong> <span data-i18n="fenta_dci">Alfentanil (Rapifen) / Fentanyl (Durogesic).</span></p>
-                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux :</strong> <span class="drug-link" onclick="showDrugModal('Durogesic')">Durogesic</span> <span data-i18n="patch_label">(patch)</span>, <span class="drug-link" onclick="showDrugModal('Rapifen')">Rapifen</span> <span data-i18n="injectable_label">(injectable)</span>.</p>
-                        <p><strong data-i18n="formes_label">Formes :</strong> <span data-i18n="fenta_formes">Patchs transdermiques (12, 25, 50, 75, 100 µg/h) ; Rapifen solution injectable (hôpital).</span></p>
-                        <p><strong data-i18n="posologie_label">Posologie :</strong> <span data-i18n="fenta_posologie">Durogesic toutes les 72h. Rapifen usage anesthésique uniquement.</span></p>
-                        <p><strong data-i18n="conseil_label">Conseil :</strong> <span data-i18n="fenta_conseil">« Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l'exposer à une source de chaleur (overdose mortelle). » Carnet à souches.</span></p>
+                        <h3 style="color:var(--primary);" data-i18n="paracetamol_vitamine_c_title">3. Paracétamol + Vitamine C</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="paracetamol_vitamine_c_gen">Paracétamol + Vitamine C.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Efferalgan VC&quot;)">Efferalgan VC</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dofebril VC&quot;)">Dofebril VC</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="paracetamol_vitamine_c_formes">Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="paracetamol_vitamine_c_posologie">500 mg à 1 g de paracétamol par prise. Max 3 g/jour. Ne jamais dépasser 4 g.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="paracetamol_vitamine_c_particularite">Association antalgique et antipyrétique de niveau 1 avec vitamine C. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="paracetamol_vitamine_c_conseil">Même conseil que le paracétamol : ne pas dépasser 3 g/j et vérifier les associations. La vitamine C n'empêche pas le surdosage.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="aspirine_n1_title">4. Acide acétylsalicylique (Aspirine)</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="aspirine_n1_gen">Acide acétylsalicylique.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspegic&quot;)">Aspegic</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Aspirine&quot;)">Aspirine</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Catalgine&quot;)">Catalgine</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="aspirine_n1_formes">Comprimés (500 mg), sachets pour solution buvable.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="aspirine_n1_posologie">500 mg toutes les 4 heures. Max 3 g/jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="aspirine_n1_particularite">Anti-inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="aspirine_n1_conseil">« Prenez-le au cours ou à la fin d'un repas. » Rappeler l'allergie à l'aspirine. Pas d'enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_2_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Niveau 2 — Opioïdes faibles</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="paracetamol_codeine_title">5. Paracétamol + Codéine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="paracetamol_codeine_gen">Paracétamol + Codéine phosphate.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Codoliprane&quot;)">Codoliprane</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Co-Dolyc&quot;)">Co-Dolyc</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Co-paramol&quot;)">Co-paramol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Coparalgan&quot;)">Coparalgan</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="paracetamol_codeine_formes">Comprimés (400 mg/30 mg ou 500 mg/30 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="paracetamol_codeine_posologie">1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="paracetamol_codeine_particularite">La codéine est une prodrogue convertie en morphine par le CYP2D6.</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="paracetamol_codeine_conseil">« Peut provoquer une constipation, hydratez-vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="paracetamol_tramadol_title">6. Paracétamol + Tramadol</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="paracetamol_tramadol_gen">Paracétamol + Chlorhydrate de tramadol.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Di-Dolex&quot;)">Di-Dolex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Supradolex&quot;)">Supradolex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Xamadol&quot;)">Xamadol</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="paracetamol_tramadol_formes">Comprimés (325 mg / 37.5 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="paracetamol_tramadol_posologie">1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="paracetamol_tramadol_particularite">Association d'un antalgique non opioïde et d'un opioïde faible à effet sérotoninergique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="paracetamol_tramadol_conseil">« Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="tramadol_title">7. Tramadol seul</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="tramadol_gen">Tramadol.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Dolex&quot;)">Dolex</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Supramadol&quot;)">Supramadol</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Zodid&quot;)">Zodid</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="tramadol_formes">Gélules (50 mg), comprimés LP (100 mg, 150 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="tramadol_posologie">50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="tramadol_particularite">Opioïde faible à double mécanisme : agoniste des récepteurs µ et effet sérotoninergique. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="tramadol_conseil">« C'est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l'alcool et les somnifères.</span></p>
+                    </div>
+                    </div>
+                    <div class="substance-group" style="margin-bottom:2rem;">
+                        <h3 class="substance-group-title" data-i18n="group_3_name" style="color:var(--primary);font-size:1.35rem;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(0,188,212,.35);">Niveau 3 — Opioïdes forts</h3>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="morphine_title">8. Morphine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="morphine_gen">Morphine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Skénan&quot;)">Skénan</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Actiskénan&quot;)">Actiskénan</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="morphine_formes">Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="morphine_posologie">Actiskénan toutes les 4-6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="morphine_particularite">Opioïde fort agoniste des récepteurs µ, analgésique de référence des douleurs intenses. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="morphine_conseil">« La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="buprenorphine_title">9. Buprénorphine</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="buprenorphine_gen">Buprénorphine.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Buprenal&quot;)">Buprenal</span>,
+                            <span class="drug-link" onclick="showDrugModal(&quot;Temgesic&quot;)">Temgesic</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="buprenorphine_formes">Comprimés sublinguaux (0.2 mg, 2 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="buprenorphine_posologie">0.2-0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="buprenorphine_particularite">Opioïde fort partiel agoniste-antagoniste µ, également utilisé dans le sevrage. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="buprenorphine_conseil">« Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="oxycodone_title">10. Oxycodone</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="oxycodone_gen">Oxycodone.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Oxynorm&quot;)">Oxynorm</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="oxycodone_formes">Gélules LP (5, 10, 20, 30, 40, 80 mg).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="oxycodone_posologie">10 mg toutes les 12h (LP) pour douleur chronique.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="oxycodone_particularite">Opioïde fort agoniste µ, utilisé dans les douleurs chroniques sévères. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="oxycodone_conseil">Mêmes précautions que la morphine. Délivrance sous carnet à souches.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="fentanyl_title">11. Fentanyl</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="fentanyl_gen">Fentanyl.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Durogesic&quot;)">Durogesic</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="fentanyl_formes">Patchs transdermiques (12, 25, 50, 75, 100 µg/h).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="fentanyl_posologie">Durogesic toutes les 72h.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="fentanyl_particularite">Opioïde fort de niveau 3 administré par voie transdermique pour les douleurs chroniques stables. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="fentanyl_conseil">« Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l'exposer à une source de chaleur (overdose mortelle). » Carnet à souches.</span></p>
+                    </div>
+                    <div class="card reveal reveal-delay-1">
+                        <h3 style="color:var(--primary);" data-i18n="alfentanil_title">12. Alfentanil</h3>
+                        <p><strong data-i18n="generique_label">Générique :</strong> <span data-i18n="alfentanil_gen">Alfentanil.</span></p>
+                        <p><strong data-i18n="noms_commerciaux">Noms commerciaux (Algérie) :</strong>
+                            <span class="drug-link" onclick="showDrugModal(&quot;Rapifen&quot;)">Rapifen</span>
+                        </p>
+                        <p><strong data-i18n="formes_label">Formes pharmaceutiques :</strong> <span data-i18n="alfentanil_formes">Solution injectable (hôpital).</span></p>
+                        <p><strong data-i18n="posologie_label">Posologie usuelle (Adulte) & Max :</strong> <span data-i18n="alfentanil_posologie">Usage anesthésique uniquement, selon protocole hospitalier. Rapifen toutes les doses sont réservées au médecin anesthésiste.</span></p>
+                        <p><strong data-i18n="particularite_label">Particularité :</strong> <span data-i18n="alfentanil_particularite">Opioïde fort d'action rapide réservé à l'anesthésie et aux soins intensifs. (données de classe — non spécifiées séparément dans le livre)</span></p>
+                        <p><strong data-i18n="conseil_pratique">Conseil pratique du pharmacien :</strong> <span data-i18n="alfentanil_conseil">Manipulation par personnel formé, surveillance respiratoire étroite. Ne jamais laisser à la portée du patient.</span></p>
+                    </div>
                     </div>
                 </section>
 
                 <section class="section-block" id="section-conseil" style="border-bottom: none;">
                     <h2 class="section-title reveal" data-i18n="conseil_final_title">Conseil ultime pour votre stage</h2>
                     <div class="card reveal reveal-delay-1">
-                        <p data-i18n="conseil_final_text">En Algérie, l'ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez‑vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer.</p>
+                        <p><strong data-i18n="conseil_chef">💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :</strong></p>
+                        <p style="font-size: 1.1rem; margin-top: 15px; padding: 20px; background: rgba(0, 188, 212, 0.1); border-radius: 12px; border-left: 4px solid var(--primary);" data-i18n="conseil_final_text">
+                            En Algérie, l'ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez-vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer.
+                        </p>
                     </div>
                 </section>
             </div>
@@ -1175,7 +1227,7 @@
                 </section>
                 <section class="section-block" id="exam-question5">
                     <h2 class="section-title reveal" data-i18n="q5_title">Question 5</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q5_text">Quels sont les effets indésirables possibles du Tramadol ?</strong></p><label><input type="checkbox" name="q5" value="a"> <span data-i18n="q5_a">Nausées</span></label><label><input type="checkbox" name="q5" value="b"> <span data-i18n="q5_b">Constipation</span></label><label><input type="checkbox" name="q5" value="c"> <span data-i18n="q5_c">Syndrome sérotoninergique (si associé aux ISRS/IRSN)</span></label><label><input type="checkbox" name="q5" value="d"> <span data-i18n="q5_d">Dépression respiratoire (si associé aux dépresseurs)</span></label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q5_text">Quels sont les effets indésirables possibles du Tramadol ?</strong></p><label><input type="checkbox" name="q5" value="a"> <span data-i18n="q5_a">Nausées</span></label><label><input type="checkbox" name="q5" value="b"> <span data-i18n="q5_b">Constipation</span></label><label><input type="checkbox" name="q5" value="c"> <span data-i18n="q5_c">Syndrome sérotoninergique (si associé aux ISRS/IRSN)</span></label><label><input type="checkbox" name="q5" value="d"> <span data-i18n="q5_d">Hypertension artérielle</span></label></div>
                 </section>
                 <section class="section-block" id="exam-question6">
                     <h2 class="section-title reveal" data-i18n="q6_title">Question 6</h2>
@@ -1187,7 +1239,7 @@
                 </section>
                 <section class="section-block" id="exam-question8">
                     <h2 class="section-title reveal" data-i18n="q8_title">Question 8</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q8_text">Quels conseils donner à un patient sous Paracétamol ?</strong></p><label><input type="checkbox" name="q8" value="a"> <span data-i18n="q8_a">Ne pas dépasser 3 g par jour</span></label><label><input type="checkbox" name="q8" value="b"> <span data-i18n="q8_b">Attendre au moins 8 h entre chaque dose de 1 g</span></label><label><input type="checkbox" name="q8" value="c"> <span data-i18n="q8_c">Éviter la consommation d'alcool</span></label><label><input type="checkbox" name="q8" value="d"> <span data-i18n="q8_d">Vérifier les autres médicaments contenant du paracétamol</span></label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q8_text">Quels conseils donner à un patient sous Paracétamol ?</strong></p><label><input type="checkbox" name="q8" value="a"> <span data-i18n="q8_a">Ne pas dépasser 3 g par jour</span></label><label><input type="checkbox" name="q8" value="b"> <span data-i18n="q8_b">Attendre au moins 8 h entre chaque dose de 1 g</span></label><label><input type="checkbox" name="q8" value="c"> <span data-i18n="q8_c">Éviter la consommation d'alcool</span></label><label><input type="checkbox" name="q8" value="d"> <span data-i18n="q8_d">Prendre à jeun pour une action plus rapide</span></label></div>
                 </section>
                 <section class="section-block" id="exam-question9">
                     <h2 class="section-title reveal" data-i18n="q9_title">Question 9</h2>
@@ -1195,7 +1247,7 @@
                 </section>
                 <section class="section-block" id="exam-question10">
                     <h2 class="section-title reveal" data-i18n="q10_title">Question 10</h2>
-                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q10_text">Concernant la Buprénorphine (Temgesic), quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q10" value="a"> <span data-i18n="q10_a">Elle s'administre par voie sublinguale</span></label><label><input type="checkbox" name="q10" value="b"> <span data-i18n="q10_b">Il ne faut pas l'avaler, mais laisser fondre sous la langue</span></label><label><input type="checkbox" name="q10" value="c"> <span data-i18n="q10_c">C'est un opioïde de Niveau 3</span></label><label><input type="checkbox" name="q10" value="d"> <span data-i18n="q10_d">Elle peut causer un syndrome de sevrage si associée à un autre opioïde fort</span></label></div>
+                    <div class="card question-card reveal reveal-delay-1"><p><strong data-i18n="q10_text">Concernant la Buprénorphine (Temgesic), quelles affirmations sont correctes ?</strong></p><label><input type="checkbox" name="q10" value="a"> <span data-i18n="q10_a">Elle s'administre par voie sublinguale</span></label><label><input type="checkbox" name="q10" value="b"> <span data-i18n="q10_b">Il ne faut pas l'avaler, mais laisser fondre sous la langue</span></label><label><input type="checkbox" name="q10" value="c"> <span data-i18n="q10_c">C'est un opioïde faible (Niveau 2)</span></label><label><input type="checkbox" name="q10" value="d"> <span data-i18n="q10_d">Elle peut causer un syndrome de sevrage si associée à un autre opioïde fort</span></label></div>
                 </section>
                 <section class="section-block" style="border-bottom: none;">
                     <div class="card reveal reveal-delay-1" style="text-align: center;">
@@ -1243,7 +1295,6 @@
                     <span data-i18n="support_info">Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏</span>
                 </div>
                 <div class="support-methods">
-                    <!-- PayPal -->
                     <a href="https://www.paypal.me/ghanipharma" target="_blank" rel="noopener noreferrer" class="support-method">
                         <div class="support-method-icon paypal"><i class="fab fa-paypal"></i></div>
                         <div class="support-method-info">
@@ -1254,8 +1305,6 @@
                             <i class="fas fa-copy"></i>
                         </button>
                     </a>
-
-                    <!-- RIP CCP -->
                     <div class="support-method" onclick="copyToClipboard('00799999002345678901', this.querySelector('.support-copy-btn'))">
                         <div class="support-method-icon ccp"><i class="fas fa-university"></i></div>
                         <div class="support-method-info">
@@ -1266,8 +1315,6 @@
                             <i class="fas fa-copy"></i>
                         </button>
                     </div>
-
-                    <!-- Flexy -->
                     <div class="support-method" onclick="copyToClipboard('+213555079282', this.querySelector('.support-copy-btn'))">
                         <div class="support-method-icon flexy"><i class="fas fa-mobile-alt"></i></div>
                         <div class="support-method-info">
@@ -1320,438 +1367,647 @@
         // ==================== TRANSLATIONS ====================
         const translations = {
             fr: {
-                theme: 'Thème', light: 'Clair', dark: 'Sombre', language: 'Langue',
-                home: 'Accueil', about: 'À propos', modules: 'Modules', contact: 'Contact',
-                pharmacology: 'Pharmacologie',
-                hero_title: 'LES ANTALGIQUES',
-                hero_subtitle: "Classification selon l'échelle OMS, mécanismes, indications et conseils à l'officine.",
-                lesson: 'Leçon', exam: 'Examen',
+                theme: "Thème",
+                light: "Clair",
+                dark: "Sombre",
+                language: "Langue",
+                home: "Accueil",
+                about: "À propos",
+                modules: "Modules",
+                contact: "Contact",
+                pharmacology: "Pharmacologie",
+                lesson: "Leçon",
+                exam: "Examen",
                 mechanism_title: "Mécanisme d'action",
-                level1_label: 'Niveau 1 :',
-                mechanism_l1: "Inhibe les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines (AINS), ou agit sur des voies centrales spécifiques (Paracétamol).",
-                levels23_label: 'Niveaux 2 & 3 :',
-                mechanism_l23: "Agonistes des récepteurs aux opioïdes (principalement les récepteurs µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur.",
-                mechanism_note: "(Note : Le tramadol a aussi un effet sérotoninergique).",
-                indications_title: 'Indications générales',
-                n1_label: 'N1 :', n2_label: 'N2 :', n3_label: 'N3 :', n2n3_label: 'N2/N3 :',
-                indication_n1: "Douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).",
-                indication_n2: "Douleurs modérées à sévères ou résistantes au Niveau 1 (post-opératoires, lombalgies aiguës).",
-                indication_n3: "Douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).",
-                contre_title: 'Contre‑indications et précautions majeures',
-                ains_label: 'AINS :',
-                contre_ains: "Ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l'aspirine (asthme).",
-                paracetamol_label: 'Paracétamol :',
-                contre_para: 'Insuffisance hépatocellulaire grave.',
-                opioides_label: 'Opioïdes :',
-                contre_opio: "Insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d'hypertension intracrânienne). IMAO (pour le tramadol et la péthidine).",
-                interactions_title: 'Interactions médicamenteuses majeures',
-                inter_1_strong: 'AINS + Anticoagulants/AVK :',
-                inter_2_strong: 'AINS + Antihypertenseurs :',
-                inter_3_strong: 'Opioïdes + Benzodiazépines/Alcool :',
-                inter_4_strong: 'Tramadol + Antidépresseurs (ISRS/IRSN) :',
-                inter_1: 'Risque hémorragique majeur.',
-                inter_2: "Diminution de l'efficacité anti-HTA.",
-                inter_3: 'Dépression respiratoire sévère.',
-                inter_4: 'Syndrome sérotoninergique (confusion, hyperthermie, rigidité).',
-                grossesse_title: 'Grossesse et Allaitement',
-                grossesse_n1: 'Paracétamol = antalgique de référence en court terme. AINS formellement contre‑indiqués au 3e trimestre.',
-                grossesse_n23: "À éviter sauf stricte nécessité. Codéine déconseillée pendant l'allaitement (métaboliseurs rapides). Morphine possible sous surveillance.",
-                niveau1_title: 'NIVEAU 1 : Antalgiques non‑opioïdes',
-                para_title: '1. Paracétamol',
-                noms_commerciaux: 'Noms commerciaux (Algérie) :',
-                nom_commercial: 'Nom commercial :',
-                formes_label: 'Formes :',
-                posologie_label: 'Posologie Adulte :',
-                particularite_label: 'Particularité :',
-                conseil_pharma: 'Conseil Pharmacien :',
-                conseil_label: 'Conseil :',
-                associations_label: 'Associations :',
-                dci_label: 'DCI :',
-                para_formes: 'Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.',
-                para_posologie: '500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.',
-                para_particularite: 'Antalgique et antipyrétique pur, aucun effet anti‑inflammatoire.',
-                para_conseil: "Vérifiez toujours les « médicaments rhume » associés. Interdit avec l'alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »",
-                para_cafeine: 'Paracétamol + Caféine',
-                para_vitc: 'Paracétamol + Vitamine C',
-                aspirine_title: '2. Acide Acétylsalicylique (AINS)',
-                aspirine_formes: 'Comprimés (500 mg), sachets pour solution buvable.',
-                aspirine_posologie: '500 mg toutes les 4 heures. Max 3 g/jour.',
-                aspirine_particularite: 'Anti‑inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).',
-                aspirine_conseil: "« Prenez‑le au cours ou à la fin d'un repas. » Rappeler l'allergie à l'aspirine. Pas d'enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.",
-                niveau2_title: 'NIVEAU 2 : Opioïdes faibles',
-                codeine_title: '3. Paracétamol + Codéine',
-                codeine_dci: 'Paracétamol + Codéine phosphate.',
-                codeine_formes: 'Comprimés (400 mg/30 mg ou 500 mg/30 mg).',
-                codeine_posologie: '1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).',
-                codeine_particularite: 'La codéine est une prodrogue convertie en morphine par le CYP2D6.',
-                codeine_conseil: "« Peut provoquer une constipation, hydratez‑vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.",
-                trama_para_title: '4. Paracétamol + Tramadol',
-                trama_para_dci: 'Paracétamol + Chlorhydrate de tramadol.',
-                trama_para_formes: 'Comprimés (325 mg / 37.5 mg).',
-                trama_para_posologie: '1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.',
-                trama_para_conseil: "« Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).",
-                trama_title: '5. Tramadol seul',
-                trama_dci: 'Tramadol.',
-                trama_formes: 'Gélules (50 mg), comprimés LP (100 mg, 150 mg).',
-                trama_posologie: '50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.',
-                trama_conseil: "« C'est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l'alcool et les somnifères.",
-                niveau3_title: 'NIVEAU 3 : Opioïdes forts',
-                morphine_title: '6. Morphine',
-                morphine_dci: 'Morphine.',
-                morphine_formes: 'Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.',
-                morphine_posologie: 'Actiskénan toutes les 4‑6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.',
-                morphine_conseil: "« La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.",
-                lp_label: '(LP)', li_label: '(LI)', patch_label: '(patch)', injectable_label: '(injectable)',
-                bupr_title: '7. Buprénorphine',
-                bupr_dci: 'Buprénorphine.',
-                bupr_formes: 'Comprimés sublinguaux (0.2 mg, 2 mg).',
-                bupr_posologie: '0.2‑0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.',
-                bupr_conseil: "« Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.",
-                oxy_title: '8. Oxycodone',
-                oxy_dci: 'Oxycodone.',
-                oxy_formes: 'Gélules LP (5, 10, 20, 30, 40, 80 mg).',
-                oxy_posologie: '10 mg toutes les 12h (LP) pour douleur chronique.',
-                oxy_conseil: 'Mêmes précautions que la morphine. Délivrance sous carnet à souches.',
-                fenta_title: '9 & 10. Fentanyl / Alfentanil',
-                fenta_dci: 'Alfentanil (Rapifen) / Fentanyl (Durogesic).',
-                fenta_formes: 'Patchs transdermiques (12, 25, 50, 75, 100 µg/h) ; Rapifen solution injectable (hôpital).',
-                fenta_posologie: 'Durogesic toutes les 72h. Rapifen usage anesthésique uniquement.',
-                fenta_conseil: "« Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l'exposer à une source de chaleur (overdose mortelle). » Carnet à souches.",
-                conseil_final_title: 'Conseil ultime pour votre stage',
-                conseil_final_text: "En Algérie, l'ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez‑vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer.",
-                qcm_label: 'QCM :',
-                qcm_instruction: 'Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.',
-                check_btn: 'Vérifier mes réponses',
-                reset_btn: 'Réinitialiser',
-                q1_title: 'Question 1', q2_title: 'Question 2', q3_title: 'Question 3', q4_title: 'Question 4', q5_title: 'Question 5',
-                q6_title: 'Question 6', q7_title: 'Question 7', q8_title: 'Question 8', q9_title: 'Question 9', q10_title: 'Question 10',
-                q1_text: "Parmi les médicaments suivants, lesquels sont classés au Niveau 1 de l'échelle OMS ?",
-                q1_a: 'Paracétamol', q1_b: 'Aspirine (AINS)', q1_c: 'Tramadol', q1_d: 'Codéine',
-                q2_text: "Quels sont les effets pharmacologiques de l'Aspirine (à dose antalgique) ?",
-                q2_a: 'Antalgique', q2_b: 'Anti-inflammatoire', q2_c: 'Antipyrétique', q2_d: 'Sérotoninergique',
-                q3_text: "Quels sont les risques majeurs de l'association AINS + Anticoagulants/AVK ?",
-                q3_a: 'Hémorragie', q3_b: 'Dépression respiratoire', q3_c: 'Syndrome sérotoninergique', q3_d: 'Ulcère gastroduodénal',
-                q4_text: 'Concernant la Codéine, quelles affirmations sont correctes ?',
-                q4_a: "C'est une prodrogue", q4_b: 'Elle est métabolisée par le CYP2D6', q4_c: "C'est un opioïde fort (Niveau 3)", q4_d: 'Elle est contre-indiquée avant 12 ans',
-                q5_text: 'Quels sont les effets indésirables possibles du Tramadol ?',
-                q5_a: 'Nausées', q5_b: 'Constipation', q5_c: 'Syndrome sérotoninergique (si associé aux ISRS/IRSN)', q5_d: 'Dépression respiratoire (si associé aux dépresseurs)',
-                q6_text: 'Quels antalgiques sont formellement contre-indiqués au 3e trimestre de grossesse ?',
-                q6_a: 'AINS', q6_b: 'Aspirine', q6_c: 'Paracétamol', q6_d: 'Morphine',
-                q7_text: 'Concernant le Fentanyl (Durogesic), quelles affirmations sont correctes ?',
-                q7_a: "C'est un patch transdermique", q7_b: "Il s'administre toutes les 72 heures", q7_c: "C'est un opioïde de Niveau 3", q7_d: 'Il peut être exposé à une source de chaleur sans risque',
-                q8_text: 'Quels conseils donner à un patient sous Paracétamol ?',
-                q8_a: 'Ne pas dépasser 3 g par jour', q8_b: 'Attendre au moins 8 h entre chaque dose de 1 g', q8_c: "Éviter la consommation d'alcool", q8_d: 'Vérifier les autres médicaments contenant du paracétamol',
-                q9_text: 'Quelles associations exposent à un risque de syndrome sérotoninergique ?',
-                q9_a: 'Tramadol + ISRS', q9_b: 'Tramadol + IRSN', q9_c: 'Codéine + ISRS', q9_d: 'Morphine + ISRS',
-                q10_text: 'Concernant la Buprénorphine (Temgesic), quelles affirmations sont correctes ?',
-                q10_a: "Elle s'administre par voie sublinguale", q10_b: "Il ne faut pas l'avaler, mais laisser fondre sous la langue", q10_c: "C'est un opioïde de Niveau 3", q10_d: 'Elle peut causer un syndrome de sevrage si associée à un autre opioïde fort',
-                support_title: 'Soutenir GhaniPharma',
+                indications_title: "Indications générales",
+                contre_title: "Contre-indications & Précautions majeures",
+                ci_absolues_label: "CI absolues :",
+                note_label: "Note :",
+                precautions_label: "Précautions :",
+                interactions_title: "Interactions médicamenteuses majeures",
+                grossesse_title: "Grossesse et Allaitement",
+                grossesse_label: "Grossesse :",
+                allaitement_label: "Allaitement :",
+                substances_title: "Les substances actives",
+                generique_label: "Générique :",
+                noms_commerciaux: "Noms commerciaux (Algérie) :",
+                formes_label: "Formes pharmaceutiques :",
+                posologie_label: "Posologie usuelle (Adulte) & Max :",
+                particularite_label: "Particularité :",
+                conseil_pratique: "Conseil pratique du pharmacien :",
+                conseil_final_title: "Conseil ultime pour votre stage",
+                conseil_chef: "💡 Le conseil « Chef de rayon » à transmettre à tous vos patients :",
+                qcm_label: "QCM :",
+                qcm_instruction: "Cochez toutes les bonnes réponses pour chaque question. Une seule réponse fausse cochée annule toute la question (0 point). Des réponses correctes partielles donnent des points partiels.",
+                check_btn: "Vérifier mes réponses",
+                reset_btn: "Réinitialiser",
+                q1_title: "Question 1",
+                q2_title: "Question 2",
+                q3_title: "Question 3",
+                q4_title: "Question 4",
+                q5_title: "Question 5",
+                q6_title: "Question 6",
+                q7_title: "Question 7",
+                q8_title: "Question 8",
+                q9_title: "Question 9",
+                q10_title: "Question 10",
+                section_title: "Les cours disponibles",
+                subject_badge: "CLASSES DE MEDECAMENTS",
+                support_title: "Soutenir GhaniPharma",
                 support_subtitle: "Votre soutien m'aide à créer plus de contenu éducatif",
                 support_info: "Si ce contenu vous a été utile, vous pouvez me soutenir de différentes manières. Chaque contribution, même petite, fait une grande différence ! 🙏",
-                rip_title: 'RIP CCP (Algérie)',
-                flexy_title: 'Flexy',
-                ccp_title: 'Compte CCP (Algérie)',
-                crypto_title: 'USDT (TRC20)',
-                support_footer: 'Merci de tout cœur',
-                copied: 'Copié !'
+                rip_title: "RIP CCP (Algérie)",
+                flexy_title: "Flexy",
+                support_footer: "Merci de tout cœur",
+                copied: "Copié !",
+                hero_title: "1. LES ANTALGIQUES (SELON OMS)",
+                hero_subtitle: "Classification selon l'échelle OMS (paliers 1 à 3), mécanismes, indications et conseils à l'officine : paracétamol, aspirine, codéine, tramadol, morphine, buprénorphine, oxycodone et fentanyl.",
+                paracetamol_title: "1. Paracétamol",
+                paracetamol_gen: "Paracétamol.",
+                paracetamol_formes: "Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.",
+                paracetamol_posologie: "500 mg à 1 g par prise. Max 3 g/jour. Ne jamais dépasser 4 g.",
+                paracetamol_particularite: "Antalgique et antipyrétique pur, aucun effet anti-inflammatoire.",
+                paracetamol_conseil: "Vérifiez toujours les « médicaments rhume » associés. Interdit avec l'alcool. Prévenez le patient : « Ne dépassez pas 3 grammes en 24h, attendez 8h entre chaque dose de 1g. »",
+                paracetamol_cafeine_title: "2. Paracétamol + Caféine",
+                paracetamol_cafeine_gen: "Paracétamol + Caféine.",
+                paracetamol_cafeine_formes: "Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.",
+                paracetamol_cafeine_posologie: "500 mg à 1 g de paracétamol par prise. Max 3 g/jour. Ne jamais dépasser 4 g.",
+                paracetamol_cafeine_particularite: "Association antalgique et antipyrétique de niveau 1 ; la caféine renforce légèrement l'effet antalgique. (données de classe — non spécifiées séparément dans le livre)",
+                paracetamol_cafeine_conseil: "Même conseil que le paracétamol : ne pas dépasser 3 g/j et vérifier les associations. La caféine peut provoquer nervosité et insomnie.",
+                paracetamol_vitamine_c_title: "3. Paracétamol + Vitamine C",
+                paracetamol_vitamine_c_gen: "Paracétamol + Vitamine C.",
+                paracetamol_vitamine_c_formes: "Comprimés (500 mg, 1000 mg), suppositoires, sachets, solutés buvables.",
+                paracetamol_vitamine_c_posologie: "500 mg à 1 g de paracétamol par prise. Max 3 g/jour. Ne jamais dépasser 4 g.",
+                paracetamol_vitamine_c_particularite: "Association antalgique et antipyrétique de niveau 1 avec vitamine C. (données de classe — non spécifiées séparément dans le livre)",
+                paracetamol_vitamine_c_conseil: "Même conseil que le paracétamol : ne pas dépasser 3 g/j et vérifier les associations. La vitamine C n'empêche pas le surdosage.",
+                aspirine_n1_title: "4. Acide acétylsalicylique (Aspirine)",
+                aspirine_n1_gen: "Acide acétylsalicylique.",
+                aspirine_n1_formes: "Comprimés (500 mg), sachets pour solution buvable.",
+                aspirine_n1_posologie: "500 mg toutes les 4 heures. Max 3 g/jour.",
+                aspirine_n1_particularite: "Anti-inflammatoire, antalgique, antipyrétique et antiagrégant (sauf 100 mg).",
+                aspirine_n1_conseil: "« Prenez-le au cours ou à la fin d'un repas. » Rappeler l'allergie à l'aspirine. Pas d'enfants (syndrome de Reye). Arrêter 7 jours avant une intervention chirurgicale.",
+                paracetamol_codeine_title: "5. Paracétamol + Codéine",
+                paracetamol_codeine_gen: "Paracétamol + Codéine phosphate.",
+                paracetamol_codeine_formes: "Comprimés (400 mg/30 mg ou 500 mg/30 mg).",
+                paracetamol_codeine_posologie: "1 à 2 comprimés toutes les 6h. Max 8 cp/j (400/30) ou 6 cp/j (500/30).",
+                paracetamol_codeine_particularite: "La codéine est une prodrogue convertie en morphine par le CYP2D6.",
+                paracetamol_codeine_conseil: "« Peut provoquer une constipation, hydratez-vous bien. » Proscrire alcool + rhume. Interdit avant 12 ans.",
+                paracetamol_tramadol_title: "6. Paracétamol + Tramadol",
+                paracetamol_tramadol_gen: "Paracétamol + Chlorhydrate de tramadol.",
+                paracetamol_tramadol_formes: "Comprimés (325 mg / 37.5 mg).",
+                paracetamol_tramadol_posologie: "1 à 2 comprimés toutes les 4 à 6h. Max 8 comprimés/jour.",
+                paracetamol_tramadol_particularite: "Association d'un antalgique non opioïde et d'un opioïde faible à effet sérotoninergique. (données de classe — non spécifiées séparément dans le livre)",
+                paracetamol_tramadol_conseil: "« Peut donner des nausées, prenez au milieu du repas. » Ne jamais associer avec Tramadol seul ni avec des antidépresseurs (syndrome sérotoninergique).",
+                tramadol_title: "7. Tramadol seul",
+                tramadol_gen: "Tramadol.",
+                tramadol_formes: "Gélules (50 mg), comprimés LP (100 mg, 150 mg).",
+                tramadol_posologie: "50 à 100 mg toutes les 4h. Max 400 mg/jour. LP : 1 à 2 fois par jour.",
+                tramadol_particularite: "Opioïde faible à double mécanisme : agoniste des récepteurs µ et effet sérotoninergique. (données de classe — non spécifiées séparément dans le livre)",
+                tramadol_conseil: "« C'est un stupéfiant, ne pas dépasser la prescription. » Ne pas écraser les LP. Avertir sur l'alcool et les somnifères.",
+                morphine_title: "8. Morphine",
+                morphine_gen: "Morphine.",
+                morphine_formes: "Comprimés LP (10, 30, 60 mg) ; Actiskénan 5, 10, 20 mg LI.",
+                morphine_posologie: "Actiskénan toutes les 4-6h, Skénan toutes les 12h. Débuter à 10 mg/12h pour Skénan.",
+                morphine_particularite: "Opioïde fort agoniste des récepteurs µ, analgésique de référence des douleurs intenses. (données de classe — non spécifiées séparément dans le livre)",
+                morphine_conseil: "« La constipation est systématique, prescrivez un laxatif. » Ordonnance sécurisée, carnet à souches.",
+                buprenorphine_title: "9. Buprénorphine",
+                buprenorphine_gen: "Buprénorphine.",
+                buprenorphine_formes: "Comprimés sublinguaux (0.2 mg, 2 mg).",
+                buprenorphine_posologie: "0.2-0.4 mg toutes les 6h, max 1.6 mg/j. Sevrage : 2 mg/j.",
+                buprenorphine_particularite: "Opioïde fort partiel agoniste-antagoniste µ, également utilisé dans le sevrage. (données de classe — non spécifiées séparément dans le livre)",
+                buprenorphine_conseil: "« Ne pas avaler, laisser fondre sous la langue. » Risque de sevrage si associé à un autre opioïde fort.",
+                oxycodone_title: "10. Oxycodone",
+                oxycodone_gen: "Oxycodone.",
+                oxycodone_formes: "Gélules LP (5, 10, 20, 30, 40, 80 mg).",
+                oxycodone_posologie: "10 mg toutes les 12h (LP) pour douleur chronique.",
+                oxycodone_particularite: "Opioïde fort agoniste µ, utilisé dans les douleurs chroniques sévères. (données de classe — non spécifiées séparément dans le livre)",
+                oxycodone_conseil: "Mêmes précautions que la morphine. Délivrance sous carnet à souches.",
+                fentanyl_title: "11. Fentanyl",
+                fentanyl_gen: "Fentanyl.",
+                fentanyl_formes: "Patchs transdermiques (12, 25, 50, 75, 100 µg/h).",
+                fentanyl_posologie: "Durogesic toutes les 72h.",
+                fentanyl_particularite: "Opioïde fort de niveau 3 administré par voie transdermique pour les douleurs chroniques stables. (données de classe — non spécifiées séparément dans le livre)",
+                fentanyl_conseil: "« Appliquez le patch sur peau saine, non poilue. Interdiction formelle de l'exposer à une source de chaleur (overdose mortelle). » Carnet à souches.",
+                alfentanil_title: "12. Alfentanil",
+                alfentanil_gen: "Alfentanil.",
+                alfentanil_formes: "Solution injectable (hôpital).",
+                alfentanil_posologie: "Usage anesthésique uniquement, selon protocole hospitalier. Rapifen toutes les doses sont réservées au médecin anesthésiste.",
+                alfentanil_particularite: "Opioïde fort d'action rapide réservé à l'anesthésie et aux soins intensifs. (données de classe — non spécifiées séparément dans le livre)",
+                alfentanil_conseil: "Manipulation par personnel formé, surveillance respiratoire étroite. Ne jamais laisser à la portée du patient.",
+                group_1_name: "Niveau 1 — Antalgiques non-opioïdes",
+                group_2_name: "Niveau 2 — Opioïdes faibles",
+                group_3_name: "Niveau 3 — Opioïdes forts",
+                indication_1: "Niveau 1 : douleurs légères à modérées (céphalées, douleurs dentaires, myalgies, arthrose).",
+                indication_2: "Niveau 2 : douleurs modérées à sévères ou résistantes au niveau 1 (post-opératoires, lombalgies aiguës).",
+                indication_3: "Niveau 3 : douleurs intenses et chroniques (cancer, soins palliatifs, post-chirurgie lourde).",
+                indication_4: "Niveaux 2/3 : douleurs nécessitant un opioïde faible ou fort selon l'intensité et la réponse au traitement.",
+                indication_5: "Paracétamol : antalgique et antipyrétique de première intention ; aspirine/AINS dans les douleurs inflammatoires.",
+                inter_1_strong: "AINS + anticoagulants/AVK",
+                inter_1: " : risque hémorragique majeur.",
+                inter_2_strong: "AINS + antihypertenseurs",
+                inter_2: " : diminution de l'efficacité antihypertensive.",
+                inter_3_strong: "Opioïdes + benzodiazépines/alcool",
+                inter_3: " : dépression respiratoire sévère.",
+                inter_4_strong: "Tramadol + antidépresseurs (ISRS/IRSN)",
+                inter_4: " : syndrome sérotoninergique (confusion, hyperthermie, rigidité).",
+                q1_text: "Parmi les médicaments suivants, lesquels sont classés au Niveau 1 de l'échelle OMS ?",
+                q1_a: "Paracétamol",
+                q1_b: "Aspirine (AINS)",
+                q1_c: "Tramadol",
+                q1_d: "Codéine",
+                q2_text: "Quels sont les effets pharmacologiques de l'Aspirine (à dose antalgique) ?",
+                q2_a: "Antalgique",
+                q2_b: "Anti-inflammatoire",
+                q2_c: "Antipyrétique",
+                q2_d: "Sérotoninergique",
+                q3_text: "Quels sont les risques majeurs de l'association AINS + Anticoagulants/AVK ?",
+                q3_a: "Hémorragie",
+                q3_b: "Dépression respiratoire",
+                q3_c: "Syndrome sérotoninergique",
+                q3_d: "Ulcère gastroduodénal",
+                q4_text: "Concernant la Codéine, quelles affirmations sont correctes ?",
+                q4_a: "C'est une prodrogue",
+                q4_b: "Elle est métabolisée par le CYP2D6",
+                q4_c: "C'est un opioïde fort (Niveau 3)",
+                q4_d: "Elle est contre-indiquée avant 12 ans",
+                q5_text: "Quels sont les effets indésirables possibles du Tramadol ?",
+                q5_a: "Nausées",
+                q5_b: "Constipation",
+                q5_c: "Syndrome sérotoninergique (si associé aux ISRS/IRSN)",
+                q5_d: "Hypertension artérielle",
+                q6_text: "Quels antalgiques sont formellement contre-indiqués au 3e trimestre de grossesse ?",
+                q6_a: "AINS",
+                q6_b: "Aspirine",
+                q6_c: "Paracétamol",
+                q6_d: "Morphine",
+                q7_text: "Concernant le Fentanyl (Durogesic), quelles affirmations sont correctes ?",
+                q7_a: "C'est un patch transdermique",
+                q7_b: "Il s'administre toutes les 72 heures",
+                q7_c: "C'est un opioïde de Niveau 3",
+                q7_d: "Il peut être exposé à une source de chaleur sans risque",
+                q8_text: "Quels conseils donner à un patient sous Paracétamol ?",
+                q8_a: "Ne pas dépasser 3 g par jour",
+                q8_b: "Attendre au moins 8 h entre chaque dose de 1 g",
+                q8_c: "Éviter la consommation d'alcool",
+                q8_d: "Prendre à jeun pour une action plus rapide",
+                q9_text: "Quelles associations exposent à un risque de syndrome sérotoninergique ?",
+                q9_a: "Tramadol + ISRS",
+                q9_b: "Tramadol + IRSN",
+                q9_c: "Codéine + ISRS",
+                q9_d: "Morphine + ISRS",
+                q10_text: "Concernant la Buprénorphine (Temgesic), quelles affirmations sont correctes ?",
+                q10_a: "Elle s'administre par voie sublinguale",
+                q10_b: "Il ne faut pas l'avaler, mais laisser fondre sous la langue",
+                q10_c: "C'est un opioïde faible (Niveau 2)",
+                q10_d: "Elle peut causer un syndrome de sevrage si associée à un autre opioïde fort",
+                mechanism_text_1: "Les antalgiques de niveau 1 (paracétamol, aspirine/AINS) inhibent les cyclo-oxygénases (COX) pour réduire la synthèse des prostaglandines, ou agissent sur des voies centrales spécifiques (paracétamol). Les niveaux 2 et 3 sont des agonistes des récepteurs aux opioïdes (principalement µ) présents dans le système nerveux central et périphérique, bloquant la transmission de la douleur. Le tramadol possède en plus un effet sérotoninergique.",
+                ci_absolues: "AINS : ulcère gastroduodénal évolutif, insuffisance rénale sévère, allergie à l'aspirine (asthme). Paracétamol : insuffisance hépatocellulaire grave. Opioïdes : insuffisance respiratoire aiguë, syndrome obstructif, traumatisme crânien (risque d'hypertension intracrânienne), IMAO (tramadol et péthidine).",
+                note_text: "Le tramadol a aussi un effet sérotoninergique : ne jamais l'associer aux ISRS/IRSN (syndrome sérotoninergique). Les opioïdes exposent à une dépression respiratoire, majorée par les benzodiazépines et l'alcool.",
+                precautions_text: "AINS : protection gastrique par IPP si risque, prise au cours du repas, arrêt 7 jours avant chirurgie pour l'aspirine. Paracétamol : ne pas dépasser 3 g/j (4 g max) et vérifier les associations. Opioïdes : constipation systématique (laxatif), ordonnance sécurisée et carnet à souches pour les stupéfiants.",
+                grossesse_text: "Paracétamol = antalgique de référence en court terme. AINS formellement contre-indiqués au 3e trimestre. Niveaux 2/3 : à éviter sauf stricte nécessité ; morphine possible sous surveillance.",
+                allaitement_text: "Codéine déconseillée pendant l'allaitement (métaboliseurs rapides). Morphine possible sous surveillance. Paracétamol et AINS : privilégier une courte durée sur avis médical.",
+                conseil_final_text: "En Algérie, l'ordonnance pour les stupéfiants (Niveau 3 et Tramadol) est extrêmement réglementée. Familiarisez-vous avec la durée de validité des ordonnances (7 jours pour les stupéfiants) et la traçabilité sur le carnet à souches avant de les délivrer."
             },
             ar: {
-                theme: 'المظهر', light: 'فاتح', dark: 'داكن', language: 'اللغة',
-                home: 'الرئيسية', about: 'حول', modules: 'الدروس', contact: 'اتصل بنا',
-                pharmacology: 'علم الأدوية',
-                hero_title: 'المسكنات',
-                hero_subtitle: 'تصنيف حسب سلّم منظمة الصحة العالمية، الآليات، الاستطبابات والنصائح في الصيدلية.',
-                lesson: 'الدرس', exam: 'الاختبار',
-                mechanism_title: 'آلية العمل',
-                level1_label: 'المستوى 1 :',
-                mechanism_l1: 'يُثبّط إنزيمات السيكلوأوكسيجيناز (COX) لتقليل تخليق البروستاغلاندينات (مضادات الالتهاب غير الستيرويدية)، أو يعمل على مسارات مركزية محددة (الباراسيتامول).',
-                levels23_label: 'المستويان 2 و 3 :',
-                mechanism_l23: 'ناهضات مستقبلات الأفيون (خاصة مستقبلات µ) الموجودة في الجهاز العصبي المركزي والمحيطي، مما يحجب نقل الألم.',
-                mechanism_note: '(ملاحظة: الترامادول له أيضاً تأثير سيروتونيني).',
-                indications_title: 'الاستطبابات العامة',
-                n1_label: 'المستوى 1 :', n2_label: 'المستوى 2 :', n3_label: 'المستوى 3 :', n2n3_label: 'المستويان 2/3 :',
-                indication_n1: 'آلام خفيفة إلى متوسطة (صداع، آلام الأسنان، آلام عضلية، فصال عظمي).',
-                indication_n2: 'آلام متوسطة إلى شديدة أو مقاومة للمستوى 1 (بعد الجراحة، آلام أسفل الظهر الحادة).',
-                indication_n3: 'آلام شديدة ومزمنة (السرطان، الرعاية التلطيفية، بعد الجراحة الكبرى).',
-                contre_title: 'مضادات الاستطباب والاحتياطات الرئيسية',
-                ains_label: 'مضادات الالتهاب غير الستيرويدية :',
-                contre_ains: 'قرحة معدية معوية نشطة، فشل كلوي شديد، حساسية للأسبرين (ربو).',
-                paracetamol_label: 'الباراسيتامول :',
-                contre_para: 'فشل كبدي خلوي شديد.',
-                opioides_label: 'الأفيونيات :',
-                contre_opio: 'فشل تنفسي حاد، متلازمة انسدادية، إصابة دماغية (خطر ارتفاع ضغط داخل الجمجمة). مثبطات MAO (للترامادول والبيثيدين).',
-                interactions_title: 'التداخلات الدوائية الرئيسية',
-                inter_1_strong: 'مضادات الالتهاب + مضادات التخثر/AVK :',
-                inter_2_strong: 'مضادات الالتهاب + خوافض الضغط :',
-                inter_3_strong: 'الأفيونيات + البنزوديازيبينات/الكحول :',
-                inter_4_strong: 'ترامادول + مضادات الاكتئاب (ISRS/IRSN) :',
-                inter_1: 'خطر نزفي كبير.',
-                inter_2: 'انخفاض فعالية مضادات ارتفاع ضغط الدم.',
-                inter_3: 'تثبيط تنفسي شديد.',
-                inter_4: 'متلازمة السيروتونين (ارتباك، فرط حرارة، تصلب).',
-                grossesse_title: 'الحمل والرضاعة',
-                grossesse_n1: 'الباراسيتامول = المسكن المرجعي على المدى القصير. مضادات الالتهاب غير الستيرويدية ممنوعة تماماً في الثلث الثالث.',
-                grossesse_n23: 'يُفضّل تجنّبها إلا في حالة الضرورة القصوى. الكودايين غير مُستحسن خلال الرضاعة (الأيض السريع). المورفين ممكن تحت المراقبة.',
-                niveau1_title: 'المستوى 1: المسكنات غير الأفيونية',
-                para_title: '1. الباراسيتامول',
-                noms_commerciaux: 'الأسماء التجارية (الجزائر) :',
-                nom_commercial: 'الاسم التجاري :',
-                formes_label: 'الأشكال :',
-                posologie_label: 'الجرعة للبالغين :',
-                particularite_label: 'الخصوصية :',
-                conseil_pharma: 'نصيحة الصيدلي :',
-                conseil_label: 'نصيحة :',
-                associations_label: 'التركيبات :',
-                dci_label: 'الاسم العلمي :',
-                para_formes: 'أقراص (500 ملغ، 1000 ملغ)، تحاميل، أكياس، محاليل للشرب.',
-                para_posologie: '500 ملغ إلى 1 غ لكل جرعة. الحد الأقصى 3 غ/يوم. لا تتجاوز 4 غ أبداً.',
-                para_particularite: 'مسكن وخافض حرارة نقي، بدون أي تأثير مضاد للالتهاب.',
-                para_conseil: 'تحقق دائماً من أدوية الزكام المرافقة. ممنوع مع الكحول. نبّه المريض: «لا تتجاوز 3 غرامات في 24 ساعة، وانتظر 8 ساعات بين كل جرعة 1 غ.»',
-                para_cafeine: 'باراسيتامول + كافيين',
-                para_vitc: 'باراسيتامول + فيتامين C',
-                aspirine_title: '2. حمض أسيتيل الساليسيليك (مضاد التهاب)',
-                aspirine_formes: 'أقراص (500 ملغ)، أكياس لمحلول للشرب.',
-                aspirine_posologie: '500 ملغ كل 4 ساعات. الحد الأقصى 3 غ/يوم.',
-                aspirine_particularite: 'مضاد للالتهاب، مسكن، خافض للحرارة ومضاد لتكدس الصفائح (باستثناء 100 ملغ).',
-                aspirine_conseil: '«تناوله أثناء أو بعد الأكل.» ذكّر بحساسية الأسبرين. لا يُعطى للأطفال (متلازمة راي). يُوقف 7 أيام قبل أي عملية جراحية.',
-                niveau2_title: 'المستوى 2: الأفيونيات الضعيفة',
-                codeine_title: '3. باراسيتامول + كودايين',
-                codeine_dci: 'باراسيتامول + فوسفات الكودايين.',
-                codeine_formes: 'أقراص (400 ملغ/30 ملغ أو 500 ملغ/30 ملغ).',
-                codeine_posologie: '1 إلى 2 قرص كل 6 ساعات. الحد الأقصى 8 أقراص/يوم (400/30) أو 6 أقراص/يوم (500/30).',
-                codeine_particularite: 'الكودايين هو دواء أولي يتحول إلى المورفين بواسطة CYP2D6.',
-                codeine_conseil: '«قد يسبب الإمساك، اشرب كمية كافية من الماء.» ممنوع مع الكحول وأدوية الزكام. ممنوع قبل 12 سنة.',
-                trama_para_title: '4. باراسيتامول + ترامادول',
-                trama_para_dci: 'باراسيتامول + هيدروكلوريد الترامادول.',
-                trama_para_formes: 'أقراص (325 ملغ / 37.5 ملغ).',
-                trama_para_posologie: '1 إلى 2 قرص كل 4 إلى 6 ساعات. الحد الأقصى 8 أقراص/يوم.',
-                trama_para_conseil: '«قد يسبب الغثيان، تناوله في وسط الوجبة.» لا تُجمعه أبداً مع الترامادول وحده أو مع مضادات الاكتئاب (متلازمة السيروتونين).',
-                trama_title: '5. الترامادول وحده',
-                trama_dci: 'ترامادول.',
-                trama_formes: 'كبسولات (50 ملغ)، أقراص ممتدة المفعول (100 ملغ، 150 ملغ).',
-                trama_posologie: '50 إلى 100 ملغ كل 4 ساعات. الحد الأقصى 400 ملغ/يوم. ممتد: مرة إلى مرتين يومياً.',
-                trama_conseil: '«إنه من المخدرات، لا تتجاوز الوصفة.» لا تسحق الأقراص الممتدة. حذّر من الكحول والمنومات.',
-                niveau3_title: 'المستوى 3: الأفيونيات القوية',
-                morphine_title: '6. المورفين',
-                morphine_dci: 'مورفين.',
-                morphine_formes: 'أقراص ممتدة (10، 30، 60 ملغ)؛ أكتيسكينان 5، 10، 20 ملغ سريعة.',
-                morphine_posologie: 'أكتيسكينان كل 4-6 ساعات، سكينان كل 12 ساعة. البدء بـ 10 ملغ/12 ساعة لسكينان.',
-                morphine_conseil: '«الإمساك أمر حتمي، اوصف مليناً.» وصفة مؤمّنة، دفتر خاص.',
-                lp_label: '(ممتد)', li_label: '(سريع)', patch_label: '(لاصقة)', injectable_label: '(حقن)',
-                bupr_title: '7. البوبرينورفين',
-                bupr_dci: 'بوبرينورفين.',
-                bupr_formes: 'أقراص تحت اللسان (0.2 ملغ، 2 ملغ).',
-                bupr_posologie: '0.2-0.4 ملغ كل 6 ساعات، الحد الأقصى 1.6 ملغ/يوم. الفطام: 2 ملغ/يوم.',
-                bupr_conseil: '«لا تبلعه، اتركه يذوب تحت اللسان.» خطر الفطام إذا جُمع مع أفيوني قوي آخر.',
-                oxy_title: '8. الأوكسيكودون',
-                oxy_dci: 'أوكسيكودون.',
-                oxy_formes: 'كبسولات ممتدة (5، 10، 20، 30، 40، 80 ملغ).',
-                oxy_posologie: '10 ملغ كل 12 ساعة (ممتد) للألم المزمن.',
-                oxy_conseil: 'نفس احتياطات المورفين. يُصرف بدفتر خاص.',
-                fenta_title: '9 و 10. الفنتانيل / الألفنتانيل',
-                fenta_dci: 'ألفنتانيل (رابيفين) / فنتانيل (ديروجيزيك).',
-                fenta_formes: 'لاصقات جلدية (12، 25، 50، 75، 100 ميكروغرام/ساعة)؛ رابيفين محلول حقن (المستشفى).',
-                fenta_posologie: 'ديروجيزيك كل 72 ساعة. رابيفين للاستعمال التخديري فقط.',
-                fenta_conseil: '«ضع اللاصقة على جلد سليم غير مشعر. يُمنع منعاً باتاً تعريضها لمصدر حرارة (جرعة زائدة قاتلة).» دفتر خاص.',
-                conseil_final_title: 'نصيحة أخيرة لتدريبك',
-                conseil_final_text: 'في الجزائر، وصفة المخدرات (المستوى 3 والترامادول) منظّمة للغاية. تعرّف على مدة صلاحية الوصفات (7 أيام للمخدرات) وقابلية التتبع في الدفتر الخاص قبل صرفها.',
-                qcm_label: 'اختبار متعدد الخيارات :',
-                qcm_instruction: 'ضع علامة على جميع الإجابات الصحيحة لكل سؤال. إجابة خاطئة واحدة تُلغي السؤال بالكامل (0 نقطة). الإجابات الصحيحة الجزئية تمنح نقاطاً جزئية.',
-                check_btn: 'تحقق من إجاباتي',
-                reset_btn: 'إعادة تعيين',
-                q1_title: 'السؤال 1', q2_title: 'السؤال 2', q3_title: 'السؤال 3', q4_title: 'السؤال 4', q5_title: 'السؤال 5',
-                q6_title: 'السؤال 6', q7_title: 'السؤال 7', q8_title: 'السؤال 8', q9_title: 'السؤال 9', q10_title: 'السؤال 10',
-                q1_text: 'من بين الأدوية التالية، أي منها مصنّف في المستوى 1 من سلّم منظمة الصحة العالمية؟',
-                q1_a: 'الباراسيتامول', q1_b: 'الأسبرين (مضاد التهاب)', q1_c: 'الترامادول', q1_d: 'الكودايين',
-                q2_text: 'ما هي التأثيرات الدوائية للأسبرين (بجرعة مسكنة)؟',
-                q2_a: 'مسكن', q2_b: 'مضاد للالتهاب', q2_c: 'خافض للحرارة', q2_d: 'سيروتونيني',
-                q3_text: 'ما هي المخاطر الرئيسية لدمج مضادات الالتهاب غير الستيرويدية مع مضادات التخثر/AVK؟',
-                q3_a: 'نزيف', q3_b: 'تثبيط تنفسي', q3_c: 'متلازمة السيروتونين', q3_d: 'قرحة معدية معوية',
-                q4_text: 'بخصوص الكودايين، أي العبارات صحيحة؟',
-                q4_a: 'هو دواء أولي', q4_b: 'يُستقلب بواسطة CYP2D6', q4_c: 'هو أفيوني قوي (المستوى 3)', q4_d: 'ممنوع قبل 12 سنة',
-                q5_text: 'ما هي الآثار الجانبية المحتملة للترامادول؟',
-                q5_a: 'غثيان', q5_b: 'إمساك', q5_c: 'متلازمة السيروتونين (إذا جُمع مع ISRS/IRSN)', q5_d: 'تثبيط تنفسي (إذا جُمع مع المثبطات)',
-                q6_text: 'ما هي المسكنات الممنوعة تماماً في الثلث الثالث من الحمل؟',
-                q6_a: 'مضادات الالتهاب غير الستيرويدية', q6_b: 'الأسبرين', q6_c: 'الباراسيتامول', q6_d: 'المورفين',
-                q7_text: 'بخصوص الفنتانيل (ديروجيزيك)، أي العبارات صحيحة؟',
-                q7_a: 'هو لاصقة جلدية', q7_b: 'يُعطى كل 72 ساعة', q7_c: 'هو أفيوني من المستوى 3', q7_d: 'يمكن تعريضه لمصدر حرارة دون خطر',
-                q8_text: 'ما هي النصائح التي تُقدَّم لمريض يتناول الباراسيتامول؟',
-                q8_a: 'لا يتجاوز 3 غ يومياً', q8_b: 'ينتظر 8 ساعات على الأقل بين كل جرعة 1 غ', q8_c: 'يتجنب شرب الكحول', q8_d: 'يتحقق من الأدوية الأخرى التي تحتوي على الباراسيتامول',
-                q9_text: 'أي من التركيبات تعرّض لخطر متلازمة السيروتونين؟',
-                q9_a: 'ترامادول + ISRS', q9_b: 'ترامادول + IRSN', q9_c: 'كودايين + ISRS', q9_d: 'مورفين + ISRS',
-                q10_text: 'بخصوص البوبرينورفين (تيمجيزيك)، أي العبارات صحيحة؟',
-                q10_a: 'يُعطى تحت اللسان', q10_b: 'لا يجب بلعه، بل تركه يذوب تحت اللسان', q10_c: 'هو أفيوني من المستوى 3', q10_d: 'قد يسبب متلازمة الفطام إذا جُمع مع أفيوني قوي آخر',
-                support_title: 'دعم GhaniPharma',
-                support_subtitle: 'دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي',
-                support_info: 'إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساهمة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏',
-                rip_title: 'RIP CCP (الجزائر)',
-                flexy_title: 'فليكسي',
-                ccp_title: 'حساب CCP (الجزائر)',
-                crypto_title: 'USDT (TRC20)',
-                support_footer: 'شكراً من كل قلبي',
-                copied: 'تم النسخ!'
+                theme: "المظهر",
+                light: "فاتح",
+                dark: "داكن",
+                language: "اللغة",
+                home: "الرئيسية",
+                about: "حول",
+                modules: "الدروس",
+                contact: "اتصل بنا",
+                pharmacology: "علم الأدوية",
+                lesson: "الدرس",
+                exam: "الاختبار",
+                mechanism_title: "آلية العمل",
+                indications_title: "الاستطبابات العامة",
+                contre_title: "مضادات الاستطباب والاحتياطات الرئيسية",
+                ci_absolues_label: "مضادات استطباب مطلقة:",
+                note_label: "ملاحظة:",
+                precautions_label: "احتياطات:",
+                interactions_title: "التداخلات الدوائية الرئيسية",
+                grossesse_title: "الحمل والرضاعة",
+                grossesse_label: "الحمل:",
+                allaitement_label: "الرضاعة:",
+                substances_title: "المواد الفعالة",
+                generique_label: "الاسم العلمي:",
+                noms_commerciaux: "الأسماء التجارية (الجزائر):",
+                formes_label: "الأشكال الصيدلانية:",
+                posologie_label: "الجرعة المعتادة (للبالغين) والقصوى:",
+                particularite_label: "الخصوصية:",
+                conseil_pratique: "نصيحة عملية للصيدلي:",
+                conseil_final_title: "نصيحة أخيرة لتدريبك",
+                conseil_chef: "💡 نصيحة «رئيس الرف» لكل مرضاك:",
+                qcm_label: "اختبار متعدد الخيارات:",
+                qcm_instruction: "اختر كل الإجابات الصحيحة لكل سؤال. إجابة خاطئة واحدة تُلغي السؤال كاملاً (صفر نقطة). الإجابات الصحيحة الجزئية تعطي نقاطاً جزئية.",
+                check_btn: "تحقق من إجاباتي",
+                reset_btn: "إعادة تعيين",
+                q1_title: "السؤال 1",
+                q2_title: "السؤال 2",
+                q3_title: "السؤال 3",
+                q4_title: "السؤال 4",
+                q5_title: "السؤال 5",
+                q6_title: "السؤال 6",
+                q7_title: "السؤال 7",
+                q8_title: "السؤال 8",
+                q9_title: "السؤال 9",
+                q10_title: "السؤال 10",
+                section_title: "الدروس المتاحة",
+                subject_badge: "أصناف الأدوية",
+                support_title: "دعم GhaniPharma",
+                support_subtitle: "دعمكم يساعدني على إنشاء المزيد من المحتوى التعليمي",
+                support_info: "إذا كان هذا المحتوى مفيداً لك، يمكنك دعمي بطرق مختلفة. كل مساعدة، حتى الصغيرة، تُحدث فرقاً كبيراً! 🙏",
+                rip_title: "RIP CCP (الجزائر)",
+                flexy_title: "فليكسي",
+                support_footer: "شكراً من القلب",
+                copied: "تم النسخ!",
+                hero_title: "المسكنات حسب سلّم منظمة الصحة العالمية",
+                hero_subtitle: "تصنيف حسب سلّم منظمة الصحة العالمية (المستويات 1 إلى 3)، الآليات، الاستطبابات والنصائح في الصيدلية: الباراسيتامول، الأسبرين، الكودايين، الترامادول، المورفين، البوبرينورفين، الأوكسيكودون والفنتانيل.",
+                paracetamol_title: "1. الباراسيتامول",
+                paracetamol_gen: "باراسيتامول.",
+                paracetamol_formes: "أقراص (500 مغ، 1000 مغ)، تحاميل، أكياس، محاليل للشرب.",
+                paracetamol_posologie: "500 مغ إلى 1 غ لكل جرعة. الحد الأقصى 3 غ/يوم. لا تتجاوز 4 غ أبداً.",
+                paracetamol_particularite: "مسكن وخافض حرارة نقي، بدون أي تأثير مضاد للالتهاب.",
+                paracetamol_conseil: "تحقق دائماً من أدوية الزكام المرافقة. ممنوع مع الكحول. نبّه المريض: «لا تتجاوز 3 غرامات في 24 ساعة، وانتظر 8 ساعات بين كل جرعة 1 غ.»",
+                paracetamol_cafeine_title: "2. باراسيتامول + كافيين",
+                paracetamol_cafeine_gen: "باراسيتامول + كافيين.",
+                paracetamol_cafeine_formes: "أقراص (500 مغ، 1000 مغ)، تحاميل، أكياس، محاليل للشرب.",
+                paracetamol_cafeine_posologie: "500 مغ إلى 1 غ من الباراسيتامول لكل جرعة. الحد الأقصى 3 غ/يوم. لا تتجاوز 4 غ أبداً.",
+                paracetamol_cafeine_particularite: "تركيبة مسكنة وخافضة للحرارة من المستوى 1؛ الكافيين يعزّز قليلاً التأثير المسكن. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                paracetamol_cafeine_conseil: "نفس نصيحة الباراسيتامول: لا تتجاوز 3 غ/يوم وتحقق من التركيبات. قد يسبب الكافيين عصبية وأرقاً.",
+                paracetamol_vitamine_c_title: "3. باراسيتامول + فيتامين C",
+                paracetamol_vitamine_c_gen: "باراسيتامول + فيتامين C.",
+                paracetamol_vitamine_c_formes: "أقراص (500 مغ، 1000 مغ)، تحاميل، أكياس، محاليل للشرب.",
+                paracetamol_vitamine_c_posologie: "500 مغ إلى 1 غ من الباراسيتامول لكل جرعة. الحد الأقصى 3 غ/يوم. لا تتجاوز 4 غ أبداً.",
+                paracetamol_vitamine_c_particularite: "تركيبة مسكنة وخافضة للحرارة من المستوى 1 مع فيتامين C. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                paracetamol_vitamine_c_conseil: "نفس نصيحة الباراسيتامول: لا تتجاوز 3 غ/يوم وتحقق من التركيبات. فيتامين C لا يمنع الجرعة الزائدة.",
+                aspirine_n1_title: "4. حمض أسيتيل الساليسيليك (الأسبرين)",
+                aspirine_n1_gen: "حمض أسيتيل الساليسيليك.",
+                aspirine_n1_formes: "أقراص (500 مغ)، أكياس لمحلول للشرب.",
+                aspirine_n1_posologie: "500 مغ كل 4 ساعات. الحد الأقصى 3 غ/يوم.",
+                aspirine_n1_particularite: "مضاد للالتهاب، مسكن، خافض للحرارة ومضاد لتكدس الصفائح (باستثناء 100 مغ).",
+                aspirine_n1_conseil: "«تناوله أثناء أو بعد الأكل.» ذكّر بحساسية الأسبرين. لا يُعطى للأطفال (متلازمة راي). يُوقف 7 أيام قبل أي عملية جراحية.",
+                paracetamol_codeine_title: "5. باراسيتامول + كودايين",
+                paracetamol_codeine_gen: "باراسيتامول + فوسفات الكودايين.",
+                paracetamol_codeine_formes: "أقراص (400 مغ/30 مغ أو 500 مغ/30 مغ).",
+                paracetamol_codeine_posologie: "1 إلى 2 قرص كل 6 ساعات. الحد الأقصى 8 أقراص/يوم (400/30) أو 6 أقراص/يوم (500/30).",
+                paracetamol_codeine_particularite: "الكودايين هو دواء أولي يتحول إلى المورفين بواسطة CYP2D6.",
+                paracetamol_codeine_conseil: "«قد يسبب الإمساك، اشرب كمية كافية من الماء.» ممنوع مع الكحول وأدوية الزكام. ممنوع قبل 12 سنة.",
+                paracetamol_tramadol_title: "6. باراسيتامول + ترامادول",
+                paracetamol_tramadol_gen: "باراسيتامول + هيدروكلوريد الترامادول.",
+                paracetamol_tramadol_formes: "أقراص (325 مغ / 37.5 مغ).",
+                paracetamol_tramadol_posologie: "1 إلى 2 قرص كل 4 إلى 6 ساعات. الحد الأقصى 8 أقراص/يوم.",
+                paracetamol_tramadol_particularite: "تركيبة من مسكن غير أفيوني وأفيوني ضعيف ذي تأثير سيروتونيني. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                paracetamol_tramadol_conseil: "«قد يسبب الغثيان، تناوله في وسط الوجبة.» لا تُجمعه أبداً مع الترامادول وحده أو مع مضادات الاكتئاب (متلازمة السيروتونين).",
+                tramadol_title: "7. الترامادول وحده",
+                tramadol_gen: "ترامادول.",
+                tramadol_formes: "كبسولات (50 مغ)، أقراص ممتدة المفعول (100 مغ، 150 مغ).",
+                tramadol_posologie: "50 إلى 100 مغ كل 4 ساعات. الحد الأقصى 400 مغ/يوم. ممتد: مرة إلى مرتين يومياً.",
+                tramadol_particularite: "أفيوني ضعيف بآلية مزدوجة: ناهض لمستقبلات µ وتأثير سيروتونيني. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                tramadol_conseil: "«إنه من المخدرات، لا تتجاوز الوصفة.» لا تسحق الأقراص الممتدة. حذّر من الكحول والمنومات.",
+                morphine_title: "8. المورفين",
+                morphine_gen: "مورفين.",
+                morphine_formes: "أقراص ممتدة (10، 30، 60 مغ)؛ أكتيسكينان 5، 10، 20 مغ سريعة.",
+                morphine_posologie: "أكتيسكينان كل 4-6 ساعات، سكينان كل 12 ساعة. البدء بـ 10 مغ/12 ساعة لسكينان.",
+                morphine_particularite: "أفيوني قوي ناهض لمستقبلات µ، المسكن المرجعي للآلام الشديدة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                morphine_conseil: "«الإمساك أمر حتمي، اوصف مليناً.» وصفة مؤمّنة، دفتر خاص.",
+                buprenorphine_title: "9. البوبرينورفين",
+                buprenorphine_gen: "بوبرينورفين.",
+                buprenorphine_formes: "أقراص تحت اللسان (0.2 مغ، 2 مغ).",
+                buprenorphine_posologie: "0.2-0.4 مغ كل 6 ساعات، الحد الأقصى 1.6 مغ/يوم. الفطام: 2 مغ/يوم.",
+                buprenorphine_particularite: "أفيوني قوي جزئي ناهض-مناهض لمستقبلات µ، يُستعمل أيضاً في الفطام. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                buprenorphine_conseil: "«لا تبلعه، اتركه يذوب تحت اللسان.» خطر الفطام إذا جُمع مع أفيوني قوي آخر.",
+                oxycodone_title: "10. الأوكسيكودون",
+                oxycodone_gen: "أوكسيكودون.",
+                oxycodone_formes: "كبسولات ممتدة (5، 10، 20، 30، 40، 80 مغ).",
+                oxycodone_posologie: "10 مغ كل 12 ساعة (ممتد) للألم المزمن.",
+                oxycodone_particularite: "أفيوني قوي ناهض لمستقبلات µ، يُستعمل في الآلام المزمنة الشديدة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                oxycodone_conseil: "نفس احتياطات المورفين. يُصرف بدفتر خاص.",
+                fentanyl_title: "11. الفنتانيل",
+                fentanyl_gen: "فنتانيل.",
+                fentanyl_formes: "لاصقات جلدية (12، 25، 50، 75، 100 ميكروغرام/ساعة).",
+                fentanyl_posologie: "ديروجيزيك كل 72 ساعة.",
+                fentanyl_particularite: "أفيوني قوي من المستوى 3 يُعطى عبر الجلد للآلام المزمنة المستقرة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                fentanyl_conseil: "«ضع اللاصقة على جلد سليم غير مشعر. يُمنع منعاً باتاً تعريضها لمصدر حرارة (جرعة زائدة قاتلة).» دفتر خاص.",
+                alfentanil_title: "12. الألفنتانيل",
+                alfentanil_gen: "ألفنتانيل.",
+                alfentanil_formes: "محلول حقن (المستشفى).",
+                alfentanil_posologie: "للاستعمال التخديري فقط، حسب بروتوكول المستشفى. جرعات رابيفين مخصصة لطبيب التخدير.",
+                alfentanil_particularite: "أفيوني قوي سريع المفعول مخصص للتخدير والعناية المركزة. (بيانات الصنف — غير محددة بشكل منفصل في الكتاب)",
+                alfentanil_conseil: "التعامل من قبل طاقم مؤهل، مع مراقبة تنفسية دقيقة. لا يُترك أبداً في متناول المريض.",
+                group_1_name: "المستوى 1 — مسكنات غير أفيونية",
+                group_2_name: "المستوى 2 — أفيونيات ضعيفة",
+                group_3_name: "المستوى 3 — أفيونيات قوية",
+                indication_1: "المستوى 1: آلام خفيفة إلى متوسطة (صداع، آلام الأسنان، آلام عضلية، فصال عظمي).",
+                indication_2: "المستوى 2: آلام متوسطة إلى شديدة أو مقاومة للمستوى 1 (بعد الجراحة، آلام أسفل الظهر الحادة).",
+                indication_3: "المستوى 3: آلام شديدة ومزمنة (السرطان، الرعاية التلطيفية، بعد الجراحة الكبرى).",
+                indication_4: "المستويان 2/3: آلام تتطلب أفيونياً ضعيفاً أو قوياً حسب الشدة والاستجابة للعلاج.",
+                indication_5: "الباراسيتامول: مسكن وخافض للحرارة من الخط الأول؛ الأسبرين/مضادات الالتهاب في الآلام الالتهابية.",
+                inter_1_strong: "مضادات الالتهاب + مضادات التخثر/AVK",
+                inter_1: " : خطر نزفي كبير.",
+                inter_2_strong: "مضادات الالتهاب + خافضات الضغط",
+                inter_2: " : انخفاض فعالية مضادات ارتفاع ضغط الدم.",
+                inter_3_strong: "الأفيونيات + البنزوديازيبينات/الكحول",
+                inter_3: " : تثبيط تنفسي شديد.",
+                inter_4_strong: "ترامادول + مضادات الاكتئاب (ISRS/IRSN)",
+                inter_4: " : متلازمة السيروتونين (ارتباك، فرط حرارة، تصلب).",
+                q1_text: "من بين الأدوية التالية، أي منها مصنّف في المستوى 1 من سلّم منظمة الصحة العالمية؟",
+                q1_a: "الباراسيتامول",
+                q1_b: "الأسبرين (مضاد التهاب)",
+                q1_c: "الترامادول",
+                q1_d: "الكودايين",
+                q2_text: "ما هي التأثيرات الدوائية للأسبرين (بجرعة مسكنة)؟",
+                q2_a: "مسكن",
+                q2_b: "مضاد للالتهاب",
+                q2_c: "خافض للحرارة",
+                q2_d: "سيروتونيني",
+                q3_text: "ما هي المخاطر الرئيسية لدمج مضادات الالتهاب غير الستيرويدية مع مضادات التخثر/AVK؟",
+                q3_a: "نزيف",
+                q3_b: "تثبيط تنفسي",
+                q3_c: "متلازمة السيروتونين",
+                q3_d: "قرحة معدية معوية",
+                q4_text: "بخصوص الكودايين، أي العبارات صحيحة؟",
+                q4_a: "هو دواء أولي",
+                q4_b: "يُستقلب بواسطة CYP2D6",
+                q4_c: "هو أفيوني قوي (المستوى 3)",
+                q4_d: "ممنوع قبل 12 سنة",
+                q5_text: "ما هي الآثار الجانبية المحتملة للترامادول؟",
+                q5_a: "غثيان",
+                q5_b: "إمساك",
+                q5_c: "متلازمة السيروتونين (إذا جُمع مع ISRS/IRSN)",
+                q5_d: "ارتفاع ضغط الدم الشرياني",
+                q6_text: "ما هي المسكنات الممنوعة تماماً في الثلث الثالث من الحمل؟",
+                q6_a: "مضادات الالتهاب غير الستيرويدية",
+                q6_b: "الأسبرين",
+                q6_c: "الباراسيتامول",
+                q6_d: "المورفين",
+                q7_text: "بخصوص الفنتانيل (ديروجيزيك)، أي العبارات صحيحة؟",
+                q7_a: "هو لاصقة جلدية",
+                q7_b: "يُعطى كل 72 ساعة",
+                q7_c: "هو أفيوني من المستوى 3",
+                q7_d: "يمكن تعريضه لمصدر حرارة دون خطر",
+                q8_text: "ما هي النصائح التي تُقدَّم لمريض يتناول الباراسيتامول؟",
+                q8_a: "لا يتجاوز 3 غ يومياً",
+                q8_b: "ينتظر 8 ساعات على الأقل بين كل جرعة 1 غ",
+                q8_c: "يتجنب شرب الكحول",
+                q8_d: "يتناوله على معدة فارغة لسرعة التأثير",
+                q9_text: "أي من التركيبات تعرّض لخطر متلازمة السيروتونين؟",
+                q9_a: "ترامادول + ISRS",
+                q9_b: "ترامادول + IRSN",
+                q9_c: "كودايين + ISRS",
+                q9_d: "مورفين + ISRS",
+                q10_text: "بخصوص البوبرينورفين (تيمجيزيك)، أي العبارات صحيحة؟",
+                q10_a: "يُعطى تحت اللسان",
+                q10_b: "لا يجب بلعه، بل تركه يذوب تحت اللسان",
+                q10_c: "هو أفيوني ضعيف (المستوى 2)",
+                q10_d: "قد يسبب متلازمة الفطام إذا جُمع مع أفيوني قوي آخر",
+                mechanism_text_1: "تُثبّط مسكنات المستوى 1 (الباراسيتامول، الأسبرين/مضادات الالتهاب) إنزيمات السيكلوأوكسيجيناز (COX) لتقليل تخليق البروستاغلاندينات، أو تعمل على مسارات مركزية محددة (الباراسيتامول). المستويان 2 و3 ناهضات لمستقبلات الأفيون (خاصة µ) الموجودة في الجهاز العصبي المركزي والمحيطي، فتحجب نقل الألم. وللترامادول أيضاً تأثير سيروتونيني.",
+                ci_absolues: "مضادات الالتهاب غير الستيرويدية: قرحة معدية معوية نشطة، فشل كلوي شديد، حساسية للأسبرين (ربو). الباراسيتامول: فشل كبدي خلوي شديد. الأفيونيات: فشل تنفسي حاد، متلازمة انسدادية، إصابة دماغية (خطر ارتفاع ضغط داخل الجمجمة)، مثبطات MAO (للترامادول والبيثيدين).",
+                note_text: "للترامادول أيضاً تأثير سيروتونيني: لا تجمعه أبداً مع ISRS/IRSN (متلازمة السيروتونين). تعرّض الأفيونيات لتثبيط تنفسي يتفاقم مع البنزوديازيبينات والكحول.",
+                precautions_text: "مضادات الالتهاب: حماية المعدة بمثبط مضخة البروتون عند وجود خطر، تناولها مع الوجبة، وإيقاف الأسبرين 7 أيام قبل الجراحة. الباراسيتامول: لا تتجاوز 3 غ/يوم (4 غ كحد أقصى) وتحقق من التركيبات. الأفيونيات: إمساك حتمي (ملين)، وصفة مؤمّنة ودفتر خاص للمخدرات.",
+                grossesse_text: "الباراسيتامول = المسكن المرجعي على المدى القصير. مضادات الالتهاب غير الستيرويدية ممنوعة تماماً في الثلث الثالث. المستويان 2/3: يُفضّل تجنّبها إلا في حالة الضرورة القصوى؛ المورفين ممكن تحت المراقبة.",
+                allaitement_text: "الكودايين غير مُستحسن خلال الرضاعة (الأيض السريع). المورفين ممكن تحت المراقبة. الباراسيتامول ومضادات الالتهاب: يُفضّل الاستعمال القصير بإشراف طبي.",
+                conseil_final_text: "في الجزائر، وصفة المخدرات (المستوى 3 والترامادول) منظّمة للغاية. تعرّف على مدة صلاحية الوصفات (7 أيام للمخدرات) وقابلية التتبع في الدفتر الخاص قبل صرفها."
             },
             en: {
-                theme: 'Theme', light: 'Light', dark: 'Dark', language: 'Language',
-                home: 'Home', about: 'About', modules: 'Modules', contact: 'Contact',
-                pharmacology: 'Pharmacology',
-                hero_title: 'ANALGESICS',
-                hero_subtitle: 'Classification according to WHO scale, mechanisms, indications and pharmacy advice.',
-                lesson: 'Lesson', exam: 'Exam',
-                mechanism_title: 'Mechanism of action',
-                level1_label: 'Level 1:',
-                mechanism_l1: 'Inhibits cyclooxygenases (COX) to reduce prostaglandin synthesis (NSAIDs), or acts on specific central pathways (Paracetamol).',
-                levels23_label: 'Levels 2 & 3:',
-                mechanism_l23: 'Opioid receptor agonists (mainly µ receptors) present in the central and peripheral nervous system, blocking pain transmission.',
-                mechanism_note: '(Note: Tramadol also has a serotonergic effect).',
-                indications_title: 'General indications',
-                n1_label: 'L1:', n2_label: 'L2:', n3_label: 'L3:', n2n3_label: 'L2/L3:',
-                indication_n1: 'Mild to moderate pain (headaches, dental pain, myalgia, osteoarthritis).',
-                indication_n2: 'Moderate to severe pain or resistant to Level 1 (post-operative, acute low back pain).',
-                indication_n3: 'Severe and chronic pain (cancer, palliative care, major post-surgery).',
-                contre_title: 'Major contraindications and precautions',
-                ains_label: 'NSAIDs:',
-                contre_ains: 'Active gastroduodenal ulcer, severe renal failure, aspirin allergy (asthma).',
-                paracetamol_label: 'Paracetamol:',
-                contre_para: 'Severe hepatocellular insufficiency.',
-                opioides_label: 'Opioids:',
-                contre_opio: "Acute respiratory failure, obstructive syndrome, head trauma (risk of intracranial hypertension). MAOIs (for tramadol and pethidine).",
-                interactions_title: 'Major drug interactions',
-                inter_1_strong: 'NSAIDs + Anticoagulants/VKAs:',
-                inter_2_strong: 'NSAIDs + Antihypertensives:',
-                inter_3_strong: 'Opioids + Benzodiazepines/Alcohol:',
-                inter_4_strong: 'Tramadol + Antidepressants (SSRIs/SNRIs):',
-                inter_1: 'Major bleeding risk.',
-                inter_2: 'Decreased antihypertensive efficacy.',
-                inter_3: 'Severe respiratory depression.',
-                inter_4: 'Serotonin syndrome (confusion, hyperthermia, rigidity).',
-                grossesse_title: 'Pregnancy and Breastfeeding',
-                grossesse_n1: 'Paracetamol = reference analgesic for short-term use. NSAIDs strictly contraindicated in the 3rd trimester.',
-                grossesse_n23: 'Avoid unless strictly necessary. Codeine not recommended during breastfeeding (rapid metabolizers). Morphine possible under supervision.',
-                niveau1_title: 'LEVEL 1: Non-opioid analgesics',
-                para_title: '1. Paracetamol',
-                noms_commerciaux: 'Brand names (Algeria):',
-                nom_commercial: 'Brand name:',
-                formes_label: 'Forms:',
-                posologie_label: 'Adult dosage:',
-                particularite_label: 'Particularity:',
-                conseil_pharma: 'Pharmacist advice:',
-                conseil_label: 'Advice:',
-                associations_label: 'Combinations:',
-                dci_label: 'INN:',
-                para_formes: 'Tablets (500 mg, 1000 mg), suppositories, sachets, oral solutions.',
-                para_posologie: '500 mg to 1 g per dose. Max 3 g/day. Never exceed 4 g.',
-                para_particularite: 'Pure analgesic and antipyretic, no anti-inflammatory effect.',
-                para_conseil: 'Always check associated "cold medicines". Forbidden with alcohol. Warn the patient: "Do not exceed 3 grams in 24h, wait 8h between each 1g dose."',
-                para_cafeine: 'Paracetamol + Caffeine',
-                para_vitc: 'Paracetamol + Vitamin C',
-                aspirine_title: '2. Acetylsalicylic Acid (NSAID)',
-                aspirine_formes: 'Tablets (500 mg), sachets for oral solution.',
-                aspirine_posologie: '500 mg every 4 hours. Max 3 g/day.',
-                aspirine_particularite: 'Anti-inflammatory, analgesic, antipyretic and antiplatelet (except 100 mg).',
-                aspirine_conseil: '"Take it during or at the end of a meal." Remind of aspirin allergy. No children (Reye syndrome). Stop 7 days before surgery.',
-                niveau2_title: 'LEVEL 2: Weak opioids',
-                codeine_title: '3. Paracetamol + Codeine',
-                codeine_dci: 'Paracetamol + Codeine phosphate.',
-                codeine_formes: 'Tablets (400 mg/30 mg or 500 mg/30 mg).',
-                codeine_posologie: '1 to 2 tablets every 6h. Max 8 tab/day (400/30) or 6 tab/day (500/30).',
-                codeine_particularite: 'Codeine is a prodrug converted to morphine by CYP2D6.',
-                codeine_conseil: '"May cause constipation, stay well hydrated." Prohibit alcohol + cold medicines. Forbidden before 12 years.',
-                trama_para_title: '4. Paracetamol + Tramadol',
-                trama_para_dci: 'Paracetamol + Tramadol hydrochloride.',
-                trama_para_formes: 'Tablets (325 mg / 37.5 mg).',
-                trama_para_posologie: '1 to 2 tablets every 4 to 6h. Max 8 tablets/day.',
-                trama_para_conseil: '"May cause nausea, take in the middle of a meal." Never combine with Tramadol alone or with antidepressants (serotonin syndrome).',
-                trama_title: '5. Tramadol alone',
-                trama_dci: 'Tramadol.',
-                trama_formes: 'Capsules (50 mg), extended-release tablets (100 mg, 150 mg).',
-                trama_posologie: '50 to 100 mg every 4h. Max 400 mg/day. ER: 1 to 2 times per day.',
-                trama_conseil: '"It is a narcotic, do not exceed the prescription." Do not crush ER tablets. Warn about alcohol and sleeping pills.',
-                niveau3_title: 'LEVEL 3: Strong opioids',
-                morphine_title: '6. Morphine',
-                morphine_dci: 'Morphine.',
-                morphine_formes: 'ER tablets (10, 30, 60 mg); Actiskénan 5, 10, 20 mg IR.',
-                morphine_posologie: 'Actiskénan every 4-6h, Skénan every 12h. Start at 10 mg/12h for Skénan.',
-                morphine_conseil: '"Constipation is systematic, prescribe a laxative." Secure prescription, record book.',
-                lp_label: '(ER)', li_label: '(IR)', patch_label: '(patch)', injectable_label: '(injectable)',
-                bupr_title: '7. Buprenorphine',
-                bupr_dci: 'Buprenorphine.',
-                bupr_formes: 'Sublingual tablets (0.2 mg, 2 mg).',
-                bupr_posologie: '0.2-0.4 mg every 6h, max 1.6 mg/day. Withdrawal: 2 mg/day.',
-                bupr_conseil: '"Do not swallow, let dissolve under the tongue." Risk of withdrawal if combined with another strong opioid.',
-                oxy_title: '8. Oxycodone',
-                oxy_dci: 'Oxycodone.',
-                oxy_formes: 'ER capsules (5, 10, 20, 30, 40, 80 mg).',
-                oxy_posologie: '10 mg every 12h (ER) for chronic pain.',
-                oxy_conseil: 'Same precautions as morphine. Dispensed with record book.',
-                fenta_title: '9 & 10. Fentanyl / Alfentanil',
-                fenta_dci: 'Alfentanil (Rapifen) / Fentanyl (Durogesic).',
-                fenta_formes: 'Transdermal patches (12, 25, 50, 75, 100 µg/h); Rapifen injectable solution (hospital).',
-                fenta_posologie: 'Durogesic every 72h. Rapifen for anesthetic use only.',
-                fenta_conseil: '"Apply the patch on healthy, hairless skin. Formal prohibition to expose it to a heat source (fatal overdose)." Record book.',
-                conseil_final_title: 'Ultimate advice for your internship',
-                conseil_final_text: 'In Algeria, the prescription for narcotics (Level 3 and Tramadol) is extremely regulated. Familiarize yourself with the validity period of prescriptions (7 days for narcotics) and traceability on the record book before dispensing them.',
-                qcm_label: 'MCQ:',
-                qcm_instruction: 'Check all correct answers for each question. A single wrong answer checked cancels the whole question (0 points). Partial correct answers give partial points.',
-                check_btn: 'Check my answers',
-                reset_btn: 'Reset',
-                q1_title: 'Question 1', q2_title: 'Question 2', q3_title: 'Question 3', q4_title: 'Question 4', q5_title: 'Question 5',
-                q6_title: 'Question 6', q7_title: 'Question 7', q8_title: 'Question 8', q9_title: 'Question 9', q10_title: 'Question 10',
-                q1_text: 'Among the following drugs, which are classified as Level 1 of the WHO scale?',
-                q1_a: 'Paracetamol', q1_b: 'Aspirin (NSAID)', q1_c: 'Tramadol', q1_d: 'Codeine',
-                q2_text: 'What are the pharmacological effects of Aspirin (at analgesic dose)?',
-                q2_a: 'Analgesic', q2_b: 'Anti-inflammatory', q2_c: 'Antipyretic', q2_d: 'Serotonergic',
-                q3_text: 'What are the major risks of combining NSAIDs + Anticoagulants/VKAs?',
-                q3_a: 'Hemorrhage', q3_b: 'Respiratory depression', q3_c: 'Serotonin syndrome', q3_d: 'Gastroduodenal ulcer',
-                q4_text: 'Regarding Codeine, which statements are correct?',
-                q4_a: 'It is a prodrug', q4_b: 'It is metabolized by CYP2D6', q4_c: 'It is a strong opioid (Level 3)', q4_d: 'It is contraindicated before 12 years',
-                q5_text: 'What are the possible side effects of Tramadol?',
-                q5_a: 'Nausea', q5_b: 'Constipation', q5_c: 'Serotonin syndrome (if combined with SSRIs/SNRIs)', q5_d: 'Respiratory depression (if combined with depressants)',
-                q6_text: 'Which analgesics are strictly contraindicated in the 3rd trimester of pregnancy?',
-                q6_a: 'NSAIDs', q6_b: 'Aspirin', q6_c: 'Paracetamol', q6_d: 'Morphine',
-                q7_text: 'Regarding Fentanyl (Durogesic), which statements are correct?',
-                q7_a: 'It is a transdermal patch', q7_b: 'It is administered every 72 hours', q7_c: 'It is a Level 3 opioid', q7_d: 'It can be exposed to a heat source without risk',
-                q8_text: 'What advice should be given to a patient on Paracetamol?',
-                q8_a: 'Do not exceed 3 g per day', q8_b: 'Wait at least 8 h between each 1 g dose', q8_c: 'Avoid alcohol consumption', q8_d: 'Check other medicines containing paracetamol',
-                q9_text: 'Which combinations expose to a risk of serotonin syndrome?',
-                q9_a: 'Tramadol + SSRIs', q9_b: 'Tramadol + SNRIs', q9_c: 'Codeine + SSRIs', q9_d: 'Morphine + SSRIs',
-                q10_text: 'Regarding Buprenorphine (Temgesic), which statements are correct?',
-                q10_a: 'It is administered sublingually', q10_b: 'It should not be swallowed, but let dissolve under the tongue', q10_c: 'It is a Level 3 opioid', q10_d: 'It can cause withdrawal syndrome if combined with another strong opioid',
-                support_title: 'Support GhaniPharma',
-                support_subtitle: 'Your support helps me create more educational content',
-                support_info: 'If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏',
-                rip_title: 'RIP CCP (Algeria)',
-                flexy_title: 'Flexy',
-                ccp_title: 'CCP Account (Algeria)',
-                crypto_title: 'USDT (TRC20)',
-                support_footer: 'Thank you from the bottom of my heart',
-                copied: 'Copied!'
-            }
+                theme: "Theme",
+                light: "Light",
+                dark: "Dark",
+                language: "Language",
+                home: "Home",
+                about: "About",
+                modules: "Modules",
+                contact: "Contact",
+                pharmacology: "Pharmacology",
+                lesson: "Lesson",
+                exam: "Exam",
+                mechanism_title: "Mechanism of action",
+                indications_title: "General indications",
+                contre_title: "Major contraindications & precautions",
+                ci_absolues_label: "Absolute CIs:",
+                note_label: "Note:",
+                precautions_label: "Precautions:",
+                interactions_title: "Major drug interactions",
+                grossesse_title: "Pregnancy and Breastfeeding",
+                grossesse_label: "Pregnancy:",
+                allaitement_label: "Breastfeeding:",
+                substances_title: "Active substances",
+                generique_label: "Generic:",
+                noms_commerciaux: "Trade names (Algeria):",
+                formes_label: "Pharmaceutical forms:",
+                posologie_label: "Usual adult dose & max:",
+                particularite_label: "Particularity:",
+                conseil_pratique: "Pharmacist's practical advice:",
+                conseil_final_title: "Ultimate advice for your internship",
+                conseil_chef: "💡 The \"Section manager\" tip to pass on to all your patients:",
+                qcm_label: "MCQ:",
+                qcm_instruction: "Check all correct answers for each question. A single wrong answer cancels the whole question (0 point). Partial correct answers give partial points.",
+                check_btn: "Check my answers",
+                reset_btn: "Reset",
+                q1_title: "Question 1",
+                q2_title: "Question 2",
+                q3_title: "Question 3",
+                q4_title: "Question 4",
+                q5_title: "Question 5",
+                q6_title: "Question 6",
+                q7_title: "Question 7",
+                q8_title: "Question 8",
+                q9_title: "Question 9",
+                q10_title: "Question 10",
+                section_title: "Available lessons",
+                subject_badge: "DRUG CLASSES",
+                support_title: "Support GhaniPharma",
+                support_subtitle: "Your support helps me create more educational content",
+                support_info: "If this content was useful to you, you can support me in different ways. Every contribution, even small, makes a big difference! 🙏",
+                rip_title: "RIP CCP (Algeria)",
+                flexy_title: "Flexy",
+                support_footer: "Thank you wholeheartedly",
+                copied: "Copied!",
+                hero_title: "ANALGESICS ACCORDING TO THE WHO SCALE",
+                hero_subtitle: "Classification according to the WHO scale (levels 1 to 3), mechanisms, indications and pharmacy advice: paracetamol, aspirin, codeine, tramadol, morphine, buprenorphine, oxycodone and fentanyl.",
+                paracetamol_title: "1. Paracetamol",
+                paracetamol_gen: "Paracetamol.",
+                paracetamol_formes: "Tablets (500 mg, 1000 mg), suppositories, sachets, oral solutions.",
+                paracetamol_posologie: "500 mg to 1 g per dose. Max 3 g/day. Never exceed 4 g.",
+                paracetamol_particularite: "Pure analgesic and antipyretic, no anti-inflammatory effect.",
+                paracetamol_conseil: "Always check associated \"cold medicines\". Forbidden with alcohol. Warn the patient: \"Do not exceed 3 grams in 24h, wait 8h between each 1g dose.\"",
+                paracetamol_cafeine_title: "2. Paracetamol + Caffeine",
+                paracetamol_cafeine_gen: "Paracetamol + caffeine.",
+                paracetamol_cafeine_formes: "Tablets (500 mg, 1000 mg), suppositories, sachets, oral solutions.",
+                paracetamol_cafeine_posologie: "500 mg to 1 g of paracetamol per dose. Max 3 g/day. Never exceed 4 g.",
+                paracetamol_cafeine_particularite: "Level 1 analgesic and antipyretic combination; caffeine slightly enhances the analgesic effect. (class data — not specified separately in the book)",
+                paracetamol_cafeine_conseil: "Same advice as paracetamol: do not exceed 3 g/day and check combinations. Caffeine may cause nervousness and insomnia.",
+                paracetamol_vitamine_c_title: "3. Paracetamol + Vitamin C",
+                paracetamol_vitamine_c_gen: "Paracetamol + vitamin C.",
+                paracetamol_vitamine_c_formes: "Tablets (500 mg, 1000 mg), suppositories, sachets, oral solutions.",
+                paracetamol_vitamine_c_posologie: "500 mg to 1 g of paracetamol per dose. Max 3 g/day. Never exceed 4 g.",
+                paracetamol_vitamine_c_particularite: "Level 1 analgesic and antipyretic combination with vitamin C. (class data — not specified separately in the book)",
+                paracetamol_vitamine_c_conseil: "Same advice as paracetamol: do not exceed 3 g/day and check combinations. Vitamin C does not prevent overdose.",
+                aspirine_n1_title: "4. Acetylsalicylic acid (Aspirin)",
+                aspirine_n1_gen: "Acetylsalicylic acid.",
+                aspirine_n1_formes: "Tablets (500 mg), sachets for oral solution.",
+                aspirine_n1_posologie: "500 mg every 4 hours. Max 3 g/day.",
+                aspirine_n1_particularite: "Anti-inflammatory, analgesic, antipyretic and antiplatelet (except 100 mg).",
+                aspirine_n1_conseil: "\"Take it during or at the end of a meal.\" Remind of aspirin allergy. No children (Reye syndrome). Stop 7 days before surgery.",
+                paracetamol_codeine_title: "5. Paracetamol + Codeine",
+                paracetamol_codeine_gen: "Paracetamol + codeine phosphate.",
+                paracetamol_codeine_formes: "Tablets (400 mg/30 mg or 500 mg/30 mg).",
+                paracetamol_codeine_posologie: "1 to 2 tablets every 6h. Max 8 tab/day (400/30) or 6 tab/day (500/30).",
+                paracetamol_codeine_particularite: "Codeine is a prodrug converted to morphine by CYP2D6.",
+                paracetamol_codeine_conseil: "\"May cause constipation, stay well hydrated.\" Prohibit alcohol + cold medicines. Forbidden before 12 years.",
+                paracetamol_tramadol_title: "6. Paracetamol + Tramadol",
+                paracetamol_tramadol_gen: "Paracetamol + tramadol hydrochloride.",
+                paracetamol_tramadol_formes: "Tablets (325 mg / 37.5 mg).",
+                paracetamol_tramadol_posologie: "1 to 2 tablets every 4 to 6h. Max 8 tablets/day.",
+                paracetamol_tramadol_particularite: "Combination of a non-opioid analgesic and a weak opioid with serotonergic effect. (class data — not specified separately in the book)",
+                paracetamol_tramadol_conseil: "\"May cause nausea, take in the middle of a meal.\" Never combine with Tramadol alone or with antidepressants (serotonin syndrome).",
+                tramadol_title: "7. Tramadol alone",
+                tramadol_gen: "Tramadol.",
+                tramadol_formes: "Capsules (50 mg), extended-release tablets (100 mg, 150 mg).",
+                tramadol_posologie: "50 to 100 mg every 4h. Max 400 mg/day. ER: 1 to 2 times per day.",
+                tramadol_particularite: "Weak opioid with a dual mechanism: µ receptor agonist and serotonergic effect. (class data — not specified separately in the book)",
+                tramadol_conseil: "\"It is a narcotic, do not exceed the prescription.\" Do not crush ER tablets. Warn about alcohol and sleeping pills.",
+                morphine_title: "8. Morphine",
+                morphine_gen: "Morphine.",
+                morphine_formes: "ER tablets (10, 30, 60 mg); Actiskénan 5, 10, 20 mg IR.",
+                morphine_posologie: "Actiskénan every 4-6h, Skénan every 12h. Start at 10 mg/12h for Skénan.",
+                morphine_particularite: "Strong µ-receptor agonist opioid, reference analgesic for severe pain. (class data — not specified separately in the book)",
+                morphine_conseil: "\"Constipation is systematic, prescribe a laxative.\" Secured prescription, record book.",
+                buprenorphine_title: "9. Buprenorphine",
+                buprenorphine_gen: "Buprenorphine.",
+                buprenorphine_formes: "Sublingual tablets (0.2 mg, 2 mg).",
+                buprenorphine_posologie: "0.2-0.4 mg every 6h, max 1.6 mg/day. Withdrawal: 2 mg/day.",
+                buprenorphine_particularite: "Partial agonist-antagonist strong opioid at µ receptors, also used in withdrawal. (class data — not specified separately in the book)",
+                buprenorphine_conseil: "\"Do not swallow, let dissolve under the tongue.\" Risk of withdrawal if combined with another strong opioid.",
+                oxycodone_title: "10. Oxycodone",
+                oxycodone_gen: "Oxycodone.",
+                oxycodone_formes: "ER capsules (5, 10, 20, 30, 40, 80 mg).",
+                oxycodone_posologie: "10 mg every 12h (ER) for chronic pain.",
+                oxycodone_particularite: "Strong µ-agonist opioid, used for severe chronic pain. (class data — not specified separately in the book)",
+                oxycodone_conseil: "Same precautions as morphine. Dispensed with record book.",
+                fentanyl_title: "11. Fentanyl",
+                fentanyl_gen: "Fentanyl.",
+                fentanyl_formes: "Transdermal patches (12, 25, 50, 75, 100 µg/h).",
+                fentanyl_posologie: "Durogesic every 72h.",
+                fentanyl_particularite: "Level 3 strong opioid given transdermally for stable chronic pain. (class data — not specified separately in the book)",
+                fentanyl_conseil: "\"Apply the patch on healthy, hairless skin. Formal prohibition to expose it to a heat source (fatal overdose).\" Record book.",
+                alfentanil_title: "12. Alfentanil",
+                alfentanil_gen: "Alfentanil.",
+                alfentanil_formes: "Injectable solution (hospital).",
+                alfentanil_posologie: "Anesthetic use only, according to hospital protocol. All Rapifen doses are reserved for the anesthesiologist.",
+                alfentanil_particularite: "Fast-acting strong opioid reserved for anesthesia and intensive care. (class data — not specified separately in the book)",
+                alfentanil_conseil: "Handled by trained staff with close respiratory monitoring. Never leave within the patient's reach.",
+                group_1_name: "Level 1 — Non-opioid analgesics",
+                group_2_name: "Level 2 — Weak opioids",
+                group_3_name: "Level 3 — Strong opioids",
+                indication_1: "Level 1: mild to moderate pain (headaches, dental pain, myalgia, osteoarthritis).",
+                indication_2: "Level 2: moderate to severe pain or pain resistant to level 1 (post-operative, acute low back pain).",
+                indication_3: "Level 3: severe and chronic pain (cancer, palliative care, major post-surgery).",
+                indication_4: "Levels 2/3: pain requiring a weak or strong opioid according to intensity and treatment response.",
+                indication_5: "Paracetamol: first-line analgesic and antipyretic; aspirin/NSAIDs for inflammatory pain.",
+                inter_1_strong: "NSAIDs + anticoagulants/VKAs",
+                inter_1: ": major bleeding risk.",
+                inter_2_strong: "NSAIDs + antihypertensives",
+                inter_2: ": decreased antihypertensive efficacy.",
+                inter_3_strong: "Opioids + benzodiazepines/alcohol",
+                inter_3: ": severe respiratory depression.",
+                inter_4_strong: "Tramadol + antidepressants (SSRIs/SNRIs)",
+                inter_4: ": serotonin syndrome (confusion, hyperthermia, rigidity).",
+                q1_text: "Among the following drugs, which are classified as Level 1 of the WHO scale?",
+                q1_a: "Paracetamol",
+                q1_b: "Aspirin (NSAID)",
+                q1_c: "Tramadol",
+                q1_d: "Codeine",
+                q2_text: "What are the pharmacological effects of Aspirin (at analgesic dose)?",
+                q2_a: "Analgesic",
+                q2_b: "Anti-inflammatory",
+                q2_c: "Antipyretic",
+                q2_d: "Serotonergic",
+                q3_text: "What are the major risks of combining NSAIDs + Anticoagulants/VKAs?",
+                q3_a: "Hemorrhage",
+                q3_b: "Respiratory depression",
+                q3_c: "Serotonin syndrome",
+                q3_d: "Gastroduodenal ulcer",
+                q4_text: "Regarding Codeine, which statements are correct?",
+                q4_a: "It is a prodrug",
+                q4_b: "It is metabolized by CYP2D6",
+                q4_c: "It is a strong opioid (Level 3)",
+                q4_d: "It is contraindicated before 12 years",
+                q5_text: "What are the possible side effects of Tramadol?",
+                q5_a: "Nausea",
+                q5_b: "Constipation",
+                q5_c: "Serotonin syndrome (if combined with SSRIs/SNRIs)",
+                q5_d: "Arterial hypertension",
+                q6_text: "Which analgesics are strictly contraindicated in the 3rd trimester of pregnancy?",
+                q6_a: "NSAIDs",
+                q6_b: "Aspirin",
+                q6_c: "Paracetamol",
+                q6_d: "Morphine",
+                q7_text: "Regarding Fentanyl (Durogesic), which statements are correct?",
+                q7_a: "It is a transdermal patch",
+                q7_b: "It is administered every 72 hours",
+                q7_c: "It is a Level 3 opioid",
+                q7_d: "It can be exposed to a heat source without risk",
+                q8_text: "What advice should be given to a patient on Paracetamol?",
+                q8_a: "Do not exceed 3 g per day",
+                q8_b: "Wait at least 8 h between each 1 g dose",
+                q8_c: "Avoid alcohol consumption",
+                q8_d: "Take on an empty stomach for faster action",
+                q9_text: "Which combinations expose to a risk of serotonin syndrome?",
+                q9_a: "Tramadol + SSRIs",
+                q9_b: "Tramadol + SNRIs",
+                q9_c: "Codeine + SSRIs",
+                q9_d: "Morphine + SSRIs",
+                q10_text: "Regarding Buprenorphine (Temgesic), which statements are correct?",
+                q10_a: "It is administered sublingually",
+                q10_b: "It should not be swallowed, but let dissolve under the tongue",
+                q10_c: "It is a weak opioid (Level 2)",
+                q10_d: "It can cause withdrawal syndrome if combined with another strong opioid",
+                mechanism_text_1: "Level 1 analgesics (paracetamol, aspirin/NSAIDs) inhibit cyclooxygenases (COX) to reduce prostaglandin synthesis, or act on specific central pathways (paracetamol). Levels 2 and 3 are opioid receptor agonists (mainly µ receptors) present in the central and peripheral nervous system, blocking pain transmission. Tramadol also has a serotonergic effect.",
+                ci_absolues: "NSAIDs: active gastroduodenal ulcer, severe renal failure, aspirin allergy (asthma). Paracetamol: severe hepatocellular insufficiency. Opioids: acute respiratory failure, obstructive syndrome, head trauma (risk of intracranial hypertension), MAOIs (for tramadol and pethidine).",
+                note_text: "Tramadol also has a serotonergic effect: never combine it with SSRIs/SNRIs (serotonin syndrome). Opioids carry a risk of respiratory depression, worsened by benzodiazepines and alcohol.",
+                precautions_text: "NSAIDs: gastric protection with a PPI when at risk, take with meals, stop aspirin 7 days before surgery. Paracetamol: do not exceed 3 g/day (4 g maximum) and check combinations. Opioids: systematic constipation (laxative), secured prescription and narcotics record book.",
+                grossesse_text: "Paracetamol = reference analgesic for short-term use. NSAIDs strictly contraindicated in the 3rd trimester. Levels 2/3: avoid unless strictly necessary; morphine possible under supervision.",
+                allaitement_text: "Codeine is not recommended during breastfeeding (rapid metabolizers). Morphine possible under supervision. Paracetamol and NSAIDs: prefer short-term use on medical advice.",
+                conseil_final_text: "In Algeria, the prescription for narcotics (Level 3 and Tramadol) is extremely regulated. Familiarize yourself with the validity period of prescriptions (7 days for narcotics) and traceability on the record book before dispensing them."
+            },
         };
 
-        // ==================== DOT TRANSLATIONS ====================
         const dotTranslations = {
-            fr: {
-                intro: 'Introduction', mecanisme: 'Mécanisme', indications: 'Indications',
-                'contre-indications': 'Contre‑indications', interactions: 'Interactions',
-                grossesse: 'Grossesse', niveau1: 'Niveau 1', niveau2: 'Niveau 2',
-                niveau3: 'Niveau 3', conseil: 'Conseil ultime',
-                question: 'Question'
-            },
-            ar: {
-                intro: 'مقدمة', mecanisme: 'آلية العمل', indications: 'الاستطبابات',
-                'contre-indications': 'مضادات الاستطباب', interactions: 'التداخلات',
-                grossesse: 'الحمل والرضاعة', niveau1: 'المستوى 1', niveau2: 'المستوى 2',
-                niveau3: 'المستوى 3', conseil: 'نصيحة أخيرة',
-                question: 'السؤال'
-            },
-            en: {
-                intro: 'Introduction', mecanisme: 'Mechanism', indications: 'Indications',
-                'contre-indications': 'Contraindications', interactions: 'Interactions',
-                grossesse: 'Pregnancy', niveau1: 'Level 1', niveau2: 'Level 2',
-                niveau3: 'Level 3', conseil: 'Final advice',
-                question: 'Question'
-            }
+                        "fr": {
+                                        "intro": "Introduction",
+                                        "mecanisme": "Mécanisme",
+                                        "indications": "Indications",
+                                        "contre-indications": "Contre-indications",
+                                        "interactions": "Interactions",
+                                        "grossesse": "Grossesse",
+                                        "substances": "Substances actives",
+                                        "conseil": "Conseil final",
+                                        "question": "Question"
+                        },
+                        "ar": {
+                                        "intro": "مقدمة",
+                                        "mecanisme": "آلية العمل",
+                                        "indications": "الاستطبابات",
+                                        "contre-indications": "مضادات الاستطباب",
+                                        "interactions": "التداخلات",
+                                        "grossesse": "الحمل",
+                                        "substances": "المواد الفعالة",
+                                        "conseil": "نصيحة أخيرة",
+                                        "question": "السؤال"
+                        },
+                        "en": {
+                                        "intro": "Introduction",
+                                        "mecanisme": "Mechanism",
+                                        "indications": "Indications",
+                                        "contre-indications": "Contraindications",
+                                        "interactions": "Interactions",
+                                        "grossesse": "Pregnancy",
+                                        "substances": "Active substances",
+                                        "conseil": "Final advice",
+                                        "question": "Question"
+                        }
         };
 
         let currentLang = localStorage.getItem('lang') || 'fr';
@@ -1762,7 +2018,7 @@
         const bottomDotsContainer = document.getElementById('bottomDotsNav');
 
         const lessonSectionIDs = ['intro', 'mecanisme', 'indications', 'contre-indications', 'interactions',
-            'grossesse', 'niveau1', 'niveau2', 'niveau3', 'conseil'
+            'grossesse', 'substances', 'conseil'
         ];
         const examSectionIDs = [
             'exam-question1', 'exam-question2', 'exam-question3', 'exam-question4', 'exam-question5',
@@ -1989,42 +2245,43 @@
             toastTimeout = setTimeout(() => copyToast.classList.remove('show'), 2000);
         }
 
-        // ==================== IMAGES ====================
+        // ==================== IMAGES DES MÉDICAMENTS ====================
         const drugImages = {
-            'Doliprane': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533105/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Doliprane.png'],
-            'Rapifen': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533113/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Rapifen.png'],
-            'Supramadol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533111/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Supramadol.png'],
-            'Xamadol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533110/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Xamadol.png'],
-            'Zodid': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533110/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Zodid.png'],
-            'Temgesic': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533110/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Temgesic.png'],
-            'Skénan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533109/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Sk%C3%A9nan.png'],
-            'Supradolex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533109/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Supradolex.png'],
-            'Planadix': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533109/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Planadix.png'],
-            'Sapramol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533108/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Sapramol.png'],
-            'Paramol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533108/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Paramol.png'],
-            'Efferalgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Efferalgan.png'],
-            'Paralgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Paralgan.png'],
-            'Panadol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Panadol_Advance.avif'],
-            'Dafalgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dafalgan.png'],
-            'Panadol Extra': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Panadol_Extra.jpg'],
-            'Oxynorm': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533107/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Oxynorm.png'],
-            'Expandol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533106/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Expandol.png'],
-            'Dolyc': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533106/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dolyc.png'],
-            'Efferalgan VC': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533106/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Efferalgan_VC.png'],
-            'Durogesic': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533105/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Durogesic.webp'],
-            'Di‑Dolex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Di-Dolex.png'],
-            'Dolex': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dolex.png'],
-            'Dofebril': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dofebril.png'],
-            'Catalgine': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533104/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Catalgine.png'],
-            'Dofebril VC': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533103/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Dofebril_VC.png'],
-            'Co‑Dolyc': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533103/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Co-Dolyc.png'],
-            'Coparalgan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Coparalgan.png'],
-            'Buprenal': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Buprenal.png'],
-            'Aspegic': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Aspegic.png'],
-            'Codoliprane': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Codoliprane.png'],
-            'Aspirine': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Aspirine.png'],
-            'Co‑paramol': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533102/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Co-paramol.png'],
-            'Actiskénan': ['https://res.cloudinary.com/s6y8zztk/image/upload/v1786533101/LES_ANTALGIQUES_ET_LES%20ANTI-INFLAMMATOIRES_1/Actisk%C3%A9nan.png']
+                    "Doliprane": [],
+                    "Dolyc": [],
+                    "Dofebril": [],
+                    "Dafalgan": [],
+                    "Panadol": [],
+                    "Efferalgan": [],
+                    "Paramol": [],
+                    "Expandol": [],
+                    "Sapramol": [],
+                    "Panadol Extra": [],
+                    "Planadix": [],
+                    "Planadix Confort +": [],
+                    "Planadix Advance": [],
+                    "Efferalgan VC": [],
+                    "Dofebril VC": [],
+                    "Aspegic": [],
+                    "Aspirine": [],
+                    "Catalgine": [],
+                    "Codoliprane": [],
+                    "Co-Dolyc": [],
+                    "Co-paramol": [],
+                    "Coparalgan": [],
+                    "Di-Dolex": [],
+                    "Supradolex": [],
+                    "Xamadol": [],
+                    "Dolex": [],
+                    "Supramadol": [],
+                    "Zodid": [],
+                    "Skénan": [],
+                    "Actiskénan": [],
+                    "Buprenal": [],
+                    "Temgesic": [],
+                    "Oxynorm": [],
+                    "Durogesic": [],
+                    "Rapifen": []
         };
 
         function showDrugModal(drugName) {
@@ -2094,9 +2351,52 @@
 
         // ==================== EXAM ====================
         const correctAnswers = {
-            q1: ['a', 'b'], q2: ['a', 'b', 'c'], q3: ['a', 'd'], q4: ['a', 'b', 'd'],
-            q5: ['a', 'b', 'c', 'd'], q6: ['a', 'b'], q7: ['a', 'b', 'c'],
-            q8: ['a', 'b', 'c', 'd'], q9: ['a', 'b'], q10: ['a', 'b', 'c', 'd']
+                    "q1": [
+                                "a",
+                                "b"
+                    ],
+                    "q2": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q3": [
+                                "a",
+                                "d"
+                    ],
+                    "q4": [
+                                "a",
+                                "b",
+                                "d"
+                    ],
+                    "q5": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q6": [
+                                "a",
+                                "b"
+                    ],
+                    "q7": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q8": [
+                                "a",
+                                "b",
+                                "c"
+                    ],
+                    "q9": [
+                                "a",
+                                "b"
+                    ],
+                    "q10": [
+                                "a",
+                                "b",
+                                "d"
+                    ]
         };
 
         document.getElementById('checkExam').addEventListener('click', () => {
